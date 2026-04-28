@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Museum Planning LLC</title>
+<meta name="description" content="From feasibility study through opening day. Museum Planning LLC guides cultural institutions through every stage of development — forty museums, one methodology.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --navy:    #1B2A3B;
+  --deep:    #111C27;
+  --gold:    #C9A84C;
+  --gold-lt: #E8D099;
+  --cream:   #F8F4EC;
+  --warm:    #EDE8DC;
+  --ink:     #1A1A1A;
+  --mid:     #5A5A5A;
+  --rule:    #D4C8B0;
+  --serif:   'Playfair Display', Georgia, serif;
+  --mono:    'DM Mono', monospace;
+  --sans:    'Lato', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes lineGrow {
+  from { width: 0; }
+  to   { width: 48px; }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: var(--deep); height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; z-index: 100;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.nav-logo { font-family: var(--serif); font-size: 15px; color: white; text-decoration: none; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: rgba(255,255,255,.45);
+  text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: rgba(255,255,255,.9); }
+.nav-links a.active { color: rgba(255,255,255,.9); }
+.nav-cta {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; background: var(--gold);
+  color: var(--deep) !important; padding: 8px 20px; text-decoration: none;
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--gold-lt) !important; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--deep);
+  padding: 130px 56px 0;
+  position: relative; overflow: hidden;
+  min-height: 72vh;
+  display: flex; align-items: flex-start;
+}
+.hero-grid {
+  position: absolute; inset: 0; opacity: .035;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+}
+.hero-circle { position: absolute; border-radius: 50%; border: 1px solid rgba(201,168,76,.07); pointer-events: none; }
+.hero-circle-1 { width: 800px; height: 800px; bottom: -300px; right: -200px; }
+.hero-circle-2 { width: 560px; height: 560px; bottom: -180px; right: -80px; }
+
+.hero-inner {
+  max-width: 1100px; margin: 0 auto; width: 100%;
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+.hero-left { padding-bottom: 80px; }
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 14px;
+  animation: fadeUp .6s .1s both;
+}
+.hero-eyebrow::before {
+  content: ''; display: block; width: 48px; height: 1px;
+  background: var(--gold); animation: lineGrow .6s .5s both;
+}
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(38px, 4.2vw, 60px);
+  font-weight: 900; color: white; line-height: 1.07;
+  margin-bottom: 28px; animation: fadeUp .6s .15s both;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-deck {
+  font-family: var(--serif); font-style: italic; font-size: 18px;
+  color: rgba(255,255,255,.5); line-height: 1.65; max-width: 480px;
+  margin-bottom: 44px; animation: fadeUp .6s .25s both;
+}
+.hero-cta-row {
+  display: flex; gap: 16px; align-items: center;
+  animation: fadeUp .6s .35s both;
+}
+.btn-primary {
+  display: inline-block; background: var(--gold); color: var(--deep);
+  padding: 14px 32px; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+  transition: background .2s, transform .15s;
+}
+.btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
+.btn-ghost {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.4);
+  text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.2);
+  padding-bottom: 2px; transition: color .2s;
+}
+.btn-ghost:hover { color: white; }
+
+/* ── HERO RIGHT: Phase Stack ── */
+.hero-phases { animation: fadeUp .6s .3s both; }
+.phase-strip {
+  display: flex; flex-direction: column; gap: 1px;
+}
+.phase-strip-item {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  padding: 22px 28px;
+  display: flex; align-items: center; gap: 20px;
+  text-decoration: none;
+  transition: background .2s, border-color .2s;
+  cursor: pointer;
+}
+.phase-strip-item:hover {
+  background: rgba(201,168,76,.07);
+  border-color: rgba(201,168,76,.3);
+}
+.phase-num {
+  font-family: var(--serif); font-size: 28px; font-weight: 700;
+  color: var(--gold); opacity: .6; line-height: 1;
+  flex-shrink: 0; width: 36px;
+}
+.phase-strip-item:hover .phase-num { opacity: 1; }
+.phase-strip-text strong {
+  display: block; font-family: var(--serif); font-size: 16px;
+  font-weight: 700; color: white; margin-bottom: 3px;
+}
+.phase-strip-text span {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: rgba(255,255,255,.35);
+}
+.phase-arrow {
+  margin-left: auto; font-family: var(--mono); font-size: 14px;
+  color: rgba(255,255,255,.2); transition: color .2s, transform .2s;
+}
+.phase-strip-item:hover .phase-arrow { color: var(--gold); transform: translateX(4px); }
+
+/* ── OVERVIEW BAND ── */
+.overview-band {
+  background: var(--navy);
+  padding: 72px 56px;
+}
+.overview-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.ov-item {
+  background: rgba(255,255,255,.04);
+  padding: 32px 28px;
+  border-top: 2px solid rgba(201,168,76,.2);
+  transition: border-color .2s, background .2s;
+}
+.ov-item:hover { border-color: var(--gold); background: rgba(201,168,76,.06); }
+.ov-num {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+}
+.ov-title {
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: white; line-height: 1.25; margin-bottom: 10px;
+}
+.ov-tags {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 1px;
+  color: rgba(255,255,255,.3); line-height: 1.8;
+}
+
+/* ── PHASE SECTIONS ── */
+.phase-section {
+  padding: 100px 56px;
+  scroll-margin-top: 60px;
+}
+.phase-section:nth-child(odd) { background: var(--cream); }
+.phase-section:nth-child(even) { background: var(--warm); }
+
+.phase-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 280px 1fr;
+  gap: 80px; align-items: start;
+}
+.phase-left { position: sticky; top: 80px; }
+.phase-big-num {
+  font-family: var(--serif); font-size: 96px; font-weight: 900;
+  color: var(--navy); opacity: .1; line-height: 1;
+  margin-bottom: -16px; display: block;
+}
+.phase-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+.phase-label::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+.phase-title {
+  font-family: var(--serif); font-size: 32px; font-weight: 700;
+  color: var(--navy); line-height: 1.2; margin-bottom: 20px;
+}
+.phase-intro {
+  font-size: 15px; color: var(--mid); line-height: 1.8; margin-bottom: 28px;
+}
+.phase-tag {
+  display: inline-block;
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold);
+  border: 1px solid rgba(201,168,76,.35); padding: 6px 14px;
+}
+
+.services-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+.service-card {
+  background: white; padding: 36px 32px;
+  border-top: 2px solid transparent;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.service-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(27,42,59,.08);
+}
+.sc-icon {
+  width: 40px; height: 40px; margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center;
+}
+.sc-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.sc-title {
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: var(--navy); margin-bottom: 10px; line-height: 1.2;
+}
+.sc-body {
+  font-size: 14px; color: var(--mid); line-height: 1.75;
+}
+.sc-deliverable {
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--gold);
+}
+
+/* ── BUSINESS PLANNING CALLOUT ── */
+.bp-callout {
+  background: var(--navy);
+  grid-column: 1 / -1;
+  padding: 36px 32px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  align-items: center;
+}
+.bp-callout-left {}
+.bp-callout-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+}
+.bp-callout-title {
+  font-family: var(--serif); font-size: 22px; font-weight: 700;
+  color: white; line-height: 1.25; margin-bottom: 12px;
+}
+.bp-callout-body {
+  font-size: 14px; color: rgba(255,255,255,.55); line-height: 1.75;
+}
+.bp-callout-right {
+  display: flex; flex-direction: column; gap: 12px;
+}
+.bp-row {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.5;
+}
+.bp-row::before {
+  content: '—'; color: var(--gold); flex-shrink: 0; margin-top: 1px;
+  font-family: var(--mono);
+}
+
+/* ── PROOF STRIP ── */
+.proof-strip {
+  background: var(--deep); padding: 72px 56px;
+}
+.proof-inner { max-width: 1100px; margin: 0 auto; }
+.proof-heading {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,.3);
+  text-align: center; margin-bottom: 48px;
+}
+.proof-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+.proof-item { background: rgba(255,255,255,.04); padding: 36px 28px; text-align: center; }
+.proof-num {
+  font-family: var(--serif); font-size: 44px; font-weight: 700;
+  color: var(--gold); line-height: 1; margin-bottom: 8px;
+}
+.proof-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.35); line-height: 1.5;
+}
+
+/* ── HOW IT WORKS ── */
+.how-band {
+  background: var(--cream); padding: 100px 56px;
+}
+.how-inner { max-width: 1100px; margin: 0 auto; }
+.how-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 14px;
+}
+.how-label::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.how-heading {
+  font-family: var(--serif); font-size: clamp(30px, 3vw, 44px);
+  font-weight: 700; color: var(--navy); line-height: 1.15;
+  margin-bottom: 64px; max-width: 600px;
+}
+.how-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+.how-card { background: white; padding: 40px 32px; position: relative; }
+.how-card-num {
+  position: absolute; top: 24px; right: 28px;
+  font-family: var(--serif); font-size: 48px; font-weight: 900;
+  color: var(--navy); opacity: .06; line-height: 1;
+}
+.how-card-title {
+  font-family: var(--serif); font-size: 20px; font-weight: 700;
+  color: var(--navy); margin-bottom: 14px; line-height: 1.2;
+}
+.how-card-body { font-size: 14px; color: var(--mid); line-height: 1.75; }
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--navy); padding: 100px 56px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; inset: 0; opacity: .025;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+}
+.cta-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
+.cta-heading {
+  font-family: var(--serif); font-size: clamp(34px, 4vw, 52px);
+  font-weight: 900; color: white; line-height: 1.1; margin-bottom: 22px;
+}
+.cta-heading em { font-style: italic; color: var(--gold); }
+.cta-body {
+  font-size: 17px; color: rgba(255,255,255,.5);
+  line-height: 1.75; margin-bottom: 48px; max-width: 480px; margin-left: auto; margin-right: auto;
+}
+.cta-contact {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 1.5px;
+  color: rgba(255,255,255,.25); margin-top: 28px;
+}
+.cta-contact a {
+  color: rgba(255,255,255,.4); text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.15); padding-bottom: 1px;
+  transition: color .2s;
+}
+.cta-contact a:hover { color: var(--gold); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep); padding: 40px 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(201,168,76,.1);
+}
+.footer-logo { font-family: var(--serif); font-size: 14px; color: rgba(255,255,255,.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.25);
+  text-decoration: none; transition: color .2s;
+}
+.footer-links a:hover { color: rgba(255,255,255,.6); }
+.footer-copy { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,.2); }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .phase-inner { grid-template-columns: 1fr; gap: 40px; }
+  .phase-left { position: static; }
+  .phase-big-num { font-size: 64px; }
+  .overview-inner { grid-template-columns: repeat(2, 1fr); }
+  .how-grid { grid-template-columns: 1fr 1fr; }
+  .proof-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 110px 24px 0; }
+  .phase-section, .how-band, .cta-section, .proof-strip { padding-left: 24px; padding-right: 24px; }
+  .overview-band { padding: 48px 24px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .overview-inner { grid-template-columns: 1fr; }
+  .bp-callout { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+  .proof-grid { grid-template-columns: repeat(2, 1fr); }
+  footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="museum-planning-sales.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <ul class="nav-links">
+    <li><a href="museum-planning-services.html" class="active">Services</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-planning-sales.html#landscape">Landscape</a></li>
+    <li><a href="museum-planning-sales.html#contact" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-circle hero-circle-1"></div>
+  <div class="hero-circle hero-circle-2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Museum Planning LLC</div>
+      <h1>From Vision<br>to <em>Opening Day.</em></h1>
+      <p class="hero-deck">Twenty-five years. Forty museums. One methodology that takes institutions from the first community assessment through post-opening evaluation — with Mark personally involved at every stage.</p>
+      <div class="hero-cta-row">
+        <a href="mailto:mark@museumplanning.com" class="btn-primary">Start a Conversation</a>
+        <a href="museum-planning-projects.html" class="btn-ghost">See the Work</a>
+      </div>
+    </div>
+    <div class="hero-phases">
+      <div class="phase-strip">
+        <a href="#phase-1" class="phase-strip-item">
+          <div class="phase-num">01</div>
+          <div class="phase-strip-text">
+            <strong>Institutional Planning</strong>
+            <span>Feasibility · Strategy · Mission</span>
+          </div>
+          <div class="phase-arrow">→</div>
+        </a>
+        <a href="#phase-2" class="phase-strip-item">
+          <div class="phase-num">02</div>
+          <div class="phase-strip-text">
+            <strong>Facility Planning</strong>
+            <span>Master Plan · Campaign · Exhibition Design</span>
+          </div>
+          <div class="phase-arrow">→</div>
+        </a>
+        <a href="#phase-3" class="phase-strip-item">
+          <div class="phase-num">03</div>
+          <div class="phase-strip-text">
+            <strong>Operational Planning</strong>
+            <span>Business Plan · Programming · Marketing</span>
+          </div>
+          <div class="phase-arrow">→</div>
+        </a>
+        <a href="#phase-4" class="phase-strip-item">
+          <div class="phase-num">04</div>
+          <div class="phase-strip-text">
+            <strong>Opening & Operations</strong>
+            <span>Grand Opening · Evaluation · Next Cycle</span>
+          </div>
+          <div class="phase-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW BAND -->
+<div class="overview-band">
+  <div class="overview-inner reveal">
+    <div class="ov-item">
+      <div class="ov-num">Phase 01</div>
+      <div class="ov-title">Institutional Planning</div>
+      <div class="ov-tags">Community Assessment · Mission & Vision · Feasibility Study · Strategic Planning</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-num">Phase 02</div>
+      <div class="ov-title">Facility Planning</div>
+      <div class="ov-tags">Master Plan · Capital Campaign · Visitor Experience · Exhibition Design · Building Design</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-num">Phase 03</div>
+      <div class="ov-title">Operational Planning</div>
+      <div class="ov-tags">Business Plan · Programming · Marketing · Fabrication · Emergency Preparedness</div>
+    </div>
+    <div class="ov-item">
+      <div class="ov-num">Phase 04</div>
+      <div class="ov-title">Opening & Operations</div>
+      <div class="ov-tags">Grand Opening · Community Impact · Evaluation · Institutional Assessment</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 1 -->
+<section class="phase-section" id="phase-1">
+  <div class="phase-inner">
+    <div class="phase-left reveal">
+      <span class="phase-big-num">01</span>
+      <div class="phase-label">Phase One</div>
+      <h2 class="phase-title">Institutional Planning</h2>
+      <p class="phase-intro">Before a single line is drawn, museums need a clear strategic foundation. This phase establishes why the museum exists, who it serves, and whether it can operate sustainably. The documents produced here are what boards, donors, and civic partners need before committing capital.</p>
+      <span class="phase-tag">Foundation Work</span>
+    </div>
+    <div class="services-grid reveal">
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
+        <div class="sc-title">Community Assessment</div>
+        <p class="sc-body">Audience research and needs analysis that maps the community the museum will serve — who they are, what they need, and whether the institution can earn their sustained engagement.</p>
+        <div class="sc-deliverable">Deliverable: Community Assessment Report</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="sc-title">Mission, Vision & Values</div>
+        <p class="sc-body">The organizational identity framework that every other decision flows from. Clear, honest, and grounded in the community — not aspirational language that evades accountability.</p>
+        <div class="sc-deliverable">Deliverable: MVV Framework Document</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <div class="sc-title">Feasibility Study</div>
+        <p class="sc-body">Attendance projections, staffing requirements, and operating cost modeling that answers the fundamental question before capital is committed: <em>can this museum actually survive?</em> Bad feasibility is still fatal.</p>
+        <div class="sc-deliverable">Deliverable: Feasibility Study Report</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg></div>
+        <div class="sc-title">Strategic Planning</div>
+        <p class="sc-body">A multi-year roadmap from planning through opening, aligned with the institution's mission and the community's needs. The plan that keeps the board, staff, and funders moving in the same direction.</p>
+        <div class="sc-deliverable">Deliverable: Strategic Plan</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 2 -->
+<section class="phase-section" id="phase-2">
+  <div class="phase-inner">
+    <div class="phase-left reveal">
+      <span class="phase-big-num">02</span>
+      <div class="phase-label">Phase Two</div>
+      <h2 class="phase-title">Facility Planning</h2>
+      <p class="phase-intro">Facility planning translates institutional goals into physical space and financial reality. This phase produces the blueprints — programmatic, experiential, and architectural — that govern every construction and design decision. It also structures the capital campaign required to fund the building and its exhibitions.</p>
+      <span class="phase-tag">Design & Campaign</span>
+    </div>
+    <div class="services-grid reveal">
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div class="sc-title">Museum Master Plan</div>
+        <p class="sc-body">Building program, floor plans, phasing, and budget — the physical translation of the institution's mission. The document that architects, contractors, and capital campaign chairs all work from.</p>
+        <div class="sc-deliverable">Deliverable: Museum Master Plan</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <div class="sc-title">Capital Campaign Plan</div>
+        <p class="sc-body">Fundraising strategy, donor pipeline, naming opportunities, and a phased campaign timeline. The plan that takes the institution from aspiration to groundbreaking.</p>
+        <div class="sc-deliverable">Deliverable: Capital Campaign Plan</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="sc-title">Visitor Experience Plan</div>
+        <p class="sc-body">The interpretive framework for every guest touchpoint — from arrival to exit, from the first exhibit to the last. Ensures the building serves the visitor, not the other way around.</p>
+        <div class="sc-deliverable">Deliverable: Visitor Experience Plan</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="sc-title">Exhibition Design</div>
+        <p class="sc-body">Content, space, sequence, and interpretation — concept through fabrication-ready CAD documentation. The craft of turning a collection or a mission into an experience that people actually have.</p>
+        <div class="sc-deliverable">Deliverable: Exhibition Design Documents</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="sc-title">Building Design</div>
+        <p class="sc-body">Architectural programming and systems coordination — ensuring the building serves the museum's mission across the full life of the institution, not just on opening day.</p>
+        <div class="sc-deliverable">Deliverable: Architectural Program</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 3 -->
+<section class="phase-section" id="phase-3">
+  <div class="phase-inner">
+    <div class="phase-left reveal">
+      <span class="phase-big-num">03</span>
+      <div class="phase-label">Phase Three</div>
+      <h2 class="phase-title">Operational Planning</h2>
+      <p class="phase-intro">As construction progresses, the institution must be ready to operate on opening day. Operational planning builds the systems, plans, and infrastructure that keep a museum running — financially, programmatically, and physically. Personnel typically accounts for 60% of a museum's annual budget, making this phase as important as any other.</p>
+      <span class="phase-tag">Systems & Operations</span>
+    </div>
+    <div class="services-grid reveal">
+
+      <!-- Business Planning Callout spans full width -->
+      <div class="bp-callout">
+        <div class="bp-callout-left">
+          <div class="bp-callout-label">Core Deliverable</div>
+          <div class="bp-callout-title">Business Planning & Pro Forma</div>
+          <p class="bp-callout-body">A museum that can open is not the same as a museum that can stay open. Rigorous pro forma modeling stress-tests the institution before capital is committed — and keeps it honest after it opens. This is not optional and it is not a formality.</p>
+        </div>
+        <div class="bp-callout-right">
+          <div class="bp-row">Operating cost projections across a 5-year horizon</div>
+          <div class="bp-row">Revenue assumptions: admissions, membership, earned income, grants</div>
+          <div class="bp-row">Staffing ratios and personnel cost modeling</div>
+          <div class="bp-row">Break-even analysis and scenario planning</div>
+          <div class="bp-row">Capital reserve and maintenance fund requirements</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="sc-title">Public Programming</div>
+        <p class="sc-body">Tours, events, education, and community initiatives that keep the museum relevant, visited, and funded. Programming is the operating environment — not a side channel.</p>
+        <div class="sc-deliverable">Deliverable: Programming Plan</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="sc-title">Marketing Plan</div>
+        <p class="sc-body">Brand identity, digital strategy, audience development, and the distribution systems that connect the museum to its community before and after opening day.</p>
+        <div class="sc-deliverable">Deliverable: Marketing Plan</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg></div>
+        <div class="sc-title">Building Construction Oversight</div>
+        <p class="sc-body">Owner's representation through the construction phase — protecting the institution's interests and ensuring the building is delivered as designed, on schedule, and within budget.</p>
+        <div class="sc-deliverable">Deliverable: Owner's Rep Services</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+        <div class="sc-title">Exhibition Fabrication</div>
+        <p class="sc-body">Oversight of interactives, AV systems, graphics, and installation — from fabrication shop to gallery floor. The phase where design becomes the physical experience visitors will have.</p>
+        <div class="sc-deliverable">Deliverable: Fabrication Oversight</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="sc-title">Emergency Preparedness</div>
+        <p class="sc-body">Disaster preparedness and emergency response planning — the infrastructure that protects the collection, the building, and the people inside it.</p>
+        <div class="sc-deliverable">Deliverable: Emergency Response Plan</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHASE 4 -->
+<section class="phase-section" id="phase-4">
+  <div class="phase-inner">
+    <div class="phase-left reveal">
+      <span class="phase-big-num">04</span>
+      <div class="phase-label">Phase Four</div>
+      <h2 class="phase-title">Opening & Operations</h2>
+      <p class="phase-intro">A successful opening is planned, not improvised. The final phase covers grand opening strategy, early-stage community engagement, and the formal evaluation cycles that determine what's working and what must evolve. Post-opening assessment closes the loop and initiates the next strategic planning cycle.</p>
+      <span class="phase-tag">Launch & Evaluate</span>
+    </div>
+    <div class="services-grid reveal">
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+        <div class="sc-title">Museum Opening</div>
+        <p class="sc-body">Press previews, VIP events, ribbon-cutting coordination, and the public grand opening — staged and sequenced to generate coverage, membership, and community ownership of the new institution.</p>
+        <div class="sc-deliverable">Deliverable: Opening Day Plan</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M12 22V12"/></svg></div>
+        <div class="sc-title">Community Impact</div>
+        <p class="sc-body">Measuring the cultural, educational, and economic contributions of the museum to its community — the accountability framework that justifies public investment and fuels the next campaign.</p>
+        <div class="sc-deliverable">Deliverable: Impact Assessment</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="sc-title">Exhibition Evaluation</div>
+        <p class="sc-body">Front-end, formative, and summative evaluation of exhibition effectiveness against learning objectives. The evidence that tells you what visitors are actually experiencing — and what needs to change.</p>
+        <div class="sc-deliverable">Deliverable: Evaluation Report</div>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></div>
+        <div class="sc-title">Institutional Assessment</div>
+        <p class="sc-body">A full operational review — financial health, programming vitality, community engagement, staff capacity — that launches the next strategic planning cycle and keeps the institution from becoming the dusty museum.</p>
+        <div class="sc-deliverable">Deliverable: Institutional Assessment</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div class="proof-heading reveal">The Track Record</div>
+    <div class="proof-grid reveal">
+      <div class="proof-item">
+        <div class="proof-num">40+</div>
+        <div class="proof-label">Museums<br>Completed</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">25</div>
+        <div class="proof-label">Years of<br>Practice</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">2</div>
+        <div class="proof-label">AAM Press<br>Books Published</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-num">100%</div>
+        <div class="proof-label">Mark Personally<br>Involved</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-band">
+  <div class="how-inner">
+    <div class="how-label">The Approach</div>
+    <h2 class="how-heading">What every engagement looks like in practice.</h2>
+    <div class="how-grid reveal">
+      <div class="how-card">
+        <div class="how-card-num">1</div>
+        <div class="how-card-title">It starts with a conversation.</div>
+        <p class="how-card-body">Every engagement begins with an hour — no cost, no obligation. Mark listens to where you are, what you're trying to build, and what decisions are in front of you. That conversation shapes the scope of work.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-num">2</div>
+        <div class="how-card-title">Mark is personally involved. Always.</div>
+        <p class="how-card-body">Museum Planning LLC is a personal practice. You are not handed off to a junior associate. Mark is in the room — with your board, your architects, your city council — from first study through opening day.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-num">3</div>
+        <div class="how-card-title">The methodology is proven across forty museums.</div>
+        <p class="how-card-body">The four-phase process has been tested on university natural history museums, city-led cultural centers, children's museums, science centers, and international institutions. It works at every scale because the fundamentals don't change.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-num">4</div>
+        <div class="how-card-title">We plan for the world the museum opens into.</div>
+        <p class="how-card-body">Audiences behave differently now. Programming drives visitation. Digital and physical are one planning problem. The methodology accounts for this — not to chase technology, but because ignoring the operating environment produces museums that struggle to find their audience.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-num">5</div>
+        <div class="how-card-title">We measure what matters.</div>
+        <p class="how-card-body">The Museum Vitality Index gives institutions a normalized, ratio-based measure of institutional health — financial, programmatic, digital, community. A $500K museum with strong ratios can outperform a $25M institution in decline. We plan for vitality, not just volume.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-card-num">6</div>
+        <div class="how-card-title">The goal is a museum that lasts.</div>
+        <p class="how-card-body">Not a building. Not a ribbon cutting. A museum that is still vibrant, financially healthy, and deeply connected to its community ten years after opening. That is the standard every engagement is held to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <h2 class="cta-heading">Ready to build<br><em>your museum?</em></h2>
+    <p class="cta-body">Whether you're starting from a feasibility question or a capital campaign, the first step is the same — a conversation. No cost, no obligation.</p>
+    <a href="mailto:mark@museumplanning.com" class="btn-primary" style="font-size: 12px; padding: 16px 44px;">Start a Conversation</a>
+    <div class="cta-contact">
+      <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>
+      &nbsp;·&nbsp;
+      <a href="tel:4157945252">415-794-5252</a>
+      &nbsp;·&nbsp;
+      New York · Mexico City · Worldwide
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="mailto:mark@museumplanning.com">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth scroll for phase nav links
+  document.querySelectorAll('a[href^="#phase"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>

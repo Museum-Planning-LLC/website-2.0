@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Diego Children's Museum — Museum Planning LLC</title>
+<meta name="description" content="San Diego Children's Museum · San Diego, California · Museum Planning LLC">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --navy:    #1B2A3B;
+  --deep:    #111C27;
+  --gold:    #C9A84C;
+  --gold-lt: #E8D099;
+  --cream:   #F8F4EC;
+  --warm:    #EDE8DC;
+  --ink:     #1A1A1A;
+  --mid:     #5A5A5A;
+  --rule:    #D4C8B0;
+  --serif:   'Playfair Display', Georgia, serif;
+  --mono:    'DM Mono', monospace;
+  --sans:    'Lato', system-ui, sans-serif;
+}
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+nav {
+  position: fixed; top:0; left:0; right:0;
+  background: var(--deep); height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; z-index: 100;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.nav-logo { font-family: var(--serif); font-size: 15px; color: white; text-decoration: none; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: rgba(255,255,255,.9); }
+.nav-cta { background: var(--gold) !important; color: var(--deep) !important; padding: 8px 20px; }
+
+.hero {
+  min-height: 70vh; position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+  padding: 0 0 0 0;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  background-color: var(--navy);
+}
+.hero-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(17,28,39,.95) 0%, rgba(17,28,39,.4) 60%, rgba(17,28,39,.1) 100%);
+}
+.hero-content {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 1100px;
+  margin: 0 auto; padding: 80px 56px 64px;
+  animation: fadeUp .7s .1s both;
+}
+.breadcrumb {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.4);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.breadcrumb a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb span { color: var(--gold); }
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(32px, 4.5vw, 58px);
+  font-weight: 900; color: white; line-height: 1.08;
+  max-width: 800px; margin-bottom: 28px;
+}
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 24px; align-items: center;
+}
+.meta-item {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.meta-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.3);
+}
+.meta-value {
+  font-family: var(--sans); font-size: 14px; font-weight: 700;
+  color: white;
+}
+.meta-divider {
+  width: 1px; height: 36px; background: rgba(255,255,255,.15);
+}
+.service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.service-tag {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--gold);
+  border: 1px solid rgba(201,168,76,.35); padding: 5px 12px;
+}
+
+.body-wrap {
+  max-width: 1100px; margin: 0 auto;
+  padding: 80px 56px 100px;
+  display: grid; grid-template-columns: 1fr 340px; gap: 80px;
+  align-items: start;
+}
+.prose h2 {
+  font-family: var(--serif); font-size: 28px; font-weight: 700;
+  color: var(--navy); margin: 48px 0 16px; line-height: 1.25;
+}
+.prose h2:first-child { margin-top: 0; }
+.prose p { font-size: 16px; line-height: 1.85; color: #333; margin-bottom: 1.4em; }
+.prose ul { margin: 0 0 1.4em 20px; }
+.prose ul li { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 6px; }
+.prose strong { color: var(--navy); font-weight: 700; }
+.prose blockquote {
+  font-family: var(--serif); font-style: italic; font-size: 20px;
+  color: var(--navy); border-left: 3px solid var(--gold);
+  padding-left: 28px; margin: 40px 0;
+}
+
+.sidebar { position: sticky; top: 80px; }
+.sidebar-card {
+  background: white; padding: 36px 32px;
+  border-top: 3px solid var(--gold); margin-bottom: 3px;
+}
+.sidebar-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+}
+.sidebar-card h3 {
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: var(--navy); margin-bottom: 12px; line-height: 1.3;
+}
+.sidebar-card p { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 1em; }
+.sidebar-card p:last-child { margin-bottom: 0; }
+.detail-row {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 12px 0; border-bottom: 1px solid var(--rule); gap: 16px;
+}
+.detail-row:last-child { border-bottom: none; }
+.detail-key { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); flex-shrink: 0; }
+.detail-val { font-size: 14px; color: var(--ink); font-weight: 600; text-align: right; }
+.btn-cta {
+  display: block; background: var(--gold); color: var(--deep);
+  padding: 14px 24px; font-family: var(--mono); font-size: 10px;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+  text-align: center; transition: background .2s; margin-top: 3px;
+}
+.btn-cta:hover { background: var(--gold-lt); }
+
+.gallery {
+  max-width: 1100px; margin: 0 auto; padding: 0 56px 80px;
+}
+.gallery-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 14px;
+}
+.gallery-label::before { content:''; width:32px; height:1px; background: var(--gold); }
+.gallery-grid {
+  display: grid; gap: 3px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gallery-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+.gallery-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+.gallery-item { overflow: hidden; background: var(--warm); }
+.gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition: transform .4s; }
+.gallery-item:hover img { transform: scale(1.03); }
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+.gallery-item.aspect-land { aspect-ratio: 16/9; }
+.gallery-item.aspect-sq   { aspect-ratio: 1/1; }
+.gallery-item.aspect-port { aspect-ratio: 3/4; }
+
+.next-projects {
+  background: var(--navy); padding: 72px 56px;
+}
+.next-inner { max-width: 1100px; margin: 0 auto; }
+.next-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 32px;
+}
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.next-card {
+  display: block; text-decoration: none; overflow: hidden;
+  position: relative;
+}
+.next-card .nc-img {
+  aspect-ratio: 4/3; overflow: hidden;
+  background: var(--deep);
+}
+.next-card .nc-img img {
+  width:100%; height:100%; object-fit:cover;
+  filter: brightness(.65); transition: filter .3s, transform .4s;
+}
+.next-card:hover .nc-img img { filter: brightness(.45); transform: scale(1.04); }
+.nc-body {
+  position: absolute; bottom:0; left:0; right:0;
+  padding: 20px 20px 18px;
+  background: linear-gradient(to top, rgba(17,28,39,.9) 0%, transparent 100%);
+}
+.nc-type { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.nc-title { font-family: var(--serif); font-size: 15px; font-weight: 700; color: white; line-height: 1.3; }
+
+.cta-band { background: var(--cream); padding: 80px 56px; text-align: center; }
+.cta-band h2 { font-family: var(--serif); font-size: clamp(28px,3vw,42px); font-weight: 900; color: var(--navy); margin-bottom: 16px; }
+.cta-band h2 em { font-style: italic; color: var(--gold); }
+.cta-band p { font-size: 16px; color: var(--mid); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
+.btn-primary {
+  display: inline-block; background: var(--gold); color: var(--deep);
+  padding: 14px 36px; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+  transition: background .2s;
+}
+.btn-primary:hover { background: var(--gold-lt); }
+
+footer {
+  background: var(--deep); padding: 40px 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(201,168,76,.1);
+}
+.footer-logo { font-family: var(--serif); font-size: 14px; color: rgba(255,255,255,.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.25); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: rgba(255,255,255,.6); }
+.footer-copy { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,.2); }
+
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero-content { padding: 80px 24px 48px; }
+  .body-wrap { grid-template-columns: 1fr; padding: 48px 24px 64px; gap: 40px; }
+  .sidebar { position: static; }
+  .gallery { padding: 0 24px 64px; }
+  .gallery-grid, .gallery-grid.two-col, .gallery-grid.four-col { grid-template-columns: repeat(2,1fr); }
+  .gallery-item.tall, .gallery-item.wide { grid-column: span 1; grid-row: span 1; }
+  .next-projects { padding: 56px 24px; }
+  .next-grid { grid-template-columns: 1fr; }
+  .cta-band, footer { padding-left: 24px; padding-right: 24px; }
+  footer { flex-direction: column; gap: 20px; text-align: center; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../museum-planning-sales.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <ul class="nav-links">
+    <li><a href="../museum-planning-sales.html#methodology">Methodology</a></li>
+    <li><a href="../museum-planning-sales.html#landscape">Landscape</a></li>
+    <li><a href="../museum-planning-projects.html" class="active">Projects</a></li>
+    <li><a href="../museum-planning-sales.html#contact" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-img" style="background-image: url('https://www.museumplanning.com/wp-content/uploads/2013/08/2.jpg');"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="../museum-planning-projects.html">← All Projects</a>
+      <span>/</span>
+      <span>Children's Museum</span>
+    </div>
+    <div class="hero-eyebrow">Children's Museum</div>
+    <h1>San Diego Children's Museum</h1>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-label">Location</div>
+        <div class="meta-value">San Diego, California</div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <div class="meta-label">Year</div>
+        <div class="meta-value">2013</div>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <div class="meta-label">Services</div>
+        <div class="service-tags"><span class="service-tag">Master Planning</span><span class="service-tag">Exhibition Design</span><span class="service-tag">Strategic Planning</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="body-wrap">
+  <div class="prose">
+    
+      <h2>Project Overview</h2>
+      <p>Museum Planning LLC developed exhibition design and master planning for the San Diego Children's Museum — a major cultural institution serving families across the San Diego region. The work focused on creating a visitor experience that grows with the city and its diverse communities.</p>
+      <h2>Master Planning</h2>
+      <p>The master planning established the building program, visitor experience framework, and long-term development strategy for the museum — aligning the institution's facilities with its educational mission and community role.</p>
+      <h2>Exhibition Design</h2>
+      <p>Exhibition concepts were developed to create engaging, age-appropriate experiences across the museum — using play, discovery, and interactive technology to serve children from early childhood through middle school.</p>
+    
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-label">Project Details</div>
+      <div class="detail-row"><span class="detail-key">Client</span><span class="detail-val">San Diego Children's Museum</span></div><div class="detail-row"><span class="detail-key">Location</span><span class="detail-val">San Diego, California</span></div><div class="detail-row"><span class="detail-key">Year</span><span class="detail-val">2013</span></div><div class="detail-row"><span class="detail-key">Services</span><span class="detail-val">Master Planning, Exhibition Design</span></div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-label">Museum Planning LLC</div>
+      <h3>Interested in a project like this?</h3>
+      <p>Every engagement begins with a conversation. Mark Walhimer is personally involved in all projects — from the first feasibility study through opening day.</p>
+    </div>
+    <a href="mailto:mark@museumplanning.com" class="btn-cta">Start a Conversation →</a>
+  </div>
+</div>
+
+
+<div class="gallery">
+  <div class="gallery-label">Photography &amp; Renderings</div>
+  <div class="gallery-grid two-col">
+    <div class="gallery-item aspect-land"><img src="https://www.museumplanning.com/wp-content/uploads/2013/08/2.jpg" alt="" loading="lazy"></div>
+
+  </div>
+</div>
+
+<div class="next-projects">
+  <div class="next-inner">
+    <div class="next-label">More Projects</div>
+    <div class="next-grid">
+      
+        <a href="city-of-mcdonough-georgia.html" class="next-card">
+          <div class="nc-img">
+            <img src="https://www.museumplanning.com/wp-content/uploads/2019/07/JT2A3715-1400x933.jpg" alt="City of McDonough — African American Museum" loading="lazy">
+          </div>
+          <div class="nc-body">
+            <div class="nc-type">African American Museum</div>
+            <div class="nc-title">City of McDonough — African American Museum</div>
+          </div>
+        </a>
+        <a href="discovery-science-center.html" class="next-card">
+          <div class="nc-img">
+            <img src="https://www.museumplanning.com/wp-content/uploads/2013/08/cube.jpg" alt="Discovery Science Center" loading="lazy">
+          </div>
+          <div class="nc-body">
+            <div class="nc-type">Science Center</div>
+            <div class="nc-title">Discovery Science Center</div>
+          </div>
+        </a>
+        <a href="discovery-center-murfree-spring.html" class="next-card">
+          <div class="nc-img">
+            <img src="https://www.museumplanning.com/wp-content/uploads/2004/04/2020-06-06-12.png" alt="Discovery Center at Murfree Spring" loading="lazy">
+          </div>
+          <div class="nc-body">
+            <div class="nc-type">Nature Center</div>
+            <div class="nc-title">Discovery Center at Murfree Spring</div>
+          </div>
+        </a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Let's build<br><em>your museum.</em></h2>
+  <p>Forty museums. One methodology. Mark personally involved in every engagement.</p>
+  <a href="mailto:mark@museumplanning.com" class="btn-primary">mark@museumplanning.com</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="mailto:mark@museumplanning.com">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+</body>
+</html>

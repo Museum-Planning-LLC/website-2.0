@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is a Museum Master Plan? — Museum Planning LLC</title>
+<meta name="description" content="A museum master plan translates institutional vision into a building program, visitor experience framework, and capital campaign strategy. Here's what it is, what it contains, and why it matters.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --navy:#1B2A3B;--deep:#111C27;--gold:#C9A84C;--gold-lt:#E8D099;
+  --cream:#F8F4EC;--warm:#EDE8DC;--ink:#1A1A1A;--mid:#5A5A5A;--rule:#D4C8B0;
+  --serif:'Playfair Display',Georgia,serif;
+  --mono:'DM Mono',monospace;
+  --sans:'Lato',system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;background:var(--deep);height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;z-index:100;border-bottom:1px solid rgba(201,168,76,.15);}
+.nav-logo{font-family:var(--serif);font-size:15px;color:white;text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,.9);}
+.nav-cta{background:var(--gold)!important;color:var(--deep)!important;padding:8px 20px;}
+
+/* HERO */
+.page-hero{background:var(--deep);padding:120px 56px 72px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;opacity:.035;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px),
+  repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px);}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.hero-breadcrumb{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.hero-breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+.hero-breadcrumb a:hover{color:var(--gold);}
+.hero-breadcrumb span{color:rgba(255,255,255,.15);}
+.hero-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:12px;animation:fadeUp .6s .1s both;}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);}
+.page-hero h1{font-family:var(--serif);font-size:clamp(34px,4.5vw,58px);font-weight:900;
+  color:white;line-height:1.08;max-width:780px;margin-bottom:20px;animation:fadeUp .6s .2s both;}
+.page-hero h1 em{font-style:italic;color:var(--gold);}
+.hero-deck{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(255,255,255,.5);
+  max-width:640px;line-height:1.65;animation:fadeUp .6s .3s both;}
+
+/* TOC BAND */
+.toc-band{background:var(--navy);padding:0 56px;border-bottom:1px solid rgba(201,168,76,.1);}
+.toc-inner{max-width:1100px;margin:0 auto;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;}
+.toc-inner::-webkit-scrollbar{display:none;}
+.toc-link{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.35);text-decoration:none;padding:16px 24px;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:color .2s,border-color .2s;display:block;}
+.toc-link:hover{color:var(--gold);border-color:var(--gold);}
+
+/* BODY */
+.article-wrap{max-width:1100px;margin:0 auto;padding:80px 56px 100px;
+  display:grid;grid-template-columns:1fr 320px;gap:72px;align-items:start;}
+
+/* PROSE */
+.prose{min-width:0;}
+.prose h2{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--navy);
+  line-height:1.2;margin:56px 0 16px;scroll-margin-top:80px;}
+.prose h2:first-child{margin-top:0;}
+.prose h3{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--navy);
+  margin:32px 0 12px;line-height:1.3;}
+.prose p{font-size:17px;line-height:1.85;color:#2a2a2a;margin-bottom:1.4em;}
+.prose ul,.prose ol{margin:0 0 1.5em 0;padding-left:0;list-style:none;}
+.prose ul li,.prose ol li{font-size:16px;line-height:1.75;color:#333;
+  margin-bottom:10px;padding-left:24px;position:relative;}
+.prose ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+.prose ol{counter-reset:steps;}
+.prose ol li{counter-increment:steps;}
+.prose ol li::before{content:counter(steps);position:absolute;left:0;
+  font-family:var(--serif);font-weight:700;color:var(--gold);font-size:15px;}
+.prose strong{color:var(--navy);font-weight:700;}
+.prose blockquote{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--navy);
+  border-left:3px solid var(--gold);padding-left:28px;margin:40px 0;line-height:1.5;}
+.prose .callout{background:var(--navy);padding:32px 36px;margin:40px 0;}
+.prose .callout-label{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;}
+.prose .callout-title{font-family:var(--serif);font-size:20px;font-weight:700;color:white;margin-bottom:10px;}
+.prose .callout-body{font-size:15px;color:rgba(255,255,255,.65);line-height:1.75;}
+.prose .rule{border:none;border-top:1px solid var(--rule);margin:48px 0;}
+.prose .step-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin:32px 0;}
+.prose .step-card{background:white;padding:28px 24px;border-top:2px solid transparent;transition:border-color .2s;}
+.prose .step-card:hover{border-color:var(--gold);}
+.prose .step-num{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;}
+.prose .step-title{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3;}
+.prose .step-body{font-size:14px;color:var(--mid);line-height:1.7;}
+.prose .resources-list{list-style:none;padding:0;margin:0;}
+.prose .resources-list li{padding:12px 0;border-bottom:1px solid var(--rule);padding-left:0;}
+.prose .resources-list li::before{display:none;}
+.prose .resources-list a{font-size:14px;color:var(--navy);text-decoration:none;
+  border-bottom:1px solid var(--rule);transition:color .2s,border-color .2s;}
+.prose .resources-list a:hover{color:var(--gold);border-color:var(--gold);}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:80px;}
+.sb-card{background:white;padding:32px 28px;border-top:3px solid var(--gold);margin-bottom:3px;}
+.sb-label{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;}
+.sb-card h3{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.3;}
+.sb-card p{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:12px;}
+.sb-card p:last-child{margin-bottom:0;}
+.sb-links{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.sb-links li a{font-size:14px;color:var(--navy);text-decoration:none;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 0;border-bottom:1px solid var(--rule);transition:color .2s;}
+.sb-links li a:hover{color:var(--gold);}
+.sb-links li a span{font-family:var(--mono);font-size:10px;color:var(--gold);}
+.sb-cta{background:var(--navy);padding:32px 28px;margin-bottom:3px;}
+.sb-cta-label{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.sb-cta h3{font-family:var(--serif);font-size:18px;font-weight:700;color:white;margin-bottom:10px;line-height:1.3;}
+.sb-cta p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:20px;}
+.btn-gold{display:block;background:var(--gold);color:var(--deep);padding:13px 20px;
+  font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;text-align:center;transition:background .2s;}
+.btn-gold:hover{background:var(--gold-lt);}
+
+/* RELATED */
+.related-band{background:var(--warm);padding:80px 56px;}
+.related-inner{max-width:1100px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:14px;}
+.related-label::before{content:'';width:28px;height:1px;background:var(--gold);}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.related-card{background:white;padding:36px 32px;text-decoration:none;
+  border-top:2px solid transparent;transition:border-color .2s,transform .2s;display:block;}
+.related-card:hover{border-color:var(--gold);transform:translateY(-2px);}
+.related-tag{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.related-title{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--navy);
+  margin-bottom:10px;line-height:1.3;}
+.related-desc{font-size:14px;color:var(--mid);line-height:1.7;}
+.related-arrow{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+
+/* CTA BAND */
+.cta-band{background:var(--deep);padding:80px 56px;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;opacity:.025;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px),
+  repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px);}
+.cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:1;}
+.cta-heading{font-family:var(--serif);font-size:clamp(30px,3.5vw,46px);font-weight:900;
+  color:white;line-height:1.1;margin-bottom:18px;}
+.cta-heading em{font-style:italic;color:var(--gold);}
+.cta-body{font-size:16px;color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:40px;}
+.cta-note{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;
+  color:rgba(255,255,255,.25);margin-top:20px;}
+.cta-note a{color:rgba(255,255,255,.35);text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.15);transition:color .2s;}
+.cta-note a:hover{color:var(--gold);}
+
+/* FOOTER */
+footer{background:var(--deep);padding:40px 56px;display:flex;align-items:center;
+  justify-content:space-between;border-top:1px solid rgba(201,168,76,.1);}
+.footer-logo{font-family:var(--serif);font-size:14px;color:rgba(255,255,255,.5);}
+.footer-logo span{color:var(--gold);}
+.footer-links{display:flex;gap:28px;list-style:none;}
+.footer-links a{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:rgba(255,255,255,.6);}
+.footer-copy{font-family:var(--mono);font-size:9px;letter-spacing:1px;color:rgba(255,255,255,.2);}
+
+@media(max-width:900px){
+  nav{padding:0 24px;} .nav-links{display:none;}
+  .page-hero,.toc-band,.related-band,.cta-band{padding-left:24px;padding-right:24px;}
+  .article-wrap{grid-template-columns:1fr;padding:48px 24px 64px;gap:40px;}
+  .sidebar{position:static;}
+  .related-grid{grid-template-columns:1fr;}
+  .prose .step-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:20px;text-align:center;padding:32px 24px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../museum-planning-sales.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <ul class="nav-links">
+    <li><a href="../museum-planning-services.html">Services</a></li>
+    <li><a href="../museum-planning-projects.html">Projects</a></li>
+    <li><a href="../museum-planning-about.html">About</a></li>
+    <li><a href="mailto:mark@museumplanning.com" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="../museum-planning-sales.html">Home</a>
+      <span>/</span>
+      <a href="#">Museum Basics</a>
+      <span>/</span>
+      Museum Master Plan
+    </div>
+    <div class="hero-eyebrow">Museum Basics</div>
+    <h1>What is a Museum<br><em>Master Plan?</em></h1>
+    <p class="hero-deck">The master plan translates your institution's mission and audience into a physical building program, visitor experience framework, and capital campaign strategy. It is what architects work from. It is what funders fund.</p>
+  </div>
+</div>
+<div class="toc-band">
+  <div class="toc-inner"><a href="#definition" class="toc-link">What It Is</a><a href="#components" class="toc-link">What It Contains</a><a href="#process" class="toc-link">The Process</a><a href="#timeline" class="toc-link">Timeline & Cost</a><a href="#relationship" class="toc-link">How It Fits</a><a href="#examples" class="toc-link">Examples</a></div>
+</div>
+<div class="article-wrap">
+  <div class="prose">
+<h2 id="definition">What a museum master plan is</h2>
+<p>A museum master plan is the foundational planning document that translates an institution's mission, audience, and collection into a physical building program, visitor experience framework, and capital campaign strategy. It is the document that architects, exhibition designers, contractors, and capital campaign chairs all work from.</p>
+<p>The master plan comes after a feasibility study confirms the project is viable and before architectural design begins. It is the bridge between institutional vision and built reality.</p>
+<blockquote>"The master plan is not a drawing of the museum. It is the reasoning behind the drawing — why the museum is this size, in this configuration, with these spaces, for these people."</blockquote>
+<p>A museum without a master plan builds the wrong building. This happens more often than the field admits. An architect working without a museum master plan is designing around assumptions — about audience, about program, about how visitors will move through the space — that may or may not be correct. The master plan establishes those parameters before a line is drawn.</p>
+<hr class="rule">
+
+<h2 id="components">What a museum master plan contains</h2>
+<p>A complete museum master plan addresses the institution from the inside out — from mission to building program to capital campaign. The following are the core components.</p>
+
+<div class="step-grid">
+  <div class="step-card">
+    <div class="step-num">01</div>
+    <div class="step-title">Institutional Foundation</div>
+    <p class="step-body">Mission, vision, values, and the strategic framework that every other planning decision flows from. The master plan confirms or refines the institutional foundation established in the feasibility and strategic planning phases.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">02</div>
+    <div class="step-title">Audience & Visitor Profile</div>
+    <p class="step-body">A clear definition of who the museum serves — primary, secondary, and tertiary audiences — and how the physical plan responds to their needs. Visitor profiles, accessibility requirements, and education program audiences are all addressed.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">03</div>
+    <div class="step-title">Building Program</div>
+    <p class="step-body">A detailed room-by-room, space-by-space program defining every function, its square footage, its relationship to other spaces, and its adjacency requirements. This is the document the architect uses to size and organize the building.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">04</div>
+    <div class="step-title">Visitor Experience Framework</div>
+    <p class="step-body">The interpretive and experiential framework for every guest touchpoint — from arrival to exit. How will visitors move through the museum? What will they encounter first, second, last? What is the arc of the experience?</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">05</div>
+    <div class="step-title">Exhibition Concept Plan</div>
+    <p class="step-body">Schematic exhibition concepts for each gallery or exhibition area — themes, content approach, interactivity level, and preliminary space requirements. This is not a detailed exhibition design; it is the conceptual foundation for it.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">06</div>
+    <div class="step-title">Site & Building Analysis</div>
+    <p class="step-body">Analysis of the proposed site or building — whether existing, renovated, or new construction — against the building program requirements. Includes circulation, accessibility, loading and service, and site context.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">07</div>
+    <div class="step-title">Capital Budget</div>
+    <p class="step-body">A detailed capital budget covering construction or renovation, exhibition design and fabrication, technology systems, furniture and equipment, pre-opening operations, and contingency. The budget drives the capital campaign goal.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">08</div>
+    <div class="step-title">Capital Campaign Plan</div>
+    <p class="step-body">A phased fundraising strategy tied to the capital budget — donor pipeline, naming opportunities, campaign timeline, and the sequencing of public and quiet phases. Typically developed alongside or immediately after the master plan.</p>
+  </div>
+</div>
+
+<hr class="rule">
+
+<h2 id="process">How the master planning process works</h2>
+<p>Museum master planning is a collaborative process that involves the institution's board and leadership, key community stakeholders, the museum planner, and (in later phases) the architect and exhibition designer. It typically unfolds in four phases.</p>
+<ol>
+  <li><strong>Discovery.</strong> Review of all prior planning documents, stakeholder interviews, site visits, and competitive analysis. The planner develops a complete picture of the institution, its audience, and its context before making any recommendations.</li>
+  <li><strong>Program development.</strong> Development of the building program, visitor experience framework, and exhibition concept plan. Multiple options are typically developed and presented to leadership for feedback before a preferred direction is selected.</li>
+  <li><strong>Validation.</strong> The preferred program is tested against the site or building, the capital budget, and the operational financial model. Adjustments are made to align program ambition with financial reality.</li>
+  <li><strong>Documentation.</strong> The final master plan document is produced — a comprehensive, board-ready report that serves as the foundation for the capital campaign and the architectural design process.</li>
+</ol>
+
+<div class="callout">
+  <div class="callout-label">Key Principle</div>
+  <div class="callout-title">The building serves the institution, not the other way around.</div>
+  <p class="callout-body">The most common master planning failure is allowing architectural ambition to outrun institutional capacity. A beautiful building that the museum cannot afford to operate is not a success. The master plan's job is to keep the building in service of the mission — and the mission within reach of the financial model.</p>
+</div>
+
+<hr class="rule">
+
+<h2 id="timeline">Timeline and cost</h2>
+<p>A museum master plan typically takes four to eight months to complete, depending on the complexity of the institution and the pace of stakeholder engagement.</p>
+<ul>
+  <li><strong>Cost range:</strong> $25,000–$80,000, depending on the scope of the building program, the number of stakeholder sessions required, and whether schematic exhibition design is included.</li>
+  <li><strong>Timeline:</strong> Four to eight months from engagement to final document.</li>
+  <li><strong>What follows:</strong> Architectural programming and schematic design, detailed exhibition design, and the launch of the capital campaign.</li>
+</ul>
+
+<hr class="rule">
+
+<h2 id="relationship">How the master plan fits into the planning sequence</h2>
+<p>The master plan occupies the second phase of the four-phase museum planning process. It follows the institutional planning phase (which includes the feasibility study and strategic plan) and precedes the facility planning phase (which includes architectural design and exhibition design).</p>
+<ul>
+  <li><strong>Before the master plan:</strong> Feasibility study, strategic plan, mission/vision/values framework.</li>
+  <li><strong>The master plan:</strong> Building program, visitor experience framework, exhibition concept plan, capital budget, capital campaign strategy.</li>
+  <li><strong>After the master plan:</strong> Architectural design, exhibition design, construction, operational planning, opening.</li>
+</ul>
+<p>Institutions that skip the master plan and proceed directly from feasibility to architectural design almost always build the wrong thing — or build the right thing in the wrong way. The master plan is the translation layer between institutional intent and physical form.</p>
+
+<hr class="rule">
+
+<h2 id="examples">Master planning in practice</h2>
+<p>Museum Planning LLC has developed master plans for institutions ranging from $1M community museums to $27M regional natural history museums. Every master plan follows the same methodology — adapted to the scale, type, and context of the specific institution.</p>
+<p>Recent master planning engagements include the <a href="../projects/howard-natural-history-museum.html" style="color:var(--navy);border-bottom:1px solid var(--rule);">Howard Natural History Museum</a> in Riverside County, California ($27.75M capital budget), the <a href="../projects/frehner-museum-southern-utah-university.html" style="color:var(--navy);border-bottom:1px solid var(--rule);">Frehner Museum of Natural History</a> at Southern Utah University (~$20M campaign), and the <a href="../projects/arizona-natural-resources-museum.html" style="color:var(--navy);border-bottom:1px solid var(--rule);">Arizona Natural Resources Museum</a> at the University of Arizona.</p>
+</div>
+  <div class="sidebar">
+    <div class="sb-cta">
+      <div class="sb-cta-label">Museum Planning LLC</div>
+      <h3>Need help with your museum?</h3>
+      <p>Mark Walhimer has guided more than forty museums through every stage of development. Every engagement begins with a conversation.</p>
+      <a href="mailto:mark@museumplanning.com" class="btn-gold">Start a Conversation</a>
+    </div>
+    
+<div class="sb-card">
+  <div class="sb-label">Master Plan Deliverables</div>
+  <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+    <li style="font-size:14px;color:#333;padding:8px 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-family:var(--mono);">—</span>Building program (room-by-room)</li>
+    <li style="font-size:14px;color:#333;padding:8px 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-family:var(--mono);">—</span>Visitor experience framework</li>
+    <li style="font-size:14px;color:#333;padding:8px 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-family:var(--mono);">—</span>Exhibition concept plan</li>
+    <li style="font-size:14px;color:#333;padding:8px 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-family:var(--mono);">—</span>Site / building analysis</li>
+    <li style="font-size:14px;color:#333;padding:8px 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-family:var(--mono);">—</span>Phasing plan</li>
+    <li style="font-size:14px;color:#333;padding:8px 0;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-family:var(--mono);">—</span>Capital budget</li>
+    <li style="font-size:14px;color:#333;padding:8px 0;display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-family:var(--mono);">—</span>Capital campaign strategy</li>
+  </ul>
+</div>
+    <div class="sb-card">
+      <div class="sb-label">Museum Basics</div>
+      <ul class="sb-links">
+        <li><a href="how-to-start-a-museum.html">How to Start a Museum <span>→</span></a></li>
+        <li><a href="what-is-a-museum-feasibility-study.html">What is a Feasibility Study <span>→</span></a></li>
+        <li><a href="what-is-a-museum-master-plan.html">What is a Museum Master Plan <span>→</span></a></li>
+      </ul>
+    </div>
+    <div class="sb-card">
+      <div class="sb-label">The Books</div>
+      <ul class="sb-links">
+        <li><a href="https://museums101.com" target="_blank">Museums 101 — AAM Press <span>→</span></a></li>
+        <li><a href="https://museum-experiences.com" target="_blank">Designing Museum Experiences <span>→</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="related-band">
+  <div class="related-inner">
+    <div class="related-label">Keep Reading</div>
+    <div class="related-grid">
+    <a href="how-to-start-a-museum.html" class="related-card">
+      <div class="related-tag">Museum Basics</div>
+      <div class="related-title">How to Start a Museum</div>
+      <p class="related-desc">A complete guide to the ten steps of museum development, from the first community meeting through opening day.</p>
+      <span class="related-arrow">Read Guide →</span>
+    </a>
+    <a href="what-is-a-museum-feasibility-study.html" class="related-card">
+      <div class="related-tag">Museum Basics</div>
+      <div class="related-title">What is a Museum Feasibility Study?</div>
+      <p class="related-desc">The feasibility study comes before the master plan. Here's what it covers and why it's essential before committing capital.</p>
+      <span class="related-arrow">Read Guide →</span>
+    </a>
+    <a href="../museum-planning-projects.html" class="related-card">
+      <div class="related-tag">Projects</div>
+      <div class="related-title">See the Work</div>
+      <p class="related-desc">Forty museums completed across the United States and internationally. Browse the full project portfolio with filters by type and service.</p>
+      <span class="related-arrow">Read Guide →</span>
+    </a></div>
+  </div>
+</div>
+<div class="cta-band">
+  <div class="cta-inner">
+    <h2 class="cta-heading">Ready to build<br><em>your museum?</em></h2>
+    <p class="cta-body">Forty museums. One methodology. Every engagement starts with a conversation — no cost, no obligation.</p>
+    <a href="mailto:mark@museumplanning.com" class="btn-gold" style="display:inline-block;padding:14px 44px;font-size:12px;">mark@museumplanning.com</a>
+    <div class="cta-note"><a href="tel:4157945252">415-794-5252</a> &nbsp;·&nbsp; New York · Mexico City · Worldwide</div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="mailto:mark@museumplanning.com">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+</body>
+</html>

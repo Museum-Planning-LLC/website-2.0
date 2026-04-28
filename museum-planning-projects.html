@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Museum Planning LLC</title>
+<meta name="description" content="Forty museums across the United States and worldwide. Feasibility through opening day.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --navy:    #1B2A3B;
+  --deep:    #111C27;
+  --gold:    #C9A84C;
+  --gold-lt: #E8D099;
+  --cream:   #F8F4EC;
+  --warm:    #EDE8DC;
+  --ink:     #1A1A1A;
+  --mid:     #5A5A5A;
+  --rule:    #D4C8B0;
+  --serif:   'Playfair Display', Georgia, serif;
+  --mono:    'DM Mono', monospace;
+  --sans:    'Lato', system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--deep);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  z-index: 100;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: rgba(255,255,255,.9); }
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep) !important;
+  padding: 8px 20px;
+  text-decoration: none;
+}
+
+/* ── HEADER ── */
+.page-header {
+  background: var(--deep);
+  padding: 120px 56px 72px;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.page-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeUp .6s .1s both;
+}
+.page-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+.page-title {
+  font-family: var(--serif);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  animation: fadeUp .6s .2s both;
+}
+.page-title em { font-style: italic; color: var(--gold); }
+.page-deck {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(255,255,255,.5);
+  max-width: 560px;
+  line-height: 1.6;
+  animation: fadeUp .6s .3s both;
+}
+
+/* ── FILTERS ── */
+.filters-bar {
+  background: var(--navy);
+  padding: 0 56px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  position: sticky;
+  top: 60px;
+  z-index: 50;
+}
+.filters-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 16px 0;
+}
+.filters-inner::-webkit-scrollbar { display: none; }
+.filter-btn {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 7px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .2s;
+}
+.filter-btn:hover { color: rgba(255,255,255,.8); border-color: rgba(255,255,255,.3); }
+.filter-btn.active {
+  background: var(--gold);
+  color: var(--deep);
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+/* ── GRID ── */
+.projects-section {
+  padding: 64px 56px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.projects-count {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 32px;
+}
+.projects-count span { color: var(--navy); font-weight: 700; }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.project-card {
+  background: white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(27,42,59,.12);
+  z-index: 2;
+  position: relative;
+}
+.project-card.hidden { display: none; }
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: var(--warm);
+  position: relative;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.project-card:hover .card-image img {
+  transform: scale(1.04);
+}
+.card-type-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--deep);
+  color: var(--gold);
+  padding: 5px 10px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .2s, transform .2s;
+}
+.project-card:hover .card-type-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-body {
+  padding: 24px 24px 28px;
+  border-top: 2px solid transparent;
+  transition: border-color .2s;
+}
+.project-card:hover .card-body {
+  border-color: var(--gold);
+}
+.card-meta {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.card-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.card-location {
+  font-size: 13px;
+  color: var(--mid);
+  font-family: var(--mono);
+  letter-spacing: 0.5px;
+}
+.card-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.service-tag {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+  background: var(--cream);
+  padding: 4px 9px;
+  border: 1px solid var(--rule);
+}
+
+/* ── NO RESULTS ── */
+.no-results {
+  display: none;
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 80px 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--mid);
+}
+.no-results.visible { display: block; }
+
+/* ── CTA ── */
+.projects-cta {
+  background: var(--navy);
+  padding: 80px 56px;
+  text-align: center;
+}
+.projects-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+}
+.projects-cta h2 em { font-style: italic; color: var(--gold); }
+.projects-cta p {
+  font-size: 16px;
+  color: rgba(255,255,255,.5);
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--deep);
+  padding: 14px 36px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .2s;
+}
+.btn-gold:hover { background: var(--gold-lt); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep);
+  padding: 40px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(201,168,76,.1);
+}
+.footer-logo { font-family: var(--serif); font-size: 14px; color: rgba(255,255,255,.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.25);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-links a:hover { color: rgba(255,255,255,.6); }
+.footer-copy { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,.2); }
+
+@media (max-width: 900px) {
+  nav, .page-header, .filters-bar, .projects-section, .projects-cta, footer { padding-left: 24px; padding-right: 24px; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  nav .nav-links { display: none; }
+  footer { flex-direction: column; gap: 20px; text-align: center; }
+}
+@media (max-width: 600px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="museum-planning-sales.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <ul class="nav-links">
+    <li><a href="museum-planning-sales.html#methodology">Methodology</a></li>
+    <li><a href="museum-planning-sales.html#landscape">Landscape</a></li>
+    <li><a href="museum-planning-projects.html" class="active">Projects</a></li>
+    <li><a href="museum-planning-sales.html#contact" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="header-inner">
+    <div class="page-eyebrow">Selected Work</div>
+    <h1 class="page-title">Forty Museums.<br><em>One Methodology.</em></h1>
+    <p class="page-deck">From university natural history collections to city-led African American cultural centers — feasibility through opening day, worldwide.</p>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="feasibility">Feasibility</button>
+    <button class="filter-btn" data-filter="master-planning">Master Planning</button>
+    <button class="filter-btn" data-filter="exhibition-design">Exhibition Design</button>
+    <button class="filter-btn" data-filter="strategic-planning">Strategic Planning</button>
+    <button class="filter-btn" data-filter="university">University</button>
+    <button class="filter-btn" data-filter="science">Science &amp; Nature</button>
+    <button class="filter-btn" data-filter="history">History &amp; Culture</button>
+    <button class="filter-btn" data-filter="childrens">Children's</button>
+    <button class="filter-btn" data-filter="international">International</button>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="projects-section">
+  <div class="projects-count">Showing <span id="count">27</span> projects</div>
+
+  <div class="projects-grid" id="grid">
+
+    <!-- 1 -->
+    <a href="https://www.museumplanning.com/portfolio-item/natural-history-museum/" target="_blank" class="project-card" data-tags="master-planning exhibition-design strategic-planning university science">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2025/08/Howard_front-1-1400x788.png" alt="Howard Natural History Museum" loading="lazy">
+        <div class="card-type-badge">2024</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Natural History Museum</div>
+        <div class="card-title">Howard Natural History Museum</div>
+        <div class="card-location">Riverside County, California</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2 -->
+    <a href="https://www.museumplanning.com/portfolio-item/museum-of-arts-and-sciences/" target="_blank" class="project-card" data-tags="exhibition-design history">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2025/08/IMG_5797-1400x1050.jpeg" alt="Museum of Arts and Sciences" loading="lazy">
+        <div class="card-type-badge">2025</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Arts &amp; Sciences</div>
+        <div class="card-title">Museum of Arts and Sciences</div>
+        <div class="card-location">Macon, Georgia</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">STEAM</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 3 -->
+    <a href="https://www.museumplanning.com/portfolio-item/frehner-museum-southern-utah-university/" target="_blank" class="project-card" data-tags="master-planning university science">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_2419-1400x1867.jpeg" alt="Frehner Museum" loading="lazy">
+        <div class="card-type-badge">2026</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">University Museum</div>
+        <div class="card-title">Frehner Museum of Natural History</div>
+        <div class="card-location">Southern Utah University · Cedar City, Utah</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">University</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 4 -->
+    <a href="https://www.museumplanning.com/portfolio-item/city-of-mcdonough-georgia/" target="_blank" class="project-card" data-tags="master-planning strategic-planning feasibility history">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2019/07/JT2A3715-1400x933.jpg" alt="City of McDonough" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">African American Museum</div>
+        <div class="card-title">City of McDonough</div>
+        <div class="card-location">McDonough, Georgia</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5 -->
+    <a href="https://www.museumplanning.com/portfolio-item/african-american-museum-exhibition-design/" target="_blank" class="project-card" data-tags="exhibition-design master-planning strategic-planning feasibility history">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2021/12/exterior0001-1400x925.png" alt="African American Museum" loading="lazy">
+        <div class="card-type-badge">2022</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">African American Museum</div>
+        <div class="card-title">Interactive African American Museum &amp; Cultural Center</div>
+        <div class="card-location">Indiana</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Feasibility</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 6 -->
+    <a href="https://www.museumplanning.com/portfolio-item/university-of-arizona/" target="_blank" class="project-card" data-tags="master-planning university science">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2023/02/image-5-copy-4-1400x643.png" alt="University of Arizona ANRM" loading="lazy">
+        <div class="card-type-badge">2023</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">University Museum</div>
+        <div class="card-title">Arizona Natural Resources Museum (ANRM)</div>
+        <div class="card-location">University of Arizona · Tucson, Arizona</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">University</span>
+          <span class="service-tag">Science</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 7 -->
+    <a href="https://www.museumplanning.com/portfolio-item/discovery-center-at-murfree-spring/" target="_blank" class="project-card" data-tags="exhibition-design strategic-planning childrens">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2004/04/2020-06-06-12.png" alt="Discovery Center at Murfree Spring" loading="lazy">
+        <div class="card-type-badge">2020</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Nature Center</div>
+        <div class="card-title">Discovery Center at Murfree Spring</div>
+        <div class="card-location">Murfreesboro, Tennessee</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 8 -->
+    <a href="https://www.museumplanning.com/portfolio-item/interactive-nature-conservation-museum/" target="_blank" class="project-card" data-tags="exhibition-design science">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2019/04/0044-1400x700.jpg" alt="Interactive Nature Conservation Museum" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Conservation Museum</div>
+        <div class="card-title">Interactive Nature Conservation Museum</div>
+        <div class="card-location">United States</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Interactive</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 9 -->
+    <a href="https://www.museumplanning.com/portfolio-item/mide-museo-interactivo-de-economia/" target="_blank" class="project-card" data-tags="exhibition-design international">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2019/04/MIDE.jpg" alt="MIDE Mexico City" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Interactive Museum</div>
+        <div class="card-title">MIDE, Museo Interactivo de Economía</div>
+        <div class="card-location">Mexico City, Mexico</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">International</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 10 -->
+    <a href="https://www.museumplanning.com/portfolio-item/museo-memoria-y-tolerancia/" target="_blank" class="project-card" data-tags="exhibition-design international history">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2016/10/ipad_tables-1200x1392.jpg" alt="Museo Memoria y Tolerancia" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">History Museum</div>
+        <div class="card-title">Museo Memoria y Tolerancia</div>
+        <div class="card-location">Mexico City, Mexico</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">International</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 11 -->
+    <a href="https://www.museumplanning.com/portfolio-item/the-tech-interactive-museum/" target="_blank" class="project-card" data-tags="exhibition-design science">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2019/05/IMG_7010_o-1400x786.jpg" alt="The Tech Interactive" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Innovation Museum</div>
+        <div class="card-title">The Tech Interactive — Innovation Exhibits</div>
+        <div class="card-location">San Jose, California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Development</span>
+          <span class="service-tag">Interactive</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 12 -->
+    <a href="https://www.museumplanning.com/portfolio-item/alcatraz-life-on-the-rock/" target="_blank" class="project-card" data-tags="exhibition-design history">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-17-at-10.44.31-PM-1400x706.jpg" alt="Alcatraz Traveling Exhibition" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Traveling Exhibition</div>
+        <div class="card-title">Full Service Traveling Exhibition Management</div>
+        <div class="card-location">Alcatraz Life on the Rock — National Tour</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Project Management</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 13 -->
+    <a href="https://www.museumplanning.com/portfolio-item/cade-steam-music-concept/" target="_blank" class="project-card" data-tags="master-planning strategic-planning feasibility science">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2017/06/camera3-1200x600.jpg" alt="Cade STEAM Music Concept" loading="lazy">
+        <div class="card-type-badge">2017</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">STEAM Museum</div>
+        <div class="card-title">Cade Museum — STEAM Music Concept</div>
+        <div class="card-location">Gainesville, Florida</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">STEAM</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 14 -->
+    <a href="https://www.museumplanning.com/portfolio-item/alcatraz-landing-2/" target="_blank" class="project-card" data-tags="exhibition-design history">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2016/10/IMG_0708-1200x2133.jpg" alt="Alcatraz Landing" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Heritage Site</div>
+        <div class="card-title">Alcatraz Landing</div>
+        <div class="card-location">San Francisco, California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Experience Design</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 15 -->
+    <a href="https://www.museumplanning.com/portfolio-item/childrens-museum-indianapolis/" target="_blank" class="project-card" data-tags="exhibition-design childrens">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2012/08/TMTE1.jpeg" alt="Children's Museum of Indianapolis" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">Children's Museum of Indianapolis</div>
+        <div class="card-location">Indianapolis, Indiana</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Interactive</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 16 -->
+    <a href="https://www.museumplanning.com/portfolio-item/childrens-museum-indianapolis-sculpture/" target="_blank" class="project-card" data-tags="exhibition-design childrens">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2016/03/dino.png" alt="Children's Museum Indianapolis Sculpture" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">Children's Museum of Indianapolis — Sculpture</div>
+        <div class="card-location">Indianapolis, Indiana</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Fabrication</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 17 -->
+    <a href="https://www.museumplanning.com/portfolio-item/childrens-museum-of-manhhattan/" target="_blank" class="project-card" data-tags="exhibition-design childrens">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2012/08/soundsfun2.jpeg" alt="Children's Museum of Manhattan" loading="lazy">
+        <div class="card-type-badge">2012</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">Children's Museum of Manhattan</div>
+        <div class="card-location">New York, New York</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Interactive</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 18 -->
+    <a href="https://www.museumplanning.com/portfolio-item/san-diego-childrens-museum/" target="_blank" class="project-card" data-tags="exhibition-design master-planning childrens">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2013/08/2.jpg" alt="San Diego Children's Museum" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">San Diego Children's Museum</div>
+        <div class="card-location">San Diego, California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Master Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 19 -->
+    <a href="https://www.museumplanning.com/portfolio-item/pretend-city-childrens-museum-of-orange-county/" target="_blank" class="project-card" data-tags="exhibition-design strategic-planning childrens">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2013/08/pretendcity1.jpg" alt="Pretend City" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">Pretend City, Children's Museum of Orange County</div>
+        <div class="card-location">Irvine, California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 20 -->
+    <a href="https://www.museumplanning.com/portfolio-item/science-center-master-planning/" target="_blank" class="project-card" data-tags="master-planning feasibility science">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2013/08/cube.jpg" alt="Discovery Science Center" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Science Center</div>
+        <div class="card-title">Discovery Science Center</div>
+        <div class="card-location">Orange County, California</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Feasibility</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 21 -->
+    <a href="https://www.museumplanning.com/portfolio-item/muzeo/" target="_blank" class="project-card" data-tags="master-planning strategic-planning history">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2013/08/muzeo2.jpg" alt="Muzeo" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">History Museum</div>
+        <div class="card-title">Muzeo</div>
+        <div class="card-location">Anaheim, California</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 22 -->
+    <a href="https://www.museumplanning.com/portfolio-item/pge-look-forward-bus/" target="_blank" class="project-card" data-tags="exhibition-design">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2016/10/DSC_0081.jpg" alt="PG&E Look Forward Bus" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Mobile Exhibition</div>
+        <div class="card-title">PG&amp;E Look Forward Bus</div>
+        <div class="card-location">California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Mobile</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 23 -->
+    <a href="https://www.museumplanning.com/portfolio-item/toyota-mobile-hybrid-experience/" target="_blank" class="project-card" data-tags="exhibition-design">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2016/10/IMG_0935-1200x900.jpg" alt="Toyota Mobile Hybrid Experience" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Brand Experience</div>
+        <div class="card-title">Toyota Mobile Hybrid Experience</div>
+        <div class="card-location">United States</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Brand Experience</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 24 -->
+    <a href="https://www.museumplanning.com/portfolio-item/academy-studios/" target="_blank" class="project-card" data-tags="feasibility strategic-planning history">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2019/04/MIDE.jpg" alt="Academy Studios" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Cultural Institution</div>
+        <div class="card-title">Academy Studios</div>
+        <div class="card-location">United States</div>
+        <div class="card-services">
+          <span class="service-tag">Feasibility</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 25 -->
+    <a href="https://www.museumplanning.com/portfolio-item/science-technology-engineering-art-and-mathematics-steam-website/" target="_blank" class="project-card" data-tags="science">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2015/06/Science-Museum-Website-Design-1400x839.jpg" alt="STEAM Website" loading="lazy">
+        <div class="card-type-badge">2015</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Science Center</div>
+        <div class="card-title">STEAM Museum Website &amp; Digital Experience</div>
+        <div class="card-location">United States</div>
+        <div class="card-services">
+          <span class="service-tag">Digital Strategy</span>
+          <span class="service-tag">STEAM</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 26 -->
+    <a href="https://www.museumplanning.com/portfolio-item/museums-101/" target="_blank" class="project-card" data-tags="">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2015/04/Museums_101.png" alt="Museums 101" loading="lazy" style="object-fit: contain; background: #f0ebe0; padding: 20px;">
+        <div class="card-type-badge">2015</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">AAM Press · Book</div>
+        <div class="card-title">Museums 101</div>
+        <div class="card-location">Mark Walhimer · AAM Press · 2015</div>
+        <div class="card-services">
+          <span class="service-tag">Publication</span>
+          <span class="service-tag">AAM Press</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 27 -->
+    <a href="https://www.museumplanning.com/portfolio-item/designing-museum-experiences-book-by-mark-walhimer/" target="_blank" class="project-card" data-tags="">
+      <div class="card-image">
+        <img src="https://www.museumplanning.com/wp-content/uploads/2021/06/Designing-Museum-Experiences-1400x2000.jpg" alt="Designing Museum Experiences" loading="lazy" style="object-fit: contain; background: #f0ebe0; padding: 20px;">
+        <div class="card-type-badge">2021</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">AAM Press · Book</div>
+        <div class="card-title">Designing Museum Experiences</div>
+        <div class="card-location">Mark Walhimer · AAM Press · 2021</div>
+        <div class="card-services">
+          <span class="service-tag">Publication</span>
+          <span class="service-tag">AAM Press</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="no-results" id="noResults">No projects match this filter.</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="projects-cta">
+  <h2>Your museum<br><em>could be next.</em></h2>
+  <p>Whether you're starting from a collection, a community need, or a capital campaign — we bring forty museums of experience to your first conversation.</p>
+  <a href="mailto:mark@museumplanning.com" class="btn-gold">Start a Conversation</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="mailto:mark@museumplanning.com">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  const countEl = document.getElementById('count');
+  const noResults = document.getElementById('noResults');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        if (filter === 'all') {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          const tags = card.dataset.tags || '';
+          if (tags.includes(filter)) {
+            card.classList.remove('hidden');
+            visible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+      countEl.textContent = visible;
+      noResults.classList.toggle('visible', visible === 0);
+    });
+  });
+</script>
+
+</body>
+</html>

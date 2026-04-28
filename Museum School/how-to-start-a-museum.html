@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Start a Museum — Museum Planning LLC</title>
+<meta name="description" content="A complete guide to starting a museum — the 10 steps, cost benchmarks, common mistakes, and expert resources from Mark Walhimer of Museum Planning LLC.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --navy:#1B2A3B;--deep:#111C27;--gold:#C9A84C;--gold-lt:#E8D099;
+  --cream:#F8F4EC;--warm:#EDE8DC;--ink:#1A1A1A;--mid:#5A5A5A;--rule:#D4C8B0;
+  --serif:'Playfair Display',Georgia,serif;
+  --mono:'DM Mono',monospace;
+  --sans:'Lato',system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;background:var(--deep);height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;z-index:100;border-bottom:1px solid rgba(201,168,76,.15);}
+.nav-logo{font-family:var(--serif);font-size:15px;color:white;text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,.9);}
+.nav-cta{background:var(--gold)!important;color:var(--deep)!important;padding:8px 20px;}
+
+/* HERO */
+.page-hero{background:var(--deep);padding:120px 56px 72px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;opacity:.035;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px),
+  repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px);}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.hero-breadcrumb{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.hero-breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+.hero-breadcrumb a:hover{color:var(--gold);}
+.hero-breadcrumb span{color:rgba(255,255,255,.15);}
+.hero-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:12px;animation:fadeUp .6s .1s both;}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);}
+.page-hero h1{font-family:var(--serif);font-size:clamp(34px,4.5vw,58px);font-weight:900;
+  color:white;line-height:1.08;max-width:780px;margin-bottom:20px;animation:fadeUp .6s .2s both;}
+.page-hero h1 em{font-style:italic;color:var(--gold);}
+.hero-deck{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(255,255,255,.5);
+  max-width:640px;line-height:1.65;animation:fadeUp .6s .3s both;}
+
+/* TOC BAND */
+.toc-band{background:var(--navy);padding:0 56px;border-bottom:1px solid rgba(201,168,76,.1);}
+.toc-inner{max-width:1100px;margin:0 auto;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;}
+.toc-inner::-webkit-scrollbar{display:none;}
+.toc-link{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.35);text-decoration:none;padding:16px 24px;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:color .2s,border-color .2s;display:block;}
+.toc-link:hover{color:var(--gold);border-color:var(--gold);}
+
+/* BODY */
+.article-wrap{max-width:1100px;margin:0 auto;padding:80px 56px 100px;
+  display:grid;grid-template-columns:1fr 320px;gap:72px;align-items:start;}
+
+/* PROSE */
+.prose{min-width:0;}
+.prose h2{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--navy);
+  line-height:1.2;margin:56px 0 16px;scroll-margin-top:80px;}
+.prose h2:first-child{margin-top:0;}
+.prose h3{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--navy);
+  margin:32px 0 12px;line-height:1.3;}
+.prose p{font-size:17px;line-height:1.85;color:#2a2a2a;margin-bottom:1.4em;}
+.prose ul,.prose ol{margin:0 0 1.5em 0;padding-left:0;list-style:none;}
+.prose ul li,.prose ol li{font-size:16px;line-height:1.75;color:#333;
+  margin-bottom:10px;padding-left:24px;position:relative;}
+.prose ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+.prose ol{counter-reset:steps;}
+.prose ol li{counter-increment:steps;}
+.prose ol li::before{content:counter(steps);position:absolute;left:0;
+  font-family:var(--serif);font-weight:700;color:var(--gold);font-size:15px;}
+.prose strong{color:var(--navy);font-weight:700;}
+.prose blockquote{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--navy);
+  border-left:3px solid var(--gold);padding-left:28px;margin:40px 0;line-height:1.5;}
+.prose .callout{background:var(--navy);padding:32px 36px;margin:40px 0;}
+.prose .callout-label{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;}
+.prose .callout-title{font-family:var(--serif);font-size:20px;font-weight:700;color:white;margin-bottom:10px;}
+.prose .callout-body{font-size:15px;color:rgba(255,255,255,.65);line-height:1.75;}
+.prose .rule{border:none;border-top:1px solid var(--rule);margin:48px 0;}
+.prose .step-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin:32px 0;}
+.prose .step-card{background:white;padding:28px 24px;border-top:2px solid transparent;transition:border-color .2s;}
+.prose .step-card:hover{border-color:var(--gold);}
+.prose .step-num{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--gold);margin-bottom:8px;}
+.prose .step-title{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3;}
+.prose .step-body{font-size:14px;color:var(--mid);line-height:1.7;}
+.prose .resources-list{list-style:none;padding:0;margin:0;}
+.prose .resources-list li{padding:12px 0;border-bottom:1px solid var(--rule);padding-left:0;}
+.prose .resources-list li::before{display:none;}
+.prose .resources-list a{font-size:14px;color:var(--navy);text-decoration:none;
+  border-bottom:1px solid var(--rule);transition:color .2s,border-color .2s;}
+.prose .resources-list a:hover{color:var(--gold);border-color:var(--gold);}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:80px;}
+.sb-card{background:white;padding:32px 28px;border-top:3px solid var(--gold);margin-bottom:3px;}
+.sb-label{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;}
+.sb-card h3{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.3;}
+.sb-card p{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:12px;}
+.sb-card p:last-child{margin-bottom:0;}
+.sb-links{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.sb-links li a{font-size:14px;color:var(--navy);text-decoration:none;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 0;border-bottom:1px solid var(--rule);transition:color .2s;}
+.sb-links li a:hover{color:var(--gold);}
+.sb-links li a span{font-family:var(--mono);font-size:10px;color:var(--gold);}
+.sb-cta{background:var(--navy);padding:32px 28px;margin-bottom:3px;}
+.sb-cta-label{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.sb-cta h3{font-family:var(--serif);font-size:18px;font-weight:700;color:white;margin-bottom:10px;line-height:1.3;}
+.sb-cta p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:20px;}
+.btn-gold{display:block;background:var(--gold);color:var(--deep);padding:13px 20px;
+  font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;text-align:center;transition:background .2s;}
+.btn-gold:hover{background:var(--gold-lt);}
+
+/* RELATED */
+.related-band{background:var(--warm);padding:80px 56px;}
+.related-inner{max-width:1100px;margin:0 auto;}
+.related-label{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:14px;}
+.related-label::before{content:'';width:28px;height:1px;background:var(--gold);}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.related-card{background:white;padding:36px 32px;text-decoration:none;
+  border-top:2px solid transparent;transition:border-color .2s,transform .2s;display:block;}
+.related-card:hover{border-color:var(--gold);transform:translateY(-2px);}
+.related-tag{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.related-title{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--navy);
+  margin-bottom:10px;line-height:1.3;}
+.related-desc{font-size:14px;color:var(--mid);line-height:1.7;}
+.related-arrow{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:10px;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+
+/* CTA BAND */
+.cta-band{background:var(--deep);padding:80px 56px;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;opacity:.025;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px),
+  repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px);}
+.cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:1;}
+.cta-heading{font-family:var(--serif);font-size:clamp(30px,3.5vw,46px);font-weight:900;
+  color:white;line-height:1.1;margin-bottom:18px;}
+.cta-heading em{font-style:italic;color:var(--gold);}
+.cta-body{font-size:16px;color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:40px;}
+.cta-note{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;
+  color:rgba(255,255,255,.25);margin-top:20px;}
+.cta-note a{color:rgba(255,255,255,.35);text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.15);transition:color .2s;}
+.cta-note a:hover{color:var(--gold);}
+
+/* FOOTER */
+footer{background:var(--deep);padding:40px 56px;display:flex;align-items:center;
+  justify-content:space-between;border-top:1px solid rgba(201,168,76,.1);}
+.footer-logo{font-family:var(--serif);font-size:14px;color:rgba(255,255,255,.5);}
+.footer-logo span{color:var(--gold);}
+.footer-links{display:flex;gap:28px;list-style:none;}
+.footer-links a{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:rgba(255,255,255,.6);}
+.footer-copy{font-family:var(--mono);font-size:9px;letter-spacing:1px;color:rgba(255,255,255,.2);}
+
+@media(max-width:900px){
+  nav{padding:0 24px;} .nav-links{display:none;}
+  .page-hero,.toc-band,.related-band,.cta-band{padding-left:24px;padding-right:24px;}
+  .article-wrap{grid-template-columns:1fr;padding:48px 24px 64px;gap:40px;}
+  .sidebar{position:static;}
+  .related-grid{grid-template-columns:1fr;}
+  .prose .step-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:20px;text-align:center;padding:32px 24px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../museum-planning-sales.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <ul class="nav-links">
+    <li><a href="../museum-planning-services.html">Services</a></li>
+    <li><a href="../museum-planning-projects.html">Projects</a></li>
+    <li><a href="../museum-planning-about.html">About</a></li>
+    <li><a href="mailto:mark@museumplanning.com" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="../museum-planning-sales.html">Home</a>
+      <span>/</span>
+      <a href="#">Museum Basics</a>
+      <span>/</span>
+      How to Start a Museum
+    </div>
+    <div class="hero-eyebrow">Museum Basics</div>
+    <h1>How to Start<br>a <em>Museum.</em></h1>
+    <p class="hero-deck">A complete guide to the ten steps of museum development — from the first community meeting through opening day and beyond. Based on thirty years of practice across forty museums.</p>
+  </div>
+</div>
+<div class="toc-band">
+  <div class="toc-inner"><a href="#overview" class="toc-link">Overview</a><a href="#before-you-begin" class="toc-link">Before You Begin</a><a href="#ten-steps" class="toc-link">The 10 Steps</a><a href="#costs" class="toc-link">Costs & Numbers</a><a href="#common-mistakes" class="toc-link">Common Mistakes</a><a href="#resources" class="toc-link">Resources</a></div>
+</div>
+<div class="article-wrap">
+  <div class="prose">
+<h2 id="overview">What you're actually building</h2>
+<p>Starting a museum is a complex, multi-year process — and one of the most meaningful things a community can do for itself. Since 1992, Mark Walhimer has been part of opening and expanding more than forty museums. The steps below reflect what actually works, drawn from that experience across science centers, children's museums, natural history museums, history museums, and cultural centers.</p>
+<p>A museum is not a building. It is an institution with a mission, a community, and a financial model that has to work on day one and on day 3,650. The building is the last thing to figure out, not the first.</p>
+<blockquote>"The best museums are those that grow out of a community need — not out of a collection looking for a home, or a building looking for a purpose."</blockquote>
+<hr class="rule">
+
+<h2 id="before-you-begin">Before you begin: three questions</h2>
+<p>Before taking any of the steps below, answer these three questions honestly. If you can't answer them, the ten steps that follow will tell you how to find the answers.</p>
+<ul>
+  <li><strong>What community need does this museum serve?</strong> Not what you want to build — what the community actually needs and will show up for.</li>
+  <li><strong>Can it survive financially?</strong> Museums typically earn 40–60% of their operating costs from admissions, membership, and programming. The rest comes from grants and donations. Know your number before you break ground.</li>
+  <li><strong>Who will run it?</strong> The institution needs leadership — a board with fundraising capacity and an executive director with operating experience. Plan for people before you plan for space.</li>
+</ul>
+<hr class="rule">
+
+<h2 id="ten-steps">The 10 steps to starting a museum</h2>
+<p>These steps do not need to happen in strict sequence — some overlap, some run in parallel. But the order matters more than it might seem. Step 7 (raise money) should not come before steps 1 through 6 have produced something worth funding.</p>
+
+<div class="step-grid">
+  <div class="step-card">
+    <div class="step-num">Step 01</div>
+    <div class="step-title">Write a one-page description</div>
+    <p class="step-body">What type of museum? Science center? Art museum? Local history? Community cultural center? Be specific. Try to think fifty years into the future. What changes might affect this institution's ability to thrive? What could hamper it?</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">Step 02</div>
+    <div class="step-title">Hold community meetings</div>
+    <p class="step-body">Invite politicians, parents, teachers, school superintendents, and real estate developers. Ask what type of museum the community wants. <strong>Do not show drawings. Do not describe what you are planning. Listen.</strong> Collect names and emails for future meetings.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">Step 03</div>
+    <div class="step-title">Visit twenty museums</div>
+    <p class="step-body">Visit twenty museums of the type you want to open. Keep notes. What is their annual attendance? Ticket price? Operating costs? What does the floor staff wear? Ask for a back-of-house tour. Join a museum association and get involved. Take everything you learn back to your community.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">Step 04</div>
+    <div class="step-title">Build real estate relationships</div>
+    <p class="step-body">Every museum project has in some way been motivated by real estate. Make friends with developers. You are supplying a community resource — that resonates. But do not make any agreements with developers until you have raised more than half your capital.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">Step 05</div>
+    <div class="step-title">Do the numbers</div>
+    <p class="step-body">As a rule of thumb: exhibition space is roughly half the total building. A 4,500 sq ft exhibition space becomes a 9,000 sq ft building — at $200–300/sq ft for new construction, that's $1.8–2.7M in construction alone, before fit-out. Create a business plan. Can you earn at least 50% of yearly expenses? Be conservative on attendance. Plan to year three, not to opening day.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">Step 06</div>
+    <div class="step-title">Own your words</div>
+    <p class="step-body">Research the search terms that describe your museum. The more specific the name, the better — "San Francisco Maritime Museum," not "Bay Area Heritage Center." Purchase relevant domains. Establish a digital presence before you open your doors.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">Step 07</div>
+    <div class="step-title">Form the nonprofit</div>
+    <p class="step-body">Wait to form the 501(c)(3) until you have community momentum — it's an advantage to build support before formalizing. Then organize a board of 15–20 people including politicians, business leaders, educators, real estate developers, and potential major donors. A larger board is appropriate while raising funds.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">Step 08</div>
+    <div class="step-title">Build a preview facility</div>
+    <p class="step-body">Create a small version of the planned museum — even temporary, even modest. The preview facility is your most powerful fundraising tool. You can walk donors through a physical version of the vision. Engage architects and exhibition designers at reduced fees in exchange for the full contract when funding is secured.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">Step 09</div>
+    <div class="step-title">Raise money</div>
+    <p class="step-body">With approximately half the funding in hand, announce a capital campaign. Use the board — each member should either contribute a major gift or find someone who will. With a preview facility and architectural renderings in hand, approach individuals, foundations, and businesses. Do not announce naming opportunities until you are confident of reaching your campaign goal.</p>
+  </div>
+  <div class="step-card">
+    <div class="step-num">Step 10</div>
+    <div class="step-title">Deliver programs, build, open</div>
+    <p class="step-body">Continue delivering community programming while designing and building. Hire an architect, general contractor, and executive director. Plan the opening. After opening, receive community feedback, improve operations, and evaluate the visitor experience. The opening is not the end — it is the beginning of the planning cycle.</p>
+  </div>
+</div>
+
+<hr class="rule">
+
+<h2 id="costs">Understanding the costs</h2>
+<p>Cost is the most common place museums get into trouble — not because the numbers are wrong, but because the assumptions behind them are optimistic. A few benchmarks from practice:</p>
+<ul>
+  <li><strong>Construction:</strong> $200–350/sq ft for new construction; $150–200/sq ft for renovation depending on condition and location.</li>
+  <li><strong>Exhibition fit-out:</strong> $150–300/sq ft for gallery spaces, depending on interactivity level.</li>
+  <li><strong>Operating costs:</strong> Personnel accounts for 55–65% of annual operating budget. Utilities, maintenance, insurance, and programming fill the rest.</li>
+  <li><strong>Attendance:</strong> Attendance typically falls 20–30% in years two and three from the opening-year spike. Plan to the third year, not to opening.</li>
+  <li><strong>Endowment:</strong> Institutions with an endowment equal to 2–3 times annual operating expenses are meaningfully more stable than those without one.</li>
+</ul>
+<div class="callout">
+  <div class="callout-label">Important</div>
+  <div class="callout-title">A museum feasibility study will tell you if your numbers are realistic.</div>
+  <p class="callout-body">Before committing capital, commission a feasibility study. It will model your attendance projections, operating costs, and revenue assumptions against real data from comparable institutions — and tell you whether the museum can actually survive. See: <a href="what-is-a-museum-feasibility-study.html" style="color:var(--gold-lt);">What is a Museum Feasibility Study →</a></p>
+</div>
+
+<hr class="rule">
+
+<h2 id="common-mistakes">The most common mistakes</h2>
+<ul>
+  <li><strong>"If I build it they will come."</strong> The single most dangerous assumption in museum planning. Community demand must be validated before capital is committed — not assumed because the founder believes in the mission.</li>
+  <li><strong>Planning only to opening day.</strong> The opening is a marketing event. The institution needs a plan for year three — when the opening buzz has faded and operating costs are fully in effect.</li>
+  <li><strong>Optimistic attendance projections.</strong> Use conservative estimates. Too many museums have gotten into financial trouble in years two and three by planning on opening-year attendance numbers.</li>
+  <li><strong>Waiting too long to hire an executive director.</strong> The ED should be in place before opening, ideally during the late construction phase. They need time to build the team and the community relationships before the doors open.</li>
+  <li><strong>Underestimating the role of programming.</strong> Programming drives visitation — before opening and after. An institution with a strong permanent collection but no reason to come back next month will lose ground to institutions that program consistently.</li>
+</ul>
+
+<hr class="rule">
+
+<h2 id="resources">Authoritative resources</h2>
+<ul class="resources-list">
+  <li><a href="https://ww2.aam-us.org/docs/default-source/about-museums/starting-a-museum--final.pdf" target="_blank">American Alliance of Museums — Starting a Museum</a></li>
+  <li><a href="https://unesdoc.unesco.org/ark:/48223/pf0000141067" target="_blank">ICOM — Running a Museum: A Practical Handbook</a></li>
+  <li><a href="https://www.aim-museums.co.uk/wp-content/uploads/2017/03/Successfully-Setting-up-a-New-Museum-2017.pdf" target="_blank">AIM — Successfully Setting Up a New Museum</a></li>
+  <li><a href="https://www.nps.gov/museum/publications/handbook.html" target="_blank">National Park Service — Museum Handbook</a></li>
+  <li><a href="https://www.aam-us.org/wp-content/uploads/2017/12/Developing-a-Strategic-Institutional-Plan-2018.pdf" target="_blank">AAM — Developing a Strategic Institutional Plan</a></li>
+</ul>
+<p style="font-size:14px;color:var(--mid);margin-top:8px;">Mark Walhimer is the author of <a href="https://museums101.com" style="color:var(--navy);">Museums 101</a> (AAM Press, 2015) and <a href="https://museum-experiences.com" style="color:var(--navy);">Designing Museum Experiences</a> (AAM Press, 2021) — both written as practical guides for exactly this process.</p>
+</div>
+  <div class="sidebar">
+    <div class="sb-cta">
+      <div class="sb-cta-label">Museum Planning LLC</div>
+      <h3>Need help with your museum?</h3>
+      <p>Mark Walhimer has guided more than forty museums through every stage of development. Every engagement begins with a conversation.</p>
+      <a href="mailto:mark@museumplanning.com" class="btn-gold">Start a Conversation</a>
+    </div>
+    
+<div class="sb-card">
+  <div class="sb-label">Quick Facts</div>
+  <p>Starting a museum typically takes <strong>3–7 years</strong> from initial concept to opening day.</p>
+  <p>Capital budgets for new museums range from <strong>$1M to $50M+</strong> depending on scope and location.</p>
+  <p>Personnel accounts for <strong>55–65%</strong> of annual museum operating costs.</p>
+</div>
+    <div class="sb-card">
+      <div class="sb-label">Museum Basics</div>
+      <ul class="sb-links">
+        <li><a href="how-to-start-a-museum.html">How to Start a Museum <span>→</span></a></li>
+        <li><a href="what-is-a-museum-feasibility-study.html">What is a Feasibility Study <span>→</span></a></li>
+        <li><a href="what-is-a-museum-master-plan.html">What is a Museum Master Plan <span>→</span></a></li>
+      </ul>
+    </div>
+    <div class="sb-card">
+      <div class="sb-label">The Books</div>
+      <ul class="sb-links">
+        <li><a href="https://museums101.com" target="_blank">Museums 101 — AAM Press <span>→</span></a></li>
+        <li><a href="https://museum-experiences.com" target="_blank">Designing Museum Experiences <span>→</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="related-band">
+  <div class="related-inner">
+    <div class="related-label">Keep Reading</div>
+    <div class="related-grid">
+    <a href="what-is-a-museum-feasibility-study.html" class="related-card">
+      <div class="related-tag">Museum Basics</div>
+      <div class="related-title">What is a Museum Feasibility Study?</div>
+      <p class="related-desc">Before your community commits capital, you need to know whether the museum can operate sustainably. Here's what a feasibility study does and why it matters.</p>
+      <span class="related-arrow">Read Guide →</span>
+    </a>
+    <a href="what-is-a-museum-master-plan.html" class="related-card">
+      <div class="related-tag">Museum Basics</div>
+      <div class="related-title">What is a Museum Master Plan?</div>
+      <p class="related-desc">The master plan translates your institution's goals into physical and financial reality — building program, floor plans, phasing, and capital campaign strategy.</p>
+      <span class="related-arrow">Read Guide →</span>
+    </a>
+    <a href="../museum-planning-services.html" class="related-card">
+      <div class="related-tag">Services</div>
+      <div class="related-title">Museum Planning LLC Services</div>
+      <p class="related-desc">From feasibility study through opening day. See how Museum Planning LLC structures every engagement across all four phases of museum development.</p>
+      <span class="related-arrow">Read Guide →</span>
+    </a></div>
+  </div>
+</div>
+<div class="cta-band">
+  <div class="cta-inner">
+    <h2 class="cta-heading">Ready to build<br><em>your museum?</em></h2>
+    <p class="cta-body">Forty museums. One methodology. Every engagement starts with a conversation — no cost, no obligation.</p>
+    <a href="mailto:mark@museumplanning.com" class="btn-gold" style="display:inline-block;padding:14px 44px;font-size:12px;">mark@museumplanning.com</a>
+    <div class="cta-note"><a href="tel:4157945252">415-794-5252</a> &nbsp;·&nbsp; New York · Mexico City · Worldwide</div>
+  </div>
+</div>
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="mailto:mark@museumplanning.com">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+</body>
+</html>
