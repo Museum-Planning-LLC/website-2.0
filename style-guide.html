@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Style Guide — Museum Planning LLC</title>
+<meta name="description" content="Museum Planning LLC website style guide for design system, navigation, typography, spacing, and publishing consistency.">
+<link rel="canonical" href="https://museum-planning-llc.github.io/website-2.0/style-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --deep: #111C27;
+  --gold: #C9A84C;
+  --gold-lt: #E8D099;
+  --cream: #F8F4EC;
+  --ink: #1A1A1A;
+  --mid: #5A5A5A;
+  --rule: #D4C8B0;
+  --serif: 'Playfair Display', Georgia, serif;
+  --mono: 'DM Mono', monospace;
+  --sans: 'Lato', system-ui, sans-serif;
+}
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+nav.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--deep);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  z-index: 100;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  text-decoration: none;
+}
+.nav-links a:hover, .nav-links a.active { color: rgba(255,255,255,.9); }
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep) !important;
+  padding: 8px 20px;
+  text-decoration: none;
+}
+.nav-cta:hover { background: var(--gold-lt); }
+.nav-search { display: flex; align-items: center; }
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: rgba(255,255,255,.45);
+  display: flex;
+}
+.search-toggle:hover { color: var(--gold); }
+.search-toggle svg {
+  width: 16px; height: 16px;
+  stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round;
+}
+
+.hero {
+  background: var(--deep);
+  color: #fff;
+  padding: 128px 56px 64px;
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; }
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  margin-bottom: 18px;
+}
+.hero h1 em { color: var(--gold); font-style: italic; }
+.hero p {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+  color: rgba(255,255,255,.56);
+  max-width: 760px;
+}
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 72px 56px 100px; }
+.section {
+  background: #fff;
+  border-top: 3px solid var(--gold);
+  padding: 34px 32px 36px;
+  margin-bottom: 24px;
+}
+.section h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+.section p { color: var(--mid); margin-bottom: 14px; }
+.section ul, .section ol { margin-left: 24px; color: var(--ink); }
+.section li { margin: 7px 0; }
+.kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+.token {
+  border: 1px solid var(--rule);
+  padding: 12px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  background: #fff;
+}
+footer {
+  background: var(--deep);
+  padding: 40px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-logo { font-family: var(--serif); color: rgba(255,255,255,.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 22px; list-style: none; }
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.26);
+  text-decoration: none;
+}
+.footer-links a:hover { color: rgba(255,255,255,.7); }
+.footer-copy { font-family: var(--mono); font-size: 9px; color: rgba(255,255,255,.25); }
+
+.search-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(17,28,39,.97); z-index: 200;
+  flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: 80px 24px 40px;
+}
+.search-overlay.open { display: flex; }
+.search-close {
+  position: absolute; top: 20px; right: 28px;
+  background: none; border: none; color: rgba(255,255,255,.4);
+  font-size: 28px; cursor: pointer; font-family: var(--mono);
+}
+.search-input-wrap {
+  width: 100%; max-width: 680px; border-bottom: 2px solid var(--gold);
+  display: flex; align-items: center; gap: 16px; margin-bottom: 48px;
+}
+.search-input-wrap svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 2; }
+#search-input {
+  flex: 1; background: none; border: none; outline: none;
+  font-family: var(--serif); font-size: clamp(24px, 4vw, 40px);
+  color: #fff; padding: 12px 0;
+}
+.search-results { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 3px; }
+.search-result {
+  background: rgba(255,255,255,.04); padding: 20px 24px; text-decoration: none;
+  border-left: 3px solid transparent; display: block;
+}
+.search-result:hover { border-color: var(--gold); background: rgba(201,168,76,.07); }
+.sr-type { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.sr-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.sr-desc { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
+
+@media (max-width: 900px) {
+  nav.site-nav { padding: 0 24px; }
+  .hero { padding: 112px 24px 56px; }
+  .wrap { padding: 64px 24px 84px; }
+  footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+}
+</style>
+<link rel="stylesheet" href="assets/nav-mobile.css">
+</head>
+<body>
+<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Internal Standard</div>
+    <h1>Website <em>Style Guide</em></h1>
+    <p>The source of truth for visual and structural consistency in `website-2.0`.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section">
+    <div class="kicker">1) Design System</div>
+    <h2>Do Not Drift</h2>
+    <p>Use this design system on all core pages unless a deliberate rebrand is approved and rolled out globally.</p>
+    <div class="token-grid">
+      <div class="token">--deep: #111C27</div>
+      <div class="token">--gold: #C9A84C</div>
+      <div class="token">--gold-lt: #E8D099</div>
+      <div class="token">--cream: #F8F4EC</div>
+      <div class="token">--ink: #1A1A1A</div>
+      <div class="token">--mid: #5A5A5A</div>
+      <div class="token">--rule: #D4C8B0</div>
+    </div>
+    <ul>
+      <li>Serif display/headlines: <code>Playfair Display</code></li>
+      <li>Utility labels/nav/meta: <code>DM Mono</code></li>
+      <li>Body copy: <code>Lato</code></li>
+      <li>Tone: premium, practical, direct</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="kicker">2) Global Navigation</div>
+    <h2>Standard Order</h2>
+    <ol>
+      <li>Services</li>
+      <li>Projects</li>
+      <li>Museum School</li>
+      <li>About</li>
+      <li>Search icon</li>
+      <li>Start a Conversation (CTA)</li>
+    </ol>
+    <ul>
+      <li>Do not add a separate Contact nav item.</li>
+      <li>Use fixed 60px dark nav with gold CTA.</li>
+      <li>Use <code>assets/nav-mobile.css</code> and <code>assets/nav-mobile.js</code>.</li>
+      <li>Keep search IDs consistent: <code>searchToggle</code>, <code>searchOverlay</code>, <code>searchClose</code>, <code>searchResults</code>.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="kicker">3) Paths and URLs</div>
+    <h2>Link Conventions</h2>
+    <ul>
+      <li>Use consistent root/site-relative links within each page.</li>
+      <li>For nested pages (<code>projects/*</code>, <code>museum-school/*</code>, <code>documents/*</code>), adjust path depth correctly.</li>
+      <li>If maintaining mirrored files in multiple locations, update all copies in one change set.</li>
+      <li>Canonical URLs should match final GitHub Pages location.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="kicker">4) Page Structure</div>
+    <h2>Required Composition</h2>
+    <ol>
+      <li>Fixed global nav</li>
+      <li>Hero with dark field and serif headline</li>
+      <li>Readable body sections/cards</li>
+      <li>CTA block with gold primary action</li>
+      <li>Standard footer</li>
+      <li>Search overlay + scripts</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="kicker">5-10) Consistency Rules</div>
+    <h2>Operational Standards</h2>
+    <ul>
+      <li>Desktop side padding baseline: <code>56px</code>; mobile: <code>24px</code>.</li>
+      <li>Keep terms exact: <code>Museum School</code>, <code>Start a Conversation</code>, <code>Museum Planning LLC</code>.</li>
+      <li>Avoid one-off visual systems on individual pages.</li>
+      <li>Pre-publish checklist: nav, mobile nav, search, tokens, links, footer, no accidental theme drift.</li>
+      <li>If intentionally changing the standard, document rationale and update the style guide.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button type="button" class="search-close" id="searchClose">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+<script>
+const PAGES = [
+  {type:"Guide",title:"Website Style Guide",desc:"Design system, nav standards, and consistency rules.",url:"style-guide.html"},
+  {type:"Home",title:"Museum Planning LLC",desc:"Forty museums. One methodology.",url:"index.html"},
+  {type:"Contact",title:"Contact — Rates & conversation",desc:"Typical consulting ranges and how to start a conversation.",url:"museum-planning-contact.html"},
+  {type:"Services",title:"Services — From Vision to Opening Day",desc:"Feasibility, strategic planning, master planning, exhibition design, evaluation.",url:"museum-planning-services.html"},
+  {type:"Projects",title:"Projects — Forty Museums",desc:"Natural history, children's, science centers, cultural centers.",url:"museum-planning-projects.html"},
+  {type:"About",title:"About — Mark Walhimer",desc:"Managing partner, thirty years in museums, AAM Press author.",url:"museum-planning-about.html"},
+  {type:"Museum School",title:"Museum School",desc:"How to start a museum, feasibility, and master planning guides.",url:"museum-school/index.html"}
+];
+const input = document.getElementById("search-input");
+const results = document.getElementById("searchResults");
+const overlay = document.getElementById("searchOverlay");
+document.getElementById("searchToggle").addEventListener("click", () => {
+  overlay.classList.add("open");
+  setTimeout(() => input.focus(), 100);
+});
+document.getElementById("searchClose").addEventListener("click", () => {
+  overlay.classList.remove("open");
+  input.value = "";
+  results.innerHTML = "";
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    overlay.classList.remove("open");
+    input.value = "";
+    results.innerHTML = "";
+  }
+});
+input.addEventListener("input", () => {
+  const q = input.value.toLowerCase().trim();
+  if (!q) { results.innerHTML = ""; return; }
+  const matches = PAGES.filter(p =>
+    p.title.toLowerCase().includes(q) ||
+    p.desc.toLowerCase().includes(q) ||
+    p.type.toLowerCase().includes(q)
+  );
+  if (!matches.length) {
+    results.innerHTML = '<div class="search-empty">No results found.</div>';
+    return;
+  }
+  results.innerHTML = matches.map(p =>
+    `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`
+  ).join("");
+});
+</script>
+<script src="assets/nav-mobile.js" defer></script>
+</body>
+</html>
