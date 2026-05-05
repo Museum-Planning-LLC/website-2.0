@@ -6,32 +6,58 @@
 <title>Museum Vitality Index — Museum Health Scoring Framework | Museum Planning LLC</title>
 <meta name="description" content="The Museum Vitality Index is a 0–100 composite scoring framework that benchmarks museums of all sizes using size-normalized metrics. A $500K museum with strong ratios can outrank a $25M institution.">
 <meta name="keywords" content="museum vitality index, museum health score, museum benchmarking, museum performance metrics, museum planning, museum consultant, museum feasibility">
-<link rel="canonical" href="https://museumplanning.com/museum-vitality-index.html">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://museum-planning-llc.github.io/website-2.0/documents/vitality/museum-vitality-index.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --navy:   #354583;
   --deep:   #1f2d5a;
   --copper: #ff6d70;
-  --gold:   #ff9a9c;
   --parch:  #f4f5f9;
   --cream:  #ffffff;
   --ink:    #1a1a2e;
   --muted:  #5a6478;
   --rule:   #dde0e8;
+  /* Site chrome (matches index / services nav) */
+  --site-gold: #c9a84c;
+  --site-gold-lt: #e8d099;
+  --site-deep: #111c27;
+  --serif: 'Playfair Display', Georgia, serif;
+  --mono: 'DM Mono', monospace;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:17px;line-height:1.78;-webkit-font-smoothing:antialiased;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:17px;line-height:1.78;-webkit-font-smoothing:antialiased;padding-top:60px;}
 
-/* NAV */
-nav{background:var(--deep);padding:0 56px;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,.06);}
-.nav-logo{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:none;}
-.nav-logo em{color:var(--copper);font-style:normal;}
-.nav-right{display:flex;gap:32px;list-style:none;align-items:center;}
-.nav-right a{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
-.nav-right a:hover{color:var(--copper);}
-.nav-right .btn{background:var(--copper);color:white !important;padding:6px 16px;font-size:10px;letter-spacing:2px;font-family:'DM Mono',monospace;}
+/* NAV — matches main site */
+nav.site-nav{position:fixed;top:0;left:0;right:0;background:var(--site-deep);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;z-index:100;border-bottom:1px solid rgba(201,168,76,.15);}
+.nav-logo{font-family:var(--serif);font-size:15px;color:white;text-decoration:none;letter-spacing:.02em;}
+.nav-logo span{color:var(--site-gold);}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center;}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--site-gold);}
+.nav-cta{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;background:var(--site-gold);color:var(--site-deep)!important;padding:8px 20px;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:var(--site-gold-lt)!important;}
+.nav-search{position:relative;display:flex;align-items:center;}
+.search-toggle{background:none;border:none;cursor:pointer;padding:6px;color:rgba(255,255,255,.45);transition:color .2s;display:flex;align-items:center;}
+.search-toggle:hover{color:var(--site-gold);}
+.search-toggle svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(17,28,39,.97);z-index:200;flex-direction:column;align-items:center;justify-content:flex-start;padding:80px 24px 40px;}
+.search-overlay.open{display:flex;}
+.search-close{position:absolute;top:20px;right:28px;background:none;border:none;color:rgba(255,255,255,.4);font-size:28px;cursor:pointer;transition:color .2s;font-family:var(--mono);}
+.search-close:hover{color:white;}
+.search-input-wrap{width:100%;max-width:680px;border-bottom:2px solid var(--site-gold);display:flex;align-items:center;gap:16px;margin-bottom:48px;}
+.search-input-wrap svg{width:22px;height:22px;stroke:var(--site-gold);fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0;}
+#search-input{flex:1;background:none;border:none;outline:none;font-family:var(--serif);font-size:clamp(24px,4vw,40px);color:white;padding:12px 0;caret-color:var(--site-gold);}
+#search-input::placeholder{color:rgba(255,255,255,.2);}
+.search-results{width:100%;max-width:680px;display:flex;flex-direction:column;gap:3px;}
+.search-result{background:rgba(255,255,255,.04);padding:20px 24px;text-decoration:none;border-left:3px solid transparent;transition:border-color .2s,background .2s;display:block;}
+.search-result:hover{border-color:var(--site-gold);background:rgba(201,168,76,.07);}
+.sr-type{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--site-gold);margin-bottom:6px;}
+.sr-title{font-family:var(--serif);font-size:18px;font-weight:700;color:white;margin-bottom:4px;}
+.sr-desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.5;}
+.search-empty{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(255,255,255,.3);text-align:center;padding:40px 0;}
+@media(max-width:900px){nav.site-nav{padding:0 24px;}}
 
 /* HERO */
 .hero{background:var(--deep);color:white;padding:80px 56px 0;position:relative;overflow:hidden;}
@@ -146,7 +172,7 @@ footer a:hover{color:var(--copper);}
 
 /* RESPONSIVE */
 @media(max-width:700px){
-  nav{padding:0 24px;}
+  nav.site-nav{padding:0 24px;}
   .hero{padding:56px 24px 0;}
   .hero-stats{margin:0 -24px;padding:0 24px;flex-wrap:wrap;}
   .hero-stat{min-width:50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.07);}
@@ -158,16 +184,22 @@ footer a:hover{color:var(--copper);}
   .cat-grid{grid-template-columns:1fr;}
 }
 </style>
+  <link rel="stylesheet" href="../../assets/nav-mobile.css">
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html">Museum Planning <em>LLC</em></a>
-  <ul class="nav-right">
-    <li><a href="museum-planning-services.html">Services</a></li>
-    <li><a href="museum-planning-projects.html">Projects</a></li>
-    <li><a href="museum-planning-about.html">About</a></li>
-    <li><a href="mailto:mark@museumplanning.com" class="btn">Get in Touch</a></li>
+<nav class="site-nav" id="site-nav">
+  <a href="https://museum-planning-llc.github.io/website-2.0/index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-services.html">Services</a></li>
+    <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-projects.html">Projects</a></li>
+    <li><a href="../../museum-school/index.html">Museum School</a></li>
+    <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-about.html">About</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="../../museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
 </nav>
 
@@ -431,5 +463,63 @@ footer a:hover{color:var(--copper);}
   <span>© 2026 Museum Planning LLC</span>
 </footer>
 
+<div class="search-overlay" id="searchOverlay">
+  <button type="button" class="search-close" id="searchClose">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+<script>
+(function () {
+  var PAGES = [
+    { type: "Resource", title: "Museum Vitality Index", desc: "0–100 composite scoring framework; size-normalized benchmarking.", url: "https://museum-planning-llc.github.io/website-2.0/museum-vitality-index.html" },
+    { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology. Feasibility through opening day.", url: "https://museum-planning-llc.github.io/website-2.0/index.html" },
+    { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and how to start a conversation.", url: "https://museum-planning-llc.github.io/website-2.0/museum-planning-contact.html" },
+    { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design, evaluation.", url: "https://museum-planning-llc.github.io/website-2.0/museum-planning-services.html" },
+    { type: "Projects", title: "Projects — Forty Museums", desc: "Natural history, children's, science centers, cultural centers.", url: "https://museum-planning-llc.github.io/website-2.0/museum-planning-projects.html" },
+    { type: "About", title: "About — Mark Walhimer", desc: "Managing partner, thirty years in museums, AAM Press author.", url: "https://museum-planning-llc.github.io/website-2.0/museum-planning-about.html" },
+    { type: "Museum School", title: "Museum School", desc: "Guides: starting a museum, feasibility, master planning.", url: "https://museum-planning-llc.github.io/website-2.0/museum-school/index.html" }
+  ];
+  var input = document.getElementById("search-input");
+  var results = document.getElementById("searchResults");
+  var overlay = document.getElementById("searchOverlay");
+  document.getElementById("searchToggle").addEventListener("click", function () {
+    overlay.classList.add("open");
+    setTimeout(function () { input.focus(); }, 100);
+  });
+  document.getElementById("searchClose").addEventListener("click", function () {
+    overlay.classList.remove("open");
+    input.value = "";
+    results.innerHTML = "";
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      overlay.classList.remove("open");
+      input.value = "";
+      results.innerHTML = "";
+    }
+  });
+  input.addEventListener("input", function () {
+    var q = input.value.toLowerCase().trim();
+    if (!q) {
+      results.innerHTML = "";
+      return;
+    }
+    var matches = PAGES.filter(function (p) {
+      return p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.type.toLowerCase().includes(q);
+    });
+    if (!matches.length) {
+      results.innerHTML = '<div class="search-empty">No results found.</div>';
+      return;
+    }
+    results.innerHTML = matches.map(function (p) {
+      return '<a href="' + p.url + '" class="search-result"><div class="sr-type">' + p.type + '</div><div class="sr-title">' + p.title + '</div><div class="sr-desc">' + p.desc + '</div></a>';
+    }).join("");
+  });
+})();
+</script>
+<script src="../../assets/nav-mobile.js" defer></script>
 </body>
 </html>
