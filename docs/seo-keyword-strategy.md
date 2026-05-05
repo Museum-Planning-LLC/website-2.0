@@ -62,8 +62,17 @@ Use these for **thought leadership**, **subsections on Services**, or **future a
 
 ---
 
+## Competitor SERP matrix (working spreadsheet)
+
+**File:** [`docs/seo-competitor-keyword-matrix.csv`](seo-competitor-keyword-matrix.csv)
+
+Columns map **primary keyword → intent → your URL(s) → five illustrative competitor domains + page types → gap note**. Import into Google Sheets or Excel; replace competitor slots with **your geo’s top URLs** from Search Console (*Queries* + manual SERP check) or a rank-tracker. Rows labeled **US-default** used aggregated web-search snapshots **May 2026** — **re-verify before tactical bets.**
+
+---
+
 ## Revision log
 
 | Date | Change |
 |------|--------|
 | 2026-02-03 | Primary + extended keyword lists; website hierarchy routing note; implementation across canonical tags, titles/meta, Services ↔ Museum School links, and site-relative nav/search URLs targeting museumplanning.com. |
+| 2026-05-05 | Added `seo-competitor-keyword-matrix.csv` plus SERP-oriented gap notes for primary + selected extended keywords. |
