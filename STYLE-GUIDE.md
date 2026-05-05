@@ -85,10 +85,23 @@ Every new major page should follow the same top-level structure:
 - Keep consistent footer composition:
   - Brand lockup
   - External links (Museum Planner, Museums 101, Museum Experiences)
+  - Social links (if active; see Social Media Standard below)
   - Contact availability (contact page in footer is acceptable)
   - Copyright line
 
-## 8) Content Consistency Rules
+## 8) Social Media Standard
+
+- **Official platforms (if active):** LinkedIn, Instagram, Facebook, X.
+- **Default placement:** Site footer on all primary pages.
+- **Optional additional placement:** Contact page only (expanded social row if desired).
+- **Order:** LinkedIn, Instagram, Facebook, X.
+- **Link labels:** `LinkedIn`, `Instagram`, `Facebook`, `X` (text labels, not icon-only).
+- **Link behavior:** open in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
+- **No placeholders:** If a platform is not active, omit it instead of linking to an empty/stub profile.
+- **Consistency rule:** Use the same URLs and same order on every page where social links appear.
+- **Personal profile exception:** Use Mark's personal LinkedIn only in the About Mark section; keep company LinkedIn in global/footer social links.
+
+## 9) Content Consistency Rules
 
 - Keep terms consistent:
   - `Museum School` (not variants)
@@ -97,7 +110,7 @@ Every new major page should follow the same top-level structure:
 - Avoid one-off visual systems on individual pages.
 - New pages must inherit this design system unless explicitly approved otherwise.
 
-## 9) Pre-Publish Checklist
+## 10) Pre-Publish Checklist
 
 Before committing any page changes:
 
@@ -107,9 +120,10 @@ Before committing any page changes:
 4. Font stack and color tokens match system.
 5. Links resolve correctly from that page depth.
 6. Footer format matches site standard.
-7. No accidental alternate palette/theme introduced.
+7. Social links (if present) follow the Social Media Standard.
+8. No accidental alternate palette/theme introduced.
 
-## 10) Change Control
+## 11) Change Control
 
 If a change intentionally breaks this guide:
 

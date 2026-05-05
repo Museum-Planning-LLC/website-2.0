@@ -262,6 +262,22 @@ footer{background:var(--deep);padding:40px 56px;display:flex;align-items:center;
   text-align: center; padding: 40px 0;
 }
 
+
+
+/* ── NEWSLETTER ── */
+.newsletter-band{background:var(--deep);padding:56px;border-top:1px solid rgba(201,168,76,.12);} 
+.newsletter-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:end;}
+.newsletter-kicker{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.newsletter-title{font-family:var(--serif);font-size:clamp(26px,3vw,40px);line-height:1.1;color:#fff;margin-bottom:10px;}
+.newsletter-copy{font-size:14px;line-height:1.6;color:rgba(255,255,255,.55);max-width:560px;}
+.newsletter-form{display:flex;gap:10px;align-items:center;}
+.newsletter-input{flex:1;min-width:200px;padding:12px 14px;border:1px solid rgba(201,168,76,.35);background:rgba(255,255,255,.04);color:#fff;font-family:var(--sans);font-size:14px;}
+.newsletter-input::placeholder{color:rgba(255,255,255,.38);} 
+.newsletter-input:focus{outline:none;border-color:var(--gold);} 
+.newsletter-btn{padding:12px 18px;border:none;background:var(--gold);color:var(--deep);font-family:var(--mono);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;cursor:pointer;}
+.newsletter-btn:hover{background:var(--gold-lt);} 
+@media (max-width:900px){.newsletter-band{padding:40px 24px;}.newsletter-inner{grid-template-columns:1fr;}.newsletter-form{flex-direction:column;align-items:stretch;}}
+
 </style>
   <link rel="stylesheet" href="../assets/nav-mobile.css">
 </head>
@@ -473,12 +489,32 @@ footer{background:var(--deep);padding:40px 56px;display:flex;align-items:center;
     <div class="cta-note"><a href="tel:4157945252">415-794-5252</a> &nbsp;·&nbsp; New York · Mexico City · Worldwide</div>
   </div>
 </div>
+
+
+<section class="newsletter-band">
+  <div class="newsletter-inner">
+    <div>
+      <div class="newsletter-kicker">Newsletter</div>
+      <h2 class="newsletter-title">Get museum planning updates.</h2>
+      <p class="newsletter-copy">Join the Museum Planning LLC newsletter for essays, case studies, and practical planning insights.</p>
+    </div>
+    <form class="newsletter-form" data-newsletter-form>
+      <input class="newsletter-input" type="email" name="email" placeholder="Your email address" required>
+      <button class="newsletter-btn" type="submit">Sign Up</button>
+    </form>
+  </div>
+</section>
+
 <footer>
   <div class="footer-logo">Museum <span>Planning</span> LLC</div>
   <ul class="footer-links">
     <li><a href="https://museumplanner.org">Museum Planner</a></li>
     <li><a href="https://museums101.com">Museums 101</a></li>
     <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="https://www.linkedin.com/company/museum-planning-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/museumplanning/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    <li><a href="https://www.facebook.com/MuseumPlanningLLC/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    <li><a href="https://x.com/MuseumPlanning" target="_blank" rel="noopener noreferrer">X</a></li>
     <li><a href="../museum-planning-contact.html">Contact</a></li>
   </ul>
   <div class="footer-copy">© 2026 Museum Planning LLC</div>
@@ -558,5 +594,24 @@ input.addEventListener('input', () => {
 });
 </script>
   <script src="../assets/nav-mobile.js" defer></script>
+
+<script>
+(function(){
+  function toMailto(email, page){
+    var subject = encodeURIComponent('Newsletter Signup Request');
+    var body = encodeURIComponent('Please add this email to the Museum Planning LLC newsletter\n\nEmail: ' + email + '\nPage: ' + page + '\nTimestamp: ' + new Date().toISOString());
+    window.location.href = 'mailto:mark@museumplanning.com?subject=' + subject + '&body=' + body;
+  }
+  document.querySelectorAll('[data-newsletter-form]').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var input = form.querySelector('input[type="email"]');
+      if(!input || !input.value) return;
+      toMailto(input.value.trim(), window.location.pathname);
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
