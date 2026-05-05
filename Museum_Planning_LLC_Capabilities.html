@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Museum Planning LLC — Capabilities Overview 2026</title>
+<meta name="description" content="Capabilities overview for Museum Planning LLC — feasibility through opening day, methodology, typical fees, selected projects, and the Museum Vitality Index.">
+<link rel="canonical" href="https://museumplanning.com/Museum_Planning_LLC_Capabilities.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep:    #111C27;
+  --gold:    #C9A84C;
+  --gold-lt: #E8D099;
+  --cream:   #F8F4EC;
+  --ink:     #1A1A1A;
+  --mid:     #5A5A5A;
+  --rule:    #D4C8B0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--ink); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+/* NAV — matches site + nav-mobile.css */
+nav.site-nav { background: var(--deep); height: 60px; padding: 0 56px; display: flex; align-items: center; justify-content: space-between; position: fixed; top: 0; left: 0; right: 0; z-index: 200; border-bottom: 1px solid rgba(201,168,76,.15); }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 15px; color: white; text-decoration: none; letter-spacing: 0.02em; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links a { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { background: var(--gold); color: var(--deep) !important; padding: 8px 20px; font-weight: 700; letter-spacing: 2px; }
+.nav-cta:hover { background: var(--gold-lt); }
+
+/* DOWNLOAD BAR */
+.dl-bar { background: rgba(255,255,255,.06); border-bottom: 1px solid var(--rule); padding: 10px 56px; margin-top: 60px; display: flex; justify-content: space-between; align-items: center; }
+.dl-bar-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid); }
+.btn-dl { display: inline-block; background: var(--gold); color: var(--deep); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; padding: 8px 18px; text-decoration: none; }
+.btn-dl:hover { background: var(--gold-lt); }
+
+/* COVER */
+.cover { background: var(--deep); color: white; min-height: calc(100vh - 100px); display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.cover::before { content: ''; position: absolute; top: -120px; right: -120px; width: 600px; height: 600px; border-radius: 50%; border: 1px solid rgba(201,168,76,.1); pointer-events: none; }
+.cover::after  { content: ''; position: absolute; top: -60px;  right: -60px;  width: 400px; height: 400px; border-radius: 50%; border: 1px solid rgba(201,168,76,.06); pointer-events: none; }
+.cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 80px 56px 0; position: relative; z-index: 1; }
+.cover-logo { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 48px; }
+.cover-logo em { color: var(--gold); font-style: normal; }
+.cover-rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 24px; }
+.cover h1 { font-family: 'Playfair Display', serif; font-size: clamp(38px, 5.5vw, 64px); font-weight: 700; line-height: 1.08; color: white; margin-bottom: 24px; max-width: 640px; }
+.cover h1 em { font-style: italic; color: var(--gold); }
+.cover-deck { font-family: 'Playfair Display', serif; font-size: 17px; font-style: italic; color: rgba(255,255,255,.5); max-width: 500px; line-height: 1.6; margin-bottom: 56px; }
+.cover-stats { display: flex; background: rgba(255,255,255,.04); border-top: 1px solid rgba(255,255,255,.08); margin: 0 -56px; padding: 0 56px; }
+.cover-stat { flex: 1; padding: 26px 0; border-right: 1px solid rgba(255,255,255,.07); padding-right: 28px; margin-right: 28px; }
+.cover-stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+.c-stat-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.28); margin-bottom: 5px; }
+.c-stat-val { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--gold); line-height: 1; }
+.cover-foot { background: rgba(0,0,0,.2); padding: 16px 56px; display: flex; justify-content: space-between; }
+.cover-foot-txt { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: rgba(255,255,255,.25); }
+
+/* SECTIONS */
+.section { padding: 72px 56px; border-bottom: 1px solid var(--rule); }
+.section:last-of-type { border-bottom: none; }
+.section-alt { background: white; }
+.section-dark { background: var(--deep); color: white; }
+.eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+.eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--gold); }
+h2.sec-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; color: var(--deep); line-height: 1.15; margin-bottom: 10px; }
+h2.sec-title em { font-style: italic; color: var(--gold); }
+.section-dark h2.sec-title { color: white; }
+.sec-intro { font-size: 16px; color: var(--mid); max-width: 660px; margin-bottom: 40px; line-height: 1.7; }
+.section-dark .sec-intro { color: rgba(255,255,255,.5); }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start; }
+.about-body p { margin-bottom: 1.4em; color: #2a2a2a; font-size: 16px; line-height: 1.8; }
+blockquote { border-left: 3px solid var(--gold); background: var(--cream); padding: 20px 28px; margin: 28px 0; }
+blockquote p { font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; color: var(--deep); line-height: 1.5; margin: 0; }
+blockquote cite { display: block; margin-top: 10px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-style: normal; }
+.stat-cards { display: flex; flex-direction: column; gap: 10px; }
+.stat-card { background: var(--deep); color: white; padding: 20px 22px; }
+.stat-card-num { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+.stat-card-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.35); }
+.info-block { background: var(--cream); border: 1px solid var(--rule); border-top: 2px solid var(--gold); padding: 16px 18px; margin-top: 10px; }
+.info-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--mid); margin-bottom: 4px; }
+.info-val { font-size: 13px; color: var(--ink); line-height: 1.5; }
+
+/* METHODOLOGY */
+.phase-list { display: flex; flex-direction: column; }
+.phase-item { display: grid; grid-template-columns: 48px 1fr 1fr; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--rule); align-items: start; }
+.phase-item:last-child { border-bottom: none; }
+.phase-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--gold); padding-top: 3px; }
+.phase-left h3 { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--deep); margin-bottom: 4px; }
+.phase-sub { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: var(--mid); margin-bottom: 10px; }
+.phase-left p { font-size: 14px; color: var(--mid); line-height: 1.65; }
+.deliverables { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; padding-top: 3px; }
+.del-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .5px; color: var(--deep); border: 1px solid var(--rule); background: var(--cream); padding: 3px 10px; }
+
+/* FEES */
+.fees-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.fees-table thead tr { background: var(--deep); }
+.fees-table th { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.4); padding: 12px 18px; text-align: left; }
+.fees-table td { padding: 16px 18px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.fees-table tr:last-child td { border-bottom: none; }
+.fees-table tr:nth-child(even) td { background: white; }
+.service-name { font-size: 15px; font-weight: 700; color: var(--deep); display: block; margin-bottom: 2px; }
+.service-sub { font-size: 12px; color: var(--mid); }
+.fee-val { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.fee-note { font-size: 11px; color: var(--mid); margin-top: 2px; }
+.fee-desc { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+/* PROJECTS */
+.projects-list { display: flex; flex-direction: column; }
+.project-row { display: grid; grid-template-columns: 28px 1fr auto auto; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--rule); align-items: center; }
+.project-row:last-child { border-bottom: none; }
+.proj-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--rule); }
+.proj-name { font-size: 14px; font-weight: 700; color: var(--deep); }
+.proj-loc { font-size: 12px; color: var(--mid); margin-top: 1px; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 4px; justify-content: flex-end; }
+.proj-tag { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: .5px; color: var(--deep); border: 1px solid var(--rule); padding: 2px 7px; }
+.proj-year { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--mid); text-align: right; min-width: 32px; }
+
+/* MVI */
+.mvi-cats { display: grid; grid-template-columns: repeat(5,1fr); border: 1px solid var(--rule); margin: 28px 0; }
+.mvi-cat { padding: 20px 16px; border-right: 1px solid var(--rule); }
+.mvi-cat:last-child { border-right: none; }
+.mvi-cat-num { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--gold); margin-bottom: 6px; }
+.mvi-cat-title { font-size: 13px; font-weight: 700; color: var(--deep); margin-bottom: 5px; line-height: 1.3; }
+.mvi-cat-desc { font-size: 12px; color: var(--mid); line-height: 1.5; }
+.mvi-panel { background: var(--deep); display: grid; grid-template-columns: 180px 1fr 180px; overflow: hidden; }
+.mvi-score-col { padding: 32px 28px; }
+.mvi-score-ey { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.mvi-score-n { font-family: 'Playfair Display', serif; font-size: 68px; font-weight: 700; color: var(--gold); line-height: 1; }
+.mvi-score-d { font-size: 20px; color: rgba(255,255,255,.2); }
+.mvi-g { display: inline-block; background: var(--gold); color: var(--deep); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; font-weight: 700; padding: 4px 12px; margin-top: 8px; }
+.mvi-bars-col { padding: 32px 28px; border-left: 1px solid rgba(255,255,255,.06); border-right: 1px solid rgba(255,255,255,.06); }
+.brow { margin-bottom: 13px; }
+.bm { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.bn { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.4); }
+.bs { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gold); }
+.bt { height: 3px; background: rgba(255,255,255,.08); }
+.bf { height: 3px; background: var(--gold); }
+.mvi-ins-col { padding: 32px 28px; }
+.mvi-ins-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 18px; }
+.ins { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,.06); }
+.ins:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.ins-n { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 3px; }
+.ins-d { font-size: 11px; color: rgba(255,255,255,.45); line-height: 1.5; }
+
+/* BACK COVER */
+.back-cover { background: var(--deep); color: white; padding: 80px 56px; position: relative; overflow: hidden; }
+.back-cover::before { content: ''; position: absolute; bottom: -80px; left: -80px; width: 440px; height: 440px; border-radius: 50%; border: 1px solid rgba(201,168,76,.08); }
+.back-cover h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 46px); font-weight: 700; color: white; line-height: 1.15; margin-bottom: 18px; max-width: 560px; }
+.back-cover h2 em { font-style: italic; color: var(--gold); }
+.back-cover p { font-size: 16px; color: rgba(255,255,255,.5); max-width: 500px; line-height: 1.7; margin-bottom: 40px; }
+.contact-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-bottom: 48px; }
+.ci-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 5px; }
+.ci-val { font-family: 'Playfair Display', serif; font-size: 15px; color: white; }
+.back-foot { border-top: 1px solid rgba(255,255,255,.08); padding-top: 18px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: rgba(255,255,255,.2); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+/* FOOTER */
+footer { background: var(--deep); color: rgba(255,255,255,.25); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; padding: 22px 56px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+footer a { color: rgba(255,255,255,.25); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+@media(max-width:900px){
+  nav.site-nav,.dl-bar { padding: 0 24px; }
+  .cover-body,.cover-foot { padding-left: 24px; padding-right: 24px; }
+  .cover-stats { margin: 0 -24px; padding: 0 24px; flex-wrap: wrap; }
+  .cover-stat { min-width: 45%; border-right: none; }
+  .section { padding: 48px 24px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .phase-item { grid-template-columns: 40px 1fr; }
+  .deliverables { display: none; }
+  .mvi-cats { grid-template-columns: 1fr 1fr; }
+  .mvi-panel { grid-template-columns: 1fr; }
+  .mvi-bars-col,.mvi-ins-col { border-left: none; border-right: none; border-top: 1px solid rgba(255,255,255,.06); }
+  .contact-row { grid-template-columns: 1fr 1fr; }
+  .back-cover { padding: 48px 24px; }
+  footer { padding: 18px 24px; }
+}
+</style>
+<link rel="stylesheet" href="assets/nav-mobile.css">
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<div class="dl-bar">
+  <span class="dl-bar-label">Museum Planning LLC · Capabilities Overview 2026</span>
+  <a class="btn-dl" href="Museum_Planning_LLC_Capabilities.pdf" download>Download PDF</a>
+</div>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-body">
+    <div class="cover-logo">Museum Planning <em>LLC</em></div>
+    <div class="cover-rule"></div>
+    <h1>Feasibility Through<br><em>Opening Day.</em></h1>
+    <p class="cover-deck">Forty museums. Twenty-five years. One methodology — and Mark personally involved in every engagement from the first community assessment through post-opening evaluation.</p>
+    <div class="cover-stats">
+      <div class="cover-stat"><div class="c-stat-label">Museums Completed</div><div class="c-stat-val">40+</div></div>
+      <div class="cover-stat"><div class="c-stat-label">Years of Practice</div><div class="c-stat-val">25</div></div>
+      <div class="cover-stat"><div class="c-stat-label">AAM Press Books</div><div class="c-stat-val">2</div></div>
+      <div class="cover-stat"><div class="c-stat-label">Mark Personally Involved</div><div class="c-stat-val">100%</div></div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span class="cover-foot-txt">mark@museumplanning.com &nbsp;·&nbsp; 415-794-5252 &nbsp;·&nbsp; museumplanning.com</span>
+    <span class="cover-foot-txt">2026 · Capabilities Overview</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-alt">
+  <div class="eyebrow">The Practice</div>
+  <h2 class="sec-title">Mark Walhimer &amp; <em>Museum Planning LLC</em></h2>
+  <div class="about-grid">
+    <div class="about-body">
+      <p>Museum Planning LLC is a personal practice founded in 1999. That is a deliberate choice, not a limitation. Every engagement is worked directly — there is no associate who handles the day-to-day while Mark attends the kickoff meeting. When a board asks who they are hiring, the answer is: Mark.</p>
+      <p>The practice specializes in the full arc of museum development — feasibility through opening day. Community assessment, strategic planning, business planning and pro forma, master planning, exhibition design, capital campaign strategy, operational planning, and post-opening evaluation. More than forty museums over twenty-five years across science centers, art museums, natural history museums, children's museums, history museums, and cultural centers — in the United States, Mexico, and internationally.</p>
+      <p>Before founding Museum Planning LLC, Mark worked inside institutions at the Children's Museum of Indianapolis, Liberty Science Center, Discovery Science Center, and the Children's Museum of Manhattan. He also served as Chief Operating Officer at a museum fabrication studio. That combination — staff experience, operational knowledge, fabrication reality — is what shapes how he plans.</p>
+      <blockquote>
+        <p>The plans I produce are designed to be built, not filed. I have been on the other side of the table when a consultant delivers a master plan. I know what happens to that document when the meeting ends.</p>
+        <cite>— Mark Walhimer, Managing Partner</cite>
+      </blockquote>
+    </div>
+    <div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="stat-card-num">40+</div><div class="stat-card-label">Museums Completed</div></div>
+        <div class="stat-card"><div class="stat-card-num">25</div><div class="stat-card-label">Years in Practice</div></div>
+        <div class="stat-card"><div class="stat-card-num">1992</div><div class="stat-card-label">In Museums Since</div></div>
+      </div>
+      <div class="info-block" style="margin-top:10px;"><div class="info-label">Education</div><div class="info-val">Pratt Institute — M.S. Industrial Design &amp; Exhibition Design<br>Skidmore College — B.A. Studio Art</div></div>
+      <div class="info-block"><div class="info-label">Offices</div><div class="info-val">New York · Mexico City · Worldwide</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section">
+  <div class="eyebrow">The Methodology</div>
+  <h2 class="sec-title">Four Phases. <em>One Continuum.</em></h2>
+  <p class="sec-intro">The same process applied across every engagement — from a $2M university collection to a $28M regional cultural center. Bad feasibility is still fatal. A museum that can open is not the same as a museum that can stay open.</p>
+  <div class="phase-list">
+    <div class="phase-item">
+      <div class="phase-num">01</div>
+      <div class="phase-left"><h3>Institutional Planning</h3><div class="phase-sub">Community Assessment · Mission &amp; Vision · Feasibility Study · Strategic Planning</div><p>Before a single line is drawn, the museum needs a clear strategic foundation — why it exists, who it serves, and whether it can operate sustainably. The documents produced here are what boards, donors, and civic partners need before committing capital.</p></div>
+      <div class="deliverables"><span class="del-tag">Community Assessment</span><span class="del-tag">Mission / Vision / Values</span><span class="del-tag">Feasibility Study</span><span class="del-tag">Strategic Plan</span></div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-num">02</div>
+      <div class="phase-left"><h3>Facility Planning</h3><div class="phase-sub">Master Plan · Capital Campaign · Visitor Experience · Exhibition Design · Building Design</div><p>Translates institutional goals into physical space and financial reality. Produces the programmatic, experiential, and architectural blueprints that govern every construction decision. Structures the capital campaign required to fund the building and its exhibitions.</p></div>
+      <div class="deliverables"><span class="del-tag">Museum Master Plan</span><span class="del-tag">Capital Campaign Plan</span><span class="del-tag">Visitor Experience Plan</span><span class="del-tag">Exhibition Design</span><span class="del-tag">Architectural Program</span></div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-num">03</div>
+      <div class="phase-left"><h3>Operational Planning</h3><div class="phase-sub">Business Plan · Programming · Marketing · Fabrication · Emergency Preparedness</div><p>Builds the systems and infrastructure that keep a museum running financially, programmatically, and physically. Personnel typically accounts for 60% of a museum's annual budget. Rigorous pro forma modeling stress-tests the institution before capital is committed.</p></div>
+      <div class="deliverables"><span class="del-tag">Business Plan &amp; Pro Forma</span><span class="del-tag">Programming Plan</span><span class="del-tag">Marketing Plan</span><span class="del-tag">Fabrication Oversight</span><span class="del-tag">Emergency Response Plan</span></div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-num">04</div>
+      <div class="phase-left"><h3>Opening &amp; Operations</h3><div class="phase-sub">Grand Opening · Community Impact · Evaluation · Institutional Assessment</div><p>A successful opening is planned, not improvised. Covers grand opening strategy, early-stage community engagement, and the formal evaluation cycles that determine what is working and what must evolve. Post-opening assessment initiates the next strategic planning cycle.</p></div>
+      <div class="deliverables"><span class="del-tag">Opening Day Plan</span><span class="del-tag">Community Impact Assessment</span><span class="del-tag">Exhibition Evaluation</span><span class="del-tag">Institutional Assessment</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="section section-alt">
+  <div class="eyebrow">Services &amp; Typical Fees</div>
+  <h2 class="sec-title">What We Deliver. <em>What It Costs.</em></h2>
+  <p class="sec-intro">Typical fee ranges listed so you know what ballpark you are in before we talk. Every engagement begins with a conversation — one hour, no cost, no obligation. All fees exclusive of travel.</p>
+  <table class="fees-table">
+    <thead><tr><th style="width:30%;">Service</th><th style="width:20%;">Typical Range</th><th>What It Produces</th></tr></thead>
+    <tbody>
+      <tr><td><span class="service-name">Museum Assessment</span><span class="service-sub">Starting point · Minimum retainer</span></td><td><span class="fee-val">$18,000+</span><div class="fee-note">+ travel</div></td><td class="fee-desc">Current-state evaluation of institutional health, community position, and planning readiness.</td></tr>
+      <tr><td><span class="service-name">Feasibility Study</span><span class="service-sub">Before capital is committed</span></td><td><span class="fee-val">$40k – $70k</span><div class="fee-note">+ travel</div></td><td class="fee-desc">Attendance projections, operating cost modeling, staffing requirements, revenue assumptions. The document that answers whether the museum can survive.</td></tr>
+      <tr><td><span class="service-name">Strategic Planning</span><span class="service-sub">Mission, vision, multi-year roadmap</span></td><td><span class="fee-val">$45k – $75k</span><div class="fee-note">+ travel</div></td><td class="fee-desc">Mission, vision, and values framework with a multi-year strategic plan that keeps boards, staff, and funders aligned.</td></tr>
+      <tr><td><span class="service-name">Museum Master Plan</span><span class="service-sub">Building program through capital campaign</span></td><td><span class="fee-val">$100k+</span><div class="fee-note">+ travel</div></td><td class="fee-desc">Building program, floor plans, phasing, budget, and capital campaign structure. The document architects, contractors, and campaign chairs work from.</td></tr>
+      <tr><td><span class="service-name">Exhibition Design</span><span class="service-sub">Concept through fabrication-ready documentation</span></td><td><span class="fee-val">$60k – $200k</span><div class="fee-note">+ travel</div></td><td class="fee-desc">Content, space, sequence, interpretation — from concept through fabrication-ready CAD documentation and installation oversight.</td></tr>
+      <tr><td><span class="service-name">Owner's Rep / PM</span><span class="service-sub">Construction &amp; fabrication oversight</span></td><td><span class="fee-val">Variable</span><div class="fee-note">per scope</div></td><td class="fee-desc">Owner's representation through construction and fabrication — protecting the institution's interests, on schedule, within budget.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- PROJECTS -->
+<section class="section">
+  <div class="eyebrow">Selected Work</div>
+  <h2 class="sec-title">Forty Museums. <em>One Methodology.</em></h2>
+  <p class="sec-intro">From university natural history collections to city-led cultural centers — across the United States and worldwide. Full portfolio at museumplanning.com/projects.</p>
+  <div class="projects-list">
+    <div class="project-row"><div class="proj-num">01</div><div><div class="proj-name">Howard Natural History Museum</div><div class="proj-loc">Riverside County, California · $27.75M · 23,000 sq ft</div></div><div class="proj-tags"><span class="proj-tag">Master Planning</span><span class="proj-tag">Exhibition Design</span></div><div class="proj-year">2024</div></div>
+    <div class="project-row"><div class="proj-num">02</div><div><div class="proj-name">Frehner Museum of Natural History</div><div class="proj-loc">Southern Utah University · Cedar City, Utah</div></div><div class="proj-tags"><span class="proj-tag">Master Planning</span><span class="proj-tag">University</span></div><div class="proj-year">2026</div></div>
+    <div class="project-row"><div class="proj-num">03</div><div><div class="proj-name">Arizona Natural Resources Museum</div><div class="proj-loc">University of Arizona · Tucson, Arizona</div></div><div class="proj-tags"><span class="proj-tag">Master Planning</span><span class="proj-tag">University</span></div><div class="proj-year">2023</div></div>
+    <div class="project-row"><div class="proj-num">04</div><div><div class="proj-name">Museum of Arts and Sciences</div><div class="proj-loc">Macon, Georgia</div></div><div class="proj-tags"><span class="proj-tag">Exhibition Design</span><span class="proj-tag">STEAM</span></div><div class="proj-year">2025</div></div>
+    <div class="project-row"><div class="proj-num">05</div><div><div class="proj-name">Interactive African American Museum &amp; Cultural Center</div><div class="proj-loc">Indiana</div></div><div class="proj-tags"><span class="proj-tag">Exhibition Design</span><span class="proj-tag">Feasibility</span></div><div class="proj-year">2022</div></div>
+    <div class="project-row"><div class="proj-num">06</div><div><div class="proj-name">MIDE, Museo Interactivo de Economía</div><div class="proj-loc">Mexico City, Mexico</div></div><div class="proj-tags"><span class="proj-tag">Exhibition Design</span><span class="proj-tag">International</span></div><div class="proj-year">2019</div></div>
+    <div class="project-row"><div class="proj-num">07</div><div><div class="proj-name">Museo Memoria y Tolerancia</div><div class="proj-loc">Mexico City, Mexico</div></div><div class="proj-tags"><span class="proj-tag">Exhibition Design</span><span class="proj-tag">International</span></div><div class="proj-year">2016</div></div>
+    <div class="project-row"><div class="proj-num">08</div><div><div class="proj-name">The Tech Interactive — Innovation Exhibits</div><div class="proj-loc">San Jose, California</div></div><div class="proj-tags"><span class="proj-tag">Exhibition Design</span><span class="proj-tag">Interactive</span></div><div class="proj-year">2019</div></div>
+    <div class="project-row"><div class="proj-num">09</div><div><div class="proj-name">Alcatraz Life on the Rock — National Tour</div><div class="proj-loc">United States · Traveling Exhibition</div></div><div class="proj-tags"><span class="proj-tag">Exhibition Design</span><span class="proj-tag">Project Mgmt</span></div><div class="proj-year">2019</div></div>
+    <div class="project-row"><div class="proj-num">10</div><div><div class="proj-name">Alcatraz Landing Heritage Visitor Experience</div><div class="proj-loc">San Francisco, California</div></div><div class="proj-tags"><span class="proj-tag">Exhibition Design</span><span class="proj-tag">Experience Design</span></div><div class="proj-year">2016</div></div>
+    <div class="project-row"><div class="proj-num">11</div><div><div class="proj-name">Children's Museum of Indianapolis</div><div class="proj-loc">Indianapolis, Indiana</div></div><div class="proj-tags"><span class="proj-tag">Exhibition Design</span><span class="proj-tag">Interactive</span></div><div class="proj-year">2013</div></div>
+    <div class="project-row"><div class="proj-num">12</div><div><div class="proj-name">Discovery Science Center</div><div class="proj-loc">Orange County, California</div></div><div class="proj-tags"><span class="proj-tag">Master Planning</span><span class="proj-tag">Feasibility</span></div><div class="proj-year">2013</div></div>
+    <div class="project-row"><div class="proj-num">13</div><div><div class="proj-name">City of McDonough — African American Museum</div><div class="proj-loc">McDonough, Georgia</div></div><div class="proj-tags"><span class="proj-tag">Master Planning</span><span class="proj-tag">Strategic Planning</span></div><div class="proj-year">2019</div></div>
+    <div class="project-row"><div class="proj-num">14</div><div><div class="proj-name">Cade Museum — STEAM Music Concept</div><div class="proj-loc">Gainesville, Florida</div></div><div class="proj-tags"><span class="proj-tag">Master Planning</span><span class="proj-tag">STEAM</span></div><div class="proj-year">2017</div></div>
+    <div class="project-row"><div class="proj-num">15</div><div><div class="proj-name">Children's Museum of Manhattan</div><div class="proj-loc">New York, New York</div></div><div class="proj-tags"><span class="proj-tag">Exhibition Design</span><span class="proj-tag">Interactive</span></div><div class="proj-year">2012</div></div>
+  </div>
+  <p style="margin-top:14px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--mid);">+ 25 additional projects · museumplanning.com/projects</p>
+</section>
+
+<!-- MVI -->
+<section class="section section-alt">
+  <div class="eyebrow">Museum Vitality Index</div>
+  <h2 class="sec-title">Measuring What <em>Actually Matters.</em></h2>
+  <p class="sec-intro">A proprietary 0–100 composite scoring framework where every metric is normalized for institutional size. A $500K museum with strong ratios can outrank a $25M institution.</p>
+  <div class="mvi-cats">
+    <div class="mvi-cat"><div class="mvi-cat-num">01</div><div class="mvi-cat-title">Visitor Experience</div><div class="mvi-cat-desc">TripAdvisor &amp; Google ratings weighted for volume. Management response rate.</div></div>
+    <div class="mvi-cat"><div class="mvi-cat-num">02</div><div class="mvi-cat-title">Digital Presence</div><div class="mvi-cat-desc">Instagram followers per $1M operating budget. Posting consistency.</div></div>
+    <div class="mvi-cat"><div class="mvi-cat-num">03</div><div class="mvi-cat-title">Financial Health</div><div class="mvi-cat-desc">Revenue per visitor. Surplus % of revenue. Endowment ratio.</div></div>
+    <div class="mvi-cat"><div class="mvi-cat-num">04</div><div class="mvi-cat-title">Community Impact</div><div class="mvi-cat-desc">Visitors per local capita. Programming breadth. AAM accreditation.</div></div>
+    <div class="mvi-cat"><div class="mvi-cat-num">05</div><div class="mvi-cat-title">Institutional Strength</div><div class="mvi-cat-desc">Years operating. Collection depth normalized for size.</div></div>
+  </div>
+  <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:8px;">Live Example — Connecticut River Museum · Essex, CT · FY2024</p>
+  <div class="mvi-panel">
+    <div class="mvi-score-col"><div class="mvi-score-ey">MVI Score</div><div><span class="mvi-score-n">79</span><span class="mvi-score-d">/100</span></div><div class="mvi-g">B+ · Strong</div></div>
+    <div class="mvi-bars-col">
+      <div class="brow"><div class="bm"><span class="bn">Visitor Experience</span><span class="bs">16/20</span></div><div class="bt"><div class="bf" style="width:80%"></div></div></div>
+      <div class="brow"><div class="bm"><span class="bn">Digital Presence</span><span class="bs">17/20</span></div><div class="bt"><div class="bf" style="width:85%"></div></div></div>
+      <div class="brow"><div class="bm"><span class="bn">Financial Health</span><span class="bs">15/20</span></div><div class="bt"><div class="bf" style="width:75%"></div></div></div>
+      <div class="brow"><div class="bm"><span class="bn">Community Impact</span><span class="bs">16/20</span></div><div class="bt"><div class="bf" style="width:80%"></div></div></div>
+      <div class="brow"><div class="bm"><span class="bn">Institutional Strength</span><span class="bs">15/20</span></div><div class="bt"><div class="bf" style="width:75%"></div></div></div>
+    </div>
+    <div class="mvi-ins-col">
+      <div class="mvi-ins-lbl">Key Findings</div>
+      <div class="ins"><div class="ins-n">3.6×</div><div class="ins-d">Instagram reach vs. Mystic Seaport per $1M budget</div></div>
+      <div class="ins"><div class="ins-n">5 yrs</div><div class="ins-d">Consecutive operating surplus including pandemic</div></div>
+      <div class="ins"><div class="ins-n">14.9%</div><div class="ins-d">Net surplus as % of revenue FY2024</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BACK COVER -->
+<section class="back-cover">
+  <div class="eyebrow">Start a Conversation</div>
+  <h2>Every museum begins<br>with a <em>conversation.</em></h2>
+  <p>One hour. No cost. No obligation. Tell us where you are and what you are trying to build — whether that is a feasibility question, a capital campaign, a historic building looking for a mission, or a collection that has never been seen by the public. Mark is personally involved in every engagement and ready to begin within two weeks of an executed agreement.</p>
+  <div class="contact-row">
+    <div><div class="ci-label">Phone</div><div class="ci-val">415-794-5252</div></div>
+    <div><div class="ci-label">Email</div><div class="ci-val">mark@museumplanning.com</div></div>
+    <div><div class="ci-label">Website</div><div class="ci-val">museumplanning.com</div></div>
+    <div><div class="ci-label">Offices</div><div class="ci-val" style="font-size:13px;">New York · Mexico City · Worldwide</div></div>
+  </div>
+  <div class="back-foot">
+    <span>Museum Planning LLC · 2026</span>
+    <span>Capabilities Overview · For Prospective Clients</span>
+    <span>museumplanning.com</span>
+  </div>
+</section>
+
+<footer>
+  <span>Museum Planning LLC · <a href="index.html">museumplanning.com</a></span>
+  <span><a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a> · 415-794-5252</span>
+  <span>© 2026 Museum Planning LLC</span>
+</footer>
+
+<script src="assets/nav-mobile.js" defer></script>
+</body>
+</html>

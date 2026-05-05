@@ -2,23 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Convergence Era — Mark Walhimer</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convergence Era — Museum Planning LLC</title>
+<meta name="description" content="Industrial Design, Artificial Intelligence, and the Transformation of Cultural Systems. A white paper by Mark Walhimer, Museum Planning LLC.">
+<link rel="canonical" href="https://museumplanning.com/convergence-era.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --ink:    #12100E;
-  --paper:  #F8F5EF;
-  --deep:   #1A1610;
-  --red:    #8C2018;
-  --gold:   #B8912A;
-  --rule:   #D4C5A9;
-  --mid:    #5C5548;
-  --light:  #EDE8DE;
+  --ink:    #1A1A1A;
+  --paper:  #F8F4EC;
+  --deep:   #111C27;
+  --red:    #C9A84C;
+  --gold:   #C9A84C;
+  --gold-lt:#E8D099;
+  --rule:   #D4C8B0;
+  --mid:    #5A5A5A;
+  --light:  #F8F4EC;
   --serif:  'Playfair Display', Georgia, serif;
   --mono:   'DM Mono', monospace;
-  --sans:   'Inter', system-ui, sans-serif;
+  --sans:   'Lato', sans-serif;
 }
 
 /* ── PAGE SETUP — LANDSCAPE ── */
@@ -29,11 +33,66 @@
 
 body {
   font-family: var(--sans);
-  background: #555;
+  background: #e8e4dc;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
   margin: 0;
   padding: 0;
+}
+
+/* Site nav — matches museumplanning.com + nav-mobile.css */
+nav.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--deep);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  z-index: 400;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+nav.site-nav .nav-logo {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+nav.site-nav .nav-logo span { color: var(--gold); }
+nav.site-nav .nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  align-items: center;
+}
+nav.site-nav .nav-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+nav.site-nav .nav-links a:hover { color: var(--gold); }
+nav.site-nav .nav-cta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep) !important;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+nav.site-nav .nav-cta:hover { background: var(--gold-lt); }
+@media (max-width: 900px) {
+  nav.site-nav { padding: 0 24px; }
 }
 
 /* ── RESPONSIVE SCALE WRAPPER ── */
@@ -113,7 +172,7 @@ body {
   font-family: var(--serif);
   font-size: 44pt;
   font-weight: 900;
-  color: #F0EBE0;
+  color: #ffffff;
   line-height: 0.9;
   letter-spacing: -0.03em;
 }
@@ -130,7 +189,7 @@ body {
   font-family: var(--serif);
   font-style: italic;
   font-size: 13pt;
-  color: rgba(240,235,224,0.55);
+  color: rgba(255,255,255,0.5);
   margin-top: 0.15in;
   line-height: 1.5;
   max-width: 4in;
@@ -140,12 +199,12 @@ body {
   font-family: var(--mono);
   font-size: 7.5pt;
   letter-spacing: 0.06em;
-  color: rgba(240,235,224,0.4);
+  color: rgba(255,255,255,0.35);
   line-height: 2.1;
 }
 
 .cover-author-block strong {
-  color: rgba(240,235,224,0.85);
+  color: rgba(255,255,255,0.85);
   font-weight: 500;
   display: block;
   font-size: 9pt;
@@ -172,7 +231,7 @@ body {
   font-size: 5.5pt;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(240,235,224,0.3);
+  color: rgba(255,255,255,0.3);
   margin-bottom: 8pt;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   padding-bottom: 5pt;
@@ -197,7 +256,7 @@ body {
 .toc-title {
   font-family: var(--mono);
   font-size: 7.5pt;
-  color: rgba(240,235,224,0.55);
+  color: rgba(255,255,255,0.5);
   flex: 1;
   letter-spacing: 0.02em;
 }
@@ -209,7 +268,7 @@ body {
 .toc-pg {
   font-family: var(--mono);
   font-size: 6pt;
-  color: rgba(240,235,224,0.22);
+  color: rgba(255,255,255,0.22);
 }
 
 .cover-watermark {
@@ -264,7 +323,7 @@ body {
   font-family: var(--mono);
   font-size: 6pt;
   letter-spacing: 0.12em;
-  color: rgba(240,235,224,0.22);
+  color: rgba(255,255,255,0.22);
 }
 
 /* main content area */
@@ -353,7 +412,7 @@ h3 {
 p.body {
   font-size: 8.5pt;
   line-height: 1.72;
-  color: #2E2820;
+  color: #2a2a2a;
   margin-bottom: 7pt;
 }
 
@@ -416,7 +475,7 @@ p.body strong { color: var(--ink); font-weight: 600; }
 .callout p {
   font-size: 8pt;
   line-height: 1.65;
-  color: rgba(240,235,224,0.75);
+  color: rgba(255,255,255,0.75);
 }
 
 .callout p strong { color: var(--gold); font-weight: 500; }
@@ -443,7 +502,7 @@ p.body strong { color: var(--ink); font-weight: 600; }
   margin-bottom: 5pt;
   font-size: 8pt;
   line-height: 1.6;
-  color: #2E2820;
+  color: #2a2a2a;
   align-items: flex-start;
 }
 
@@ -555,7 +614,7 @@ p.body strong { color: var(--ink); font-weight: 600; }
   font-size: 16pt;
   font-style: italic;
   line-height: 1.65;
-  color: rgba(240,235,224,0.82);
+  color: rgba(255,255,255,0.8);
   max-width: 8in;
   margin: 0 auto;
   text-align: center;
@@ -574,7 +633,7 @@ p.body strong { color: var(--ink); font-weight: 600; }
   font-size: 7pt;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(240,235,224,0.3);
+  color: rgba(255,255,255,0.3);
 }
 
 /* page number badge */
@@ -601,8 +660,22 @@ p.body strong { color: var(--ink); font-weight: 600; }
   pointer-events: none;
 }
 </style>
+<link rel="stylesheet" href="assets/nav-mobile.css">
 </head>
 <body>
+<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
 <div class="scale-container" id="scaleContainer">
 
 <!-- ══════════════════════════════
@@ -627,12 +700,12 @@ p.body strong { color: var(--ink); font-weight: 600; }
       museumplanning.com · culture-planning.com
     </div>
 
-    <div style="margin-top:0.18in; padding-top:0.14in; border-top:1px solid rgba(184,145,42,0.2);">
-      <div style="font-family:'DM Mono',monospace; font-size:5.5pt; letter-spacing:0.18em; text-transform:uppercase; color:rgba(184,145,42,0.55); margin-bottom:6pt;">Related Works</div>
-      <div style="font-family:'DM Mono',monospace; font-size:7pt; color:rgba(240,235,224,0.38); line-height:1.9;">
-        <span style="color:rgba(240,235,224,0.65);">Designing Museum Experiences</span> · AAM Press<br>
-        <span style="color:rgba(240,235,224,0.65);">Museums 101</span> · Second Edition · Forthcoming<br>
-        <span style="color:rgba(240,235,224,0.65);">Culture Everywhere</span> · Platform · 2026
+    <div style="margin-top:0.18in; padding-top:0.14in; border-top:1px solid rgba(201,168,76,0.2);">
+      <div style="font-family:'DM Mono',monospace; font-size:5.5pt; letter-spacing:0.18em; text-transform:uppercase; color:rgba(201,168,76,0.9); margin-bottom:6pt;">Related Works</div>
+      <div style="font-family:'DM Mono',monospace; font-size:7pt; color:rgba(255,255,255,0.4); line-height:1.9;">
+        <span style="color:rgba(255,255,255,0.75);">Designing Museum Experiences</span> · AAM Press<br>
+        <span style="color:rgba(255,255,255,0.75);">Museums 101</span> · Second Edition · Forthcoming<br>
+        <span style="color:rgba(255,255,255,0.75);">Culture Everywhere</span> · Platform · 2026
       </div>
     </div>
   </div>
@@ -1065,15 +1138,15 @@ p.body strong { color: var(--ink); font-weight: 600; }
 ══════════════════════════════ -->
 <div class="page inner-page closing-bg" style="position:relative;">
   <div class="running-head" style="background:rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.08);">
-    <span class="rh-left" style="color:rgba(255,255,255,0.2);">Convergence Era · Mark Walhimer · 2026</span>
-    <span class="rh-center" style="color:rgba(184,145,42,0.5);">Conclusion</span>
-    <span class="rh-right" style="color:rgba(255,255,255,0.15);">museumplanning.com</span>
+    <span class="rh-left" style="color:rgba(255,255,255,0.3);">Convergence Era · Mark Walhimer · 2026</span>
+    <span class="rh-center" style="color:rgba(201,168,76,0.8);">Conclusion</span>
+    <span class="rh-right" style="color:rgba(255,255,255,0.25);">museumplanning.com</span>
   </div>
 
   <div class="content-area" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
     <div style="text-align:center; margin-bottom:0.3in;">
-      <div style="font-family:'DM Mono',monospace; font-size:6.5pt; letter-spacing:0.25em; text-transform:uppercase; color:rgba(184,145,42,0.5); margin-bottom:0.12in;">Convergence Era · Museum Planning LLC · March 2026</div>
-      <div style="width:40pt; height:2px; background:var(--gold); opacity:0.4; margin:0 auto;"></div>
+      <div style="font-family:'DM Mono',monospace; font-size:6.5pt; letter-spacing:0.25em; text-transform:uppercase; color:rgba(201,168,76,0.8); margin-bottom:0.12in;">Convergence Era · Museum Planning LLC · March 2026</div>
+      <div style="width:40pt; height:2px; background:var(--gold); opacity:0.6; margin:0 auto;"></div>
     </div>
 
     <div class="closing-statement">
@@ -1082,7 +1155,7 @@ p.body strong { color: var(--ink); font-weight: 600; }
 
     <div class="closing-author" style="margin-top:0.3in;">
       Mark Walhimer · Museum Planning LLC · New York · Mexico City<br>
-      museumplanning.com · culture-planning.com · February 2026
+      museumplanning.com · culture-planning.com · March 2026
     </div>
   </div>
 
@@ -1117,5 +1190,6 @@ window.addEventListener('resize', scalePages);
 scalePages();
 </script>
 
+<script src="assets/nav-mobile.js" defer></script>
 </body>
 </html>
