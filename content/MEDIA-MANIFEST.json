@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "base_removed": "https://www.museumplanning.com/wp-content/uploads/",
+    "assets_copied": 60,
+    "html_files_modified": 29,
+    "external_wp_pdf_urls_left_unchanged": [
+      "https://www.aam-us.org/wp-content/uploads/2017/12/Developing-a-Strategic-Institutional-Plan-2018.pdf",
+      "https://www.aim-museums.co.uk/wp-content/uploads/2017/03/Successfully-Setting-up-a-New-Museum-2017.pdf"
+    ]
+  },
+  "assets": [
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2004/04/2020-06-06-12.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2004/04/2020-06-06-12.png",
+      "repo_path": "content/uploads/2004/04/2020-06-06-12.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2012/08/TMTE1.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2012/08/TMTE1.jpeg",
+      "repo_path": "content/uploads/2012/08/TMTE1.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2012/08/soundsfun2.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2012/08/soundsfun2.jpeg",
+      "repo_path": "content/uploads/2012/08/soundsfun2.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2013/08/2.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2013/08/2.jpg",
+      "repo_path": "content/uploads/2013/08/2.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2013/08/cube.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2013/08/cube.jpg",
+      "repo_path": "content/uploads/2013/08/cube.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2013/08/muzeo2.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2013/08/muzeo2.jpg",
+      "repo_path": "content/uploads/2013/08/muzeo2.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2013/08/pretendcity1.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2013/08/pretendcity1.jpg",
+      "repo_path": "content/uploads/2013/08/pretendcity1.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2015/04/Museums_101.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2015/04/Museums_101.png",
+      "repo_path": "content/uploads/2015/04/Museums_101.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2015/06/Science-Museum-Website-Design-1400x839.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2015/06/Science-Museum-Website-Design-1400x839.jpg",
+      "repo_path": "content/uploads/2015/06/Science-Museum-Website-Design-1400x839.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2016/03/dino.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2016/03/dino.png",
+      "repo_path": "content/uploads/2016/03/dino.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2016/10/DSC_0081.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2016/10/DSC_0081.jpg",
+      "repo_path": "content/uploads/2016/10/DSC_0081.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2016/10/IMG_0708-1200x2133.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2016/10/IMG_0708-1200x2133.jpg",
+      "repo_path": "content/uploads/2016/10/IMG_0708-1200x2133.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2016/10/IMG_0935-1200x900.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2016/10/IMG_0935-1200x900.jpg",
+      "repo_path": "content/uploads/2016/10/IMG_0935-1200x900.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2016/10/ipad_tables-1200x1392.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2016/10/ipad_tables-1200x1392.jpg",
+      "repo_path": "content/uploads/2016/10/ipad_tables-1200x1392.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2017/06/camera3-1200x600.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2017/06/camera3-1200x600.jpg",
+      "repo_path": "content/uploads/2017/06/camera3-1200x600.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2019/04/0044-1400x700.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2019/04/0044-1400x700.jpg",
+      "repo_path": "content/uploads/2019/04/0044-1400x700.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2019/04/MIDE.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2019/04/MIDE.jpg",
+      "repo_path": "content/uploads/2019/04/MIDE.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2019/05/IMG_7010_o-1400x786.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2019/05/IMG_7010_o-1400x786.jpg",
+      "repo_path": "content/uploads/2019/05/IMG_7010_o-1400x786.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2019/07/JT2A3715-1400x933.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2019/07/JT2A3715-1400x933.jpg",
+      "repo_path": "content/uploads/2019/07/JT2A3715-1400x933.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-17-at-10.44.31-PM-1400x706.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2019/07/Screen-Shot-2019-07-17-at-10.44.31-PM-1400x706.jpg",
+      "repo_path": "content/uploads/2019/07/Screen-Shot-2019-07-17-at-10.44.31-PM-1400x706.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/06/Designing-Museum-Experiences-1400x2000.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/06/Designing-Museum-Experiences-1400x2000.jpg",
+      "repo_path": "content/uploads/2021/06/Designing-Museum-Experiences-1400x2000.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/12/001.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/12/001.png",
+      "repo_path": "content/uploads/2021/12/001.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/12/002.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/12/002.png",
+      "repo_path": "content/uploads/2021/12/002.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/12/003.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/12/003.png",
+      "repo_path": "content/uploads/2021/12/003.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/12/005.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/12/005.png",
+      "repo_path": "content/uploads/2021/12/005.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/12/exterior0001-1400x925.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/12/exterior0001-1400x925.png",
+      "repo_path": "content/uploads/2021/12/exterior0001-1400x925.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/12/image-C.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/12/image-C.png",
+      "repo_path": "content/uploads/2021/12/image-C.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/12/image-F.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/12/image-F.png",
+      "repo_path": "content/uploads/2021/12/image-F.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/12/studio3.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/12/studio3.jpeg",
+      "repo_path": "content/uploads/2021/12/studio3.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2021/12/unnamed-1.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2021/12/unnamed-1.png",
+      "repo_path": "content/uploads/2021/12/unnamed-1.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2023/02/Desert1.webp",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2023/02/Desert1.webp",
+      "repo_path": "content/uploads/2023/02/Desert1.webp"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2023/02/Desert2.webp",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2023/02/Desert2.webp",
+      "repo_path": "content/uploads/2023/02/Desert2.webp"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2023/02/Ext_Frontal0001.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2023/02/Ext_Frontal0001.png",
+      "repo_path": "content/uploads/2023/02/Ext_Frontal0001.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2023/02/Int_tables20000.webp",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2023/02/Int_tables20000.webp",
+      "repo_path": "content/uploads/2023/02/Int_tables20000.webp"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2023/02/image-5-copy-2.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2023/02/image-5-copy-2.png",
+      "repo_path": "content/uploads/2023/02/image-5-copy-2.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2023/02/image-5-copy-4-1400x643.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2023/02/image-5-copy-4-1400x643.png",
+      "repo_path": "content/uploads/2023/02/image-5-copy-4-1400x643.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2023/02/image-5-copy-4.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2023/02/image-5-copy-4.png",
+      "repo_path": "content/uploads/2023/02/image-5-copy-4.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg",
+      "repo_path": "content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/Howard-4.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/Howard-4.png",
+      "repo_path": "content/uploads/2025/08/Howard-4.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/Howard_front-1-1400x788.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/Howard_front-1-1400x788.png",
+      "repo_path": "content/uploads/2025/08/Howard_front-1-1400x788.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/Howard_front-1.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/Howard_front-1.png",
+      "repo_path": "content/uploads/2025/08/Howard_front-1.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/Howard_tables.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/Howard_tables.png",
+      "repo_path": "content/uploads/2025/08/Howard_tables.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/Howard_ticket.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/Howard_ticket.png",
+      "repo_path": "content/uploads/2025/08/Howard_ticket.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/IMG_5792.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/IMG_5792.jpeg",
+      "repo_path": "content/uploads/2025/08/IMG_5792.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/IMG_5794.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/IMG_5794.jpeg",
+      "repo_path": "content/uploads/2025/08/IMG_5794.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/IMG_5797-1400x1050.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/IMG_5797-1400x1050.jpeg",
+      "repo_path": "content/uploads/2025/08/IMG_5797-1400x1050.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/IMG_5797.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/IMG_5797.jpeg",
+      "repo_path": "content/uploads/2025/08/IMG_5797.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/IMG_5869.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/IMG_5869.jpeg",
+      "repo_path": "content/uploads/2025/08/IMG_5869.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/IMG_6314.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/IMG_6314.jpeg",
+      "repo_path": "content/uploads/2025/08/IMG_6314.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2025/08/Untitled.png",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2025/08/Untitled.png",
+      "repo_path": "content/uploads/2025/08/Untitled.png"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_2400-1-1030x773.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_2400-1-1030x773.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_2400-1-1030x773.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_2419-1400x1867.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_2419-1400x1867.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_2419-1400x1867.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_2648-1030x773.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_2648-1030x773.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_2648-1030x773.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_2972-773x1030.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_2972-773x1030.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_2972-773x1030.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_3578-1030x773.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_3578-1030x773.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_3578-1030x773.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_4038-1030x773.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_4038-1030x773.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_4038-1030x773.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_4039-773x1030.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_4039-773x1030.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_4039-773x1030.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_4146-1-773x1030.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_4146-1-773x1030.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_4146-1-773x1030.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_4158-2-1030x773.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_4158-2-1030x773.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_4158-2-1030x773.jpeg"
+    },
+    {
+      "url": "https://www.museumplanning.com/wp-content/uploads/2026/02/IMG_4694-1-1030x773.jpeg",
+      "copied_from": "/Users/markwalhimer/Desktop/uploads/2026/02/IMG_4694-1-1030x773.jpeg",
+      "repo_path": "content/uploads/2026/02/IMG_4694-1-1030x773.jpeg"
+    }
+  ]
+}
