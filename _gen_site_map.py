@@ -1,0 +1,600 @@
+#!/usr/bin/env python3
+"""Generate site-map.html and sitemap.xml from repo HTML — run from repo root."""
+from __future__ import annotations
+
+import json
+import re
+import xml.etree.ElementTree as ET
+from datetime import date
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+BASE = "https://museumplanning.com"
+LASTMOD = date.today().isoformat()
+
+TITLE_RE = re.compile(r"<title>([^<]+)</title>", re.I)
+META_DESC_RE = re.compile(
+    r'<meta\s+name="description"\s+content="([^"]*)"', re.I
+)
+
+
+def title_from_slug(slug: str) -> str:
+    return " ".join(w.capitalize() for w in slug.replace(".html", "").split("-"))
+
+
+def strip_suffix(title: str) -> str:
+    return re.sub(
+        r"\s*[—–-]\s*Museum Planning LLC\s*$", "", title.strip(), flags=re.I
+    )
+
+
+def extract_meta(path: Path) -> tuple[str, str]:
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    tm = TITLE_RE.search(text)
+    title = strip_suffix(tm.group(1)) if tm else title_from_slug(path.stem)
+    dm = META_DESC_RE.search(text)
+    desc = dm.group(1).strip() if dm else f"Museum Planning LLC — {title}."
+    return title, desc
+
+
+def sort_key(rel: str) -> tuple:
+    order = {
+        "index.html": 0,
+        "museum-planning-services.html": 1,
+        "museum-planning-projects.html": 2,
+        "museum-planning-about.html": 3,
+        "museum-planning-contact.html": 4,
+        "museum-school/index.html": 5,
+        "museum-school/how-to-start-a-museum.html": 6,
+        "museum-school/what-is-a-museum-feasibility-study.html": 7,
+        "museum-school/what-is-a-museum-master-plan.html": 8,
+        "museum-vitality-index.html": 9,
+        "Museum_Planning_LLC_Capabilities.html": 10,
+        "convergence-era.html": 11,
+        "style-guide.html": 98,
+        "site-map.html": 99,
+    }
+    return (order.get(rel, 50), rel)
+
+
+def url_priority(rel: str) -> tuple[str, str]:
+    if rel == "index.html":
+        return "weekly", "1.0"
+    if rel in {
+        "museum-planning-services.html",
+        "museum-planning-projects.html",
+        "museum-planning-about.html",
+        "museum-planning-contact.html",
+        "museum-school/index.html",
+    }:
+        return "monthly", "0.9"
+    if rel.startswith("museum-school/"):
+        return "monthly", "0.85"
+    if rel in (
+        "museum-vitality-index.html",
+        "Museum_Planning_LLC_Capabilities.html",
+        "convergence-era.html",
+    ):
+        return "monthly", "0.8"
+    if rel.startswith("projects/"):
+        return "monthly", "0.72"
+    return "monthly", "0.45"
+
+
+def page_type(rel: str) -> str:
+    if rel == "index.html":
+        return "Home"
+    if rel.startswith("museum-school/"):
+        return "Museum School"
+    if rel.startswith("projects/"):
+        return "Project"
+    if rel.startswith("museum-planning-"):
+        return rel.replace("museum-planning-", "").replace(".html", "").title()
+    if rel == "site-map.html":
+        return "SEO"
+    if rel == "style-guide.html":
+        return "Guide"
+    return "Page"
+
+
+html_files: list[str] = []
+for p in sorted(ROOT.rglob("*.html")):
+    rel = p.relative_to(ROOT).as_posix()
+    if rel.startswith("documents/"):
+        continue
+    html_files.append(rel)
+
+html_files.sort(key=sort_key)
+
+
+def build_overlay_pages() -> list[dict]:
+    out: list[dict] = []
+    for rel in html_files:
+        path = ROOT / rel
+        title, desc = extract_meta(path)
+        out.append(
+            {
+                "type": page_type(rel),
+                "title": title,
+                "desc": desc,
+                "url": rel,
+            }
+        )
+    return out
+
+
+def loc_for(rel: str) -> str:
+    return BASE + "/" + rel if rel != "index.html" else BASE + "/"
+
+
+def write_sitemap() -> None:
+    urlset = ET.Element(
+        "urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    )
+    for rel in html_files:
+        url_el = ET.SubElement(urlset, "url")
+        ET.SubElement(url_el, "loc").text = loc_for(rel)
+        ET.SubElement(url_el, "lastmod").text = LASTMOD
+        freq, pri = url_priority(rel)
+        ET.SubElement(url_el, "changefreq").text = freq
+        ET.SubElement(url_el, "priority").text = pri
+    tree = ET.ElementTree(urlset)
+    ET.indent(tree, space="  ")
+    tree.write(
+        ROOT / "sitemap.xml",
+        encoding="utf-8",
+        xml_declaration=True,
+        default_namespace=None,
+    )
+
+
+def projects_li_markup(rel: str) -> str:
+    path = ROOT / rel
+    title, _ = extract_meta(path)
+    return f'        <li><a href="{rel}">{title}</a></li>'
+
+
+def main() -> None:
+    overlay = build_overlay_pages()
+    pages_json = json.dumps(overlay, ensure_ascii=False, indent=2)
+
+    project_rows = [r for r in html_files if r.startswith("projects/")]
+    projects_ul = "\n".join(projects_li_markup(r) for r in sorted(project_rows))
+
+    head_and_styles = r"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Map — Museum Planning LLC</title>
+<meta name="description" content="Human-readable map of museumplanning.com pages, plus links to sitemap.xml and robots.txt for crawlers.">
+<link rel="canonical" href="https://museumplanning.com/site-map.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --deep: #111C27;
+  --gold: #C9A84C;
+  --gold-lt: #E8D099;
+  --cream: #F8F4EC;
+  --ink: #1A1A1A;
+  --mid: #5A5A5A;
+  --rule: #D4C8B0;
+  --serif: 'Playfair Display', Georgia, serif;
+  --mono: 'DM Mono', monospace;
+  --sans: 'Lato', system-ui, sans-serif;
+}
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+nav.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--deep);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  z-index: 100;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  text-decoration: none;
+}
+.nav-links a:hover, .nav-links a.active { color: rgba(255,255,255,.9); }
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep) !important;
+  padding: 8px 20px;
+  text-decoration: none;
+}
+.nav-cta:hover { background: var(--gold-lt); }
+.nav-search { display: flex; align-items: center; }
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: rgba(255,255,255,.45);
+  display: flex;
+}
+.search-toggle:hover { color: var(--gold); }
+.search-toggle svg {
+  width: 16px; height: 16px;
+  stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round;
+}
+
+.hero {
+  background: var(--deep);
+  color: #fff;
+  padding: 128px 56px 64px;
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; }
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  margin-bottom: 18px;
+}
+.hero h1 em { color: var(--gold); font-style: italic; }
+.hero p {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+  color: rgba(255,255,255,.56);
+  max-width: 760px;
+}
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 72px 56px 100px; }
+.section {
+  background: #fff;
+  border-top: 3px solid var(--gold);
+  padding: 34px 32px 36px;
+  margin-bottom: 24px;
+}
+.section h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+.section p { color: var(--mid); margin-bottom: 14px; }
+.section ul, .section ol { margin-left: 24px; color: var(--ink); }
+.section li { margin: 7px 0; }
+.kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.projects-box {
+  background: #fff;
+  border-top: 3px solid var(--gold);
+  padding: 34px 32px 40px;
+}
+.projects-box .k {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.projects-box h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+.projects-columns ul {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 2.5rem;
+}
+.projects-columns li { break-inside: avoid; margin: 6px 0; }
+.projects-columns a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.projects-columns a:hover { color: var(--gold); border-color: var(--gold); }
+
+.machine {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--mid);
+  margin-top: 12px;
+}
+
+footer {
+  background: var(--deep);
+  padding: 40px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-logo { font-family: var(--serif); color: rgba(255,255,255,.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 22px; list-style: none; }
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.26);
+  text-decoration: none;
+}
+.footer-links a:hover { color: rgba(255,255,255,.7); }
+.footer-copy { font-family: var(--mono); font-size: 9px; color: rgba(255,255,255,.25); }
+
+.search-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(17,28,39,.97); z-index: 200;
+  flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: 80px 24px 40px;
+}
+.search-overlay.open { display: flex; }
+.search-close {
+  position: absolute; top: 20px; right: 28px;
+  background: none; border: none; color: rgba(255,255,255,.4);
+  font-size: 28px; cursor: pointer; font-family: var(--mono);
+}
+.search-input-wrap {
+  width: 100%; max-width: 680px; border-bottom: 2px solid var(--gold);
+  display: flex; align-items: center; gap: 16px; margin-bottom: 48px;
+}
+.search-input-wrap svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 2; }
+#search-input {
+  flex: 1; background: none; border: none; outline: none;
+  font-family: var(--serif); font-size: clamp(24px, 4vw, 40px);
+  color: #fff; padding: 12px 0;
+}
+.search-results { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 3px; }
+.search-result {
+  background: rgba(255,255,255,.04); padding: 20px 24px; text-decoration: none;
+  border-left: 3px solid transparent; display: block;
+}
+.search-result:hover { border-color: var(--gold); background: rgba(201,168,76,.07); }
+.sr-type { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.sr-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.sr-desc { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
+.search-empty { font-family: var(--serif); font-size: 18px; color: rgba(255,255,255,.35); padding: 12px 0; }
+
+@media (max-width: 900px) {
+  nav.site-nav { padding: 0 24px; }
+  .hero { padding: 112px 24px 56px; }
+  .wrap { padding: 64px 24px 84px; }
+  footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+  .projects-columns ul { columns: 1; }
+}
+</style>
+<link rel="stylesheet" href="assets/nav-mobile.css">
+</head>
+<body>
+"""
+
+    nav = r"""<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+"""
+
+    hero = f"""<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Discovery</div>
+    <h1>Site <em>Map</em></h1>
+    <p>Every public HTML page on museumplanning.com, grouped for humans; machine-readable feeds linked below.</p>
+    <p class="machine">Sitemap last refreshed: {LASTMOD}</p>
+  </div>
+</header>
+"""
+
+    main_open = '<main class="wrap">\n'
+
+    sec_core = """  <section class="section">
+    <div class="kicker">Core</div>
+    <h2>Primary pages</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="museum-planning-services.html">Services</a></li>
+      <li><a href="museum-planning-projects.html">Projects</a></li>
+      <li><a href="museum-planning-about.html">About</a></li>
+      <li><a href="museum-planning-contact.html">Contact</a></li>
+    </ul>
+  </section>
+"""
+
+    sec_school = """  <section class="section">
+    <div class="kicker">Museum School</div>
+    <h2>Guides</h2>
+    <ul>
+      <li><a href="museum-school/index.html">Museum School — overview</a></li>
+      <li><a href="museum-school/how-to-start-a-museum.html">How to start a museum</a></li>
+      <li><a href="museum-school/what-is-a-museum-feasibility-study.html">What is a museum feasibility study</a></li>
+      <li><a href="museum-school/what-is-a-museum-master-plan.html">What is a museum master plan</a></li>
+    </ul>
+  </section>
+"""
+
+    sec_pub = """  <section class="section">
+    <div class="kicker">Publishing &amp; tools</div>
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="museum-vitality-index.html">Museum Vitality Index</a></li>
+      <li><a href="Museum_Planning_LLC_Capabilities.html">Capabilities overview</a></li>
+      <li><a href="convergence-era.html">Convergence era</a></li>
+    </ul>
+  </section>
+"""
+
+    sec_machine = f"""  <section class="section">
+    <div class="kicker">Crawlers</div>
+    <h2>Machine-readable</h2>
+    <p>For search engines: XML sitemap and robots directive (primary domain <strong>museumplanning.com</strong>).</p>
+    <ul>
+      <li><a href="sitemap.xml">sitemap.xml</a></li>
+      <li><a href="robots.txt">robots.txt</a></li>
+    </ul>
+  </section>
+"""
+
+    sec_tools = """  <section class="section">
+    <div class="kicker">Internal</div>
+    <h2>Website maintenance</h2>
+    <ul>
+      <li><a href="style-guide.html">Website style guide</a></li>
+      <li><a href="site-map.html">Site map (this page)</a></li>
+    </ul>
+  </section>
+"""
+
+    projects_box = (
+        """</main>
+
+<div class="wrap" style="padding-top:0;">
+  <div class="projects-box">
+    <div class="k">Portfolio</div>
+    <h2>Project case studies</h2>
+    <p style="color:var(--mid);font-size:15px;margin-top:8px;max-width:720px;">Alphabetical list.</p>
+    <div class="projects-columns">
+      <ul>
+"""
+        + projects_ul
+        + """
+      </ul>
+    </div>
+  </div>
+</div>
+
+"""
+    )
+
+    footer_html = r"""<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li><a href="site-map.html">Site Map</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button type="button" class="search-close" id="searchClose">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+<script>
+const PAGES =
+"""
+    script_tail = r"""const input = document.getElementById("search-input");
+const results = document.getElementById("searchResults");
+const overlay = document.getElementById("searchOverlay");
+document.getElementById("searchToggle").addEventListener("click", () => {
+  overlay.classList.add("open");
+  setTimeout(() => input.focus(), 100);
+});
+document.getElementById("searchClose").addEventListener("click", () => {
+  overlay.classList.remove("open");
+  input.value = "";
+  results.innerHTML = "";
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    overlay.classList.remove("open");
+    input.value = "";
+    results.innerHTML = "";
+  }
+});
+input.addEventListener("input", () => {
+  const q = input.value.toLowerCase().trim();
+  if (!q) { results.innerHTML = ""; return; }
+  const matches = PAGES.filter(p =>
+    p.title.toLowerCase().includes(q) ||
+    p.desc.toLowerCase().includes(q) ||
+    p.type.toLowerCase().includes(q)
+  );
+  if (!matches.length) {
+    results.innerHTML = '<div class="search-empty">No results found.</div>';
+    return;
+  }
+  results.innerHTML = matches.map(p =>
+    `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`
+  ).join("");
+});
+</script>
+<script src="assets/nav-mobile.js" defer></script>
+</body>
+</html>
+"""
+    footer_and_scripts = footer_html + pages_json + script_tail
+
+    parts = [
+        head_and_styles,
+        nav,
+        hero,
+        main_open,
+        sec_core,
+        sec_school,
+        sec_pub,
+        sec_machine,
+        sec_tools,
+        projects_box,
+        footer_and_scripts,
+    ]
+    (ROOT / "site-map.html").write_text("".join(parts), encoding="utf-8")
+    write_sitemap()
+
+
+if __name__ == "__main__":
+    main()

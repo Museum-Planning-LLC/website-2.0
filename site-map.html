@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Map — Museum Planning LLC</title>
+<meta name="description" content="Human-readable map of museumplanning.com pages, plus links to sitemap.xml and robots.txt for crawlers.">
+<link rel="canonical" href="https://museumplanning.com/site-map.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --deep: #111C27;
+  --gold: #C9A84C;
+  --gold-lt: #E8D099;
+  --cream: #F8F4EC;
+  --ink: #1A1A1A;
+  --mid: #5A5A5A;
+  --rule: #D4C8B0;
+  --serif: 'Playfair Display', Georgia, serif;
+  --mono: 'DM Mono', monospace;
+  --sans: 'Lato', system-ui, sans-serif;
+}
+body {
+  font-family: var(--sans);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+nav.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--deep);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+  z-index: 100;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  text-decoration: none;
+}
+.nav-links a:hover, .nav-links a.active { color: rgba(255,255,255,.9); }
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep) !important;
+  padding: 8px 20px;
+  text-decoration: none;
+}
+.nav-cta:hover { background: var(--gold-lt); }
+.nav-search { display: flex; align-items: center; }
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: rgba(255,255,255,.45);
+  display: flex;
+}
+.search-toggle:hover { color: var(--gold); }
+.search-toggle svg {
+  width: 16px; height: 16px;
+  stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round;
+}
+
+.hero {
+  background: var(--deep);
+  color: #fff;
+  padding: 128px 56px 64px;
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; }
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  margin-bottom: 18px;
+}
+.hero h1 em { color: var(--gold); font-style: italic; }
+.hero p {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+  color: rgba(255,255,255,.56);
+  max-width: 760px;
+}
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 72px 56px 100px; }
+.section {
+  background: #fff;
+  border-top: 3px solid var(--gold);
+  padding: 34px 32px 36px;
+  margin-bottom: 24px;
+}
+.section h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+.section p { color: var(--mid); margin-bottom: 14px; }
+.section ul, .section ol { margin-left: 24px; color: var(--ink); }
+.section li { margin: 7px 0; }
+.kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.projects-box {
+  background: #fff;
+  border-top: 3px solid var(--gold);
+  padding: 34px 32px 40px;
+}
+.projects-box .k {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.projects-box h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+.projects-columns ul {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 2.5rem;
+}
+.projects-columns li { break-inside: avoid; margin: 6px 0; }
+.projects-columns a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+.projects-columns a:hover { color: var(--gold); border-color: var(--gold); }
+
+.machine {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--mid);
+  margin-top: 12px;
+}
+
+footer {
+  background: var(--deep);
+  padding: 40px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-logo { font-family: var(--serif); color: rgba(255,255,255,.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 22px; list-style: none; }
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.26);
+  text-decoration: none;
+}
+.footer-links a:hover { color: rgba(255,255,255,.7); }
+.footer-copy { font-family: var(--mono); font-size: 9px; color: rgba(255,255,255,.25); }
+
+.search-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(17,28,39,.97); z-index: 200;
+  flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: 80px 24px 40px;
+}
+.search-overlay.open { display: flex; }
+.search-close {
+  position: absolute; top: 20px; right: 28px;
+  background: none; border: none; color: rgba(255,255,255,.4);
+  font-size: 28px; cursor: pointer; font-family: var(--mono);
+}
+.search-input-wrap {
+  width: 100%; max-width: 680px; border-bottom: 2px solid var(--gold);
+  display: flex; align-items: center; gap: 16px; margin-bottom: 48px;
+}
+.search-input-wrap svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 2; }
+#search-input {
+  flex: 1; background: none; border: none; outline: none;
+  font-family: var(--serif); font-size: clamp(24px, 4vw, 40px);
+  color: #fff; padding: 12px 0;
+}
+.search-results { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 3px; }
+.search-result {
+  background: rgba(255,255,255,.04); padding: 20px 24px; text-decoration: none;
+  border-left: 3px solid transparent; display: block;
+}
+.search-result:hover { border-color: var(--gold); background: rgba(201,168,76,.07); }
+.sr-type { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.sr-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.sr-desc { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
+.search-empty { font-family: var(--serif); font-size: 18px; color: rgba(255,255,255,.35); padding: 12px 0; }
+
+@media (max-width: 900px) {
+  nav.site-nav { padding: 0 24px; }
+  .hero { padding: 112px 24px 56px; }
+  .wrap { padding: 64px 24px 84px; }
+  footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+  .projects-columns ul { columns: 1; }
+}
+</style>
+<link rel="stylesheet" href="assets/nav-mobile.css">
+</head>
+<body>
+<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Discovery</div>
+    <h1>Site <em>Map</em></h1>
+    <p>Every public HTML page on museumplanning.com, grouped for humans; machine-readable feeds linked below.</p>
+    <p class="machine">Sitemap last refreshed: 2026-05-05</p>
+  </div>
+</header>
+<main class="wrap">
+  <section class="section">
+    <div class="kicker">Core</div>
+    <h2>Primary pages</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="museum-planning-services.html">Services</a></li>
+      <li><a href="museum-planning-projects.html">Projects</a></li>
+      <li><a href="museum-planning-about.html">About</a></li>
+      <li><a href="museum-planning-contact.html">Contact</a></li>
+    </ul>
+  </section>
+  <section class="section">
+    <div class="kicker">Museum School</div>
+    <h2>Guides</h2>
+    <ul>
+      <li><a href="museum-school/index.html">Museum School — overview</a></li>
+      <li><a href="museum-school/how-to-start-a-museum.html">How to start a museum</a></li>
+      <li><a href="museum-school/what-is-a-museum-feasibility-study.html">What is a museum feasibility study</a></li>
+      <li><a href="museum-school/what-is-a-museum-master-plan.html">What is a museum master plan</a></li>
+    </ul>
+  </section>
+  <section class="section">
+    <div class="kicker">Publishing &amp; tools</div>
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="museum-vitality-index.html">Museum Vitality Index</a></li>
+      <li><a href="Museum_Planning_LLC_Capabilities.html">Capabilities overview</a></li>
+      <li><a href="convergence-era.html">Convergence era</a></li>
+    </ul>
+  </section>
+  <section class="section">
+    <div class="kicker">Crawlers</div>
+    <h2>Machine-readable</h2>
+    <p>For search engines: XML sitemap and robots directive (primary domain <strong>museumplanning.com</strong>).</p>
+    <ul>
+      <li><a href="sitemap.xml">sitemap.xml</a></li>
+      <li><a href="robots.txt">robots.txt</a></li>
+    </ul>
+  </section>
+  <section class="section">
+    <div class="kicker">Internal</div>
+    <h2>Website maintenance</h2>
+    <ul>
+      <li><a href="style-guide.html">Website style guide</a></li>
+      <li><a href="site-map.html">Site map (this page)</a></li>
+    </ul>
+  </section>
+</main>
+
+<div class="wrap" style="padding-top:0;">
+  <div class="projects-box">
+    <div class="k">Portfolio</div>
+    <h2>Project case studies</h2>
+    <p style="color:var(--mid);font-size:15px;margin-top:8px;max-width:720px;">Alphabetical list.</p>
+    <div class="projects-columns">
+      <ul>
+        <li><a href="projects/academy-studios.html">Academy Studios</a></li>
+        <li><a href="projects/alcatraz-landing.html">Alcatraz Landing</a></li>
+        <li><a href="projects/alcatraz-traveling-exhibition.html">Alcatraz: Life on the Rock — Traveling Exhibition</a></li>
+        <li><a href="projects/arizona-natural-resources-museum.html">Arizona Natural Resources Museum (ANRM)</a></li>
+        <li><a href="projects/cade-museum-steam.html">Cade Museum — STEAM Music Concept</a></li>
+        <li><a href="projects/childrens-museum-indianapolis-sculpture.html">Children's Museum of Indianapolis — Sculpture</a></li>
+        <li><a href="projects/childrens-museum-indianapolis.html">Children's Museum of Indianapolis</a></li>
+        <li><a href="projects/childrens-museum-manhattan.html">Children's Museum of Manhattan</a></li>
+        <li><a href="projects/city-of-mcdonough-georgia.html">City of McDonough — African American Museum</a></li>
+        <li><a href="projects/designing-museum-experiences.html">Designing Museum Experiences</a></li>
+        <li><a href="projects/discovery-center-murfree-spring.html">Discovery Center at Murfree Spring</a></li>
+        <li><a href="projects/discovery-science-center.html">Discovery Science Center</a></li>
+        <li><a href="projects/frehner-museum-southern-utah-university.html">Frehner Museum of Natural History</a></li>
+        <li><a href="projects/howard-natural-history-museum.html">Howard Natural History Museum</a></li>
+        <li><a href="projects/interactive-african-american-museum.html">Interactive African American Museum & Cultural Center</a></li>
+        <li><a href="projects/interactive-nature-conservation-museum.html">Interactive Nature Conservation Museum</a></li>
+        <li><a href="projects/mide-museo-interactivo-de-economia.html">MIDE — Museo Interactivo de Economía</a></li>
+        <li><a href="projects/museo-memoria-y-tolerancia.html">Museo Memoria y Tolerancia</a></li>
+        <li><a href="projects/museum-of-arts-and-sciences.html">Museum of Arts and Sciences</a></li>
+        <li><a href="projects/museums-101.html">Museums 101</a></li>
+        <li><a href="projects/muzeo.html">Muzeo</a></li>
+        <li><a href="projects/pge-look-forward-bus.html">PG&E Look Forward Bus</a></li>
+        <li><a href="projects/pretend-city-childrens-museum.html">Pretend City, Children's Museum of Orange County</a></li>
+        <li><a href="projects/san-diego-childrens-museum.html">San Diego Children's Museum</a></li>
+        <li><a href="projects/steam-museum-website.html">STEAM Museum Website & Digital Experience</a></li>
+        <li><a href="projects/the-tech-interactive.html">The Tech Interactive — Innovation Exhibits</a></li>
+        <li><a href="projects/toyota-mobile-hybrid-experience.html">Toyota Mobile Hybrid Experience</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li><a href="site-map.html">Site Map</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button type="button" class="search-close" id="searchClose">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+<script>
+const PAGES =
+[
+  {
+    "type": "Home",
+    "title": "Museum Planning LLC — We Build Museums",
+    "desc": "Forty museums. One methodology. Feasibility through opening day — with Mark Walhimer personally involved in every engagement.",
+    "url": "index.html"
+  },
+  {
+    "type": "Services",
+    "title": "Services",
+    "desc": "From feasibility study through opening day. Museum Planning LLC guides cultural institutions through every stage of development — forty museums, one methodology.",
+    "url": "museum-planning-services.html"
+  },
+  {
+    "type": "Projects",
+    "title": "Projects",
+    "desc": "Forty museums across the United States and worldwide. Feasibility through opening day.",
+    "url": "museum-planning-projects.html"
+  },
+  {
+    "type": "About",
+    "title": "About",
+    "desc": "Mark Walhimer is the managing partner of Museum Planning LLC. Forty museums. Twenty-five years. One methodology — from feasibility through opening day.",
+    "url": "museum-planning-about.html"
+  },
+  {
+    "type": "Contact",
+    "title": "Contact",
+    "desc": "Start a conversation with Museum Planning LLC. Typical consulting ranges, phone, and message — feasibility through opening day.",
+    "url": "museum-planning-contact.html"
+  },
+  {
+    "type": "Museum School",
+    "title": "Museum School",
+    "desc": "Free guides on how to start a museum, what a feasibility study is, what a master plan is, and more — from Mark Walhimer of Museum Planning LLC.",
+    "url": "museum-school/index.html"
+  },
+  {
+    "type": "Museum School",
+    "title": "How to Start a Museum",
+    "desc": "A complete guide to starting a museum — the 10 steps, cost benchmarks, common mistakes, and expert resources from Mark Walhimer of Museum Planning LLC.",
+    "url": "museum-school/how-to-start-a-museum.html"
+  },
+  {
+    "type": "Museum School",
+    "title": "What is a Museum Feasibility Study?",
+    "desc": "A museum feasibility study tells you whether a proposed museum can operate sustainably before capital is committed. Here's what it covers, how it works, and why it matters.",
+    "url": "museum-school/what-is-a-museum-feasibility-study.html"
+  },
+  {
+    "type": "Museum School",
+    "title": "What is a Museum Master Plan?",
+    "desc": "A museum master plan translates institutional vision into a building program, visitor experience framework, and capital campaign strategy. Here's what it is, what it contains, and why it matters.",
+    "url": "museum-school/what-is-a-museum-master-plan.html"
+  },
+  {
+    "type": "Page",
+    "title": "Museum Vitality Index — Museum Health Scoring Framework | Museum Planning LLC",
+    "desc": "The Museum Vitality Index is a 0–100 composite scoring framework that benchmarks museums of all sizes using size-normalized metrics. A $500K museum with strong ratios can outrank a $25M institution.",
+    "url": "museum-vitality-index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Museum Planning LLC — Capabilities Overview 2026",
+    "desc": "Capabilities overview for Museum Planning LLC — feasibility through opening day, methodology, typical fees, selected projects, and the Museum Vitality Index.",
+    "url": "Museum_Planning_LLC_Capabilities.html"
+  },
+  {
+    "type": "Page",
+    "title": "Convergence Era",
+    "desc": "Industrial Design, Artificial Intelligence, and the Transformation of Cultural Systems. A white paper by Mark Walhimer, Museum Planning LLC.",
+    "url": "convergence-era.html"
+  },
+  {
+    "type": "Project",
+    "title": "Academy Studios",
+    "desc": "Academy Studios · United States · Museum Planning LLC",
+    "url": "projects/academy-studios.html"
+  },
+  {
+    "type": "Project",
+    "title": "Alcatraz Landing",
+    "desc": "Alcatraz Landing · San Francisco, California · Museum Planning LLC",
+    "url": "projects/alcatraz-landing.html"
+  },
+  {
+    "type": "Project",
+    "title": "Alcatraz: Life on the Rock — Traveling Exhibition",
+    "desc": "Alcatraz: Life on the Rock — Traveling Exhibition · National Tour · Museum Planning LLC",
+    "url": "projects/alcatraz-traveling-exhibition.html"
+  },
+  {
+    "type": "Project",
+    "title": "Arizona Natural Resources Museum (ANRM)",
+    "desc": "Arizona Natural Resources Museum (ANRM) · University of Arizona · Tucson, Arizona · Museum Planning LLC",
+    "url": "projects/arizona-natural-resources-museum.html"
+  },
+  {
+    "type": "Project",
+    "title": "Cade Museum — STEAM Music Concept",
+    "desc": "Cade Museum — STEAM Music Concept · Gainesville, Florida · Museum Planning LLC",
+    "url": "projects/cade-museum-steam.html"
+  },
+  {
+    "type": "Project",
+    "title": "Children's Museum of Indianapolis — Sculpture",
+    "desc": "Children's Museum of Indianapolis — Sculpture · Indianapolis, Indiana · Museum Planning LLC",
+    "url": "projects/childrens-museum-indianapolis-sculpture.html"
+  },
+  {
+    "type": "Project",
+    "title": "Children's Museum of Indianapolis",
+    "desc": "Children's Museum of Indianapolis · Indianapolis, Indiana · Museum Planning LLC",
+    "url": "projects/childrens-museum-indianapolis.html"
+  },
+  {
+    "type": "Project",
+    "title": "Children's Museum of Manhattan",
+    "desc": "Children's Museum of Manhattan · New York, New York · Museum Planning LLC",
+    "url": "projects/childrens-museum-manhattan.html"
+  },
+  {
+    "type": "Project",
+    "title": "City of McDonough — African American Museum",
+    "desc": "City of McDonough — African American Museum · McDonough, Georgia · Museum Planning LLC",
+    "url": "projects/city-of-mcdonough-georgia.html"
+  },
+  {
+    "type": "Project",
+    "title": "Designing Museum Experiences",
+    "desc": "Designing Museum Experiences · Published 2021 · Museum Planning LLC",
+    "url": "projects/designing-museum-experiences.html"
+  },
+  {
+    "type": "Project",
+    "title": "Discovery Center at Murfree Spring",
+    "desc": "Discovery Center at Murfree Spring · Murfreesboro, Tennessee · Museum Planning LLC",
+    "url": "projects/discovery-center-murfree-spring.html"
+  },
+  {
+    "type": "Project",
+    "title": "Discovery Science Center",
+    "desc": "Discovery Science Center · Orange County, California · Museum Planning LLC",
+    "url": "projects/discovery-science-center.html"
+  },
+  {
+    "type": "Project",
+    "title": "Frehner Museum of Natural History",
+    "desc": "Frehner Museum of Natural History · Southern Utah University · Cedar City, Utah · Museum Planning LLC",
+    "url": "projects/frehner-museum-southern-utah-university.html"
+  },
+  {
+    "type": "Project",
+    "title": "Howard Natural History Museum",
+    "desc": "Howard Natural History Museum · Riverside County, California · Museum Planning LLC",
+    "url": "projects/howard-natural-history-museum.html"
+  },
+  {
+    "type": "Project",
+    "title": "Interactive African American Museum & Cultural Center",
+    "desc": "Interactive African American Museum & Cultural Center · Indiana · Museum Planning LLC",
+    "url": "projects/interactive-african-american-museum.html"
+  },
+  {
+    "type": "Project",
+    "title": "Interactive Nature Conservation Museum",
+    "desc": "Interactive Nature Conservation Museum · United States · Museum Planning LLC",
+    "url": "projects/interactive-nature-conservation-museum.html"
+  },
+  {
+    "type": "Project",
+    "title": "MIDE — Museo Interactivo de Economía",
+    "desc": "MIDE — Museo Interactivo de Economía · Mexico City, Mexico · Museum Planning LLC",
+    "url": "projects/mide-museo-interactivo-de-economia.html"
+  },
+  {
+    "type": "Project",
+    "title": "Museo Memoria y Tolerancia",
+    "desc": "Museo Memoria y Tolerancia · Mexico City, Mexico · Museum Planning LLC",
+    "url": "projects/museo-memoria-y-tolerancia.html"
+  },
+  {
+    "type": "Project",
+    "title": "Museum of Arts and Sciences",
+    "desc": "Museum of Arts and Sciences · Macon, Georgia · Museum Planning LLC",
+    "url": "projects/museum-of-arts-and-sciences.html"
+  },
+  {
+    "type": "Project",
+    "title": "Museums 101",
+    "desc": "Museums 101 · Published 2015 · Museum Planning LLC",
+    "url": "projects/museums-101.html"
+  },
+  {
+    "type": "Project",
+    "title": "Muzeo",
+    "desc": "Muzeo · Anaheim, California · Museum Planning LLC",
+    "url": "projects/muzeo.html"
+  },
+  {
+    "type": "Project",
+    "title": "PG&E Look Forward Bus",
+    "desc": "PG&E Look Forward Bus · California · Museum Planning LLC",
+    "url": "projects/pge-look-forward-bus.html"
+  },
+  {
+    "type": "Project",
+    "title": "Pretend City, Children's Museum of Orange County",
+    "desc": "Pretend City, Children's Museum of Orange County · Irvine, California · Museum Planning LLC",
+    "url": "projects/pretend-city-childrens-museum.html"
+  },
+  {
+    "type": "Project",
+    "title": "San Diego Children's Museum",
+    "desc": "San Diego Children's Museum · San Diego, California · Museum Planning LLC",
+    "url": "projects/san-diego-childrens-museum.html"
+  },
+  {
+    "type": "Project",
+    "title": "STEAM Museum Website & Digital Experience",
+    "desc": "Museum Planning LLC — STEAM Museum Website & Digital Experience.",
+    "url": "projects/steam-museum-website.html"
+  },
+  {
+    "type": "Project",
+    "title": "The Tech Interactive — Innovation Exhibits",
+    "desc": "The Tech Interactive — Innovation Exhibits · San Jose, California · Museum Planning LLC",
+    "url": "projects/the-tech-interactive.html"
+  },
+  {
+    "type": "Project",
+    "title": "Toyota Mobile Hybrid Experience",
+    "desc": "Toyota Mobile Hybrid Experience · United States · Museum Planning LLC",
+    "url": "projects/toyota-mobile-hybrid-experience.html"
+  },
+  {
+    "type": "Guide",
+    "title": "Website Style Guide",
+    "desc": "Museum Planning LLC website style guide for design system, navigation, typography, spacing, and publishing consistency.",
+    "url": "style-guide.html"
+  },
+  {
+    "type": "SEO",
+    "title": "Site Map",
+    "desc": "Human-readable map of museumplanning.com pages, plus links to sitemap.xml and robots.txt for crawlers.",
+    "url": "site-map.html"
+  }
+]const input = document.getElementById("search-input");
+const results = document.getElementById("searchResults");
+const overlay = document.getElementById("searchOverlay");
+document.getElementById("searchToggle").addEventListener("click", () => {
+  overlay.classList.add("open");
+  setTimeout(() => input.focus(), 100);
+});
+document.getElementById("searchClose").addEventListener("click", () => {
+  overlay.classList.remove("open");
+  input.value = "";
+  results.innerHTML = "";
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    overlay.classList.remove("open");
+    input.value = "";
+    results.innerHTML = "";
+  }
+});
+input.addEventListener("input", () => {
+  const q = input.value.toLowerCase().trim();
+  if (!q) { results.innerHTML = ""; return; }
+  const matches = PAGES.filter(p =>
+    p.title.toLowerCase().includes(q) ||
+    p.desc.toLowerCase().includes(q) ||
+    p.type.toLowerCase().includes(q)
+  );
+  if (!matches.length) {
+    results.innerHTML = '<div class="search-empty">No results found.</div>';
+    return;
+  }
+  results.innerHTML = matches.map(p =>
+    `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`
+  ).join("");
+});
+</script>
+<script src="assets/nav-mobile.js" defer></script>
+</body>
+</html>

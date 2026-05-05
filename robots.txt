@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Primary domain — submit this sitemap in Google Search Console
+Sitemap: https://museumplanning.com/sitemap.xml
