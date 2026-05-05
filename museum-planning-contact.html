@@ -5,507 +5,550 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — Museum Planning LLC</title>
 <meta name="description" content="Start a conversation with Museum Planning LLC. Typical consulting rates, phone, and message — feasibility through opening day.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --navy:    #1B2A3B;
-  --deep:    #111C27;
-  --gold:    #C9A84C;
-  --gold-lt: #E8D099;
-  --cream:   #F8F4EC;
-  --warm:    #EDE8DC;
-  --ink:     #1A1A1A;
-  --mid:     #5A5A5A;
-  --rule:    #D4C8B0;
-  --serif:   'Playfair Display', Georgia, serif;
-  --mono:    'DM Mono', monospace;
-  --sans:    'Lato', system-ui, sans-serif;
+  --ink: #18160f;
+  --paper: #efe9df;
+  --warm: #c8b99a;
+  --mid: #9a9088;
+  --accent: #a8864e;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--sans);
-  background: var(--cream);
+  background: var(--paper);
   color: var(--ink);
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes lineGrow {
-  from { width: 0; }
-  to   { width: 48px; }
-}
-
+/* ── Nav (matches live WP contact embed) ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  background: var(--deep); height: 60px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 56px; z-index: 100;
-  border-bottom: 1px solid rgba(201,168,76,.15);
-}
-.nav-logo { font-family: var(--serif); font-size: 15px; color: white; text-decoration: none; }
-.nav-logo span { color: var(--gold); }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px;
-  text-transform: uppercase; color: rgba(255,255,255,.45);
-  text-decoration: none; transition: color .2s;
-}
-.nav-links a:hover { color: rgba(255,255,255,.9); }
-.nav-links a.active { color: rgba(255,255,255,.9); }
-.nav-cta {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
-  text-transform: uppercase; background: var(--gold);
-  color: var(--deep) !important; padding: 8px 20px; text-decoration: none;
-  transition: background .2s;
-}
-.nav-cta:hover { background: var(--gold-lt) !important; }
-
-/* Hero */
-.hero {
-  background: var(--deep);
-  padding: 130px 56px 56px;
-  position: relative;
-  overflow: hidden;
-  min-height: 52vh;
-}
-.hero-grid {
-  position: absolute; inset: 0; opacity: .035;
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
-    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
-}
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-.hero-eyebrow {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 3.5px;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
-  display: flex; align-items: center; gap: 14px;
-  animation: fadeUp .6s .1s both;
-}
-.hero-eyebrow::before {
-  content: ''; display: block; width: 48px; height: 1px;
-  background: var(--gold); animation: lineGrow .6s .5s both;
-}
-.hero h1 {
-  font-family: var(--serif); font-size: clamp(38px, 4.5vw, 58px);
-  font-weight: 900; color: white; line-height: 1.08;
-  margin-bottom: 20px; animation: fadeUp .6s .15s both;
-}
-.hero h1 em { font-style: italic; color: var(--gold); }
-.hero-deck {
-  font-family: var(--serif); font-style: italic; font-size: 18px;
-  color: rgba(255,255,255,.5); line-height: 1.65; max-width: 560px;
-  animation: fadeUp .6s .25s both;
-}
-
-/* Two-column contact */
-.contact-band {
-  padding: 0 56px 80px;
-  margin-top: -8px;
-}
-.contact-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
-  align-items: start;
-}
-.panel {
-  background: white;
-  padding: 40px 36px 44px;
-  border-top: 3px solid var(--gold);
-}
-.panel-label {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
-}
-.rates-list {
-  list-style: none;
-  margin: 0 0 28px;
-}
-.rates-list li {
-  font-size: 15px;
-  color: #333;
-  line-height: 1.65;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--rule);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 600;
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
   justify-content: space-between;
-  align-items: baseline;
-}
-.rates-list li:last-child { border-bottom: none; }
-.rate-name {
-  font-weight: 600;
-  color: var(--navy);
-}
-.rate-num {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  color: var(--mid);
-  text-align: right;
-}
-.rate-note {
-  display: block;
-  width: 100%;
-  font-size: 13px;
-  font-style: italic;
-  color: var(--mid);
-  margin-top: 4px;
-}
-.phone-block {
-  margin-top: 8px;
-  padding-top: 24px;
-  border-top: 1px solid var(--rule);
-}
-.phone-label {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
-}
-.phone-num {
-  font-family: var(--serif); font-size: 28px; font-weight: 700;
-  color: var(--navy);
-}
-.phone-num a { color: inherit; text-decoration: none; }
-.phone-num a:hover { color: var(--gold); }
-.phone-meta {
-  font-size: 14px;
-  color: var(--mid);
-  margin-top: 12px;
+  align-items: center;
+  padding: 26px 52px;
+  transition: background 0.4s, border-color 0.4s;
+  border-bottom: 1px solid transparent;
 }
 
-.form-panel .panel-label { margin-bottom: 20px; }
-.form-note {
-  font-size: 14px;
-  color: var(--mid);
-  line-height: 1.65;
-  margin-bottom: 28px;
+nav.scrolled {
+  background: rgba(239, 233, 223, 0.95);
+  backdrop-filter: blur(12px);
+  border-color: rgba(24, 22, 15, 0.07);
 }
-.field { margin-bottom: 20px; }
-.field label {
-  display: block;
-  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--mid);
-  margin-bottom: 8px;
-}
-.field input,
-.field textarea,
-.field select {
-  width: 100%;
-  font-family: var(--sans);
-  font-size: 16px;
-  padding: 12px 14px;
-  border: 1px solid var(--rule);
-  border-radius: 0;
-  background: var(--cream);
-  color: var(--ink);
-}
-.field input:focus,
-.field textarea:focus,
-.field select:focus {
-  outline: none;
-  border-color: var(--gold);
-}
-.field textarea { min-height: 140px; resize: vertical; }
-.form-submit {
-  margin-top: 8px;
-}
-.btn-submit {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--deep);
-  padding: 14px 32px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 2px;
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  transition: background .2s;
-}
-.btn-submit:hover { background: var(--gold-lt); }
-.form-footnote {
-  font-size: 12px;
-  color: var(--mid);
-  margin-top: 16px;
-  line-height: 1.5;
+  color: var(--ink);
+  text-decoration: none;
 }
 
-/* Ready band */
-.ready-band {
-  background: var(--navy);
-  padding: 88px 56px;
-  text-align: center;
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
 }
-.ready-inner {
-  max-width: 640px;
-  margin: 0 auto;
+
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  transition: opacity 0.3s;
 }
-.ready-band h2 {
-  font-family: var(--serif); font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 900;
-  color: white;
-  line-height: 1.15;
+
+.nav-links a:hover { opacity: 0.9; }
+.nav-links a.active { opacity: 1; color: var(--accent); }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--ink);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(239, 233, 223, 0.97);
+  z-index: 599;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu a {
+  color: var(--ink);
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+
+.mobile-menu a:hover { color: var(--accent); }
+
+/* ── Hero ── */
+#hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: flex-end;
+  background: var(--paper);
+  padding: 100px 52px 72px;
+}
+
+.hero-kicker {
+  font-size: 9px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--mid);
   margin-bottom: 18px;
 }
-.ready-band h2 em { font-style: italic; color: var(--gold); }
-.ready-band p {
-  font-size: 17px;
-  color: rgba(255,255,255,.55);
-  line-height: 1.75;
-  margin-bottom: 28px;
+
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 7.5vw, 108px);
+  font-weight: 300;
+  line-height: 0.93;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
-.ready-band .btn-primary {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--deep);
-  padding: 14px 36px;
-  font-family: var(--mono);
+
+.hero-h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* ── Contact body ── */
+#contact-body { padding: 80px 52px; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 80px;
+  align-items: start;
+  border-top: 1px solid rgba(24, 22, 15, 0.08);
+  padding-top: 56px;
+}
+
+.contact-col-label {
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.rate-list {
+  list-style: none;
+  border-top: 1px solid rgba(24, 22, 15, 0.08);
+}
+
+.rate-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(24, 22, 15, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rate-name {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.rate-val {
+  font-size: 15px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  color: var(--mid);
+}
+
+.rate-val em {
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.phone-block { margin-top: 48px; }
+
+.phone-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--ink);
+  letter-spacing: 0.03em;
+}
+
+.phone-number a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.phone-number a:hover { color: var(--accent); }
+
+.phone-note {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-top: 6px;
+}
+
+/* ── Form (CF7-style layout from WP) ── */
+.wpcf7 form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.wpcf7 .field-row {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wpcf7 label,
+.field-label {
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(24, 22, 15, 0.15);
+  padding: 8px 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--ink);
+  transition: border-color 0.25s;
+  outline: none;
+  width: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.wpcf7 input::placeholder,
+.wpcf7 textarea::placeholder {
+  color: rgba(154, 144, 136, 0.4);
+}
+
+.wpcf7 input:focus,
+.wpcf7 textarea:focus {
+  border-color: var(--accent);
+}
+
+.wpcf7 textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.7;
+}
+
+.wpcf7 input[type="submit"] {
+  align-self: flex-start;
+  margin-top: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  padding: 14px 40px;
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s;
+  border-radius: 0;
+}
+
+.wpcf7 input[type="submit"]:hover {
+  background: var(--accent);
+}
+
+.form-note {
   font-size: 11px;
-  letter-spacing: 2px;
+  line-height: 1.65;
+  color: var(--mid);
+  margin-top: -8px;
+}
+
+.form-note a {
+  color: var(--accent);
+}
+
+/* ── CTA band ── */
+#cta-band {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 120px 52px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 80px;
+}
+
+.cta-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 72px);
+  font-weight: 300;
+  line-height: 0.98;
+}
+
+.cta-h em {
+  font-style: italic;
+  color: var(--warm);
+}
+
+.cta-body {
+  margin-top: 22px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: rgba(239, 233, 223, 0.45);
+  max-width: 420px;
+}
+
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.btn-s {
+  display: inline-block;
+  padding: 16px 40px;
+  border: 1px solid rgba(239, 233, 223, 0.25);
+  color: var(--paper);
+  font-size: 10px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: background .2s;
+  white-space: nowrap;
+  transition: border-color 0.3s;
 }
-.ready-band .btn-primary:hover { background: var(--gold-lt); }
 
+.btn-s:hover {
+  border-color: rgba(239, 233, 223, 0.7);
+}
+
+/* ── Footer ── */
 footer {
-  background: var(--deep); padding: 40px 56px;
-  display: flex; align-items: center; justify-content: space-between;
-  border-top: 1px solid rgba(201,168,76,.1);
+  background: var(--ink);
+  padding: 28px 52px;
+  border-top: 1px solid rgba(239, 233, 223, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.footer-logo { font-family: var(--serif); font-size: 14px; color: rgba(255,255,255,.5); }
-.footer-logo span { color: var(--gold); }
-.footer-links { display: flex; gap: 28px; list-style: none; }
-.footer-links a {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
-  text-transform: uppercase; color: rgba(255,255,255,.25);
-  text-decoration: none; transition: color .2s;
+
+footer span {
+  font-size: 10px;
+  color: var(--mid);
+  letter-spacing: 0.1em;
 }
-.footer-links a:hover { color: rgba(255,255,255,.6); }
-.footer-copy { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,.2); }
+
+.ft-links {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.ft-links a {
+  font-size: 10px;
+  color: var(--mid);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+
+.ft-links a:hover {
+  color: var(--warm);
+}
 
 @media (max-width: 900px) {
-  .contact-inner { grid-template-columns: 1fr; }
-  .hero { padding: 110px 24px 40px; }
-  .contact-band { padding: 0 24px 64px; }
-  .ready-band { padding: 72px 24px; }
-  footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
-}
-@media (max-width: 700px) {
-  nav { padding: 0 24px; }
-}
-
-/* Search */
-.nav-search { position: relative; display: flex; align-items: center; }
-.search-toggle {
-  background: none; border: none; cursor: pointer; padding: 6px;
-  color: rgba(255,255,255,.45); transition: color .2s;
-  display: flex; align-items: center;
-}
-.search-toggle:hover { color: var(--gold); }
-.search-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
-
-.search-overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(17,28,39,.97); z-index: 200;
-  flex-direction: column; align-items: center; justify-content: flex-start;
-  padding: 80px 24px 40px;
-}
-.search-overlay.open { display: flex; }
-.search-close {
-  position: absolute; top: 20px; right: 28px;
-  background: none; border: none;
-  color: rgba(255,255,255,.4); font-size: 28px; cursor: pointer;
-  transition: color .2s; font-family: var(--mono);
-}
-.search-close:hover { color: white; }
-.search-input-wrap {
-  width: 100%; max-width: 680px;
-  border-bottom: 2px solid var(--gold);
-  display: flex; align-items: center; gap: 16px;
-  margin-bottom: 48px;
-}
-.search-input-wrap svg {
-  width: 22px; height: 22px; stroke: var(--gold); fill: none;
-  stroke-width: 2; stroke-linecap: round; flex-shrink: 0;
-}
-#search-input {
-  flex: 1; background: none; border: none; outline: none;
-  font-family: var(--serif); font-size: clamp(24px, 4vw, 40px);
-  color: white; padding: 12px 0; caret-color: var(--gold);
-}
-#search-input::placeholder { color: rgba(255,255,255,.2); }
-.search-results { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 3px; }
-.search-result {
-  background: rgba(255,255,255,.04); padding: 20px 24px; text-decoration: none;
-  border-left: 3px solid transparent; transition: border-color .2s, background .2s;
-  display: block;
-}
-.search-result:hover { border-color: var(--gold); background: rgba(201,168,76,.07); }
-.sr-type {
-  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
-}
-.sr-title {
-  font-family: var(--serif); font-size: 18px; font-weight: 700;
-  color: white; margin-bottom: 4px;
-}
-.sr-desc { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
-.search-empty {
-  font-family: var(--serif); font-style: italic; font-size: 18px;
-  color: rgba(255,255,255,.3); text-align: center; padding: 40px 0;
+  nav { padding: 22px 28px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  #hero { padding: 88px 24px 60px; }
+  #contact-body { padding: 60px 24px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  #cta-band {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 80px 28px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 24px 28px;
+  }
+  .ft-links { justify-content: center; }
 }
 </style>
-  <link rel="stylesheet" href="assets/nav-mobile.css">
 </head>
 <body>
 
-<nav class="site-nav" id="site-nav">
-  <a href="https://museum-planning-llc.github.io/website-2.0/index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
-  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
-    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
-  </button>
-  <ul class="nav-links" id="site-nav-menu">
-    <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-services.html">Services</a></li>
+<nav id="nav">
+  <a href="https://museum-planning-llc.github.io/website-2.0/index.html" class="nav-logo">Museum Planning LLC</a>
+  <ul class="nav-links">
     <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-projects.html">Projects</a></li>
-    <li><a href="museum-school/index.html">Museum School</a></li>
-    <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-about.html">About</a></li>
+    <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-services.html">Services</a></li>
+    <li><a href="https://museum-planning-llc.github.io/website-2.0/index.html#methodology">Approach</a></li>
+    <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-school/index.html">Articles</a></li>
     <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-contact.html" class="active">Contact</a></li>
-    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
-    <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
+  <button type="button" class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<section class="hero">
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Museum Planning LLC · Get in Touch</div>
-    <h1>Start a<br><em>Conversation.</em></h1>
-    <p class="hero-deck">Typical consulting ranges are listed beside this form so you know what ballpark you are in before we talk. Every engagement begins with a conversation — an hour, no cost, no obligation.</p>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-projects.html">Projects</a>
+  <a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-services.html">Services</a>
+  <a href="https://museum-planning-llc.github.io/website-2.0/index.html#methodology">Approach</a>
+  <a href="https://museum-planning-llc.github.io/website-2.0/museum-school/index.html">Articles</a>
+  <a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-contact.html">Contact</a>
+</div>
+
+<section id="hero">
+  <div>
+    <div class="hero-kicker">Museum Planning LLC · Get in Touch</div>
+    <h1 class="hero-h1">Start a<br><em>Conversation.</em></h1>
   </div>
 </section>
 
-<section class="contact-band">
-  <div class="contact-inner">
-    <div class="panel">
-      <div class="panel-label">Typical Rates</div>
-      <ul class="rates-list">
+<section id="contact-body">
+  <div class="contact-grid">
+    <div>
+      <div class="contact-col-label">Typical Rates</div>
+      <ul class="rate-list">
         <li>
           <span class="rate-name">Museum Assessment</span>
-          <span class="rate-num">$18,000 + travel</span>
-          <span class="rate-note">Minimum retainer.</span>
+          <span class="rate-val">$18,000 + travel <em>(min. retainer)</em></span>
         </li>
         <li>
           <span class="rate-name">Strategic Planning</span>
-          <span class="rate-num">$45k – $75k + travel</span>
+          <span class="rate-val">$45k – $75k + travel</span>
         </li>
         <li>
           <span class="rate-name">Feasibility Studies</span>
-          <span class="rate-num">$40k – $70k + travel</span>
+          <span class="rate-val">$40k – $70k + travel</span>
         </li>
         <li>
           <span class="rate-name">Master Planning</span>
-          <span class="rate-num">$100k+ + travel</span>
+          <span class="rate-val">$100k+ + travel</span>
         </li>
         <li>
           <span class="rate-name">Exhibition Design</span>
-          <span class="rate-num">$60k – $200k + travel</span>
+          <span class="rate-val">$60k – $200k + travel</span>
         </li>
         <li>
           <span class="rate-name">Owners Rep / PM</span>
-          <span class="rate-num">Variable — per scope</span>
+          <span class="rate-val">Variable — per scope</span>
         </li>
       </ul>
       <div class="phone-block">
-        <div class="phone-label">Phone</div>
-        <div class="phone-num"><a href="tel:4157945252">415-794-5252</a></div>
-        <p class="phone-meta">USA · New York · Mexico City · Worldwide projects</p>
+        <div class="contact-col-label" style="margin-bottom:10px">Phone</div>
+        <div class="phone-number"><a href="tel:4157945252">415-794-5252</a></div>
+        <div class="phone-note">USA</div>
       </div>
     </div>
 
-    <div class="panel form-panel">
-      <div class="panel-label">Send a Message</div>
-      <p class="form-note">Submitting opens your email app with this page’s typical rates included in the message so expectations are clear on both sides.</p>
-      <form id="contact-form" novalidate>
-        <div class="field">
-          <label for="contact-name">Your Name</label>
-          <input type="text" id="contact-name" name="name" required autocomplete="name" placeholder="Jane Smith">
-        </div>
-        <div class="field">
-          <label for="contact-email">Your Email</label>
-          <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="you@organization.org">
-        </div>
-        <div class="field">
-          <label for="contact-interest">What are you exploring?</label>
-          <select id="contact-interest" name="interest">
-            <option value="">Select one (optional)</option>
-            <option>Museum Assessment</option>
-            <option>Strategic Planning</option>
-            <option>Feasibility Study</option>
-            <option>Master Planning</option>
-            <option>Exhibition Design</option>
-            <option>Owners Rep / PM</option>
-            <option>Other / not sure yet</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="contact-subject">Subject</label>
-          <input type="text" id="contact-subject" name="subject" placeholder="City / institution — brief topic">
-        </div>
-        <div class="field">
-          <label for="contact-message">Your Message</label>
-          <textarea id="contact-message" name="message" required placeholder="Tell us about your institution, timeline, and what you need."></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn-submit">Send via email</button>
-        </div>
-        <p class="form-footnote">Uses your device’s mail app (mailto). If nothing opens, email <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a> directly.</p>
-      </form>
+    <div>
+      <div class="contact-col-label">Send a Message</div>
+      <p class="form-note">Submit opens your mail app with typical rates included in the body (same idea as the WordPress contact form).</p>
+      <div class="wpcf7">
+        <form id="contact-form" class="wpcf7-form" novalidate>
+          <div class="field-row">
+            <span class="field-label">Your Name (required)</span>
+            <input type="text" name="your-name" id="your-name" required autocomplete="name" aria-required="true">
+          </div>
+          <div class="field-row">
+            <span class="field-label">Your Email (required)</span>
+            <input type="email" name="your-email" id="your-email" required autocomplete="email" aria-required="true">
+          </div>
+          <div class="field-row">
+            <span class="field-label">Subject</span>
+            <input type="text" name="your-subject" id="your-subject" autocomplete="off">
+          </div>
+          <div class="field-row">
+            <span class="field-label">Your Message</span>
+            <textarea name="your-message" id="your-message" required aria-required="true"></textarea>
+          </div>
+          <input class="wpcf7-form-control wpcf7-submit" type="submit" value="Send">
+        </form>
+      </div>
+      <p class="form-note" style="margin-top:16px">If mail does not open, write to <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>.</p>
     </div>
   </div>
 </section>
 
-<section class="ready-band">
-  <div class="ready-inner">
-    <h2>Ready to define<br><em>your museum’s future?</em></h2>
-    <p>Mark Walhimer is personally involved in every engagement. We are ready to begin within two weeks of executed agreement.</p>
-    <a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-services.html" class="btn-primary">View Services</a>
+<section id="cta-band">
+  <div>
+    <h2 class="cta-h">Ready to define<br>your <em>museum’s future?</em></h2>
+    <p class="cta-body">Mark Walhimer is personally involved in every engagement. We are ready to begin within two weeks of executed agreement.</p>
+  </div>
+  <div class="cta-actions">
+    <a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-services.html" class="btn-s">View Services</a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
-  <ul class="footer-links">
-    <li><a href="https://museumplanner.org">Museum Planner</a></li>
-    <li><a href="https://museums101.com">Museums 101</a></li>
-    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
-    <li><a href="mailto:mark@museumplanning.com">Contact</a></li>
-  </ul>
-  <div class="footer-copy">© 2026 Museum Planning LLC</div>
-</footer>
-
-<div class="search-overlay" id="searchOverlay">
-  <button type="button" class="search-close" id="searchClose">×</button>
-  <div class="search-input-wrap">
-    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  <span>© 2026 Museum Planning, LLC</span>
+  <div class="ft-links">
+    <a href="https://museumplanner.org" target="_blank" rel="noopener">Museum Planner</a>
+    <a href="https://museums101.com" target="_blank" rel="noopener">Museums 101</a>
+    <a href="https://www.museum-experiences.com" target="_blank" rel="noopener">Museum Experiences</a>
+    <a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-contact.html">Contact</a>
   </div>
-  <div class="search-results" id="searchResults"></div>
-</div>
+</footer>
 
 <script>
 (function () {
@@ -520,11 +563,10 @@ footer {
 
   document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    var name = document.getElementById("contact-name").value.trim();
-    var email = document.getElementById("contact-email").value.trim();
-    var interest = document.getElementById("contact-interest").value.trim();
-    var subject = document.getElementById("contact-subject").value.trim();
-    var message = document.getElementById("contact-message").value.trim();
+    var name = document.getElementById("your-name").value.trim();
+    var email = document.getElementById("your-email").value.trim();
+    var subject = document.getElementById("your-subject").value.trim();
+    var message = document.getElementById("your-message").value.trim();
     if (!name || !email || !message) return;
 
     var subj = subject || "Inquiry — Museum Planning LLC";
@@ -532,86 +574,39 @@ footer {
       RATES_BLOCK +
       "---\r\n" +
       "Name: " + name + "\r\n" +
-      "Email: " + email + "\r\n" +
-      (interest ? "Exploring: " + interest + "\r\n\r\n" : "\r\n") +
+      "Email: " + email + "\r\n\r\n" +
       message;
 
-    var mailto =
+    window.location.href =
       "mailto:mark@museumplanning.com?subject=" +
       encodeURIComponent(subj) +
       "&body=" +
       encodeURIComponent(body);
+  });
 
-    window.location.href = mailto;
+  var nav = document.getElementById("nav");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 40) nav.classList.add("scrolled");
+    else nav.classList.remove("scrolled");
+  }, { passive: true });
+
+  var btn = document.getElementById("nav-hamburger");
+  var menu = document.getElementById("mobile-menu");
+  btn.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    btn.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.style.overflow = open ? "hidden" : "";
+  });
+  menu.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () {
+      menu.classList.remove("open");
+      btn.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    });
   });
 })();
 </script>
-
-<script>
-const PAGES = [
-  { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology.", url: "index.html" },
-  { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and start a conversation.", url: "museum-planning-contact.html" },
-  { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "museum-planning-services.html" },
-  { type: "Projects", title: "Projects — Forty Museums", desc: "Portfolio worldwide.", url: "museum-planning-projects.html" },
-  { type: "About", title: "About — Mark Walhimer", desc: "Managing partner, thirty years in museums.", url: "museum-planning-about.html" },
-  { type: "Museum School", title: "Museum School", desc: "Guides on feasibility, master planning, starting a museum.", url: "museum-school/index.html" },
-];
-
-const input = document.getElementById("search-input");
-const results = document.getElementById("searchResults");
-const overlay = document.getElementById("searchOverlay");
-
-document.getElementById("searchToggle").addEventListener("click", function () {
-  overlay.classList.add("open");
-  setTimeout(function () { input.focus(); }, 100);
-});
-document.getElementById("searchClose").addEventListener("click", function () {
-  overlay.classList.remove("open");
-  input.value = "";
-  results.innerHTML = "";
-});
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
-    overlay.classList.remove("open");
-    input.value = "";
-    results.innerHTML = "";
-  }
-});
-
-input.addEventListener("input", function () {
-  var q = input.value.toLowerCase().trim();
-  if (!q) {
-    results.innerHTML = "";
-    return;
-  }
-  var matches = PAGES.filter(function (p) {
-    return (
-      p.title.toLowerCase().includes(q) ||
-      p.desc.toLowerCase().includes(q) ||
-      p.type.toLowerCase().includes(q)
-    );
-  });
-  if (!matches.length) {
-    results.innerHTML = '<div class="search-empty">No results found.</div>';
-    return;
-  }
-  results.innerHTML = matches
-    .map(function (p) {
-      return (
-        '<a href="' +
-        p.url +
-        '" class="search-result"><div class="sr-type">' +
-        p.type +
-        "</div><div class=\"sr-title\">" +
-        p.title +
-        '</div><div class="sr-desc">' +
-        p.desc +
-        "</div></a>"
-      );
-    })
-    .join("");
-});
-</script>
-  <script src="assets/nav-mobile.js" defer></script>
 </body>
 </html>
