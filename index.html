@@ -789,13 +789,17 @@ footer {
 .search-empty{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(255,255,255,.3);text-align:center;padding:40px 0;}
 
 </style>
+  <link rel="stylesheet" href="assets/nav-mobile.css">
 </head>
 <body>
 
 <!-- ── NAV ── -->
-<nav>
+<nav class="site-nav" id="site-nav">
   <a href="https://museum-planning-llc.github.io/website-2.0/index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
-  <ul class="nav-links">
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
     <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-services.html">Services</a></li>
     <li><a href="https://museum-planning-llc.github.io/website-2.0/museum-planning-projects.html">Projects</a></li>
     <li><a href="museum-school/index.html">Museum School</a></li>
@@ -1196,5 +1200,6 @@ input.addEventListener('input',()=>{
   results.innerHTML=matches.map(p=>`<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('');
 });
 </script>
+  <script src="assets/nav-mobile.js" defer></script>
 </body>
 </html>
