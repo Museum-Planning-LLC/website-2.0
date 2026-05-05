@@ -1,0 +1,21 @@
+/* Thin disclosure strip above the dark footer (linked site-wide) */
+.privacy-strip {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  text-align: center;
+  padding: 14px 24px;
+  background: #111c27;
+  border-top: 1px solid rgba(201, 168, 76, 0.12);
+  margin: 0;
+}
+.privacy-strip a {
+  color: #c9a84c;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
+}
+.privacy-strip a:hover {
+  border-bottom-color: #c9a84c;
+}
