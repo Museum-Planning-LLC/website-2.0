@@ -66,7 +66,7 @@ Use these for **thought leadership**, **subsections on Services**, or **future a
 
 **File:** [`docs/seo-competitor-keyword-matrix.csv`](seo-competitor-keyword-matrix.csv)
 
-Columns map **primary keyword → intent → your URL(s) → five illustrative competitor domains + page types → gap note**. Import into Google Sheets or Excel; replace competitor slots with **your geo’s top URLs** from Search Console (*Queries* + manual SERP check) or a rank-tracker. Rows labeled **US-default** used aggregated web-search snapshots **May 2026** — **re-verify before tactical bets.**
+Columns map **primary keyword → intent → your URL(s) → five illustrative competitor domains + page types → gap note**. Import into Google Sheets or Excel; replace competitor slots with **your geo’s top URLs** from Search Console (*Queries* + manual SERP check) or a rank-tracker. Rows labeled **US-default** used aggregated web-search snapshots **May 2026** — **re-verify before tactical bets.** Exhibit-heavy SERPs shift quickly; e.g. **Gallagher & Associates**, **Local Projects**, **Ideum**, **Quatrefoil** often rank depending on query wording but did not surface in the first automated pulls — see dedicated cohort row in the CSV.
 
 ---
 
@@ -75,4 +75,4 @@ Columns map **primary keyword → intent → your URL(s) → five illustrative c
 | Date | Change |
 |------|--------|
 | 2026-02-03 | Primary + extended keyword lists; website hierarchy routing note; implementation across canonical tags, titles/meta, Services ↔ Museum School links, and site-relative nav/search URLs targeting museumplanning.com. |
-| 2026-05-05 | Added `seo-competitor-keyword-matrix.csv` plus SERP-oriented gap notes for primary + selected extended keywords. |
+| 2026-05-05 | Competitor matrix CSV (primary + extended keywords); experiential cohort row Gallagher Local Projects Ideum Quatrefoil noted absent initial scrape. |
