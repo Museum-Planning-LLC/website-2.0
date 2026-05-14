@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirecting — Museum Planning LLC</title>
+<script>
+(function() {
+  var path = window.location.pathname.replace(/\/$/, '').toLowerCase();
+  var host = window.location.hostname;
+
+  // ── EXACT MATCHES ──────────────────────────────────────────────────────────
+  var exact = {
+    // Main service pages
+    '/museum-feasibility-studies':               '/museum-planning-services.html',
+    '/museum-master-planning':                   '/museum-planning-services.html',
+    '/museum-strategic-planning-consultants':    '/museum-planning-services.html',
+    '/museum-assessment':                        '/museum-planning-services.html',
+    '/museum-project-management':                '/museum-planning-services.html',
+    '/museum-owners-representative':             '/museum-planning-services.html',
+    '/museum-exhibition-evaluation':             '/museum-planning-services.html',
+    '/interactive-museum-exhibition-design':     '/museum-planning-services.html',
+    '/interactive-history-museum-design-company':'/museum-planning-services.html',
+    '/science-center-design':                    '/museum-planning-services.html',
+    '/museum-customer-service-training':         '/museum-planning-services.html',
+    '/museum-exterior-signage':                  '/museum-planning-services.html',
+    '/designing-museum-experiences-dme-process': '/museum-planning-services.html',
+    '/museum-planning-workshop':                 '/museum-planning-services.html',
+    '/process':                                  '/museum-planning-services.html',
+    '/museum-planning-llc-process':              '/museum-planning-services.html',
+    '/approach':                                 '/museum-planning-services.html',
+
+    // Projects / portfolio
+    '/projects':                                 '/museum-planning-projects.html',
+    '/projects-2':                               '/museum-planning-projects.html',
+    '/work':                                     '/museum-planning-projects.html',
+    '/portfolio-item':                           '/museum-planning-projects.html',
+
+    // Specific project pages
+    '/portfolio-item/mide-museo-interactivo-de-economia':       '/projects/mide-museo-interactivo-de-economia.html',
+    '/portfolio-item/frehner-museum-southern-utah-university':  '/projects/frehner-museum-southern-utah-university.html',
+    '/portfolio-item/university-of-arizona':                    '/projects/arizona-natural-resources-museum.html',
+    '/portfolio-item/african-american-museum-exhibition-design':'/projects/interactive-african-american-museum.html',
+    '/portfolio-item/city-of-mcdonough-georgia':                '/museum-planning-projects.html',
+    '/portfolio-item/discovery-center-at-murfree-spring':       '/museum-planning-projects.html',
+    '/portfolio-item/childrens-museum-of-manhhattan':           '/museum-planning-projects.html',
+    '/portfolio-item/childrens-museum-indianapolis':            '/museum-planning-projects.html',
+    '/portfolio-item/childrens-museum-indianapolis-sculpture':  '/museum-planning-projects.html',
+    '/portfolio-item/pretend-city-childrens-museum-of-orange-county': '/museum-planning-projects.html',
+    '/portfolio-item/the-tech-interactive-museum':              '/museum-planning-projects.html',
+    '/portfolio-item/alcatraz-life-on-the-rock':                '/museum-planning-projects.html',
+    '/portfolio-item/cade-steam-music-concept':                 '/museum-planning-projects.html',
+    '/portfolio-item/toyota-mobile-hybrid-experience':          '/museum-planning-projects.html',
+    '/portfolio-item/pge-look-forward-bus':                     '/museum-planning-projects.html',
+    '/portfolio-item/museo-memoria-y-tolerancia':               '/museum-planning-projects.html',
+    '/portfolio-item/academy-studios':                          '/museum-planning-projects.html',
+    '/portfolio-item/muzeo':                                    '/museum-planning-projects.html',
+    '/portfolio-item/interactive-nature-conservation-museum':   '/museum-planning-projects.html',
+    '/portfolio-item/designing-museum-experiences-book-by-mark-walhimer': '/museum-planning-about.html',
+
+    // About / resume
+    '/mark-walhimer-resume':                     '/museum-planning-about.html',
+    '/by-michael-vega':                          '/museum-planning-about.html',
+
+    // Museum School / education
+    '/starting-a-museum':                        '/museum-school/index.html',
+    '/starting-a-science-center':                '/museum-school/index.html',
+    '/starting-a-childrens-museum':              '/museum-school/index.html',
+
+    // Articles / blog
+    '/articles':                                 '/museum-planning-about.html',
+    '/articles-3':                               '/museum-planning-about.html',
+    '/museums-and-a-metaphysical-crisis':        '/museum-planning-about.html',
+    '/a-future-vision-for-childrens-museums':    '/museum-planning-about.html',
+
+    // Old homepage variants
+    '/home-2':                                   '/',
+    '/digital-2':                                '/',
+    '/2022-plans':                               '/museum-planning-projects.html',
+  };
+
+  // Check exact match first
+  if (exact[path]) {
+    window.location.replace('https://museumplanning.com' + exact[path]);
+    return;
+  }
+
+  // ── PREFIX / PATTERN MATCHES ───────────────────────────────────────────────
+
+  // Portfolio item sub-pages (images, attachments) → projects
+  if (path.indexOf('/portfolio-item/') === 0) {
+    window.location.replace('https://museumplanning.com/museum-planning-projects.html');
+    return;
+  }
+
+  // Portfolio categories and tags → projects
+  if (path.indexOf('/portfolio-item-category/') === 0 ||
+      path.indexOf('/portfolio-item-tag/') === 0) {
+    window.location.replace('https://museumplanning.com/museum-planning-projects.html');
+    return;
+  }
+
+  // WordPress attachment IDs
+  if (window.location.search.indexOf('attachment_id=') !== -1) {
+    window.location.replace('https://museumplanning.com/museum-planning-projects.html');
+    return;
+  }
+
+  // WordPress uploads (PDFs) → about page
+  if (path.indexOf('/wp-content/uploads/') === 0) {
+    window.location.replace('https://museumplanning.com/museum-planning-about.html');
+    return;
+  }
+
+  // Category / tag / page archives → homepage
+  if (path.indexOf('/category/') === 0 ||
+      path.indexOf('/tag/') === 0 ||
+      path.indexOf('/page/') === 0 ||
+      path.indexOf('/updates/') === 0) {
+    window.location.replace('https://museumplanning.com/');
+    return;
+  }
+
+  // Process sub-pages
+  if (path.indexOf('/process/') === 0) {
+    window.location.replace('https://museumplanning.com/museum-planning-services.html');
+    return;
+  }
+
+  // Museum assessment sub-pages
+  if (path.indexOf('/museum-assessment/') === 0) {
+    window.location.replace('https://museumplanning.com/museum-planning-services.html');
+    return;
+  }
+
+  // Mark Walhimer resume sub-pages
+  if (path.indexOf('/mark-walhimer-resume/') === 0) {
+    window.location.replace('https://museumplanning.com/museum-planning-about.html');
+    return;
+  }
+
+  // Anything else → homepage
+  window.location.replace('https://museumplanning.com/');
+
+})();
+</script>
+<style>
+  body {
+    font-family: 'Georgia', serif;
+    background: #111C27;
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  p { font-size: 14px; letter-spacing: 1px; }
+  a { color: #C9A84C; text-decoration: none; }
+</style>
+</head>
+<body>
+  <p>Redirecting&hellip; <a href="https://museumplanning.com/">museumplanning.com</a></p>
+</body>
+</html>
