@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Museum Feasibility Study — What It Is, What It Costs, What You Get | Museum Planning LLC</title>
+<meta name="description" content="A museum feasibility study answers three questions before capital is committed: What are we building, can it sustain itself, and what will it actually cost to operate? Here's exactly what the process produces — and why it comes first.">
+<link rel="canonical" href="https://museumplanning.com/museum-feasibility-study.html">
+<script>document.documentElement.classList.add('js-ready');</script>
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --deep:  #111C27;
+  --gold:  #C9A84C;
+  --cream: #F8F4EC;
+  --ink:   #1A1A1A;
+  --mid:   #5A5A5A;
+  --rule:  #D4C8B0;
+  --white: #FFFFFF;
+  --light: #EDE8DC;
+  --serif: 'Playfair Display', Georgia, serif;
+  --mono:  'DM Mono', monospace;
+  --sans:  'Lato', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); font-size: 16px; line-height: 1.65; color: var(--ink); background: var(--white); }
+
+/* SITE NAV (STYLE-GUIDE.md) */
+.site-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: var(--deep); height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; z-index: 100;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+.nav-logo { font-family: var(--serif); font-size: 15px; color: #fff; text-decoration: none; letter-spacing: 0.02em; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-cta {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  background: var(--gold); color: var(--deep) !important; padding: 8px 20px; text-decoration: none; transition: background .2s;
+}
+.nav-cta:hover { background: #E8D099; }
+.nav-search { position: relative; display: flex; align-items: center; }
+.search-toggle {
+  background: none; border: none; cursor: pointer; padding: 6px;
+  color: rgba(255,255,255,0.45); transition: color .2s; display: flex; align-items: center;
+}
+.search-toggle:hover { color: var(--gold); }
+.search-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+.search-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(17, 28, 39, 0.97); z-index: 200;
+  flex-direction: column; align-items: center; justify-content: flex-start; padding: 80px 24px 40px;
+}
+.search-overlay.open { display: flex; }
+.search-close {
+  position: absolute; top: 20px; right: 28px; background: none; border: none;
+  color: rgba(255,255,255,0.4); font-size: 28px; cursor: pointer; font-family: var(--mono);
+}
+.search-close:hover { color: #fff; }
+.search-input-wrap {
+  width: 100%; max-width: 680px; border-bottom: 2px solid var(--gold);
+  display: flex; align-items: center; gap: 16px; margin-bottom: 48px;
+}
+.search-input-wrap svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; }
+#search-input {
+  flex: 1; background: none; border: none; outline: none; font-family: var(--serif);
+  font-size: clamp(24px, 4vw, 40px); color: #fff; padding: 12px 0; caret-color: var(--gold);
+}
+#search-input::placeholder { color: rgba(255,255,255,0.2); }
+.search-results { width: 100%; max-width: 680px; display: flex; flex-direction: column; gap: 3px; }
+.search-result {
+  background: rgba(255,255,255,0.04); padding: 20px 24px; text-decoration: none;
+  border-left: 3px solid transparent; transition: border-color .2s, background .2s; display: block;
+}
+.search-result:hover { border-color: var(--gold); background: rgba(201, 168, 76, 0.07); }
+.sr-type { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.sr-title { font-family: var(--serif); font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.sr-desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+.search-empty { font-family: var(--serif); font-style: italic; font-size: 18px; color: rgba(255,255,255,0.3); text-align: center; padding: 40px 0; }
+
+/* HERO */
+.hero { background: var(--deep); padding: 112px 56px 80px; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,.03) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+.hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 72px; align-items: start; position: relative; z-index: 1; }
+.eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.eyebrow::before { content: '— '; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 52px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-deck { font-size: 17px; color: rgba(255,255,255,.62); line-height: 1.75; margin-bottom: 32px; }
+.hero-deck strong { color: rgba(255,255,255,.9); }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; background: var(--gold); color: var(--deep); padding: 14px 28px; text-decoration: none; font-weight: 500; display: inline-block; transition: opacity .2s; }
+.btn-primary:hover { opacity: .88; }
+.btn-ghost { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.65); padding: 14px 28px; text-decoration: none; display: inline-block; transition: border-color .2s, color .2s; }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Hero right — deliverable preview */
+.hero-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09); padding: 28px 24px; }
+.hero-card-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.deliverable-row { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.06); display: flex; gap: 12px; align-items: flex-start; }
+.deliverable-row:last-child { border-bottom: none; }
+.d-check { color: var(--gold); font-size: 11px; flex-shrink: 0; padding-top: 2px; }
+.d-text { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.5; }
+.d-text strong { color: rgba(255,255,255,.85); font-weight: 600; display: block; margin-bottom: 2px; }
+
+/* SECTIONS */
+.section { padding: 80px 48px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-cream { background: var(--cream); }
+.section-dark { background: var(--deep); color: white; }
+.section-white { background: var(--white); }
+.section-h2 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 700; line-height: 1.15; color: var(--deep); margin-bottom: 18px; }
+.section-h2 em { font-style: italic; color: var(--gold); }
+.section-dark .section-h2 { color: var(--white); }
+.section-dark .eyebrow { color: var(--gold); }
+.section-lead { font-size: 17px; color: var(--mid); line-height: 1.75; max-width: 680px; margin-bottom: 48px; }
+.section-dark .section-lead { color: rgba(255,255,255,.58); }
+.gold-rule { width: 40px; height: 2px; background: var(--gold); margin-bottom: 28px; }
+
+/* THE THREE QUESTIONS */
+.questions-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.question-card { background: var(--deep); padding: 32px 24px; position: relative; overflow: hidden; }
+.question-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); opacity: 0; transition: opacity .2s; }
+.question-card:hover::after { opacity: 1; }
+.q-num { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.q-question { font-family: 'Playfair Display', serif; font-size: 17px; font-style: italic; color: var(--white); margin-bottom: 12px; line-height: 1.35; }
+.q-answer { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.65; }
+
+/* PROCESS LADDER — the how-we-work section */
+.ladder { display: flex; flex-direction: column; gap: 0; }
+.ladder-step { display: grid; grid-template-columns: 72px 1fr; gap: 0; border-bottom: 1px solid var(--rule); }
+.ladder-step:last-child { border-bottom: none; }
+.ladder-left { padding: 32px 24px 32px 0; border-right: 1px solid var(--rule); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.ladder-right { padding: 32px 0 32px 32px; }
+.ladder-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--gold); }
+.ladder-icon { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid); writing-mode: vertical-rl; transform: rotate(180deg); line-height: 1; margin-top: 4px; }
+.ladder-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--deep); margin-bottom: 8px; line-height: 1.2; }
+.ladder-title em { font-style: italic; color: var(--gold); }
+.ladder-body { font-size: 15px; color: var(--mid); line-height: 1.7; margin-bottom: 12px; }
+.ladder-body strong { color: var(--ink); }
+.ladder-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.ladder-tag { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 1px; text-transform: uppercase; color: var(--mid); border: 1px solid var(--rule); padding: 3px 8px; }
+.ladder-note { background: var(--deep); padding: 14px 16px; margin-top: 12px; }
+.ladder-note p { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.6; }
+.ladder-note strong { color: var(--gold); font-weight: 500; }
+
+/* FEASIBILITY DEEP-DIVE */
+.outputs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.output-card { border: 1px solid var(--rule); border-top: 3px solid var(--gold); padding: 28px 24px; background: var(--white); }
+.output-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.output-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--deep); margin-bottom: 10px; }
+.output-body { font-size: 14px; color: var(--mid); line-height: 1.65; }
+
+/* PULL QUOTE */
+.pull-quote { border-left: 3px solid var(--gold); padding: 18px 22px; background: var(--cream); margin: 36px 0; }
+.pull-quote p { font-family: 'Playfair Display', serif; font-size: 18px; font-style: italic; color: var(--deep); line-height: 1.55; }
+.pull-quote cite { display: block; margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+/* CAMPAIGN NOTE */
+.campaign-block { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.campaign-text h3 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 14px; line-height: 1.2; }
+.campaign-text h3 em { font-style: italic; color: var(--gold); }
+.campaign-text p { font-size: 15px; color: rgba(255,255,255,.58); line-height: 1.72; margin-bottom: 12px; }
+.campaign-sequence { display: flex; flex-direction: column; gap: 2px; }
+.seq-row { display: flex; align-items: center; gap: 0; }
+.seq-box { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09); padding: 16px 20px; flex: 1; }
+.seq-box.active { background: var(--gold); border-color: var(--gold); }
+.seq-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+.seq-box .seq-label { color: rgba(255,255,255,.3); }
+.seq-box.active .seq-label { color: var(--deep); }
+.seq-name { font-size: 14px; font-weight: 700; }
+.seq-box .seq-name { color: rgba(255,255,255,.7); }
+.seq-box.active .seq-name { color: var(--deep); }
+.seq-arrow { font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(255,255,255,.2); padding: 0 4px; flex-shrink: 0; }
+
+/* FEES */
+.fees-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.fee-card { background: var(--cream); padding: 28px 24px; border-top: 2px solid transparent; transition: border-color .2s; }
+.fee-card:hover { border-top-color: var(--gold); }
+.fee-card.highlight { background: var(--deep); }
+.fee-service { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--mid); margin-bottom: 8px; }
+.fee-card.highlight .fee-service { color: var(--gold); }
+.fee-price { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--deep); margin-bottom: 8px; }
+.fee-card.highlight .fee-price { color: var(--white); }
+.fee-note { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.fee-desc { font-size: 13px; color: var(--mid); line-height: 1.6; }
+.fee-card.highlight .fee-desc { color: rgba(255,255,255,.55); }
+
+/* INTENT LINKS */
+.intent-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 12px; }
+.intent-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); padding: 24px 20px; text-decoration: none; transition: border-color .2s; }
+.intent-card:hover { border-color: var(--gold); }
+.intent-label { font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.intent-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; line-height: 1.35; }
+.intent-body { font-size: 12px; color: rgba(255,255,255,.4); line-height: 1.55; }
+.intent-link { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-top: 10px; display: block; }
+
+/* CTA */
+.cta-section { background: var(--deep); padding: 88px 48px; }
+.cta-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.cta-left h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 42px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 16px; }
+.cta-left h2 em { font-style: italic; color: var(--gold); }
+.cta-left p { font-size: 15px; color: rgba(255,255,255,.55); line-height: 1.72; margin-bottom: 28px; }
+.contact-direct { display: flex; flex-direction: column; gap: 14px; }
+.contact-line { display: flex; align-items: center; gap: 16px; }
+.contact-type { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.25); min-width: 48px; }
+.contact-val { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: var(--white); text-decoration: none; transition: color .2s; }
+.contact-val:hover { color: var(--gold); }
+.cta-form { display: flex; flex-direction: column; gap: 13px; }
+.cta-form label { display: flex; flex-direction: column; gap: 5px; }
+.cta-form .field-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.3); }
+.cta-form input, .cta-form select, .cta-form textarea { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); color: var(--white); font-family: 'Lato', sans-serif; font-size: 15px; padding: 11px 14px; outline: none; transition: border-color .2s; resize: none; -webkit-appearance: none; }
+.cta-form input::placeholder, .cta-form textarea::placeholder { color: rgba(255,255,255,.2); }
+.cta-form input:focus, .cta-form select:focus, .cta-form textarea:focus { border-color: var(--gold); }
+.cta-form select option { background: var(--deep); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.btn-submit { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: var(--gold); color: var(--deep); border: none; padding: 16px 24px; cursor: pointer; font-weight: 500; transition: opacity .2s; }
+.btn-submit:hover { opacity: .88; }
+.form-note { font-size: 12px; color: rgba(255,255,255,.2); text-align: center; }
+.form-success { display: none; text-align: center; padding: 48px 24px; color: rgba(255,255,255,.6); }
+.form-success .check { font-size: 36px; color: var(--gold); margin-bottom: 14px; }
+.form-success h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 10px; }
+
+/* FOOTER (site standard) */
+footer {
+  background: var(--deep); padding: 40px 56px; display: flex; align-items: center;
+  justify-content: space-between; border-top: 1px solid rgba(201, 168, 76, 0.1);
+  flex-wrap: wrap; gap: 20px;
+}
+.footer-logo { font-family: var(--serif); font-size: 14px; color: rgba(255,255,255,0.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 24px; list-style: none; }
+.footer-links a {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); text-decoration: none; transition: color .2s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.6); }
+.footer-copy {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,0.2);
+  width: 100%; text-align: center;
+}
+
+/* REVEAL */
+.js-ready .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.js-ready .reveal.visible { opacity: 1; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero-inner, .campaign-block, .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+  .questions-trio, .outputs-grid, .fees-row, .intent-strip { grid-template-columns: 1fr; }
+  .ladder-step { grid-template-columns: 1fr; }
+  .ladder-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 20px 0; flex-direction: row; align-items: center; }
+  .ladder-icon { writing-mode: horizontal-tb; transform: none; }
+  .ladder-right { padding: 20px 0; }
+  .section, .cta-section { padding: 56px 24px; }
+  .site-nav { padding: 0 24px; }
+  footer { flex-direction: column; text-align: center; padding: 32px 24px; }
+}
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .seq-arrow { display: none; }
+}
+</style>
+<link rel="stylesheet" href="assets/nav-mobile.css">
+<link rel="stylesheet" href="assets/site-footer.css">
+<script src="assets/ga-measurement-id.js"></script>
+<script src="assets/analytics.js" defer></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="for-cities.html">For Cities</a></li>
+    <li><a href="for-cities-science-center.html">Science Centers</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Museum Feasibility Study</div>
+      <h1>What You're <em>Actually</em> Buying When You Commission a Feasibility Study</h1>
+      <p class="hero-deck">A feasibility study is not a recommendation to build. It is an honest answer to three questions you must answer <strong>before capital is committed</strong> — what are we actually building, can it sustain itself financially, and what will it truly cost to operate year after year. A study that can't say "no" isn't a feasibility study. It's a proposal document.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start a Conversation</a>
+        <a href="#process" class="btn-ghost">See the Process</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">What a Feasibility Study Produces</div>
+      <div class="deliverable-row">
+        <span class="d-check">✓</span>
+        <div class="d-text"><strong>Attendance Projections</strong>Realistic visitor numbers, not optimistic ones. Broken down by audience segment, day-part, and season.</div>
+      </div>
+      <div class="deliverable-row">
+        <span class="d-check">✓</span>
+        <div class="d-text"><strong>Operating Cost Model</strong>What it costs to run — staffing, programs, facilities, marketing — by year one, year three, and year ten.</div>
+      </div>
+      <div class="deliverable-row">
+        <span class="d-check">✓</span>
+        <div class="d-text"><strong>Revenue Assumptions</strong>Earned revenue, contributed income, government support, grants — what's realistic, not what's needed to break even.</div>
+      </div>
+      <div class="deliverable-row">
+        <span class="d-check">✓</span>
+        <div class="d-text"><strong>Operating Gap Analysis</strong>The number between what the museum will earn and what it will cost — and a clear-eyed view of who covers it.</div>
+      </div>
+      <div class="deliverable-row">
+        <span class="d-check">✓</span>
+        <div class="d-text"><strong>Program &amp; Site Concept</strong>A clear picture of what kind of institution this should be — mission, audience, type, scale — before a floor plan is drawn.</div>
+      </div>
+      <div class="deliverable-row">
+        <span class="d-check">✓</span>
+        <div class="d-text"><strong>Decision-Ready Report</strong>Structured for a board vote, council presentation, grant application, or bond allocation. Built to survive scrutiny.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE QUESTIONS -->
+<section class="section section-dark reveal">
+  <div class="section-inner">
+    <div class="eyebrow">Why Feasibility Comes First</div>
+    <h2 class="section-h2">Three Questions. <em>Before Anything Is Built.</em></h2>
+    <p class="section-lead">Every museum project — from a $2M local history museum to a $60M science center — begins with the same three questions. A feasibility study exists to answer them honestly, before architectural plans are drawn, before a capital campaign launches, and before a community's expectations become commitments.</p>
+    <div class="questions-trio">
+      <div class="question-card">
+        <div class="q-num">Question 01</div>
+        <div class="q-question">"What are we actually building — and should we?"</div>
+        <div class="q-answer">Mission, audience, type of institution, scale, and program mix. The community assessment answers whether sufficient audience, donor base, and civic will exist to sustain the institution. Many projects answer "not yet" or "not this way" — and that's the right answer. A feasibility study earns its fee when it prevents a wrong project as much as when it confirms a right one.</div>
+      </div>
+      <div class="question-card">
+        <div class="q-num">Question 02</div>
+        <div class="q-question">"What will it actually cost to operate — not just build?"</div>
+        <div class="q-answer">Capital cost is the number everyone focuses on. Operating cost is the number that closes museums. Personnel alone typically runs 55–65% of annual budget. A feasibility study models the full operating picture — staffing, programs, marketing, facilities management, debt service — before a shovel goes in the ground. The institution you open should be one you can afford to keep open.</div>
+      </div>
+      <div class="question-card">
+        <div class="q-num">Question 03</div>
+        <div class="q-question">"Who covers the gap — and for how long?"</div>
+        <div class="q-answer">Almost no museum is fully self-sustaining on earned revenue alone. The operating gap — the difference between what the institution earns and what it costs — is covered by contributed income, city support, endowment draws, or grants. The feasibility study makes that gap explicit and asks the board, city, or sponsor to commit to covering it before the building opens. Hidden gaps are how institutions fail.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div style="padding: 0 48px; max-width: 1148px; margin: 0 auto;">
+  <div class="pull-quote reveal">
+    <p>Bad feasibility is still fatal. A museum that can open is not the same as a museum that can stay open — and the community that funded it is responsible for what happens next.</p>
+    <cite>Mark Walhimer · Managing Partner, Museum Planning LLC</cite>
+  </div>
+</div>
+
+<!-- THE PROCESS LADDER -->
+<section class="section section-white reveal" id="process">
+  <div class="section-inner">
+    <div class="eyebrow">How We Work</div>
+    <h2 class="section-h2">Feasibility Through Opening Day. <em>One Continuum.</em></h2>
+    <p class="section-lead">The same methodology applied across every engagement — from a $2M university collection to a $28M regional cultural center. Each phase builds on the clarity produced by the last. A capital campaign that launches before feasibility is clear is a campaign built on guesswork.</p>
+    <div class="ladder">
+
+      <div class="ladder-step">
+        <div class="ladder-left">
+          <div class="ladder-num">01</div>
+          <div class="ladder-icon">Free</div>
+        </div>
+        <div class="ladder-right">
+          <div class="ladder-title">Early Conversation — <em>Before Anything Else</em></div>
+          <div class="ladder-body">One hour. No cost. No obligation. Tell us where you are: a meeting that just ended, a building that needs a purpose, a board that voted to "study the museum idea," or a city council that allocated $50K and now needs to know what to do with it. We assess whether a formal study makes sense, what it would take, and what order of engagement fits your situation. Mark is personally involved from this call forward.</div>
+          <div class="ladder-tags">
+            <span class="ladder-tag">No cost</span>
+            <span class="ladder-tag">1 hour</span>
+            <span class="ladder-tag">Confidential</span>
+            <span class="ladder-tag">Available within 2 weeks</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ladder-step">
+        <div class="ladder-left">
+          <div class="ladder-num">02</div>
+          <div class="ladder-icon">$18K+</div>
+        </div>
+        <div class="ladder-right">
+          <div class="ladder-title">Museum Assessment — <em>If Something Already Exists</em></div>
+          <div class="ladder-body">If a museum, historic house, collection, or cultural program already exists, we begin with an institutional health assessment: financial structure, governance, programming, community position, facility condition, and planning readiness. The Museum Vitality Index gives you a size-normalized benchmark against peer institutions nationally — so you know where you actually stand before deciding whether to invest further, restructure, or start something new.</div>
+          <div class="ladder-tags">
+            <span class="ladder-tag">Starting at $18,000</span>
+            <span class="ladder-tag">MVI Benchmarking</span>
+            <span class="ladder-tag">6–8 weeks</span>
+          </div>
+          <div class="ladder-note">
+            <p><strong>When to start here:</strong> You have an existing institution and want to understand its health before committing to expansion, renovation, or a capital campaign. Skipping this step and going straight to master planning is a common and expensive mistake.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ladder-step">
+        <div class="ladder-left">
+          <div class="ladder-num">03</div>
+          <div class="ladder-icon">$40–70K</div>
+        </div>
+        <div class="ladder-right">
+          <div class="ladder-title">Feasibility Study — <em>Before Capital Is Committed</em></div>
+          <div class="ladder-body">The core engagement. Attendance projections, operating cost modeling, staffing requirements, revenue assumptions, and a clear operating gap analysis — the financial case for (or against) proceeding. Community assessment, stakeholder engagement, and program concept work happen here. The deliverable is structured for a board vote, council presentation, bond allocation, or grant application. <strong>It will say no if the answer is no.</strong></div>
+          <div class="ladder-tags">
+            <span class="ladder-tag">$40,000 – $70,000</span>
+            <span class="ladder-tag">3–6 months</span>
+            <span class="ladder-tag">Decision-ready deliverable</span>
+          </div>
+          <div class="ladder-note">
+            <p><strong>What you get:</strong> A written report with attendance projections, operating model, revenue assumptions, operating gap analysis, program and site concept, and a clear recommendation — structured to survive board scrutiny, council review, and public records requests.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ladder-step">
+        <div class="ladder-left">
+          <div class="ladder-num">04</div>
+          <div class="ladder-icon">$100K+</div>
+        </div>
+        <div class="ladder-right">
+          <div class="ladder-title">Museum Master Plan — <em>Translating Vision into Built Reality</em></div>
+          <div class="ladder-body">Once feasibility is established, the master plan translates institutional goals into physical space and financial structure. Building program, floor plans, phasing strategy, construction budget, and capital campaign architecture. Designed to work with your architect — not replace them. We represent the client's interest on program, not a design-build vendor. The master plan is what your architect needs to design from; without it, they're guessing at your mission.</div>
+          <div class="ladder-tags">
+            <span class="ladder-tag">Starting at $100,000</span>
+            <span class="ladder-tag">6–12 months</span>
+            <span class="ladder-tag">Phased delivery available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ladder-step">
+        <div class="ladder-left">
+          <div class="ladder-num">05</div>
+          <div class="ladder-icon">Variable</div>
+        </div>
+        <div class="ladder-right">
+          <div class="ladder-title">Exhibitions, Operations &amp; <em>Opening Day</em></div>
+          <div class="ladder-body">Exhibition design (concept through fabrication-ready documentation), operational planning (business plan, programming, marketing, emergency preparedness), fabrication oversight, and opening day planning. The capital campaign works best when the program narrative established in feasibility and master planning is already clear — donors fund a story, not a line item. <strong>Post-opening evaluation closes the loop and initiates the next planning cycle.</strong></div>
+          <div class="ladder-tags">
+            <span class="ladder-tag">Exhibition Design: $60K – $200K</span>
+            <span class="ladder-tag">Owner's Rep: variable</span>
+            <span class="ladder-tag">Mark personally involved throughout</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THE STUDY PRODUCES IN DETAIL -->
+<section class="section section-cream reveal">
+  <div class="section-inner">
+    <div class="eyebrow">Inside the Feasibility Study</div>
+    <h2 class="section-h2">The Six Things a Feasibility Study <em>Must</em> Answer</h2>
+    <p class="section-lead">A properly scoped feasibility study is not a market survey or a visioning exercise. It is a financial and programmatic analysis structured to produce specific answers — the ones a board, council, or donor needs before committing resources.</p>
+    <div class="outputs-grid">
+      <div class="output-card">
+        <div class="output-label">Output 01</div>
+        <div class="output-title">Community &amp; Audience Assessment</div>
+        <div class="output-body">Who is the museum for — and is that audience present in sufficient size and composition to sustain the institution? Demographic analysis, competitive landscape, comparable institutions in similar markets, and an honest assessment of whether the community can support the proposed scope. This is where "not yet" or "smaller" sometimes surfaces.</div>
+      </div>
+      <div class="output-card">
+        <div class="output-label">Output 02</div>
+        <div class="output-title">Attendance Projections</div>
+        <div class="output-body">Realistic annual visitor numbers, not aspirational ones. Broken down by paid admission, school groups, members, event attendance, and free community days. Modeled against peer institutions in comparable markets, not against flagship institutions in major cities. Year one, year three, and stabilized-year projections.</div>
+      </div>
+      <div class="output-card">
+        <div class="output-label">Output 03</div>
+        <div class="output-title">Operating Cost Model</div>
+        <div class="output-body">Full operating budget model: personnel (typically 55–65% of total), programming, marketing, facilities management, technology, insurance, and debt service if applicable. Personnel is modeled by role and FTE, not as a lump sum. The operating model is what separates a professional feasibility study from a wish list.</div>
+      </div>
+      <div class="output-card">
+        <div class="output-label">Output 04</div>
+        <div class="output-title">Revenue Assumptions</div>
+        <div class="output-body">Earned revenue (admissions, memberships, retail, rental, programs) modeled against attendance projections. Contributed revenue (individual giving, corporate, foundation, government) assessed against the local donor landscape and realistic grant eligibility. Revenue assumptions are stress-tested — not reverse-engineered from what the budget needs.</div>
+      </div>
+      <div class="output-card">
+        <div class="output-label">Output 05</div>
+        <div class="output-title">Operating Gap &amp; Subsidy Analysis</div>
+        <div class="output-body">The explicit difference between projected revenue and projected operating cost — by year, clearly labeled, with the question asked directly: who covers this, how, and for how long? A feasibility study that doesn't produce a clear gap analysis is not a feasibility study. The gap is the number your board is actually voting on.</div>
+      </div>
+      <div class="output-card">
+        <div class="output-label">Output 06</div>
+        <div class="output-title">Program &amp; Site Concept</div>
+        <div class="output-body">A clear articulation of what kind of institution this should be — mission, audience, exhibition and program mix, approximate square footage, site requirements, and any constraints that affect viability. This is the foundation the master plan builds from. Without it, your architect is designing a building for a client who hasn't decided what they do.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CAMPAIGN NEEDS FEASIBILITY -->
+<section class="section section-dark reveal">
+  <div class="section-inner">
+    <div class="campaign-block">
+      <div class="campaign-text">
+        <div class="eyebrow">Capital Campaign &amp; Feasibility</div>
+        <h3>The Campaign Works Best When <em>Clarity Comes First</em></h3>
+        <p>A capital campaign raises money for a specific, defensible vision — a building, a program, a transformation with a clear cost and a clear case. That case rests entirely on what feasibility established: what the institution will be, what it will cost to operate, and who it will serve.</p>
+        <p>Campaigns that launch before feasibility is complete are raising money for a vision that hasn't been stress-tested. Donors fund stories, not spreadsheets — but the story has to be anchored in a financial model that survives due diligence. The feasibility study is what makes the story credible.</p>
+        <p>This is not a philosophical preference. It is the order in which the work actually holds together.</p>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace; font-size:9px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">The Sequence That Works</div>
+        <div class="campaign-sequence">
+          <div class="seq-row">
+            <div class="seq-box active">
+              <div class="seq-label">Step 01</div>
+              <div class="seq-name">Feasibility Study</div>
+            </div>
+          </div>
+          <div style="font-family:'DM Mono',monospace; font-size:10px; color:rgba(255,255,255,.2); padding:4px 20px;">↓</div>
+          <div class="seq-row">
+            <div class="seq-box">
+              <div class="seq-label">Step 02</div>
+              <div class="seq-name">Master Plan</div>
+            </div>
+          </div>
+          <div style="font-family:'DM Mono',monospace; font-size:10px; color:rgba(255,255,255,.2); padding:4px 20px;">↓</div>
+          <div class="seq-row">
+            <div class="seq-box">
+              <div class="seq-label">Step 03</div>
+              <div class="seq-name">Capital Campaign</div>
+            </div>
+          </div>
+          <div style="font-family:'DM Mono',monospace; font-size:10px; color:rgba(255,255,255,.2); padding:4px 20px;">↓</div>
+          <div class="seq-row">
+            <div class="seq-box">
+              <div class="seq-label">Steps 04–05</div>
+              <div class="seq-name">Design · Build · Open</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:12px; color:rgba(255,255,255,.3); margin-top:14px; font-family:'DM Mono',monospace; line-height:1.6;">Each step produces what the next one needs. Skipping or reordering doesn't save time — it creates rework, donor confusion, and projects that open at the wrong scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="section section-white reveal">
+  <div class="section-inner">
+    <div class="eyebrow">Typical Fee Ranges</div>
+    <h2 class="section-h2">Know the Ballpark <em>Before You Call</em></h2>
+    <p class="section-lead">Every engagement starts with a one-hour conversation at no cost. The ranges below are starting points — actual scope and fee are set in that first conversation based on what you're trying to answer. All fees exclusive of travel.</p>
+    <div class="fees-row">
+      <div class="fee-card">
+        <div class="fee-service">Museum Assessment</div>
+        <div class="fee-price">$18,000+</div>
+        <div class="fee-note">If something already exists</div>
+        <div class="fee-desc">Current-state evaluation of institutional health, community position, and planning readiness. Includes MVI benchmarking against peer institutions nationally. The right starting point when a museum already exists and you're deciding whether to invest further.</div>
+      </div>
+      <div class="fee-card highlight">
+        <div class="fee-service">Feasibility Study</div>
+        <div class="fee-price">$40k – $70k</div>
+        <div class="fee-note">The core engagement · most projects start here</div>
+        <div class="fee-desc">Attendance projections, operating cost model, revenue assumptions, operating gap analysis, community assessment, and program concept. Structured for board vote, council presentation, bond allocation, or grant application. 3–6 months.</div>
+      </div>
+      <div class="fee-card">
+        <div class="fee-service">Museum Master Plan</div>
+        <div class="fee-price">$100k+</div>
+        <div class="fee-note">After feasibility is confirmed</div>
+        <div class="fee-desc">Building program, floor plans, phasing, construction budget, and capital campaign structure. Designed to work with your architect — not replace them. Phased delivery available for multi-year budget cycles.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTENT LINKS — internal routing to the other pages -->
+<section class="section section-dark reveal">
+  <div class="section-inner">
+    <div class="eyebrow">Related Guides</div>
+    <h2 class="section-h2">Your Specific <em>Situation</em></h2>
+    <p class="section-lead">Feasibility looks different depending on who's asking and what's already on the table. These pages go deeper on specific contexts.</p>
+    <div class="intent-strip">
+      <a href="for-cities.html" class="intent-card">
+        <div class="intent-label">For Cities &amp; Municipalities</div>
+        <div class="intent-title">City Council, Mayor's Office, Economic Development</div>
+        <div class="intent-body">Public-sector projects, procurement realities, council presentations, bond allocations, and how feasibility works when a historic civic building is already part of the conversation.</div>
+        <span class="intent-link">Read the guide →</span>
+      </a>
+      <a href="for-cities-science-center.html" class="intent-card">
+        <div class="intent-label">Science &amp; Technology Centers</div>
+        <div class="intent-title">Starting a Science Center — The New Model</div>
+        <div class="intent-body">Why the Exploratorium template won't deliver tech jobs or a workforce pipeline — and what the convergence-era model looks like instead.</div>
+        <span class="intent-link">Read the guide →</span>
+      </a>
+      <a href="local-history-museum.html" class="intent-card">
+        <div class="intent-label">Local History &amp; Community Museums</div>
+        <div class="intent-title">Historic Building, Community Collection, or Both</div>
+        <div class="intent-body">The most common starting point: a building that wants a purpose, a collection in storage, or a historical society ready to grow. Feasibility looks different here — and governance matters more than most people expect.</div>
+        <span class="intent-link">Read the guide →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="eyebrow">Start Here</div>
+      <h2>One Hour. No Cost. <em>No Obligation.</em></h2>
+      <p>Tell us where you are. Whether a board just voted to "study the museum idea," a city has a building it doesn't know what to do with, or you've already done a feasibility study and suspect it missed the hard questions — Mark is personally involved in every engagement and available within two weeks.</p>
+      <div class="contact-direct">
+        <div class="contact-line"><span class="contact-type">Phone</span><a href="tel:4157945252" class="contact-val">415-794-5252</a></div>
+        <div class="contact-line"><span class="contact-type">Email</span><a href="mailto:mark@museumplanning.com" class="contact-val">mark@museumplanning.com</a></div>
+        <div class="contact-line"><span class="contact-type">Offices</span><span class="contact-val" style="cursor:default;">New York · Mexico City</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="cta-form" id="contactForm">
+        <div class="form-row">
+          <label><span class="field-label">Your Name</span><input type="text" placeholder="Jane Smith" id="f-name"></label>
+          <label><span class="field-label">Role / Organization</span><input type="text" placeholder="Board Chair, City of —" id="f-title"></label>
+        </div>
+        <label><span class="field-label">City or Organization</span><input type="text" placeholder="Historical Society of Greenville, SC" id="f-city"></label>
+        <label><span class="field-label">Email Address</span><input type="email" placeholder="jane@example.org" id="f-email"></label>
+        <label>
+          <span class="field-label">Where Are You in the Process?</span>
+          <select id="f-interest">
+            <option value="" disabled selected>Select the closest match</option>
+            <option>We just voted to "study the museum idea" — what now?</option>
+            <option>We have a building and need to know if it can be a museum</option>
+            <option>We need a feasibility study — ready to scope</option>
+            <option>We have a feasibility study and need a second opinion</option>
+            <option>We need a museum master plan</option>
+            <option>We have an existing museum — need assessment or MVI</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label><span class="field-label">Brief Context (Optional)</span><textarea rows="3" placeholder="A sentence or two about your situation." id="f-note"></textarea></label>
+        <button class="btn-submit" onclick="handleSubmit()">Request a Conversation →</button>
+        <p class="form-note">We respond to every inquiry within one business day.</p>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✓</div>
+        <h3>Your email client should have opened.</h3>
+        <p>If it didn't, nothing was sent — reach out directly:<br>
+        <a href="mailto:mark@museumplanning.com" style="color:var(--gold);">mark@museumplanning.com</a><br>
+        <a href="tel:4157945252" style="color:var(--gold);">415-794-5252</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="privacy-strip"><a href="museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
+
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="https://www.linkedin.com/company/museum-planning-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/museumplanning/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    <li><a href="https://www.facebook.com/MuseumPlanningLLC/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    <li><a href="https://x.com/MuseumPlanning" target="_blank" rel="noopener noreferrer">X</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li><a href="museum-planning-privacy.html">Privacy</a></li>
+    <li><a href="museum-vitality-index.html">MVI</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button type="button" class="search-close" id="searchClose" aria-label="Close search">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.07 });
+reveals.forEach(el => observer.observe(el));
+
+function handleSubmit() {
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const interest = document.getElementById('f-interest').value;
+  if (!name || !email || !interest) {
+    if (!name)     document.getElementById('f-name').style.borderColor = '#C9A84C';
+    if (!email)    document.getElementById('f-email').style.borderColor = '#C9A84C';
+    if (!interest) document.getElementById('f-interest').style.borderColor = '#C9A84C';
+    return;
+  }
+  const title = document.getElementById('f-title').value.trim();
+  const city  = document.getElementById('f-city').value.trim();
+  const note  = document.getElementById('f-note').value.trim();
+  const body  = encodeURIComponent(`Name: ${name}\nRole: ${title}\nOrg/City: ${city}\nEmail: ${email}\nStage: ${interest}\nNote: ${note}`);
+  window.location.href = `mailto:mark@museumplanning.com?subject=${encodeURIComponent('Feasibility Inquiry — ' + (city || name))}&body=${body}`;
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
+});
+</script>
+<script>
+const PAGES = [
+  { type: "Guide", title: "Museum Feasibility Study — What You Get", desc: "What a study is, costs, deliverables, and when to commission one.", url: "museum-feasibility-study.html" },
+  { type: "Guide", title: "Starting a Local History Museum", desc: "Historic buildings, collections in storage, governance, and feasibility.", url: "local-history-museum.html" },
+  { type: "Municipal", title: "For Cities — Museum Feasibility", desc: "City managers, mayors' offices, and feasibility before capital.", url: "for-cities.html" },
+  { type: "Municipal", title: "Science Centers for Cities", desc: "Civic science & technology centers, convergence-era model.", url: "for-cities-science-center.html" },
+  { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology.", url: "index.html" },
+  { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and how to start a conversation.", url: "museum-planning-contact.html" },
+  { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "museum-planning-services.html" },
+  { type: "Projects", title: "Projects — Forty Museums", desc: "Portfolio worldwide.", url: "museum-planning-projects.html" },
+  { type: "About", title: "About — Mark Walhimer", desc: "Managing partner, museum planning consultant.", url: "museum-planning-about.html" },
+  { type: "MVI", title: "Museum Vitality Index", desc: "0–100 institutional health benchmarking.", url: "museum-vitality-index.html" },
+  { type: "Museum School", title: "Museum School", desc: "Guides on starting a museum, feasibility, and master planning.", url: "museum-school/index.html" },
+  { type: "Museum School", title: "How to Start a Museum", desc: "Ten steps, costs, common mistakes, and resources.", url: "museum-school/how-to-start-a-museum.html" },
+  { type: "Museum School", title: "What is a Museum Feasibility Study?", desc: "What it covers, how it works, cost and timeline.", url: "museum-school/what-is-a-museum-feasibility-study.html" },
+  { type: "Museum School", title: "What is a Museum Master Plan?", desc: "Building program, visitor experience, capital campaign strategy.", url: "museum-school/what-is-a-museum-master-plan.html" }
+];
+const input = document.getElementById("search-input");
+const results = document.getElementById("searchResults");
+const overlay = document.getElementById("searchOverlay");
+document.getElementById("searchToggle").addEventListener("click", function () {
+  overlay.classList.add("open");
+  setTimeout(function () { input.focus(); }, 100);
+});
+document.getElementById("searchClose").addEventListener("click", function () {
+  overlay.classList.remove("open");
+  input.value = "";
+  results.innerHTML = "";
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    overlay.classList.remove("open");
+    input.value = "";
+    results.innerHTML = "";
+  }
+});
+input.addEventListener("input", function () {
+  const q = input.value.toLowerCase().trim();
+  if (!q) { results.innerHTML = ""; return; }
+  const matches = PAGES.filter(function (p) {
+    return p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.type.toLowerCase().includes(q);
+  });
+  if (!matches.length) { results.innerHTML = '<div class="search-empty">No results found.</div>'; return; }
+  results.innerHTML = matches.map(function (p) {
+    return '<a href="' + p.url + '" class="search-result"><div class="sr-type">' + p.type + '</div><div class="sr-title">' + p.title + '</div><div class="sr-desc">' + p.desc + "</div></a>";
+  }).join("");
+});
+</script>
+<script src="assets/nav-mobile.js" defer></script>
+
+</body>
+</html>
