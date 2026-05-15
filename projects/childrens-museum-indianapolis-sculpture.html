@@ -265,6 +265,90 @@ footer {
 .newsletter-btn:hover{background:var(--gold-lt);} 
 @media (max-width:900px){.newsletter-band{padding:40px 24px;}.newsletter-inner{grid-template-columns:1fr;}.newsletter-form{flex-direction:column;align-items:stretch;}}
 
+/* ── SEARCH ── */
+.nav-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: rgba(255,255,255,.45);
+  transition: color .2s;
+  display: flex;
+  align-items: center;
+}
+.search-toggle:hover { color: var(--gold); }
+.search-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+.search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(17,28,39,.97);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 24px 40px;
+}
+.search-overlay.open { display: flex; }
+.search-close {
+  position: absolute;
+  top: 20px; right: 28px;
+  background: none; border: none;
+  color: rgba(255,255,255,.4);
+  font-size: 28px; cursor: pointer;
+  transition: color .2s;
+  font-family: var(--mono);
+}
+.search-close:hover { color: white; }
+.search-input-wrap {
+  width: 100%; max-width: 680px;
+  border-bottom: 2px solid var(--gold);
+  display: flex; align-items: center;
+  gap: 16px; margin-bottom: 48px;
+}
+.search-input-wrap svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; flex-shrink: 0; }
+#search-input {
+  flex: 1; background: none; border: none; outline: none;
+  font-family: var(--serif); font-size: clamp(24px, 4vw, 40px);
+  color: white; padding: 12px 0;
+  caret-color: var(--gold);
+}
+#search-input::placeholder { color: rgba(255,255,255,.2); }
+.search-results {
+  width: 100%; max-width: 680px;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.search-result {
+  background: rgba(255,255,255,.04);
+  padding: 20px 24px;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: border-color .2s, background .2s;
+  display: block;
+}
+.search-result:hover { border-color: var(--gold); background: rgba(201,168,76,.07); }
+.sr-type {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+}
+.sr-title {
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: white; margin-bottom: 4px;
+}
+.sr-desc { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
+.search-empty {
+  font-family: var(--serif); font-style: italic;
+  font-size: 18px; color: rgba(255,255,255,.3);
+  text-align: center; padding: 40px 0;
+}
+
+
 </style>
   <link rel="stylesheet" href="../assets/nav-mobile.css">
   <link rel="stylesheet" href="../assets/site-footer.css">
@@ -283,10 +367,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
     <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
   </button>
-  <ul class="nav-links" id="site-nav-menu">
-    <li><a href="../index.html#methodology">Methodology</a></li>
-    <li><a href="../index.html#landscape">Landscape</a></li>
+    <ul class="nav-links" id="site-nav-menu">
+    <li><a href="../museum-planning-services.html">Services</a></li>
+    <li><a href="../for-cities.html">For Cities</a></li>
     <li><a href="../museum-planning-projects.html" class="active">Projects</a></li>
+    <li><a href="../museum-school/index.html">Museum School</a></li>
+    <li><a href="../for-cities-science-center.html">Science Centers</a></li>
+    <li><a href="../museum-planning-about.html">About</a></li>
+    <li><a href="../museum-planning-contact.html">Contact</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
     <li><a href="../museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
 </nav>
@@ -427,6 +516,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
   <div class="footer-copy">© 2026 Museum Planning LLC</div>
 </footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" id="searchClose" type="button" aria-label="Close search">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+<script>
+const PAGES=[
+  {type:"Home",title:"Museum Planning LLC",desc:"Forty museums. One methodology. Feasibility through opening day.",url:"../index.html"},
+  {type:"Privacy",title:"Privacy and analytics",desc:"Cookies, Google Analytics, and forms on museumplanning.com.",url:"../museum-planning-privacy.html"},
+  {type:"Contact",title:"Contact — Rates & conversation",desc:"Typical consulting ranges and how to start a conversation.",url:"../museum-planning-contact.html"},
+  {type:"Services",title:"Services — From Vision to Opening Day",desc:"Feasibility, strategic planning, master planning, exhibition design, evaluation.",url:"../museum-planning-services.html"},
+  {type:"Projects",title:"Projects — Forty Museums",desc:"Natural history, children's, science centers, cultural centers.",url:"../museum-planning-projects.html"},
+  {type:"About",title:"About — Mark Walhimer",desc:"Managing partner, twenty-five years in museums, AAM Press author.",url:"../museum-planning-about.html"},
+  {type:"Municipal",title:"For Cities — Museum Feasibility",desc:"City managers, mayors' offices, feasibility before capital.",url:"../for-cities.html"},
+  {type:"Municipal",title:"Science Centers for Cities",desc:"Civic science and technology centers, convergence-era model.",url:"../for-cities-science-center.html"},
+  {type:"Guide",title:"Museum Feasibility Study — What You Get",desc:"Deliverables, costs, and when to commission a study.",url:"../museum-feasibility-study.html"},
+  {type:"Guide",title:"Starting a Local History Museum",desc:"Historic buildings, collections, governance, feasibility.",url:"../local-history-museum.html"},
+  {type:"White Paper",title:"Convergence Era",desc:"Industrial design, AI, and cultural systems — planning context.",url:"../convergence-era.html"},
+  {type:"Framework",title:"Museum Vitality Index",desc:"0–100 health scoring with size-normalized museum benchmarking.",url:"../museum-vitality-index.html"},
+  {type:"Museum School",title:"How to Start a Museum",desc:"Ten steps, costs, common mistakes, and resources.",url:"../museum-school/how-to-start-a-museum.html"},
+  {type:"Museum School",title:"What is a Museum Feasibility Study?",desc:"What it covers, how it works, cost and timeline.",url:"../museum-school/what-is-a-museum-feasibility-study.html"},
+  {type:"Museum School",title:"What is a Museum Master Plan?",desc:"Building program, visitor experience, capital campaign strategy.",url:"../museum-school/what-is-a-museum-master-plan.html"},
+  {type:"Project",title:"Howard Natural History Museum",desc:"Master planning, Riverside County California, $27.75M.",url:"../projects/howard-natural-history-museum.html"},
+  {type:"Project",title:"Frehner Museum of Natural History",desc:"University museum, Southern Utah University.",url:"../projects/frehner-museum-southern-utah-university.html"},
+  {type:"Project",title:"Arizona Natural Resources Museum",desc:"Master planning, University of Arizona.",url:"../projects/arizona-natural-resources-museum.html"},
+  {type:"Project",title:"Interactive African American Museum",desc:"Exhibition design and master planning, Indiana.",url:"../projects/interactive-african-american-museum.html"},
+  {type:"Project",title:"Museum of Arts and Sciences",desc:"Exhibition design, Macon Georgia.",url:"../projects/museum-of-arts-and-sciences.html"},
+  {type:"Project",title:"MIDE Museo Interactivo de Economia",desc:"Exhibition design, Mexico City.",url:"../projects/mide-museo-interactivo-de-economia.html"},
+  {type:"Book",title:"Museums 101",desc:"AAM Press 2015.",url:"../projects/museums-101.html"},
+  {type:"Book",title:"Designing Museum Experiences",desc:"AAM Press 2021.",url:"../projects/designing-museum-experiences.html"},
+];
+const input=document.getElementById('search-input');
+const results=document.getElementById('searchResults');
+const overlay=document.getElementById('searchOverlay');
+document.getElementById('searchToggle').addEventListener('click',()=>{overlay.classList.add('open');setTimeout(()=>input.focus(),100);});
+document.getElementById('searchClose').addEventListener('click',()=>{overlay.classList.remove('open');input.value='';results.innerHTML='';});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){overlay.classList.remove('open');input.value='';results.innerHTML='';}});
+input.addEventListener('input',()=>{
+  const q=input.value.toLowerCase().trim();
+  if(!q){results.innerHTML='';return;}
+  const matches=PAGES.filter(p=>p.title.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)||p.type.toLowerCase().includes(q));
+  if(!matches.length){results.innerHTML='<div class="search-empty">No results found.</div>';return;}
+  results.innerHTML=matches.map(p=>`<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('');
+});
+</script>
+
   <script src="../assets/nav-mobile.js" defer></script>
 
 <script>
