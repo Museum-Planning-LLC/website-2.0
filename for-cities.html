@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Museum Feasibility Study for Cities & Municipalities | Museum Planning LLC</title>
+<meta name="description" content="Museum Planning LLC helps city managers, mayors' offices, and economic development directors evaluate museum feasibility, plan cultural destinations, and understand real operating costs — before capital is committed.">
+<link rel="canonical" href="https://museumplanning.com/for-cities.html">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --deep:   #111C27;
+  --gold:   #C9A84C;
+  --cream:  #F8F4EC;
+  --ink:    #1A1A1A;
+  --mid:    #5A5A5A;
+  --rule:   #D4C8B0;
+  --light:  #EDE8DC;
+  --white:  #FFFFFF;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--white);
+}
+
+/* ─── SITE NAV ─── */
+.site-nav {
+  background: var(--deep);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.nav-logo-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--gold);
+}
+.nav-cta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--deep);
+  background: var(--gold);
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--deep);
+  padding: 96px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 40%;
+  background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.06) 100%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.hero-eyebrow::before { content: '— '; }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-deck {
+  font-size: 17px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep);
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-ghost {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7);
+  padding: 14px 28px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Hero right: quick stats */
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.hero-stat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 24px 20px;
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hero-stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ─── SHARED LAYOUT ─── */
+.section {
+  padding: 80px 48px;
+}
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-cream { background: var(--cream); }
+.section-dark  { background: var(--deep); color: white; }
+.section-white { background: var(--white); }
+
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.section-eyebrow::before { content: '— '; }
+
+.section-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--deep);
+  margin-bottom: 20px;
+}
+.section-h2 em { font-style: italic; color: var(--gold); }
+.section-dark .section-h2 { color: var(--white); }
+
+.section-lead {
+  font-size: 17px;
+  color: var(--mid);
+  line-height: 1.75;
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+.section-dark .section-lead { color: rgba(255,255,255,0.6); }
+
+/* ─── AUDIENCE CARDS ─── */
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.audience-card {
+  background: var(--deep);
+  padding: 32px 28px;
+  position: relative;
+}
+.audience-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.audience-card:hover::before { opacity: 1; }
+.audience-icon {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.audience-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.audience-body {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+
+/* ─── QUESTIONS / FAQ ─── */
+.questions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.question-block {
+  border-left: 2px solid var(--rule);
+  padding: 0 0 0 24px;
+}
+.question-block:hover {
+  border-left-color: var(--gold);
+}
+.question-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--deep);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.question-a {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.65;
+}
+
+/* ─── HOW WE WORK ─── */
+.phases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.phase-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 0;
+  align-items: start;
+}
+.phase-row:last-child { border-bottom: none; }
+.phase-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  padding-top: 3px;
+}
+.phase-content {}
+.phase-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+.phase-desc {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.65;
+}
+.phase-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.phase-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--mid);
+  border: 1px solid var(--rule);
+  padding: 3px 8px;
+}
+
+/* ─── MVI SECTION ─── */
+.mvi-callout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.mvi-score-demo {
+  background: var(--deep);
+  padding: 40px;
+  position: relative;
+}
+.mvi-demo-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.mvi-score-display {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.mvi-score-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 28px;
+}
+.mvi-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mvi-bar-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+.mvi-bar-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 4px;
+}
+.mvi-bar-track {
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  position: relative;
+}
+.mvi-bar-fill {
+  height: 100%;
+  background: var(--gold);
+}
+.mvi-bar-score {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.mvi-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.mvi-text p {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.mvi-text p:last-child { margin-bottom: 0; }
+
+/* ─── PROOF / CASE ─── */
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.proof-card {
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--gold);
+  padding: 32px 28px;
+  background: var(--white);
+}
+.proof-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.proof-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--deep);
+  margin-bottom: 10px;
+}
+.proof-body {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.proof-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.proof-link:hover { border-bottom-color: var(--gold); }
+.proof-link::after { content: ' →'; }
+
+/* ─── FEES PREVIEW ─── */
+.fees-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.fee-card {
+  background: var(--cream);
+  padding: 28px 24px;
+  border-top: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.fee-card:hover { border-top-color: var(--gold); }
+.fee-service {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 8px;
+}
+.fee-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 8px;
+}
+.fee-desc {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+/* ─── CTA SECTION ─── */
+.cta-section {
+  background: var(--deep);
+  padding: 96px 48px;
+}
+.cta-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.cta-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.cta-left h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.cta-left p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+.contact-direct {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.contact-type {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  min-width: 48px;
+}
+.contact-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-val:hover { color: var(--gold); }
+
+/* Contact form */
+.cta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cta-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cta-form .field-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.cta-form input,
+.cta-form select,
+.cta-form textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+  -webkit-appearance: none;
+}
+.cta-form input::placeholder,
+.cta-form textarea::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+.cta-form input:focus,
+.cta-form select:focus,
+.cta-form textarea:focus {
+  border-color: var(--gold);
+}
+.cta-form select option {
+  background: var(--deep);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.btn-submit {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep);
+  border: none;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  text-align: center;
+}
+.btn-submit:hover { opacity: 0.88; }
+.form-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+  text-align: center;
+  margin-top: -4px;
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+  background: #0A1017;
+  padding: 32px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+.footer-right {
+  display: flex;
+  gap: 24px;
+}
+.footer-right a {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-right a:hover { color: var(--gold); }
+
+/* ─── DIVIDER ─── */
+.gold-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 32px;
+}
+
+/* ─── PULL QUOTE ─── */
+.pull-quote {
+  border-left: 3px solid var(--gold);
+  padding: 20px 28px;
+  background: var(--cream);
+  margin: 40px 0;
+}
+.pull-quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--deep);
+  line-height: 1.55;
+}
+.pull-quote cite {
+  display: block;
+  margin-top: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-style: normal;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .hero-inner,
+  .mvi-callout,
+  .questions-grid,
+  .proof-grid,
+  .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+  .audience-grid { grid-template-columns: 1fr 1fr; }
+  .fees-strip { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .section, .cta-section { padding: 60px 24px; }
+  .site-nav { padding: 0 24px; }
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  .audience-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* Form success state */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 48px 24px;
+  color: rgba(255,255,255,0.7);
+}
+.form-success .check {
+  font-size: 36px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.form-success h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+/* Scroll reveal — visible by default; JS enhances */
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.js-ready .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+</style>
+  <script src="assets/ga-measurement-id.js"></script>
+  <script src="assets/analytics.js" defer></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-text">Museum Planning LLC</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="for-cities.html" class="active">For Cities</a></li>
+    <li><a href="for-cities-science-center.html">Science Centers</a></li>
+    <li><a href="museum-vitality-index.html">MVI</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+  </ul>
+  <a href="tel:4157945252" class="nav-cta">415-794-5252</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">For Cities &amp; Municipalities</div>
+      <h1>Is a Museum <em>Right</em> for Your City?</h1>
+      <p class="hero-deck">Before capital is committed, before a council vote, before a groundbreaking — get an honest answer. We help city managers, mayors' offices, and economic development directors understand what a museum actually costs to operate, whether the community can support one, and what a realistic path forward looks like.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start a Conversation</a>
+        <a href="#how-we-work" class="btn-ghost">How We Work</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">25+</div>
+        <div class="hero-stat-label">Years Experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$40k</div>
+        <div class="hero-stat-label">Feasibility Starting Fee</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label">Phases — Concept to Opening</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1hr</div>
+        <div class="hero-stat-label">Free Initial Conversation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section section-dark reveal">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who This Is For</div>
+    <h2 class="section-h2">The People at <em>City Hall</em> Who Call Us</h2>
+    <p class="section-lead">Museum projects inside government don't start in a museum director's office. They start with a question in a budget meeting, a council resolution, or a mayor's vision for downtown. We speak that language.</p>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-icon">01 · Role</div>
+        <div class="audience-title">City Manager / Administrator</div>
+        <div class="audience-body">You're being asked to evaluate a proposal or allocate capital reserve funds. You need an honest cost model, realistic operating projections, and a clear picture of the risk — before it goes to council.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">02 · Role</div>
+        <div class="audience-title">Mayor's Office / Chief of Staff</div>
+        <div class="audience-body">This is a legacy project, a tourism initiative, or a downtown revitalization anchor. You need a credible external voice — someone who can speak to the council, the press, and the community with authority.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">03 · Role</div>
+        <div class="audience-title">Economic Development Director</div>
+        <div class="audience-body">A cultural destination means hotel-nights, restaurant revenue, and property value lift. You need the numbers — what peer cities have built, what it actually costs, and what the ROI looks like over 10 years.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">04 · Role</div>
+        <div class="audience-title">Parks &amp; Recreation / Arts Commission</div>
+        <div class="audience-body">You may already operate a historic building, a collection, or a cultural program. We can assess whether it's ready to grow — and what governance, staffing, and funding structure would actually support that.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">05 · Role</div>
+        <div class="audience-title">City Council</div>
+        <div class="audience-body">You've been asked to vote on a feasibility allocation or a cultural master plan line item. We can brief your body on what the process produces, what questions it answers, and what it doesn't — before the vote.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">06 · Role</div>
+        <div class="audience-title">Finance / Budget Office</div>
+        <div class="audience-body">Operating a museum is not the same as opening one. Personnel alone is typically 60% of annual budget. We build the pro forma that shows what year one, year five, and year ten actually look like — with and without city subsidy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONS THEY COME WITH -->
+<section class="section section-white reveal">
+  <div class="section-inner">
+    <div class="section-eyebrow">What Cities Ask Us</div>
+    <h2 class="section-h2">The Questions We Hear <em>Before</em> Anyone Calls</h2>
+    <p class="section-lead">Most cities don't reach out because they have a plan. They reach out because they have a question — and nobody inside the building has a credible answer to it.</p>
+    <div class="questions-grid">
+      <div class="question-block">
+        <div class="question-q">"Is a museum even realistic for a city our size?"</div>
+        <div class="question-a">Scale and financial structure matter more than population. A $2M annual-budget community museum in a city of 40,000 can be deeply healthy — or deeply struggling. We assess whether the demographic base, tourism draw, and institutional structure support sustained operations before anything is built.</div>
+      </div>
+      <div class="question-block">
+        <div class="question-q">"What does this actually cost to run — not just build?"</div>
+        <div class="question-a">Capital cost is the number everyone sees. Operating cost is the number that closes museums. A feasibility study models attendance projections, earned revenue assumptions, staffing requirements, and the annual gap between what a museum earns and what it costs — so the city knows what it's underwriting.</div>
+      </div>
+      <div class="question-block">
+        <div class="question-q">"Can we do this in phases? We don't have $20M right now."</div>
+        <div class="question-a">Almost always yes. A master plan structures the full vision but sequences capital deployment so the institution opens at a scale it can sustain and grows into the larger program as funding allows. We design for the first phase to be operationally viable on its own, not dependent on Phase 2 being built.</div>
+      </div>
+      <div class="question-block">
+        <div class="question-q">"What partners should we have? Who else funds this?"</div>
+        <div class="question-a">State cultural agencies, federal programs (IMLS, NEH, EDA, HUD CDBG), private philanthropy, university partnerships, and tourism tax revenue all play roles in different configurations. We map realistic funding stacks for your specific context — not a generic grant list, but a sequenced strategy tied to what you already have.</div>
+      </div>
+      <div class="question-block">
+        <div class="question-q">"How long does feasibility take? What do we get at the end?"</div>
+        <div class="question-a">A proper feasibility study runs 3–6 months and produces attendance projections, operating cost modeling, staffing requirements, and revenue assumptions — structured so a council can vote on it, a bond attorney can reference it, and a capital campaign can launch from it.</div>
+      </div>
+      <div class="question-block">
+        <div class="question-q">"We have a historic building that's been empty for years. Is that a museum?"</div>
+        <div class="question-a">Maybe — and that's exactly the question to answer before you commit. A historic structure can anchor a cultural institution or sink one, depending on structural condition, operating cost of the building, programmatic fit with the community's needs, and what "museum" would actually mean in that space.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div style="padding: 0 48px; max-width: 1100px; margin: 0 auto;">
+  <div class="pull-quote reveal">
+    <p>A museum that can open is not the same as a museum that can stay open. Bad feasibility is still fatal — and the city that funded it is still responsible for what happens next.</p>
+    <cite>Mark Walhimer · Managing Partner, Museum Planning LLC</cite>
+  </div>
+</div>
+
+<!-- HOW WE WORK WITH PUBLIC SECTOR -->
+<section class="section section-cream reveal" id="how-we-work">
+  <div class="section-inner">
+    <div class="section-eyebrow">How We Work With Cities</div>
+    <h2 class="section-h2">A Process Built for <em>Public Projects</em></h2>
+    <p class="section-lead">Public museum projects move differently than private ones. Procurement rules, council timelines, budget cycles, and public stakeholder processes shape every phase. We've worked inside that reality — and we don't try to run a private-sector engagement in a public-sector context.</p>
+    <div class="phases-list">
+      <div class="phase-row">
+        <div class="phase-num">01</div>
+        <div class="phase-content">
+          <div class="phase-title">Early Conversation — Before the RFQ</div>
+          <div class="phase-desc">Most public projects start with an internal question before they reach procurement. We make time for a one-hour no-obligation call with city staff — city manager, economic development director, or council staff — to assess whether a formal study makes sense and what it would take to structure it for your procurement process.</div>
+          <div class="phase-tags">
+            <span class="phase-tag">No cost</span>
+            <span class="phase-tag">1 hour</span>
+            <span class="phase-tag">Confidential</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-num">02</div>
+        <div class="phase-content">
+          <div class="phase-title">Museum Assessment — Current State</div>
+          <div class="phase-desc">If a museum or cultural program already exists, we begin with an institutional health assessment: financial structure, governance, programming, facility condition, community position, and planning readiness. The Museum Vitality Index gives you a size-normalized benchmark against peer institutions nationally — so you know where you actually stand before planning begins.</div>
+          <div class="phase-tags">
+            <span class="phase-tag">Starting at $18,000</span>
+            <span class="phase-tag">MVI Benchmarking</span>
+            <span class="phase-tag">6–8 weeks</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-num">03</div>
+        <div class="phase-content">
+          <div class="phase-title">Feasibility Study — Before Capital is Committed</div>
+          <div class="phase-desc">Attendance projections, operating cost modeling, staffing requirements, revenue assumptions, and a clear operating gap analysis — the financial case for (or against) proceeding. Structured for council presentation, bond counsel review, and capital campaign launch. We include stakeholder engagement, community focus groups, and a written report that survives public records requests.</div>
+          <div class="phase-tags">
+            <span class="phase-tag">$40,000 – $70,000</span>
+            <span class="phase-tag">3–6 months</span>
+            <span class="phase-tag">Council-ready deliverable</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-num">04</div>
+        <div class="phase-content">
+          <div class="phase-title">Museum Master Plan — Building Program Through Capital Campaign</div>
+          <div class="phase-desc">Translates institutional goals into physical space and financial reality. Building program, floor plans, phasing strategy, construction budget, and capital campaign structure. Designed to work with your architect — not replace them. We serve as the client's advocate on program, not a design-build vendor.</div>
+          <div class="phase-tags">
+            <span class="phase-tag">Starting at $100,000</span>
+            <span class="phase-tag">6–12 months</span>
+            <span class="phase-tag">Phased delivery available</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-num">05</div>
+        <div class="phase-content">
+          <div class="phase-title">Stakeholders — How We Handle Public Process</div>
+          <div class="phase-desc">Public museum projects require community input that goes on the record. We design stakeholder engagement that satisfies public participation requirements, surfaces real community priorities, and produces documentation that protects the project from "we were never consulted" objections down the road. This isn't a listening tour — it's structured public engagement with a professional outcome.</div>
+          <div class="phase-tags">
+            <span class="phase-tag">Community focus groups</span>
+            <span class="phase-tag">Council presentations</span>
+            <span class="phase-tag">On-record documentation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MVI SECTION -->
+<section class="section section-white reveal">
+  <div class="section-inner">
+    <div class="section-eyebrow">Museum Vitality Index</div>
+    <div class="mvi-callout">
+      <div class="mvi-score-demo">
+        <div class="mvi-demo-eyebrow">Sample MVI Assessment</div>
+        <div class="mvi-score-display">79</div>
+        <div class="mvi-score-sub">B+ Strong · out of 100</div>
+        <div class="mvi-bars">
+          <div class="mvi-bar-row">
+            <div>
+              <div class="mvi-bar-label">Visitor Experience</div>
+              <div class="mvi-bar-track"><div class="mvi-bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="mvi-bar-score">17/20</div>
+          </div>
+          <div class="mvi-bar-row">
+            <div>
+              <div class="mvi-bar-label">Digital Presence</div>
+              <div class="mvi-bar-track"><div class="mvi-bar-fill" style="width:70%"></div></div>
+            </div>
+            <div class="mvi-bar-score">14/20</div>
+          </div>
+          <div class="mvi-bar-row">
+            <div>
+              <div class="mvi-bar-label">Financial Health</div>
+              <div class="mvi-bar-track"><div class="mvi-bar-fill" style="width:70%"></div></div>
+            </div>
+            <div class="mvi-bar-score">14/20</div>
+          </div>
+          <div class="mvi-bar-row">
+            <div>
+              <div class="mvi-bar-label">Community Impact</div>
+              <div class="mvi-bar-track"><div class="mvi-bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="mvi-bar-score">17/20</div>
+          </div>
+          <div class="mvi-bar-row">
+            <div>
+              <div class="mvi-bar-label">Institutional Strength</div>
+              <div class="mvi-bar-track"><div class="mvi-bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="mvi-bar-score">17/20</div>
+          </div>
+        </div>
+      </div>
+      <div class="mvi-text">
+        <div class="gold-rule"></div>
+        <h3>Before You Plan, Know Where You Stand</h3>
+        <p>The Museum Vitality Index is a proprietary 0–100 benchmarking framework developed by Museum Planning LLC. It evaluates museum performance across five dimensions — normalized for institutional size, so a $1.2M regional museum can be directly compared to a $25M peer.</p>
+        <p>For cities considering a cultural investment, the MVI answers a foundational question: if a museum already exists locally, is it healthy enough to build on? If not, what needs to change before a capital campaign makes sense?</p>
+        <p>Every metric is a ratio or rate — never a raw number. Five years of IRS 990 filings, TripAdvisor and Google ratings, Instagram analytics, and U.S. Census demographics all feed a single score with a clear grade and a plain-language strategic briefing.</p>
+        <a href="museum-vitality-index.html" class="proof-link" style="margin-top:8px; display:inline-block;">Learn more about the MVI</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section section-cream reveal">
+  <div class="section-inner">
+    <div class="section-eyebrow">Relevant Work</div>
+    <h2 class="section-h2">Civic and City-Adjacent <em>Projects</em></h2>
+    <p class="section-lead">Selected engagements where the client was a municipality, a city-backed institution, or a civic development organization — not a private board.</p>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-label">Municipality · Economic Development</div>
+        <div class="proof-name">Connecticut River Museum</div>
+        <div class="proof-body">A civic cultural institution serving Essex, CT and the Connecticut River Valley region. Museum Planning LLC produced a full MVI assessment — scoring financial health, digital reach, community impact, and institutional strength — benchmarked against peer institutions and delivered to the museum's leadership and stakeholders as a planning foundation.</div>
+        <a href="mailto:mark@museumplanning.com?subject=MVI%20Report%20Request%20%E2%80%94%20Connecticut%20River%20Museum" class="proof-link">Request MVI Report</a>
+      </div>
+      <div class="proof-card">
+        <div class="proof-label">Civic Development · Master Planning</div>
+        <div class="proof-name">Hunter Museum of American Art</div>
+        <div class="proof-body">In partnership with River City Company — a private nonprofit working alongside Chattanooga city government — the Hunter Museum issued an RFQ for comprehensive master planning, campus programming, and long-range capital strategy. A publicly accountable process designed to advance a city-owned cultural anchor.</div>
+        <a href="mailto:mark@museumplanning.com?subject=Project%20Reference%20%E2%80%94%20Hunter%20Museum" class="proof-link">Request Project Detail</a>
+      </div>
+    </div>
+    <p style="margin-top:28px; font-size:13px; color:var(--mid);">Additional municipal and civic project references available on request. We can provide contacts who have worked with us in a public-sector context.</p>
+  </div>
+</section>
+
+<!-- FEES PREVIEW -->
+<section class="section section-white reveal">
+  <div class="section-inner">
+    <div class="section-eyebrow">Typical Fee Ranges</div>
+    <h2 class="section-h2">Know What Ballpark <em>Before</em> You Call</h2>
+    <p class="section-lead">Every engagement begins with a one-hour conversation at no cost. The ranges below are starting points — actual scope and fee are set in that conversation, based on what you're actually trying to answer. All fees are exclusive of travel.</p>
+    <div class="fees-strip">
+      <div class="fee-card">
+        <div class="fee-service">Museum Assessment</div>
+        <div class="fee-price">$18,000+</div>
+        <div class="fee-desc">Current-state evaluation of institutional health, community position, and planning readiness. Includes MVI benchmarking against peer institutions nationally. Starting point for any engagement where a museum already exists.</div>
+      </div>
+      <div class="fee-card">
+        <div class="fee-service">Feasibility Study</div>
+        <div class="fee-price">$40k – $70k</div>
+        <div class="fee-desc">Attendance projections, operating cost modeling, staffing requirements, revenue assumptions — before capital is committed. The foundational document for council votes, bond allocations, and capital campaign launches.</div>
+      </div>
+      <div class="fee-card">
+        <div class="fee-service">Museum Master Plan</div>
+        <div class="fee-price">$100k+</div>
+        <div class="fee-desc">Building program through capital campaign structure. Includes floor plans, phasing, budget, and capital campaign framework. Phased delivery available for municipalities managing multi-year budget cycles.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="section-eyebrow" style="color:var(--gold);">Start Here</div>
+      <h2>One Hour. No Cost. <em>No Obligation.</em></h2>
+      <p>Tell us where you are and what you're trying to figure out — whether that's a feasibility question, a capital campaign you've been handed, a building that's been empty for a decade, or a council resolution you need to respond to. Mark is personally involved in every engagement and available within two weeks.</p>
+      <div class="contact-direct">
+        <div class="contact-line">
+          <span class="contact-type">Phone</span>
+          <a href="tel:4157945252" class="contact-val">415-794-5252</a>
+        </div>
+        <div class="contact-line">
+          <span class="contact-type">Email</span>
+          <a href="mailto:mark@museumplanning.com" class="contact-val">mark@museumplanning.com</a>
+        </div>
+        <div class="contact-line">
+          <span class="contact-type">Offices</span>
+          <span class="contact-val" style="cursor:default;">New York · Mexico City</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="cta-form" id="contactForm">
+        <div class="form-row">
+          <label>
+            <span class="field-label">Your Name</span>
+            <input type="text" placeholder="Jane Smith" id="f-name">
+          </label>
+          <label>
+            <span class="field-label">Title / Role</span>
+            <input type="text" placeholder="City Manager" id="f-title">
+          </label>
+        </div>
+        <label>
+          <span class="field-label">City / Municipality</span>
+          <input type="text" placeholder="City of Greenville, SC" id="f-city">
+        </label>
+        <label>
+          <span class="field-label">Email Address</span>
+          <input type="email" placeholder="jane@cityofgreenville.gov" id="f-email">
+        </label>
+        <label>
+          <span class="field-label">What Are You Trying to Figure Out?</span>
+          <select id="f-interest">
+            <option value="" disabled selected>Select the closest match</option>
+            <option>Is a museum realistic for our city?</option>
+            <option>What would it cost to build and operate?</option>
+            <option>We have a building — could it be a museum?</option>
+            <option>We have an existing museum that needs help</option>
+            <option>Museum feasibility study — ready to scope</option>
+            <option>Museum master plan / capital campaign</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>
+          <span class="field-label">Brief Context (Optional)</span>
+          <textarea rows="3" placeholder="A sentence or two about your situation — we read every message." id="f-note"></textarea>
+        </label>
+        <button class="btn-submit" onclick="handleSubmit()">Request a Conversation →</button>
+        <p class="form-note">We respond to every message within one business day.</p>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✓</div>
+        <h3>Your email client should have opened.</h3>
+        <p>If it didn't, nothing was sent — please email or call directly:<br>
+        <a href="mailto:mark@museumplanning.com" style="color:var(--gold);">mark@museumplanning.com</a><br>
+        <a href="tel:4157945252" style="color:var(--gold);">415-794-5252</a><br><br>
+        We respond to every inquiry within one business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-left">Museum Planning LLC · museumplanning.com · mark@museumplanning.com · 415-794-5252</div>
+  <div class="footer-right">
+    <a href="museum-planning-services.html">Services</a>
+    <a href="for-cities.html">For Cities</a>
+    <a href="for-cities-science-center.html">Science Centers</a>
+    <a href="museum-vitality-index.html">MVI</a>
+    <a href="museum-planning-about.html">About</a>
+    <a href="museum-planning-contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+// Mark document as JS-enabled so .reveal animation activates safely
+document.documentElement.classList.add('js-ready');
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
+
+// Simple form handler (hooks into mailto as fallback)
+function handleSubmit() {
+  const name    = document.getElementById('f-name').value.trim();
+  const title   = document.getElementById('f-title').value.trim();
+  const city    = document.getElementById('f-city').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const interest = document.getElementById('f-interest').value;
+  const note    = document.getElementById('f-note').value.trim();
+
+  if (!name || !email || !interest) {
+    // Highlight required fields
+    if (!name)  document.getElementById('f-name').style.borderColor = '#C9A84C';
+    if (!email) document.getElementById('f-email').style.borderColor = '#C9A84C';
+    if (!interest) document.getElementById('f-interest').style.borderColor = '#C9A84C';
+    return;
+  }
+
+  const body = encodeURIComponent(
+    `Name: ${name}\nTitle: ${title}\nCity: ${city}\nEmail: ${email}\nInterest: ${interest}\nNote: ${note}`
+  );
+  const subject = encodeURIComponent(`Municipal Inquiry — ${city || name}`);
+  window.location.href = `mailto:mark@museumplanning.com?subject=${subject}&body=${body}`;
+
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// Smooth anchor for CTA buttons
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>

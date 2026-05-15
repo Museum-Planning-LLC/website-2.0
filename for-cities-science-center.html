@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Center Feasibility for Cities | The New Model | Museum Planning LLC</title>
+<meta name="description" content="Science center feasibility for cities: starting a science center or technology center, workforce pipelines, employer signal, and real operating costs — before capital is committed. Museum Planning LLC helps you compare the legacy template to a convergence-era civic model.">
+<link rel="canonical" href="https://museumplanning.com/for-cities-science-center.html">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --deep:   #111C27;
+  --gold:   #C9A84C;
+  --cream:  #F8F4EC;
+  --ink:    #1A1A1A;
+  --mid:    #5A5A5A;
+  --rule:   #D4C8B0;
+  --white:  #FFFFFF;
+  /* Science-center accent — used only for the "broken model" contrast and tech callouts */
+  --red:    #8C2018;
+  --teal:   #1A4A5C;
+  --teal-light: #E8F2F6;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--white);
+}
+
+/* ─── NAV (matches for-cities.html) ─── */
+.site-nav {
+  background: var(--deep);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  text-decoration: none;
+}
+.nav-logo-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-cta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--deep);
+  background: var(--gold);
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--deep);
+  padding: 96px 48px 72px;
+  position: relative;
+  overflow: hidden;
+}
+/* subtle grid texture overlay */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.hero-eyebrow::before { content: '— '; }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4.5vw, 58px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.08;
+  margin-bottom: 8px;
+  max-width: 820px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 28px;
+  line-height: 1.3;
+}
+.hero-deck {
+  font-size: 17px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+  margin-bottom: 40px;
+  max-width: 680px;
+}
+.hero-deck strong { color: rgba(255,255,255,0.9); font-weight: 700; }
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep);
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-ghost {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.65);
+  padding: 14px 28px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Hero stat bar */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 56px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 32px;
+}
+.hero-stat {
+  padding: 0 24px 0 0;
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hero-stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  line-height: 1.5;
+}
+
+/* ─── SHARED ─── */
+.section { padding: 80px 48px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-cream  { background: var(--cream); }
+.section-dark   { background: var(--deep); color: white; }
+.section-white  { background: var(--white); }
+.section-teal   { background: var(--teal); color: white; }
+
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.eyebrow::before { content: '— '; }
+.section-dark .eyebrow,
+.section-teal .eyebrow { color: var(--gold); }
+.eyebrow-warn { color: var(--red); }
+
+.section-h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3vw, 42px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--deep);
+  margin-bottom: 20px;
+}
+.section-h2 em { font-style: italic; color: var(--gold); }
+.section-dark .section-h2,
+.section-teal .section-h2 { color: var(--white); }
+
+.section-lead {
+  font-size: 17px;
+  color: var(--mid);
+  line-height: 1.75;
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+.section-dark .section-lead,
+.section-teal .section-lead { color: rgba(255,255,255,0.58); }
+
+.gold-rule {
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 28px;
+}
+
+/* ─── CIVIC GOALS STRIP ─── */
+.goals-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 8px;
+}
+.goal-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-top: 2px solid var(--gold);
+  padding: 28px 24px;
+}
+.goal-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.goal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.goal-body {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+}
+
+/* ─── BROKEN MODEL ─── */
+.broken-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.broken-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(140,32,24,0.2);
+}
+.broken-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.broken-body {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.broken-body strong { color: var(--ink); }
+
+.failure-list {
+  list-style: none;
+  margin: 16px 0;
+}
+.failure-list li {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.6;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.failure-list li:last-child { border-bottom: none; }
+.failure-marker {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--red);
+  flex-shrink: 0;
+  padding-top: 2px;
+  opacity: 0.7;
+}
+
+/* Timeline comparison */
+.model-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 40px;
+}
+.model-col {
+  padding: 28px 24px;
+}
+.model-col-old {
+  background: #F5EFED;
+  border-top: 3px solid var(--red);
+}
+.model-col-new {
+  background: var(--deep);
+  border-top: 3px solid var(--gold);
+}
+.model-col-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.model-col-old .model-col-label { color: var(--red); }
+.model-col-new .model-col-label { color: var(--gold); }
+.model-col-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.model-col-old .model-col-heading { color: var(--deep); }
+.model-col-new .model-col-heading { color: var(--white); }
+.model-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  font-size: 13px;
+  gap: 12px;
+}
+.model-col-new .model-row { border-bottom-color: rgba(255,255,255,0.07); }
+.model-row:last-child { border-bottom: none; }
+.model-row-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.model-col-old .model-row-label { color: var(--mid); }
+.model-col-new .model-row-label { color: rgba(255,255,255,0.35); }
+.model-row-val {
+  font-size: 13px;
+  font-weight: 700;
+  text-align: right;
+}
+.model-col-old .model-row-val { color: var(--red); }
+.model-col-new .model-row-val { color: var(--gold); }
+
+/* ─── NEW MODEL / CONVERGENCE ─── */
+.convergence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.convergence-visual {
+  background: var(--deep);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.convergence-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.cv-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.cv-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+}
+.cv-title em { font-style: italic; color: var(--gold); }
+.cv-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+.cv-nodes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  position: relative;
+  z-index: 1;
+}
+.cv-node {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.15);
+  padding: 14px 12px;
+}
+.cv-node-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+.cv-node-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+}
+.convergence-text {}
+.convergence-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.convergence-text h3 em { font-style: italic; color: var(--gold); }
+.convergence-text p {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.72;
+  margin-bottom: 14px;
+}
+.convergence-text .quote-block {
+  border-left: 3px solid var(--gold);
+  background: var(--cream);
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+.convergence-text .quote-block p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--deep);
+  margin: 0 0 8px;
+}
+.convergence-text .quote-block cite {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-style: normal;
+}
+
+/* ─── FIVE COMPONENTS ─── */
+.components-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.component-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+}
+.component-row:last-child { border-bottom: none; }
+.component-left {
+  padding: 32px 32px 32px 0;
+  border-right: 1px solid var(--rule);
+}
+.component-right {
+  padding: 32px 0 32px 32px;
+}
+.component-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.component-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--deep);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.component-title em { font-style: italic; color: var(--gold); }
+.component-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.component-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--mid);
+  border: 1px solid var(--rule);
+  padding: 3px 7px;
+}
+.component-body {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+.component-body strong { color: var(--ink); }
+.component-governance {
+  font-size: 14px;
+  color: var(--mid);
+  margin-top: 12px;
+  line-height: 1.65;
+}
+.component-callout {
+  background: var(--deep);
+  padding: 16px 18px;
+  margin-top: 14px;
+}
+.component-callout p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.6);
+}
+.component-callout strong { color: var(--gold); font-weight: 500; }
+
+/* ─── WHAT IT DELIVERS ─── */
+.delivers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.delivers-card {
+  padding: 32px 24px;
+  border-top: 2px solid rgba(201,168,76,0.3);
+  background: rgba(255,255,255,0.03);
+}
+.delivers-card:hover { border-top-color: var(--gold); }
+.delivers-icon {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.delivers-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.delivers-body {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+}
+
+/* ─── PROOF ─── */
+.proof-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.proof-main {
+  background: var(--deep);
+  padding: 40px 36px;
+}
+.proof-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.proof-side-card {
+  background: var(--cream);
+  border-top: 2px solid var(--gold);
+  padding: 24px 28px;
+  flex: 1;
+}
+.proof-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.proof-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.proof-location {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 16px;
+}
+.proof-body {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.proof-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 16px;
+}
+.proof-stat {
+  background: rgba(255,255,255,0.04);
+  padding: 14px 12px;
+}
+.proof-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.proof-stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.proof-side-card .proof-eyebrow { color: var(--gold); }
+.proof-side-card .proof-name {
+  font-size: 18px;
+  color: var(--deep);
+}
+.proof-side-card .proof-body {
+  font-size: 13px;
+  color: var(--mid);
+}
+
+/* ─── FEES ─── */
+.fees-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.fee-card {
+  background: var(--cream);
+  padding: 28px 24px;
+  border-top: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.fee-card:hover { border-top-color: var(--gold); }
+.fee-service {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 8px;
+}
+.fee-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 8px;
+}
+.fee-desc {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+/* ─── CTA ─── */
+.cta-section {
+  background: var(--deep);
+  padding: 96px 48px;
+}
+.cta-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.cta-left h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+.cta-left h2 em { font-style: italic; color: var(--gold); }
+.cta-left p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.72;
+  margin-bottom: 32px;
+}
+.contact-direct { display: flex; flex-direction: column; gap: 16px; }
+.contact-line { display: flex; align-items: center; gap: 16px; }
+.contact-type {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  min-width: 48px;
+}
+.contact-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-val:hover { color: var(--gold); }
+
+.cta-form { display: flex; flex-direction: column; gap: 14px; }
+.cta-form label { display: flex; flex-direction: column; gap: 5px; }
+.cta-form .field-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.cta-form input,
+.cta-form select,
+.cta-form textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+  -webkit-appearance: none;
+}
+.cta-form input::placeholder,
+.cta-form textarea::placeholder { color: rgba(255,255,255,0.2); }
+.cta-form input:focus,
+.cta-form select:focus,
+.cta-form textarea:focus { border-color: var(--gold); }
+.cta-form select option { background: var(--deep); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.btn-submit {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--deep);
+  border: none;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+.btn-submit:hover { opacity: 0.88; }
+.form-note { font-size: 12px; color: rgba(255,255,255,0.2); text-align: center; }
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 48px 24px;
+  color: rgba(255,255,255,0.6);
+}
+.form-success .check { font-size: 36px; color: var(--gold); margin-bottom: 14px; }
+.form-success h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 10px; }
+
+/* ─── FOOTER ─── */
+.site-footer {
+  background: #0A1017;
+  padding: 32px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-left {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+.footer-right { display: flex; gap: 24px; }
+.footer-right a {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-right a:hover { color: var(--gold); }
+
+/* ─── PULL QUOTE ─── */
+.pull-quote {
+  border-left: 3px solid var(--gold);
+  padding: 18px 22px;
+  background: var(--cream);
+  margin: 36px 0;
+}
+.pull-quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-style: italic;
+  color: var(--deep);
+  line-height: 1.55;
+}
+.pull-quote cite {
+  display: block;
+  margin-top: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-style: normal;
+}
+
+/* ─── PROOF LINK ─── */
+.proof-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.proof-link:hover { border-bottom-color: var(--gold); }
+.proof-link::after { content: ' →'; }
+
+/* ─── SCROLL REVEAL (JS-safe) ─── */
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.js-ready .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 960px) {
+  .broken-grid,
+  .convergence-grid,
+  .cta-inner,
+  .proof-block { grid-template-columns: 1fr; }
+  .component-row { grid-template-columns: 1fr; }
+  .component-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 24px 0; }
+  .component-right { padding: 24px 0; }
+  .goals-strip,
+  .delivers-grid,
+  .fees-strip { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .section, .cta-section { padding: 56px 24px; }
+  .site-nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .model-compare { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .proof-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+  <script src="assets/ga-measurement-id.js"></script>
+  <script src="assets/analytics.js" defer></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-text">Museum Planning LLC</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="for-cities.html">For Cities</a></li>
+    <li><a href="for-cities-science-center.html" class="active">Science Centers</a></li>
+    <li><a href="museum-vitality-index.html">MVI</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+  </ul>
+  <a href="tel:4157945252" class="nav-cta">415-794-5252</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">For Cities Considering a Science &amp; Technology Center</div>
+    <h1>Your City Wants Tech Jobs,<br>a Workforce Pipeline,<br>and <em>a Destination.</em></h1>
+    <div class="hero-sub">The model most cities get pitched won't deliver any of those.</div>
+    <p class="hero-deck">Cities pursuing science and technology centers are almost always presented with a version of the same proposal: a large building full of push-button interactives, school-group programming, and a gift shop. That model is fifty years old. <strong>It was never designed to attract employers, develop a workforce, or function as a technology demonstration.</strong> There's a new model. Here's what it looks like — and how to tell the difference before you commit capital.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start a Conversation</a>
+      <a href="#new-model" class="btn-ghost">The New Model</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">1969</div>
+        <div class="hero-stat-label">Year the Exploratorium opened —<br>still the dominant template</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$327</div>
+        <div class="hero-stat-label">Per sq ft — proven exhibition cost,<br>new model, 2019</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">18mo</div>
+        <div class="hero-stat-label">Concept to grand opening,<br>new model</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">55+</div>
+        <div class="hero-stat-label">Years since the hands-on template<br>most cities are still pitched</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT CITIES ARE ACTUALLY TRYING TO ACCOMPLISH -->
+<section class="section section-dark reveal">
+  <div class="section-inner">
+    <div class="eyebrow">What City Hall Is Actually Asking</div>
+    <h2 class="section-h2">Three Goals a Science Center <em>Should</em> Deliver</h2>
+    <p class="section-lead">When economic development directors, mayors' offices, and city councils start the science center conversation, they usually aren't thinking about school groups and push-button dinosaur exhibits. They're thinking about three things — and the institution they build should be designed to deliver them.</p>
+    <div class="goals-strip">
+      <div class="goal-card">
+        <div class="goal-num">Goal 01</div>
+        <div class="goal-title">Attract Technology Companies &amp; Employers</div>
+        <div class="goal-body">Tech companies locate where the signal is clear: this city invests in science, technology, and data. A science center is a visible statement of that commitment — but only if the institution itself demonstrates the technologies those companies use. A building full of 1990s interactives sends exactly the wrong message to a prospective employer evaluating sites.</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-num">Goal 02</div>
+        <div class="goal-title">Build the Labor Market — STEM Pipeline</div>
+        <div class="goal-body">The workforce argument is the strongest civic case for a science center, and it's the one most facilities never actually deliver on. A building that hosts school field trips once a year does not build a labor pipeline. A living lab that partners with community colleges, high schools, and employers — and where students do real work with real technology — does.</div>
+      </div>
+      <div class="goal-card">
+        <div class="goal-num">Goal 03</div>
+        <div class="goal-title">Anchor Main Street &amp; Economic Development</div>
+        <div class="goal-body">Hotel nights, restaurant revenue, retail, property values — the economic multiplier argument for a cultural destination. This is legitimate, but it requires an institution people actually want to visit repeatedly, not just once on a field trip in the third grade. Repeat visitorship requires a living system, not a static exhibit hall.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE BROKEN MODEL -->
+<section class="section section-white reveal">
+  <div class="section-inner">
+    <div class="eyebrow eyebrow-warn">The Broken Model</div>
+    <div class="broken-grid">
+      <div>
+        <div class="broken-label">The Exploratorium Template · 1969–Present</div>
+        <div class="broken-title">Why the Standard Science Center Model Won't Get You There</div>
+        <div class="broken-body">The Exploratorium opened in San Francisco in 1969. It was a genuine innovation: hands-on, inquiry-based, participatory. It was the right institution for its moment. <strong>That moment was fifty-five years ago.</strong></div>
+        <div class="broken-body">The problem isn't that the Exploratorium was a bad idea. The problem is that nearly every science center built since then has been a version of the same building — and the world has changed faster than the model. The smartphone in a child's pocket offers more interactive computing than most science center exhibits. The economics are brutal. And the civic goals — workforce development, employer attraction, economic anchoring — were never the Exploratorium's goals for every city, and they still aren't built into the standard model most consultants sell.</div>
+        <ul class="failure-list">
+          <li><span class="failure-marker">✗</span>High construction cost ($50–150M) for exhibits that age badly and become expensive to maintain or replace</li>
+          <li><span class="failure-marker">✗</span>Annual operating budget ($4–12M) heavily dependent on school group revenue that flatlines after year three</li>
+          <li><span class="failure-marker">✗</span>Static content — exhibits don't update, can't adapt, don't respond to the visitor or to the city's changing story</li>
+          <li><span class="failure-marker">✗</span>No structural connection to employers, community colleges, or workforce agencies — field trips aren't a labor pipeline</li>
+          <li><span class="failure-marker">✗</span>Sends no signal to relocating tech companies that the city understands or demonstrates current technology</li>
+          <li><span class="failure-marker">✗</span>Repeat visitation collapses after the first visit — the economics require a new audience, not a returning community</li>
+        </ul>
+      </div>
+      <div>
+        <div class="pull-quote" style="margin-top:0;">
+          <p>"A museum that can open is not the same as a museum that can stay open. Bad feasibility is still fatal — and the city that funded it is still responsible for what happens next."</p>
+          <cite>Mark Walhimer · Museum Planning LLC</cite>
+        </div>
+        <div class="broken-body" style="margin-top:4px;">The institutions that fail quietly — the ones that become budget line items cities can't exit — almost always followed the standard model. Large building. Expensive exhibits. School-group dependent revenue. No living connection to current technology or the local workforce.</div>
+        <div class="broken-body">The failure isn't usually visible at the ribbon cutting. It shows up in year four or five when the capital campaign donors have moved on, school group revenue has plateaued, and the operating gap is landing in the general fund.</div>
+        <div class="broken-body"><strong>The question a good feasibility process asks isn't "can we build it?" — it's "can we operate it sustainably for twenty years while it continues to deliver on the civic goals that justified the investment?"</strong></div>
+      </div>
+    </div>
+
+    <div class="model-compare">
+      <div class="model-col model-col-old">
+        <div class="model-col-label">Old Model</div>
+        <div class="model-col-heading">The Exploratorium Template</div>
+        <div class="model-row"><span class="model-row-label">Core concept</span><span class="model-row-val">Push-button interactives</span></div>
+        <div class="model-row"><span class="model-row-label">Content</span><span class="model-row-val">Static, ages in place</span></div>
+        <div class="model-row"><span class="model-row-label">Visitor interface</span><span class="model-row-val">Physical buttons &amp; panels</span></div>
+        <div class="model-row"><span class="model-row-label">Revenue model</span><span class="model-row-val">School groups + admissions</span></div>
+        <div class="model-row"><span class="model-row-label">Workforce connection</span><span class="model-row-val">None — field trips</span></div>
+        <div class="model-row"><span class="model-row-label">Tech signal to employers</span><span class="model-row-val">Weak</span></div>
+        <div class="model-row"><span class="model-row-label">Repeat visitorship</span><span class="model-row-val">Collapses after year 1</span></div>
+        <div class="model-row"><span class="model-row-label">Capital cost</span><span class="model-row-val">$50M – $150M+</span></div>
+      </div>
+      <div class="model-col model-col-new">
+        <div class="model-col-label">New Model</div>
+        <div class="model-col-heading">Convergence-Era Science Center</div>
+        <div class="model-row"><span class="model-row-label">Core concept</span><span class="model-row-val">Distributed AI / data system</span></div>
+        <div class="model-row"><span class="model-row-label">Content</span><span class="model-row-val">Adaptive, updates in real time</span></div>
+        <div class="model-row"><span class="model-row-label">Visitor interface</span><span class="model-row-val">Gesture, movement, voice, AI</span></div>
+        <div class="model-row"><span class="model-row-label">Revenue model</span><span class="model-row-val">Diverse: civic, employer, event, IP</span></div>
+        <div class="model-row"><span class="model-row-label">Workforce connection</span><span class="model-row-val">Structural — living lab</span></div>
+        <div class="model-row"><span class="model-row-label">Tech signal to employers</span><span class="model-row-val">Strong — IS the demonstration</span></div>
+        <div class="model-row"><span class="model-row-label">Repeat visitorship</span><span class="model-row-val">High — content evolves</span></div>
+        <div class="model-row"><span class="model-row-label">Capital cost</span><span class="model-row-val">Right-sized for the mission</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE NEW MODEL -->
+<section class="section section-cream reveal" id="new-model">
+  <div class="section-inner">
+    <div class="eyebrow">The Convergence-Era Model</div>
+    <h2 class="section-h2">Not a Building Full of Exhibits.<br><em>A Living System for the City.</em></h2>
+    <p class="section-lead">The new model, developed through Museum Planning LLC's Convergence Era framework, starts from a different premise: a science and technology center should itself be a demonstration of the technologies it's meant to represent — and it should be structurally connected to the workforce, employers, and civic identity it's meant to serve.</p>
+    <div class="convergence-grid">
+      <div class="convergence-visual">
+        <div class="cv-eyebrow">Convergence Era · Museum Planning LLC · 2026</div>
+        <div class="cv-title">Not a Building.<br><em>A Distributed<br>Interpretive System.</em></div>
+        <div class="cv-sub">An interconnected network of AI, sensors, and spatial computation</div>
+        <div class="cv-nodes">
+          <div class="cv-node">
+            <div class="cv-node-label">AI Layer</div>
+            <div class="cv-node-desc">The city's own data — history, demographics, science — becomes the exhibit. Visitors ask anything.</div>
+          </div>
+          <div class="cv-node">
+            <div class="cv-node-label">Spatial Computing</div>
+            <div class="cv-node-desc">Every room a computation. Sensor-rich. Adaptive. Responsive to presence and movement.</div>
+          </div>
+          <div class="cv-node">
+            <div class="cv-node-label">Embodied AI</div>
+            <div class="cv-node-desc">Gesture, proximity, gaze as interface. No buttons. Perceptually alive environments.</div>
+          </div>
+          <div class="cv-node">
+            <div class="cv-node-label">Distributed Nodes</div>
+            <div class="cv-node-desc">Main Street. Schools. Libraries. The system extends beyond the building.</div>
+          </div>
+          <div class="cv-node">
+            <div class="cv-node-label">Workforce Pipeline</div>
+            <div class="cv-node-desc">Structural partnerships with colleges and employers. Students do real work here.</div>
+          </div>
+          <div class="cv-node">
+            <div class="cv-node-label">Living Content</div>
+            <div class="cv-node-desc">Content updates as the city changes. The AI learns. The exhibition never stagnates.</div>
+          </div>
+        </div>
+      </div>
+      <div class="convergence-text">
+        <div class="gold-rule"></div>
+        <h3>What <em>"Dataland"</em> Actually Means for a City</h3>
+        <p>The convergence-era science center treats the city's own data as its primary exhibit. 200 years of public archives, historic photographs, census records, environmental data, local scientific research — absorbed by an AI that speaks the city back to itself. Visitors ask any question. Schools use it daily. Remote users access it from home. The AI updates as the city changes.</p>
+        <p>This is not a metaphor. It is a specific technical architecture: AI trained on local content, deployed through spatial computing and embodied interfaces, distributed across physical nodes in the city. The building is an anchor, not the entire system.</p>
+        <div class="convergence-text quote-block">
+          <p>"A museum will no longer be defined solely as a building, but as a distributed interpretive system — an interconnected network of metadata, AI-driven content, environmental sensors, and spatial computation."</p>
+          <cite>Convergence Era · Museum Planning LLC · 2026</cite>
+        </div>
+        <p>For a city, this matters because the system is designed from the start for the three goals city hall actually cares about — employer attraction, workforce development, and economic anchoring — not retrofitted for them after the building opens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIVE COMPONENTS -->
+<section class="section section-white reveal">
+  <div class="section-inner">
+    <div class="eyebrow">The Architecture of the New Model</div>
+    <h2 class="section-h2">Five Systems. <em>One Civic Institution.</em></h2>
+    <p class="section-lead">The convergence-era science center isn't a collection of exhibits — it's an integrated system of five technical and programmatic layers, each designed to deliver a specific civic outcome.</p>
+    <div class="components-list">
+
+      <div class="component-row">
+        <div class="component-left">
+          <div class="component-num">System 01</div>
+          <div class="component-title">The <em>AI Layer</em></div>
+          <div class="component-tags">
+            <span class="component-tag">City's Own Data</span>
+            <span class="component-tag">Adaptive Content</span>
+            <span class="component-tag">Always Live</span>
+          </div>
+        </div>
+        <div class="component-right">
+          <div class="component-body">An AI trained on the city's own data — 200+ years of archives, photographs, demographic records, environmental data, local scientific research, contested histories reviewed by community stakeholders. This AI becomes the primary interpretive layer of the institution. <strong>Visitors ask any question and receive a response grounded in the city's actual story.</strong> Schools use it daily as a curriculum resource. Remote users access it from home. The system updates as new data is added. Content never stagnates because the city itself is the content.</div>
+          <div class="component-governance">A serious feasibility process also defines governance: what data may enter the model, how accuracy and contested history are handled, retention and public-records alignment, vendor roles, and what the city owns versus licenses. Those decisions belong in writing before procurement — not after opening.</div>
+          <div class="component-callout">
+            <p><strong>Employer signal:</strong> A city that has built and maintains a public AI system trained on local civic data is demonstrating exactly the data infrastructure and AI fluency that technology employers look for when evaluating sites.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-row">
+        <div class="component-left">
+          <div class="component-num">System 02</div>
+          <div class="component-title">Spatial Computing &amp; <em>Embodied AI</em></div>
+          <div class="component-tags">
+            <span class="component-tag">Sensor Networks</span>
+            <span class="component-tag">No Buttons</span>
+            <span class="component-tag">Perceptually Alive</span>
+          </div>
+        </div>
+        <div class="component-right">
+          <div class="component-body">Spatial computing turns every room into an interactive field of computation: PIR sensors, depth cameras, BLE positioning, LIDAR, environmental monitors, edge computing nodes. <strong>The visitor's presence, movement, gaze, and gesture become the interface.</strong> There are no buttons to push, no touchscreens to tap. The environment perceives and responds. Embodied AI integrates this sensory fabric with the AI layer, allowing the institution to deliver personalized interpretation in real time — adapting lighting, narrative, language, and content depth to the individual visitor without a single static exhibit panel.</div>
+          <div class="component-callout">
+            <p><strong>Workforce application:</strong> Local students and community college programs can participate directly in the design, calibration, and maintenance of these systems — doing real technical work, not just visiting.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-row">
+        <div class="component-left">
+          <div class="component-num">System 03</div>
+          <div class="component-title">The Physical <em>Experience Layer</em></div>
+          <div class="component-tags">
+            <span class="component-tag">Projection Mapping</span>
+            <span class="component-tag">Video Wall</span>
+            <span class="component-tag">Holographics</span>
+            <span class="component-tag">Maker Area</span>
+          </div>
+        </div>
+        <div class="component-right">
+          <div class="component-body">The physical anchor: exterior projection mapping on the building facade. A hero video wall. Holographic figures. Projection-mapped interactive scale models. Touch tables with object recognition. A local art gallery. Historic artifact displays. A kids maker area with a 3D printer and fabrication lab. Community conference space available for civic and employer events. <strong>Every component proven, replicable, and now dramatically less expensive than it was in 2019 due to AI-driven content generation.</strong></div>
+          <div class="component-callout">
+            <p><strong>Proven at scale:</strong> The C.O. Polk Interactive Museum (McDonough, Georgia, 2019) demonstrated this physical layer at $327/sq ft with an 18-month timeline from concept to grand opening. That cost is now lower due to advances in AI content production.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-row">
+        <div class="component-left">
+          <div class="component-num">System 04</div>
+          <div class="component-title">The <em>Distributed Network</em></div>
+          <div class="component-tags">
+            <span class="component-tag">Main Street Nodes</span>
+            <span class="component-tag">School Satellites</span>
+            <span class="component-tag">Remote Access</span>
+          </div>
+        </div>
+        <div class="component-right">
+          <div class="component-body">The convergence-era science center is not confined to a single building. The AI layer, spatial content, and interpretive system extend into the city: <strong>Main Street activations at storefronts and civic buildings, satellite nodes at schools and libraries, remote digital access for citizens who can't visit in person.</strong> This distributed architecture dramatically reduces the financial risk of the model — the system doesn't depend on a single venue's attendance to justify its operating cost. It also multiplies the institution's civic footprint and its presence in the daily life of the community.</div>
+          <div class="component-callout">
+            <p><strong>Economic development application:</strong> Main Street nodes create a direct link between the science center and downtown retail, restaurant, and hospitality businesses — the multiplier effect city hall is looking for.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-row">
+        <div class="component-left">
+          <div class="component-num">System 05</div>
+          <div class="component-title">The <em>Workforce Pipeline</em></div>
+          <div class="component-tags">
+            <span class="component-tag">Employer Partnerships</span>
+            <span class="component-tag">College Integration</span>
+            <span class="component-tag">Real Work</span>
+          </div>
+        </div>
+        <div class="component-right">
+          <div class="component-body">The workforce pipeline is not a program — it's a structural design decision. The institution is built with designated spaces, governance frameworks, and technology infrastructure that invite employers, community colleges, and high schools to use the facility as a working lab. <strong>Students don't just visit — they help design, calibrate, and maintain the systems. They do internships. They do real data work on real city data.</strong> Employers who partner with the institution gain a visible presence, a recruitment pipeline, and a demonstration platform for their own technologies. This is the model that actually delivers on the labor market argument.</div>
+          <div class="component-callout">
+            <p><strong>What this requires:</strong> Intentional design of partnership structures, physical space allocation, and governance from day one — not afterthought programming added after the building opens. We build this into the feasibility study and master plan from the start.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT DELIVERS FOR THE CITY -->
+<section class="section section-dark reveal">
+  <div class="section-inner">
+    <div class="eyebrow">The Civic Return</div>
+    <h2 class="section-h2">What the New Model <em>Actually Delivers</em></h2>
+    <p class="section-lead">The convergence-era science center is designed from the first day of planning to deliver on the three things city hall actually cares about — not as hoped-for outcomes, but as structural results of how the institution is designed.</p>
+    <div class="delivers-grid">
+      <div class="delivers-card">
+        <div class="delivers-icon">Return 01</div>
+        <div class="delivers-title">Technology Employer Signal</div>
+        <div class="delivers-body">A city that has built and operates a living AI system, spatial computing infrastructure, and public data layer is demonstrating the exact capabilities technology companies look for when evaluating sites. The institution itself is the pitch to prospective employers. Not a brochure about the city — a working demonstration inside it.</div>
+      </div>
+      <div class="delivers-card">
+        <div class="delivers-icon">Return 02</div>
+        <div class="delivers-title">Workforce Development</div>
+        <div class="delivers-body">Structural partnerships with community colleges and employers — not field trips. Students work on real data systems, participate in real projects, and build portfolios in AI, spatial computing, fabrication, and data science. The institution becomes a recognized step in a local STEM career pathway.</div>
+      </div>
+      <div class="delivers-card">
+        <div class="delivers-icon">Return 03</div>
+        <div class="delivers-title">Main Street &amp; Economic Anchoring</div>
+        <div class="delivers-body">High repeat visitorship (because content evolves), distributed Main Street nodes that drive pedestrian traffic to adjacent businesses, civic event capacity that fills hotel nights and restaurants. The economic multiplier argument is real — but it requires an institution people come back to, not just visit once.</div>
+      </div>
+      <div class="delivers-card">
+        <div class="delivers-icon">Return 04</div>
+        <div class="delivers-title">Sustainable Operating Model</div>
+        <div class="delivers-body">Revenue diversification from the start: city support, employer partnerships, event rental, IP licensing of the local AI system, grant funding from IMLS, NEH, EDA, and CDBG. Not a model built on school group admissions that plateaus in year three and lands in the general fund in year five.</div>
+      </div>
+      <div class="delivers-card">
+        <div class="delivers-icon">Return 05</div>
+        <div class="delivers-title">Civic Identity &amp; Narrative</div>
+        <div class="delivers-body">The AI layer, trained on the city's own story, gives residents a new way to understand where they live — contested histories, scientific heritage, demographic change, future possibilities. It is a civic mirror that updates as the city changes. Schools use it as a curriculum resource. The institution becomes genuinely part of daily life, not a destination you visit once and forget.</div>
+      </div>
+      <div class="delivers-card">
+        <div class="delivers-icon">Return 06</div>
+        <div class="delivers-title">Regional &amp; National Differentiation</div>
+        <div class="delivers-body">A convergence-era science center is genuinely different from what exists in most American cities. That differentiation is a competitive asset for regional talent attraction, tourism marketing, and media coverage. The institution becomes a story — not another building with push-button exhibits.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section section-cream reveal">
+  <div class="section-inner">
+    <div class="eyebrow">Proof of Concept</div>
+    <h2 class="section-h2">It's Been <em>Built.</em></h2>
+    <p class="section-lead">The convergence-era model isn't theoretical. The first institution of this type opened in 2019 in McDonough, Georgia — designed, built, and opened on time and on budget by Museum Planning LLC.</p>
+    <div class="proof-block">
+      <div class="proof-main">
+        <div class="proof-eyebrow">Proof of Concept · Municipal Science Center</div>
+        <div class="proof-name">C.O. Polk Interactive Museum</div>
+        <div class="proof-location">McDonough, Georgia · Opened 2019</div>
+        <div class="proof-body">The first museum of this model: exterior projection mapping on the building facade, a hero video wall, holographic figures, projection-mapped interactive scale models, touch tables with object recognition, a local art gallery, historic artifact displays, a kids maker area with 3D printer, and community conference space. Designed and built by Museum Planning LLC, personally led by Mark Walhimer. Delivered on time and on budget for a municipality with capital reserves but no prior museum infrastructure.</div>
+        <div class="proof-body">The AI intelligence layer that now dramatically reduces content production costs did not exist in 2019. The physical systems cost and timeline figures from this project are conservative — the new model is less expensive to build and maintain than the 2019 proof of concept.</div>
+        <div class="proof-stats">
+          <div class="proof-stat">
+            <div class="proof-stat-num">$327</div>
+            <div class="proof-stat-label">Per square foot · 2019</div>
+          </div>
+          <div class="proof-stat">
+            <div class="proof-stat-num">18mo</div>
+            <div class="proof-stat-label">Concept to grand opening</div>
+          </div>
+          <div class="proof-stat">
+            <div class="proof-stat-num">2019</div>
+            <div class="proof-stat-label">Year opened · on time, on budget</div>
+          </div>
+          <div class="proof-stat">
+            <div class="proof-stat-num">City</div>
+            <div class="proof-stat-label">Municipal client path —<br>capital reserves &amp; public accountability</div>
+          </div>
+        </div>
+      </div>
+      <div class="proof-side">
+        <div class="proof-side-card">
+          <div class="proof-eyebrow">The Municipal Profile</div>
+          <div class="proof-name" style="font-size:16px; color:var(--deep);">Wealthy City, No Destination Museum</div>
+          <div class="proof-body">McDonough is the model for a specific prospect category: a city or town with significant capital reserves and no cultural destination commensurate with its wealth and demographics. The conversation is discretionary spending, not fundraising. The decision-maker is the city manager, economic development director, or mayor's office. The funding signal is capital reserve ratio and general fund balance.</div>
+          <a href="mailto:mark@museumplanning.com?subject=McDonough%20Reference%20%E2%80%94%20Science%20Center" class="proof-link">Request Reference</a>
+        </div>
+        <div class="proof-side-card">
+          <div class="proof-eyebrow">The Convergence Era White Paper</div>
+          <div class="proof-name" style="font-size:16px; color:var(--deep);">Theoretical Foundation</div>
+          <div class="proof-body">The full intellectual framework behind the new model — industrial design, artificial intelligence, spatial computing, embodied AI, material intelligence, and the transformation of cultural systems — is documented in <em>Convergence Era</em>, a 2026 white paper by Mark Walhimer, Museum Planning LLC.</div>
+          <a href="convergence-era.html" class="proof-link">Read Convergence Era</a>
+          <a href="mailto:mark@museumplanning.com?subject=Convergence%20Era%20White%20Paper%20Request" class="proof-link" style="margin-left:16px;">Request a PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="section section-white reveal">
+  <div class="section-inner">
+    <div class="eyebrow">Typical Fee Ranges</div>
+    <h2 class="section-h2">Know the Ballpark <em>Before</em> You Call</h2>
+    <p class="section-lead">Every engagement begins with a one-hour conversation at no cost. Fee ranges below are starting points — actual scope is set based on what you're trying to answer and what already exists. All fees exclusive of travel.</p>
+    <div class="fees-strip">
+      <div class="fee-card">
+        <div class="fee-service">Feasibility Study</div>
+        <div class="fee-price">$40k – $70k</div>
+        <div class="fee-desc">Attendance projections, operating cost modeling, workforce partnership framework, revenue assumptions, site analysis, and the new-model vs. old-model analysis your council will need to make an informed decision. Structured for council vote, bond allocation, and capital campaign launch.</div>
+      </div>
+      <div class="fee-card">
+        <div class="fee-service">Museum Master Plan</div>
+        <div class="fee-price">$100k+</div>
+        <div class="fee-desc">Building program, floor plans, phasing, technology systems architecture, employer partnership structure, workforce pipeline design, and capital campaign framework. Designed to work with your architect — not replace them. We represent the city's interest on program.</div>
+      </div>
+      <div class="fee-card">
+        <div class="fee-service">MVI Assessment (Existing)</div>
+        <div class="fee-price">$18,000+</div>
+        <div class="fee-desc">If a science center or cultural institution already exists in your city and you're evaluating whether to invest further, rebuild, or replace it — the Museum Vitality Index benchmarks its current health against peer institutions nationally. Tells you where you actually stand before planning begins.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="eyebrow">Start Here</div>
+      <h2>One Hour. No Cost. <em>No Obligation.</em></h2>
+      <p>Tell us what your city is trying to accomplish. Whether you've been handed a proposal for a science center and want an honest second opinion, you're starting from scratch and want to understand what's realistic, or you have a building and a budget and need to know what model makes sense — Mark is personally involved in every engagement and available within two weeks.</p>
+      <div class="contact-direct">
+        <div class="contact-line">
+          <span class="contact-type">Phone</span>
+          <a href="tel:4157945252" class="contact-val">415-794-5252</a>
+        </div>
+        <div class="contact-line">
+          <span class="contact-type">Email</span>
+          <a href="mailto:mark@museumplanning.com" class="contact-val">mark@museumplanning.com</a>
+        </div>
+        <div class="contact-line">
+          <span class="contact-type">Offices</span>
+          <span class="contact-val" style="cursor:default;">New York · Mexico City</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="cta-form" id="contactForm">
+        <div class="form-row">
+          <label>
+            <span class="field-label">Your Name</span>
+            <input type="text" placeholder="Jane Smith" id="f-name">
+          </label>
+          <label>
+            <span class="field-label">Title / Role</span>
+            <input type="text" placeholder="Economic Dev. Director" id="f-title">
+          </label>
+        </div>
+        <label>
+          <span class="field-label">City / Municipality</span>
+          <input type="text" placeholder="City of Greenville, SC" id="f-city">
+        </label>
+        <label>
+          <span class="field-label">Email Address</span>
+          <input type="email" placeholder="jane@cityofgreenville.gov" id="f-email">
+        </label>
+        <label>
+          <span class="field-label">Where Are You in the Process?</span>
+          <select id="f-interest">
+            <option value="" disabled selected>Select the closest match</option>
+            <option>We have a proposal and want an honest second opinion</option>
+            <option>We're starting from scratch — is this realistic for us?</option>
+            <option>We have a building and budget — what model makes sense?</option>
+            <option>We need a feasibility study — ready to scope</option>
+            <option>We have an existing science center that isn't working</option>
+            <option>Workforce development / labor market focus</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>
+          <span class="field-label">Brief Context (Optional)</span>
+          <textarea rows="3" placeholder="A sentence or two — we read every message." id="f-note"></textarea>
+        </label>
+        <button class="btn-submit" onclick="handleSubmit()">Request a Conversation →</button>
+        <p class="form-note">We respond to every inquiry within one business day.</p>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✓</div>
+        <h3>Your email client should have opened.</h3>
+        <p>If it didn't, nothing was sent — please reach out directly:<br>
+        <a href="mailto:mark@museumplanning.com" style="color:var(--gold);">mark@museumplanning.com</a><br>
+        <a href="tel:4157945252" style="color:var(--gold);">415-794-5252</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-left">Museum Planning LLC · museumplanning.com · mark@museumplanning.com · 415-794-5252</div>
+  <div class="footer-right">
+    <a href="museum-planning-services.html">Services</a>
+    <a href="for-cities.html">For Cities</a>
+    <a href="for-cities-science-center.html">Science Centers</a>
+    <a href="museum-vitality-index.html">MVI</a>
+    <a href="museum-planning-about.html">About</a>
+    <a href="museum-planning-contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js-ready');
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.06 });
+reveals.forEach(el => observer.observe(el));
+
+function handleSubmit() {
+  const name     = document.getElementById('f-name').value.trim();
+  const title    = document.getElementById('f-title').value.trim();
+  const city     = document.getElementById('f-city').value.trim();
+  const email    = document.getElementById('f-email').value.trim();
+  const interest = document.getElementById('f-interest').value;
+  const note     = document.getElementById('f-note').value.trim();
+
+  if (!name || !email || !interest) {
+    if (!name)     document.getElementById('f-name').style.borderColor  = '#C9A84C';
+    if (!email)    document.getElementById('f-email').style.borderColor = '#C9A84C';
+    if (!interest) document.getElementById('f-interest').style.borderColor = '#C9A84C';
+    return;
+  }
+
+  const body    = encodeURIComponent(`Name: ${name}\nTitle: ${title}\nCity: ${city}\nEmail: ${email}\nInterest: ${interest}\nNote: ${note}`);
+  const subject = encodeURIComponent(`Science Center Inquiry — ${city || name}`);
+  window.location.href = `mailto:mark@museumplanning.com?subject=${subject}&body=${body}`;
+
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+
+</body>
+</html>
