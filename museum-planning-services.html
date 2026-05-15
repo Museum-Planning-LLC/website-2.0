@@ -562,6 +562,32 @@ nav {
 }
 .how-card-body { font-size: 14px; color: var(--mid); line-height: 1.75; }
 
+/* Typical fees (aligned with Contact page) */
+.services-fees { padding: 72px 56px; background: var(--cream); border-top: 1px solid var(--rule); }
+.services-fees-inner { max-width: 1100px; margin: 0 auto; }
+.services-fees h2 {
+  font-family: var(--serif); font-size: clamp(26px, 3vw, 38px); font-weight: 700;
+  color: var(--navy); line-height: 1.15; margin-bottom: 12px;
+}
+.services-fees-lead { font-size: 16px; color: var(--mid); max-width: 640px; margin-bottom: 28px; line-height: 1.65; }
+.services-fees-card { background: #fff; padding: 36px 32px 40px; border-top: 3px solid var(--gold); }
+.svc-rate-row {
+  display: flex; flex-wrap: wrap; justify-content: space-between;
+  align-items: baseline;
+  gap: 12px 20px; padding: 16px 0; border-bottom: 1px solid var(--rule);
+  font-size: 15px; line-height: 1.5;
+}
+.svc-rate-row:last-of-type { border-bottom: none; }
+.svc-rate-name { font-weight: 700; color: var(--navy); }
+.svc-rate-num { font-family: var(--mono); font-size: 11px; color: var(--mid); text-align: right; }
+.svc-rate-note { width: 100%; font-size: 13px; font-style: italic; color: var(--mid); margin: 0; padding-top: 4px; }
+.services-fees-more { margin-top: 20px; font-size: 15px; color: var(--mid); }
+.services-fees-more a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,.4); }
+.services-fees-more a:hover { border-bottom-color: var(--gold); }
+@media (max-width: 700px) {
+  .services-fees { padding: 56px 24px; }
+}
+
 /* ── CTA ── */
 .cta-section {
   background: var(--navy); padding: 100px 56px;
@@ -791,11 +817,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </button>
   <ul class="nav-links" id="site-nav-menu">
     <li><a href="museum-planning-services.html" class="active">Services</a></li>
+    <li><a href="for-cities.html">For Cities</a></li>
     <li><a href="museum-planning-projects.html">Projects</a></li>
     <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="for-cities-science-center.html">Science Centers</a></li>
     <li><a href="museum-planning-about.html">About</a></li>
-    <li><a href="museum-planning-contact.html">Contact</a></li>
-    <li><a href="museum-planning-privacy.html">Privacy</a></li>
     <li class="nav-search"><button class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
     <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
@@ -810,9 +836,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-left">
       <div class="hero-eyebrow">Museum Planning LLC</div>
       <h1>From Vision<br>to <em>Opening Day.</em></h1>
-      <p class="hero-deck">Twenty-five years. Forty museums. One methodology that takes institutions from the first community assessment through post-opening evaluation — with Mark personally involved at every stage.</p>
+      <p class="hero-deck">Thirty years. Forty museums. One methodology that takes institutions from the first community assessment through post-opening evaluation — with Mark personally involved at every stage.</p>
       <div class="hero-cta-row">
-        <a href="mailto:mark@museumplanning.com" class="btn-primary">Start a Conversation</a>
+        <a href="museum-planning-contact.html" class="btn-primary">Start a Conversation</a>
         <a href="museum-planning-projects.html" class="btn-ghost">See the Work</a>
       </div>
     </div>
@@ -902,6 +928,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<section class="institutions-band reveal" aria-label="For cities and municipalities">
+  <div class="institutions-inner">
+    <p class="institutions-kicker">For Cities &amp; Municipalities</p>
+    <p class="institutions-more" style="max-width: 760px; line-height: 1.7; margin-top: 0;">City managers, mayors' offices, and economic development directors evaluating a civic museum, a historic building reuse, or a science and technology center — <a href="for-cities.html">museum feasibility for cities</a> · <a href="for-cities-science-center.html">science centers for cities</a>.</p>
+  </div>
+</section>
+
 <section class="institutions-band" aria-label="Selected museum planning projects">
   <div class="institutions-inner reveal">
     <p class="institutions-kicker">Selected institutions</p>
@@ -919,7 +952,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="outcome-strip reveal" aria-label="Practice scale and outcomes">
   <div class="outcome-strip-inner">
-    <p><strong>40+ museums</strong> completed over <strong>25 years</strong>, with Mark personally involved in every engagement — from a <strong>$2M</strong> university collection to a <strong>$28M</strong> regional cultural center.</p>
+    <p><strong>40+ museums</strong> completed over <strong>30 years</strong>, with Mark personally involved in every engagement — from a <strong>$2M</strong> university collection to a <strong>$28M</strong> regional cultural center.</p>
   </div>
 </div>
 
@@ -984,7 +1017,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="phase-big-num">01</span>
       <div class="phase-label">Phase One</div>
       <h2 class="phase-title">Institutional Planning</h2>
-      <p class="phase-intro">Before a single line is drawn, museums need a clear strategic foundation. This phase establishes why the museum exists, who it serves, and whether it can operate sustainably. The documents produced here are what boards, donors, and civic partners need before committing capital.</p>
+      <p class="phase-intro">Before a single line is drawn, museums need a clear strategic foundation. This phase establishes why the museum exists, who it serves, and whether it can operate sustainably. The documents produced here are what boards, donors, and civic partners need before committing capital. Historic civic buildings and community collections often enter here — when that is the situation, see <a href="local-history-museum.html">starting a local history museum</a>.</p>
       <span class="phase-tag">Foundation Work</span>
     </div>
     <div class="services-grid reveal">
@@ -1006,7 +1039,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="service-card">
         <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
         <div class="sc-title">Feasibility Study</div>
-        <p class="sc-body">Attendance projections, staffing requirements, and operating cost modeling that answers the fundamental question before capital is committed: <em>can this museum actually survive?</em> Bad feasibility is still fatal. For context on scope and vocabulary, see <a href="museum-school/what-is-a-museum-feasibility-study.html">what a museum feasibility study covers</a> before you engage consultants.</p>
+        <p class="sc-body">Attendance projections, staffing requirements, and operating cost modeling that answers the fundamental question before capital is committed: <em>can this museum actually survive?</em> Bad feasibility is still fatal. For vocabulary and scope, see <a href="museum-school/what-is-a-museum-feasibility-study.html">what a museum feasibility study covers</a>; for deliverables and fee context, see <a href="museum-feasibility-study.html">what you are buying when you commission a study</a>.</p>
         <div class="sc-deliverable">Deliverable: Feasibility Study Report</div>
       </div>
 
@@ -1193,7 +1226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="proof-label">Museums<br>Completed</div>
       </div>
       <div class="proof-item">
-        <div class="proof-num">25</div>
+        <div class="proof-num">30</div>
         <div class="proof-label">Years of<br>Practice</div>
       </div>
       <div class="proof-item">
@@ -1232,7 +1265,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="how-card">
         <div class="how-card-num">4</div>
         <div class="how-card-title">We plan for the world the museum opens into.</div>
-        <p class="how-card-body">Audiences behave differently now. Programming drives visitation. Digital and physical are one planning problem. The methodology accounts for this — not to chase technology, but because ignoring the operating environment produces museums that struggle to find their audience.</p>
+        <p class="how-card-body">Audiences behave differently now. Programming drives visitation. Digital and physical are one planning problem. The methodology accounts for this — not to chase technology, but because ignoring the operating environment produces museums that struggle to find their audience. For the systems-level argument — especially for civic science centers — read <a href="convergence-era.html" style="color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,.4);">Convergence Era</a>.</p>
       </div>
       <div class="how-card">
         <div class="how-card-num">5</div>
@@ -1248,12 +1281,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<section class="services-fees reveal" aria-labelledby="services-fees-heading">
+  <div class="services-fees-inner">
+    <h2 id="services-fees-heading">Typical consulting ranges</h2>
+    <p class="services-fees-lead">Ballpark fees before you call — same numbers as on the contact page. Every engagement still begins with a one-hour conversation at no cost; actual scope is set from there.</p>
+    <div class="services-fees-card">
+      <div class="svc-rate-row">
+        <span class="svc-rate-name">Museum Assessment</span>
+        <span class="svc-rate-num">$18,000 + travel</span>
+        <p class="svc-rate-note">Minimum retainer.</p>
+      </div>
+      <div class="svc-rate-row">
+        <span class="svc-rate-name">Strategic Planning</span>
+        <span class="svc-rate-num">$45k – $75k + travel</span>
+      </div>
+      <div class="svc-rate-row">
+        <span class="svc-rate-name">Feasibility Studies</span>
+        <span class="svc-rate-num">$40k – $70k + travel</span>
+      </div>
+      <div class="svc-rate-row">
+        <span class="svc-rate-name">Master Planning</span>
+        <span class="svc-rate-num">$100k+ + travel</span>
+      </div>
+      <div class="svc-rate-row">
+        <span class="svc-rate-name">Exhibition Design</span>
+        <span class="svc-rate-num">$60k – $200k + travel</span>
+      </div>
+      <div class="svc-rate-row">
+        <span class="svc-rate-name">Owners Rep / PM</span>
+        <span class="svc-rate-num">Variable — per scope</span>
+      </div>
+    </div>
+    <p class="services-fees-more"><a href="museum-planning-contact.html">Start a conversation on the contact page →</a></p>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner reveal">
     <h2 class="cta-heading">Ready to build<br><em>your museum?</em></h2>
     <p class="cta-body">Whether you're starting from a feasibility question or a capital campaign, the first step is the same — a conversation. No cost, no obligation.</p>
-    <a href="mailto:mark@museumplanning.com" class="btn-primary" style="font-size: 12px; padding: 16px 44px;">Start a Conversation</a>
+    <a href="museum-planning-contact.html" class="btn-primary" style="font-size: 12px; padding: 16px 44px;">Start a Conversation</a>
     <div class="cta-contact">
       <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>
       &nbsp;·&nbsp;
@@ -1311,6 +1379,11 @@ const PAGES = [
   { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology. Feasibility through opening day.", url: "index.html" },
   { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and how to start a conversation.", url: "museum-planning-contact.html" },
   { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design, evaluation.", url: "museum-planning-services.html" },
+  { type: "Municipal", title: "For Cities — Museum Feasibility", desc: "City managers, mayors' offices, feasibility before capital.", url: "for-cities.html" },
+  { type: "Municipal", title: "Science Centers for Cities", desc: "Civic science and technology centers, convergence-era model.", url: "for-cities-science-center.html" },
+  { type: "Guide", title: "Museum Feasibility Study — What You Get", desc: "Deliverables, costs, and when to commission a study.", url: "museum-feasibility-study.html" },
+  { type: "Guide", title: "Starting a Local History Museum", desc: "Historic buildings, collections, governance, feasibility.", url: "local-history-museum.html" },
+  { type: "White Paper", title: "Convergence Era", desc: "Industrial design, AI, and cultural systems.", url: "convergence-era.html" },
   { type: "Projects", title: "Projects — Forty Museums", desc: "All projects including natural history, children's, science centers, cultural centers.", url: "museum-planning-projects.html" },
   { type: "About", title: "About — Mark Walhimer", desc: "Managing partner, thirty years in museums, Pratt Institute, AAM Press author.", url: "museum-planning-about.html" },
   { type: "Museum School", title: "How to Start a Museum", desc: "Ten steps to starting a museum, costs, common mistakes, and resources.", url: "museum-school/how-to-start-a-museum.html" },

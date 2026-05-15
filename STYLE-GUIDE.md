@@ -27,9 +27,9 @@ Use this exact nav pattern on all primary pages (including municipal funnels):
 - Brand: `Museum <span>Planning</span> LLC`
 - Links (in order):
   1. Services
-  2. Projects
-  3. Museum School
-  4. **For Cities** → `for-cities.html`
+  2. **For Cities** → `for-cities.html`
+  3. Projects
+  4. Museum School
   5. **Science Centers** → `for-cities-science-center.html`
   6. About
   7. Search icon button
