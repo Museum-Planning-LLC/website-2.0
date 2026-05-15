@@ -24,6 +24,9 @@
   --rule:   #D4C8B0;
   --light:  #EDE8DC;
   --white:  #FFFFFF;
+  --serif:  'Playfair Display', Georgia, serif;
+  --mono:   'DM Mono', monospace;
+  --sans:   'Lato', system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,72 +34,200 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--sans);
   font-size: 16px;
   line-height: 1.65;
   color: var(--ink);
   background: var(--white);
 }
 
-/* ─── SITE NAV ─── */
+/* ─── SITE NAV (see STYLE-GUIDE.md) ─── */
 .site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: var(--deep);
-  padding: 0 48px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
-  position: sticky;
-  top: 0;
+  padding: 0 56px;
   z-index: 100;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
 }
 .nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  font-family: var(--serif);
+  font-size: 15px;
+  color: #fff;
   text-decoration: none;
+  letter-spacing: 0.02em;
 }
-.nav-logo-text {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-}
+.nav-logo span { color: var(--gold); }
 .nav-links {
   display: flex;
   gap: 32px;
   list-style: none;
+  align-items: center;
 }
 .nav-links a {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   transition: color 0.2s;
 }
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--gold);
 }
 .nav-cta {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--mono);
   font-size: 10px;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--deep);
   background: var(--gold);
-  padding: 8px 18px;
+  color: var(--deep) !important;
+  padding: 8px 20px;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: background 0.2s;
 }
-.nav-cta:hover { opacity: 0.85; }
+.nav-cta:hover {
+  background: #E8D099;
+}
+
+.nav-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.search-toggle:hover { color: var(--gold); }
+.search-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 28, 39, 0.97);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 24px 40px;
+}
+.search-overlay.open { display: flex; }
+.search-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 28px;
+  cursor: pointer;
+  font-family: var(--mono);
+}
+.search-close:hover { color: #fff; }
+.search-input-wrap {
+  width: 100%;
+  max-width: 680px;
+  border-bottom: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.search-input-wrap svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+#search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--serif);
+  font-size: clamp(24px, 4vw, 40px);
+  color: #fff;
+  padding: 12px 0;
+  caret-color: var(--gold);
+}
+#search-input::placeholder { color: rgba(255, 255, 255, 0.2); }
+.search-results {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.search-result {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 20px 24px;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+  display: block;
+}
+.search-result:hover {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.07);
+}
+.sr-type {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.sr-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.sr-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+}
+.search-empty {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  padding: 40px 0;
+}
 
 /* ─── HERO ─── */
 .hero {
   background: var(--deep);
-  padding: 96px 48px 80px;
+  padding: 112px 56px 80px;
   position: relative;
   overflow: hidden;
 }
@@ -665,35 +796,47 @@ body {
   margin-top: -4px;
 }
 
-/* ─── FOOTER ─── */
-.site-footer {
-  background: #0A1017;
-  padding: 32px 48px;
+/* ─── FOOTER (site standard) ─── */
+footer {
+  background: var(--deep);
+  padding: 40px 56px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(201, 168, 76, 0.1);
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.footer-left {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
 }
-.footer-right {
+.footer-logo span { color: var(--gold); }
+.footer-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
+  list-style: none;
 }
-.footer-right a {
-  font-family: 'DM Mono', monospace;
+.footer-links a {
+  font-family: var(--mono);
   font-size: 9px;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
+  color: rgba(255, 255, 255, 0.25);
   text-decoration: none;
   transition: color 0.2s;
 }
-.footer-right a:hover { color: var(--gold); }
+.footer-links a:hover { color: rgba(255, 255, 255, 0.6); }
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  text-align: center;
+}
 
 /* ─── DIVIDER ─── */
 .gold-rule {
@@ -740,7 +883,7 @@ body {
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .section, .cta-section { padding: 60px 24px; }
   .site-nav { padding: 0 24px; }
-  .nav-links { display: none; }
+  footer { flex-direction: column; text-align: center; padding: 32px 24px; }
 }
 @media (max-width: 600px) {
   .audience-grid { grid-template-columns: 1fr; }
@@ -778,6 +921,8 @@ body {
   transform: none;
 }
 </style>
+  <link rel="stylesheet" href="assets/nav-mobile.css">
+  <link rel="stylesheet" href="assets/site-footer.css">
   <script src="assets/ga-measurement-id.js"></script>
   <script src="assets/analytics.js" defer></script>
 
@@ -789,19 +934,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
-<nav class="site-nav">
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-text">Museum Planning LLC</span>
-  </a>
-  <ul class="nav-links">
+<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
     <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
     <li><a href="for-cities.html" class="active">For Cities</a></li>
     <li><a href="for-cities-science-center.html">Science Centers</a></li>
-    <li><a href="museum-vitality-index.html">MVI</a></li>
     <li><a href="museum-planning-about.html">About</a></li>
-    <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
-  <a href="tel:4157945252" class="nav-cta">415-794-5252</a>
 </nav>
 
 <!-- HERO -->
@@ -1175,20 +1322,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-left">Museum Planning LLC · museumplanning.com · mark@museumplanning.com · 415-794-5252</div>
-  <div class="footer-right">
-    <a href="museum-planning-services.html">Services</a>
-    <a href="for-cities.html">For Cities</a>
-    <a href="for-cities-science-center.html">Science Centers</a>
-    <a href="museum-vitality-index.html">MVI</a>
-    <a href="museum-planning-about.html">About</a>
-    <a href="museum-planning-contact.html">Contact</a>
-  </div>
+<p class="privacy-strip"><a href="museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
+
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="https://www.linkedin.com/company/museum-planning-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/museumplanning/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    <li><a href="https://www.facebook.com/MuseumPlanningLLC/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    <li><a href="https://x.com/MuseumPlanning" target="_blank" rel="noopener noreferrer">X</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li><a href="museum-planning-privacy.html">Privacy</a></li>
+    <li><a href="museum-vitality-index.html">MVI</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
 </footer>
 
-<script>
+<div class="search-overlay" id="searchOverlay">
+  <button type="button" class="search-close" id="searchClose" aria-label="Close search">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
@@ -1239,6 +1399,76 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 </script>
+
+<script>
+const PAGES = [
+  { type: "Municipal", title: "For Cities — Museum Feasibility", desc: "City managers, mayors' offices, and feasibility before capital.", url: "for-cities.html" },
+  { type: "Municipal", title: "Science Centers for Cities", desc: "Civic science & technology centers, feasibility, convergence-era model.", url: "for-cities-science-center.html" },
+  { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology.", url: "index.html" },
+  { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and how to start a conversation.", url: "museum-planning-contact.html" },
+  { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "museum-planning-services.html" },
+  { type: "Projects", title: "Projects — Forty Museums", desc: "Portfolio worldwide.", url: "museum-planning-projects.html" },
+  { type: "About", title: "About — Mark Walhimer", desc: "Managing partner, museum planning consultant.", url: "museum-planning-about.html" },
+  { type: "MVI", title: "Museum Vitality Index", desc: "0–100 institutional health benchmarking.", url: "museum-vitality-index.html" },
+  { type: "Museum School", title: "Museum School", desc: "Guides on starting a museum, feasibility, and master planning.", url: "museum-school/index.html" },
+  { type: "Museum School", title: "How to Start a Museum", desc: "Ten steps, costs, common mistakes, and resources.", url: "museum-school/how-to-start-a-museum.html" },
+  { type: "Museum School", title: "What is a Museum Feasibility Study?", desc: "What it covers, how it works, cost and timeline.", url: "museum-school/what-is-a-museum-feasibility-study.html" },
+  { type: "Museum School", title: "What is a Museum Master Plan?", desc: "Building program, visitor experience, capital campaign strategy.", url: "museum-school/what-is-a-museum-master-plan.html" }
+];
+const input = document.getElementById("search-input");
+const results = document.getElementById("searchResults");
+const overlay = document.getElementById("searchOverlay");
+document.getElementById("searchToggle").addEventListener("click", function () {
+  overlay.classList.add("open");
+  setTimeout(function () { input.focus(); }, 100);
+});
+document.getElementById("searchClose").addEventListener("click", function () {
+  overlay.classList.remove("open");
+  input.value = "";
+  results.innerHTML = "";
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    overlay.classList.remove("open");
+    input.value = "";
+    results.innerHTML = "";
+  }
+});
+input.addEventListener("input", function () {
+  const q = input.value.toLowerCase().trim();
+  if (!q) {
+    results.innerHTML = "";
+    return;
+  }
+  const matches = PAGES.filter(function (p) {
+    return (
+      p.title.toLowerCase().includes(q) ||
+      p.desc.toLowerCase().includes(q) ||
+      p.type.toLowerCase().includes(q)
+    );
+  });
+  if (!matches.length) {
+    results.innerHTML = '<div class="search-empty">No results found.</div>';
+    return;
+  }
+  results.innerHTML = matches
+    .map(function (p) {
+      return (
+        '<a href="' +
+        p.url +
+        '" class="search-result"><div class="sr-type">' +
+        p.type +
+        '</div><div class="sr-title">' +
+        p.title +
+        '</div><div class="sr-desc">' +
+        p.desc +
+        "</div></a>"
+      );
+    })
+    .join("");
+});
+</script>
+<script src="assets/nav-mobile.js" defer></script>
 
 </body>
 </html>

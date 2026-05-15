@@ -22,16 +22,20 @@ This guide is the source of truth for visual and structural consistency in `webs
 
 ## 2) Global Navigation Standard
 
-Use this exact nav pattern on all primary pages:
+Use this exact nav pattern on all primary pages (including municipal funnels):
 
 - Brand: `Museum <span>Planning</span> LLC`
 - Links (in order):
   1. Services
   2. Projects
   3. Museum School
-  4. About
-  5. Search icon button
-  6. CTA: `Start a Conversation` -> `museum-planning-contact.html`
+  4. **For Cities** → `for-cities.html`
+  5. **Science Centers** → `for-cities-science-center.html`
+  6. About
+  7. Search icon button
+  8. CTA: `Start a Conversation` → `museum-planning-contact.html`
+
+On each page, set `class="active"` on the current section’s link only (typically the CTA uses `active` on the Contact page).
 
 Rules:
 
