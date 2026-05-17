@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Museum Planning & Feasibility | Museum Planning LLC</title>
+<meta name="description" content="Museum Planning LLC helps university presidents, provosts, and boards turn collections in storage and underused buildings into public-facing museums that serve both the campus and the surrounding community.">
+<link rel="canonical" href="https://museumplanning.com/for-universities.html">
+<script>document.documentElement.classList.add('js-ready');</script>
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GFF0QW5N3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GFF0QW5N3B');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:       #141210;
+  --ink-mid:   #2a2520;
+  --cream:     #f5f0e8;
+  --cream-dim: #e8e2d6;
+  --cream-mute:#b8b0a2;
+  --copper:    #b5763a;
+  --copper-lt: #d4904a;
+  --rule:      rgba(245,240,232,0.12);
+  --rule-warm: rgba(181,118,58,0.25);
+  --rule-solid:#c8b89a;
+  --paper:     #f5f0e8;
+  --pale:      #ece6d8;
+  --muted:     #7a7060;
+  --accent:    #8b2020;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'Source Serif 4',Georgia,serif;
+  font-weight:300;
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NAV (page legacy — overridden by site nav) ── */
+.site-nav{
+  border-bottom:1px solid var(--rule);
+  padding:20px 48px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  background:rgba(20,18,16,0.97);
+  backdrop-filter:blur(12px);
+  z-index:100;
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:17px;
+  font-weight:600;
+  color:var(--cream);
+  text-decoration:none;
+  letter-spacing:0.01em;
+}
+.nav-logo em{font-style:italic;color:var(--copper);}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+.nav-links a{
+  font-family:'DM Sans',sans-serif;
+  font-size:12px;
+  font-weight:400;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--cream-mute);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--cream);}
+.nav-links a.active{color:var(--cream);}
+.nav-cta{
+  color:var(--copper) !important;
+  border:1px solid var(--rule-warm);
+  padding:6px 16px;
+  transition:background 0.2s, color 0.2s !important;
+}
+.nav-cta:hover{background:var(--copper) !important;color:var(--ink) !important;}
+
+/* ── HERO ── */
+.hero{
+  padding:88px 48px 72px;
+  border-bottom:1px solid var(--rule);
+  max-width:1100px;
+}
+.hero-context{
+  font-family:'DM Sans',sans-serif;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:24px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.hero-context::after{
+  content:'';
+  display:block;
+  width:40px;
+  height:1px;
+  background:var(--copper);
+  opacity:0.5;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(38px,5.5vw,64px);
+  font-weight:700;
+  line-height:1.07;
+  letter-spacing:-0.02em;
+  color:var(--cream);
+  margin-bottom:28px;
+}
+.hero h1 em{font-style:italic;color:var(--cream-dim);}
+.hero-body{
+  font-size:19px;
+  line-height:1.65;
+  color:var(--cream-dim);
+  max-width:680px;
+  margin-bottom:36px;
+}
+.hero-stats{
+  display:flex;
+  gap:48px;
+  padding-top:32px;
+  border-top:1px solid var(--rule);
+  flex-wrap:wrap;
+}
+.hero-stat{}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:28px;
+  font-weight:700;
+  color:var(--copper);
+  line-height:1;
+  margin-bottom:4px;
+}
+.stat-label{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--cream-mute);
+  line-height:1.4;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px;}
+.btn{
+  font-family:'DM Sans',sans-serif;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:12px 24px;
+  display:inline-block;
+  transition:all 0.2s;
+}
+.btn-primary{background:var(--copper);color:var(--ink);}
+.btn-primary:hover{background:var(--copper-lt);}
+.btn-outline{border:1px solid var(--rule-warm);color:var(--copper);}
+.btn-outline:hover{background:var(--copper);color:var(--ink);}
+
+/* ── SECTIONS ── */
+.content-section{
+  padding:72px 48px;
+  border-bottom:1px solid var(--rule);
+  max-width:1100px;
+}
+.section-eyebrow{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:32px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--rule-warm);
+}
+.section-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(26px,3.5vw,42px);
+  font-weight:700;
+  line-height:1.1;
+  color:var(--cream);
+  margin-bottom:40px;
+}
+.section-h2 em{font-style:italic;color:var(--cream-dim);}
+
+/* ── ROLES GRID ── */
+.roles-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+}
+.role-card{
+  background:var(--ink);
+  padding:28px 24px;
+  transition:background 0.2s;
+}
+.role-card:hover{background:var(--ink-mid);}
+.role-num{
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;
+  font-weight:500;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:8px;
+}
+.role-title{
+  font-family:'Playfair Display',serif;
+  font-size:17px;
+  font-weight:600;
+  color:var(--cream);
+  margin-bottom:10px;
+  line-height:1.2;
+}
+.role-desc{
+  font-size:14px;
+  color:var(--cream-mute);
+  line-height:1.65;
+}
+
+/* ── THE TENSION ── */
+.tension-block{
+  background:var(--ink-mid);
+  border:1px solid var(--rule-warm);
+  padding:40px 44px;
+  margin-bottom:48px;
+}
+.tension-label{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:16px;
+}
+.tension-block h3{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  font-weight:700;
+  line-height:1.2;
+  color:var(--cream);
+  margin-bottom:18px;
+}
+.tension-block h3 em{font-style:italic;color:var(--cream-dim);}
+.tension-block p{
+  font-size:16px;
+  color:var(--cream-dim);
+  line-height:1.75;
+  margin-bottom:14px;
+}
+.tension-block p:last-child{margin-bottom:0;}
+
+/* ── QUESTIONS ── */
+.questions-list{display:flex;flex-direction:column;gap:0;}
+.question-item{
+  padding:24px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:24px;
+  align-items:start;
+}
+.question-item:first-child{padding-top:0;}
+.question-q{
+  font-family:'Playfair Display',serif;
+  font-size:17px;
+  font-style:italic;
+  color:var(--cream-dim);
+  line-height:1.35;
+  padding-top:2px;
+  flex-shrink:0;
+  width:20px;
+  text-align:center;
+}
+.question-body{}
+.question-text{
+  font-family:'Playfair Display',serif;
+  font-size:17px;
+  font-style:italic;
+  color:var(--cream-dim);
+  line-height:1.35;
+  margin-bottom:10px;
+}
+.question-answer{
+  font-size:15px;
+  color:var(--cream-mute);
+  line-height:1.7;
+}
+
+/* ── SOLUTION MODEL ── */
+.model-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-bottom:40px;
+}
+.model-card{
+  border:1px solid var(--rule);
+  padding:28px 24px;
+  transition:border-color 0.2s;
+}
+.model-card:hover{border-color:var(--rule-warm);}
+.model-num{
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:10px;
+}
+.model-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:18px;
+  font-weight:600;
+  color:var(--cream);
+  margin-bottom:10px;
+  line-height:1.2;
+}
+.model-card h3 em{font-style:italic;color:var(--cream-dim);}
+.model-card p{
+  font-size:14px;
+  color:var(--cream-mute);
+  line-height:1.65;
+}
+
+/* ── PULL QUOTE ── */
+.pull-quote{
+  border-left:3px solid var(--copper);
+  padding:20px 28px;
+  margin:40px 0;
+}
+.pull-quote p{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  font-style:italic;
+  font-weight:400;
+  line-height:1.45;
+  color:var(--cream-dim);
+  margin-bottom:10px;
+}
+.pull-quote cite{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--copper);
+  font-style:normal;
+}
+
+/* ── PROCESS ── */
+.process-steps{display:flex;flex-direction:column;gap:0;}
+.process-step{
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:24px;
+  padding:28px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.process-step:last-child{border-bottom:none;}
+.step-num{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  font-weight:700;
+  color:rgba(181,118,58,0.25);
+  line-height:1;
+  padding-top:4px;
+}
+.step-body{}
+.step-head{
+  display:flex;
+  align-items:baseline;
+  gap:12px;
+  margin-bottom:8px;
+  flex-wrap:wrap;
+}
+.step-title{
+  font-family:'Playfair Display',serif;
+  font-size:19px;
+  font-weight:600;
+  color:var(--cream);
+}
+.step-meta{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--copper);
+}
+.step-desc{
+  font-size:15px;
+  color:var(--cream-mute);
+  line-height:1.7;
+}
+.step-tags{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.step-tag{
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:3px 10px;
+  border:1px solid var(--rule);
+  color:var(--cream-mute);
+}
+
+/* ── PORTFOLIO ── */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+  margin-bottom:32px;
+}
+.portfolio-card{
+  background:var(--ink);
+  padding:28px 24px;
+  transition:background 0.2s;
+}
+.portfolio-card:hover{background:var(--ink-mid);}
+.port-type{
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--copper);
+  margin-bottom:10px;
+}
+.portfolio-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:17px;
+  font-weight:600;
+  color:var(--cream);
+  line-height:1.2;
+  margin-bottom:8px;
+}
+.portfolio-card p{
+  font-size:13px;
+  color:var(--cream-mute);
+  line-height:1.6;
+  margin-bottom:14px;
+}
+.port-link{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--copper);
+  text-decoration:none;
+  transition:color 0.15s;
+}
+.port-link:hover{color:var(--cream);}
+
+/* ── FEES ── */
+.fees-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1px;
+  background:var(--rule);
+  border:1px solid var(--rule);
+}
+.fee-card{
+  background:var(--ink);
+  padding:28px 24px;
+}
+.fee-service{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--cream-mute);
+  margin-bottom:12px;
+}
+.fee-amount{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  font-weight:700;
+  color:var(--copper);
+  line-height:1;
+  margin-bottom:10px;
+}
+.fee-desc{
+  font-size:13px;
+  color:var(--cream-mute);
+  line-height:1.6;
+}
+
+/* ── CONTACT FORM ── */
+.contact-section{
+  padding:72px 48px;
+  max-width:1100px;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:start;
+}
+.contact-left h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(24px,3vw,36px);
+  font-weight:700;
+  line-height:1.1;
+  color:var(--cream);
+  margin-bottom:16px;
+}
+.contact-left h2 em{font-style:italic;color:var(--cream-dim);}
+.contact-left p{
+  font-size:15px;
+  color:var(--cream-mute);
+  line-height:1.7;
+  margin-bottom:12px;
+}
+.contact-direct{margin-top:28px;}
+.contact-direct a{
+  display:block;
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;
+  color:var(--cream-mute);
+  text-decoration:none;
+  padding:6px 0;
+  transition:color 0.15s;
+}
+.contact-direct a strong{color:var(--cream);}
+.contact-direct a:hover{color:var(--copper);}
+.form-group{display:flex;flex-direction:column;gap:10px;margin-bottom:8px;}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  font-family:'Source Serif 4',serif;
+  font-size:14px;
+  padding:11px 16px;
+  background:var(--ink-mid);
+  border:1px solid var(--rule);
+  color:var(--cream);
+  outline:none;
+  transition:border-color 0.2s;
+  width:100%;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:rgba(245,240,232,0.2);}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:var(--copper);}
+.form-group select{
+  font-family:'DM Sans',sans-serif;
+  font-size:12px;
+  letter-spacing:0.05em;
+  color:var(--cream-mute);
+  appearance:none;
+}
+.form-group textarea{resize:vertical;min-height:100px;font-size:14px;}
+.form-submit{
+  font-family:'DM Sans',sans-serif;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:13px 28px;
+  background:var(--copper);
+  color:var(--ink);
+  border:none;
+  cursor:pointer;
+  width:100%;
+  transition:background 0.2s;
+  margin-top:4px;
+}
+.form-submit:hover{background:var(--copper-lt);}
+.form-note{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:0.1em;
+  color:rgba(245,240,232,0.25);
+  text-align:center;
+  margin-top:8px;
+}
+.success-msg{
+  display:none;
+  background:var(--ink-mid);
+  border:1px solid var(--rule-warm);
+  padding:24px;
+  text-align:center;
+}
+.success-msg h3{
+  font-family:'Playfair Display',serif;
+  font-size:20px;
+  font-weight:600;
+  color:var(--cream);
+  margin-bottom:8px;
+}
+.success-msg p{font-size:14px;color:var(--cream-mute);}
+
+/* ── FOOTER ── */
+.site-footer{
+  border-top:1px solid var(--rule);
+  padding:36px 48px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.footer-brand{
+  font-size:13px;
+  color:rgba(245,240,232,0.3);
+}
+.footer-brand strong{color:var(--cream-mute);}
+.footer-links{list-style:none;display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(245,240,232,0.3);
+  text-decoration:none;
+  transition:color 0.15s;
+}
+.footer-links a:hover{color:var(--copper);}
+
+@media(max-width:900px){
+  .site-nav{padding:16px 20px;}
+  .nav-links{gap:14px;}
+  .hero{padding:56px 20px 48px;}
+  .content-section{padding:48px 20px;}
+  .roles-grid{grid-template-columns:1fr;}
+  .model-grid{grid-template-columns:1fr;}
+  .portfolio-grid{grid-template-columns:1fr;}
+  .fees-grid{grid-template-columns:1fr;}
+  .contact-section{padding:48px 20px;}
+  .contact-grid{grid-template-columns:1fr;}
+  .site-footer{padding:28px 20px;}
+  .tension-block{padding:28px 24px;}
+  .hero-stats{gap:28px;}
+}
+
+/* Site nav (museumplanning.com) */
+body { padding-top: 60px; }
+nav.site-nav#site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 56px;
+  background: #111C27;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  z-index: 100;
+}
+nav.site-nav#site-nav .nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+}
+nav.site-nav#site-nav .nav-logo span { color: #C9A84C; }
+nav.site-nav#site-nav .nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+nav.site-nav#site-nav .nav-links a:hover,
+nav.site-nav#site-nav .nav-links a.active { color: #C9A84C; }
+nav.site-nav#site-nav .nav-cta {
+  background: #C9A84C;
+  color: #111C27 !important;
+  padding: 8px 20px;
+}
+
+</style>
+  <link rel="stylesheet" href="assets/nav-mobile.css">
+  <link rel="stylesheet" href="assets/site-footer.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="for-cities.html">For Cities</a></li>
+    <li><a href="for-universities.html" class="active">For Universities</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="for-cities-science-center.html">Science Centers</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="#contact" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-context">For Universities &amp; Academic Institutions</div>
+  <h1>Your University Has<br>Something the Community<br><em>Has Never Seen.</em></h1>
+  <div class="hero-body">
+    Universities hold some of the most significant natural history collections, art holdings, and cultural artifacts in America — most of it in storage, inaccessible to the public and underutilized by the institution that owns it. A university museum solves two problems at once: it gives the collection a public purpose and it gives the institution a genuine answer to the question every board and every community is asking.
+  </div>
+  <div class="hero-actions">
+    <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+    <a href="#how-we-work" class="btn btn-outline">How We Work</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="stat-num">1992</div>
+      <div class="stat-label">Year Mark first<br>worked inside a university museum</div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-num">$18K</div>
+      <div class="stat-label">Starting fee for a<br>Museum Assessment</div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-num">3–6mo</div>
+      <div class="stat-label">Typical feasibility<br>study timeline</div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-num">1hr</div>
+      <div class="stat-label">Free initial<br>conversation</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TENSION — THE REAL REASON THIS CALL GETS MADE -->
+<section class="content-section">
+  <div class="section-eyebrow">Why Universities Call</div>
+
+  <div class="tension-block">
+    <div class="tension-label">The Real Reasons — There Are Usually Two</div>
+    <h3>The community doesn't feel the university gives enough back.<br><em>And enrollment is declining.</em></h3>
+    <p>Most university museum projects don't begin with a curator or a collections manager. They begin with a board meeting — often initiated by a board member who is also a city mayor or local civic leader. That board member raises it with the university president. The president thinks: where would this live? Almost always the answer is the sciences — the biology department, the natural sciences college. The dean gets the assignment. The dean hands it to an assistant, who runs the actual search for a consultant.</p>
+    <p>By the time that assistant contacts a museum planner, there are usually two conversations running in parallel. The first is about community relations: the university owns a significant share of the community's land and pays no property tax on it. The community has noticed. A public-facing museum — one where local residents get free admission on presentation of a driver's license with a local zip code — is one of the most effective answers a university can give to that question.</p>
+    <p>The second conversation is about enrollment. Universities across the country are facing declining admissions. A museum becomes a recruitment tool that no brochure can replicate. A prospective student on a campus tour walks through the museum and hears: if you study biology here, you can work in this collection. Classes are taught here. Events happen here. Research happens here. That is a tangible demonstration of what the university offers — and it matters to a 17-year-old making a decision about where to spend four years.</p>
+    <p>We help universities turn both of those conversations into a building program, a feasibility study, and a plan the board can actually vote on.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"A museum that can open is not the same as a museum that can stay open. Bad feasibility is still fatal — and the university that funded it is still responsible for what happens next."</p>
+    <cite>Mark Walhimer · Museum Planning LLC</cite>
+  </div>
+</section>
+
+<!-- WHO CALLS -->
+<section class="content-section">
+  <div class="section-eyebrow">Who This Is For</div>
+  <h2 class="section-h2">The People at <em>the University</em> Who Call Us</h2>
+
+  <div class="roles-grid">
+    <div class="role-card">
+      <div class="role-num">01 · Where It Starts</div>
+      <div class="role-title">Board Member — Often the Mayor</div>
+      <div class="role-desc">The idea almost always originates here. A board member who is also a local civic leader — frequently the mayor or a prominent community figure — raises the museum question in a board meeting. It is a community relations initiative, a legacy project, or a response to political pressure about town-gown tensions. The board member brings it to the president.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-num">02 · The Decision</div>
+      <div class="role-title">University President or Provost</div>
+      <div class="role-desc">The president receives the idea and has to decide where it lives institutionally. The answer is almost always: the sciences. The biology department has the collection. The natural sciences college has the curatorial expertise. The president assigns it to the relevant dean and makes it a presidential initiative. This is also a legacy opportunity and a community relations imperative — both reasons the president takes it seriously.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-num">03 · The Assignment</div>
+      <div class="role-title">Dean of Natural Sciences or Biology</div>
+      <div class="role-desc">The dean receives the assignment from the president. Your department has the collection — natural history specimens, biological materials, geological samples, archival records — that faculty and students use but the public has never seen. You understand the academic value. You may also have a museum studies program that needs a working home. You evaluate whether this is feasible and what it would take.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-num">04 · Who Runs the Search</div>
+      <div class="role-title">Dean's Assistant or Administrative Coordinator</div>
+      <div class="role-desc">This is the person who actually contacts museum planners. The dean has handed off the project management. You are researching consultants, assembling an RFQ, coordinating the internal stakeholder process, and making sure the project moves forward on an administrative timeline that works within the university's budget cycle. If you are reading this page, you are probably this person. We respond to every inquiry within one business day.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-num">05 · The Enrollment Angle</div>
+      <div class="role-title">VP for Enrollment or Admissions</div>
+      <div class="role-desc">Declining admissions is the second driver of most university museum projects. A museum becomes a recruitment tool that no brochure can replicate. Prospective students on campus tours walk through the museum and hear: if you study biology here, you can work in this collection. Classes are taught here. Research happens here. Events happen here. That is a tangible demonstration of what the university offers — and it matters to a 17-year-old deciding where to spend four years.</div>
+    </div>
+    <div class="role-card">
+      <div class="role-num">06 · The Money</div>
+      <div class="role-title">University Foundation / Development Office</div>
+      <div class="role-desc">A museum generates naming opportunities, donor engagement, and community visibility that most university buildings cannot. You're evaluating whether a capital campaign is feasible, who the lead donors might be, and whether an endowment can support operations over time. The feasibility study is the document you need to have that conversation with the board and with major gift prospects.</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTIONS WE HEAR -->
+<section class="content-section">
+  <div class="section-eyebrow">What Universities Ask</div>
+  <h2 class="section-h2">The Questions We Hear <em>Before</em> Anyone Calls</h2>
+
+  <div class="questions-list">
+    <div class="question-item">
+      <div class="question-q">"</div>
+      <div class="question-body">
+        <div class="question-text">We have a natural history collection in storage that hasn't been seen publicly in thirty years. What would it actually take to build a museum around it?</div>
+        <div class="question-answer">A collection in storage is the best possible starting point — you have content, you have curatorial expertise in the biology department, and you have institutional ownership. What you need is a feasibility study that models the operating cost of making it public: staffing, conservation requirements, building program, visitor experience, and the annual gap between what the museum earns and what it costs. That gap, and how the university commits to covering it, is what a feasibility study answers. We have done this three times with natural history collections at universities. It is a known path.</div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-q">"</div>
+      <div class="question-body">
+        <div class="question-text">The community feels we don't pay enough in property taxes or give back enough. Would a museum actually help that relationship?</div>
+        <div class="question-answer">Yes — if it is designed from the beginning to serve community audiences, not just the campus. The specific mechanism that works best is free admission for local residents with a driver's license showing a local zip code. This is simple, visible, and verifiable. Combined with active school partnerships, community programming, and public events, a museum built this way generates genuine goodwill that the institution cannot manufacture any other way. The key is building the community-serving mission into the governance documents from day one — not adding it as a program after the building opens.</div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-q">"</div>
+      <div class="question-body">
+        <div class="question-text">Our admissions numbers are declining. Can a museum actually help with enrollment?</div>
+        <div class="question-answer">Yes — and this is one of the most underused arguments for a university museum. A museum on campus gives prospective students something concrete to walk through during their visit. They see students doing real research with real collections. They hear that classes are taught in the museum, that student internships are available, that events happen there. For a 17-year-old choosing between two similar universities, that kind of tangible, living demonstration of what student life looks like is more persuasive than a brochure and more memorable than a standard campus tour. We build the enrollment and recruitment case into the feasibility study alongside the community relations case — because in most university museum conversations, both are true simultaneously.</div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-q">"</div>
+      <div class="question-body">
+        <div class="question-text">We have a museum studies program. Can the museum be a teaching lab for our students?</div>
+        <div class="question-answer">This is one of the most powerful arguments for a university museum and one of the most underbuilt features when the planning isn't done carefully. We design the museum from the start as a working institution — with governance, staffing structures, and physical space that allow museum studies students to do real curatorial, interpretive, development, and administrative work. The result is a living lab that justifies the museum studies program's existence and produces graduates with genuine institutional experience. This has to be built into the master plan, not bolted on after opening.</div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-q">"</div>
+      <div class="question-body">
+        <div class="question-text">Is there federal or state funding available for a university museum?</div>
+        <div class="question-answer">Yes. IMLS (Institute of Museum and Library Services), NEH (National Endowment for the Humanities), and NSF all fund university museum projects — collections digitization, interpretive programming, and capital improvements. State cultural agencies and state historic preservation offices are often additional sources. University development offices frequently underestimate what is available through these channels for natural history and cultural collections. We map realistic funding stacks as part of every feasibility study — not a generic grant list, but a sequenced strategy tied to what the institution already holds.</div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-q">"</div>
+      <div class="question-body">
+        <div class="question-text">Should this be a university-operated museum or an independent 501(c)(3)?</div>
+        <div class="question-answer">This is one of the most consequential governance decisions in university museum planning, and most institutions get it wrong by defaulting to whatever is administratively easiest rather than whatever is structurally sustainable. A fully university-operated museum depends on the administration's continued support — it disappears in a budget cycle when the president changes. An independent 501(c)(3) can build its own donor base, apply for grants the university cannot, and survive institutional leadership transitions. A hybrid model — university-owned collection, independently governed museum — is often the most sustainable structure. We lay out all three options with real operating implications in the feasibility study.</div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-q">"</div>
+      <div class="question-body">
+        <div class="question-text">We have an early childhood center on campus. How does that connect to the museum?</div>
+        <div class="question-answer">University early childhood centers serve two purposes simultaneously: they train students in early childhood education programs, and they provide subsidized childcare for faculty and staff who could not otherwise afford local rates. That existing program almost always becomes the anchor for a children's gallery or early learning area within the museum. Building this integration into the museum from the start — rather than adding it later — means the museum serves the youngest community members from day one, gives the education faculty a public-facing classroom, and creates a reason for local families to visit repeatedly. We design the early childhood component as a programmatic decision in the master plan, not an afterthought.</div>
+      </div>
+    </div>
+
+    <div class="question-item">
+      <div class="question-q">"</div>
+      <div class="question-body">
+        <div class="question-text">We have a historic building on campus that needs a new purpose. Could the museum go there?</div>
+        <div class="question-answer">Maybe — and the feasibility study is exactly the tool to answer that honestly before capital is committed. A historic building can anchor a university museum beautifully, or it can sink one, depending on structural condition, the cost of bringing it to public occupancy standards, ADA compliance requirements, HVAC demands for climate-controlled collections, and whether the floor plan serves museum circulation. We assess the building as part of the feasibility process. A structure that looks like a perfect home for a natural history museum sometimes turns out to cost twice as much to prepare as a new building. That answer needs to come before the capital campaign, not after.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE SOLUTION MODEL -->
+<section class="content-section">
+  <div class="section-eyebrow">The University Museum Model</div>
+  <h2 class="section-h2">Built to Serve <em>Two Audiences.</em></h2>
+
+  <div class="model-grid">
+    <div class="model-card">
+      <div class="model-num">University Audience</div>
+      <h3>The Campus as <em>Stakeholder</em></h3>
+      <p>Undergraduate and graduate curriculum integration. Museum studies practicum. Biology and natural sciences teaching collection. Faculty research access. Donor cultivation space. Alumni events and alumni identity. Architectural landmark on the campus tour.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-num">Community Audience</div>
+      <h3>The Town as <em>Stakeholder</em></h3>
+      <p>Free admission for local residents with a driver's license showing a local zip code. School programs for K–12. Public lectures and community events. Local history interpretation. A destination that serves residents who may never set foot on campus for any other reason.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-num">Collection</div>
+      <h3>Natural History as <em>Foundation</em></h3>
+      <p>Most university museums begin with a natural history or biological sciences collection. These collections are already curated, already documented, and already have internal expertise through the biology department. The museum makes them public without removing them from their research function.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-num">Governance</div>
+      <h3>Structure for <em>Survival</em></h3>
+      <p>The governance structure is the decision that determines whether the museum exists in 20 years. University-operated, independent 501(c)(3), or hybrid — each has distinct financial, political, and operational implications. We lay out all three options with real operating costs before the board votes on anything.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-num">Admission Model</div>
+      <h3>Free for Locals.<br><em>Always.</em></h3>
+      <p>The single most effective community relations mechanism for a university museum: free admission for any resident who presents a driver's license with a local zip code. Simple to administer. Visible. Verifiable. The community knows it exists. This needs to be in the governance documents from day one, not a program that can be cut when budgets tighten.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-num">Enrollment &amp; Recruitment</div>
+      <h3>The Museum as <em>Recruitment Tool</em></h3>
+      <p>A prospective student on a campus tour walks through the museum and hears: if you study biology here, you can work in this collection. Classes are taught here. Research happens here. Events happen here. That is a tangible demonstration of what student life looks like — more memorable than any campus visit without it. The demographic cliff is real: the traditional college-age population peaks in 2025 and declines for at least 15 years after that. Institutions that can show prospective students something concrete will have an advantage over those that cannot.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-num">Early Childhood</div>
+      <h3>The Children's Area<br><em>Is Almost Always There</em></h3>
+      <p>Most universities operate an early childhood center — a laboratory school that serves two purposes simultaneously: it is a training site for students in early childhood education programs, and it is subsidized childcare for faculty and staff who could not otherwise afford it. That early childhood center almost always becomes the anchor for a children's gallery or early learning area within the museum. Building this in from the start — rather than retrofitting it — means the museum serves the youngest community members and gives the education faculty a working classroom that is visible to the public.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-num">Art + Technology</div>
+      <h3>The Convergence the<br><em>University Already Sees</em></h3>
+      <p>Many universities are actively pursuing the overlap between fine arts, media arts, biology, and technology — the programs that online courses cannot replicate. Projection mapping. Digital fabrication. Biomedical visualization. Interactive media. A museum that demonstrates this convergence physically — where students and visitors can see art and technology intersecting in real space — becomes a recruitment asset for the programs with growing enrollment and a visible argument for what makes the university different from an online degree provider.</p>
+    </div>
+    <div class="model-card">
+      <div class="model-num">The Pipeline</div>
+      <h3>Museum Studies as<br><em>Living Lab</em></h3>
+      <p>Museum studies programs are small — only 836 degrees were awarded nationally in 2021–22, making it the 275th most popular major in the U.S. The programs that survive will be the ones attached to working institutions where students do real curatorial, interpretive, development, and administrative work. A university museum justifies the program's existence and produces graduates with genuine institutional experience. Without a working museum, museum studies is a degree without a practicum.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="content-section" id="how-we-work">
+  <div class="section-eyebrow">How We Work with Universities</div>
+  <h2 class="section-h2">A Process Built for <em>Academic Institutions</em></h2>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <div class="step-head">
+          <div class="step-title">Early Conversation — Before the Proposal</div>
+          <div class="step-meta">No cost · 1 hour · Confidential</div>
+        </div>
+        <div class="step-desc">Most university museum projects begin with an internal question before they reach a formal proposal. We make time for a one-hour no-obligation call with the president's office, provost, or relevant dean — to assess whether a formal study makes sense, what it would take to structure one for the university's internal approval process, and what questions need to be answered before anything goes to the board.</div>
+        <div class="step-tags">
+          <span class="step-tag">President / Provost</span>
+          <span class="step-tag">No cost</span>
+          <span class="step-tag">Confidential</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <div class="step-head">
+          <div class="step-title">Museum Assessment — If a Museum Already Exists</div>
+          <div class="step-meta">Starting at $18,000 · 6–8 weeks</div>
+        </div>
+        <div class="step-desc">If the university already operates a museum or gallery — even informally — we begin with an institutional health assessment using the Museum Vitality Index. Financial structure, governance, programming, facility condition, community reach, and planning readiness. The MVI gives you a size-normalized benchmark against peer institutions nationally, so you know where you actually stand before planning begins.</div>
+        <div class="step-tags">
+          <span class="step-tag">MVI Benchmarking</span>
+          <span class="step-tag">Existing institutions</span>
+          <span class="step-tag">Starting at $18,000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <div class="step-head">
+          <div class="step-title">Feasibility Study — Before Capital Is Committed</div>
+          <div class="step-meta">$40,000–$70,000 · 3–6 months</div>
+        </div>
+        <div class="step-desc">Attendance projections, operating cost modeling, staffing requirements, revenue assumptions, governance structure analysis, and a clear operating gap analysis. The document a board can vote on. Covers collections assessment, building program scope, town-gown impact analysis, free local admission modeling, museum studies integration, and a realistic funding stack including IMLS, NEH, NSF, state cultural agencies, and private philanthropy. Structured for board presentation and capital campaign launch.</div>
+        <div class="step-tags">
+          <span class="step-tag">$40K–$70K</span>
+          <span class="step-tag">3–6 months</span>
+          <span class="step-tag">Board-ready deliverable</span>
+          <span class="step-tag">Governance analysis included</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <div class="step-head">
+          <div class="step-title">Museum Master Plan — Building Program Through Capital Campaign</div>
+          <div class="step-meta">Starting at $100,000 · 6–12 months</div>
+        </div>
+        <div class="step-desc">Translates institutional goals into physical space and financial reality. Building program, floor plans, phasing strategy, collections housing, public gallery design, museum studies integration spaces, construction budget, and capital campaign structure. Designed to work with your architect — not replace them. We represent the university's program interest on every decision.</div>
+        <div class="step-tags">
+          <span class="step-tag">Starting at $100K</span>
+          <span class="step-tag">6–12 months</span>
+          <span class="step-tag">Phased delivery available</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="process-step">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <div class="step-head">
+          <div class="step-title">Stakeholder Engagement — Campus and Community</div>
+          <div class="step-meta">Included in feasibility and master plan</div>
+        </div>
+        <div class="step-desc">University museum planning requires two distinct stakeholder processes running in parallel: one with internal academic constituencies (faculty, museum studies program, biology department, student government, alumni board) and one with external community stakeholders (K–12 schools, local government, civic organizations, neighborhood representatives). We design and facilitate both processes — producing documentation that satisfies shared governance requirements and builds the community legitimacy the museum needs to function.</div>
+        <div class="step-tags">
+          <span class="step-tag">Campus engagement</span>
+          <span class="step-tag">Community engagement</span>
+          <span class="step-tag">On-record documentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="content-section">
+  <div class="section-eyebrow">Relevant Work</div>
+  <h2 class="section-h2">University &amp; University-Adjacent <em>Projects</em></h2>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-card">
+      <div class="port-type">Natural History · University · Master Planning</div>
+      <h3>Frehner Museum of Natural History</h3>
+      <p>Southern Utah University. Master planning for a natural history museum built around the university's existing biological sciences collection, serving both the campus curriculum and the surrounding rural community. Ongoing, 2026.</p>
+      <a href="projects/frehner-museum-southern-utah-university.html" class="port-link">View project →</a>
+    </div>
+    <div class="portfolio-card">
+      <div class="port-type">Natural Resources · University · Master Planning</div>
+      <h3>Arizona Natural Resources Museum</h3>
+      <p>University of Arizona, Tucson. Master planning for a natural resources museum integrating the university's extensive collections with public interpretation and community programming. Completed 2023.</p>
+      <a href="projects/arizona-natural-resources-museum.html" class="port-link">View project →</a>
+    </div>
+    <div class="portfolio-card">
+      <div class="port-type">Natural History · Regional · Master Planning</div>
+      <h3>Howard Natural History Museum</h3>
+      <p>Riverside County, CA. $27.75M master planning engagement for a regional natural history museum serving a major university county — integrating institutional collections with broad public access and community identity. Completed 2024.</p>
+      <a href="projects/howard-natural-history-museum.html" class="port-link">View project →</a>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--cream-mute);line-height:1.6;">Additional university and university-adjacent project references available on request. We can provide contacts who have worked with us in an academic context.</p>
+</section>
+
+<!-- FEES -->
+<section class="content-section">
+  <div class="section-eyebrow">Typical Fee Ranges</div>
+  <h2 class="section-h2">Know the Ballpark <em>Before You Call</em></h2>
+
+  <div class="fees-grid">
+    <div class="fee-card">
+      <div class="fee-service">Museum Assessment</div>
+      <div class="fee-amount">$18,000+</div>
+      <div class="fee-desc">Current-state evaluation of an existing university museum or collection. Includes Museum Vitality Index benchmarking against peer institutions nationally. The starting point for any engagement where something already exists.</div>
+    </div>
+    <div class="fee-card">
+      <div class="fee-service">Feasibility Study</div>
+      <div class="fee-amount">$40k – $70k</div>
+      <div class="fee-desc">Attendance projections, operating cost modeling, governance structure analysis, staffing requirements, community impact framework, and funding stack — before capital is committed. The document that goes to the board. 3–6 months.</div>
+    </div>
+    <div class="fee-card">
+      <div class="fee-service">Museum Master Plan</div>
+      <div class="fee-amount">$100k+</div>
+      <div class="fee-desc">Building program through capital campaign structure. Floor plans, phasing, technology systems, collections housing, museum studies integration, and capital campaign framework. Designed to work with your architect. 6–12 months.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;padding:20px 24px;border:1px solid var(--rule);font-size:14px;color:var(--cream-mute);line-height:1.65;">
+    Every engagement begins with a one-hour conversation at no cost. The ranges above are starting points — actual scope and fee are set in that conversation based on what you're actually trying to answer. All fees exclusive of travel.
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div class="contact-left">
+      <h2>One Hour. No Cost.<br><em>No Obligation.</em></h2>
+      <p>Tell us where you are and what you're trying to figure out — whether that's a collection in storage, a historic building with no purpose, a community relations problem, a feasibility study you've been asked to commission, or a board resolution you need to respond to.</p>
+      <p>Mark is personally involved in every engagement and available within two weeks.</p>
+      <div class="contact-direct">
+        <a href="tel:4157945252"><strong>415-794-5252</strong></a>
+        <a href="mailto:mark@museumplanning.com"><strong>mark@museumplanning.com</strong></a>
+        <a href="#"><strong>New York · Mexico City</strong></a>
+      </div>
+    </div>
+    <div class="contact-right">
+      <div class="form-group">
+        <input type="text" placeholder="Your name" id="f-name">
+        <input type="text" placeholder="Title / Role" id="f-title">
+        <input type="text" placeholder="Institution" id="f-inst">
+        <input type="email" placeholder="Email address" id="f-email">
+        <select id="f-stage">
+          <option value="" disabled selected>Where are you in the process?</option>
+          <option>We have a collection that has never been shown publicly</option>
+          <option>Town-gown tension — exploring a museum as a solution</option>
+          <option>Historic building on campus needing a new purpose</option>
+          <option>We have an existing university museum that needs help</option>
+          <option>Feasibility study — ready to scope</option>
+          <option>Master plan / capital campaign</option>
+          <option>Something else</option>
+        </select>
+        <textarea placeholder="Brief context (optional)" id="f-context" rows="3"></textarea>
+        <button type="button" class="form-submit" onclick="submitForm()">Request a Conversation →</button>
+        <div class="form-note">We respond to every inquiry within one business day.</div>
+      </div>
+      <div class="success-msg" id="successMsg">
+        <h3>✓ Message sent.</h3>
+        <p>We respond to every inquiry within one business day.<br>mark@museumplanning.com · 415-794-5252</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (site) -->
+<p class="privacy-strip"><a href="museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
+
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="https://www.linkedin.com/company/museum-planning-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/museumplanning/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    <li><a href="https://www.facebook.com/MuseumPlanningLLC/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    <li><a href="https://x.com/MuseumPlanning" target="_blank" rel="noopener noreferrer">X</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li><a href="museum-planning-privacy.html">Privacy</a></li>
+    <li><a href="museum-vitality-index.html">MVI</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button type="button" class="search-close" id="searchClose" aria-label="Close search">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
+
+// Simple form handler (hooks into mailto as fallback)
+function handleSubmit() {
+  const name    = document.getElementById('f-name').value.trim();
+  const title   = document.getElementById('f-title').value.trim();
+  const city    = document.getElementById('f-city').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const interest = document.getElementById('f-interest').value;
+  const note    = document.getElementById('f-note').value.trim();
+
+  if (!name || !email || !interest) {
+    // Highlight required fields
+    if (!name)  document.getElementById('f-name').style.borderColor = '#C9A84C';
+    if (!email) document.getElementById('f-email').style.borderColor = '#C9A84C';
+    if (!interest) document.getElementById('f-interest').style.borderColor = '#C9A84C';
+    return;
+  }
+
+  const body = encodeURIComponent(
+    `Name: ${name}
+Title: ${title}
+City: ${city}
+Email: ${email}
+Interest: ${interest}
+Note: ${note}`
+  );
+  const subject = encodeURIComponent(`Municipal Inquiry — ${city || name}`);
+  window.location.href = `mailto:mark@museumplanning.com?subject=${subject}&body=${body}`;
+
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+// Smooth anchor for CTA buttons
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+<script>
+const PAGES = [
+  { type: "University", title: "For Universities — Museum Planning", desc: "Presidents, provosts, deans, and feasibility before capital.", url: "for-universities.html" },
+  { type: "Municipal", title: "For Cities — Museum Feasibility", desc: "City managers, mayors' offices, and feasibility before capital.", url: "for-cities.html" },
+  { type: "Municipal", title: "Science Centers for Cities", desc: "Civic science & technology centers, feasibility, convergence-era model.", url: "for-cities-science-center.html" },
+  { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology.", url: "index.html" },
+  { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and how to start a conversation.", url: "museum-planning-contact.html" },
+  { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "museum-planning-services.html" },
+  { type: "Projects", title: "Projects — Forty Museums", desc: "Portfolio worldwide.", url: "museum-planning-projects.html" },
+  { type: "About", title: "About — Mark Walhimer", desc: "Managing partner, Museum Planning LLC since 1999, Pratt Institute, Bloomsbury author.", url: "museum-planning-about.html" },
+  { type: "MVI", title: "Museum Vitality Index", desc: "0–100 institutional health benchmarking.", url: "museum-vitality-index.html" },
+  { type: "Museum School", title: "Museum School", desc: "Guides on starting a museum, feasibility, and master planning.", url: "museum-school/index.html" },
+  { type: "Museum School", title: "How to Start a Museum", desc: "Ten steps, costs, common mistakes, and resources.", url: "museum-school/how-to-start-a-museum.html" },
+  { type: "Museum School", title: "What is a Museum Feasibility Study?", desc: "What it covers, how it works, cost and timeline.", url: "museum-school/what-is-a-museum-feasibility-study.html" },
+  { type: "Museum School", title: "What is a Museum Master Plan?", desc: "Building program, visitor experience, capital campaign strategy.", url: "museum-school/what-is-a-museum-master-plan.html" },
+  { type: "Guide", title: "Museum Feasibility Study — What You Get", desc: "Deliverables, costs, commissioning context.", url: "museum-feasibility-study.html" },
+  { type: "Guide", title: "Starting a Local History Museum", desc: "Historic buildings, collections, governance.", url: "local-history-museum.html" }
+];
+const input = document.getElementById("search-input");
+const results = document.getElementById("searchResults");
+const overlay = document.getElementById("searchOverlay");
+document.getElementById("searchToggle").addEventListener("click", function () {
+  overlay.classList.add("open");
+  setTimeout(function () { input.focus(); }, 100);
+});
+document.getElementById("searchClose").addEventListener("click", function () {
+  overlay.classList.remove("open");
+  input.value = "";
+  results.innerHTML = "";
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    overlay.classList.remove("open");
+    input.value = "";
+    results.innerHTML = "";
+  }
+});
+input.addEventListener("input", function () {
+  const q = input.value.toLowerCase().trim();
+  if (!q) {
+    results.innerHTML = "";
+    return;
+  }
+  const matches = PAGES.filter(function (p) {
+    return (
+      p.title.toLowerCase().includes(q) ||
+      p.desc.toLowerCase().includes(q) ||
+      p.type.toLowerCase().includes(q)
+    );
+  });
+  if (!matches.length) {
+    results.innerHTML = '<div class="search-empty">No results found.</div>';
+    return;
+  }
+  results.innerHTML = matches
+    .map(function (p) {
+      return (
+        '<a href="' +
+        p.url +
+        '" class="search-result"><div class="sr-type">' +
+        p.type +
+        '</div><div class="sr-title">' +
+        p.title +
+        '</div><div class="sr-desc">' +
+        p.desc +
+        "</div></a>"
+      );
+    })
+    .join("");
+});
+</script>
+<script src="assets/nav-mobile.js" defer></script>
+
+</body>
+</html>
+
