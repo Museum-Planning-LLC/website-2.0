@@ -12,14 +12,6 @@ SITE_HEAD = """<link rel="canonical" href="https://museumplanning.com/for-univer
 <link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GFF0QW5N3B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-GFF0QW5N3B');
-</script>
 """
 
 SITE_NAV = """<nav class="site-nav" id="site-nav">
