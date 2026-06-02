@@ -3,70 +3,178 @@
 Single source of truth for **which phrases we target** and **which pages own them**. Update when positioning changes or after reviewing Search Console query data (quarterly is enough for most sites).
 
 **Primary domain:** https://museumplanning.com  
-
-This document is the **strategy source of truth**. Page titles, meta descriptions, canonicals, and copy updates follow from the map below.
-
-### Website hierarchy (how keywords route)
-
-1. **`museum-planning-services.html`** — Primary commercial hub: *museum planning*, *museum consultant(s)*, *museum strategic planning*, *museum exhibition design*, *interactive museum exhibits* (in body copy), plus deep links to Museum School for *feasibility* and *master planning* explainers.
-2. **`museum-planning-projects.html`** + **`projects/*.html`** — Proof and entity-rich pages; reinforce *interactive museum exhibits* and service filters (feasibility, master planning, etc.).
-3. **`museum-school/*`** — Informational owners for *starting a museum*, *museum feasibility study*, *museum master planning*; linked from Services to clarify vocabulary before hiring.
-4. **`museum-planning-about.html`** — Brand owner for *Mark Walhimer* and consultant credibility.
-5. **`index.html`** — Site-wide positioning and navigational reinforcement for *museum planning* / *museum consultants*.
+**Implementation companion:** [`STYLE-GUIDE.md`](../STYLE-GUIDE.md) (page tiers, SEO head standard, voice) · [`redirects/README.md`](../redirects/README.md) (Cloudflare 301s + stubs)
 
 ---
 
-## Primary keyword list (commercial + brand core)
+## Tier 1 — money keywords (one URL per phrase)
 
-One **primary URL** per row avoids competing with yourself. Supporting pages reinforce the topic with internal links and proof (projects, Museum School, capabilities).
+These five phrases drive $100K-class engagements. Each has a **single primary URL**. Do not create competing pages or duplicate intent.
 
-| Keyword / phrase | Intent | Primary URL | Supporting URLs |
-|------------------|--------|-------------|-----------------|
-| Museum planning | Commercial + informational | `museum-planning-services.html` | `index.html`, `museum-planning-projects.html`, `Museum_Planning_LLC_Capabilities.html` |
-| Museum consultant(s) | Commercial | `museum-planning-services.html` | `museum-planning-about.html`, `museum-planning-contact.html`, `index.html` |
-| Museum feasibility study | Informational + commercial | `museum-school/what-is-a-museum-feasibility-study.html` + `museum-planning-services.html` | `museum-planning-contact.html`, relevant `projects/*.html` |
-| Museum master planning | Informational + commercial | `museum-school/what-is-a-museum-master-plan.html` + `museum-planning-services.html` | Capabilities, projects |
-| Museum strategic planning | Commercial | `museum-planning-services.html` | About, capabilities |
-| Museum exhibition design | Commercial | `museum-planning-services.html` | Project case studies, capabilities |
-| Interactive museum exhibits | Commercial + informational | `museum-planning-projects.html` + relevant `projects/*.html` | Services (exhibitions / experience) |
-| Starting a museum | Informational | `museum-school/how-to-start-a-museum.html` | `museum-school/index.html`, services, contact |
-| Mark Walhimer | Brand / navigational | `museum-planning-about.html` | Home, contact, Museum School bylines |
+| # | Keyword / phrase | Primary URL | Sitemap priority |
+|---|------------------|-------------|------------------|
+| 1 | **Museum planning** | [`index.html`](../index.html) (`/`) | `1.0` |
+| 2 | **Museum planning services** / **museum consultants** | [`museum-planning-services.html`](../museum-planning-services.html) | `0.9` |
+| 3 | **Museum feasibility study** | [`museum-feasibility-study.html`](../museum-feasibility-study.html) | `0.85` |
+| 4 | **Museum strategic planning** | [`museum-strategic-planning.html`](../museum-strategic-planning.html) | `0.85` |
+| 5 | **Museum master planning** | [`museum-master-planning.html`](../museum-master-planning.html) | `0.85` |
 
 **Notes**
 
-- Treat **“museum consultants”** as the same cluster as **museum consultant**; use natural plural in body copy.
-- Do **not** treat **“museum”** alone as a target phrase—use it only inside longer queries.
+- **Services hub** (`museum-planning-services.html`) owns *museum planning services* by URL and `ItemList` schema; title/H1 lead **museum consultants** (same hire-intent cluster). Both phrases are intentional.
+- **Homepage** owns *museum planning* in title, OG, and `WebPage` schema; H1 is brand (“We Build Museums”) — acceptable for home.
+- Treat **museum consultant** / **museum consultants** as the same cluster as the services page.
+- Do **not** target **“museum”** alone — only inside longer queries.
+
+### Tier 1 on-page checklist (each pillar page)
+
+- [ ] Primary keyword in `<title>` (first), `| Museum Planning LLC` suffix
+- [ ] Keyword in H1 (natural, not stuffed)
+- [ ] ~155-char meta description, **we** voice, fee signal where appropriate
+- [ ] Canonical with `.html`
+- [ ] Open Graph + Twitter Card
+- [ ] JSON-LD: `WebPage`, `Service`, `FAQPage` (visible FAQs must match), `BreadcrumbList`
+- [ ] Intent strip linking sibling Tier 1 pages
+- [ ] Legacy path in `redirects/legacy-redirects.json` + Cloudflare CSV if WordPress URL existed
+- [ ] URL in `sitemap.xml`; request GSC indexing after deploy
+
+**Status (2026-06-02):** Pillars 3–5 fully optimized. Homepage and services hub optimized with intentional brand/consultant emphasis (see notes above).
 
 ---
 
-## Extended list (phase 2 — topical & niche)
+## Tier 2 — audience / vertical guides
 
-Use these for **thought leadership**, **subsections on Services**, or **future articles**—not necessarily duplicate homepage/service hubs.
+Sitemap priority **`0.45`**. Link **up** to Tier 1; do not keyword-stuff or duplicate Tier 1 copy.
 
-| Theme | Typical phrases | Likely home on site |
-|-------|-----------------|---------------------|
-| Future of museums | future of museums, museum relevance | Long-form (e.g. `convergence-era.html`) or a dedicated essay later |
-| Technology & museums | AI and museums, digital transformation in museums | `convergence-era.html`, Services (light touch) |
-| Experience | immersive museum experiences, museum visitor engagement | Projects + Services |
-| Planning vocabulary | interpretive planning museum, museum capital campaign planning | Services + proof in projects (only if accurate to engagements) |
-| Organizational change | museum change management, museum transformation | Services subsection + methodology if offered substantively |
-| Institutional health | museum benchmarking, museum financial health | `museum-vitality-index.html`, capabilities |
-
----
-
-## House rules
-
-1. **`meta name="keywords"`** — Not used for ranking; optional at most. Prefer strong titles and descriptions per URL.
-2. **Measurement** — Google Search Console: impressions and clicks by query and landing page; refine this doc from real data.
-3. **Regeneration** — `_gen_site_map.py` refreshes `site-map.html` / `sitemap.xml`; it does **not** replace this strategy file.
+| Page | Audience / topic |
+|------|------------------|
+| [`for-cities.html`](../for-cities.html) | Municipal / civic museum feasibility |
+| [`for-cities-science-center.html`](../for-cities-science-center.html) | City science & technology centers |
+| [`for-universities.html`](../for-universities.html) | University museums & collections |
+| [`local-history-museum.html`](../local-history-museum.html) | Local / community history museums |
+| [`immersive-museum-planning.html`](../immersive-museum-planning.html) | Immersive & interactive exhibition design |
 
 ---
 
-## Competitor SERP matrix (working spreadsheet)
+## Tier 3 — Museum School (vocabulary, not commercial owners)
+
+Sitemap priority **lower than Tier 1** (informational). Answers “what is…?” before hire. Always link **up** to the matching Tier 1 commercial page.
+
+| Museum School page | Links up to |
+|--------------------|-------------|
+| `museum-school/what-is-a-museum-feasibility-study.html` | `museum-feasibility-study.html` |
+| `museum-school/what-is-a-museum-master-plan.html` | `museum-master-planning.html` |
+| `museum-school/how-to-start-a-museum.html` | `museum-planning-services.html`, contact |
+
+**Do not** treat Museum School URLs as primary owners for feasibility, strategic, or master planning commercial queries.
+
+---
+
+## Supporting pages (proof & brand)
+
+| Role | URLs |
+|------|------|
+| Project proof | `museum-planning-projects.html`, `projects/*.html` |
+| Brand / person | `museum-planning-about.html` (Mark Walhimer) |
+| Conversion | `museum-planning-contact.html` |
+| Thought leadership | `convergence-era.html`, `museum-vitality-index.html` |
+| Capabilities PDF-style | `Museum_Planning_LLC_Capabilities.html` |
+
+---
+
+## Legacy URL routing (Cloudflare + stubs)
+
+GitHub Pages cannot send HTTP 301. **Cloudflare Bulk Redirects** (preferred) plus GitHub stub pages (fallback).
+
+**Regenerate after editing the map:**
+
+```bash
+python3 tools/gen_legacy_redirect_stubs.py
+python3 tools/gen_cloudflare_bulk_redirects.py
+```
+
+Source of truth: [`redirects/legacy-redirects.json`](../redirects/legacy-redirects.json)
+
+### Rank-critical legacy paths
+
+| Legacy URL | 301 target |
+|------------|------------|
+| `/museum-feasibility-studies/` | `museum-feasibility-study.html` |
+| `/museum-master-planning/` | `museum-master-planning.html` |
+| `/museum-strategic-planning/` | `museum-strategic-planning.html` |
+| `/museum-strategic-planning-consultants/` | `museum-strategic-planning.html` |
+| `/museum-consultants/` | `museum-planning-services.html` |
+| `/museum-consulting-and-cultural-planning-museum-planning-llc/` | `museum-planning-services.html` |
+| `/immersive-interactive-museum-transformation/` | `immersive-museum-planning.html` |
+
+Verify after Cloudflare import:
+
+```bash
+curl -sI "https://museumplanning.com/museum-master-planning/" | grep -iE "^HTTP|location"
+```
+
+---
+
+## Secondary & extended keywords (phase 2)
+
+One primary URL per row where possible. Use body copy and internal links — not duplicate hubs.
+
+| Keyword / phrase | Intent | Primary URL | Supporting URLs |
+|------------------|--------|-------------|-----------------|
+| Museum exhibition design | Commercial | `museum-planning-services.html` | Project case studies, capabilities |
+| Interactive museum exhibits | Commercial + informational | `museum-planning-projects.html`, `projects/*.html` | Services, immersive guide |
+| Immersive museum planning | Commercial | `immersive-museum-planning.html` | Services, science-center vertical |
+| Starting a museum | Informational | `museum-school/how-to-start-a-museum.html` | Services, contact |
+| Mark Walhimer | Brand / navigational | `museum-planning-about.html` | Home, contact |
+
+### Extended topical list (essays & future content)
+
+| Theme | Typical phrases | Likely home |
+|-------|-----------------|-------------|
+| Future of museums | future of museums, museum relevance | `convergence-era.html` |
+| Technology & museums | AI and museums, digital transformation | `convergence-era.html`, immersive guide |
+| Experience | museum visitor engagement | Projects, immersive guide |
+| Institutional health | museum benchmarking | `museum-vitality-index.html` |
+
+---
+
+## Measurement & maintenance
+
+1. **Google Search Console** — monthly: impressions/clicks by query and landing page; confirm Tier 1 URLs receive impressions for target phrases.
+2. **After any new commercial page** — add to `sitemap.xml`, legacy redirects if needed, request indexing, resubmit sitemap.
+3. **Quarterly** — update this doc from GSC query data; refresh [`docs/seo-competitor-keyword-matrix.csv`](seo-competitor-keyword-matrix.csv) for top 5–10 queries.
+4. **`meta name="keywords"`** — not used.
+5. **Sitemap regen** — `python3 _gen_site_map.py` refreshes `site-map.html` / `sitemap.xml`; does not replace this strategy file.
+
+---
+
+## Remaining optimization (post-migration checklist)
+
+Technical and on-page work completed as of **2026-06-02**. What remains is mostly **monitoring and optional polish**:
+
+| Item | Priority | Status |
+|------|----------|--------|
+| Cloudflare 301s for rank-critical legacy paths | High | Done — verify periodically |
+| Tier 1 pillar pages (feasibility, strategic, master) | High | Done |
+| GSC sitemap resubmit | High | User done |
+| GSC URL Inspection on all Tier 1 URLs | High | Confirm each requested once |
+| Organic rank recovery | Medium | Wait 2–8 weeks post-301; track in GSC |
+| Homepage H1 exact match for “museum planning” | Low | Optional — brand H1 is fine |
+| Services title/H1 “museum planning services” | Low | Optional — consultants cluster is strong |
+| Demote Museum School sitemap priority below 0.85 | Low | Reduces minor cannibalization risk |
+| `for-universities.html` Tier 2 SEO pass | Medium | Page exists; confirm head/schema matches standard |
+| Off-site backlinks & citations | Ongoing | Directories, speaking, museumplanner.org cross-links |
+| GSC query-driven content (1 article/quarter) | Ongoing | Use Search Console “Queries” tab |
+
+---
+
+## Competitor SERP matrix
 
 **File:** [`docs/seo-competitor-keyword-matrix.csv`](seo-competitor-keyword-matrix.csv)
 
-Columns map **primary keyword → intent → your URL(s) → five illustrative competitor domains + page types → gap note**. Import into Google Sheets or Excel; replace competitor slots with **your geo’s top URLs** from Search Console (*Queries* + manual SERP check) or a rank-tracker. Rows labeled **US-default** used aggregated web-search snapshots **May 2026** — **re-verify before tactical bets.** Exhibit-heavy SERPs shift quickly; e.g. **Gallagher & Associates**, **Local Projects**, **Ideum**, **Quatrefoil** often rank depending on query wording but did not surface in the first automated pulls — see cohort rows in the CSV. User-added peers **JRA** ([RWS Global / JRA](https://www.rwsglobal.com/jra)) and **Design and Production** ([d-and-p.com](https://www.d-and-p.com/)) capture turnkey **museum experiences** / master-plan-to-operations positioning versus planner-led consulting firms. Additional cohort captured in CSV row **Atelier Brückner** ([atelier-brueckner.com/en](https://www.atelier-brueckner.com/en)), **Kossmann.dejong** ([kossmanndejong.nl](https://kossmanndejong.nl/)), **Gensler** ([gensler.com](https://www.gensler.com/) — Culture & Museums), **kubik maltbie** ([kubikmaltbie.com](https://kubikmaltbie.com/) fabrication/design-build): stratify **scenography / spatial narrative / AE breadth / fabrication** versus consulting planner positioning. **Mega institutional cultural consulting:** [Lord Cultural Resources](https://www.lord.ca/) (cultural planning breadth publications tools events) and [AEA Consulting projects hub](https://aeaconsulting.com/projects) (filterable international portfolio strategic/feasibility/capital) — compete on clarity of wedge not organizational scale.
+Import into Sheets; replace competitor slots with URLs from GSC + manual SERP checks for your geo. Re-verify before tactical bets — exhibit-heavy SERPs shift quickly.
+
+Peer cohorts in matrix: Lord Cultural Resources, AEA Consulting, JRA/RWS Global, Design and Production, Atelier Brückner, Kossmann.dejong, Gensler Culture, kubik maltbie, Gallagher, Local Projects, Ideum, Quatrefoil.
 
 ---
 
@@ -74,5 +182,6 @@ Columns map **primary keyword → intent → your URL(s) → five illustrative c
 
 | Date | Change |
 |------|--------|
-| 2026-02-03 | Primary + extended keyword lists; website hierarchy routing note; implementation across canonical tags, titles/meta, Services ↔ Museum School links, and site-relative nav/search URLs targeting museumplanning.com. |
-| 2026-05-05 | Competitor matrix CSV cohorts through Kubik; Lord Cultural Resources + AEA mega cultural-strategy row added. |
+| 2026-02-03 | Primary + extended keyword lists; website hierarchy; Services ↔ Museum School links. |
+| 2026-05-05 | Competitor matrix CSV cohorts; Lord + AEA rows. |
+| 2026-06-02 | **Tier 1 realignment:** commercial pillars own feasibility/strategic/master (not Museum School); five money keywords mapped; Cloudflare redirect table; Tier 2/3 split; remaining optimization checklist. |
