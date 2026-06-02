@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Museum Planning LLC — Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#f9f7f4;
+  --white:#ffffff;
+  --rule:#e0d9d0;
+  --ink:#141210;
+  --mid:#5a5248;
+  --muted:#9a9088;
+  --sans:'DM Sans',sans-serif;
+  --mono:'DM Mono',monospace;
+  --serif-p:'Playfair Display',Georgia,serif;
+  --serif-c:'Cormorant Garamond',Georgia,serif;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+.sg-nav{position:sticky;top:0;z-index:100;background:rgba(249,247,244,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);padding:0 48px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.sg-nav-logo{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.sg-nav-links{display:flex;gap:28px;list-style:none}
+.sg-nav-links a{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.sg-nav-links a:hover{color:var(--ink)}
+
+/* ── LAYOUT ── */
+.sg-hero{padding:80px 48px 64px;border-bottom:2px solid var(--ink);max-width:1200px;margin:0 auto}
+.sg-section{padding:72px 48px;border-bottom:1px solid var(--rule);max-width:1200px;margin:0 auto}
+.sg-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sg-label::before{content:'';width:16px;height:1px;background:var(--muted)}
+.sg-h2{font-family:var(--serif-p);font-size:32px;font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:8px}
+.sg-intro{font-size:14px;color:var(--mid);max-width:640px;line-height:1.7;margin-bottom:48px}
+.sg-rule{width:100%;height:1px;background:var(--rule);margin:40px 0}
+
+/* ── SITE PALETTES ── */
+.site-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:48px}
+.site-card{background:var(--white);padding:32px 28px}
+.site-name{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.site-swatches{display:flex;flex-direction:column;gap:6px;margin-bottom:24px}
+.swatch{height:36px;border-radius:2px;display:flex;align-items:center;padding:0 12px}
+.swatch-label{font-family:var(--mono);font-size:8.5px;letter-spacing:1px;color:rgba(255,255,255,.7);mix-blend-mode:normal}
+.swatch-label.dark{color:rgba(0,0,0,.4)}
+.site-note{font-size:12px;color:var(--mid);line-height:1.6}
+
+/* ── SHARED TOKENS ── */
+.tokens-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.token-group{background:var(--white);padding:28px}
+.token-title{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.token-row{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--bg)}
+.token-row:last-child{border-bottom:none}
+.token-swatch{width:24px;height:24px;border-radius:2px;flex-shrink:0;border:1px solid rgba(0,0,0,.06)}
+.token-name{font-family:var(--mono);font-size:10px;color:var(--ink)}
+.token-value{font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:auto}
+
+/* ── TYPOGRAPHY ── */
+.type-specimens{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:48px}
+.type-card{background:var(--white);padding:36px 32px}
+.type-site-tag{font-family:var(--mono);font-size:8.5px;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;display:inline-block;padding:3px 10px;border:1px solid var(--rule);color:var(--muted)}
+.type-scale{display:flex;flex-direction:column;gap:16px}
+.type-row{display:flex;align-items:baseline;gap:16px}
+.type-meta{font-family:var(--mono);font-size:8.5px;color:var(--muted);white-space:nowrap;min-width:120px}
+
+/* type specimens */
+.t-h1-p{font-family:'Playfair Display',Georgia,serif;font-size:48px;font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:var(--ink)}
+.t-h2-p{font-family:'Playfair Display',Georgia,serif;font-size:32px;font-weight:700;line-height:1.15;color:var(--ink)}
+.t-h3-p{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:600;line-height:1.2;color:var(--ink)}
+.t-italic-p{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-style:italic;font-weight:400;color:var(--mid);line-height:1.5}
+
+.t-h1-c{font-family:'Cormorant Garamond',Georgia,serif;font-size:56px;font-weight:300;line-height:1.0;letter-spacing:-.5px;color:var(--ink)}
+.t-h2-c{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:300;line-height:1.12;color:var(--ink)}
+.t-italic-c{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-style:italic;font-weight:300;color:var(--mid);line-height:1.5}
+
+.t-body{font-family:'DM Sans',sans-serif;font-size:16px;font-weight:400;line-height:1.75;color:#3a3530}
+.t-body-sm{font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.7;color:#5a5248}
+.t-mono-label{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+.t-mono-body{font-family:'DM Mono',monospace;font-size:12px;color:var(--mid);line-height:1.65}
+
+.type-section-title{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;border-bottom:1px solid var(--rule);padding-bottom:12px}
+
+/* ── SCALE TABLE ── */
+.scale-table{width:100%;border-collapse:collapse;margin-bottom:32px}
+.scale-table th{font-family:var(--mono);font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:10px 12px;text-align:left;border-bottom:2px solid var(--rule)}
+.scale-table td{padding:12px 12px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.scale-table td:first-child{font-family:var(--mono);font-size:10px;color:var(--muted);white-space:nowrap}
+.scale-table td:nth-child(2){font-family:var(--mono);font-size:10px;color:var(--ink)}
+.scale-table td:nth-child(3){font-family:var(--mono);font-size:10px;color:var(--muted)}
+.scale-table td:last-child{font-size:13px;color:var(--mid)}
+
+/* ── COMPONENTS ── */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:48px}
+.comp-card{background:var(--white);padding:36px 32px}
+.comp-label{font-family:var(--mono);font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;border-bottom:1px solid var(--rule);padding-bottom:10px}
+.comp-example{margin-bottom:20px}
+.comp-code{font-family:var(--mono);font-size:10px;color:var(--muted);background:var(--bg);padding:10px 14px;border-left:2px solid var(--rule);line-height:1.6;margin-top:12px}
+
+/* Sample nav demo */
+.demo-nav{background:#f8f4ec;border:1px solid var(--rule);padding:0 28px;height:48px;display:flex;align-items:center;justify-content:space-between}
+.demo-nav-logo{font-family:'Playfair Display',Georgia,serif;font-size:13px;color:#1a1a1a}
+.demo-nav-links{display:flex;gap:20px;list-style:none}
+.demo-nav-links a{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:#9a9088;text-decoration:none}
+.demo-nav-cta{background:#C9A84C;color:#111C27;padding:6px 14px;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;text-decoration:none}
+
+/* Sample eyebrow */
+.demo-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.demo-eyebrow::before{content:'';width:24px;height:1px;background:#C9A84C}
+
+/* Sample section heading */
+.demo-heading-p{font-family:'Playfair Display',Georgia,serif;font-size:28px;font-weight:700;color:#1B2A3B;line-height:1.15}
+.demo-heading-p em{font-style:italic;color:#C9A84C}
+.demo-heading-c{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:300;color:#1a1510;line-height:1.1}
+.demo-heading-c em{font-style:italic;color:#9b6e2e}
+
+/* Buttons */
+.demo-btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.demo-btn-gold{background:#C9A84C;color:#111C27;padding:12px 28px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block}
+.demo-btn-red{background:#8c2018;color:white;padding:12px 28px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block}
+.demo-btn-outline{border:1px solid #d4c8b0;color:#5a5248;padding:11px 28px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block}
+.demo-btn-ink{border-bottom:1px solid #141210;color:#141210;padding-bottom:2px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block}
+
+/* Cards */
+.demo-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.demo-card{background:var(--bg);padding:24px 22px;border-top:3px solid transparent;transition:border-color .2s}
+.demo-card:hover{border-top-color:#C9A84C}
+.demo-card-tag{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:#C9A84C;margin-bottom:10px}
+.demo-card-title{font-family:'Playfair Display',Georgia,serif;font-size:16px;font-weight:700;color:#1B2A3B;margin-bottom:8px;line-height:1.2}
+.demo-card-body{font-size:12px;color:var(--mid);line-height:1.6}
+
+/* Section band */
+.demo-band{background:#1B2A3B;padding:32px 28px;text-align:center}
+.demo-band-quote{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-style:italic;color:rgba(255,255,255,.9);line-height:1.45}
+.demo-band-quote em{color:#C9A84C;font-style:normal}
+
+/* ── SPACING ── */
+.spacing-demo{display:flex;flex-direction:column;gap:2px}
+.spacing-row{background:var(--white);display:flex;align-items:stretch}
+.spacing-vis{background:rgba(201,168,76,.15);border:1px dashed rgba(201,168,76,.4);display:flex;align-items:center;justify-content:center;min-width:80px}
+.spacing-val{font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--muted);padding:0 20px;display:flex;align-items:center}
+.spacing-use{font-size:12px;color:var(--mid);padding:0 20px;display:flex;align-items:center;border-left:1px solid var(--rule);margin-left:auto}
+
+/* ── ANIMATION REFERENCE ── */
+.anim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.anim-card{background:var(--white);padding:28px;cursor:pointer}
+.anim-card:hover .anim-demo{animation:fadeUp .6s both}
+.anim-label{font-family:var(--mono);font-size:8.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.anim-demo{height:40px;background:var(--rule);border-radius:2px}
+.anim-code{font-family:var(--mono);font-size:9px;color:var(--muted);margin-top:10px;line-height:1.6}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SITE IDENTITY CARDS ── */
+.identity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:48px}
+.identity-card{background:var(--white);padding:40px 36px;border-top:4px solid var(--rule)}
+.identity-card.mp{border-top-color:#C9A84C}
+.identity-card.m1{border-top-color:#8c2018}
+.identity-card.me{border-top-color:#c4834a}
+.identity-card.mw{border-top-color:#9a9590}
+.identity-domain{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.identity-purpose{font-family:var(--serif-p);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:16px;line-height:1.2}
+.identity-serif{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px}
+.identity-tokens{display:flex;flex-direction:column;gap:6px}
+.identity-token{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10px;color:var(--mid)}
+.identity-token-swatch{width:16px;height:16px;border-radius:2px;flex-shrink:0}
+
+/* footer */
+.sg-footer{background:#111C27;padding:40px 48px;display:flex;align-items:center;justify-content:space-between}
+.sg-footer-text{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25)}
+</style>
+</head>
+<body>
+
+<nav class="sg-nav">
+  <a href="#" class="sg-nav-logo">Museum Planning LLC — Design System</a>
+  <ul class="sg-nav-links">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#colors">Colors</a></li>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#components">Components</a></li>
+    <li><a href="#spacing">Spacing</a></li>
+    <li><a href="#sites">Site Identity</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="border-bottom:2px solid var(--ink)">
+<div class="sg-hero">
+  <div class="sg-label">Design System · v1.0 · May 2026</div>
+  <h1 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(40px,5vw,64px);font-weight:900;line-height:1.05;letter-spacing:-2px;color:var(--ink);margin-bottom:16px">Museum Planning LLC<br><em style="font-style:italic;color:#C9A84C">Design System</em></h1>
+  <p style="font-family:'DM Sans',sans-serif;font-size:17px;color:var(--mid);max-width:640px;line-height:1.7;margin-bottom:40px">A unified design system for four properties: museumplanning.com, museums101.com, museum-experiences.com, and markwalhimer.com. Shared foundations, distinct identities.</p>
+  <div style="display:flex;gap:32px;flex-wrap:wrap">
+    <div style="font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">4 Properties</div>
+    <div style="font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">2 Serif Families</div>
+    <div style="font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">1 Sans · 1 Mono</div>
+    <div style="font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Light Backgrounds Throughout</div>
+  </div>
+</div>
+</div>
+
+<!-- OVERVIEW -->
+<div id="overview" class="sg-section">
+  <div class="sg-label">01 — Overview</div>
+  <h2 class="sg-h2">Four properties. One system.</h2>
+  <p class="sg-intro">Each property has a distinct identity and audience, but all share common foundations: the same sans and mono typefaces, a shared spacing and layout system, and consistent component patterns. The serif typeface and accent color are the primary differentiators between sites.</p>
+
+  <div class="identity-grid">
+    <div class="identity-card mp">
+      <div class="identity-domain">museumplanning.com</div>
+      <div class="identity-purpose">Consulting Hub</div>
+      <div class="identity-serif">Feasibility studies, master planning, strategic planning. $100K engagements. Audience: museum directors, board chairs, city managers, university administrators.</div>
+      <div class="identity-tokens">
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#C9A84C"></div>Gold #C9A84C — primary accent</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#1B2A3B"></div>Navy #1B2A3B — headings, anchor</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#F8F4EC;border:1px solid #e0d9d0"></div>Cream #F8F4EC — background</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#14202E"></div>Deep #14202E — footer, accents</div>
+        <div class="identity-token" style="flex-direction:column;align-items:flex-start;gap:2px"><span>Serif: <strong>Playfair Display</strong></span></div>
+      </div>
+    </div>
+    <div class="identity-card m1">
+      <div class="identity-domain">museums101.com</div>
+      <div class="identity-purpose">Book One Brand</div>
+      <div class="identity-serif">Museums 101 by Mark Walhimer. The foundational text. Audience: museum professionals, graduate students, board members starting a museum. Gateway to consulting.</div>
+      <div class="identity-tokens">
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#8c2018"></div>Red #8c2018 — primary accent</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#14120f"></div>Ink #14120f — headings, body</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#f8f6f3;border:1px solid #e0d9d0"></div>Off-white #f8f6f3 — background</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#1e2a4a"></div>Book navy #1e2a4a — book cover</div>
+        <div class="identity-token" style="flex-direction:column;align-items:flex-start;gap:2px"><span>Serif: <strong>Playfair Display</strong></span></div>
+      </div>
+    </div>
+    <div class="identity-card me">
+      <div class="identity-domain">museum-experiences.com</div>
+      <div class="identity-purpose">Book Two Companion</div>
+      <div class="identity-serif">Designing Museum Experiences by Mark Walhimer. How-to for visitor-centered design. Audience: museum operations staff, visitor experience professionals, design students.</div>
+      <div class="identity-tokens">
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#c4834a"></div>Copper #c4834a — primary accent</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#9b6e2e"></div>Gold #9b6e2e — secondary accent</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#faf7f2;border:1px solid #e0d9d0"></div>Cream #faf7f2 — background</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#1a1510"></div>Warm ink #1a1510 — headings</div>
+        <div class="identity-token" style="flex-direction:column;align-items:flex-start;gap:2px"><span>Serif: <strong>Cormorant Garamond</strong></span></div>
+      </div>
+    </div>
+    <div class="identity-card mw">
+      <div class="identity-domain">markwalhimer.com</div>
+      <div class="identity-purpose">Art Practice</div>
+      <div class="identity-serif">Digital installation artist. Machine aesthetics as a way to think about acceptance, control, and agency. Audience: collectors, institutions, galleries, $100K commission market.</div>
+      <div class="identity-tokens">
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#141210"></div>Ink #141210 — primary, headings</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#ffffff;border:1px solid #e0d9d0"></div>White #ffffff — background</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#e0dbd4"></div>Rule #e0dbd4 — borders, dividers</div>
+        <div class="identity-token"><div class="identity-token-swatch" style="background:#6a6460"></div>Mid #6a6460 — body text, captions</div>
+        <div class="identity-token" style="flex-direction:column;align-items:flex-start;gap:2px"><span>Serif: <strong>Cormorant Garamond</strong></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Serif split explanation -->
+  <div style="background:var(--white);padding:32px;border-left:3px solid #C9A84C;margin-bottom:0">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Serif Split — Design Rationale</div>
+    <p style="font-size:14px;color:var(--mid);line-height:1.7;max-width:800px"><strong style="color:var(--ink)">Playfair Display</strong> is used for museumplanning.com and museums101.com — the consulting and institutional-facing properties. It is authoritative, high-weight, and carries institutional credibility appropriate for a $100K practice. <strong style="color:var(--ink)">Cormorant Garamond</strong> is used for museum-experiences.com and markwalhimer.com — the book companion and art practice. It is literary, refined, and carries the weight of a practiced author and artist. The split is intentional and should be maintained.</p>
+  </div>
+</div>
+
+<!-- COLORS -->
+<div id="colors" class="sg-section">
+  <div class="sg-label">02 — Colors</div>
+  <h2 class="sg-h2">Shared tokens + site palettes</h2>
+  <p class="sg-intro">These tokens are shared across all four sites. Site-specific accent colors are defined separately in each property's CSS.</p>
+
+  <div class="tokens-grid" style="margin-bottom:48px">
+    <div class="token-group">
+      <div class="token-title">Shared — Neutral Scale</div>
+      <div class="token-row"><div class="token-swatch" style="background:#ffffff"></div><div class="token-name">--white</div><div class="token-value">#ffffff</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#f8f6f3"></div><div class="token-name">--off-white</div><div class="token-value">#f8f6f3</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#f0ece6"></div><div class="token-name">--pale</div><div class="token-value">#f0ece6</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#e0d9d0"></div><div class="token-name">--rule</div><div class="token-value">#e0d9d0</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#9a9088"></div><div class="token-name">--muted</div><div class="token-value">#9a9088</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#5a5248"></div><div class="token-name">--mid</div><div class="token-value">#5a5248</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#141210"></div><div class="token-name">--ink</div><div class="token-value">#141210</div></div>
+    </div>
+    <div class="token-group">
+      <div class="token-title">Site — museumplanning.com</div>
+      <div class="token-row"><div class="token-swatch" style="background:#F8F4EC"></div><div class="token-name">--cream</div><div class="token-value">#F8F4EC</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#EDE8DC"></div><div class="token-name">--warm</div><div class="token-value">#EDE8DC</div></div>
+      <div class="token-swatch" style="height:1px;background:var(--rule);margin:8px 0"></div>
+      <div class="token-row"><div class="token-swatch" style="background:#C9A84C"></div><div class="token-name">--gold</div><div class="token-value">#C9A84C</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#E8D099"></div><div class="token-name">--gold-lt</div><div class="token-value">#E8D099</div></div>
+      <div class="token-swatch" style="height:1px;background:var(--rule);margin:8px 0"></div>
+      <div class="token-row"><div class="token-swatch" style="background:#1B2A3B"></div><div class="token-name">--navy</div><div class="token-value">#1B2A3B</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#14202E"></div><div class="token-name">--deep</div><div class="token-value">#14202E</div></div>
+    </div>
+    <div class="token-group">
+      <div class="token-title">Site — museums101.com</div>
+      <div class="token-row"><div class="token-swatch" style="background:#f8f6f3"></div><div class="token-name">--off</div><div class="token-value">#f8f6f3</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#f0ece6"></div><div class="token-name">--pale</div><div class="token-value">#f0ece6</div></div>
+      <div class="token-swatch" style="height:1px;background:var(--rule);margin:8px 0"></div>
+      <div class="token-row"><div class="token-swatch" style="background:#8c2018"></div><div class="token-name">--red</div><div class="token-value">#8c2018</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#6e180f"></div><div class="token-name">--red-dk</div><div class="token-value">#6e180f</div></div>
+      <div class="token-swatch" style="height:1px;background:var(--rule);margin:8px 0"></div>
+      <div class="token-row"><div class="token-swatch" style="background:#14120f"></div><div class="token-name">--ink</div><div class="token-value">#14120f</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#1e2a4a"></div><div class="token-name">--book-navy</div><div class="token-value">#1e2a4a</div></div>
+    </div>
+  </div>
+  <div class="tokens-grid">
+    <div class="token-group">
+      <div class="token-title">Site — museum-experiences.com</div>
+      <div class="token-row"><div class="token-swatch" style="background:#faf7f2"></div><div class="token-name">--cream</div><div class="token-value">#faf7f2</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#f7f3ec"></div><div class="token-name">--paper</div><div class="token-value">#f7f3ec</div></div>
+      <div class="token-swatch" style="height:1px;background:var(--rule);margin:8px 0"></div>
+      <div class="token-row"><div class="token-swatch" style="background:#c4834a"></div><div class="token-name">--copper</div><div class="token-value">#c4834a</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#9b6e2e"></div><div class="token-name">--gold</div><div class="token-value">#9b6e2e</div></div>
+      <div class="token-swatch" style="height:1px;background:var(--rule);margin:8px 0"></div>
+      <div class="token-row"><div class="token-swatch" style="background:#1a1510"></div><div class="token-name">--ink</div><div class="token-value">#1a1510</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#8c2018"></div><div class="token-name">--red</div><div class="token-value">#8c2018</div></div>
+    </div>
+    <div class="token-group">
+      <div class="token-title">Site — markwalhimer.com</div>
+      <div class="token-row"><div class="token-swatch" style="background:#ffffff;border:1px solid #e0d9d0"></div><div class="token-name">--white</div><div class="token-value">#ffffff</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#f8f7f5"></div><div class="token-name">--off</div><div class="token-value">#f8f7f5</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#f0ede8"></div><div class="token-name">--pale</div><div class="token-value">#f0ede8</div></div>
+      <div class="token-swatch" style="height:1px;background:var(--rule);margin:8px 0"></div>
+      <div class="token-row"><div class="token-swatch" style="background:#e0dbd4"></div><div class="token-name">--rule</div><div class="token-value">#e0dbd4</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#6a6460"></div><div class="token-name">--mid</div><div class="token-value">#6a6460</div></div>
+      <div class="token-row"><div class="token-swatch" style="background:#141210"></div><div class="token-name">--ink</div><div class="token-value">#141210</div></div>
+    </div>
+    <div class="token-group">
+      <div class="token-title">Usage Rules</div>
+      <div style="font-size:12px;color:var(--mid);line-height:1.75">
+        <p style="margin-bottom:12px"><strong style="color:var(--ink);font-size:11px">Backgrounds:</strong> Always light (cream or off-white). Never pure white (#fff) on museumplanning.com or museums101 — use the warm off-white variants instead.</p>
+        <p style="margin-bottom:12px"><strong style="color:var(--ink);font-size:11px">Dark sections:</strong> Permitted as accent only. One per page maximum (excluding footer). Use --navy/#1B2A3B for mp.com, --ink for museums101.</p>
+        <p style="margin-bottom:12px"><strong style="color:var(--ink);font-size:11px">Accent colors:</strong> Gold for mp.com, Red for museums101, Copper for museum-exp. Never mix accent colors between sites.</p>
+        <p><strong style="color:var(--ink);font-size:11px">markwalhimer.com:</strong> No accent color. Neutral ink only. The art speaks — no color competition.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div id="typography" class="sg-section">
+  <div class="sg-label">03 — Typography</div>
+  <h2 class="sg-h2">Three families. Two serifs, one sans, one mono.</h2>
+  <p class="sg-intro">DM Sans and DM Mono are shared across all four properties. The serif is property-specific: Playfair Display for consulting/institutional, Cormorant Garamond for literary/artistic.</p>
+
+  <table class="scale-table" style="margin-bottom:48px">
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Family</th>
+        <th>Size / Weight</th>
+        <th>Used on</th>
+        <th>Sample</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Hero H1</td><td>Playfair Display</td><td>clamp(44px,5.5vw,72px) / 900</td><td>mp.com, museums101</td><td style="font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:900;color:var(--ink)">We Build Museums.</td></tr>
+      <tr><td>Hero H1</td><td>Cormorant Garamond</td><td>clamp(48px,6vw,80px) / 300</td><td>museum-exp, markwalhimer</td><td style="font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:300;color:var(--ink)">Selected Works</td></tr>
+      <tr><td>Section H2</td><td>Playfair Display</td><td>clamp(32px,3.5vw,48px) / 700</td><td>mp.com, museums101</td><td style="font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:var(--ink)">Forty Museums. <em style="color:#C9A84C;font-style:italic">One Methodology.</em></td></tr>
+      <tr><td>Section H2</td><td>Cormorant Garamond</td><td>clamp(30px,4vw,52px) / 300-400</td><td>museum-exp, markwalhimer</td><td style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:300;color:var(--ink)">Every kind of <em style="font-style:italic;color:#9b6e2e">institution.</em></td></tr>
+      <tr><td>Deck / Italic</td><td>Playfair Display Italic</td><td>18–22px / 400 italic</td><td>mp.com, museums101</td><td style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-style:italic;color:var(--mid)">The fundamentals haven't changed.</td></tr>
+      <tr><td>Body</td><td>DM Sans</td><td>15–17px / 400</td><td>All four sites</td><td style="font-family:'DM Sans',sans-serif;font-size:14px;color:#3a3530">Museum planning and consulting for forty institutions worldwide.</td></tr>
+      <tr><td>Small body</td><td>DM Sans</td><td>13–14px / 300-400</td><td>All four sites</td><td style="font-family:'DM Sans',sans-serif;font-size:12px;color:var(--mid)">Card body text, captions, supporting copy.</td></tr>
+      <tr><td>Eyebrow label</td><td>DM Mono</td><td>9–10px / 400 · letter-spacing: 2.5–3.5px · uppercase</td><td>All four sites</td><td style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#C9A84C">The Methodology</td></tr>
+      <tr><td>Nav links</td><td>DM Mono</td><td>9–10px · letter-spacing: 1.5–2px · uppercase</td><td>All four sites</td><td style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Services · Projects · About</td></tr>
+      <tr><td>Buttons</td><td>DM Mono</td><td>9.5–11px · letter-spacing: 2px · uppercase</td><td>All four sites</td><td style="font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--ink)">Start a Conversation</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Type specimens -->
+  <div class="type-specimens">
+    <div class="type-card">
+      <div class="type-site-tag">museumplanning.com · museums101.com</div>
+      <div class="type-section-title">Playfair Display — Display Scale</div>
+      <div class="type-scale">
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Hero · 64–88px · 900</div><div style="font-family:'Playfair Display',Georgia,serif;font-size:48px;font-weight:900;line-height:1.0;letter-spacing:-2px;color:var(--ink)">We Build <em style="font-style:italic;color:#C9A84C">Museums.</em></div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Section H2 · 36–48px · 700</div><div style="font-family:'Playfair Display',Georgia,serif;font-size:32px;font-weight:700;line-height:1.12;color:var(--ink)">Forty Museums. One Methodology.</div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Deck italic · 18–22px · 400</div><div style="font-family:'Playfair Display',Georgia,serif;font-size:19px;font-style:italic;color:var(--mid);line-height:1.5">The fundamentals haven't changed. The world your museum opens into has.</div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Card title · 20–22px · 700</div><div style="font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:700;color:#1B2A3B;line-height:1.2">Feasibility Study</div></div>
+      </div>
+    </div>
+    <div class="type-card">
+      <div class="type-site-tag">museum-experiences.com · markwalhimer.com</div>
+      <div class="type-section-title">Cormorant Garamond — Display Scale</div>
+      <div class="type-scale">
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Hero · 56–80px · 300</div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:52px;font-weight:300;line-height:1.0;letter-spacing:-.5px;color:var(--ink)">Designing <em style="font-style:italic">Experiences</em></div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Section H2 · 36–52px · 300–400</div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:300;line-height:1.1;color:var(--ink)">Every kind of <em style="font-style:italic;color:#c4834a">institution.</em></div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Deck italic · 18–22px · 300</div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:300;color:var(--mid);line-height:1.5">How to create visitor-centered, inclusive museum experiences.</div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Artist thesis · 20–24px · 300</div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;font-style:italic;font-weight:300;color:var(--mid);line-height:1.55;border-left:2px solid var(--rule);padding-left:16px">Machine aesthetics as a way to think about acceptance, control, and agency.</div></div>
+      </div>
+    </div>
+    <div class="type-card">
+      <div class="type-site-tag">All sites</div>
+      <div class="type-section-title">DM Sans — Body</div>
+      <div class="type-scale">
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Body · 15–17px · 400</div><div style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:400;line-height:1.75;color:#3a3530;max-width:380px">Museum Planning LLC is a personal practice founded in 1999. Every engagement is worked directly — there is no associate who handles the day-to-day.</div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Card body · 13–14px · 400</div><div style="font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;line-height:1.7;color:var(--mid);max-width:380px">Feasibility through opening day. Forty museums. One methodology. Mark personally involved in every engagement.</div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Light body · 15px / 300</div><div style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;line-height:1.75;color:var(--mid);max-width:380px">A companion website with resources, templates, and practical tools for museum practitioners.</div></div>
+      </div>
+    </div>
+    <div class="type-card">
+      <div class="type-site-tag">All sites</div>
+      <div class="type-section-title">DM Mono — Labels, Nav, Buttons</div>
+      <div class="type-scale">
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Eyebrow · 9–10px · 400 · ls: 3–3.5px</div><div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px"><span style="width:24px;height:1px;background:#C9A84C;display:block"></span>The Methodology</div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Nav · 9.5–10px · ls: 1.5–2px</div><div style="display:flex;gap:20px"><span style="font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Services</span><span style="font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Projects</span><span style="font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">About</span></div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Button · 9.5–11px · ls: 2px · all caps</div><div class="demo-btn-row"><a class="demo-btn-gold">Start a Conversation</a><a class="demo-btn-outline">Our Methodology</a></div></div>
+        <div><div style="font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Metadata · 9–10px / stat labels</div><div style="display:flex;gap:20px"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Museums Completed</span><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Years Practice</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPONENTS -->
+<div id="components" class="sg-section">
+  <div class="sg-label">04 — Components</div>
+  <h2 class="sg-h2">Shared patterns across all four sites.</h2>
+  <p class="sg-intro">These component patterns are consistent across properties, with color variables swapped per-site.</p>
+
+  <!-- Nav -->
+  <div style="margin-bottom:40px">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;border-bottom:1px solid var(--rule);padding-bottom:10px">Navigation — Light Variant (museumplanning.com)</div>
+    <div class="demo-nav">
+      <a class="demo-nav-logo" style="font-family:'Playfair Display',Georgia,serif">Museum Planning <span style="color:#C9A84C">LLC</span></a>
+      <ul class="demo-nav-links">
+        <li><a>Services</a></li>
+        <li><a>Projects</a></li>
+        <li><a>MVI</a></li>
+        <li><a>About</a></li>
+        <li><a>Contact</a></li>
+        <li><a class="demo-nav-cta" style="font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:#14202E;background:#C9A84C;padding:6px 14px;text-decoration:none">Start a Conversation</a></li>
+      </ul>
+    </div>
+    <div class="comp-code">position: sticky · top: 0 · height: 56px · backdrop-filter: blur(10px) · border-bottom: 1px solid --rule
+Logo: Playfair Display 14–15px · Nav: DM Mono 9.5–10px ls:1.5–2px uppercase · CTA: solid accent color button</div>
+  </div>
+
+  <!-- Eyebrow + Heading pattern -->
+  <div style="margin-bottom:40px">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;border-bottom:1px solid var(--rule);padding-bottom:10px">Section Header Pattern — all sites</div>
+    <div style="background:var(--white);padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:48px">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#8c2018;margin-bottom:12px;display:flex;align-items:center;gap:10px"><span style="width:20px;height:1px;background:#8c2018;display:block"></span>The Methodology</div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:32px;font-weight:700;color:var(--ink);line-height:1.12;margin-bottom:12px">What Has Not <em style="color:#8c2018;font-style:italic">Changed.</em></div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:var(--mid);line-height:1.6">These are the foundations. They were true in 1990 and true now.</div>
+        <div style="font-family:var(--mono);font-size:9px;color:var(--muted);margin-top:10px">museums101.com — red accent</div>
+      </div>
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;display:flex;align-items:center;gap:10px"><span style="width:20px;height:1px;background:#C9A84C;display:block"></span>The Methodology</div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:32px;font-weight:700;color:#1B2A3B;line-height:1.12;margin-bottom:12px">What Has Not <em style="color:#C9A84C;font-style:italic">Changed.</em></div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:17px;color:var(--mid);line-height:1.6">These are the foundations. They were true in 1990 and true now.</div>
+        <div style="font-family:var(--mono);font-size:9px;color:var(--muted);margin-top:10px">museumplanning.com — gold accent</div>
+      </div>
+    </div>
+    <div class="comp-code">eyebrow: DM Mono 9px · letter-spacing: 3px · uppercase · site accent color · 20px rule line before
+h2: serif 32–48px · bold · ink or navy · em tag in italic + accent color
+subhead: serif italic 17–19px · mid color</div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="margin-bottom:40px">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;border-bottom:1px solid var(--rule);padding-bottom:10px">Buttons</div>
+    <div style="background:var(--white);padding:36px;display:flex;flex-direction:column;gap:24px">
+      <div><div style="font-family:var(--mono);font-size:8.5px;color:var(--muted);margin-bottom:10px">Primary CTA — filled accent color</div><div class="demo-btn-row"><a class="demo-btn-gold">Start a Conversation</a><a class="demo-btn-red">Buy the Book</a></div></div>
+      <div><div style="font-family:var(--mono);font-size:8.5px;color:var(--muted);margin-bottom:10px">Secondary — outline</div><div class="demo-btn-row"><a class="demo-btn-outline">Our Methodology</a><a class="demo-btn-ink">View All Projects →</a></div></div>
+    </div>
+    <div class="comp-code">Primary: background = site accent · color = deep · DM Mono · 9.5–11px · letter-spacing: 2px · uppercase · padding: 12–16px 28–40px
+Secondary outline: border: 1px solid --rule · color: --mid → hover: accent color
+Underline text: border-bottom: 1px solid --ink · color: --ink · no background</div>
+  </div>
+
+  <!-- Cards -->
+  <div style="margin-bottom:40px">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;border-bottom:1px solid var(--rule);padding-bottom:10px">Cards — White on Cream, 3px top border on hover</div>
+    <div class="demo-card-grid">
+      <div class="demo-card">
+        <div class="demo-card-tag">01 — Feasibility</div>
+        <div class="demo-card-title">Can this museum actually survive?</div>
+        <div class="demo-card-body">Before your community commits capital, you need to know whether the museum can operate sustainably.</div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-card-tag">02 — Strategic Planning</div>
+        <div class="demo-card-title">Why does this museum exist?</div>
+        <div class="demo-card-body">Mission, vision, and community identity are not technology questions. They are organizational questions.</div>
+      </div>
+      <div class="demo-card">
+        <div class="demo-card-tag">03 — Master Planning</div>
+        <div class="demo-card-title">Building program to capital campaign.</div>
+        <div class="demo-card-body">Translates institutional goals into physical and financial reality.</div>
+      </div>
+    </div>
+    <div class="comp-code">background: white · on cream background · padding: 36–44px 32–36px · border-top: 3px solid transparent
+hover: border-top-color = site accent · transform: translateY(-2px) (optional)
+tag: DM Mono 9px uppercase · site accent color · title: serif 18–22px bold · body: DM Sans 13–14px mid</div>
+  </div>
+
+  <!-- Thesis band -->
+  <div style="margin-bottom:40px">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;border-bottom:1px solid var(--rule);padding-bottom:10px">Dark Accent Band — use once per page, never on art site</div>
+    <div class="demo-band">
+      <div class="demo-band-quote">"A museum still needs a feasibility study. None of that is different. What has changed is the world that museum opens into." <em>— Mark Walhimer, 2026</em></div>
+    </div>
+    <div class="comp-code">background: --navy (#1B2A3B) · padding: 64–80px 56px · text-align: center
+quote: serif italic 24–38px · white 90% opacity · em: site accent · attribution: DM Mono 10px uppercase white 30%</div>
+  </div>
+</div>
+
+<!-- SPACING -->
+<div id="spacing" class="sg-section">
+  <div class="sg-label">05 — Spacing</div>
+  <h2 class="sg-h2">Consistent spacing scale.</h2>
+  <p class="sg-intro">All four sites use a consistent spacing system. Section padding is 80–100px vertical, 48–56px horizontal. Max content width is 1100–1140px centered.</p>
+
+  <div class="spacing-demo" style="margin-bottom:48px">
+    <div class="spacing-row"><div class="spacing-vis" style="height:100px"><span style="font-family:var(--mono);font-size:9px;color:#9a9088">100px</span></div><div class="spacing-val">100px / 6.25rem</div><div class="spacing-use">Section vertical padding (large sections)</div></div>
+    <div class="spacing-row"><div class="spacing-vis" style="height:80px"><span style="font-family:var(--mono);font-size:9px;color:#9a9088">80px</span></div><div class="spacing-val">80px / 5rem</div><div class="spacing-use">Section vertical padding (standard)</div></div>
+    <div class="spacing-row"><div class="spacing-vis" style="height:56px"><span style="font-family:var(--mono);font-size:9px;color:#9a9088">56px</span></div><div class="spacing-val">56px / 3.5rem</div><div class="spacing-use">Section horizontal padding · also nav/header height</div></div>
+    <div class="spacing-row"><div class="spacing-vis" style="height:48px"><span style="font-family:var(--mono);font-size:9px;color:#9a9088">48px</span></div><div class="spacing-val">48px / 3rem</div><div class="spacing-use">Between heading and first content · card padding</div></div>
+    <div class="spacing-row"><div class="spacing-vis" style="height:32px"><span style="font-family:var(--mono);font-size:9px;color:#9a9088">32px</span></div><div class="spacing-val">32px / 2rem</div><div class="spacing-use">Between eyebrow and heading · card gap</div></div>
+    <div class="spacing-row"><div class="spacing-vis" style="height:20px"><span style="font-family:var(--mono);font-size:9px;color:#9a9088">20px</span></div><div class="spacing-val">20px / 1.25rem</div><div class="spacing-use">Eyebrow margin-bottom · small gaps</div></div>
+    <div class="spacing-row"><div class="spacing-vis" style="height:12px"><span style="font-family:var(--mono);font-size:9px;color:#9a9088">12px</span></div><div class="spacing-val">12px / .75rem</div><div class="spacing-use">Nav link gaps · tight spacing</div></div>
+  </div>
+
+  <div style="background:var(--white);padding:28px;margin-bottom:0">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px">Layout Rules</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div><div style="font-family:var(--mono);font-size:9px;color:var(--ink);margin-bottom:6px">Max content width</div><div style="font-size:13px;color:var(--mid)">1100–1140px centered. Use max-width + margin: 0 auto on inner containers.</div></div>
+      <div><div style="font-family:var(--mono);font-size:9px;color:var(--ink);margin-bottom:6px">Card gaps</div><div style="font-size:13px;color:var(--mid)">2px gap between cards (not 16–24px). Creates grid-line effect, feels architectural.</div></div>
+      <div><div style="font-family:var(--mono);font-size:9px;color:var(--ink);margin-bottom:6px">Grid columns</div><div style="font-size:13px;color:var(--mid)">2-col and 3-col grids. Never 4-col on main content. Use 4-col only for stat/proof bands.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SITE RULES -->
+<div id="sites" class="sg-section">
+  <div class="sg-label">06 — Site Rules</div>
+  <h2 class="sg-h2">What each site does and doesn't do.</h2>
+  <p class="sg-intro">Clear separation of concerns. Each site has one job. These rules prevent content creep and maintain brand clarity.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2px">
+    <div style="background:var(--white);padding:32px;border-top:3px solid #C9A84C">
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#C9A84C;margin-bottom:14px">museumplanning.com</div>
+      <div style="font-size:13px;color:var(--mid);line-height:1.75"><strong style="color:var(--ink);display:block;margin-bottom:6px">✓ Does:</strong> Consulting services, methodology, project case studies, MVI framework, Convergence Era white paper, contact/hire form, fee signals, newsletter.<br><br><strong style="color:var(--ink);display:block;margin-bottom:6px">✗ Does not:</strong> Art portfolio, teaching CV, book sales (links to books101.com), domain-level content marketing, museum school (keep minimal).</div>
+    </div>
+    <div style="background:var(--white);padding:32px;border-top:3px solid #8c2018">
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#8c2018;margin-bottom:14px">museums101.com</div>
+      <div style="font-size:13px;color:var(--mid);line-height:1.75"><strong style="color:var(--ink);display:block;margin-bottom:6px">✓ Does:</strong> Book content, TOC, resources, toolbox, second edition teaser, links to consulting. Lead generation for museumplanning.com.<br><br><strong style="color:var(--ink);display:block;margin-bottom:6px">✗ Does not:</strong> Consulting pitch, art content, course sales (link to museumcourses.com).</div>
+    </div>
+    <div style="background:var(--white);padding:32px;border-top:3px solid #c4834a">
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#c4834a;margin-bottom:14px">museum-experiences.com</div>
+      <div style="font-size:13px;color:var(--mid);line-height:1.75"><strong style="color:var(--ink);display:block;margin-bottom:6px">✓ Does:</strong> Book two content, visitor experience resources, templates, author bio linking to museumplanning.com. Remove AdSense. Remove "(needs updating)" notes.<br><br><strong style="color:var(--ink);display:block;margin-bottom:6px">✗ Does not:</strong> Consulting pitch, teaching résumé, art content.</div>
+    </div>
+    <div style="background:var(--white);padding:32px;border-top:3px solid #9a9590">
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#9a9590;margin-bottom:14px">markwalhimer.com</div>
+      <div style="font-size:13px;color:var(--mid);line-height:1.75"><strong style="color:var(--ink);display:block;margin-bottom:6px">✓ Does:</strong> Art portfolio, selected works, thesis, commissioning pathway ("Available for institutional commissions and private collections"), one-line bio with consulting link.<br><br><strong style="color:var(--ink);display:block;margin-bottom:6px">✗ Does not:</strong> Teaching CV, résumé, book sales, consulting pitch, blockchain origin story.</div>
+    </div>
+  </div>
+</div>
+
+<footer class="sg-footer">
+  <span class="sg-footer-text">Museum Planning LLC — Design System v1.0 — May 2026</span>
+  <span class="sg-footer-text">museumplanning.com · museums101.com · museum-experiences.com · markwalhimer.com</span>
+</footer>
+
+</body>
+</html>

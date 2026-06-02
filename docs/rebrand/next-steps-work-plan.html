@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Steps — Museum Planning LLC · Mark Walhimer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:    #111010;
+  --paper:  #f5f0e8;
+  --rule:   #c8b89a;
+  --red:    #8b2020;
+  --gold:   #C9A84C;
+  --navy:   #1B2A3B;
+  --muted:  #7a7060;
+  --pale:   #ece6d8;
+  --done:   #2d6a4f;
+  --done-bg:#edf5f0;
+  --urgent: #8b2020;
+  --urgent-bg:#fdf0f0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:17px;line-height:1.75;
+  background:var(--paper);color:var(--ink);
+  max-width:820px;margin:0 auto;
+  padding:0 32px 100px;
+}
+
+/* ── HEADER ── */
+header{
+  border-top:3px solid var(--ink);
+  border-bottom:1px solid var(--rule);
+  padding:40px 0 24px;margin-bottom:40px;
+  display:grid;grid-template-columns:1fr auto;
+  align-items:end;gap:16px;
+}
+.doc-label{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+h1{font-size:clamp(28px,4vw,42px);font-weight:300;line-height:1.1}
+h1 em{font-style:italic;color:var(--red)}
+.header-meta{
+  text-align:right;font-family:'DM Mono',monospace;
+  font-size:10px;line-height:1.9;
+  letter-spacing:.1em;color:var(--muted);
+}
+
+/* ── CONTEXT BLOCK ── */
+.context-block{
+  border-left:3px solid var(--red);
+  padding:20px 24px;margin-bottom:40px;
+  background:var(--pale);
+}
+.context-block p{
+  font-size:18px;font-weight:300;font-style:italic;
+  line-height:1.65;color:#2a2620;
+}
+
+/* ── COMPLETED ── */
+.completed-block{
+  border:1px solid rgba(45,106,79,.25);
+  background:var(--done-bg);
+  padding:24px 28px;margin-bottom:48px;
+}
+.completed-label{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--done);margin-bottom:16px;
+  display:flex;align-items:center;gap:8px;
+}
+.completed-label::before{content:'✓';font-size:11px}
+.completed-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.completed-list li{
+  display:grid;grid-template-columns:16px 1fr;gap:10px;
+  font-family:'DM Mono',monospace;font-size:10.5px;
+  letter-spacing:.05em;color:#2a4a38;line-height:1.5;
+}
+.completed-list li::before{content:'✓';color:var(--done)}
+
+/* ── URGENT ── */
+.urgent-block{
+  border:1px solid var(--urgent);
+  border-left:4px solid var(--urgent);
+  background:var(--urgent-bg);
+  padding:24px 28px;margin-bottom:48px;
+}
+.urgent-label{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--urgent);margin-bottom:12px;
+  display:flex;align-items:center;gap:8px;
+}
+.urgent-heading{
+  font-size:20px;font-weight:400;color:var(--urgent);
+  margin-bottom:8px;line-height:1.2;
+}
+.urgent-heading em{font-style:italic}
+.urgent-body{font-size:15px;color:#4a1818;line-height:1.65}
+.urgent-body strong{font-weight:600;color:var(--urgent)}
+.urgent-detail{
+  margin-top:14px;display:flex;flex-direction:column;gap:6px;
+}
+.urgent-detail li{
+  display:grid;grid-template-columns:16px 1fr;gap:10px;
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:.05em;color:#5a2020;line-height:1.5;list-style:none;
+}
+.urgent-detail li::before{content:'→';color:var(--urgent)}
+
+/* ── PHASE ── */
+.phase{margin-bottom:52px}
+.phase-header{
+  display:flex;align-items:baseline;gap:16px;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:10px;margin-bottom:22px;
+}
+.phase-number{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:.2em;color:var(--red);flex-shrink:0;
+}
+.phase-number.gold{color:var(--gold)}
+.phase-number.navy{color:var(--navy)}
+h2{font-size:22px;font-weight:400;line-height:1.2}
+h2 em{font-style:italic;font-weight:300}
+.phase-note{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:.12em;color:var(--muted);margin-bottom:18px;
+}
+
+/* ── STEPS ── */
+.steps{list-style:none;padding:0}
+.steps li{
+  display:grid;grid-template-columns:20px 1fr;
+  gap:16px;padding:12px 0;
+  border-bottom:1px solid var(--pale);align-items:start;
+}
+.steps li:last-child{border-bottom:none}
+.step-marker{
+  font-family:'DM Mono',monospace;font-size:10px;
+  color:var(--rule);padding-top:4px;
+}
+.step-content strong{
+  font-weight:600;display:block;margin-bottom:2px;
+}
+.step-content span{
+  font-size:15px;color:var(--muted);line-height:1.6;
+}
+.step-content a{color:var(--red);text-decoration:none;border-bottom:1px solid rgba(139,32,32,.3)}
+
+/* ── FLAG / TAG ── */
+.flag{
+  display:inline-block;font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:.15em;text-transform:uppercase;
+  padding:2px 8px;border:1px solid var(--red);
+  color:var(--red);margin-left:8px;vertical-align:middle;
+}
+.flag.gold{border-color:var(--gold);color:var(--gold)}
+.flag.navy{border-color:var(--navy);color:var(--navy)}
+.flag.done{border-color:var(--done);color:var(--done)}
+
+/* ── MODEL ── */
+.model-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2px;margin-bottom:0;
+}
+.model-card{
+  background:var(--pale);
+  border:1px solid var(--rule);
+  padding:24px 24px;
+}
+.model-card-label{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:10px;
+}
+.model-card-amount{
+  font-size:32px;font-weight:600;
+  color:var(--ink);line-height:1;margin-bottom:8px;
+}
+.model-card-amount span{font-size:16px;font-weight:300;color:var(--muted)}
+.model-card-body{font-size:14px;color:var(--muted);line-height:1.65}
+.model-note{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:.1em;color:var(--muted);
+  margin-top:14px;padding-top:14px;
+  border-top:1px solid var(--rule);
+  font-style:italic;
+}
+
+/* ── TARGET INSTITUTIONS (art) ── */
+.target-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:2px;margin-top:0;
+}
+.target-card{
+  background:var(--pale);
+  border:1px solid var(--rule);
+  padding:20px 22px;
+}
+.target-num{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:.2em;color:var(--muted);margin-bottom:8px;
+}
+.target-name{font-size:16px;font-weight:400;color:var(--ink);margin-bottom:4px;line-height:1.2}
+.target-name em{font-style:italic}
+.target-why{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--muted);line-height:1.5}
+
+/* ── KEYWORDS ── */
+.keyword-block{
+  background:var(--pale);border:1px solid var(--rule);
+  padding:20px 24px;margin-top:0;
+}
+.keyword-label{
+  font-family:'DM Mono',monospace;font-size:9px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;
+}
+.keyword-list{display:flex;flex-wrap:wrap;gap:8px}
+.keyword{
+  font-family:'DM Mono',monospace;font-size:9.5px;
+  letter-spacing:.1em;
+  background:white;
+  border:1px solid var(--rule);
+  padding:4px 12px;color:var(--ink);
+}
+
+/* ── PARALLEL ── */
+.parallel{
+  margin-top:52px;border-top:3px solid var(--ink);
+  padding-top:32px;
+}
+.parallel h3{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:20px;
+}
+.parallel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.parallel-item{
+  padding:16px;border:1px solid var(--rule);
+  background:var(--pale);
+}
+.parallel-item strong{display:block;font-size:15px;font-weight:600;margin-bottom:4px}
+.parallel-item span{font-size:14px;color:var(--muted);line-height:1.5}
+
+/* ── HONEST NOTE ── */
+.honest-note{
+  margin-top:52px;border-top:1px solid var(--rule);padding-top:28px;
+}
+.honest-note .label{
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--red);margin-bottom:12px;
+}
+.honest-note p{font-size:17px;font-weight:300;line-height:1.7;color:#2a2620}
+
+/* ── FOOTER ── */
+footer{
+  margin-top:64px;border-top:1px solid var(--rule);
+  padding-top:20px;font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:.15em;
+  color:var(--muted);display:flex;justify-content:space-between;
+}
+
+@media(max-width:600px){
+  header,.model-grid,.target-grid,.parallel-grid{grid-template-columns:1fr}
+  .header-meta{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="doc-label">Museum Planning LLC · Mark Walhimer · Work Plan</div>
+    <h1>Next Steps.<br><em>Updated June 2026.</em></h1>
+  </div>
+  <div class="header-meta">
+    June 2, 2026<br>
+    museumplanning.com<br>
+    markwalhimer.com
+  </div>
+</header>
+
+<div class="context-block">
+  <p>Two objectives. One client base. Museum consulting at $100,000+ per engagement. Art commissions at $100,000. <strong>Site infrastructure and Tier 1 SEO are done.</strong> The business is five money keywords — one URL each. Revenue now comes from outreach (LinkedIn, director email, Mailchimp), not more pages — unless a new page fits the tier model.</p>
+</div>
+
+<!-- COMPLETED MAY -->
+<div class="completed-block">
+  <div class="completed-label">Completed — May 2026 (rebrand &amp; migration)</div>
+  <ul class="completed-list">
+    <li>Style guide — four-property design system documented</li>
+    <li>museumplanning.com redesigned — light background, style guide compliant</li>
+    <li>Domain portfolio audited — 307 domains categorized</li>
+    <li>Four active properties confirmed — museumplanning.com, museums101.com, museum-experiences.com, markwalhimer.com</li>
+    <li>markwalhimer.com confirmed as primary art domain</li>
+  </ul>
+</div>
+
+<!-- COMPLETED JUNE -->
+<div class="completed-block">
+  <div class="completed-label">Completed — June 2026 (SEO, site, documentation)</div>
+  <ul class="completed-list">
+    <li>Tier 1 commercial pillars live — feasibility, strategic planning, master planning (+ services hub + homepage)</li>
+    <li>Cloudflare 301 redirects verified — legacy WordPress paths → correct Tier 1 URLs</li>
+    <li>Tier 2 pages — immersive-museum-planning, for-universities SEO pass, civic verticals wired</li>
+    <li>MAS portfolio — mas-executive-director + mas-art-tech-collaboration case study (2 parts)</li>
+    <li>Museum School sitemap demoted (0.55) — Tier 1 owns commercial feasibility/master/strategic</li>
+    <li>Services + homepage keyword polish — museum planning services, museum planning in deck</li>
+    <li>docs/BUSINESS-AND-SEO-PLAYBOOK.md + Cursor rule — Tier 1 pushback for future sessions</li>
+    <li>docs/seo-keyword-strategy.md, STYLE-GUIDE, README aligned to tier model</li>
+    <li>GSC sitemap resubmitted; indexing requested on new pages</li>
+    <li>wp-content/uploads symlink — legacy image paths work from GitHub Pages</li>
+    <li>museum-vitality-index.html exists and is linked (MVI page live)</li>
+  </ul>
+</div>
+
+<!-- ACTIVE LEADS -->
+<div class="urgent-block" style="border-color:var(--gold);border-left-color:var(--gold);background:#fdf8ef">
+  <div class="urgent-label" style="color:var(--gold)">Active pipeline — prioritize follow-up</div>
+  <div class="urgent-heading" style="color:var(--navy)">Bob Moog Foundation — <em>strategic planning + relocation.</em></div>
+  <p class="urgent-body" style="color:#2a2620">~$100K scope discussed (strategic + integrated work). Tier 1 page ready: <strong>museum-strategic-planning.html</strong> ($45–75K standard; FAQ covers $75–100K+ integrated scopes). Track in CRM — next touch, proposal stage, decision timeline.</p>
+  <ul class="urgent-detail">
+    <li style="color:#3a3020">Use simple pipeline: name · institution · service · last touch · next action</li>
+    <li style="color:#3a3020">Outreach links always point to matching Tier 1 pillar, not generic homepage</li>
+  </ul>
+</div>
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">THE MODEL</div>
+    <h2>Two revenue streams. <em>One client base.</em></h2>
+  </div>
+  <div class="phase-note">Costs near zero until there's a project. The model is correct — don't change it.</div>
+
+  <div class="model-grid">
+    <div class="model-card">
+      <div class="model-card-label">Consulting Target</div>
+      <div class="model-card-amount">$100K <span>per engagement</span></div>
+      <div class="model-card-body">University or city hires Mark directly — feasibility study, master plan, strategic plan. Costs are essentially time. Margin is very high. Done 40 times. This is the core business.</div>
+    </div>
+    <div class="model-card">
+      <div class="model-card-label">Art Target</div>
+      <div class="model-card-amount">$100K <span>per commission/sale</span></div>
+      <div class="model-card-body">Site-specific installation commissions and limited hardware editions. The museum director who hires you to plan the building is the same person who commissions an installation for the lobby.</div>
+    </div>
+  </div>
+  <div class="model-note">The connection is the strategy. Both objectives share the same client. Lead with consulting. The art conversation follows naturally once the relationship exists.</div>
+</div>
+
+<!-- PHASE 1 — TECHNICAL (mostly done) -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">PHASE 01</div>
+    <h2>Technical migration. <em>Largely complete.</em></h2>
+  </div>
+  <div class="phase-note">Remaining items are polish — not blockers for outreach.</div>
+  <ul class="steps">
+    <li>
+      <div class="step-marker">✓</div>
+      <div class="step-content">
+        <strong>GitHub Pages live on museumplanning.com <span class="flag done">done</span></strong>
+        <span>Cloudflare in front; SSL active.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">✓</div>
+      <div class="step-content">
+        <strong>301 redirects — Cloudflare bulk rules <span class="flag done">done</span></strong>
+        <span>Feasibility, strategic, master, immersive, consultants — verified with curl. Regenerate from repo: tools/gen_cloudflare_bulk_redirects.py</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">✓</div>
+      <div class="step-content">
+        <strong>Legacy image paths <span class="flag done">done</span></strong>
+        <span>wp-content/uploads → content/uploads symlink. Project photos served from repo.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">✓</div>
+      <div class="step-content">
+        <strong>MVI page <span class="flag done">done</span></strong>
+        <span>museum-vitality-index.html live. Strengthen copy/sample scores over time — not blocking.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Replace newsletter mailto with Mailchimp <span class="flag">Phase 04</span></strong>
+        <span>Wait until GSC shows Tier 1 impressions (2–4 weeks post-redirect). Then embed signup + welcome sequence linking pillar pages.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>markwalhimer.com GitHub deploy + CNAME</strong>
+        <span>Art domain — separate from consulting site. Redirect mark-walhimer.com → markwalhimer.com.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Domain forwards — emergentdna.com, machinedna.com</strong>
+        <span>Forward to markwalhimer.com per 2026 objectives. Resolve machinedna registrar if missing.</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- PHASE 2 — TIER 1 SEO (done — monitor) -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">PHASE 02</div>
+    <h2>Tier 1 keywords. <em>The business.</em></h2>
+  </div>
+  <div class="phase-note">One URL per money keyword. Do not add pages that compete — expand FAQs on existing pillars instead. Playbook: website-2.0/docs/BUSINESS-AND-SEO-PLAYBOOK.md</div>
+  <ul class="steps">
+    <li>
+      <div class="step-marker">✓</div>
+      <div class="step-content">
+        <strong>Five Tier 1 pages optimized <span class="flag done">done</span></strong>
+        <span>Title, H1, meta, FAQ schema, intent strips, Cloudflare 301s. Pillars 3–5 fully optimized; homepage + services polished.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">✓</div>
+      <div class="step-content">
+        <strong>Sitemap + GSC <span class="flag done">done</span></strong>
+        <span>Sitemap resubmitted. Indexing requested on new URLs. Rank recovery: 2–8 weeks — patience, not more rewrites.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Monthly GSC review <span class="flag navy">ongoing</span></strong>
+        <span>Queries + landing pages. Confirm Tier 1 URLs getting impressions. Update seo-keyword-strategy.md from data quarterly.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>New page? Push back first.</strong>
+        <span>Example: "museum cost" → FAQ on museum-feasibility-study.html, not a new URL. Tier 2 only for distinct audiences (cities, universities, immersive).</span>
+      </div>
+    </li>
+  </ul>
+
+  <div class="keyword-block" style="margin:0 0 20px 36px">
+    <div class="keyword-label">Tier 1 — Money keywords (one primary URL each — hammer these)</div>
+    <div class="keyword-list">
+      <span class="keyword">museum planning → /</span>
+      <span class="keyword">museum planning services → services</span>
+      <span class="keyword">museum feasibility study</span>
+      <span class="keyword">museum strategic planning</span>
+      <span class="keyword">museum master planning</span>
+    </div>
+  </div>
+  <div class="keyword-block" style="margin:0 0 20px 36px">
+    <div class="keyword-label">Tier 2 — Audience verticals (link up to Tier 1)</div>
+    <div class="keyword-list">
+      <span class="keyword">for-cities.html</span>
+      <span class="keyword">for-cities-science-center.html</span>
+      <span class="keyword">for-universities.html</span>
+      <span class="keyword">local-history-museum.html</span>
+      <span class="keyword">immersive-museum-planning.html</span>
+    </div>
+  </div>
+  <div class="keyword-block" style="margin:0 0 0 36px">
+    <div class="keyword-label">Tier 3 — Museum School (vocabulary only; links up)</div>
+    <div class="keyword-list">
+      <span class="keyword">starting a museum</span>
+      <span class="keyword">what is a museum feasibility study</span>
+      <span class="keyword">what is a museum master plan</span>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 3 — DOMAIN SALES -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">PHASE 03</div>
+    <h2>List high-value domains. <em>Passive income.</em></h2>
+  </div>
+  <div class="phase-note">30 minutes on Afternic. Domains sell passively. Total estimated value of sell candidates: $100,000+.</div>
+  <ul class="steps">
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>List immediately — highest value</strong>
+        <span>mwed.com ($5,916) · museumexhibits.com ($4,271) · museumplanner.com ($2,743) · visitorex.com ($2,725) · publicinstallation.com ($2,720) · museumbasics.com ($2,718). These six domains alone could net $15,000–$20,000. Go to Afternic.com, add the domains, set Buy Now pricing at estimated value or 20% above.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Work through the full domain audit</strong>
+        <span>The complete audit is at domain_audit_20260523.html — sortable by action and value. Filter to SELL, sort by value descending, and list in batches. Let expire any domain under $100 estimated value at next renewal.</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- PHASE 4 — OUTREACH (now) -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">PHASE 04</div>
+    <h2>Outreach. <em>Where revenue comes from.</em></h2>
+  </div>
+  <div class="phase-note">Sequence: GSC shows Tier 1 impressions (weeks 2–4) → Mailchimp → LinkedIn + director email. Open website-2.0 repo in Cursor for site work.</div>
+  <ul class="steps">
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Simple CRM / pipeline <span class="flag">start now</span></strong>
+        <span>Spreadsheet: name · institution · role · service (feasibility/strategic/master) · last touch · next action. Bob Moog Foundation and every warm lead in one place.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>LinkedIn — primary outbound channel</strong>
+        <span>Profile headline: Museum Planning · Feasibility, Strategic &amp; Master Planning. Featured links: feasibility + strategic + contact. 1–2 posts/week → one Tier 1 pillar URL each time. Comment on AAM / director posts.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Individual email to museum directors</strong>
+        <span>Personal note · one proof point (MAS, Howard, MIDE) · one pillar link · offer 1-hour call. Attach or link capabilities one-pager. Email signature: museumplanning.com + rotating pillar link.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Mailchimp — after GSC baseline (week 4+)</strong>
+        <span>Replace mailto newsletter on site. Welcome sequence links Tier 1 pages. Reintroduction email to 6,000 list — new site, same methodology, feedback ask.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>GA4 + GSC — monthly rhythm</strong>
+        <span>GA4: organic traffic, contact/tel/mailto events. GSC: queries landing on Tier 1 URLs. Twitter/Instagram: brand presence only; LinkedIn drives consulting leads.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Referral partners</strong>
+        <span>3–5 architect / exhibit firm relationships who send feasibility work they don't want. Lower volume than cold email, higher close rate.</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- PHASE 5 — MVI -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">PHASE 05</div>
+    <h2>MVI — strengthen over time. <em>Page is live.</em></h2>
+  </div>
+  <div class="phase-note">museum-vitality-index.html exists. Add sample scores and Connecticut River example when ready — not blocking outreach.</div>
+  <ul class="steps">
+    <li>
+      <div class="step-marker">✓</div>
+      <div class="step-content">
+        <strong>museum-vitality-index.html published <span class="flag done">done</span></strong>
+        <span>Linked from homepage and services. Tier 3 authority — not a money keyword owner.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Mailchimp MVI feature (optional)</strong>
+        <span>After main reintroduction send. Directors forward to boards → inbound. Pairs with $18K assessment offer on for-universities page.</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- PHASE 6 — CIVIC ANCHOR -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">PHASE 06</div>
+    <h2>The civic anchor pitch. <em>This is the one that generates work.</em></h2>
+  </div>
+  <div class="phase-note">The frozen mid-market doesn't matter here. This reaches mayors, city managers, university administrators — clients funded by local capital, not federal grants.</div>
+  <ul class="steps">
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Build three case studies — one page each</strong>
+        <span>Post office → museum (McDonough). Masonic temple → university museum (Arizona). A third — MIDE or Frehner. Before, after, what it did for the community, what it cost, what the process looked like. These are the pitch, not a brochure.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Identify 30 target municipalities</strong>
+        <span>Cities with financial capacity, a visible historic building problem, and no destination museum. Sources: National Register of Historic Places nominations, state preservation office databases, economic development press, and capital reserve data from municipal bond filings.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Send the civic anchor Mailchimp</strong>
+        <span>"Do you have a historic building your community doesn't know what to do with? We've solved this problem twelve times." Lead with the problem they already have. Include one case study. One ask: reply to this email.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Mexico City is the same pitch, possibly a better market right now</strong>
+        <span>Real completed project history — MIDE, Museo Memoria y Tolerancia. Low fixed costs. The civic anchor model translates directly. Run Mexico City outreach in parallel with US outreach.</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- PHASE 7 — ART PRACTICE -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number gold">PHASE 07</div>
+    <h2>Art practice outreach. <em>$100K commissions don't find you.</em></h2>
+  </div>
+  <div class="phase-note">This phase does not wait for consulting to be complete. Run in parallel. The art and consulting are the same client base.</div>
+  <ul class="steps">
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Identify five target institutions for commission outreach <span class="flag gold">art</span></strong>
+        <span>Museums planning new buildings or lobbies are the natural first audience — they have capital, they understand installation art, and they already know who you are. University art centers and civic cultural buildings are second. Start with five specific institutions, not a general campaign.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Five target institutions for 2026</strong>
+      </div>
+    </li>
+  </ul>
+
+  <div class="target-grid" style="margin:0 0 20px 36px">
+    <div class="target-card">
+      <div class="target-num">Target 01</div>
+      <div class="target-name"><em>Bob Moog Foundation</em></div>
+      <div class="target-why">Active — strategic planning + relocation · ~$100K · museum-strategic-planning.html</div>
+    </div>
+    <div class="target-card">
+      <div class="target-num">Target 02</div>
+      <div class="target-name">ICA Miami — <em>continue</em></div>
+      <div class="target-why">Critique relationship established. Institutional acquisition next — not cold</div>
+    </div>
+    <div class="target-card">
+      <div class="target-num">Target 03</div>
+      <div class="target-name"><em>Howard Natural History Museum</em></div>
+      <div class="target-why">Active consulting — new building lobby = commission opportunity in context</div>
+    </div>
+    <div class="target-card">
+      <div class="target-num">Targets 04–05</div>
+      <div class="target-name">Two university art centers — <em>TBD</em></div>
+      <div class="target-why">Select from consulting network — provosts and deans already know the practice. Identify two with capital budgets for new construction or renovation</div>
+    </div>
+  </div>
+
+  <ul class="steps">
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Social media — use the keywords, stay consistent <span class="flag gold">art</span></strong>
+        <span>markwalhimer.com is the anchor. Instagram and X are the distribution. Post work in progress, not finished pieces. The community for generative and new media art is built through process documentation.</span>
+      </div>
+    </li>
+  </ul>
+
+  <div class="keyword-block" style="margin:0 0 0 36px">
+    <div class="keyword-label">Art Practice Keywords — use consistently across all platforms</div>
+    <div class="keyword-list">
+      <span class="keyword">#new_media_art</span>
+      <span class="keyword">#generativeart</span>
+      <span class="keyword">#proceduralart</span>
+      <span class="keyword">#creativecoding</span>
+      <span class="keyword">#creativecodeartm</span>
+      <span class="keyword">new media art</span>
+      <span class="keyword">digital installation</span>
+      <span class="keyword">generative installation</span>
+      <span class="keyword">machine aesthetics</span>
+      <span class="keyword">p5.js</span>
+      <span class="keyword">WebGL</span>
+      <span class="keyword">GLSL</span>
+    </div>
+  </div>
+
+  <ul class="steps" style="margin-top:16px">
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Price the work at $100K — don't discount down from there</strong>
+        <span>Site-specific institutional commissions are the target, not gallery sales. The price point needs to be established early in the conversation. The commission page on markwalhimer.com states this clearly. Don't deviate from it in the first conversation.</span>
+      </div>
+    </li>
+    <li>
+      <div class="step-marker">—</div>
+      <div class="step-content">
+        <strong>Let the consulting relationship open the art conversation — not the other way around</strong>
+        <span>The museum director who hires you to plan the building sees your work. The art conversation comes up naturally. Don't lead with the art in consulting contexts — it complicates the hire. Lead with it only in art contexts.</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- PARALLEL -->
+<div class="parallel">
+  <h3>Running parallel — always on</h3>
+  <div class="parallel-grid">
+    <div class="parallel-item">
+      <strong>Museums 101, Second Edition</strong>
+      <span>Keep writing. Long-term credential. Book authority feeds consulting but is a separate track from site SEO.</span>
+    </div>
+    <div class="parallel-item">
+      <strong>GA4 + Google Search Console</strong>
+      <span>Monthly review. Tier 1 impressions = signal to scale Mailchimp and LinkedIn. Organic was 5% pre-redirect — expect improvement over 2–8 weeks.</span>
+    </div>
+    <div class="parallel-item">
+      <strong>website-2.0 documentation</strong>
+      <span>docs/BUSINESS-AND-SEO-PLAYBOOK.md — open that repo in Cursor for any site work. AI should push back on new pages that compete with Tier 1.</span>
+    </div>
+    <div class="parallel-item">
+      <strong>Mexico City base</strong>
+      <span>MIDE, Museo Memoria y Tolerancia — civic anchor pitch works in parallel with US outreach.</span>
+    </div>
+  </div>
+</div>
+
+<!-- HONEST NOTE -->
+<div class="honest-note">
+  <div class="label">The honest note — June 2026</div>
+  <p>The site is built. Tier 1 keywords are structured. Cloudflare redirects work. <strong>Stop adding infrastructure.</strong> Hammer the five money keywords in LinkedIn and email — always link to the matching pillar page. Wait 2–4 weeks for GSC, then Mailchimp the list. Track every lead in a simple CRM. Museums 101 and art outreach run in parallel but do not replace director outreach. If you ask for a new page like "museum cost," the answer is: add an FAQ to feasibility — that's the business model.</p>
+</div>
+
+<footer>
+  <span>Museum Planning LLC · June 2026</span>
+  <span>mark@museumplanning.com · mark@walhimer.com</span>
+</footer>
+
+</body>
+</html>

@@ -13,6 +13,7 @@ Public marketing site for **[museumplanning.com](https://museumplanning.com/)**,
 | File | Purpose |
 |------|---------|
 | **[docs/BUSINESS-AND-SEO-PLAYBOOK.md](./docs/BUSINESS-AND-SEO-PLAYBOOK.md)** | **Start here** — business intent, Tier 1 keywords, new-page pushback rules, thread handoff |
+| [docs/rebrand/](./docs/rebrand/) | Work plan HTML, May session summary, design-system styleguide, planning RTFs |
 | [AGENTS.md](./AGENTS.md) | Short pointer for Cursor / AI sessions |
 | [STYLE-GUIDE.md](./STYLE-GUIDE.md) | Design system, global nav, footer, voice, SEO checklist |
 | [style-guide.html](./style-guide.html) | Browser-readable version of the style guide |
