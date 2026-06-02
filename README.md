@@ -12,25 +12,33 @@ Public marketing site for **[museumplanning.com](https://museumplanning.com/)**,
 
 | File | Purpose |
 |------|---------|
+| **[docs/BUSINESS-AND-SEO-PLAYBOOK.md](./docs/BUSINESS-AND-SEO-PLAYBOOK.md)** | **Start here** — business intent, Tier 1 keywords, new-page pushback rules, thread handoff |
+| [AGENTS.md](./AGENTS.md) | Short pointer for Cursor / AI sessions |
 | [STYLE-GUIDE.md](./STYLE-GUIDE.md) | Design system, global nav, footer, voice, SEO checklist |
 | [style-guide.html](./style-guide.html) | Browser-readable version of the style guide |
 | [SITE-STRATEGY.md](./SITE-STRATEGY.md) | Audience, funnel, keyword clusters (internal reference) |
-| [docs/seo-keyword-strategy.md](./docs/seo-keyword-strategy.md) | Keyword tiers and landing-page backlog |
+| [docs/seo-keyword-strategy.md](./docs/seo-keyword-strategy.md) | Keyword tiers and URL ownership |
 | [redirects/README.md](./redirects/README.md) | Legacy URL mapping, Cloudflare bulk redirect import |
+
+Cursor rule [`.cursor/rules/tier-1-keywords-first.mdc`](./.cursor/rules/tier-1-keywords-first.mdc) enforces Tier 1 discipline in new sessions when this repo is open.
 
 ## Page tiers (information architecture)
 
 Each tier maps to **one primary URL** per keyword cluster. Cross-link between tiers; do not duplicate intent across thin pages.
 
-### Tier 1 — Commercial pillars (priority 0.85 in sitemap)
+### Tier 1 — Commercial pillars (sitemap priority 0.85–1.0)
 
-| URL | Primary intent |
-|-----|----------------|
-| `index.html` | Museum consultants, firm credibility |
-| `museum-planning-services.html` | Museum consultant / full methodology |
+**These five money keywords are the business.** One URL each.
+
+| URL | Primary keyword |
+|-----|-----------------|
+| `index.html` | Museum planning |
+| `museum-planning-services.html` | Museum planning services / museum consultants |
 | `museum-feasibility-study.html` | Museum feasibility study |
-| `museum-strategic-planning.html` | Museum strategic planning consultants |
+| `museum-strategic-planning.html` | Museum strategic planning |
 | `museum-master-planning.html` | Museum master planning |
+
+**New page requests** (e.g. “museum cost”) → see [docs/BUSINESS-AND-SEO-PLAYBOOK.md](./docs/BUSINESS-AND-SEO-PLAYBOOK.md) — usually expand Tier 1 FAQ, not a new URL.
 
 **Template reference:** copy structure from `museum-feasibility-study.html` (nav, hero, sections, FAQ, intent strip, contact form, JSON-LD).
 
@@ -46,9 +54,9 @@ Each tier maps to **one primary URL** per keyword cluster. Cross-link between ti
 
 Tier 2 pages **support** Tier 1 — they link up to feasibility, master planning, and services; they do not replace them.
 
-### Tier 3 — Museum School (education, not primary conversion)
+### Tier 3 — Museum School (vocabulary, sitemap ~0.55)
 
-`museum-school/*.html` — vocabulary and process guides. Each School article should link up to the matching commercial page where one exists.
+`museum-school/*.html` — education only; each article links **up** to the matching Tier 1 commercial page.
 
 ## SEO and redirects workflow
 

@@ -26,14 +26,17 @@ One-off strip-mall or hobby “museum” concepts with no institutional path; ch
 
 ## Keyword clusters (for content & IA — not a rank guarantee)
 
-Group by **job-to-be-done**; each cluster should map to **one primary URL** plus internal links.
+**Tier 1 money keywords** own commercial intent — see [`docs/BUSINESS-AND-SEO-PLAYBOOK.md`](docs/BUSINESS-AND-SEO-PLAYBOOK.md). Do not add pages that compete with them.
+
+Group supporting content by **job-to-be-done**; each cluster maps to **one primary URL** plus internal links up to Tier 1.
 
 | Cluster | Example intent | Primary URLs |
 |--------|----------------|--------------|
-| Municipal / civic | City museum feasibility, historic building, council-ready study | `for-cities.html`, Services, Contact |
-| Science center | Starting a science center, tech/workforce narrative | `for-cities-science-center.html`, Services |
-| Core consulting | Museum planning consultant, feasibility, master plan | `museum-planning-services.html`, Museum School |
-| Education | How to start a museum, what is feasibility | `museum-school/*.html` |
+| Municipal / civic | City museum feasibility, historic building | `for-cities.html` → `museum-feasibility-study.html` |
+| Science center | Starting a science center | `for-cities-science-center.html` → Tier 1 |
+| University | Campus museum, collection in storage | `for-universities.html` → Tier 1 |
+| Core consulting | Museum planning, consultants, feasibility, strategic, master | **Tier 1 pillar pages** (not Museum School) |
+| Education | What is feasibility / how to start | `museum-school/*.html` (Tier 3, links up) |
 
 ## Key conversion URLs
 

@@ -185,3 +185,4 @@ Peer cohorts in matrix: Lord Cultural Resources, AEA Consulting, JRA/RWS Global,
 | 2026-02-03 | Primary + extended keyword lists; website hierarchy; Services ↔ Museum School links. |
 | 2026-05-05 | Competitor matrix CSV cohorts; Lord + AEA rows. |
 | 2026-06-02 | **Tier 1 realignment:** commercial pillars own feasibility/strategic/master (not Museum School); five money keywords mapped; Cloudflare redirect table; Tier 2/3 split; remaining optimization checklist. |
+| 2026-06-02 | See [`docs/BUSINESS-AND-SEO-PLAYBOOK.md`](./BUSINESS-AND-SEO-PLAYBOOK.md) for full thread handoff and new-page pushback protocol. |

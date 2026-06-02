@@ -1,0 +1,44 @@
+---
+description: Museum Planning LLC — Tier 1 keyword discipline; push back on new pages that dilute money keywords
+alwaysApply: true
+---
+
+# Tier 1 keywords first — museumplanning.com
+
+This repo is **Museum Planning LLC** commercial site (`museumplanning.com`). The business is **five Tier 1 money keywords** — one primary URL each. Read [`docs/BUSINESS-AND-SEO-PLAYBOOK.md`](docs/BUSINESS-AND-SEO-PLAYBOOK.md) and [`docs/seo-keyword-strategy.md`](docs/seo-keyword-strategy.md) before adding pages or changing IA.
+
+## Tier 1 (do not compete with these)
+
+| Keyword | Primary URL |
+|---------|-------------|
+| Museum planning | `index.html` |
+| Museum planning services / museum consultants | `museum-planning-services.html` |
+| Museum feasibility study | `museum-feasibility-study.html` |
+| Museum strategic planning | `museum-strategic-planning.html` |
+| Museum master planning | `museum-master-planning.html` |
+
+## Before creating any new HTML page
+
+**Stop and ask once** (unless the user already named tier + keyword):
+
+> How does this fit Tier 1? Which money keyword does it support — and does it **compete** with an existing primary URL?
+
+**Default alternatives** (prefer over new URLs):
+
+- **Museum cost / budget / operating expenses** → FAQ or section on `museum-feasibility-study.html`, not a new page
+- **Generic “what is…”** → `museum-school/*.html` (Tier 3), link up to Tier 1
+- **Audience-specific (cities, universities, immersive)** → Tier 2 vertical; link up to Tier 1
+- **Proof** → `projects/*.html` only
+
+**Allow new Tier 2** only for a **distinct audience** the firm sells into. **Allow Tier 3** School articles that link up. **Never** duplicate Tier 1 intent.
+
+## Voice & scope
+
+- Commercial pages: **we / our practice**, not **I**
+- Follow [`STYLE-GUIDE.md`](STYLE-GUIDE.md) for nav, SEO head, schema
+- After redirect map changes: run `gen_legacy_redirect_stubs.py` + `gen_cloudflare_bulk_redirects.py`
+- This repo is **not** walhimer.github.io artwork — do not blend personal art/sketch work here unless the user explicitly asks
+
+## User overrides
+
+If the user insists on a new page after pushback, implement it — but update `docs/seo-keyword-strategy.md` with the tier and keyword ownership first.
