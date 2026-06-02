@@ -22,21 +22,24 @@
     '/museum-vitality-index':                    '/museum-vitality-index.html',
     '/convergence-era':                          '/convergence-era.html',
     '/for-cities':                               '/for-cities.html',
+    '/for-universities':                         '/for-universities.html',
     '/for-cities-science-center':                '/for-cities-science-center.html',
 
     // Legacy WordPress / inbound links (GA4 404 recovery)
     '/contact':                                  '/museum-planning-contact.html',
     '/contact-museum-planning':                  '/museum-planning-contact.html',
     '/museum-consultants':                       '/museum-planning-services.html',
+    '/museum-consulting-and-cultural-planning-museum-planning-llc': '/museum-planning-services.html',
     '/about-us':                                 '/museum-planning-about.html',
     '/about':                                    '/museum-planning-about.html',
     '/support':                                  '/museum-planning-contact.html',
     '/museum-planning-llc':                      '/',
     '/museum-school':                            '/museum-school/index.html',
 
-    // Main service pages
-    '/museum-feasibility-studies':               '/museum-planning-services.html',
-    '/museum-master-planning':                   '/museum-planning-services.html',
+    // Main service pages (rank-critical — stubs also at redirects/legacy-redirects.json)
+    '/museum-feasibility-studies':               '/museum-feasibility-study.html',
+    '/museum-feasibility-study':                 '/museum-feasibility-study.html',
+    '/museum-master-planning':                   '/museum-school/what-is-a-museum-master-plan.html',
     '/museum-strategic-planning-consultants':    '/museum-planning-services.html',
     '/museum-assessment':                        '/museum-planning-services.html',
     '/museum-project-management':                '/museum-planning-services.html',
@@ -44,7 +47,7 @@
     '/museum-exhibition-evaluation':             '/museum-planning-services.html',
     '/interactive-museum-exhibition-design':     '/museum-planning-services.html',
     '/interactive-history-museum-design-company':'/museum-planning-services.html',
-    '/science-center-design':                    '/museum-planning-services.html',
+    '/science-center-design':                    '/for-cities-science-center.html',
     '/museum-customer-service-training':         '/museum-planning-services.html',
     '/museum-exterior-signage':                  '/museum-planning-services.html',
     '/designing-museum-experiences-dme-process': '/museum-planning-services.html',
@@ -64,15 +67,15 @@
     '/portfolio-item/frehner-museum-southern-utah-university':  '/projects/frehner-museum-southern-utah-university.html',
     '/portfolio-item/university-of-arizona':                    '/projects/arizona-natural-resources-museum.html',
     '/portfolio-item/african-american-museum-exhibition-design':'/projects/interactive-african-american-museum.html',
-    '/portfolio-item/city-of-mcdonough-georgia':                '/museum-planning-projects.html',
-    '/portfolio-item/discovery-center-at-murfree-spring':       '/museum-planning-projects.html',
-    '/portfolio-item/childrens-museum-of-manhhattan':           '/museum-planning-projects.html',
-    '/portfolio-item/childrens-museum-indianapolis':            '/museum-planning-projects.html',
-    '/portfolio-item/childrens-museum-indianapolis-sculpture':  '/museum-planning-projects.html',
-    '/portfolio-item/pretend-city-childrens-museum-of-orange-county': '/museum-planning-projects.html',
-    '/portfolio-item/the-tech-interactive-museum':              '/museum-planning-projects.html',
-    '/portfolio-item/alcatraz-life-on-the-rock':                '/museum-planning-projects.html',
-    '/portfolio-item/cade-steam-music-concept':                 '/museum-planning-projects.html',
+    '/portfolio-item/city-of-mcdonough-georgia':                '/projects/city-of-mcdonough-georgia.html',
+    '/portfolio-item/discovery-center-at-murfree-spring':       '/projects/discovery-center-murfree-spring.html',
+    '/portfolio-item/childrens-museum-of-manhhattan':           '/projects/childrens-museum-manhattan.html',
+    '/portfolio-item/childrens-museum-indianapolis':            '/projects/childrens-museum-indianapolis.html',
+    '/portfolio-item/childrens-museum-indianapolis-sculpture':  '/projects/childrens-museum-indianapolis-sculpture.html',
+    '/portfolio-item/pretend-city-childrens-museum-of-orange-county': '/projects/pretend-city-childrens-museum.html',
+    '/portfolio-item/the-tech-interactive-museum':              '/projects/the-tech-interactive.html',
+    '/portfolio-item/alcatraz-life-on-the-rock':                '/projects/alcatraz-traveling-exhibition.html',
+    '/portfolio-item/cade-steam-music-concept':                 '/projects/cade-museum-steam.html',
     '/portfolio-item/toyota-mobile-hybrid-experience':          '/museum-planning-projects.html',
     '/portfolio-item/pge-look-forward-bus':                     '/museum-planning-projects.html',
     '/portfolio-item/museo-memoria-y-tolerancia':               '/museum-planning-projects.html',
@@ -91,7 +94,7 @@
     '/by-michael-vega':                          '/museum-planning-about.html',
 
     // Museum School / education
-    '/starting-a-museum':                        '/museum-school/index.html',
+    '/starting-a-museum':                        '/museum-school/how-to-start-a-museum.html',
     '/starting-a-science-center':                '/museum-school/index.html',
     '/starting-a-childrens-museum':              '/museum-school/index.html',
 
@@ -140,9 +143,9 @@
     return;
   }
 
-  // WordPress uploads (PDFs) → about page
+  // WordPress uploads → same files under /content/uploads/ (symlink on deploy)
   if (path.indexOf('/wp-content/uploads/') === 0) {
-    window.location.replace('https://museumplanning.com/museum-planning-about.html');
+    window.location.replace('https://museumplanning.com' + path.replace('/wp-content/uploads/', '/content/uploads/'));
     return;
   }
 
