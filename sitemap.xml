@@ -242,9 +242,21 @@
   </url>
   <url>
     <loc>https://museumplanning.com/projects/museum-of-arts-and-sciences.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://museumplanning.com/projects/mas-executive-director.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://museumplanning.com/projects/mas-art-tech-collaboration.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://museumplanning.com/projects/museums-101.html</loc>

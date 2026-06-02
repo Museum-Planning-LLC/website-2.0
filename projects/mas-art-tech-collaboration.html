@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+<title>Museum of Arts and Sciences — Art & Tech Collaboration | Museum Planning, LLC</title>
+<meta name="description" content="Art and technology collaboration program at the Museum of Arts and Sciences — six artists, interactive installations, and public programming that made AI and blockchain accessible. Part 2 of 2.">
+<link rel="canonical" href="https://museumplanning.com/projects/mas-art-tech-collaboration.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #1e3a5f;
+    --blue: #2563a8;
+    --indigo: #3730a3;
+    --violet: #6d28d9;
+    --teal: #0d9488;
+    --gold: #c9952a;
+    --gold-light: #e8b84b;
+    --cream: #f8f6f1;
+    --warm: #f0ebe0;
+    --dark: #111827;
+    --mid: #374151;
+    --muted: #6b7280;
+    --border: #d1c9b8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark);
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ─────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 4rem;
+    background: rgba(13, 27, 42, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav-brand em { color: var(--gold-light); font-style: italic; }
+
+  .nav-series {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .nav-series a {
+    color: var(--gold-light);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .nav-series a:hover { opacity: 0.7; }
+  .nav-series span { color: rgba(255,255,255,0.2); }
+
+  /* ── HERO ─────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: var(--navy);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('../content/uploads/2025/08/Untitled.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;
+    animation: slowZoom 14s ease forwards;
+    transform: scale(1.06);
+  }
+
+  @keyframes slowZoom { to { transform: scale(1); } }
+
+  /* Animated gradient mesh background */
+  .hero-mesh {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(109,40,217,0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(13,148,136,0.2) 0%, transparent 45%),
+      radial-gradient(ellipse at 60% 80%, rgba(37,99,168,0.3) 0%, transparent 45%);
+    animation: meshShift 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes meshShift {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,27,42,1) 0%, rgba(13,27,42,0.3) 60%, rgba(13,27,42,0.6) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 10rem 5rem 5rem;
+    max-width: 900px;
+  }
+
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.3s forwards;
+  }
+
+  .hero-kicker-line { width: 40px; height: 2px; background: var(--teal); }
+
+  .hero-kicker span {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(13,148,136,0.9);
+  }
+
+  .hero-part {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold-light);
+    padding: 0.3rem 0.85rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.4s forwards;
+  }
+
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    line-height: 1.04;
+    color: #fff;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.55s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--teal), #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.75s forwards;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.9s forwards;
+  }
+
+  .tag {
+    padding: 0.35rem 0.9rem;
+    border-radius: 2rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .tag-teal { background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.5); color: #2dd4bf; }
+  .tag-violet { background: rgba(109,40,217,0.2); border: 1px solid rgba(109,40,217,0.5); color: #a78bfa; }
+  .tag-blue { background: rgba(37,99,168,0.2); border: 1px solid rgba(37,99,168,0.5); color: #93c5fd; }
+  .tag-gold { background: rgba(201,149,42,0.2); border: 1px solid rgba(201,149,42,0.5); color: var(--gold-light); }
+
+  /* ── SHARED ───────────────────────────── */
+  section { padding: 6rem 0; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .label {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+  }
+
+  .label-light {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.75rem;
+  }
+
+  .heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .heading-dark {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+
+  .rule-teal { width: 48px; height: 3px; background: var(--teal); margin-bottom: 2.5rem; }
+  .rule-gold { width: 48px; height: 3px; background: var(--gold); margin-bottom: 2.5rem; }
+
+  /* ── CONCEPT SECTION ──────────────────── */
+  .concept {
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .concept-text p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1.5rem;
+  }
+
+  .concept-text p strong { color: #fff; }
+
+  .concept-aside {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2.5rem;
+    position: sticky;
+    top: 7rem;
+  }
+
+  .concept-aside-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .tech-pill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .tech-pill {
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .tech-pill:hover {
+    border-color: var(--teal);
+    background: rgba(13,148,136,0.08);
+  }
+
+  .tech-pill-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+
+  .tech-pill-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.05em;
+  }
+
+  .aside-note {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 1.25rem;
+    font-style: italic;
+  }
+
+  /* ── SIX ARTISTS ──────────────────────── */
+  .artists {
+    background: var(--cream);
+  }
+
+  .artists .label { color: var(--blue); }
+
+  .artists-intro {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: var(--mid);
+    max-width: 700px;
+    margin-bottom: 3.5rem;
+  }
+
+  .artists-intro strong { color: var(--dark); }
+
+  .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .artist-card {
+    background: #fff;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .artist-card:hover { background: var(--cream); }
+
+  .artist-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: rgba(37,99,168,0.08);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .artist-card-type {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .type-ai { background: rgba(109,40,217,0.1); color: #7c3aed; }
+  .type-blockchain { background: rgba(13,148,136,0.1); color: #0f766e; }
+  .type-network { background: rgba(37,99,168,0.1); color: #1d4ed8; }
+  .type-sound { background: rgba(201,149,42,0.12); color: #92400e; }
+  .type-data { background: rgba(220,38,38,0.08); color: #b91c1c; }
+  .type-generative { background: rgba(5,150,105,0.1); color: #065f46; }
+
+  .artist-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .artist-card p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  .artist-card-bar {
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 3px;
+    width: 0;
+    background: var(--blue);
+    transition: width 0.4s ease;
+  }
+
+  .artist-card:hover .artist-card-bar { width: 100%; }
+
+  /* ── GALLERY ──────────────────────────── */
+  .gallery {
+    background: var(--navy);
+    padding: 0;
+  }
+
+  .gallery-full {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 4px;
+    background: var(--dark);
+  }
+
+  .gallery-full-main {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-full-main img {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+    filter: brightness(0.9);
+  }
+
+  .gallery-full-main:hover img { transform: scale(1.03); filter: brightness(1); }
+
+  .gallery-full-side {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+  }
+
+  .gallery-full-side-item {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-full-side-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+    filter: brightness(0.85);
+  }
+
+  .gallery-full-side-item:hover img { transform: scale(1.04); filter: brightness(1); }
+
+  /* ── PROGRAMMING ──────────────────────── */
+  .programming {
+    background: rgba(13,27,42,0.98);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .programming-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .programming-header p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .programming-header p strong { color: #fff; }
+
+  .tech-topics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tech-topic {
+    padding: 2rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .tech-topic::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    transition: opacity 0.3s;
+  }
+
+  .topic-ai::before { background: linear-gradient(to bottom, #7c3aed, #4f46e5); }
+  .topic-blockchain::before { background: linear-gradient(to bottom, #0d9488, #0891b2); }
+  .topic-network::before { background: linear-gradient(to bottom, #2563a8, #0ea5e9); }
+  .topic-interactive::before { background: linear-gradient(to bottom, #c9952a, #f59e0b); }
+
+  .tech-topic:hover {
+    border-color: rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.05);
+  }
+
+  .tech-topic-icon {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .tech-topic h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.6rem;
+  }
+
+  .tech-topic p {
+    font-size: 0.84rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ── WHY IT MATTERS ───────────────────── */
+  .impact {
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+  }
+
+  .impact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .impact-img img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+  }
+
+  .impact-text {}
+
+  .impact-text p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--mid);
+    margin-bottom: 1.5rem;
+  }
+
+  .impact-text p strong { color: var(--dark); }
+
+  .impact-quote {
+    background: var(--navy);
+    padding: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .impact-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: #fff;
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  .impact-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-style: normal;
+  }
+
+  /* ── BACK / FOOTER ────────────────────── */
+  .back-cta {
+    background: var(--gold);
+    padding: 4rem 0;
+  }
+
+  .back-cta-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .back-cta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+  }
+
+  .back-cta p {
+    font-size: 0.88rem;
+    color: rgba(13,27,42,0.6);
+    margin-top: 0.3rem;
+  }
+
+  .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+
+  .btn-back:hover { background: var(--navy-mid); }
+
+  .btn-back svg {
+    width: 1rem; height: 1rem;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  footer {
+    background: var(--navy);
+    padding: 3.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .footer-brand em { color: var(--gold-light); }
+
+  .footer-contact {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .footer-contact a {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-contact a:hover { color: var(--gold-light); }
+
+  /* ── ANIMATIONS ───────────────────────── */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .d1 { transition-delay: 0.1s; }
+  .d2 { transition-delay: 0.2s; }
+  .d3 { transition-delay: 0.3s; }
+  .d4 { transition-delay: 0.4s; }
+  .d5 { transition-delay: 0.5s; }
+  .d6 { transition-delay: 0.6s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-series { display: none; }
+    .hero-content { padding: 8rem 2rem 4rem; }
+    .container { padding: 0 1.5rem; }
+    .concept-grid, .programming-header, .impact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .concept-aside { position: static; }
+    .artist-grid { grid-template-columns: 1fr; }
+    .gallery-full { grid-template-columns: 1fr; }
+    .gallery-full-main img { min-height: 280px; }
+    .gallery-full-side { grid-template-rows: auto auto; }
+    .gallery-full-side-item img { height: 220px; }
+    .tech-topics { grid-template-columns: 1fr; }
+    .back-cta-inner { flex-direction: column; text-align: center; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-brand">Museum <em>Planning</em>, LLC</a>
+  <div class="nav-series">
+    <a href="mas-executive-director.html">← Part 1 — Executive Director</a>
+    <span>|</span>
+    <span>Part 2 of 2</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-mesh"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-kicker">
+      <div class="hero-kicker-line"></div>
+      <span>Museum of Arts and Sciences — Macon, Georgia</span>
+    </div>
+    <div class="hero-part">Part 2 of 2</div>
+    <h1 class="hero-title">
+      Art &amp; <em>Technology</em><br>Collaboration
+    </h1>
+    <p class="hero-sub">
+      Six artists. Interactive digital installations. And a public programming
+      initiative that transformed complex technology — AI, blockchain, IT networking —
+      into visceral, participatory experiences that anyone could understand.
+    </p>
+    <div class="hero-tags">
+      <span class="tag tag-teal">6 Artists</span>
+      <span class="tag tag-violet">Artificial Intelligence</span>
+      <span class="tag tag-blue">Blockchain</span>
+      <span class="tag tag-blue">IT Networking</span>
+      <span class="tag tag-gold">Public Programming</span>
+      <span class="tag tag-teal">Interactive Installations</span>
+      <span class="tag tag-violet">Digital Experience</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept" id="overview">
+  <div class="container">
+    <div class="concept-grid">
+      <div class="concept-text reveal">
+        <div class="label">The Concept</div>
+        <h2 class="heading">Where Art Teaches<br>Technology</h2>
+        <div class="rule-teal"></div>
+        <p>
+          What began as a curatorial initiative — inviting six artists to create
+          interactive digital installations — became something far more significant:
+          <strong>a model for using art to teach the public about the technologies
+          shaping their lives.</strong>
+        </p>
+        <p>
+          Each artist worked at the intersection of contemporary art and emerging
+          technology. Their installations didn't just use AI, blockchain, or networked
+          systems as tools — they made the technology itself visible, tangible,
+          and intellectually accessible to every visitor who engaged with the work.
+        </p>
+        <p>
+          The result was a public programming initiative unlike anything the museum had
+          done before. <strong>Visitors who came for the art left understanding
+          something about artificial intelligence. Visitors who came for the technology
+          left moved by something beautiful.</strong> The two were inseparable.
+        </p>
+      </div>
+      <div class="concept-aside reveal d2">
+        <div class="concept-aside-title">Technologies Made Accessible</div>
+        <div class="tech-pill-grid">
+          <div class="tech-pill">
+            <span class="tech-pill-icon">🤖</span>
+            <div class="tech-pill-name">Artificial Intelligence</div>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-pill-icon">⛓️</span>
+            <div class="tech-pill-name">Blockchain</div>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-pill-icon">🌐</span>
+            <div class="tech-pill-name">IT Networking</div>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-pill-icon">💻</span>
+            <div class="tech-pill-name">Digital Media</div>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-pill-icon">🎵</span>
+            <div class="tech-pill-name">Generative Sound</div>
+          </div>
+          <div class="tech-pill">
+            <span class="tech-pill-icon">📊</span>
+            <div class="tech-pill-name">Data Visualization</div>
+          </div>
+        </div>
+        <p class="aside-note">
+          Each technology was introduced not through explanation, but through
+          direct visitor interaction with artist-created installations — making
+          abstract concepts tangible and memorable.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIX ARTISTS -->
+<section class="artists" id="artists">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Artist Collaborations</div>
+      <h2 class="heading-dark">Six Artists,<br>Six Technologies</h2>
+      <div class="rule-gold"></div>
+      <p class="artists-intro">
+        Mark Walhimer identified and partnered with <strong>six artists</strong> working
+        at the leading edge of art and technology practice. Each artist brought a distinct
+        technology to life through an interactive installation — creating an exhibition
+        that functioned simultaneously as contemporary art and as informal technology education.
+      </p>
+    </div>
+    <div class="artist-grid">
+      <div class="artist-card reveal d1">
+        <div class="artist-card-bar"></div>
+        <div class="artist-num">01</div>
+        <span class="artist-card-type type-ai">Artificial Intelligence</span>
+        <h3>Generative AI Installation</h3>
+        <p>An interactive work exploring machine learning and neural networks — inviting visitors to co-create imagery and text with an AI system, making the mechanics of generative models visible and participatory.</p>
+      </div>
+      <div class="artist-card reveal d2">
+        <div class="artist-card-bar"></div>
+        <div class="artist-num">02</div>
+        <span class="artist-card-type type-blockchain">Blockchain</span>
+        <h3>Distributed Ledger as Art</h3>
+        <p>An installation that visualized blockchain transactions in real time, transforming the abstract concept of distributed trust and immutable records into a living, breathing visual system visitors could observe and interact with.</p>
+      </div>
+      <div class="artist-card reveal d3">
+        <div class="artist-card-bar"></div>
+        <div class="artist-num">03</div>
+        <span class="artist-card-type type-network">IT Networking</span>
+        <h3>Network Topology Sculpture</h3>
+        <p>A physical and digital sculptural work mapping live network traffic and data flows — making the invisible infrastructure of the internet tangible, beautiful, and comprehensible to non-technical visitors.</p>
+      </div>
+      <div class="artist-card reveal d1">
+        <div class="artist-card-bar"></div>
+        <div class="artist-num">04</div>
+        <span class="artist-card-type type-sound">Generative Sound</span>
+        <h3>Algorithmic Sound Environment</h3>
+        <p>An immersive audio installation using algorithmic composition and real-time data inputs to generate music that responded to visitor presence, temperature, and time of day — demonstrating how computers can create and adapt in real time.</p>
+      </div>
+      <div class="artist-card reveal d2">
+        <div class="artist-card-bar"></div>
+        <div class="artist-num">05</div>
+        <span class="artist-card-type type-data">Data Visualization</span>
+        <h3>Living Data Portrait</h3>
+        <p>A large-scale visualization work drawing on publicly available datasets to create dynamic, ever-changing portraits of the community — illustrating how data is collected, structured, and interpreted to tell stories about people and places.</p>
+      </div>
+      <div class="artist-card reveal d3">
+        <div class="artist-card-bar"></div>
+        <div class="artist-num">06</div>
+        <span class="artist-card-type type-generative">Generative Systems</span>
+        <h3>Interactive Co-Creation System</h3>
+        <p>A generative art environment where visitors' movements and choices directly shaped the visual output — demonstrating feedback loops, input-output relationships, and the fundamental logic of interactive computing through playful, accessible engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery">
+  <div class="gallery-full">
+    <div class="gallery-full-main">
+      <img src="../content/uploads/2025/08/IMG_6314.jpeg"
+        alt="Interactive art installation at Museum of Arts and Sciences">
+    </div>
+    <div class="gallery-full-side">
+      <div class="gallery-full-side-item">
+        <img src="../content/uploads/2025/08/IMG_5869.jpeg"
+          alt="STEAM exhibition space">
+      </div>
+      <div class="gallery-full-side-item">
+        <img src="../content/uploads/2025/08/Untitled.png"
+          alt="Technology installation detail">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLIC PROGRAMMING -->
+<section class="programming" id="programming">
+  <div class="container">
+    <div class="programming-header">
+      <div class="reveal">
+        <div class="label-light">The Breakthrough</div>
+        <h2 class="heading">Art as Public<br>Tech Education</h2>
+        <div class="rule-teal"></div>
+      </div>
+      <div class="reveal d2">
+        <p>
+          What made this initiative genuinely innovative was not the installations themselves —
+          it was the <strong>public programming layer built around them.</strong>
+          Curator-led talks, artist demonstrations, and hands-on workshops transformed
+          each installation into a classroom without walls.
+        </p>
+        <p>
+          Visitors didn't just look at art. They learned why it worked — and in doing so,
+          they learned how the technologies underpinning modern life actually function.
+        </p>
+      </div>
+    </div>
+    <div class="tech-topics">
+      <div class="tech-topic topic-ai reveal d1">
+        <span class="tech-topic-icon">🤖</span>
+        <h3>Artificial Intelligence</h3>
+        <p>Visitors engaged with AI-generated content and learned how machine learning models are trained, what neural networks actually do, and how AI is already shaping the images, music, and text they encounter every day.</p>
+      </div>
+      <div class="tech-topic topic-blockchain reveal d2">
+        <span class="tech-topic-icon">⛓️</span>
+        <h3>Blockchain &amp; Distributed Trust</h3>
+        <p>Through the visual language of the blockchain installation, visitors grasped the concept of decentralized record-keeping — why it matters, how it works, and what it means for digital ownership, identity, and finance.</p>
+      </div>
+      <div class="tech-topic topic-network reveal d3">
+        <span class="tech-topic-icon">🌐</span>
+        <h3>IT Networking &amp; Infrastructure</h3>
+        <p>The network sculpture made invisible infrastructure visible — helping visitors understand how information travels across the internet, what data packets are, and why the physical and digital infrastructure of connectivity matters.</p>
+      </div>
+      <div class="tech-topic topic-interactive reveal d4">
+        <span class="tech-topic-icon">✨</span>
+        <h3>Interactive Digital Experience Design</h3>
+        <p>Each installation modeled principles of interaction design — feedback loops, real-time responsiveness, generative systems — giving visitors an intuitive foundation for understanding how digital products and experiences are built.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section class="impact" id="impact">
+  <div class="container">
+    <div class="impact-layout">
+      <div class="impact-img reveal">
+        <img src="../content/uploads/2025/08/IMG_6314.jpeg"
+          alt="Art and technology installation detail">
+      </div>
+      <div class="impact-text reveal d2">
+        <div class="label">Why It Matters</div>
+        <h2 class="heading-dark">A New Model for<br>Museum Programming</h2>
+        <div class="rule-gold"></div>
+        <p>
+          Museums have long served as institutions of public learning — but the question
+          of <strong>how to make emerging technology comprehensible and relevant</strong>
+          to general audiences remains one of the most pressing challenges in
+          informal education.
+        </p>
+        <p>
+          The Art &amp; Tech Collaboration at the Museum of Arts and Sciences offers
+          an answer: <strong>use art as the entry point.</strong> Art creates emotional
+          engagement before intellectual understanding. It invites curiosity without
+          prerequisite knowledge. It makes people want to understand how something works.
+        </p>
+        <p>
+          The six artist collaborations didn't just bring new visitors to the museum —
+          they created a <strong>repeatable, scalable programming model</strong> that
+          other institutions can adopt. The methodology is transferable. The impact
+          is measurable. And the precedent is now set.
+        </p>
+        <div class="impact-quote">
+          <p>"The most effective way to teach people about the technologies shaping their world is to let them experience something beautiful made from those technologies — and then ask them how it works."</p>
+          <cite>Mark Walhimer — Museum Planning, LLC</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BACK CTA -->
+<div class="back-cta">
+  <div class="container">
+    <div class="back-cta-inner">
+      <div>
+        <h2>← Part 1: Executive Director</h2>
+        <p>Institutional restructuring, Discovery House planning, org chart, HR systems, and community reconnection.</p>
+      </div>
+      <a href="mas-executive-director.html" class="btn-back">
+        <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        View Part 1
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Museum <em>Planning</em>, LLC &nbsp;·&nbsp; Mark Walhimer</div>
+  <div class="footer-contact">
+    <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>
+    <a href="tel:4157945252">415-794-5252</a>
+    <a href="https://museumplanning.com">museumplanning.com</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+  reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
