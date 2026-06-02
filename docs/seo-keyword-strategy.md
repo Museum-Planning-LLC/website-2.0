@@ -159,10 +159,10 @@ Technical and on-page work completed as of **2026-06-02**. What remains is mostl
 | GSC sitemap resubmit | High | User done |
 | GSC URL Inspection on all Tier 1 URLs | High | Confirm each requested once |
 | Organic rank recovery | Medium | Wait 2–8 weeks post-301; track in GSC |
-| Homepage H1 exact match for “museum planning” | Low | Optional — brand H1 is fine |
-| Services title/H1 “museum planning services” | Low | Optional — consultants cluster is strong |
-| Demote Museum School sitemap priority below 0.85 | Low | Reduces minor cannibalization risk |
-| `for-universities.html` Tier 2 SEO pass | Medium | Page exists; confirm head/schema matches standard |
+| Homepage H1 exact match for “museum planning” | Low | Done — keyword in hero deck; brand H1 retained |
+| Services title/H1 “museum planning services” | Low | Done |
+| Demote Museum School sitemap priority below 0.85 | Low | Done — now `0.55` |
+| `for-universities.html` Tier 2 SEO pass | Medium | Done — OG, schema, Tier 1 links |
 | Off-site backlinks & citations | Ongoing | Directories, speaking, museumplanner.org cross-links |
 | GSC query-driven content (1 article/quarter) | Ongoing | Use Search Console “Queries” tab |
 
