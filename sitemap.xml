@@ -110,9 +110,21 @@
   </url>
   <url>
     <loc>https://museumplanning.com/museum-feasibility-study.html</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.45</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://museumplanning.com/museum-strategic-planning.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://museumplanning.com/museum-master-planning.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://museumplanning.com/projects/academy-studios.html</loc>

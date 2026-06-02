@@ -59,3 +59,37 @@ Then in **Google Search Console**: URL Inspection → Request indexing on the **
 ## If you ever want true HTTP 301 (optional)
 
 Without Cloudflare, the usual option is **Netlify** or **Vercel** with a `_redirects` / `vercel.json` file — same static site, GoDaddy DNS points to them instead of GitHub Pages. Not required if stubs are deployed.
+
+### Cloudflare Bulk Redirects (CSV import)
+
+Generate or refresh the import file:
+
+```bash
+python3 tools/gen_cloudflare_bulk_redirects.py
+```
+
+Files:
+
+- `redirects/cloudflare-bulk-redirects.csv` — **no header row** (Cloudflare requirement)
+- Source map: `redirects/legacy-redirects.json`
+
+**CSV column format:** source = `museumplanning.com/path` (no `https://`); target = full `https://museumplanning.com/...` URL.
+
+**Import in Cloudflare:**
+
+1. **Bulk Redirects** → **Create Bulk Redirect List** → name it e.g. `wordpress-legacy`
+2. **Import** → upload `cloudflare-bulk-redirects.csv`
+3. Review imported rows → **Continue to Redirect Rules**
+4. **Create Bulk Redirect Rule** → attach the list → **Deploy**
+
+**Important:** `@` and `www` DNS records must be **Proxied** (orange cloud) or redirect rules never run.
+
+Verify:
+
+```bash
+curl -sI "https://museumplanning.com/museum-feasibility-studies/" | grep -iE "^HTTP|location|cf-ray"
+```
+
+Expect `301` and `location: …museum-feasibility-study.html`.
+
+**Free plan note:** Cloudflare Free may cap how many bulk redirect items you can import. If import fails, import only the rank-critical rows (feasibility, consultants, master planning, strategic planning, wp-content) from the top of the CSV.
