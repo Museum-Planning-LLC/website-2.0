@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+<title>Museum Exhibition Design Part IV: Installation — Museum Planning LLC</title>
+<meta name="description" content="Museum exhibition installation — load-in, staging, punch list, soft opening, and the 26-step installation checklist.">
+<link rel="canonical" href="https://museumplanning.com/museum-school/museum-exhibition-design/exhibition-design-part-iv.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{--navy:#1b2230;--deep:#131820;--copper:#c8924a;--gold:#dba96a;--parchment:#f5f2ec;--cream:#faf9f6;--ink:#1b2230;--muted:#6b7068;--rule:#dbd8d0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.75;}
+.site-header{background:var(--deep);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;}
+.site-logo{font-family:'Playfair Display',serif;font-size:15px;color:#f5f2ec;text-decoration:none;}
+.site-logo span{color:var(--copper);}
+.site-nav a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;margin-left:28px;}
+.series-bar{background:var(--navy);border-bottom:2px solid var(--copper);}
+.series-bar-inner{max-width:960px;margin:0 auto;padding:0 40px;display:flex;align-items:stretch;overflow-x:auto;scrollbar-width:none;}
+.series-bar-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);padding:14px 20px 14px 0;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;}
+.series-link{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:14px 14px;white-space:nowrap;border-left:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:5px;flex-shrink:0;}
+.series-link:hover{color:var(--gold);}
+.series-link.active{color:var(--copper);border-bottom:2px solid var(--copper);margin-bottom:-2px;}
+.series-link .sn{opacity:.5;}
+.hero{background:var(--navy);padding:56px 40px 48px;}
+.hero-inner{max-width:960px;margin:0 auto;}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--copper);margin-bottom:14px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;line-height:1.1;color:#f5f2ec;max-width:720px;margin-bottom:14px;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.55);max-width:600px;line-height:1.65;}
+.hero-meta{display:flex;gap:40px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap;}
+.hero-meta-item label{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px;}
+.hero-meta-item span{font-size:13px;color:rgba(255,255,255,.7);font-weight:500;}
+.body-wrap{max-width:960px;margin:0 auto;padding:0 40px 80px;}
+.article{padding:48px 0 40px;border-bottom:1px solid var(--rule);}
+.article:last-child{border-bottom:none;}
+.article-header{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;}
+.article-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--copper);letter-spacing:2px;flex-shrink:0;}
+.article-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;color:var(--navy);}
+.lede{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--navy);border-left:3px solid var(--copper);padding:4px 0 4px 22px;margin-bottom:28px;}
+.prose p{font-size:16px;line-height:1.85;margin-bottom:18px;}
+.prose p:last-child{margin-bottom:0;}
+.step-list{display:flex;flex-direction:column;gap:2px;margin:24px 0;}
+.step{display:grid;grid-template-columns:44px 1fr;background:var(--parchment);border:1px solid var(--rule);}
+.step-num{background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--copper);}
+.step-body{padding:18px 22px;}
+.step-body h3{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;}
+.step-body p{font-size:14px;line-height:1.7;color:var(--ink);margin:0;}
+.callout{border:1px solid var(--rule);border-left:3px solid var(--copper);background:var(--parchment);padding:20px 24px;margin:28px 0;}
+.callout-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:8px;}
+.callout p{font-size:14px;line-height:1.7;color:var(--muted);margin:0;}
+.pullquote{background:var(--navy);padding:36px 40px;margin:36px 0;position:relative;}
+.pullquote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:72px;line-height:1;color:var(--copper);opacity:.3;position:absolute;top:12px;left:28px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;line-height:1.6;color:#f5f2ec;padding-left:32px;margin:0;}
+.pullquote cite{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:14px;padding-left:32px;font-style:normal;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.info-card{background:var(--parchment);border:1px solid var(--rule);border-top:3px solid var(--copper);padding:20px;}
+.info-card h3{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:10px;}
+.info-card ul{font-size:14px;line-height:1.7;color:var(--ink);padding-left:18px;margin:0;}
+.info-card li{margin-bottom:4px;}
+.series-nav{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:48px 0 0;border-top:1px solid var(--rule);padding-top:32px;}
+.series-nav-item{padding:20px 24px;background:var(--parchment);border:1px solid var(--rule);text-decoration:none;transition:background .15s;}
+.series-nav-item:hover{background:white;}
+.series-nav-item.prev{text-align:left;}
+.series-nav-item.next{text-align:right;}
+.series-nav-dir{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.series-nav-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--navy);font-weight:600;}
+.series-nav-sub{font-size:12px;color:var(--muted);margin-top:3px;}
+footer{background:var(--deep);padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+footer .f-brand{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);}
+footer .f-brand em{color:var(--copper);font-style:normal;}
+footer a{color:rgba(255,255,255,.4);text-decoration:none;}
+@media(max-width:720px){.two-col{grid-template-columns:1fr;}.hero h1{font-size:34px;}.series-nav{grid-template-columns:1fr;}.body-wrap,.hero,.site-header,footer{padding-left:20px;padding-right:20px;}.series-bar-inner{padding-left:20px;}}
+
+/* museumplanning.com shell */
+:root{--gold:#C9A84C;--deep:#111C27;}
+nav.site-nav{position:fixed;top:0;left:0;right:0;background:var(--deep);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:200;border-bottom:1px solid rgba(201,168,76,.15);}
+nav.site-nav .nav-logo{font-family:'Playfair Display',serif;font-size:15px;color:#fff;text-decoration:none;}
+nav.site-nav .nav-logo span{color:var(--gold);}
+nav.site-nav .nav-links{display:flex;gap:24px;list-style:none;align-items:center;margin:0;padding:0;}
+nav.site-nav .nav-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+nav.site-nav .nav-links a:hover,nav.site-nav .nav-links a.active{color:rgba(255,255,255,.9);}
+nav.site-nav .nav-cta{background:var(--gold)!important;color:var(--deep)!important;padding:8px 16px;}
+nav.site-nav .search-toggle{background:none;border:none;cursor:pointer;padding:4px;}
+nav.site-nav .search-toggle svg{width:18px;height:18px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:2;}
+.hero{padding-top:124px!important;}
+.series-bar{position:sticky;top:60px;z-index:150;}
+.tier3-band{background:#1B2A3B;padding:28px 40px;border-top:3px solid var(--gold);}
+.tier3-inner{max-width:960px;margin:0 auto;}
+.tier3-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.tier3-body{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin:0;}
+.tier3-body a{color:var(--gold);}
+footer .footer-logo{font-family:'Playfair Display',serif;font-size:16px;color:#fff;}
+footer .footer-logo span{color:var(--gold);}
+footer{background:var(--deep);padding:32px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;}
+footer .footer-links{display:flex;gap:24px;list-style:none;margin:0;padding:0;}
+footer .footer-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;}
+footer .footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.privacy-strip{text-align:center;padding:12px;font-size:12px;color:#888;background:#f0ebe0;}
+.privacy-strip a{color:#666;}
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(17,28,39,.97);z-index:300;flex-direction:column;align-items:center;padding-top:120px;}
+.search-overlay.open{display:flex;}
+.search-close{position:absolute;top:24px;right:32px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;}
+.search-input-wrap{display:flex;align-items:center;gap:16px;width:90%;max-width:680px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:12px;}
+.search-input-wrap svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2;}
+#search-input{flex:1;background:none;border:none;outline:none;font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);color:#fff;}
+.search-results{width:90%;max-width:680px;margin-top:24px;}
+.search-result{display:block;padding:16px 20px;text-decoration:none;border-left:3px solid transparent;margin-bottom:4px;background:rgba(255,255,255,.04);}
+.search-result:hover{border-color:var(--gold);}
+.sr-type{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.sr-title{font-family:'Playfair Display',serif;font-size:18px;color:#fff;margin:4px 0;}
+.sr-desc{font-size:13px;color:rgba(255,255,255,.4);}
+.search-empty{color:rgba(255,255,255,.3);font-style:italic;text-align:center;padding:40px;}
+@media(max-width:900px){nav.site-nav .nav-links:not(.open){display:none;}}
+</style>
+<link rel="stylesheet" href="../../assets/nav-mobile.css">
+<link rel="stylesheet" href="../../assets/site-footer.css">
+<script src="../../assets/ga-measurement-id.js"></script>
+<script src="../../assets/analytics.js" defer></script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="site-nav" id="site-nav">
+  <a href="../../index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="../../museum-planning-services.html">Services</a></li>
+    <li><a href="../../for-cities.html">For Cities</a></li>
+    <li><a href="../../for-universities.html">For Universities</a></li>
+    <li><a href="../../museum-planning-projects.html">Projects</a></li>
+    <li><a href="../index.html" class="active">Museum School</a></li>
+    <li><a href="../../for-cities-science-center.html">Science Centers</a></li>
+    <li><a href="../../museum-planning-about.html">About</a></li>
+    <li><a href="../../museum-planning-contact.html">Contact</a></li>
+    <li class="nav-search"><button class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="../../museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+<nav class="series-bar"><div class="series-bar-inner">
+  <span class="series-bar-label">Exhibition Design Series</span>
+  <a class="series-link" href="index.html"><span class="sn">↗</span>Overview</a>
+  <a class="series-link" href="exhibition-design-part-i.html"><span class="sn">I</span>Planning</a>
+  <a class="series-link" href="exhibition-design-part-ii.html"><span class="sn">II</span>Design</a>
+  <a class="series-link" href="exhibition-design-part-iii.html"><span class="sn">III</span>Fabrication</a>
+  <a class="series-link active" href="exhibition-design-part-iv.html"><span class="sn">IV</span>Installation</a>
+  <a class="series-link" href="exhibition-design-part-v.html"><span class="sn">V</span>Maintenance</a>
+  <a class="series-link" href="exhibition-design-part-vi.html"><span class="sn">VI</span>Full Process</a>
+</div></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Part IV of VI &nbsp;·&nbsp; Exhibition Design Series</div>
+    <h1>Exhibition<br><em>Installation</em></h1>
+    <p class="hero-sub">Installation is a stressful time. Most people cannot read drawings, and this is the first moment stakeholders will see the exhibition in physical space. Keep your cool — and delay reacting to comments until the exhibition is 80% installed.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><label>Phase</label><span>Installation</span></div>
+      <div class="hero-meta-item"><label>Key Outputs</label><span>Installed exhibition, punch list, soft opening</span></div>
+      <div class="hero-meta-item"><label>Prerequisite</label><span>Completed, shipped, pre-ship-reviewed fabrication</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">01 ·</span><span class="article-title">The Nature of Installation</span></div>
+    <div class="lede">As soon as the first crate rolls into the building, people will be excited and the comments will start: "I thought it would be red." "I thought it would be bigger." Keep your cool and delay reactions to comments until the exhibition is 80% installed.</div>
+    <div class="prose">
+      <p>Installation is the phase where every decision made in the previous three phases converges in a single physical space under a fixed deadline. It is also the phase where the gap between drawing and reality is most visible — and most anxiety-inducing for everyone involved.</p>
+      <p>The best installation teams have two qualities in common: they follow a documented sequence, and they know how to manage stakeholder expectations in real time. Both qualities are equally important. A technically flawless installation derailed by stakeholder panic is still a failed installation.</p>
+      <p>Having been part of more than forty museum exhibition installations — in Mexico, the United States, Canada, Indonesia, and Hong Kong — the patterns of what goes wrong, and how to prevent it, are consistent across cultures and museum types.</p>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">02 ·</span><span class="article-title">Load In and Staging</span></div>
+    <div class="prose">
+      <p>Load in is a logistics operation. Work with the fabricator to detail which exhibits will be brought to the site first, in what sequence they will be loaded into the building, and where they will be staged before installation. A poorly planned load in sequence wastes days — exhibits installed first can block access to spaces where earlier-sequence items need to be placed.</p>
+    </div>
+    <div class="step-list">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Develop the Load In Plan</h3><p>Map the sequence of crate delivery against the installation floor plan. Large structural elements — walls, platforms, overhead structures — come first. Casework comes next. Interactives, AV equipment, and graphics come last. The sequence should minimize the distance any component must travel through the space after delivery.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Protect the Space</h3><p>Before the first crate enters the building, protect all finished floors, walls, and door frames. Rented floor protection, corner guards, and door frame covers are inexpensive compared to the cost of repairing damage to a finished museum space during installation.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Stage Components Logically</h3><p>Staging is temporary storage within the installation space. Stage components as close as possible to their final installation position, without blocking access paths for subsequent deliveries. Label every crate on arrival using the crate-to-exhibit map created during fabrication.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Verify Quantities on Arrival</h3><p>As each crate arrives, verify its contents against the packing list. Note any damage immediately, in writing and with photographs, before accepting delivery. Claims for shipping damage must be documented at the time of receipt — not discovered three days later during installation.</p></div></div>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">03 ·</span><span class="article-title">Installation Sequence</span></div>
+    <div class="prose">
+      <p>Installation follows a strict sequence dictated by construction logic: structure before skin, substrate before finish, rough-in before close-up. This sequence is the same whether the project is a residential renovation or a 15,000 square foot museum exhibition — the logic of what must exist before the next thing can be attached governs everything.</p>
+    </div>
+    <div class="step-list">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Structural Elements</h3><p>Platforms, raised floors, partition walls, overhead structures, and anchor points are installed first. These elements define the geometry of the space and must be precisely positioned — minor errors in structural placement compound through every subsequent layer.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Rough Mechanical, Electrical, and Data</h3><p>All conduit, junction boxes, data conduit, and rough electrical work is completed before casework is installed. Access to walls and floors is impossible after casework is in place. Coordinate with the museum's electrical contractor to sequence rough-in work with the arrival of exhibit components.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Casework and Major Exhibits</h3><p>Large casework, display cases, and major exhibit components are positioned, leveled, and secured. Check all dimensions against the working drawings. Verify clearances for ADA compliance and for the operational and maintenance access specified in the design.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h3>AV, Interactives, and Technology</h3><p>AV equipment is racked and connected. Interactive components are installed and software loaded. All technology is tested against the pre-ship review benchmarks — it should perform identically to how it performed at the fabricator's facility.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-body"><h3>Graphics and Finishing</h3><p>Graphics and painted finishes are the last elements installed, to protect them from construction traffic. Graphic panels are positioned and aligned. Touch-up paint is applied. The exhibition is cleaned from ceiling to floor.</p></div></div>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">04 ·</span><span class="article-title">Managing Stakeholders During Installation</span></div>
+    <div class="prose">
+      <p>Stakeholder management during installation is a distinct skill from the technical work of installing exhibits. Directors, board members, donors, and curators will want to see the exhibition before it is complete. Almost all of them will have comments. Almost none of them will be able to visualize the finished state from a partially assembled gallery.</p>
+      <p>The standard advice — true across every project — is to delay substantive responses to comments until the exhibition is at least 80% installed. A half-installed exhibition looks wrong. Colors appear different without their neighboring finishes. Proportions appear off without their surrounding context. Responding to premature feedback with design changes creates expensive disruption for problems that often resolve themselves as installation progresses.</p>
+    </div>
+    <div class="two-col">
+      <div class="info-card">
+        <h3>Productive Stakeholder Involvement</h3>
+        <ul>
+          <li>Scheduled walk-throughs at 50% and 80% completion</li>
+          <li>Formal comment sheet distributed at each walk-through</li>
+          <li>Written responses to all comments within 24 hours</li>
+          <li>Clear distinction between punch list items and scope changes</li>
+          <li>Director or project manager as single point of contact</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Common Stakeholder Comments</h3>
+        <ul>
+          <li>"I thought it would be bigger / smaller"</li>
+          <li>"I thought it would be a different color"</li>
+          <li>"Can we move this to a different location?"</li>
+          <li>"The text is too small / too large"</li>
+          <li>"This doesn't match what I saw in the drawings"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-label">On Color Comments</div>
+      <p>Color is the most common source of installation surprises. Colors approved on a screen, on a printed sample, or in a fabricator's facility look different under museum lighting, next to adjacent finishes, and at full scale. The best prevention is a full-size mock-up of one exhibit zone, reviewed under the actual installation lighting, before fabrication begins.</p>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">05 ·</span><span class="article-title">Punch List and Soft Opening</span></div>
+    <div class="prose">
+      <p>The punch list is a formal document listing every incomplete or deficient item in the installed exhibition, with an assigned responsible party and a completion deadline. A thorough punch list review — conducted by the designer, the museum project manager, and the fabricator together — produces a shared understanding of what remains to be done before opening.</p>
+      <p>The soft opening, typically one to two weeks before the public opening, is when the exhibition is experienced by invited guests — staff, board members, community partners — under operating conditions. The soft opening identifies operational problems that do not surface during installation: visitor flow congestion, interactive failures under load, inadequate wayfinding, and content gaps that become obvious only when visitors engage freely with the space.</p>
+      <p>Everything observed during the soft opening is documented, prioritized, and addressed before the public opening. The soft opening is not optional — it is the final quality assurance step in the exhibition process.</p>
+    </div>
+
+    <div class="pullquote">
+      <p>A successful opening is planned, not improvised. The soft opening closes the loop between design intent and visitor reality — and it is the last opportunity to correct problems before they become permanent.</p>
+      <cite>Mark Walhimer · Museum Planning LLC</cite>
+    </div>
+
+    <div class="series-nav">
+      <a class="series-nav-item prev" href="exhibition-design-part-iii.html">
+        <div class="series-nav-dir">← Part III</div>
+        <div class="series-nav-title">Fabrication</div>
+        <div class="series-nav-sub">Working drawings, fabricator, build oversight</div>
+      </a>
+      <a class="series-nav-item next" href="exhibition-design-part-v.html">
+        <div class="series-nav-dir">Next →</div>
+        <div class="series-nav-title">Part V: Maintenance</div>
+        <div class="series-nav-sub">Manuals, training, updates, evaluation</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="tier3-band">
+  <div class="tier3-inner">
+    <div class="tier3-label">Commercial guide</div>
+    <p class="tier3-body">This series is educational reference. For exhibition design engagements — process, deliverables, and typical fees — see <a href="../../museum-planning-services.html">museum planning services</a> and <a href="../../immersive-museum-planning.html">immersive museum planning</a>.</p>
+  </div>
+</div>
+
+<p class="privacy-strip"><a href="../../museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Museum School</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="../../museum-planning-contact.html">Contact</a></li>
+    <li><a href="../../museum-planning-privacy.html">Privacy</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" id="searchClose">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<script>
+const PAGES = [
+  { type: "Museum School", title: "Museum Exhibition Design — Overview", desc: "Six-part series from planning through maintenance.", url: "index.html" },
+  { type: "Museum School", title: "Exhibition Design Part I — Planning", desc: "Visitor objectives, charter, budget, schedule.", url: "exhibition-design-part-i.html" },
+  { type: "Museum School", title: "Exhibition Design Part II — Design", desc: "Script, schematic, design development, final design.", url: "exhibition-design-part-ii.html" },
+  { type: "Museum School", title: "Exhibition Design Part III — Fabrication", desc: "Working drawings, fabricator, quality control.", url: "exhibition-design-part-iii.html" },
+  { type: "Museum School", title: "Exhibition Design Part IV — Installation", desc: "Load-in, staging, punch list, opening.", url: "exhibition-design-part-iv.html" },
+  { type: "Museum School", title: "Exhibition Design Part V — Maintenance", desc: "Operational exhibits, staff training, evaluation.", url: "exhibition-design-part-v.html" },
+  { type: "Museum School", title: "Exhibition Design Part VI — Full Process", desc: "Complete process summary and checklist.", url: "exhibition-design-part-vi.html" },
+  { type: "Services", title: "Museum Planning Services", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "../../museum-planning-services.html" },
+  { type: "Guide", title: "Immersive Museum Planning", desc: "Interactive and immersive exhibition design.", url: "../../immersive-museum-planning.html" },
+  { type: "Museum School", title: "How to Start a Museum", desc: "Ten steps to starting a museum.", url: "../how-to-start-a-museum.html" },
+];
+const input = document.getElementById('search-input');
+const results = document.getElementById('searchResults');
+const overlay = document.getElementById('searchOverlay');
+document.getElementById('searchToggle').addEventListener('click', () => {
+  overlay.classList.add('open');
+  setTimeout(() => input.focus(), 100);
+});
+document.getElementById('searchClose').addEventListener('click', () => {
+  overlay.classList.remove('open');
+  input.value = '';
+  results.innerHTML = '';
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { overlay.classList.remove('open'); input.value = ''; results.innerHTML = ''; }
+});
+input.addEventListener('input', () => {
+  const q = input.value.toLowerCase().trim();
+  if (!q) { results.innerHTML = ''; return; }
+  const matches = PAGES.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+  results.innerHTML = matches.length ? matches.map(p => `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('') : '<div class="search-empty">No results found.</div>';
+});
+</script>
+<script src="../../assets/nav-mobile.js" defer></script>
+</body>
+</html>

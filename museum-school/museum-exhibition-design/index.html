@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+<title>Museum Exhibition Design Guide — Museum Planning LLC</title>
+<meta name="description" content="Museum exhibition design from planning through maintenance — a six-part reference series by Mark Walhimer, Museum Planning LLC.">
+<link rel="canonical" href="https://museumplanning.com/museum-school/museum-exhibition-design/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{--navy:#1b2230;--deep:#131820;--mid:#2c3a4f;--copper:#c8924a;--gold:#dba96a;--parchment:#f5f2ec;--cream:#faf9f6;--ink:#1b2230;--muted:#6b7068;--rule:#dbd8d0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.75;}
+.site-header{background:var(--deep);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;}
+.site-logo{font-family:'Playfair Display',serif;font-size:15px;color:var(--parchment);text-decoration:none;}
+.site-logo span{color:var(--copper);}
+.site-nav a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;margin-left:28px;}
+.site-nav a:hover{color:var(--copper);}
+.series-bar{background:var(--navy);border-bottom:2px solid var(--copper);}
+.series-bar-inner{max-width:960px;margin:0 auto;padding:0 40px;display:flex;align-items:stretch;overflow-x:auto;scrollbar-width:none;}
+.series-bar-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);padding:14px 20px 14px 0;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;}
+.series-link{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:14px 14px;white-space:nowrap;border-left:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.series-link:hover{color:var(--gold);}
+.series-link.active{color:var(--copper);border-bottom:2px solid var(--copper);margin-bottom:-2px;}
+.series-link .sn{opacity:.5;}
+.hero{background:var(--navy);padding:64px 40px 56px;}
+.hero-inner{max-width:960px;margin:0 auto;}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--copper);margin-bottom:14px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;line-height:1.08;color:var(--parchment);max-width:760px;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.55);max-width:560px;line-height:1.65;}
+.hero-meta{display:flex;gap:40px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap;}
+.hero-meta-item label{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px;}
+.hero-meta-item span{font-size:13px;color:rgba(255,255,255,.7);font-weight:500;}
+.body-wrap{max-width:960px;margin:0 auto;padding:0 40px 80px;}
+.article{padding:48px 0 40px;border-bottom:1px solid var(--rule);}
+.article:last-child{border-bottom:none;}
+.article-header{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;}
+.article-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--copper);letter-spacing:2px;flex-shrink:0;}
+.article-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;color:var(--navy);}
+.prose p{font-size:16px;line-height:1.85;color:var(--ink);margin-bottom:18px;}
+.prose p:last-child{margin-bottom:0;}
+.lede{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--navy);border-left:3px solid var(--copper);padding:4px 0 4px 22px;margin-bottom:28px;}
+.hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:28px 0;}
+.hub-card{background:var(--parchment);border:1px solid var(--rule);text-decoration:none;padding:24px 22px;display:block;transition:background .15s;}
+.hub-card:hover{background:white;}
+.hub-card-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--copper);margin-bottom:10px;}
+.hub-card-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.3;}
+.hub-card-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+.phase-table{width:100%;border-collapse:collapse;margin:24px 0;}
+.phase-table th{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:10px 14px;text-align:left;background:var(--navy);color:rgba(255,255,255,.6);}
+.phase-table td{padding:14px;border-bottom:1px solid var(--rule);font-size:14px;line-height:1.6;}
+.phase-table tr:nth-child(odd) td{background:var(--parchment);}
+.phase-table td:first-child{font-family:'DM Mono',monospace;font-size:11px;color:var(--copper);font-weight:500;white-space:nowrap;}
+.callout{border:1px solid var(--rule);border-left:3px solid var(--copper);background:var(--parchment);padding:20px 24px;margin:28px 0;}
+.callout-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:8px;}
+.callout p{font-size:14px;line-height:1.7;color:var(--muted);margin:0;}
+footer{background:var(--deep);padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+footer .f-brand{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);}
+footer .f-brand em{color:var(--copper);font-style:normal;}
+footer .f-links{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.3);}
+footer a{color:rgba(255,255,255,.4);text-decoration:none;}
+@media(max-width:720px){.hub-grid{grid-template-columns:1fr;}.hero h1{font-size:36px;}.body-wrap,.hero,.site-header,footer{padding-left:20px;padding-right:20px;}.series-bar-inner{padding-left:20px;}}
+
+/* museumplanning.com shell */
+:root{--gold:#C9A84C;--deep:#111C27;}
+nav.site-nav{position:fixed;top:0;left:0;right:0;background:var(--deep);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:200;border-bottom:1px solid rgba(201,168,76,.15);}
+nav.site-nav .nav-logo{font-family:'Playfair Display',serif;font-size:15px;color:#fff;text-decoration:none;}
+nav.site-nav .nav-logo span{color:var(--gold);}
+nav.site-nav .nav-links{display:flex;gap:24px;list-style:none;align-items:center;margin:0;padding:0;}
+nav.site-nav .nav-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+nav.site-nav .nav-links a:hover,nav.site-nav .nav-links a.active{color:rgba(255,255,255,.9);}
+nav.site-nav .nav-cta{background:var(--gold)!important;color:var(--deep)!important;padding:8px 16px;}
+nav.site-nav .search-toggle{background:none;border:none;cursor:pointer;padding:4px;}
+nav.site-nav .search-toggle svg{width:18px;height:18px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:2;}
+.hero{padding-top:124px!important;}
+.series-bar{position:sticky;top:60px;z-index:150;}
+.tier3-band{background:#1B2A3B;padding:28px 40px;border-top:3px solid var(--gold);}
+.tier3-inner{max-width:960px;margin:0 auto;}
+.tier3-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.tier3-body{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin:0;}
+.tier3-body a{color:var(--gold);}
+footer .footer-logo{font-family:'Playfair Display',serif;font-size:16px;color:#fff;}
+footer .footer-logo span{color:var(--gold);}
+footer{background:var(--deep);padding:32px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;}
+footer .footer-links{display:flex;gap:24px;list-style:none;margin:0;padding:0;}
+footer .footer-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;}
+footer .footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.privacy-strip{text-align:center;padding:12px;font-size:12px;color:#888;background:#f0ebe0;}
+.privacy-strip a{color:#666;}
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(17,28,39,.97);z-index:300;flex-direction:column;align-items:center;padding-top:120px;}
+.search-overlay.open{display:flex;}
+.search-close{position:absolute;top:24px;right:32px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;}
+.search-input-wrap{display:flex;align-items:center;gap:16px;width:90%;max-width:680px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:12px;}
+.search-input-wrap svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2;}
+#search-input{flex:1;background:none;border:none;outline:none;font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);color:#fff;}
+.search-results{width:90%;max-width:680px;margin-top:24px;}
+.search-result{display:block;padding:16px 20px;text-decoration:none;border-left:3px solid transparent;margin-bottom:4px;background:rgba(255,255,255,.04);}
+.search-result:hover{border-color:var(--gold);}
+.sr-type{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.sr-title{font-family:'Playfair Display',serif;font-size:18px;color:#fff;margin:4px 0;}
+.sr-desc{font-size:13px;color:rgba(255,255,255,.4);}
+.search-empty{color:rgba(255,255,255,.3);font-style:italic;text-align:center;padding:40px;}
+@media(max-width:900px){nav.site-nav .nav-links:not(.open){display:none;}}
+</style>
+<link rel="stylesheet" href="../../assets/nav-mobile.css">
+<link rel="stylesheet" href="../../assets/site-footer.css">
+<script src="../../assets/ga-measurement-id.js"></script>
+<script src="../../assets/analytics.js" defer></script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="site-nav" id="site-nav">
+  <a href="../../index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="../../museum-planning-services.html">Services</a></li>
+    <li><a href="../../for-cities.html">For Cities</a></li>
+    <li><a href="../../for-universities.html">For Universities</a></li>
+    <li><a href="../../museum-planning-projects.html">Projects</a></li>
+    <li><a href="../index.html" class="active">Museum School</a></li>
+    <li><a href="../../for-cities-science-center.html">Science Centers</a></li>
+    <li><a href="../../museum-planning-about.html">About</a></li>
+    <li><a href="../../museum-planning-contact.html">Contact</a></li>
+    <li class="nav-search"><button class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="../../museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+<nav class="series-bar">
+  <div class="series-bar-inner">
+    <span class="series-bar-label">Exhibition Design Series</span>
+    <a class="series-link active" href="index.html"><span class="sn">↗</span>Overview</a>
+    <a class="series-link" href="exhibition-design-part-i.html"><span class="sn">I</span>Planning</a>
+    <a class="series-link" href="exhibition-design-part-ii.html"><span class="sn">II</span>Design</a>
+    <a class="series-link" href="exhibition-design-part-iii.html"><span class="sn">III</span>Fabrication</a>
+    <a class="series-link" href="exhibition-design-part-iv.html"><span class="sn">IV</span>Installation</a>
+    <a class="series-link" href="exhibition-design-part-v.html"><span class="sn">V</span>Maintenance</a>
+    <a class="series-link" href="exhibition-design-part-vi.html"><span class="sn">VI</span>Full Process</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">A Six-Part Series</div>
+    <h1>Museum Exhibition<br>Design: <em>A Complete Guide</em></h1>
+    <p class="hero-sub">From the first meeting with a client through opening day and beyond — the full arc of how museum exhibitions are planned, designed, built, installed, and maintained.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><label>Author</label><span>Mark Walhimer, Museum Planning LLC</span></div>
+      <div class="hero-meta-item"><label>Coverage</label><span>All museum types</span></div>
+      <div class="hero-meta-item"><label>Parts</label><span>Six + this overview</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="article">
+    <div class="article-header">
+      <span class="article-num">01 ·</span>
+      <span class="article-title">What Is Museum Exhibition Design?</span>
+    </div>
+    <div class="lede">Anyone who thinks exhibition design is the creation of drawings has only one quarter of the picture. The process begins before a single line is drawn and continues through opening day — and well beyond.</div>
+    <div class="prose">
+      <p>Museum exhibition design is the discipline of planning, designing, fabricating, installing, and maintaining the physical and experiential environment inside a museum gallery. It sits at the intersection of architecture, graphic design, industrial design, content development, and project management.</p>
+      <p>The process is fundamentally the same whether the institution is an art museum, a natural history museum, a children's museum, or a science center. What differs is the content — the artifacts, the stories, the interactive modalities — but the underlying workflow from concept through installation follows consistent phases.</p>
+      <p>This series documents that workflow in six parts. Each part corresponds to a distinct phase of the process, with the steps that experienced exhibition designers follow at each stage. The series draws on more than forty museum exhibition projects across the United States, Mexico, Indonesia, and Hong Kong.</p>
+    </div>
+    <div class="callout">
+      <div class="callout-label">A Note on Scale</div>
+      <p>The process described here applies from a 500 square foot gallery refresh to a $20M permanent exhibition. The effort varies enormously — schematic design alone can range from 40 hours to 320 hours depending on project scale — but the steps themselves remain consistent.</p>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header">
+      <span class="article-num">02 ·</span>
+      <span class="article-title">The Six Phases at a Glance</span>
+    </div>
+    <div class="prose">
+      <p>The exhibition design process can be organized into six sequential phases. In practice, phases overlap and iterate — design informs fabrication decisions that loop back into design — but understanding them as distinct stages clarifies responsibilities, deliverables, and decision points.</p>
+    </div>
+
+    <table class="phase-table">
+      <thead>
+        <tr><th>Phase</th><th>Core Question</th><th>Key Deliverables</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>I · Planning</td><td>Who is the visitor and what do we want them to experience?</td><td>Project charter, objectives, budget, schedule, visitor profile</td></tr>
+        <tr><td>II · Design</td><td>How do we tell the story in space?</td><td>Exhibition script, schematic drawings, style boards, design development documents</td></tr>
+        <tr><td>III · Fabrication</td><td>How do we build what we designed?</td><td>Working drawings, fabricator selection, fabrication oversight, quality control</td></tr>
+        <tr><td>IV · Installation</td><td>How do we assemble it correctly in the space?</td><td>Installation sequence, punch list, stakeholder walk-through, soft opening</td></tr>
+        <tr><td>V · Maintenance</td><td>How do we keep it working and relevant?</td><td>Maintenance manual, staff training, content update plan, evaluation</td></tr>
+        <tr><td>VI · Full Process</td><td>How do all six phases connect?</td><td>Process summary, checklist, resources for museum teams</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="article">
+    <div class="article-header">
+      <span class="article-num">03 ·</span>
+      <span class="article-title">Start Reading the Series</span>
+    </div>
+    <div class="prose"><p>Each part below is a standalone reference for that phase of the process. Read sequentially for the full arc, or jump to the phase most relevant to where your project stands right now.</p></div>
+
+    <div class="hub-grid">
+      <a class="hub-card" href="exhibition-design-part-i.html">
+        <div class="hub-card-num">Part I</div>
+        <div class="hub-card-title">Planning</div>
+        <div class="hub-card-desc">Understanding the visitor, establishing objectives, writing the project charter, and setting budget and schedule before anyone draws anything.</div>
+      </a>
+      <a class="hub-card" href="exhibition-design-part-ii.html">
+        <div class="hub-card-num">Part II</div>
+        <div class="hub-card-title">Design</div>
+        <div class="hub-card-desc">Writing the exhibition script, chunking the content into spatial zones, creating concept and schematic documents, and moving through design development.</div>
+      </a>
+      <a class="hub-card" href="exhibition-design-part-iii.html">
+        <div class="hub-card-num">Part III</div>
+        <div class="hub-card-title">Fabrication</div>
+        <div class="hub-card-desc">Translating drawings into physical exhibits: selecting a fabricator, creating working drawings, managing fabrication, and shipping to site.</div>
+      </a>
+      <a class="hub-card" href="exhibition-design-part-iv.html">
+        <div class="hub-card-num">Part IV</div>
+        <div class="hub-card-title">Installation</div>
+        <div class="hub-card-desc">Loading in, staging, and assembling the exhibition — managing stakeholder reactions before the work is 80% complete.</div>
+      </a>
+      <a class="hub-card" href="exhibition-design-part-v.html">
+        <div class="hub-card-num">Part V</div>
+        <div class="hub-card-title">Maintenance</div>
+        <div class="hub-card-desc">Building in sustainability: maintenance manuals, staff training, content update cycles, and visitor evaluation.</div>
+      </a>
+      <a class="hub-card" href="exhibition-design-part-vi.html">
+        <div class="hub-card-num">Part VI</div>
+        <div class="hub-card-title">The Complete Process</div>
+        <div class="hub-card-desc">The full arc from first meeting to long-term operation. An executive summary and master checklist for museum teams.</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="tier3-band">
+  <div class="tier3-inner">
+    <div class="tier3-label">Commercial guide</div>
+    <p class="tier3-body">This series is educational reference. For exhibition design engagements — process, deliverables, and typical fees — see <a href="../../museum-planning-services.html">museum planning services</a> and <a href="../../immersive-museum-planning.html">immersive museum planning</a>.</p>
+  </div>
+</div>
+
+<p class="privacy-strip"><a href="../../museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Museum School</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="../../museum-planning-contact.html">Contact</a></li>
+    <li><a href="../../museum-planning-privacy.html">Privacy</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" id="searchClose">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<script>
+const PAGES = [
+  { type: "Museum School", title: "Museum Exhibition Design — Overview", desc: "Six-part series from planning through maintenance.", url: "index.html" },
+  { type: "Museum School", title: "Exhibition Design Part I — Planning", desc: "Visitor objectives, charter, budget, schedule.", url: "exhibition-design-part-i.html" },
+  { type: "Museum School", title: "Exhibition Design Part II — Design", desc: "Script, schematic, design development, final design.", url: "exhibition-design-part-ii.html" },
+  { type: "Museum School", title: "Exhibition Design Part III — Fabrication", desc: "Working drawings, fabricator, quality control.", url: "exhibition-design-part-iii.html" },
+  { type: "Museum School", title: "Exhibition Design Part IV — Installation", desc: "Load-in, staging, punch list, opening.", url: "exhibition-design-part-iv.html" },
+  { type: "Museum School", title: "Exhibition Design Part V — Maintenance", desc: "Operational exhibits, staff training, evaluation.", url: "exhibition-design-part-v.html" },
+  { type: "Museum School", title: "Exhibition Design Part VI — Full Process", desc: "Complete process summary and checklist.", url: "exhibition-design-part-vi.html" },
+  { type: "Services", title: "Museum Planning Services", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "../../museum-planning-services.html" },
+  { type: "Guide", title: "Immersive Museum Planning", desc: "Interactive and immersive exhibition design.", url: "../../immersive-museum-planning.html" },
+  { type: "Museum School", title: "How to Start a Museum", desc: "Ten steps to starting a museum.", url: "../how-to-start-a-museum.html" },
+];
+const input = document.getElementById('search-input');
+const results = document.getElementById('searchResults');
+const overlay = document.getElementById('searchOverlay');
+document.getElementById('searchToggle').addEventListener('click', () => {
+  overlay.classList.add('open');
+  setTimeout(() => input.focus(), 100);
+});
+document.getElementById('searchClose').addEventListener('click', () => {
+  overlay.classList.remove('open');
+  input.value = '';
+  results.innerHTML = '';
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { overlay.classList.remove('open'); input.value = ''; results.innerHTML = ''; }
+});
+input.addEventListener('input', () => {
+  const q = input.value.toLowerCase().trim();
+  if (!q) { results.innerHTML = ''; return; }
+  const matches = PAGES.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+  results.innerHTML = matches.length ? matches.map(p => `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('') : '<div class="search-empty">No results found.</div>';
+});
+</script>
+<script src="../../assets/nav-mobile.js" defer></script>
+</body>
+</html>

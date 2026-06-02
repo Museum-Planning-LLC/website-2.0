@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Museum Planner — Museum Planning Consultants · Museum Planning LLC</title>
+<meta name="description" content="Museum planning consultant for feasibility studies, master planning, and strategic planning. Mark Walhimer, Managing Partner — 40+ museums, practice founded 1999. Engagements begin at $40,000.">
+<link rel="canonical" href="https://museumplanning.com/museum-planner/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://museumplanning.com/museum-planner/">
+<meta property="og:title" content="Museum Planner — Museum Planning Consultants · Museum Planning LLC">
+<meta property="og:description" content="Museum planning consultant for feasibility studies, master planning, and strategic planning. Mark Walhimer — 40+ museums, founded 1999.">
+<meta property="og:image" content="https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Museum Planning LLC","url":"https://museumplanning.com/","description":"Museum planning consultants for feasibility studies, master planning, and strategic planning.","email":"mark@museumplanning.com","telephone":"+1-415-794-5252","foundingDate":"1999","areaServed":{"@type":"Place","name":"Worldwide"},"priceRange":"$40,000–$200,000+","founder":{"@type":"Person","name":"Mark Walhimer","jobTitle":"Museum Planning Consultant"}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+/* ── TOKENS (Style Guide v1.0) ── */
+:root{
+  --cream:  #F8F4EC;
+  --warm:   #EDE8DC;
+  --white:  #ffffff;
+  --pale:   #F2EDE3;
+  --rule:   #D4C8B0;
+  --navy:   #1B2A3B;
+  --deep:   #14202E;
+  --ink:    #1A1A1A;
+  --mid:    #5A5248;
+  --muted:  #96907F;
+  --gold:   #C9A84C;
+  --gold-lt:#E8D099;
+  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+  --mono:   'DM Mono', monospace;
+}
+
+body{
+  font-family:var(--sans);
+  background:var(--cream);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lineGrow{from{width:0}to{width:40px}}
+
+/* ── NAV — minimal landing page nav ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(248,244,236,.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;
+  border-bottom:1px solid var(--rule);
+}
+.nav-logo{
+  font-family:var(--serif);
+  font-size:15px;font-weight:600;
+  color:var(--navy);text-decoration:none;
+}
+.nav-logo span{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:32px}
+.nav-tel{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:1.5px;
+  color:var(--muted);text-decoration:none;
+  transition:color .2s;
+}
+.nav-tel:hover{color:var(--navy)}
+.nav-cta{
+  background:var(--gold);color:var(--deep);
+  padding:9px 20px;
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;transition:background .2s;
+}
+.nav-cta:hover{background:var(--gold-lt)}
+.nav-site{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+  border-bottom:1px solid var(--rule);padding-bottom:1px;
+  transition:color .2s,border-color .2s;
+}
+.nav-site:hover{color:var(--navy);border-color:var(--navy)}
+
+/* ── HERO ── */
+.hero{
+  background:var(--cream);
+  padding:88px 56px 72px;
+  border-bottom:1px solid var(--rule);
+}
+.hero-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1.1fr 1fr;
+  gap:80px;align-items:center;
+}
+.hero-left{animation:fadeUp .65s .1s both}
+.eyebrow{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:24px;
+  display:flex;align-items:center;gap:14px;
+}
+.eyebrow::before{
+  content:'';display:block;
+  width:40px;height:1px;background:var(--gold);
+  animation:lineGrow .6s .5s both;
+}
+h1{
+  font-family:var(--serif);
+  font-size:clamp(40px,5vw,68px);
+  font-weight:900;line-height:1.04;
+  color:var(--navy);margin-bottom:28px;
+  letter-spacing:-1.5px;
+}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-deck{
+  font-family:var(--serif);font-style:italic;
+  font-size:19px;color:var(--mid);
+  max-width:500px;line-height:1.65;
+  margin-bottom:44px;
+}
+.cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{
+  background:var(--gold);color:var(--deep);
+  padding:14px 36px;
+  font-family:var(--mono);font-size:10.5px;
+  letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;
+  transition:background .2s,transform .15s;
+  display:inline-block;
+}
+.btn-primary:hover{background:var(--gold-lt);transform:translateY(-1px)}
+.btn-ghost{
+  font-family:var(--mono);font-size:10.5px;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--mid);text-decoration:none;
+  border-bottom:1px solid var(--rule);padding-bottom:2px;
+  transition:color .2s,border-color .2s;
+}
+.btn-ghost:hover{color:var(--navy);border-color:var(--navy)}
+.hero-note{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:1.5px;color:var(--muted);
+  margin-top:20px;
+}
+
+/* Hero right — credential stack */
+.hero-right{animation:fadeUp .65s .3s both}
+.cred-stack{display:flex;flex-direction:column;gap:2px}
+.cred-item{
+  background:var(--white);
+  border:1px solid var(--rule);border-left:3px solid var(--rule);
+  padding:24px 28px;
+  display:flex;align-items:flex-start;gap:20px;
+  transition:border-left-color .2s;
+}
+.cred-item:hover{border-left-color:var(--gold)}
+.cred-num{
+  font-family:var(--serif);font-size:40px;
+  font-weight:700;color:var(--gold);
+  line-height:1;flex-shrink:0;width:80px;
+}
+.cred-text strong{
+  display:block;font-family:var(--serif);
+  font-size:15px;color:var(--navy);
+  font-weight:600;margin-bottom:3px;
+}
+.cred-text span{
+  font-family:var(--mono);font-size:11px;
+  letter-spacing:.5px;color:var(--muted);
+}
+
+/* ── CLIENTS STRIP ── */
+.clients{
+  background:var(--warm);
+  padding:40px 56px;
+  border-bottom:1px solid var(--rule);
+}
+.clients-inner{max-width:1000px;margin:0 auto;text-align:center}
+.clients-label{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:18px;
+}
+.clients-list{
+  display:flex;flex-wrap:wrap;
+  justify-content:center;gap:8px 20px;
+  margin-bottom:20px;
+}
+.clients-list span{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--navy);
+  border-bottom:1px solid rgba(201,168,76,.35);
+  padding-bottom:2px;
+}
+.clients-range{
+  font-family:var(--serif);font-style:italic;
+  font-size:16px;color:var(--mid);
+  max-width:640px;margin:0 auto;line-height:1.55;
+}
+.clients-range strong{font-style:normal;color:var(--navy)}
+
+/* ── SERVICES ── */
+.services{
+  background:var(--cream);
+  padding:96px 56px;
+}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+  display:flex;align-items:center;gap:14px;
+}
+.section-label::before{content:'';display:block;width:32px;height:1px;background:var(--gold)}
+h2{
+  font-family:var(--serif);
+  font-size:clamp(30px,3.2vw,44px);
+  font-weight:700;line-height:1.12;
+  color:var(--navy);margin-bottom:20px;letter-spacing:-.5px;
+}
+h2 em{font-style:italic;color:var(--gold)}
+.section-sub{
+  font-family:var(--serif);font-style:italic;
+  font-size:19px;color:var(--mid);
+  max-width:600px;margin-bottom:56px;line-height:1.6;
+}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;
+}
+.svc-card{
+  background:var(--white);
+  padding:40px 36px;
+  border-top:3px solid transparent;
+  transition:border-color .2s,transform .2s;
+  position:relative;
+}
+.svc-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.svc-num{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:2px;color:var(--gold);margin-bottom:16px;
+}
+.svc-title{
+  font-family:var(--serif);font-size:21px;
+  font-weight:700;color:var(--navy);
+  margin-bottom:12px;line-height:1.2;
+}
+.svc-body{font-size:14px;line-height:1.75;color:var(--mid);margin-bottom:24px}
+.svc-fee{
+  font-family:var(--mono);font-size:11px;
+  letter-spacing:1.5px;
+  color:var(--navy);
+  border-top:1px solid var(--rule);
+  padding-top:16px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.svc-fee-num{
+  font-family:var(--serif);font-size:20px;
+  font-weight:700;color:var(--gold);
+}
+
+/* ── THESIS ── */
+.thesis{
+  background:var(--deep);
+  padding:80px 56px;
+  border-top:3px solid var(--gold);
+}
+.thesis-inner{max-width:860px;margin:0 auto;text-align:center}
+.thesis-quote{
+  font-family:var(--serif);
+  font-size:clamp(22px,3vw,34px);
+  font-style:italic;color:rgba(255,255,255,.92);
+  line-height:1.45;margin-bottom:32px;
+}
+.thesis-quote em{color:var(--gold);font-style:normal}
+.thesis-attr{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.28);
+}
+
+/* ── PROCESS ── */
+.process{background:var(--warm);padding:96px 56px}
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:2px;margin-top:0;
+}
+.process-step{
+  background:var(--white);
+  padding:36px 30px;
+  position:relative;
+}
+.step-num{
+  font-family:var(--serif);font-size:48px;
+  font-weight:900;color:rgba(201,168,76,.15);
+  line-height:1;margin-bottom:16px;
+  letter-spacing:-2px;
+}
+.step-title{
+  font-family:var(--serif);font-size:18px;
+  font-weight:700;color:var(--navy);
+  margin-bottom:10px;line-height:1.2;
+}
+.step-body{font-size:13px;color:var(--mid);line-height:1.7}
+.step-arrow{
+  position:absolute;top:36px;right:-1px;
+  width:20px;height:20px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:12px;color:var(--gold);
+  background:var(--warm);z-index:1;
+}
+
+/* ── PROJECTS ── */
+.projects{background:var(--cream);padding:96px 56px}
+.proj-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;margin-top:0;
+}
+.proj-card{
+  background:var(--white);
+  padding:36px 32px;
+  border-top:3px solid transparent;
+  transition:border-color .2s;
+  text-decoration:none;display:block;
+}
+.proj-card:hover{border-color:var(--gold)}
+.proj-type{
+  font-family:var(--mono);font-size:9px;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+}
+.proj-name{
+  font-family:var(--serif);font-size:19px;
+  font-weight:700;color:var(--navy);
+  margin-bottom:8px;line-height:1.2;
+}
+.proj-detail{font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:16px}
+.proj-fee{
+  font-family:var(--mono);font-size:10.5px;
+  letter-spacing:1px;color:var(--gold);
+  border-top:1px solid var(--rule);padding-top:12px;
+  margin-top:auto;
+}
+
+/* ── ABOUT ── */
+.about{
+  background:var(--warm);padding:96px 56px;
+  border-top:1px solid var(--rule);
+}
+.about-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+}
+.about-left{}
+.about-photo-frame{
+  background:var(--pale);
+  border:1px solid var(--rule);
+  aspect-ratio:4/5;
+  max-width:340px;
+  overflow:hidden;
+}
+.about-photo-frame img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;filter:grayscale(15%);
+}
+.about-right{}
+.about-body{
+  font-size:17px;color:#3a3530;
+  line-height:1.8;margin-bottom:1.5em;
+}
+.about-body:first-of-type{
+  font-family:var(--serif);
+  font-size:20px;font-style:italic;
+  color:var(--navy);line-height:1.6;
+}
+.about-credentials{
+  list-style:none;margin-top:32px;
+  display:flex;flex-direction:column;gap:12px;
+  border-top:1px solid var(--rule);padding-top:28px;
+}
+.about-credentials li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.5px;color:var(--mid);line-height:1.5;
+}
+.about-credentials li::before{content:'—';color:var(--gold);flex-shrink:0}
+
+/* ── CONTACT ── */
+.contact{
+  background:var(--cream);
+  padding:96px 56px;
+  border-top:1px solid var(--rule);
+}
+.contact-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+}
+.contact-left h2{margin-bottom:20px}
+.contact-deck{
+  font-family:var(--serif);font-style:italic;
+  font-size:18px;color:var(--mid);
+  line-height:1.65;margin-bottom:36px;
+  max-width:440px;
+}
+.contact-direct{
+  display:flex;flex-direction:column;gap:12px;margin-bottom:32px;
+}
+.contact-direct a{
+  font-family:var(--mono);font-size:11px;
+  letter-spacing:1.5px;color:var(--navy);
+  text-decoration:none;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:2px;display:inline-block;
+  transition:color .2s,border-color .2s;
+  width:fit-content;
+}
+.contact-direct a:hover{color:var(--gold);border-color:var(--gold)}
+.fee-note{
+  background:var(--white);
+  border:1px solid var(--rule);border-left:3px solid var(--gold);
+  padding:20px 24px;
+  font-family:var(--serif);font-size:15px;
+  font-style:italic;color:var(--mid);line-height:1.6;
+}
+.fee-note strong{font-style:normal;color:var(--navy)}
+
+/* Contact form */
+.contact-form{
+  background:var(--white);
+  border:1px solid var(--rule);
+  padding:40px 36px;
+}
+.form-title{
+  font-family:var(--serif);font-size:20px;
+  font-weight:700;color:var(--navy);
+  margin-bottom:28px;line-height:1.2;
+}
+.form-row{margin-bottom:20px}
+.form-row label{
+  display:block;
+  font-family:var(--mono);font-size:9px;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);margin-bottom:8px;
+}
+.form-row input,
+.form-row select,
+.form-row textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--rule);
+  background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:15px;
+  transition:border-color .2s;
+  -webkit-appearance:none;appearance:none;
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus{
+  outline:none;border-color:var(--gold);
+  background:var(--white);
+}
+.form-row textarea{height:100px;resize:vertical}
+.form-row select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%2396907F'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 14px center;
+  cursor:pointer;
+}
+.form-submit{
+  width:100%;padding:14px;border:none;
+  background:var(--gold);color:var(--deep);
+  font-family:var(--mono);font-size:10.5px;
+  letter-spacing:2px;text-transform:uppercase;
+  cursor:pointer;transition:background .2s;
+  margin-top:8px;
+}
+.form-submit:hover{background:var(--gold-lt)}
+.form-note{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.5px;color:var(--muted);
+  margin-top:12px;text-align:center;
+}
+
+/* ── MVI CALLOUT ── */
+.mvi-callout{
+  background:var(--navy);
+  padding:56px;
+}
+.mvi-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;
+  justify-content:space-between;gap:40px;
+  flex-wrap:wrap;
+}
+.mvi-text{}
+.mvi-tag{
+  font-family:var(--mono);font-size:9.5px;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+  display:flex;align-items:center;gap:10px;
+}
+.mvi-tag::before{content:'';width:20px;height:1px;background:var(--gold)}
+.mvi-heading{
+  font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);
+  font-weight:700;color:white;line-height:1.15;
+  margin-bottom:12px;
+}
+.mvi-heading em{font-style:italic;color:var(--gold)}
+.mvi-body{
+  font-size:15px;color:rgba(255,255,255,.5);
+  line-height:1.7;max-width:500px;
+}
+.mvi-action{flex-shrink:0}
+.btn-light{
+  background:transparent;color:var(--gold);
+  padding:13px 28px;
+  font-family:var(--mono);font-size:10.5px;
+  letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;
+  border:1px solid rgba(201,168,76,.4);
+  transition:background .2s,border-color .2s;
+  display:inline-block;
+}
+.btn-light:hover{background:rgba(201,168,76,.1);border-color:var(--gold)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--deep);
+  padding:36px 56px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(201,168,76,.1);
+}
+.footer-logo{
+  font-family:var(--serif);font-size:14px;
+  color:rgba(255,255,255,.4);
+}
+.footer-logo span{color:var(--gold)}
+.footer-links{display:flex;gap:24px;list-style:none}
+.footer-links a{
+  font-family:var(--mono);font-size:9px;
+  letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.2);text-decoration:none;
+  transition:color .2s;
+}
+.footer-links a:hover{color:rgba(255,255,255,.5)}
+.footer-copy{
+  font-family:var(--mono);font-size:9px;
+  letter-spacing:.5px;color:rgba(255,255,255,.16);
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-tel{display:none}
+  .hero{padding:88px 24px 64px}
+  .hero-inner,.about-inner,.contact-inner{grid-template-columns:1fr;gap:48px}
+  .services-grid,.process-steps,.proj-grid{grid-template-columns:1fr}
+  .process-step .step-arrow{display:none}
+  .clients,.services,.process,.projects,.about,.contact{padding:72px 24px}
+  .thesis,.mvi-callout{padding:64px 24px}
+  footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}
+  .mvi-inner{flex-direction:column}
+}
+</style>
+  <script src="../assets/ga-measurement-id.js"></script>
+  <script src="../assets/analytics.js" defer></script>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="../index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <div class="nav-right">
+    <a href="tel:4157945252" class="nav-tel">415-794-5252</a>
+    <a href="../index.html" class="nav-site">Full Site →</a>
+    <a href="#contact" class="nav-cta">Start a Conversation</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="eyebrow">Museum Planning Consultant</div>
+      <h1>Museum<br>Planner.<br><em>Since 1999.</em></h1>
+      <p class="hero-deck">Feasibility studies, master planning, and strategic planning for museums, cultural centers, and science centers — feasibility through opening day.</p>
+      <div class="cta-row">
+        <a href="#contact" class="btn-primary">Request a Proposal</a>
+        <a href="#services" class="btn-ghost">See Services & Fees</a>
+      </div>
+      <p class="hero-note">Engagements begin at $40,000 · One-hour consultation at no cost</p>
+    </div>
+    <div class="hero-right">
+      <div class="cred-stack">
+        <div class="cred-item">
+          <div class="cred-num">40+</div>
+          <div class="cred-text">
+            <strong>Museums Completed</strong>
+            <span>Universities · Cities · Cultural Institutions</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-num">1999</div>
+          <div class="cred-text">
+            <strong>Practice Founded</strong>
+            <span>25 Years of Museum Planning</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-num">100%</div>
+          <div class="cred-text">
+            <strong>Mark Personally Involved</strong>
+            <span>No Associates — No Hand-Off</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-num">2</div>
+          <div class="cred-text">
+            <strong>Bloomsbury Books Published</strong>
+            <span>Museums 101 · Designing Museum Experiences</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLIENTS ── -->
+<div class="clients reveal">
+  <div class="clients-inner">
+    <div class="clients-label">Selected Institutions</div>
+    <div class="clients-list">
+      <span>Howard Natural History Museum</span>
+      <span>MIDE Mexico City</span>
+      <span>Museum of Arts and Sciences</span>
+      <span>Arizona Natural Resources Museum</span>
+      <span>Interactive African American Museum</span>
+      <span>Frehner Museum · Southern Utah University</span>
+      <span>Children's Museum of Indianapolis</span>
+      <span>The Tech Interactive</span>
+      <span>Children's Museum of Manhattan</span>
+      <span>Alcatraz — Life on the Rock</span>
+    </div>
+    <p class="clients-range">From a <strong>$2M</strong> university collection to a <strong>$28M</strong> regional cultural center — the same process applied across every engagement.</p>
+  </div>
+</div>
+
+<!-- ── THESIS ── -->
+<div class="thesis">
+  <div class="thesis-inner">
+    <p class="thesis-quote">
+      "A museum still needs a feasibility study. It still needs a strategic plan, a master plan, an exhibition design, and a rigorous opening-day process. <em>None of that is different.</em> What has changed is the world that museum opens into."
+    </p>
+    <div class="thesis-attr">Mark Walhimer · Museum Planning LLC · 2026</div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-label reveal">Services &amp; Fees</div>
+    <h2 class="reveal">What We Deliver.<br><em>What It Costs.</em></h2>
+    <p class="section-sub reveal">Typical fee ranges so you know what ballpark you are in before we talk. Every engagement begins with a one-hour conversation — no cost, no obligation. All fees exclusive of travel.</p>
+
+    <div class="services-grid reveal">
+      <div class="svc-card">
+        <div class="svc-num">01 — Assessment</div>
+        <div class="svc-title">Museum Assessment</div>
+        <p class="svc-body">Current-state evaluation of institutional health, community position, and planning readiness. The starting point — the minimum retainer that establishes the baseline before any capital is committed.</p>
+        <div class="svc-fee">
+          Starting At
+          <div class="svc-fee-num">$18,000</div>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02 — Feasibility</div>
+        <div class="svc-title">Museum Feasibility Study</div>
+        <p class="svc-body">Attendance projections, operating cost modeling, staffing requirements, and revenue assumptions — before capital is committed. The question a feasibility study answers: can this institution survive on its own?</p>
+        <div class="svc-fee">
+          Typical Range
+          <div class="svc-fee-num">$40k–$70k</div>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03 — Strategic Planning</div>
+        <div class="svc-title">Museum Strategic Plan</div>
+        <p class="svc-body">Mission, vision, and values framework with a multi-year strategic roadmap. Community identity questions come first. Every capital decision that follows depends on getting this right.</p>
+        <div class="svc-fee">
+          Typical Range
+          <div class="svc-fee-num">$45k–$75k</div>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04 — Master Planning</div>
+        <div class="svc-title">Museum Master Plan</div>
+        <p class="svc-body">Building program, floor plans, phasing, budget, and capital campaign structure. Translates institutional goals into physical and financial reality. The work that must be done correctly before construction begins.</p>
+        <div class="svc-fee">
+          Starting At
+          <div class="svc-fee-num">$100,000</div>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">05 — Exhibition Design</div>
+        <div class="svc-title">Interactive Exhibition Design</div>
+        <p class="svc-body">Content, space, sequence, interpretation, and immersive museum experiences — concept through fabrication-ready CAD documentation. From natural history to interactive science centers to cultural institutions.</p>
+        <div class="svc-fee">
+          Typical Range
+          <div class="svc-fee-num">$60k–$200k</div>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">06 — City Cultural Planning</div>
+        <div class="svc-title">Civic Museum Planning</div>
+        <p class="svc-body">City cultural planning for mayors' offices and city managers considering civic investment in a museum or cultural center. Feasibility before capital — the decision support a city needs before committing public funds.</p>
+        <div class="svc-fee">
+          <a href="../for-cities.html" style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:2px">For Cities →</a>
+          <div class="svc-fee-num" style="font-size:16px;color:var(--muted)">Variable</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="process" id="process">
+  <div class="section-inner">
+    <div class="section-label reveal">The Process</div>
+    <h2 class="reveal">One Methodology.<br><em>Every Engagement.</em></h2>
+    <p class="section-sub reveal">The same six-phase process applied consistently across forty institutions — from the first community assessment to post-opening evaluation.</p>
+
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Community Assessment</div>
+        <p class="step-body">Who is the audience? Does the mission match a real community need? Is the timing right? These questions come before any planning begins.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Feasibility &amp; Business Planning</div>
+        <p class="step-body">Can it survive financially? Operating cost modeling, revenue assumptions, staffing ratios, and pro forma stress-testing before capital is committed.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Strategic &amp; Master Planning</div>
+        <p class="step-body">Mission, vision, building program, floor plans, phasing, and capital campaign structure — the complete institutional framework.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Exhibition Design &amp; Opening</div>
+        <p class="step-body">Content, sequence, and visitor experience through fabrication-ready documentation — and a rigorous opening-day process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section class="projects" id="projects">
+  <div class="section-inner">
+    <div class="section-label reveal">Selected Work</div>
+    <h2 class="reveal">Forty Museums.<br><em>One Methodology.</em></h2>
+    <p class="section-sub reveal">Natural history · Children's museums · Science centers · Cultural centers · University museums · Civic institutions</p>
+
+    <div class="proj-grid reveal">
+      <a href="../projects/howard-natural-history-museum.html" class="proj-card">
+        <div class="proj-type">Master Planning · Exhibition Design</div>
+        <div class="proj-name">Howard Natural History Museum</div>
+        <p class="proj-detail">Riverside County, California. Comprehensive museum master planning and exhibition design for a new natural history museum in the Inland Empire region.</p>
+        <div class="proj-fee">$27.75M project · 2024</div>
+      </a>
+      <a href="../projects/frehner-museum-southern-utah-university.html" class="proj-card">
+        <div class="proj-type">University Museum · Master Planning</div>
+        <div class="proj-name">Frehner Museum of Natural History</div>
+        <p class="proj-detail">Southern Utah University, Cedar City. Museum master planning for a new natural history museum on a university campus.</p>
+        <div class="proj-fee">Southern Utah University · 2026</div>
+      </a>
+      <a href="../projects/arizona-natural-resources-museum.html" class="proj-card">
+        <div class="proj-type">University · Master Planning</div>
+        <div class="proj-name">Arizona Natural Resources Museum</div>
+        <p class="proj-detail">University of Arizona, Tucson. Master planning for a new natural resources museum integrating research collections with public engagement.</p>
+        <div class="proj-fee">University of Arizona · 2023</div>
+      </a>
+      <a href="../projects/interactive-african-american-museum.html" class="proj-card">
+        <div class="proj-type">Cultural Center · Exhibition Design</div>
+        <div class="proj-name">Interactive African American Museum &amp; Cultural Center</div>
+        <p class="proj-detail">Indiana. Feasibility study and interactive exhibition design for a new African American museum and cultural center.</p>
+        <div class="proj-fee">Exhibition Design · Feasibility · 2022</div>
+      </a>
+      <a href="../projects/mide-museo-interactivo-de-economia.html" class="proj-card">
+        <div class="proj-type">Interactive Museum · International</div>
+        <div class="proj-name">MIDE, Museo Interactivo de Economía</div>
+        <p class="proj-detail">Mexico City. Interactive museum exhibition design for one of Latin America's premier economics museums. Immersive museum experiences for a general audience.</p>
+        <div class="proj-fee">Mexico City · 2019</div>
+      </a>
+      <a href="../projects/museum-of-arts-and-sciences.html" class="proj-card">
+        <div class="proj-type">Arts &amp; Sciences · Exhibition Design</div>
+        <div class="proj-name">Museum of Arts and Sciences</div>
+        <p class="proj-detail">Macon, Georgia. Exhibition design and gallery renovation for a regional arts and sciences museum serving central Georgia.</p>
+        <div class="proj-fee">Macon, Georgia · 2025</div>
+      </a>
+    </div>
+
+    <div style="text-align:center;margin-top:48px">
+      <a href="../museum-planning-projects.html" class="btn-primary" style="font-size:10.5px">View All 40+ Projects →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── MVI CALLOUT ── -->
+<div class="mvi-callout reveal">
+  <div class="mvi-inner">
+    <div class="mvi-text">
+      <div class="mvi-tag">Proprietary Framework</div>
+      <div class="mvi-heading">Museum Vitality Index — <em>Is your museum healthy?</em></div>
+      <p class="mvi-body">A 0–100 health score that normalizes every metric for institutional size. A $500K museum with a strong strategy can outrank a $25M institution in decline.</p>
+    </div>
+    <div class="mvi-action">
+      <a href="../museum-vitality-index.html" class="btn-light">Learn About the MVI →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-inner">
+      <div class="about-left">
+        <div class="about-photo-frame">
+          <img src="../content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg" alt="Mark Walhimer — Museum Planning Consultant" loading="lazy">
+        </div>
+      </div>
+      <div class="about-right reveal">
+        <div class="section-label">About</div>
+        <h2>Mark Walhimer,<br><em>Museum Consultant.</em></h2>
+        <p class="about-body">Museum planning is a personal practice. Every engagement — from the first community assessment through post-opening evaluation — is worked directly by Mark. There is no associate who handles the day-to-day.</p>
+        <p class="about-body" style="font-family:var(--sans);font-size:16px;font-style:normal;color:#3a3530;">Managing Partner of Museum Planning LLC since 1999. Forty museums completed across 25 years. Two books published by Bloomsbury Press — <em>Museums 101</em> and <em>Designing Museum Experiences</em>. Fulbright Specialist. Formerly on faculty at Pratt Institute and Georgia Tech.</p>
+        <ul class="about-credentials">
+          <li>Managing Partner, Museum Planning LLC (1999–present)</li>
+          <li>Author, <em>Museums 101</em> — Bloomsbury Press, 2015</li>
+          <li>Author, <em>Designing Museum Experiences</em> — Bloomsbury Press, 2021</li>
+          <li>Fulbright Specialist, U.S. Department of State</li>
+          <li>Faculty (former), Pratt Institute · Georgia Tech</li>
+          <li>New York · Mexico City · Worldwide</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="contact-left reveal">
+        <div class="section-label">Start a Conversation</div>
+        <h2>Let's build<br><em>your museum.</em></h2>
+        <p class="contact-deck">One hour. No cost. No obligation. Tell us what you're working on and we'll tell you honestly whether and how we can help.</p>
+        <div class="contact-direct">
+          <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>
+          <a href="tel:4157945252">415-794-5252</a>
+        </div>
+        <div class="fee-note">
+          <strong>Typical engagements begin at $40,000.</strong> Museum assessments start at $18,000. Master planning starts at $100,000. All fees exclusive of travel. Fees confirmed in writing before any engagement begins.
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-title">Tell us about your museum.</div>
+        <form id="inquiry-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Name and title" required>
+          </div>
+          <div class="form-row">
+            <label for="org">Institution or Organization</label>
+            <input type="text" id="org" name="org" placeholder="Museum or organization name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-row">
+            <label for="service">Service You're Considering</label>
+            <select id="service" name="service">
+              <option value="">— Select a service —</option>
+              <option>Museum Assessment (from $18,000)</option>
+              <option>Museum Feasibility Study ($40k–$70k)</option>
+              <option>Museum Strategic Planning ($45k–$75k)</option>
+              <option>Museum Master Planning ($100k+)</option>
+              <option>Exhibition Design ($60k–$200k)</option>
+              <option>City Cultural Planning</option>
+              <option>Not sure — need guidance</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Tell Us About Your Project</label>
+            <textarea id="message" name="message" placeholder="Brief description of your museum, your timeline, and what you're trying to accomplish…"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Inquiry →</button>
+          <p class="form-note">We respond within one business day.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Full Site</a></li>
+    <li><a href="../museum-planning-services.html">Services</a></li>
+    <li><a href="../museum-planning-projects.html">Projects</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="../museum-planning-contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<!-- ── SCRIPTS ── -->
+<script>
+/* Scroll reveal */
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+reveals.forEach(el=>obs.observe(el));
+
+/* Form — mailto with form data */
+function handleSubmit(e){
+  e.preventDefault();
+  const f=e.target;
+  const name=f.name.value.trim();
+  const org=f.org.value.trim();
+  const email=f.email.value.trim();
+  const service=f.service.value;
+  const message=f.message.value.trim();
+  const subject=encodeURIComponent('Museum Planning Inquiry — '+org);
+  const body=encodeURIComponent(
+    'Name: '+name+'\n'+
+    'Organization: '+org+'\n'+
+    'Reply Email: '+email+'\n'+
+    'Service Considering: '+(service||'Not specified')+'\n\n'+
+    'Project Description:\n'+message+'\n\n'+
+    '---\nSubmitted via museumplanning.com/museum-planner\n'+
+    new Date().toISOString()
+  );
+  window.location.href='mailto:mark@museumplanning.com?subject='+subject+'&body='+body;
+}
+</script>
+
+</body>
+</html>

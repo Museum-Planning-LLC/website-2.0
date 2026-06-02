@@ -68,6 +68,9 @@ Always link **up** to the commercial pillar:
 | `what-is-a-museum-feasibility-study.html` | `museum-feasibility-study.html` |
 | `what-is-a-museum-master-plan.html` | `museum-master-planning.html` |
 | `how-to-start-a-museum.html` | `museum-planning-services.html` |
+| `museum-exhibition-design/` (six-part series) | `museum-planning-services.html`, `immersive-museum-planning.html` |
+
+**museumplanner.org sunset:** Copy reference content to Museum School; 301 legacy blog URLs when DNS cuts over. See [`docs/museumplanner-org-sunset-redirects.md`](./museumplanner-org-sunset-redirects.md).
 
 ---
 

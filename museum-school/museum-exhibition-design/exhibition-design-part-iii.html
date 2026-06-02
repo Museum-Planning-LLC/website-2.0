@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+<title>Museum Exhibition Design Part III: Fabrication — Museum Planning LLC</title>
+<meta name="description" content="Translating exhibition drawings into built exhibits — fabricator selection, working drawings, and quality control.">
+<link rel="canonical" href="https://museumplanning.com/museum-school/museum-exhibition-design/exhibition-design-part-iii.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{--navy:#1b2230;--deep:#131820;--copper:#c8924a;--gold:#dba96a;--parchment:#f5f2ec;--cream:#faf9f6;--ink:#1b2230;--muted:#6b7068;--rule:#dbd8d0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.75;}
+.site-header{background:var(--deep);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;}
+.site-logo{font-family:'Playfair Display',serif;font-size:15px;color:#f5f2ec;text-decoration:none;}
+.site-logo span{color:var(--copper);}
+.site-nav a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;margin-left:28px;}
+.series-bar{background:var(--navy);border-bottom:2px solid var(--copper);}
+.series-bar-inner{max-width:960px;margin:0 auto;padding:0 40px;display:flex;align-items:stretch;overflow-x:auto;scrollbar-width:none;}
+.series-bar-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);padding:14px 20px 14px 0;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;}
+.series-link{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;padding:14px 14px;white-space:nowrap;border-left:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:5px;flex-shrink:0;}
+.series-link:hover{color:var(--gold);}
+.series-link.active{color:var(--copper);border-bottom:2px solid var(--copper);margin-bottom:-2px;}
+.series-link .sn{opacity:.5;}
+.hero{background:var(--navy);padding:56px 40px 48px;}
+.hero-inner{max-width:960px;margin:0 auto;}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--copper);margin-bottom:14px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;line-height:1.1;color:#f5f2ec;max-width:720px;margin-bottom:14px;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.55);max-width:600px;line-height:1.65;}
+.hero-meta{display:flex;gap:40px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap;}
+.hero-meta-item label{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:4px;}
+.hero-meta-item span{font-size:13px;color:rgba(255,255,255,.7);font-weight:500;}
+.body-wrap{max-width:960px;margin:0 auto;padding:0 40px 80px;}
+.article{padding:48px 0 40px;border-bottom:1px solid var(--rule);}
+.article:last-child{border-bottom:none;}
+.article-header{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;}
+.article-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--copper);letter-spacing:2px;flex-shrink:0;}
+.article-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;color:var(--navy);}
+.lede{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;line-height:1.6;color:var(--navy);border-left:3px solid var(--copper);padding:4px 0 4px 22px;margin-bottom:28px;}
+.prose p{font-size:16px;line-height:1.85;margin-bottom:18px;}
+.prose p:last-child{margin-bottom:0;}
+.step-list{display:flex;flex-direction:column;gap:2px;margin:24px 0;}
+.step{display:grid;grid-template-columns:44px 1fr;background:var(--parchment);border:1px solid var(--rule);}
+.step-num{background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--copper);}
+.step-body{padding:18px 22px;}
+.step-body h3{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;}
+.step-body p{font-size:14px;line-height:1.7;color:var(--ink);margin:0;}
+.callout{border:1px solid var(--rule);border-left:3px solid var(--copper);background:var(--parchment);padding:20px 24px;margin:28px 0;}
+.callout-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:8px;}
+.callout p{font-size:14px;line-height:1.7;color:var(--muted);margin:0;}
+.pullquote{background:var(--navy);padding:36px 40px;margin:36px 0;position:relative;}
+.pullquote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:72px;line-height:1;color:var(--copper);opacity:.3;position:absolute;top:12px;left:28px;}
+.pullquote p{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;line-height:1.6;color:#f5f2ec;padding-left:32px;margin:0;}
+.pullquote cite{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:14px;padding-left:32px;font-style:normal;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.info-card{background:var(--parchment);border:1px solid var(--rule);border-top:3px solid var(--copper);padding:20px;}
+.info-card h3{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:10px;}
+.info-card ul{font-size:14px;line-height:1.7;color:var(--ink);padding-left:18px;margin:0;}
+.info-card li{margin-bottom:4px;}
+.series-nav{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:48px 0 0;border-top:1px solid var(--rule);padding-top:32px;}
+.series-nav-item{padding:20px 24px;background:var(--parchment);border:1px solid var(--rule);text-decoration:none;transition:background .15s;}
+.series-nav-item:hover{background:white;}
+.series-nav-item.prev{text-align:left;}
+.series-nav-item.next{text-align:right;}
+.series-nav-dir{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.series-nav-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--navy);font-weight:600;}
+.series-nav-sub{font-size:12px;color:var(--muted);margin-top:3px;}
+footer{background:var(--deep);padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+footer .f-brand{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);}
+footer .f-brand em{color:var(--copper);font-style:normal;}
+footer a{color:rgba(255,255,255,.4);text-decoration:none;}
+@media(max-width:720px){.two-col{grid-template-columns:1fr;}.hero h1{font-size:34px;}.series-nav{grid-template-columns:1fr;}.body-wrap,.hero,.site-header,footer{padding-left:20px;padding-right:20px;}.series-bar-inner{padding-left:20px;}}
+
+/* museumplanning.com shell */
+:root{--gold:#C9A84C;--deep:#111C27;}
+nav.site-nav{position:fixed;top:0;left:0;right:0;background:var(--deep);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:200;border-bottom:1px solid rgba(201,168,76,.15);}
+nav.site-nav .nav-logo{font-family:'Playfair Display',serif;font-size:15px;color:#fff;text-decoration:none;}
+nav.site-nav .nav-logo span{color:var(--gold);}
+nav.site-nav .nav-links{display:flex;gap:24px;list-style:none;align-items:center;margin:0;padding:0;}
+nav.site-nav .nav-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;}
+nav.site-nav .nav-links a:hover,nav.site-nav .nav-links a.active{color:rgba(255,255,255,.9);}
+nav.site-nav .nav-cta{background:var(--gold)!important;color:var(--deep)!important;padding:8px 16px;}
+nav.site-nav .search-toggle{background:none;border:none;cursor:pointer;padding:4px;}
+nav.site-nav .search-toggle svg{width:18px;height:18px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:2;}
+.hero{padding-top:124px!important;}
+.series-bar{position:sticky;top:60px;z-index:150;}
+.tier3-band{background:#1B2A3B;padding:28px 40px;border-top:3px solid var(--gold);}
+.tier3-inner{max-width:960px;margin:0 auto;}
+.tier3-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.tier3-body{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin:0;}
+.tier3-body a{color:var(--gold);}
+footer .footer-logo{font-family:'Playfair Display',serif;font-size:16px;color:#fff;}
+footer .footer-logo span{color:var(--gold);}
+footer{background:var(--deep);padding:32px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;}
+footer .footer-links{display:flex;gap:24px;list-style:none;margin:0;padding:0;}
+footer .footer-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;}
+footer .footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
+.privacy-strip{text-align:center;padding:12px;font-size:12px;color:#888;background:#f0ebe0;}
+.privacy-strip a{color:#666;}
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(17,28,39,.97);z-index:300;flex-direction:column;align-items:center;padding-top:120px;}
+.search-overlay.open{display:flex;}
+.search-close{position:absolute;top:24px;right:32px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;}
+.search-input-wrap{display:flex;align-items:center;gap:16px;width:90%;max-width:680px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:12px;}
+.search-input-wrap svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2;}
+#search-input{flex:1;background:none;border:none;outline:none;font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);color:#fff;}
+.search-results{width:90%;max-width:680px;margin-top:24px;}
+.search-result{display:block;padding:16px 20px;text-decoration:none;border-left:3px solid transparent;margin-bottom:4px;background:rgba(255,255,255,.04);}
+.search-result:hover{border-color:var(--gold);}
+.sr-type{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.sr-title{font-family:'Playfair Display',serif;font-size:18px;color:#fff;margin:4px 0;}
+.sr-desc{font-size:13px;color:rgba(255,255,255,.4);}
+.search-empty{color:rgba(255,255,255,.3);font-style:italic;text-align:center;padding:40px;}
+@media(max-width:900px){nav.site-nav .nav-links:not(.open){display:none;}}
+</style>
+<link rel="stylesheet" href="../../assets/nav-mobile.css">
+<link rel="stylesheet" href="../../assets/site-footer.css">
+<script src="../../assets/ga-measurement-id.js"></script>
+<script src="../../assets/analytics.js" defer></script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="site-nav" id="site-nav">
+  <a href="../../index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="../../museum-planning-services.html">Services</a></li>
+    <li><a href="../../for-cities.html">For Cities</a></li>
+    <li><a href="../../for-universities.html">For Universities</a></li>
+    <li><a href="../../museum-planning-projects.html">Projects</a></li>
+    <li><a href="../index.html" class="active">Museum School</a></li>
+    <li><a href="../../for-cities-science-center.html">Science Centers</a></li>
+    <li><a href="../../museum-planning-about.html">About</a></li>
+    <li><a href="../../museum-planning-contact.html">Contact</a></li>
+    <li class="nav-search"><button class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="../../museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+<nav class="series-bar"><div class="series-bar-inner">
+  <span class="series-bar-label">Exhibition Design Series</span>
+  <a class="series-link" href="index.html"><span class="sn">↗</span>Overview</a>
+  <a class="series-link" href="exhibition-design-part-i.html"><span class="sn">I</span>Planning</a>
+  <a class="series-link" href="exhibition-design-part-ii.html"><span class="sn">II</span>Design</a>
+  <a class="series-link active" href="exhibition-design-part-iii.html"><span class="sn">III</span>Fabrication</a>
+  <a class="series-link" href="exhibition-design-part-iv.html"><span class="sn">IV</span>Installation</a>
+  <a class="series-link" href="exhibition-design-part-v.html"><span class="sn">V</span>Maintenance</a>
+  <a class="series-link" href="exhibition-design-part-vi.html"><span class="sn">VI</span>Full Process</a>
+</div></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Part III of VI &nbsp;·&nbsp; Exhibition Design Series</div>
+    <h1>Exhibition<br><em>Fabrication</em></h1>
+    <p class="hero-sub">Fabrication is where the exhibition moves from paper to physical reality. It is the phase where design decisions are tested against materials, tolerances, and time — and where budget overruns are born if not caught early.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><label>Phase</label><span>Fabrication</span></div>
+      <div class="hero-meta-item"><label>Key Outputs</label><span>Working drawings, completed exhibits, shipping documentation</span></div>
+      <div class="hero-meta-item"><label>Prerequisite</label><span>Approved design development drawings</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="body-wrap">
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">01 ·</span><span class="article-title">What Fabrication Means</span></div>
+    <div class="lede">Fabrication is not just woodworking and metal. It is the coordination of carpentry, electrical, AV, graphics, software development, interactives engineering, and finishing — all converging on a single ship date.</div>
+    <div class="prose">
+      <p>By the end of design development, the exhibition exists completely on paper. Fabrication is the process of turning those documents into physical exhibits that will be shipped to a museum, installed in the gallery, and experienced by visitors. It is the most complex project management phase in the exhibition design process.</p>
+      <p>The steps of fabrication are similar regardless of museum type. What changes is the mix of trades involved — a science center with complex interactives requires more software engineering and electronics; a history exhibition with artifact cases requires more conservation-grade fabrication. But the workflow — working drawings, fabricator selection, oversight, quality control, shipping — remains consistent.</p>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">02 ·</span><span class="article-title">Working Drawings</span></div>
+    <div class="prose">
+      <p>Working drawings are the construction documents of the exhibition world — the complete, dimensioned, specification-level drawings from which a fabricator builds. They differ from design development drawings in precision and completeness: every joint, every dimension, every material, every fastener is specified.</p>
+      <p>Working drawings typically include: dimensioned plan and elevation drawings for every exhibit component; electrical and data drawings; AV equipment rack layouts and wiring diagrams; graphic production files at final size; finish and material specifications; and hardware schedules. The package should be complete enough that a qualified fabricator could build the exhibition without contacting the designer for clarification.</p>
+    </div>
+    <div class="callout">
+      <div class="callout-label">Working Drawings vs. Design Development</div>
+      <p>Design development drawings communicate intent and allow cost estimation. Working drawings communicate construction — they are the legal documents of the fabrication contract. The distinction matters when disputes arise: ambiguity in working drawings is the designer's problem; ambiguity in design development drawings is a negotiation.</p>
+    </div>
+    <div class="step-list">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Dimensioned Plan Drawings</h3><p>Full floor plan at 1/4" = 1' or metric equivalent, with all exhibit positions dimensioned from fixed reference points. Include column locations, door swings, electrical panel clearances, and ADA clear floor space zones.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Elevation and Section Drawings</h3><p>Every exhibit face shown in elevation with all dimensions, material call-outs, and finish designations. Sections through complex casework, interactives, or structures. Ceiling sections showing lighting positions and heights.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h3>AV and Technology Drawings</h3><p>Equipment schedules for all AV, interactive, and technology components. Rack layout drawings. Cable routing diagrams. Conduit and pull box locations in the floor plan. Software and content specifications for interactive elements.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Graphic Production Files</h3><p>All graphics at final production size, in production-ready file formats. Bleed, registration, and substrate specifications included. Color managed and proofed against the fabricator's printing system.</p></div></div>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">03 ·</span><span class="article-title">Selecting a Fabricator</span></div>
+    <div class="prose">
+      <p>Fabricator selection is one of the most consequential decisions in the exhibition process. The fabricator is responsible for translating the working drawings into physical exhibits — a process that typically represents 60–80% of the total exhibition budget. A fabricator mismatch produces budget overruns, quality problems, and schedule failures that no amount of oversight can fully correct.</p>
+    </div>
+    <div class="step-list">
+      <div class="step"><div class="step-num">1</div><div class="step-body"><h3>Issue the Bid Package</h3><p>Send the complete working drawing set with a formal request for proposal. The bid package should specify the scope of work, bid format requirements, schedule milestones, insurance and bonding requirements, and the evaluation criteria the museum will use to select a fabricator.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-body"><h3>Evaluate Capability, Not Just Price</h3><p>Request references from three recent museum projects of similar scale and complexity. Visit the fabricator's facility if possible. Review their shop drawings from previous projects — shop drawing quality is a strong predictor of fabrication quality. The lowest bid from a fabricator without relevant experience is rarely the best value.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-body"><h3>Negotiate the Contract Carefully</h3><p>The fabrication contract should specify deliverables, payment milestones tied to fabrication progress, quality standards, change order procedures, and warranty terms. A vague contract is an invitation to scope creep and disputes. Museum fabrication contracts should always include a warranty period of at least one year post-installation.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-body"><h3>Review Shop Drawings</h3><p>Before fabrication begins, the fabricator produces shop drawings — their interpretation of the working drawings, showing how they intend to build each component. Review shop drawings carefully against the working drawings. Approving a shop drawing with a discrepancy creates a change order; missing a discrepancy creates a rebuild.</p></div></div>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">04 ·</span><span class="article-title">Fabrication Oversight</span></div>
+    <div class="prose">
+      <p>Fabrication oversight is active participation in the build process — not passive waiting for delivery. Regular site visits to the fabrication facility, review of construction progress against the schedule, and resolution of questions in real time prevent the accumulation of problems that only surface at installation.</p>
+    </div>
+    <div class="two-col">
+      <div class="info-card">
+        <h3>Oversight Activities</h3>
+        <ul>
+          <li>Weekly progress reviews against schedule</li>
+          <li>Site visits at key milestones</li>
+          <li>Review and approval of material samples</li>
+          <li>Finish mock-up review before full production</li>
+          <li>Interactive prototype testing</li>
+          <li>AV system integration review</li>
+          <li>Graphic proof review and approval</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Common Fabrication Problems</h3>
+        <ul>
+          <li>Material substitutions without approval</li>
+          <li>Dimension tolerances accumulating through assembly</li>
+          <li>AV equipment substitutions changing rack layouts</li>
+          <li>Graphic color drift from approved proofs</li>
+          <li>Interactive software behind schedule</li>
+          <li>Substrate warping in climate-controlled casework</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">05 ·</span><span class="article-title">Quality Control and Pre-Ship Review</span></div>
+    <div class="prose">
+      <p>Before any exhibit component leaves the fabrication facility, it should be reviewed against the working drawings and the approved samples. A pre-ship review — conducted at the fabricator's facility with the designer and museum project manager present — is the last opportunity to correct problems without the time pressure of an active installation.</p>
+      <p>The pre-ship review should confirm that every exhibit functions as designed, that all finishes match approved samples, that all graphics are correctly produced, and that all AV and interactive content is loaded and operating. Components that fail the pre-ship review should be corrected before shipping — not flagged as "punch list items" to be resolved on site.</p>
+    </div>
+    <div class="callout">
+      <div class="callout-label">On Balancing Interactivity and Maintenance</div>
+      <p>Too often museums err on the side of low interactivity out of fear of maintenance issues, rather than building updateability and changeability into the exhibits from the start. The right time to design for maintainability is in the working drawings — not after the first element breaks on the installation floor.</p>
+    </div>
+  </div>
+
+  <div class="article">
+    <div class="article-header"><span class="article-num">06 ·</span><span class="article-title">Shipping and Crating</span></div>
+    <div class="prose">
+      <p>Exhibition components must survive shipping and — if the exhibition will travel — multiple installations. Crating is an engineering problem, not an afterthought. The fabricator should provide custom-built crates with internal fixtures that hold each component securely, with documented packing procedures that allow reinstallation by a different crew.</p>
+      <p>Document every crate: photograph the packed contents, record the crate dimensions and weight, and create a crate-to-exhibit map that allows any team member to identify which exhibit is in which crate without opening it. This documentation becomes the installation sequence guide in Phase IV.</p>
+    </div>
+
+    <div class="pullquote">
+      <p>Anyone who thinks that exhibition design is the creation of drawings is only one quarter correct. The process starts before drawing and continues through to the installation of the exhibits.</p>
+      <cite>Mark Walhimer · Museum Planning LLC</cite>
+    </div>
+
+    <div class="series-nav">
+      <a class="series-nav-item prev" href="exhibition-design-part-ii.html">
+        <div class="series-nav-dir">← Part II</div>
+        <div class="series-nav-title">Design</div>
+        <div class="series-nav-sub">Script, schematic, design development</div>
+      </a>
+      <a class="series-nav-item next" href="exhibition-design-part-iv.html">
+        <div class="series-nav-dir">Next →</div>
+        <div class="series-nav-title">Part IV: Installation</div>
+        <div class="series-nav-sub">Load in, staging, assembly, opening</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="tier3-band">
+  <div class="tier3-inner">
+    <div class="tier3-label">Commercial guide</div>
+    <p class="tier3-body">This series is educational reference. For exhibition design engagements — process, deliverables, and typical fees — see <a href="../../museum-planning-services.html">museum planning services</a> and <a href="../../immersive-museum-planning.html">immersive museum planning</a>.</p>
+  </div>
+</div>
+
+<p class="privacy-strip"><a href="../../museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="../index.html">Museum School</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="../../museum-planning-contact.html">Contact</a></li>
+    <li><a href="../../museum-planning-privacy.html">Privacy</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" id="searchClose">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<script>
+const PAGES = [
+  { type: "Museum School", title: "Museum Exhibition Design — Overview", desc: "Six-part series from planning through maintenance.", url: "index.html" },
+  { type: "Museum School", title: "Exhibition Design Part I — Planning", desc: "Visitor objectives, charter, budget, schedule.", url: "exhibition-design-part-i.html" },
+  { type: "Museum School", title: "Exhibition Design Part II — Design", desc: "Script, schematic, design development, final design.", url: "exhibition-design-part-ii.html" },
+  { type: "Museum School", title: "Exhibition Design Part III — Fabrication", desc: "Working drawings, fabricator, quality control.", url: "exhibition-design-part-iii.html" },
+  { type: "Museum School", title: "Exhibition Design Part IV — Installation", desc: "Load-in, staging, punch list, opening.", url: "exhibition-design-part-iv.html" },
+  { type: "Museum School", title: "Exhibition Design Part V — Maintenance", desc: "Operational exhibits, staff training, evaluation.", url: "exhibition-design-part-v.html" },
+  { type: "Museum School", title: "Exhibition Design Part VI — Full Process", desc: "Complete process summary and checklist.", url: "exhibition-design-part-vi.html" },
+  { type: "Services", title: "Museum Planning Services", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "../../museum-planning-services.html" },
+  { type: "Guide", title: "Immersive Museum Planning", desc: "Interactive and immersive exhibition design.", url: "../../immersive-museum-planning.html" },
+  { type: "Museum School", title: "How to Start a Museum", desc: "Ten steps to starting a museum.", url: "../how-to-start-a-museum.html" },
+];
+const input = document.getElementById('search-input');
+const results = document.getElementById('searchResults');
+const overlay = document.getElementById('searchOverlay');
+document.getElementById('searchToggle').addEventListener('click', () => {
+  overlay.classList.add('open');
+  setTimeout(() => input.focus(), 100);
+});
+document.getElementById('searchClose').addEventListener('click', () => {
+  overlay.classList.remove('open');
+  input.value = '';
+  results.innerHTML = '';
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { overlay.classList.remove('open'); input.value = ''; results.innerHTML = ''; }
+});
+input.addEventListener('input', () => {
+  const q = input.value.toLowerCase().trim();
+  if (!q) { results.innerHTML = ''; return; }
+  const matches = PAGES.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+  results.innerHTML = matches.length ? matches.map(p => `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('') : '<div class="search-empty">No results found.</div>';
+});
+</script>
+<script src="../../assets/nav-mobile.js" defer></script>
+</body>
+</html>
