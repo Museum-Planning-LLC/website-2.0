@@ -269,7 +269,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li>Serif display/headlines: <code>Playfair Display</code></li>
       <li>Utility labels/nav/meta: <code>DM Mono</code></li>
       <li>Body copy: <code>Lato</code></li>
-      <li>Tone: premium, practical, direct</li>
+      <li>Tone: premium, practical, direct — use <strong>we</strong> on commercial pages, not first-person <strong>I</strong></li>
     </ul>
   </section>
 
@@ -278,15 +278,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Standard Order</h2>
     <ol>
       <li>Services</li>
+      <li>For Cities</li>
+      <li>For Universities</li>
       <li>Projects</li>
       <li>Museum School</li>
+      <li>Science Centers</li>
       <li>About</li>
+      <li>Contact</li>
       <li>Search icon</li>
       <li>Start a Conversation (CTA)</li>
     </ol>
     <ul>
-      <li>Do not add a separate Contact nav item.</li>
-      <li>Use fixed 60px dark nav with gold CTA.</li>
+      <li>Fixed 60px dark nav with gold CTA.</li>
       <li>Use <code>assets/nav-mobile.css</code> and <code>assets/nav-mobile.js</code>.</li>
       <li>Keep search IDs consistent: <code>searchToggle</code>, <code>searchOverlay</code>, <code>searchClose</code>, <code>searchResults</code>.</li>
     </ul>
@@ -317,7 +320,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <section class="section">
-    <div class="kicker">5) Social Media Standard</div>
+    <div class="kicker">5) Page Tiers</div>
+    <h2>SEO / Information Architecture</h2>
+    <p>One primary URL per keyword cluster. Cross-link between tiers; do not duplicate intent.</p>
+    <ul>
+      <li><strong>Tier 1</strong> (sitemap 0.85): <code>museum-feasibility-study.html</code>, <code>museum-strategic-planning.html</code>, <code>museum-master-planning.html</code>, <code>museum-planning-services.html</code></li>
+      <li><strong>Tier 2</strong> (sitemap 0.45): <code>for-cities.html</code>, <code>for-cities-science-center.html</code>, <code>local-history-museum.html</code>, <code>immersive-museum-planning.html</code>, <code>for-universities.html</code></li>
+      <li><strong>Tier 3</strong>: <code>museum-school/*.html</code> — link up to commercial pages</li>
+    </ul>
+    <p>Template: Tier 1 → <code>museum-feasibility-study.html</code>. Tier 2 → <code>local-history-museum.html</code> or <code>immersive-museum-planning.html</code>.</p>
+  </section>
+
+  <section class="section">
+    <div class="kicker">6) SEO Standard</div>
+    <h2>Head, Schema, and Redirects</h2>
+    <ul>
+      <li>Unique title + ~155-char meta description; canonical with <code>.html</code></li>
+      <li>Open Graph + Twitter Card; JSON-LD: WebPage, FAQPage (must match visible FAQ), BreadcrumbList</li>
+      <li>Add URL to <code>sitemap.xml</code>; legacy paths in <code>redirects/legacy-redirects.json</code></li>
+      <li>Run <code>python3 tools/gen_legacy_redirect_stubs.py</code> and <code>gen_cloudflare_bulk_redirects.py</code> after redirect changes</li>
+      <li>No <code>meta keywords</code>; no keyword-stuffed headings</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="kicker">7) Social Media Standard</div>
     <h2>How Social Links Are Managed</h2>
     <ul>
       <li>Official platforms (if active): <code>LinkedIn</code>, <code>Instagram</code>, <code>X</code>.</li>
@@ -332,13 +359,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <section class="section">
-    <div class="kicker">6-11) Consistency Rules</div>
+    <div class="kicker">8) Consistency Rules</div>
     <h2>Operational Standards</h2>
     <ul>
       <li>Desktop side padding baseline: <code>56px</code>; mobile: <code>24px</code>.</li>
       <li>Keep terms exact: <code>Museum School</code>, <code>Start a Conversation</code>, <code>Museum Planning LLC</code>.</li>
       <li>Avoid one-off visual systems on individual pages.</li>
-      <li>Pre-publish checklist: nav, mobile nav, search, tokens, links, footer, social standard, no accidental theme drift.</li>
+      <li>Pre-publish checklist: nav, mobile nav, search, tokens, links, footer, social standard, SEO head, sitemap, voice (<strong>we</strong> not <strong>I</strong>), no theme drift.</li>
+      <li>Full spec: <code>STYLE-GUIDE.md</code> in repo root.</li>
       <li>If intentionally changing the standard, document rationale and update the style guide.</li>
     </ul>
   </section>
@@ -368,7 +396,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <script>
 const PAGES = [
-  {type:"Guide",title:"Website Style Guide",desc:"Design system, nav standards, and consistency rules.",url:"style-guide.html"},
+  {type:"Guide",title:"Website Style Guide",desc:"Design system, nav standards, SEO tiers, and consistency rules.",url:"style-guide.html"},
+  {type:"Guide",title:"Immersive Museum Planning",desc:"Science centers, local history, natural history — exhibition design.",url:"immersive-museum-planning.html"},
+  {type:"Guide",title:"Museum Feasibility Study — What You Get",desc:"Deliverables, costs, when to commission.",url:"museum-feasibility-study.html"},
+  {type:"Guide",title:"Museum Strategic Planning Consultants",desc:"Mission, vision, roadmap, fees, process.",url:"museum-strategic-planning.html"},
+  {type:"Guide",title:"Museum Master Planning",desc:"Building program through capital campaign.",url:"museum-master-planning.html"},
   {type:"Home",title:"Museum Planning LLC",desc:"Forty museums. One methodology.",url:"index.html"},
   {type:"Contact",title:"Contact — Rates & conversation",desc:"Typical consulting ranges and how to start a conversation.",url:"museum-planning-contact.html"},
   {type:"Services",title:"Services — From Vision to Opening Day",desc:"Feasibility, strategic planning, master planning, exhibition design, evaluation.",url:"museum-planning-services.html"},
