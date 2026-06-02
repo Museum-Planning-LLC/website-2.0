@@ -1,6 +1,6 @@
-# Legacy URL redirects (no Cloudflare)
+# Legacy URL redirects
 
-GitHub Pages **cannot send HTTP 301**. This repo uses two mechanisms instead:
+GitHub Pages **cannot send HTTP 301**. This repo uses **Cloudflare Bulk Redirects** (preferred) plus GitHub stubs as fallback:
 
 ## 1. Stub pages (primary — SEO recovery)
 
@@ -39,18 +39,22 @@ Long-tail WordPress paths (portfolio pagination, tags, unknown slugs) still use 
 |------------|-------------|
 | `/museum-feasibility-studies` | `/museum-feasibility-study.html` |
 | `/museum-consulting-and-cultural-planning-museum-planning-llc` | `/museum-planning-services.html` |
-| `/museum-master-planning` | `/museum-school/what-is-a-museum-master-plan.html` |
+| `/museum-master-planning` | `/museum-master-planning.html` |
+| `/museum-strategic-planning` | `/museum-strategic-planning.html` |
+| `/museum-strategic-planning-consultants` | `/museum-strategic-planning.html` |
+| `/immersive-interactive-museum-transformation` | `/immersive-museum-planning.html` |
 | `/starting-a-museum` | `/museum-school/how-to-start-a-museum.html` |
 
-After deploy, verify:
+After Cloudflare import, verify **301** (trailing slash — WordPress default):
 
 ```bash
-curl -sI "https://museumplanning.com/museum-feasibility-studies/" | head -3
-# expect HTTP/2 200 (not 404)
-
-curl -s "https://museumplanning.com/museum-feasibility-studies/" | grep canonical
-# expect museum-feasibility-study.html
+curl -sI "https://museumplanning.com/museum-feasibility-studies/" | grep -iE "^HTTP|location"
+curl -sI "https://museumplanning.com/museum-master-planning/" | grep -iE "^HTTP|location"
+curl -sI "https://museumplanning.com/museum-strategic-planning-consultants/" | grep -iE "^HTTP|location"
+curl -sI "https://museumplanning.com/immersive-interactive-museum-transformation/" | grep -iE "^HTTP|location"
 ```
+
+Without Cloudflare, stubs return **200** + canonical (still OK for SEO, weaker than 301).
 
 Then in **Google Search Console**: URL Inspection → Request indexing on the **target** pages.
 
@@ -70,8 +74,9 @@ python3 tools/gen_cloudflare_bulk_redirects.py
 
 Files:
 
-- `redirects/cloudflare-bulk-redirects.csv` — **no header row** (Cloudflare requirement)
-- Source map: `redirects/legacy-redirects.json`
+- `redirects/cloudflare-bulk-redirects.csv` — full list, **no header row**
+- `redirects/cloudflare-bulk-redirects-priority.csv` — rank-critical rows only (Free plan cap fallback)
+- Source map: `redirects/legacy-redirects.json` (do not override in `EXTRA_EXACT` except `/museum-school`)
 
 **CSV column format:** source = `museumplanning.com/path` (no `https://`); target = full `https://museumplanning.com/...` URL.
 

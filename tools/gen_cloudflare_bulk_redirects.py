@@ -25,8 +25,8 @@ OUT_PRIORITY = ROOT / "redirects" / "cloudflare-bulk-redirects-priority.csv"
 HOST = "museumplanning.com"
 SITE = f"https://{HOST}"
 
+# Paths not in legacy-redirects.json exact map
 EXTRA_EXACT = {
-    "/museum-strategic-planning": "/museum-planning-services.html",
     "/museum-school": "/museum-school/index.html",
 }
 
@@ -41,6 +41,7 @@ PRIORITY_SOURCES = {
     "/museum-strategic-planning-consultants",
     "/museum-strategic-planning",
     "/museum-consulting-and-cultural-planning-museum-planning-llc",
+    "/immersive-interactive-museum-transformation",
 }
 
 
@@ -80,6 +81,9 @@ def main() -> None:
         if source in SKIP_EXACT:
             continue
         add(source, dest, trailing_slash=False)
+        # WordPress legacy URLs often used trailing slashes; Cloudflare must match both.
+        if source in PRIORITY_SOURCES:
+            add(source, dest, trailing_slash=True)
 
     skip_prefixes = {
         "/portfolio-item/",
