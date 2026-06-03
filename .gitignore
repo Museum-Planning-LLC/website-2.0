@@ -1,2 +1,6 @@
 __pycache__/
 .DS_Store
+tools/gsc-credentials.json
+**/gsc-service-account*.json
+tools/launch.env
+launch.env

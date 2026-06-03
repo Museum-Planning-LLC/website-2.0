@@ -1,0 +1,43 @@
+name: SEO rankings (GSC)
+
+on:
+  schedule:
+    # 1st of each month, 14:00 UTC (~7am PT)
+    - cron: "0 14 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install GSC dependencies
+        run: pip install -r tools/requirements-gsc.txt
+
+      - name: Fetch Search Console data
+        env:
+          GSC_CREDENTIALS_JSON: ${{ secrets.GSC_CREDENTIALS_JSON }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GOOGLE_CSE_API_KEY: ${{ secrets.GOOGLE_CSE_API_KEY }}
+          GOOGLE_CSE_CX: ${{ secrets.GOOGLE_CSE_CX }}
+        run: python3 tools/fetch_gsc_rankings.py
+
+      - name: Commit rankings.json if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/rankings.json
+          if git diff --staged --quiet; then
+            echo "No ranking changes."
+          else
+            git commit -m "chore(seo): refresh GSC rankings snapshot"
+            git push
+          fi

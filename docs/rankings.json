@@ -1,0 +1,251 @@
+{
+  "property": "museumplanning.com",
+  "reportDate": "2026-06-02",
+  "dataSource": "Your ranks: last snapshot / seed (connect GSC for live data) · Competitors: manual SERP (2026-06-02)",
+  "gscConnected": false,
+  "cseConnected": false,
+  "competitors": [
+    {
+      "id": "mgmp",
+      "label": "mgmp.us",
+      "short": "mgmp.us",
+      "domain": "mgmp.us"
+    },
+    {
+      "id": "vj",
+      "label": "verner\njohnson",
+      "short": "vernerjohnson",
+      "domain": "vernerjohnson.com"
+    },
+    {
+      "id": "tmg",
+      "label": "museum\ngroup",
+      "short": "museumgroup",
+      "domain": "museumgroup.com"
+    },
+    {
+      "id": "met",
+      "label": "met\nstrat.",
+      "short": "metstrategies",
+      "domain": "metstrategies.com"
+    }
+  ],
+  "keywords": [
+    {
+      "phrase": "museum planning",
+      "pillarUrl": "https://museumplanning.com/",
+      "volume": "1K–2K / mo",
+      "volumeTier": "High",
+      "you": 1,
+      "ranks": {
+        "mgmp": 3,
+        "vj": 6,
+        "tmg": null,
+        "met": null
+      },
+      "mom": {
+        "dir": "flat",
+        "label": "—"
+      },
+      "gsc": null
+    },
+    {
+      "phrase": "museum planning services",
+      "pillarUrl": "https://museumplanning.com/museum-planning-services.html",
+      "volume": "300–600 / mo",
+      "volumeTier": "Med",
+      "you": 2,
+      "ranks": {
+        "mgmp": 1,
+        "vj": 4,
+        "tmg": 7,
+        "met": null
+      },
+      "mom": {
+        "dir": "flat",
+        "label": "—"
+      },
+      "gsc": null
+    },
+    {
+      "phrase": "museum feasibility study",
+      "pillarUrl": "https://museumplanning.com/museum-feasibility-study.html",
+      "volume": "200–400 / mo",
+      "volumeTier": "Med",
+      "you": 3,
+      "ranks": {
+        "mgmp": 2,
+        "vj": null,
+        "tmg": 8,
+        "met": 5
+      },
+      "mom": {
+        "dir": "flat",
+        "label": "—"
+      },
+      "gsc": null
+    },
+    {
+      "phrase": "museum strategic planning",
+      "pillarUrl": "https://museumplanning.com/museum-strategic-planning.html",
+      "volume": "200–500 / mo",
+      "volumeTier": "Med",
+      "you": 5,
+      "ranks": {
+        "mgmp": 2,
+        "vj": 4,
+        "tmg": 1,
+        "met": 3
+      },
+      "mom": {
+        "dir": "flat",
+        "label": "—"
+      },
+      "gsc": null
+    },
+    {
+      "phrase": "museum master planning",
+      "pillarUrl": "https://museumplanning.com/museum-master-planning.html",
+      "volume": "100–300 / mo",
+      "volumeTier": "Lower",
+      "you": 14,
+      "ranks": {
+        "mgmp": 1,
+        "vj": 2,
+        "tmg": null,
+        "met": 6
+      },
+      "mom": {
+        "dir": "flat",
+        "label": "—"
+      },
+      "gsc": null
+    }
+  ],
+  "competitorProfiles": [
+    {
+      "name": "M. Goodwin Museum Planning",
+      "url": "mgmp.us",
+      "threat": "high",
+      "keywords": [
+        {
+          "short": "planning",
+          "rank": 3
+        },
+        {
+          "short": "services",
+          "rank": 1
+        },
+        {
+          "short": "feasibility",
+          "rank": 2
+        },
+        {
+          "short": "strategic",
+          "rank": 2
+        },
+        {
+          "short": "master",
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "name": "VernerJohnson",
+      "url": "vernerjohnson.com",
+      "threat": "high",
+      "keywords": [
+        {
+          "short": "planning",
+          "rank": 6
+        },
+        {
+          "short": "services",
+          "rank": 4
+        },
+        {
+          "short": "feasibility",
+          "rank": null
+        },
+        {
+          "short": "strategic",
+          "rank": 4
+        },
+        {
+          "short": "master",
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "name": "The Museum Group",
+      "url": "museumgroup.com",
+      "threat": "med",
+      "keywords": [
+        {
+          "short": "planning",
+          "rank": null
+        },
+        {
+          "short": "services",
+          "rank": 7
+        },
+        {
+          "short": "feasibility",
+          "rank": 8
+        },
+        {
+          "short": "strategic",
+          "rank": 1
+        },
+        {
+          "short": "master",
+          "rank": null
+        }
+      ]
+    },
+    {
+      "name": "METStrategies",
+      "url": "metstrategies.com",
+      "threat": "low",
+      "presentOn": 3,
+      "keywords": [
+        {
+          "short": "strategic",
+          "rank": 3
+        },
+        {
+          "short": "master",
+          "rank": 6
+        },
+        {
+          "short": "feasibility",
+          "rank": 5
+        }
+      ]
+    }
+  ],
+  "opportunities": [
+    {
+      "type": "gap",
+      "label": "⚠ Priority Gap",
+      "keyword": "museum master planning",
+      "note": "Page 2 target. mgmp.us and VernerJohnson dominate SERP. Strengthen the Tier 1 pillar with case studies and internal links from services + projects."
+    },
+    {
+      "type": "close",
+      "label": "↑ Close the Gap",
+      "keyword": "museum strategic planning",
+      "note": "Behind museumgroup.com on SERP. Case studies and deeper service-page content help close the gap — watch GSC average position monthly."
+    },
+    {
+      "type": "strengthen",
+      "label": "✓ Strengthen",
+      "keyword": "museum planning services",
+      "accent": "green",
+      "note": "Trending up in GSC. Cross-link from Museum AI, Museum Courses, and project proof pages to build topical authority."
+    }
+  ],
+  "competitorRanksAsOf": "2026-06-02",
+  "competitorRanksNote": "Manual SERP check — update quarterly in this file (no paid rank tracker)"
+}

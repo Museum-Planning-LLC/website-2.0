@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Keyword Rankings Dashboard — Museum Planning LLC</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sidebar-bg: #ffffff;
+  --sidebar-active: #f5f7fa;
+  --body-bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --topbar-bg: #ffffff;
+  --gold: #C9A84C;
+  --gold-bg: #fdf6e3;
+  --teal: #1a9e8f;
+  --teal-bg: #e8f7f5;
+  --red: #e05252;
+  --red-bg: #fdf0f0;
+  --green: #27ae60;
+  --green-bg: #eaf7ef;
+  --amber: #e67e22;
+  --amber-bg: #fdf3e7;
+  --ink: #1a2436;
+  --mid: #6b7a8d;
+  --light: #9aa5b4;
+  --rule: #e4e8ee;
+  --rule-dark: #d0d7e2;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+  --sidebar-w: 240px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{height:100%;}
+body{font-family:'DM Sans',sans-serif;background:var(--body-bg);color:var(--ink);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased;height:100%;}
+button{font:inherit;cursor:pointer;}
+a{color:inherit;}
+
+.shell{display:grid;grid-template-columns:var(--sidebar-w) 1fr;height:100vh;overflow:hidden;}
+
+.sidebar{background:var(--sidebar-bg);border-right:1px solid var(--rule);display:flex;flex-direction:column;overflow-y:auto;}
+.sb-logo{padding:18px 20px 16px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;}
+.sb-logo svg{height:28px;width:28px;flex-shrink:0;}
+.sb-logo-name{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);line-height:1.3;}
+.sb-logo-sub{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);}
+
+.sb-group{padding:20px 12px 6px;}
+.sb-group-label{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:2.5px;text-transform:uppercase;color:var(--light);margin-bottom:6px;padding-left:8px;}
+.sb-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:5px;transition:background .15s;margin-bottom:1px;text-decoration:none;border:1px solid transparent;width:100%;text-align:left;background:none;}
+.sb-item:hover{background:var(--body-bg);}
+.sb-item.active{background:var(--gold-bg);border-color:rgba(201,168,76,.25);}
+.sb-item.disabled{opacity:.55;cursor:not-allowed;}
+.sb-icon{width:18px;height:18px;border-radius:4px;background:var(--rule);display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--mid);flex-shrink:0;}
+.sb-item.active .sb-icon{background:rgba(201,168,76,.2);color:var(--gold);}
+.sb-label{font-size:12px;color:var(--mid);font-weight:400;}
+.sb-item.active .sb-label{color:var(--ink);font-weight:600;}
+.sb-badge{margin-left:auto;background:var(--gold-bg);color:var(--gold);font-family:'DM Mono',monospace;font-size:8px;padding:2px 6px;border-radius:10px;border:1px solid rgba(201,168,76,.2);}
+.sb-soon{margin-left:auto;font-family:'DM Mono',monospace;font-size:7px;letter-spacing:1px;text-transform:uppercase;color:var(--light);}
+
+.sb-divider{height:1px;background:var(--rule);margin:8px 12px;}
+.sb-footer{margin-top:auto;padding:14px 16px;border-top:1px solid var(--rule);}
+.sb-user-row{display:flex;align-items:center;gap:8px;}
+.sb-avatar{width:28px;height:28px;border-radius:50%;background:var(--gold-bg);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);}
+.sb-user-name{font-size:11px;color:var(--ink);font-weight:500;}
+.sb-user-email{font-family:'DM Mono',monospace;font-size:8px;color:var(--light);}
+
+.main{display:flex;flex-direction:column;overflow:hidden;min-width:0;}
+
+.topbar{background:var(--topbar-bg);height:56px;padding:0 16px 0 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);box-shadow:var(--shadow);flex-shrink:0;gap:12px;}
+.tb-left{display:flex;align-items:center;gap:14px;min-width:0;}
+.menu-btn{display:none;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--rule);border-radius:4px;background:var(--card-bg);color:var(--mid);flex-shrink:0;}
+.menu-btn svg{width:18px;height:18px;}
+.tb-crumb{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.tb-crumb-sep{color:var(--rule-dark);}
+.tb-title{font-size:15px;font-weight:600;color:var(--ink);}
+.tb-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.tb-date{font-family:'DM Mono',monospace;font-size:9px;color:var(--light);background:var(--body-bg);padding:5px 10px;border-radius:4px;border:1px solid var(--rule);}
+.tb-btn{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);background:var(--card-bg);border:1px solid var(--rule);padding:6px 12px;border-radius:4px;transition:border-color .15s,color .15s;}
+.tb-btn:hover{border-color:var(--gold);color:var(--gold);}
+.tb-btn.primary{background:var(--gold);color:white;border-color:var(--gold);font-weight:600;}
+.tb-btn.primary:hover{color:white;border-color:#b8912a;background:#b8912a;}
+
+.scroll{flex:1;overflow-y:auto;padding:20px 24px;}
+.loading-state{padding:48px 24px;text-align:center;color:var(--light);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;}
+
+.summary-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px;}
+.sum-card{background:var(--card-bg);border:1px solid var(--rule);border-radius:8px;padding:16px;box-shadow:var(--shadow);}
+.sum-label{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:10px;}
+.sum-val{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:4px;}
+.sum-val.gold{color:var(--gold);}
+.sum-val.green{color:var(--green);}
+.sum-val.red{color:var(--red);}
+.sum-val.small{font-size:14px;font-family:'DM Sans',sans-serif;font-weight:600;margin-top:4px;}
+.sum-sub{font-size:11px;color:var(--light);margin-bottom:6px;}
+.sum-trend{display:inline-flex;align-items:center;gap:4px;font-family:'DM Mono',monospace;font-size:9px;padding:2px 7px;border-radius:10px;font-weight:500;}
+.trend-up{background:var(--green-bg);color:var(--green);}
+.trend-down{background:var(--red-bg);color:var(--red);}
+.trend-flat{background:var(--body-bg);color:var(--light);}
+
+.two-col{display:grid;grid-template-columns:1fr 340px;gap:16px;margin-bottom:16px;}
+
+.card{background:var(--card-bg);border:1px solid var(--rule);border-radius:8px;box-shadow:var(--shadow);overflow:hidden;}
+.card-header{padding:14px 18px;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.ch-title{font-size:12px;font-weight:600;color:var(--ink);}
+.ch-sub{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);}
+.ch-badge{font-family:'DM Mono',monospace;font-size:8px;padding:3px 9px;border-radius:10px;border:1px solid var(--rule);color:var(--mid);background:var(--body-bg);white-space:nowrap;}
+
+.kw-table{width:100%;border-collapse:collapse;}
+.kw-table caption{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.kw-table th{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);padding:9px 14px;text-align:left;border-bottom:1px solid var(--rule);background:var(--body-bg);}
+.kw-table th.c{text-align:center;}
+.kw-table td{padding:11px 14px;border-bottom:1px solid #f0f2f5;vertical-align:middle;}
+.kw-table tr:last-child td{border-bottom:none;}
+.kw-table tbody tr:hover td{background:#f8f9fb;}
+.kw-name{font-size:12.5px;font-weight:500;color:var(--ink);}
+.kw-name a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s;}
+.kw-name a:hover{border-bottom-color:var(--gold);color:var(--ink);}
+.kw-vol{font-family:'DM Mono',monospace;font-size:10px;color:var(--light);margin-top:1px;}
+
+.rank-cell{text-align:center;}
+.rp{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:24px;padding:0 6px;border-radius:4px;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;}
+.rp-1{background:var(--gold-bg);color:#a07c1a;border:1px solid rgba(201,168,76,.3);}
+.rp-2{background:#fff8e6;color:#b8912a;border:1px solid rgba(201,168,76,.2);}
+.rp-3{background:var(--teal-bg);color:#157a6e;border:1px solid rgba(26,158,143,.25);}
+.rp-4{background:#f0f4f8;color:var(--mid);border:1px solid var(--rule-dark);}
+.rp-nr{background:#f5f5f5;color:#bbb;border:1px solid #e0e0e0;font-size:9px;}
+.rp-you{background:var(--ink);color:white;border:1px solid var(--ink);}
+.rp-you.p1{background:var(--gold);border-color:var(--gold);}
+.rp-you.p2{background:#b8912a;border-color:#b8912a;}
+.rp-you.p3{background:var(--teal);border-color:var(--teal);}
+.rp-you.pg2{background:var(--red);border-color:var(--red);}
+
+.diff{display:inline-flex;align-items:center;gap:3px;font-family:'DM Mono',monospace;font-size:10px;padding:2px 6px;border-radius:3px;}
+.diff-up{background:var(--green-bg);color:var(--green);}
+.diff-down{background:var(--red-bg);color:var(--red);}
+.diff-flat{color:var(--light);}
+
+.comp-list{padding:0;}
+.comp-item{padding:12px 16px;border-bottom:1px solid var(--rule);}
+.comp-item:last-child{border-bottom:none;}
+.comp-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;gap:8px;}
+.comp-name{font-size:12px;font-weight:600;color:var(--ink);}
+.comp-url{font-family:'DM Mono',monospace;font-size:9px;color:var(--light);margin-top:1px;}
+.comp-meta{font-family:'DM Mono',monospace;font-size:8px;color:var(--light);margin-top:2px;}
+.threat{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:10px;white-space:nowrap;flex-shrink:0;}
+.th-high{background:var(--red-bg);color:var(--red);border:1px solid rgba(224,82,82,.2);}
+.th-med{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(230,126,34,.2);}
+.th-low{background:var(--teal-bg);color:var(--teal);border:1px solid rgba(26,158,143,.2);}
+.comp-kws{display:flex;flex-wrap:wrap;gap:5px;}
+.ck{display:inline-flex;align-items:center;gap:5px;background:var(--body-bg);border:1px solid var(--rule);padding:3px 8px;border-radius:10px;}
+.ck-name{font-size:10px;color:var(--mid);}
+.ck-rank{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;}
+.ck-rank.r1{color:var(--gold);} .ck-rank.r2{color:#b8912a;} .ck-rank.r3{color:var(--teal);} .ck-rank.rn{color:#bbb;}
+
+.opp-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px;}
+.opp-card{background:var(--card-bg);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;box-shadow:var(--shadow);border-left:3px solid var(--gold);}
+.opp-label{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.opp-kw{font-size:12.5px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.opp-note{font-size:11px;color:var(--mid);line-height:1.55;}
+
+.footer-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0 0;gap:16px;flex-wrap:wrap;}
+.fr-note{font-family:'DM Mono',monospace;font-size:8px;color:var(--light);}
+
+.sidebar-backdrop{display:none;position:fixed;inset:0;background:rgba(26,36,54,.4);z-index:90;}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--ink);color:#fff;font-family:'DM Mono',monospace;font-size:10px;padding:10px 14px;border-radius:6px;box-shadow:var(--shadow-md);opacity:0;transform:translateY(8px);transition:opacity .2s,transform .2s;pointer-events:none;z-index:200;max-width:320px;}
+.toast.show{opacity:1;transform:translateY(0);}
+
+dialog{border:none;border-radius:8px;padding:0;box-shadow:var(--shadow-md);max-width:420px;width:calc(100% - 32px);}
+dialog::backdrop{background:rgba(26,36,54,.45);}
+.modal{padding:20px 22px;}
+.modal h2{font-size:14px;margin-bottom:8px;}
+.modal p{font-size:12px;color:var(--mid);line-height:1.6;margin-bottom:16px;}
+.modal-actions{display:flex;justify-content:flex-end;gap:8px;}
+
+@media(max-width:960px){
+  .shell{grid-template-columns:1fr;}
+  .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);z-index:100;transform:translateX(-100%);transition:transform .2s ease;box-shadow:var(--shadow-md);}
+  .sidebar.open{transform:translateX(0);}
+  .sidebar-backdrop.show{display:block;}
+  .menu-btn{display:inline-flex;}
+  .summary-row{grid-template-columns:1fr 1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .opp-row{grid-template-columns:1fr;}
+  .tb-date{display:none;}
+}
+
+@media print{
+  .sidebar,.menu-btn,.sidebar-backdrop,.tb-btn,.toast,dialog{display:none!important;}
+  .shell{grid-template-columns:1fr;height:auto;}
+  .scroll{overflow:visible;padding:0;}
+  body{background:#fff;}
+  .card,.sum-card{break-inside:avoid;box-shadow:none;}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar" id="sidebar" aria-label="Dashboard navigation">
+    <div class="sb-logo">
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <rect width="32" height="32" rx="4" fill="#1a2436"/>
+        <text x="16" y="21" text-anchor="middle" font-family="'DM Mono',monospace" font-size="11" font-weight="500" fill="#C9A84C">MP</text>
+      </svg>
+      <div>
+        <div class="sb-logo-name">Museum Planning</div>
+        <div class="sb-logo-sub">SEO Dashboard</div>
+      </div>
+    </div>
+
+    <nav class="sb-group" aria-label="Analytics">
+      <div class="sb-group-label">Analytics</div>
+      <button type="button" class="sb-item active" aria-current="page">
+        <span class="sb-icon" aria-hidden="true">◈</span>
+        <span class="sb-label">Keyword Rankings</span>
+        <span class="sb-badge" id="nav-kw-count">5</span>
+      </button>
+      <button type="button" class="sb-item disabled" disabled title="Coming soon">
+        <span class="sb-icon" aria-hidden="true">◇</span>
+        <span class="sb-label">Competitor Watch</span>
+        <span class="sb-soon">Soon</span>
+      </button>
+      <button type="button" class="sb-item disabled" disabled title="Coming soon">
+        <span class="sb-icon" aria-hidden="true">◇</span>
+        <span class="sb-label">Page Performance</span>
+        <span class="sb-soon">Soon</span>
+      </button>
+      <button type="button" class="sb-item disabled" disabled title="Coming soon">
+        <span class="sb-icon" aria-hidden="true">◇</span>
+        <span class="sb-label">Backlink Profile</span>
+        <span class="sb-soon">Soon</span>
+      </button>
+    </nav>
+
+    <div class="sb-divider" role="presentation"></div>
+
+    <nav class="sb-group" aria-label="Properties">
+      <div class="sb-group-label">Properties</div>
+      <button type="button" class="sb-item active" aria-current="true">
+        <span class="sb-icon" style="background:rgba(192,57,43,.2);color:#c0392b;" aria-hidden="true">M</span>
+        <span class="sb-label">museumplanning.com</span>
+      </button>
+      <button type="button" class="sb-item disabled" disabled title="Not connected">
+        <span class="sb-icon" style="background:rgba(26,158,143,.15);color:var(--teal);" aria-hidden="true">AI</span>
+        <span class="sb-label">museum-ai.com</span>
+        <span class="sb-soon">Soon</span>
+      </button>
+      <button type="button" class="sb-item disabled" disabled title="Not connected">
+        <span class="sb-icon" style="background:rgba(201,168,76,.15);color:var(--gold);" aria-hidden="true">C</span>
+        <span class="sb-label">museumcourses.com</span>
+        <span class="sb-soon">Soon</span>
+      </button>
+    </nav>
+
+    <div class="sb-divider" role="presentation"></div>
+
+    <nav class="sb-group" aria-label="Reports">
+      <div class="sb-group-label">Reports</div>
+      <button type="button" class="sb-item disabled" disabled title="Coming soon">
+        <span class="sb-icon" aria-hidden="true">◇</span>
+        <span class="sb-label">Monthly Summary</span>
+      </button>
+      <button type="button" class="sb-item" id="export-btn">
+        <span class="sb-icon" aria-hidden="true">↓</span>
+        <span class="sb-label">Export Data</span>
+      </button>
+    </nav>
+
+    <div class="sb-footer">
+      <div class="sb-user-row">
+        <div class="sb-avatar" aria-hidden="true">MW</div>
+        <div>
+          <div class="sb-user-name">Mark Walhimer</div>
+          <div class="sb-user-email">mark@museumplanning.com</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="tb-left">
+        <button type="button" class="menu-btn" id="menu-btn" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div>
+          <div class="tb-crumb">
+            <span>museumplanning.com</span>
+            <span class="tb-crumb-sep" aria-hidden="true">/</span>
+            <span>SEO</span>
+            <span class="tb-crumb-sep" aria-hidden="true">/</span>
+          </div>
+          <h1 class="tb-title">Keyword Rankings</h1>
+        </div>
+      </div>
+      <div class="tb-right">
+        <time class="tb-date" id="report-date" datetime="2026-06-02">June 2, 2026</time>
+        <button type="button" class="tb-btn" id="refresh-btn">↻ Refresh</button>
+        <button type="button" class="tb-btn primary" id="add-kw-btn">+ Add Keyword</button>
+      </div>
+    </header>
+
+    <main class="scroll" id="dashboard-root" aria-live="polite"></main>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="add-kw-dialog" aria-labelledby="add-kw-title">
+  <div class="modal">
+    <h2 id="add-kw-title">Add keyword</h2>
+    <p>Add Tier 1 keywords in <code>docs/seo-dashboard-config.json</code>, then run <code>python3 tools/fetch_gsc_rankings.py</code>. Your ranks come from Google Search Console; competitor ranks are updated manually (free quarterly SERP check).</p>
+    <div class="modal-actions">
+      <button type="button" class="tb-btn" id="add-kw-close">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="rankings.embed.js"></script>
+<script>
+let DATA = null;
+
+function rankPill(rank, isYou) {
+  if (rank == null) return `<span class="rp rp-nr" aria-label="Not ranking">NR</span>`;
+  let cls = "rp-4";
+  if (rank === 1) cls = "rp-1";
+  else if (rank === 2) cls = "rp-2";
+  else if (rank === 3) cls = "rp-3";
+  let youCls = "";
+  if (isYou) {
+    youCls = " rp-you";
+    if (rank === 1) youCls += " p1";
+    else if (rank === 2) youCls += " p2";
+    else if (rank === 3) youCls += " p3";
+    else if (rank > 10) youCls += " pg2";
+  }
+  const label = isYou ? `Your rank: ${rank}` : `Rank ${rank}`;
+  return `<span class="rp ${cls}${youCls}" aria-label="${label}">${rank}</span>`;
+}
+
+function diffPill(mom) {
+  const cls = mom.dir === "up" ? "diff-up" : mom.dir === "down" ? "diff-down" : "diff-flat";
+  return `<span class="diff ${cls}">${mom.label}</span>`;
+}
+
+function computeSummary(keywords) {
+  const top3 = keywords.filter(k => k.you >= 1 && k.you <= 3).length;
+  const page1NotTop3 = keywords.filter(k => k.you >= 4 && k.you <= 10).length;
+  const notPage1 = keywords.filter(k => k.you > 10).length;
+  const improved = keywords.filter(k => k.mom && k.mom.dir === "up").length;
+  const gapKw = keywords.find(k => k.you > 10);
+  return { top3, page1NotTop3, notPage1, improved, gapKw };
+}
+
+function topCompetitor(keywords, competitors, profiles) {
+  const counts = Object.fromEntries(competitors.map(c => [c.id, 0]));
+  keywords.forEach(kw => {
+    competitors.forEach(c => {
+      if (kw.ranks[c.id] != null) counts[c.id]++;
+    });
+  });
+  const best = competitors.reduce((a, b) => counts[a.id] >= counts[b.id] ? a : b);
+  const profile = profiles.find(p => p.url.startsWith(best.short) || best.short.startsWith(p.url.split(".")[0]));
+  return { id: best.id, count: counts[best.id], total: keywords.length, profile };
+}
+
+function threatClass(level) {
+  if (level === "high") return "th-high";
+  if (level === "med") return "th-med";
+  return "th-low";
+}
+
+function threatLabel(level) {
+  if (level === "high") return "High";
+  if (level === "med") return "Medium";
+  return "Lower";
+}
+
+function ckRankClass(rank) {
+  if (rank == null) return "rn";
+  if (rank === 1) return "r1";
+  if (rank === 2) return "r2";
+  return "r3";
+}
+
+function gscSubline(kw) {
+  if (!kw.gsc || kw.gsc.impressions == null) return "";
+  const imp = kw.gsc.impressions.toLocaleString();
+  const clk = kw.gsc.clicks != null ? kw.gsc.clicks.toLocaleString() : "0";
+  return `<div class="kw-vol">GSC: ${imp} imp · ${clk} clk</div>`;
+}
+
+function renderDashboard() {
+  const root = document.getElementById("dashboard-root");
+  if (!DATA) {
+    root.innerHTML = `<div class="loading-state">Loading rankings…</div>`;
+    return;
+  }
+
+  const { keywords, competitors, opportunities, competitorProfiles } = DATA;
+  const summary = computeSummary(keywords);
+  const topComp = topCompetitor(keywords, competitors, competitorProfiles);
+  const compName = topComp.profile ? topComp.profile.name : topComp.id;
+  const compUrl = topComp.profile ? topComp.profile.url : "";
+
+  const tableHead = competitors.map(c =>
+    `<th class="c" scope="col">${c.label.replace(/\n/g, "<br>")}</th>`
+  ).join("");
+
+  const tableRows = keywords.map(kw => {
+    const compCells = competitors.map(c =>
+      `<td class="rank-cell">${rankPill(kw.ranks[c.id], false)}</td>`
+    ).join("");
+    return `<tr>
+      <th scope="row">
+        <div class="kw-name"><a href="${kw.pillarUrl}" target="_blank" rel="noopener">${kw.phrase}</a></div>
+        <div class="kw-vol">${kw.volume}</div>
+        ${gscSubline(kw)}
+      </th>
+      <td class="rank-cell">${rankPill(kw.you, true)}</td>
+      ${compCells}
+      <td><span class="kw-vol">${kw.volumeTier}</span></td>
+      <td>${diffPill(kw.mom)}</td>
+    </tr>`;
+  }).join("");
+
+  const compItems = competitorProfiles.map(cp => {
+    const kws = cp.keywords.map(k =>
+      `<div class="ck"><span class="ck-name">${k.short}</span><span class="ck-rank ${ckRankClass(k.rank)}">${k.rank == null ? "NR" : "#" + k.rank}</span></div>`
+    ).join("");
+    const meta = cp.presentOn
+      ? `<div class="comp-meta">Ranks on ${cp.presentOn}/${keywords.length} tracked KWs · SERP ${DATA.competitorRanksAsOf || ""}</div>`
+      : `<div class="comp-meta">Ranks on ${cp.keywords.filter(k => k.rank != null).length}/${keywords.length} tracked KWs · SERP ${DATA.competitorRanksAsOf || ""}</div>`;
+    return `<article class="comp-item">
+      <div class="comp-top">
+        <div>
+          <div class="comp-name">${cp.name}</div>
+          <div class="comp-url">${cp.url}</div>
+          ${meta}
+        </div>
+        <span class="threat ${threatClass(cp.threat)}">${threatLabel(cp.threat)}</span>
+      </div>
+      <div class="comp-kws">${kws}</div>
+    </article>`;
+  }).join("");
+
+  const oppCards = opportunities.map(o => {
+    const accent = o.accent === "green" ? " green-accent" : "";
+    const labelColor = o.accent === "green" ? " style=\"color:var(--teal)\"" : "";
+    const border = o.accent === "green" ? " style=\"border-left-color:var(--teal)\"" : "";
+    return `<article class="opp-card${accent}"${border}>
+      <div class="opp-label"${labelColor}>${o.label}</div>
+      <div class="opp-kw">${o.keyword}</div>
+      <div class="opp-note">${o.note}</div>
+    </article>`;
+  }).join("");
+
+  const dateFormatted = new Date(DATA.reportDate + "T12:00:00").toLocaleDateString("en-US", {
+    month: "long", day: "numeric", year: "numeric"
+  });
+
+  const momTrend = summary.improved > 0
+    ? `<span class="sum-trend trend-up">↑ ${summary.improved} improved</span>`
+    : `<span class="sum-trend trend-flat">— MoM from GSC</span>`;
+
+  root.innerHTML = `
+    <section class="summary-row" aria-label="Summary metrics">
+      <div class="sum-card">
+        <div class="sum-label">Tracked Keywords</div>
+        <div class="sum-val">${keywords.length}</div>
+        <div class="sum-sub">Tier 1 core set</div>
+      </div>
+      <div class="sum-card">
+        <div class="sum-label">Top 3 Positions</div>
+        <div class="sum-val green">${summary.top3}</div>
+        <div class="sum-sub">of ${keywords.length} keywords</div>
+        ${momTrend}
+      </div>
+      <div class="sum-card">
+        <div class="sum-label">Page 1 (pos. 4–10)</div>
+        <div class="sum-val gold">${summary.page1NotTop3}</div>
+        <div class="sum-sub">of ${keywords.length} keywords</div>
+        <span class="sum-trend trend-flat">avg position from GSC</span>
+      </div>
+      <div class="sum-card">
+        <div class="sum-label">Not Page 1</div>
+        <div class="sum-val red">${summary.notPage1}</div>
+        <div class="sum-sub">${summary.gapKw ? summary.gapKw.phrase : "—"}</div>
+        <span class="sum-trend trend-down">↓ priority gap</span>
+      </div>
+      <div class="sum-card">
+        <div class="sum-label">Top Competitor</div>
+        <div class="sum-val small">${compUrl}</div>
+        <div class="sum-sub">${compName}</div>
+        <span class="sum-trend trend-down">Ranks on ${topComp.count}/${topComp.total} KWs</span>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <section class="card" aria-labelledby="kw-table-title">
+        <div class="card-header">
+          <h2 class="ch-title" id="kw-table-title">Keyword Positions · ${DATA.property}</h2>
+          <span class="ch-badge">${keywords.length} keywords · ${dateFormatted.split(",")[0]}</span>
+        </div>
+        <table class="kw-table">
+          <caption>Keyword ranking positions for ${DATA.property} versus competitors</caption>
+          <thead>
+            <tr>
+              <th scope="col" style="width:28%;">Keyword</th>
+              <th class="c" scope="col" style="width:8%;">You</th>
+              ${tableHead}
+              <th scope="col" style="width:9%;">Tier</th>
+              <th scope="col" style="width:9%;">MoM</th>
+            </tr>
+          </thead>
+          <tbody>${tableRows}</tbody>
+        </table>
+      </section>
+
+      <section class="card" aria-labelledby="comp-panel-title">
+        <div class="card-header">
+          <h2 class="ch-title" id="comp-panel-title">Competitor Profiles</h2>
+          <span class="ch-sub">Manual SERP · ${DATA.competitorRanksAsOf || "quarterly"}</span>
+        </div>
+        <div class="comp-list">${compItems}</div>
+      </section>
+    </div>
+
+    <section class="opp-row" aria-label="Opportunities">${oppCards}</section>
+
+    <footer class="footer-row">
+      <p class="fr-note">${DATA.dataSource}</p>
+      <p class="fr-note">Museum Planning LLC · ${dateFormatted}</p>
+    </footer>
+  `;
+
+  document.getElementById("nav-kw-count").textContent = keywords.length;
+  const dateEl = document.getElementById("report-date");
+  dateEl.textContent = dateFormatted;
+  dateEl.dateTime = DATA.reportDate;
+}
+
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(showToast._timer);
+  showToast._timer = setTimeout(() => t.classList.remove("show"), 3200);
+}
+
+function setupNav() {
+  const sidebar = document.getElementById("sidebar");
+  const backdrop = document.getElementById("sidebar-backdrop");
+  const menuBtn = document.getElementById("menu-btn");
+
+  function setOpen(open) {
+    sidebar.classList.toggle("open", open);
+    backdrop.classList.toggle("show", open);
+    backdrop.hidden = !open;
+    menuBtn.setAttribute("aria-expanded", open);
+    menuBtn.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+  }
+
+  menuBtn.addEventListener("click", () => setOpen(!sidebar.classList.contains("open")));
+  backdrop.addEventListener("click", () => setOpen(false));
+  window.addEventListener("keydown", e => {
+    if (e.key === "Escape") setOpen(false);
+  });
+  sidebar.querySelectorAll(".sb-item:not(.disabled)").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (window.matchMedia("(max-width: 960px)").matches) setOpen(false);
+    });
+  });
+}
+
+async function loadRankings() {
+  const root = document.getElementById("dashboard-root");
+  root.innerHTML = `<div class="loading-state">Loading rankings…</div>`;
+  try {
+    const res = await fetch(`rankings.json?${Date.now()}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    DATA = await res.json();
+  } catch (err) {
+    if (window.RANKINGS_DATA) {
+      DATA = window.RANKINGS_DATA;
+    } else {
+      root.innerHTML = `<div class="loading-state">Could not load rankings — run <code>python3 tools/fetch_gsc_rankings.py</code>, then reopen this page.</div>`;
+      showToast("Failed to load rankings");
+      return false;
+    }
+  }
+  renderDashboard();
+  return true;
+}
+
+document.getElementById("refresh-btn").addEventListener("click", async () => {
+  const ok = await loadRankings();
+  if (ok) {
+    showToast(DATA.gscConnected
+      ? "Reloaded rankings from GSC snapshot."
+      : "Reloaded rankings.json (connect GSC for live your-ranks).");
+  }
+});
+
+document.getElementById("add-kw-btn").addEventListener("click", () => {
+  document.getElementById("add-kw-dialog").showModal();
+});
+
+document.getElementById("add-kw-close").addEventListener("click", () => {
+  document.getElementById("add-kw-dialog").close();
+});
+
+document.getElementById("export-btn").addEventListener("click", () => {
+  if (!DATA) return;
+  const blob = new Blob([JSON.stringify(DATA, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `seo-rankings-${DATA.property}-${DATA.reportDate}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast("Exported JSON snapshot.");
+});
+
+setupNav();
+loadRankings();
+</script>
+</body>
+</html>
