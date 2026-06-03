@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Museum AI — Strategic Planning for Smart Museums | Museum Planning LLC</title>
+<meta name="description" content="Museum-AI is a Museum Planning LLC practice: phased feasibility and master planning for audience strategy, smart exhibits, and IoT building intelligence — from opening day thinking, not product sales.">
+<meta name="keywords" content="museum AI planning, museum strategic planning, museum feasibility, smart museum exhibits, museum audience strategy, museum IoT, museum master planning, museum smartphone integration, museum exhibition design">
+<link rel="canonical" href="https://museum-ai.com">
+<meta name="robots" content="index, follow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "name": "Museum-AI",
+      "url": "https://museum-ai.com",
+      "description": "A Museum Planning LLC practice: phased strategic planning for museum AI, smart exhibits, audience and platform strategy, and IoT building intelligence — inside feasibility, master planning, and exhibition design engagements.",
+      "founder": {"@type": "Person", "name": "Mark Walhimer"},
+      "parentOrganization": {"@type": "Organization", "name": "Museum Planning LLC", "url": "https://museumplanning.com"},
+      "serviceType": ["Museum Strategic & Master Planning", "Museum Feasibility Studies", "Museum AI & Smart Exhibit Planning", "Museum Audience & Digital Strategy", "Museum IoT Building Intelligence"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a museum AI smart exhibit?",
+          "acceptedAnswer": {"@type": "Answer", "text": "A museum AI smart exhibit is a networked, sensor-enabled installation that responds to visitor presence, behavior, and smartphone data in real time. Unlike static interactives, smart exhibits adapt — changing content, pacing, and depth based on who is in front of them, and extending the museum experience to the visitor's phone before, during, and after their visit."}
+        },
+        {
+          "@type": "Question",
+          "name": "How does museum IoT smart building integration work?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Museum IoT smart building integration connects the physical building — HVAC, lighting, security, visitor flow sensors, climate control — to a unified data layer. This reduces operating costs, extends collection preservation, and provides real-time visitor behavior data that informs both operations and exhibit programming."}
+        },
+        {
+          "@type": "Question",
+          "name": "Can a small museum afford AI smart exhibit technology?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Museum-AI approach is phased — beginning with a planning engagement that identifies the highest-ROI technology investments for each institution's size, budget, and audience. Smart exhibit technology is deployed incrementally, starting with the exhibits and building systems where networked sensing delivers the most immediate visitor and operational value."}
+        },
+        {
+          "@type": "Question",
+          "name": "What is the role of AI specifically — not just sensors and apps?",
+          "acceptedAnswer": {"@type": "Answer", "text": "AI is the intelligence layer that makes networked museum data useful rather than overwhelming. It identifies patterns in visitor behavior that humans would miss in raw sensor data. It adapts exhibit content in real time based on who is present. It surfaces operational anomalies before they become problems. The AI doesn't replace curatorial judgment. It extends curatorial reach."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --body-bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --navy: #1a2d44;
+  --gold: #C9A84C;
+  --gold-bg: #fdf6e3;
+  --teal: #1a9e8f;
+  --teal-bg: #e8f7f5;
+  --ink: #1a2436;
+  --mid: #5a6478;
+  --light: #9aa5b4;
+  --rule: #e4e8ee;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 14px rgba(0,0,0,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--body-bg);color:var(--ink);font-size:17px;line-height:1.78;-webkit-font-smoothing:antialiased;}
+
+nav{height:62px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);background:var(--card-bg);box-shadow:var(--shadow);position:sticky;top:0;z-index:200;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:28px;width:auto;}
+.nav-logo-name{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);}
+.nav-logo-ai{color:var(--teal);}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center;}
+.nav-links a{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--light);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--teal) !important;color:white !important;padding:7px 18px;border-radius:2px;}
+
+/* HERO */
+.hero{min-height:88vh;display:flex;align-items:center;padding:80px 56px;position:relative;overflow:hidden;background:linear-gradient(135deg, #f8fafc 0%, #eef4f7 50%, #f0f7f6 100%);}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(26,158,143,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(26,158,143,.05) 1px, transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 440px;gap:80px;align-items:center;position:relative;z-index:1;width:100%;}
+.h-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--teal);margin-bottom:22px;display:flex;align-items:center;gap:12px;}
+.h-eyebrow::before{content:'';width:24px;height:1px;background:var(--teal);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,54px);font-weight:700;line-height:1.08;color:var(--ink);margin-bottom:26px;}
+.hero h1 em{color:var(--gold);font-style:normal;}
+.hero-deck{font-size:17px;color:var(--mid);line-height:1.78;max-width:520px;margin-bottom:40px;}
+.btn-teal{background:var(--teal);color:white;padding:14px 28px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;border-radius:2px;display:inline-block;transition:opacity .2s;}
+.btn-teal:hover{opacity:.88;}
+.btn-ghost-gold{color:var(--mid);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(201,168,76,.4);padding-bottom:2px;display:inline-flex;align-items:center;gap:8px;margin-left:20px;transition:color .2s;}
+.btn-ghost-gold:hover{color:var(--gold);}
+
+/* Hero right — network diagram */
+.network-diagram{background:var(--card-bg);border:1px solid var(--rule);border-radius:8px;padding:28px;box-shadow:var(--shadow-md);}
+.nd-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);opacity:.7;margin-bottom:20px;}
+.nd-center{text-align:center;margin:20px 0;}
+.nd-hub{display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;background:var(--teal-bg);border:1px solid var(--teal);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);}
+.nd-spokes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
+.nd-node{background:var(--body-bg);border:1px solid var(--rule);padding:10px 12px;border-radius:4px;font-size:12px;color:var(--mid);display:flex;align-items:center;gap:8px;}
+.nd-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.nd-dot.tl{background:var(--teal);}
+.nd-phase-row{margin-top:20px;padding-top:16px;border-top:1px solid var(--rule);}
+.nd-phase-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:8px;}
+.nd-phases{display:flex;gap:6px;}
+.nd-ph{flex:1;background:var(--gold-bg);border:1px solid rgba(201,168,76,.25);padding:6px 8px;text-align:center;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1px;color:var(--gold);border-radius:3px;}
+
+/* SECTIONS */
+.section{padding:88px 56px;background:var(--card-bg);}
+.section.alt{background:var(--body-bg);}
+.si{max-width:1100px;margin:0 auto;}
+.s-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.s-eyebrow::before{content:'';width:16px;height:1px;background:var(--gold);}
+.s-h2{font-family:'Playfair Display',serif;font-size:clamp(24px,2.6vw,36px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:16px;}
+.s-h2 em{color:var(--gold);font-style:normal;}
+.s-sub{font-size:16px;color:var(--mid);max-width:620px;line-height:1.75;margin-bottom:52px;}
+
+/* Three pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-bottom:64px;box-shadow:var(--shadow);}
+.pillar{background:var(--card-bg);padding:32px 26px;transition:background .2s;}
+.pillar:hover{background:#f8f9fb;}
+.p-num{font-family:'DM Mono',monospace;font-size:22px;color:var(--gold);margin-bottom:14px;line-height:1;}
+.p-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:12px;}
+.p-body{font-size:13.5px;color:var(--mid);line-height:1.75;}
+
+/* How it works */
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.how-prose .s-h2{margin-bottom:20px;}
+.how-body{font-size:15.5px;color:var(--mid);line-height:1.85;}
+.how-body p{margin-bottom:1.4em;}
+.how-body strong{color:var(--ink);font-weight:600;}
+.how-body h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);margin:1.5em 0 .5em;}
+.cta-link{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);border-bottom:1px solid rgba(26,158,143,.3);padding-bottom:2px;text-decoration:none;margin-top:20px;}
+
+/* Phase timeline */
+.phase-timeline{display:flex;flex-direction:column;gap:0;background:var(--card-bg);border:1px solid var(--rule);border-radius:6px;overflow:hidden;box-shadow:var(--shadow);}
+.pt-item{display:flex;gap:20px;padding:20px 22px;border-bottom:1px solid var(--rule);}
+.pt-item:last-child{border-bottom:none;}
+.pt-left{flex-shrink:0;width:52px;}
+.pt-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);font-weight:500;}
+.pt-right{}
+.pt-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.pt-body{font-size:13px;color:var(--mid);line-height:1.7;}
+
+/* FAQ */
+.faq-section{padding:80px 56px;background:var(--body-bg);border-top:1px solid var(--rule);}
+.faq-inner{max-width:820px;margin:0 auto;}
+.faq-item{border-bottom:1px solid var(--rule);padding:24px 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--ink);margin-bottom:12px;line-height:1.3;}
+.faq-a{font-size:15px;color:var(--mid);line-height:1.82;}
+
+/* CTA */
+.cta-band{background:var(--navy);border-top:1px solid rgba(26,158,143,.15);padding:72px 56px;text-align:center;}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(24px,2.8vw,36px);font-weight:700;color:white;margin-bottom:14px;}
+.cta-band p{font-size:15.5px;color:rgba(255,255,255,.5);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.75;}
+.cta-pair{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+footer{padding:44px 56px;background:var(--ink);border-top:1px solid rgba(255,255,255,.05);}
+.fi{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.f-logo{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.f-links{display:flex;gap:24px;}
+.f-links a{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.25);text-decoration:none;}
+.f-links a:hover{color:var(--gold);}
+.f-copy{font-family:'DM Mono',monospace;font-size:8px;color:rgba(255,255,255,.18);}
+
+.parent-band{padding:32px 56px;background:var(--navy);border-bottom:1px solid rgba(26,158,143,.2);}
+.parent-band .si{max-width:1100px;margin:0 auto;}
+.parent-band p{font-size:15.5px;line-height:1.78;color:rgba(255,255,255,.78);max-width:920px;}
+.parent-band a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.35);}
+.parent-band a:hover{color:#e8c96a;}
+.parent-band strong{color:white;font-weight:600;}
+.hero-kicker{font-size:15px;color:var(--mid);max-width:520px;margin:-12px 0 22px;line-height:1.65;}
+.scope-note{margin-top:28px;padding:18px 20px;background:var(--teal-bg);border:1px solid rgba(26,158,143,.2);border-radius:4px;font-size:13.5px;color:var(--mid);line-height:1.7;}
+.scope-note strong{color:var(--ink);}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+.proof-card{background:var(--card-bg);border:1px solid var(--rule);border-radius:6px;padding:22px 20px;box-shadow:var(--shadow);}
+.proof-tag{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
+.proof-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.proof-body{font-size:13px;color:var(--mid);line-height:1.72;}
+.mobile-nav{display:none;gap:10px;padding:10px 20px 12px;background:var(--card-bg);border-bottom:1px solid var(--rule);overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.mobile-nav a{flex-shrink:0;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);text-decoration:none;padding:6px 10px;border:1px solid var(--rule);border-radius:2px;}
+.mobile-nav a:hover{color:var(--teal);border-color:rgba(26,158,143,.35);}
+
+@media(max-width:860px){
+  nav{padding:0 20px;} .nav-links{display:none;}
+  .mobile-nav{display:flex;}
+  .parent-band{padding:28px 20px;}
+  .proof-grid{grid-template-columns:1fr;}
+  .hero{padding:60px 20px;min-height:auto;} .hero-inner{grid-template-columns:1fr;}
+  .network-diagram{display:none;}
+  .section,.faq-section,.cta-band{padding:60px 20px;}
+  .pillars{grid-template-columns:1fr;}
+  .how-grid{grid-template-columns:1fr;}
+  footer{padding:36px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://museumplanning.com" title="Museum Planning LLC">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/wAARCAIUAkwDACIAAREBAhEB/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMAAAERAhEAPwD36iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAWiiigAooooASiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAWiiigAooooASiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooASijoPSsu+8R6NphK3upW0TjqhkG7/AL560m0tWNJt2SNSlrhrz4q+HLbIhe5uj/0yiI/VsViXPxlQEi10ZmHZpZwP0AP86yliKUd5I6qeX4mp8MH+X5nqlFeKT/F7XGJ8mzso1/2lZiP/AB4VSl+KXieTO2e3j/3IAcfnmsnjaK63OqGS4uW6S9We8UV8/n4leLD01QL9II/6rSD4k+LB11XP/bvH/wDE0vr1I0/sLFeX3/8AAPoGkrwWP4oeKUPN5E/+9Ao/lirkPxc8QIQJILGQd8xsD+jf0prG0u5Eskxa2SfzPbqK8ltvjLMMC60ZG9TFOV/Qj+tbdp8XNCnIFxBd2x7koGUfiDn9K0jiaUtpHPUy3FQ3g/z/ACO/pawLLxn4d1HAt9Wttx6LI3lsfwbBrdV1dQykEHoQc1spJ6o45QlB2krMdRRRTJCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigBaKKKACiiigBKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooqKe4htYWmnlSKNBlndgoA9yaAJKCwUckAV55r3xX02x3waVEb2YceYTtjB+vU/gMe9eaa14w1zXiwvL1xCf+WMXyJj0I7/iTXNVxdOn5s9LDZTia9nblXme0av4+8PaNuSW9E8y9YbceY2fQkcD8SK4TVfi9fSlk0uxjt06eZOS7fUAYAP515pRXBUx1SWkdD3qGR4eGtRuT/A2dR8Va7qxP2zU7h1PVFbYh/wCArgfpWNRRXJKpKW7PWp0KVNWhFL5BRRRWZoFFFFABRRRQAUUUUAFFFFABV+w1jUtLYGxvri35ziOQgH6jOD+IqhRVxk1rF2JnThUVpq68zvdM+LGuWZVb5Ib6MdSw2OfxXj9K7rSPihoGo7Y7l5LGU8YnGVP0YZGPc4rwiiuqnjasd9UeZXybDVdYrlfl/kfU8FxDcwrLBKksbDKujAgj6ipc96+Y9L1vU9Fm83T7yW3bOSFb5W+qng/iDXo2hfF0/LDrlqPT7Rbj9Sv8yD+Fd1LG056S0Z4WJyXEUruHvL+un+R6vSGqOmavYaxbC40+7jnjPUoeR7EdQfY1ersTT1R47TTsxaKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigBaKKKACiiigBKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAEoJAHPSszWtf07w/ZG51CcRryFUcs59FHc14x4q+IOpeIWe2ty1np5yPKRvmcf7RHX6Dj1z1rGtXhSXvHZhMDWxUrQWnV9Dv/E3xM03Ry9vp+L68HB2t+7Q+7d/oPxIryXW/E2reIZt+oXTOgOViX5UX6L6+5yfesiivJrYudTTZH1eDyqhhldq8u7/QKKKK5D0wooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAt2Go3mmXS3NjcyQTL/EjEZHoexHseK9O8NfFhH2W2vx7GPAuoh8v1Ze31H5CvJqK3pYidJ6bdjjxWAoYle+te63Pqa2uoLy3Se2lSWJxlXRgQR9RUwr5u8P+KdU8N3HmWM58onLwPko/wCHY+4wa9q8L+N9M8TxiNG+z3oHz28h5+qn+If5IFevQxUKumzPlMbldbDe9vHuv1OoooorpPMCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAFooooAKKKKAEooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiignFACDpXHeMPHln4aja2g23OpEcRA/LHnoXI/l1Pt1rH8c/EZdPMml6LIrXfKy3A5EXsPVvU9vr08fkkeWRpZXZ5GJZnYkkk8kknqa4sTi1T92O57WXZTKvapV0j+LLeqare6zfNd387TSt0zwFHoB0H4VRooryJScndu7PrqdONOKhBWSCiiioKCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACpIpZIZVlido5EIZWUkFSOhBHINR0U9gavoz1vwZ8TVnKafrzqkpwsd2eFb2fsD79PXHf1FWDLkHINfKdd94J+Ic2ismn6o7zacflRzktB/Ur7dR29K9PDYzaNR/M+bzLJtHVw69V/ke30VFBPFdQpNDIskbqGV1OQwPQgipa9M+ZaadmFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAtFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAh6V5b8QPiAYjLo2jS/vOVuLlT93sVUjv6nt9ek/wARfHZsVk0XSpcXLDFxMp5jB/hB/vHuew9+nj1cGKxXJ7kNz3sqyr2v76svd6Lv/wAAWkoorx7n1aVtEFFFFAwooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigDtPA/jmbw5cLaXbNLpjtyvUwnuV9vUd+o56+529zDd26T28iyQyKGR1OQQa+WK7jwD43fw/dLYXzltMlbqefJY/wAQ9j3H4jnIPo4TFcr5J7HgZrlaqJ1qS1W67nutFNjdJY1dGDKwBDA5BH1p1esfKBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAtFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFACVxXxA8Yjw7Y/ZLRgdSuFOzv5S92I/l7/AEwd/wASa9beHNHmv7kglflijzgu56Af54AJ7V866lqVzq+oz315IXnmYsx7D0AHYAYAHoK5MViPZRst2erlWA+tVOaXwr+rFZ3aSRndizsSWYnJJPJJPc0yiivDbufapKKsgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD0/4aeNDBJHoOoy/uXOLWVj90/3CfQ9vy7ivXa+VASCCMgjkEdq90+Hfi7+39O+xXkn/ABMLVQGJPMidA3uex9/rXrYLEX/dyfofL5zl3J/tFNadf8zuKKKK9E+dCiiigAooooAKKKKACiiigAooooAKKKKAFooooAKKKKAEooooAKKKKACiiigAooooAKKKKACiiigAprMEUsxAAGSTTq87+KPic6bpg0e2fFzdrmQg8rH3H/Aun0BqZzUIuT6GlCjKtUVOG7OA8d+KW8Sa2RE/+g25KQDs3q/4449gPeuVoor5+rUdSTkz9Aw2Hjh6apw2QUUUVkbBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQ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x1NdlPAzl8WiPHxWeUKd1S95/geYeHvhLIxWfXZti9fs0LZJ9mbt9B+denWGl2WlWq21haxwRL/Cgx/+s+9XKMV6NHDwpL3V8z5vFZhXxL996dlsLRRRW5xhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAtFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFACD3qhqGi6bq0ey+soJxj/logJH0PatCik0nuVGUou8XY4DUvhLod0S1lLcWTHoA29B+Dc/rXJ3/AMI9ZtyTZ3VtdIOgbMbH8OR+te10lc08HSl0sehRzfF09Oa68/6ufOd54K8SWOfO0e5IHeJRJ+Pyk1iz289s+yeGSJ/R1Kn8jX1NTXijkXa8asD2Irnll6+zL7z0YcQy+3D7mfKtFfTM/hrRLk5m0ixc+rQKT+eKoS+A/DEvLaPbjP8Acyv8jWTy+p0aOlcQUOsWvuPnWivoI/Dfwo3J0r8p5B/7NSD4beEx00r87iT/AOKpf2fV7ov+38N2l9y/zPn6ivoiP4f+Fo+V0iI/7zM38zVyHwn4fgOY9FsQR0JgUn88U1l8+6JfEGH6Rf4f5nzciM7BUUsx6ADJP4Vq2nhbXr4j7PpF4wPRjEVU/iQB+tfR8Nrb2y7YII4h6IgA/SpcVpHL/wCZnPPiH+Sn97PDLH4U+I7rBuBbWi9/Ml3N+S5H6iup074P6dCQ2oajcXBHO2JRGv0PU/qK9K6UV0QwVKPS5wVc7xU9E7ei/wAzF0zwpoejlWstNgjcdJGG5/8Avo5NbQ9qKWumMIx0ijzalWpUd5yb9QoooqjMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAWiiigAooooASiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAWiiigAooooASiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAWiiigAooooASiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAWiiigAooooASiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAWiiigAooooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAMUYoooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/9k=" alt="Museum Planning LLC">
+    <span class="nav-logo-name">Museum<span class="nav-logo-ai">·AI</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#smart-exhibits">Capabilities</a></li>
+    <li><a href="#smart-building">Operations</a></li>
+    <li><a href="#how">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="mailto:mark@museumplanning.com" class="nav-cta">Start a Project</a></li>
+  </ul>
+</nav>
+<div class="mobile-nav" aria-label="Page sections">
+  <a href="#approach">Approach</a>
+  <a href="#smart-exhibits">Capabilities</a>
+  <a href="#how">Process</a>
+  <a href="#proof">Outcomes</a>
+  <a href="#faq">FAQ</a>
+</div>
+
+<header class="hero">
+  <div class="grid-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="h-eyebrow">Museum Planning LLC · Museum-AI Practice</div>
+      <h1>The Museum That <em>Knows</em> Its Visitors.</h1>
+      <p class="hero-kicker">Feasibility through opening day — with networked intelligence planned inside the institution you already have.</p>
+      <p class="hero-deck">Audience strategy, event-driven programming, and platform-native storytelling first. Then smart exhibits, visitor smartphones, and building data — phased, maintainable, and aligned to your collection and capital plan.</p>
+      <div>
+        <a href="mailto:mark@museumplanning.com" class="btn-teal">Start a Conversation</a>
+        <a href="#how" class="btn-ghost-gold">See how it works →</a>
+      </div>
+    </div>
+    <div>
+      <div class="network-diagram">
+        <div class="nd-label">Museum-AI · Connected System</div>
+        <div class="nd-center"><div class="nd-hub">Museum AI</div></div>
+        <div class="nd-spokes">
+          <div class="nd-node"><div class="nd-dot tl"></div>Audience &amp; Programs</div>
+          <div class="nd-node"><div class="nd-dot"></div>Digital &amp; Social Reach</div>
+          <div class="nd-node"><div class="nd-dot tl"></div>Smart Exhibits</div>
+          <div class="nd-node"><div class="nd-dot"></div>Visitor Smartphones</div>
+          <div class="nd-node"><div class="nd-dot tl"></div>Building &amp; Climate IoT</div>
+          <div class="nd-node"><div class="nd-dot"></div>Planning &amp; Operations Data</div>
+        </div>
+        <div class="nd-phase-row">
+          <div class="nd-phase-label">Implementation Phases</div>
+          <div class="nd-phases">
+            <div class="nd-ph">Plan</div>
+            <div class="nd-ph">Phase</div>
+            <div class="nd-ph">Deploy</div>
+            <div class="nd-ph">Learn</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="parent-band" id="approach">
+  <div class="si">
+    <p><strong>Museum-AI</strong> is a practice area of <a href="https://museumplanning.com">Museum Planning LLC</a> — feasibility studies, strategic and master planning, exhibition design, and opening-day methodology with Mark Walhimer personally involved. Author of <em>Museums 101</em> and <em>Designing Museum Experiences</em> (AAM Press). Networked intelligence is scoped inside planning engagements, not sold as a platform license.</p>
+  </div>
+</section>
+
+<section class="section alt" id="smart-exhibits">
+  <div class="si">
+    <div class="s-eyebrow">Capabilities Inside Planning</div>
+    <h2 class="s-h2">What <em>Museum AI</em> Actually Means</h2>
+    <p class="s-sub">Not a product. Not a vendor stack. A planned, phased layer of intelligence — audience and programming first, exhibits and phones second, building systems where they protect collections and inform decisions.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="p-num">01</div>
+        <div class="p-title">Audience &amp; Institutional Strategy</div>
+        <div class="p-body">Who is deciding to show up — and why? Planning for digital-first behavior, event- and program-driven visitation, social and platform-native storytelling, and hybrid physical–digital experience design as strategic infrastructure, not a late add-on to the building program.</div>
+      </div>
+      <div class="pillar">
+        <div class="p-num">02</div>
+        <div class="p-title">Smart Exhibits &amp; Phones</div>
+        <div class="p-body">Networked, sensor-capable installations that adapt content depth and pacing to who is in front of them — plus smartphone layers that extend interpretation before, during, and after the visit. AI extends curatorial reach; it does not replace judgment.</div>
+      </div>
+      <div class="pillar" id="smart-building">
+        <div class="p-num">03</div>
+        <div class="p-title">IoT Building &amp; Operations</div>
+        <div class="p-body">HVAC, lighting, visitor flow, and collection climate connected to one operational data layer — reducing energy cost, tightening preservation, and feeding programming decisions. Building intelligence supports the plan; it does not lead it.</div>
+      </div>
+    </div>
+
+    <div class="how-grid" id="how">
+      <div class="how-prose">
+        <div class="s-eyebrow">How Museum AI Works</div>
+        <h2 class="s-h2">Planned, Phased, <em>Built for Your Museum</em></h2>
+        <div class="how-body">
+          <p>The most common mistake in museum technology projects is beginning with the technology rather than the institution. A vendor sells a smart exhibit system. The museum buys it. Two years later the system is underused, undermaintained, and disconnected from everything else in the building.</p>
+          <p>Museum-AI begins inside <strong>the same planning work Museum Planning LLC has delivered since 1999</strong> — feasibility, strategic plan, master plan, exhibition design — with leadership, curatorial, education, and operations at the table. What visitor behaviors matter? Where is the public story negotiated before the visit? What would change programming if you had better data?</p>
+          <h3>The Role of AI in the Museum</h3>
+          <p>Artificial intelligence in museums is not about replacing human interpretation. It is <strong>strategic literacy</strong>: making curatorial and educational knowledge available at the right depth and moment, and feeding behavioral and operational data back into planning — without mandatory hype or platform lock-in.</p>
+          <p>Smart exhibits that sense presence and adapt content. Buildings that know when a gallery is crowded. Phones that extend a visit into curriculum and community. Deployable and maintainable at any scale — when phased from a roadmap your board can fund and your staff can run.</p>
+          <div class="scope-note"><strong>Scope:</strong> Museum Planning leads discovery, roadmap, and design authority. Implementation is phased with your team and vetted technology partners — one methodology from feasibility through opening day, not a parallel product sale.</div>
+        </div>
+        <a href="mailto:mark@museumplanning.com" class="cta-link">Discuss your museum's AI strategy →</a>
+        <a href="https://museumplanning.com" class="cta-link" style="margin-left:20px;">Full firm capabilities at museumplanning.com →</a>
+      </div>
+      <div>
+        <div class="phase-timeline">
+          <div class="pt-item">
+            <div class="pt-left"><div class="pt-num">01</div></div>
+            <div class="pt-right">
+              <div class="pt-title">Discovery &amp; Feasibility</div>
+              <div class="pt-body">Institutional audit — collection, audience, operations, capital context, and existing technology. Define what networked intelligence must accomplish for visitation, programming, and preservation. Produce a phased roadmap aligned to budget, staff capacity, and master plan milestones.</div>
+            </div>
+          </div>
+          <div class="pt-item">
+            <div class="pt-left"><div class="pt-num">02</div></div>
+            <div class="pt-right">
+              <div class="pt-title">Smart Exhibit Design</div>
+              <div class="pt-body">Design the first phase of networked exhibits — sensing strategy, content architecture, smartphone integration layer, and AI response logic. Aligned to specific galleries or collections with the highest visitor engagement potential.</div>
+            </div>
+          </div>
+          <div class="pt-item">
+            <div class="pt-left"><div class="pt-num">03</div></div>
+            <div class="pt-right">
+              <div class="pt-title">IoT Building Integration</div>
+              <div class="pt-body">Connect building systems — HVAC, lighting, visitor flow, climate monitoring — to a unified operational data layer. Establish the data infrastructure that smart exhibits will use and generate.</div>
+            </div>
+          </div>
+          <div class="pt-item">
+            <div class="pt-left"><div class="pt-num">04</div></div>
+            <div class="pt-right">
+              <div class="pt-title">Website & Smartphone Connection</div>
+              <div class="pt-body">Extend the exhibit content to the museum's website and to visitor smartphones. The physical visit becomes the entry point for a digital relationship — not a one-time transaction.</div>
+            </div>
+          </div>
+          <div class="pt-item">
+            <div class="pt-left"><div class="pt-num">05</div></div>
+            <div class="pt-right">
+              <div class="pt-title">Evaluation & Iteration</div>
+              <div class="pt-body">Post-deployment behavioral data analysis. What are visitors actually doing? Which exhibits are performing? What does the smart building data reveal about operations? Feed findings into the next phase.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="proof">
+  <div class="si">
+    <div class="s-eyebrow">Planning Outcomes</div>
+    <h2 class="s-h2">Institutional Work, <em>Contemporary Conditions</em></h2>
+    <p class="s-sub">Museum-AI extends a planning practice already trusted by universities, cities, and museums — with proof framed around outcomes, not product logos.</p>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-tag">Feasibility · U.S. Metro</div>
+        <div class="proof-title">Capital plan tied to audience reality</div>
+        <div class="proof-body">Planning engagement reframed expansion around program-driven visitation and digital reach — giving the board a feasibility narrative that matched how audiences actually decide to attend.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-tag">Master plan · University museum</div>
+        <div class="proof-title">Hybrid experience in the plan</div>
+        <div class="proof-body">Master plan chapter integrated exhibit technology, website, and classroom extension as one visitor system — avoiding a standalone interactive RFP disconnected from interpretation.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-tag">Operations · Multi-site history org</div>
+        <div class="proof-title">Phased IoT without boil-the-ocean</div>
+        <div class="proof-body">Roadmap prioritized climate-critical storage and one high-traffic gallery for visitor-flow sensing first — operational savings and visitor data before full-building instrumentation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="s-eyebrow" style="margin-bottom:14px;">Frequently Asked Questions</div>
+    <h2 class="s-h2" style="margin-bottom:40px;">Questions About Museum AI</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is a museum AI smart exhibit?</div>
+      <div class="faq-a">A museum AI smart exhibit is a networked, sensor-enabled installation that responds to visitor presence, behavior, and smartphone data in real time. Unlike static interactives, smart exhibits adapt — changing content depth, pacing, and language based on who is in front of them — and extend the museum experience to the visitor's phone before, during, and after their visit. They work for art, science, and history collections.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does museum IoT smart building integration work?</div>
+      <div class="faq-a">Museum IoT smart building integration connects the physical building — HVAC, lighting, security, visitor flow sensors, collection climate control — to a unified data layer. This reduces operating costs, extends collection preservation through tighter climate management, and provides real-time visitor behavior data that informs both daily operations and longer-term programming decisions.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the role of AI specifically — not just sensors and apps?</div>
+      <div class="faq-a">AI is the intelligence layer that makes networked museum data useful rather than overwhelming. It identifies patterns in visitor behavior that humans would miss in raw sensor data. It adapts exhibit content in real time based on who is present. It surfaces operational anomalies — a gallery running hot, a fire exit with unusual traffic — before they become problems. The AI doesn't replace curatorial judgment. It extends curatorial reach.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can a small museum afford museum AI smart exhibit technology?</div>
+      <div class="faq-a">Yes. The Museum-AI approach is phased — beginning with a planning engagement that identifies the highest-ROI technology investments for each institution's size, budget, and staff capacity. Smart exhibit technology is deployed incrementally, starting where networked sensing delivers the most immediate visitor and operational value. A small museum does not need to instrument its entire building to benefit from AI-powered exhibits.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>What Would Your Museum Know If Its Exhibits Were Listening?</h2>
+  <p>Art museum, science center, or local history institution — start with feasibility and strategic planning, then phase in intelligence where ROI is clear. Museum-AI is how Museum Planning LLC names that work for a convergent era.</p>
+  <div class="cta-pair">
+    <a href="mailto:mark@museumplanning.com" class="btn-teal">Start a Conversation</a>
+    <a href="https://museumplanning.com" class="btn-ghost-gold" style="margin-left:0;border-bottom-color:rgba(255,255,255,.25);color:rgba(255,255,255,.65);">museumplanning.com →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fi">
+    <div class="f-logo">Museum-AI.com · Museum Planning LLC · Mark Walhimer</div>
+    <div class="f-links">
+      <a href="https://museumplanning.com">museumplanning.com</a>
+      <a href="mailto:mark@museumplanning.com">Contact</a>
+      <a href="#approach">Approach</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="f-copy">© 2026 Museum Planning LLC</div>
+  </div>
+</footer>
+
+</body>
+</html>
