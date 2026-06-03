@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+<title>Thought Leadership — Museum Planning LLC</title>
+<meta name="description" content="Field notes, white papers, and practice lenses from Museum Planning LLC — museum AI, immersive planning, staff portals, convergence-era civic museums, and 2026 projects to watch.">
+<link rel="canonical" href="https://museumplanning.com/thought-leadership.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --navy:#1B2A3B;--deep:#111C27;--gold:#C9A84C;--gold-lt:#E8D099;
+  --cream:#F8F4EC;--warm:#EDE8DC;--ink:#1A1A1A;--mid:#5A5A5A;--rule:#D4C8B0;
+  --serif:'Playfair Display',Georgia,serif;
+  --mono:'DM Mono',monospace;
+  --sans:'Lato',system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+nav{position:fixed;top:0;left:0;right:0;background:var(--deep);height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;z-index:100;border-bottom:1px solid rgba(201,168,76,.15);}
+.nav-logo{font-family:var(--serif);font-size:15px;color:white;text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:rgba(255,255,255,.9);}
+.nav-links a.active{color:rgba(255,255,255,.9);}
+.nav-search{position:relative;display:flex;align-items:center;}
+.search-toggle{background:none;border:none;cursor:pointer;padding:6px;color:rgba(255,255,255,.45);transition:color .2s;display:flex;align-items:center;}
+.search-toggle:hover{color:var(--gold);}
+.search-toggle svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
+.nav-cta{background:var(--gold)!important;color:var(--deep)!important;padding:8px 20px;}
+
+.hero{background:var(--deep);padding:130px 56px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;opacity:.035;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px),
+  repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px);}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.hero-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:14px;animation:fadeUp .6s .1s both;}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
+.hero h1{font-family:var(--serif);font-size:clamp(38px,5vw,66px);font-weight:900;
+  color:white;line-height:1.05;margin-bottom:24px;animation:fadeUp .6s .2s both;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-deck{font-family:var(--serif);font-style:italic;font-size:19px;color:rgba(255,255,255,.5);
+  max-width:720px;line-height:1.65;margin-bottom:20px;animation:fadeUp .6s .3s both;}
+.hero-note{font-size:14px;color:rgba(255,255,255,.35);max-width:720px;line-height:1.7;animation:fadeUp .6s .35s both;}
+.hero-note a{color:var(--gold);}
+
+.guides-section{padding:80px 56px 100px;max-width:1100px;margin:0 auto;}
+.guides-label{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:48px;display:flex;align-items:center;gap:14px;}
+.guides-label::before{content:'';width:32px;height:1px;background:var(--gold);}
+.guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
+
+.guide-card{background:white;text-decoration:none;display:block;
+  border-top:3px solid transparent;transition:border-color .25s,transform .25s,box-shadow .25s;}
+.guide-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 16px 48px rgba(27,42,59,.1);}
+.guide-card-body{padding:40px 36px 36px;}
+.guide-tag{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;}
+.guide-title{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--navy);
+  line-height:1.2;margin-bottom:12px;}
+.guide-desc{font-size:15px;color:var(--mid);line-height:1.75;margin-bottom:24px;}
+.guide-link{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:8px;}
+.guide-link::after{content:'→';}
+
+.cta-section{background:var(--navy);padding:72px 56px;text-align:center;}
+.cta-inner{max-width:560px;margin:0 auto;}
+.cta-heading{font-family:var(--serif);font-size:clamp(26px,3.5vw,40px);font-weight:700;
+  color:white;line-height:1.15;margin-bottom:16px;}
+.cta-heading em{font-style:italic;color:var(--gold);}
+.cta-body{font-size:16px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:32px;}
+.btn-gold{display:inline-block;background:var(--gold);color:var(--deep);
+  padding:14px 40px;font-family:var(--mono);font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;text-decoration:none;transition:background .2s;margin:0 8px 12px;}
+.btn-gold:hover{background:var(--gold-lt);}
+.btn-outline{display:inline-block;border:1px solid rgba(201,168,76,.45);color:var(--gold);
+  padding:14px 40px;font-family:var(--mono);font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;text-decoration:none;transition:border-color .2s,background .2s;margin:0 8px 12px;}
+.btn-outline:hover{border-color:var(--gold);background:rgba(201,168,76,.08);}
+
+.privacy-strip{text-align:center;padding:24px;font-size:13px;color:var(--mid);}
+.privacy-strip a{color:var(--navy);}
+
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(17,28,39,.97);z-index:200;
+  flex-direction:column;align-items:center;justify-content:flex-start;padding:80px 24px 40px;}
+.search-overlay.open{display:flex;}
+.search-close{position:absolute;top:20px;right:28px;background:none;border:none;
+  color:rgba(255,255,255,.4);font-size:28px;cursor:pointer;transition:color .2s;font-family:var(--mono);}
+.search-close:hover{color:white;}
+.search-input-wrap{width:100%;max-width:680px;border-bottom:2px solid var(--gold);
+  display:flex;align-items:center;gap:16px;margin-bottom:48px;}
+.search-input-wrap svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0;}
+#search-input{flex:1;background:none;border:none;outline:none;font-family:var(--serif);
+  font-size:clamp(24px,4vw,40px);color:white;padding:12px 0;caret-color:var(--gold);}
+#search-input::placeholder{color:rgba(255,255,255,.2);}
+.search-results{width:100%;max-width:680px;display:flex;flex-direction:column;gap:3px;}
+.search-result{background:rgba(255,255,255,.04);padding:20px 24px;text-decoration:none;
+  border-left:3px solid transparent;transition:border-color .2s,background .2s;display:block;}
+.search-result:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+.sr-type{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.sr-title{font-family:var(--serif);font-size:18px;font-weight:700;color:white;margin-bottom:4px;}
+.sr-desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.5;}
+.search-empty{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(255,255,255,.3);text-align:center;padding:40px 0;}
+
+@media(max-width:900px){
+  nav{padding:0 24px;} .nav-links{display:none;}
+  .hero{padding:110px 24px 64px;}
+  .guides-section{padding:56px 24px 72px;}
+  .guides-grid{grid-template-columns:1fr;}
+  .cta-section{padding:56px 24px;}
+}
+</style>
+<link rel="stylesheet" href="assets/nav-mobile.css">
+<link rel="stylesheet" href="assets/site-footer.css">
+<script src="assets/ga-measurement-id.js"></script>
+<script src="assets/analytics.js" defer></script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="for-cities.html">For Cities</a></li>
+    <li><a href="for-universities.html">For Universities</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="thought-leadership.html" class="active">Thought Leadership</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Museum Planning LLC</div>
+    <h1>Thought<br><em>Leadership.</em></h1>
+    <p class="hero-deck">Field notes, white papers, and practice lenses from forty museums of work — including the <strong>Convergence Era</strong> white paper, Museum AI, 2026 projects to watch, immersive planning, staff portal &amp; handbook review, and the Museum Vitality Index.</p>
+    <p class="hero-note">For feasibility, strategic planning, and master planning engagements, see <a href="museum-planning-services.html">services</a> or <a href="museum-strategic-planning.html">museum strategic planning</a>. For free vocabulary guides, see <a href="museum-school/index.html">Museum School</a>.</p>
+  </div>
+</div>
+
+<div class="guides-section">
+  <div class="guides-label">Articles &amp; frameworks</div>
+  <div class="guides-grid">
+
+    <a href="museum-ai/" class="guide-card">
+      <div class="guide-card-body">
+        <div class="guide-tag">Museum AI</div>
+        <div class="guide-title">Smart Museums Practice</div>
+        <p class="guide-desc">How museum AI, smart exhibits, audience strategy, and building IoT fit inside feasibility and master planning — not a separate AI firm.</p>
+        <div class="guide-link">Read Museum AI</div>
+      </div>
+    </a>
+
+    <a href="convergence-era.html" class="guide-card">
+      <div class="guide-card-body">
+        <div class="guide-tag">Thought leadership · White paper</div>
+        <div class="guide-title">Convergence Era</div>
+        <p class="guide-desc">Science centers, museums, and AI — how industrial design and agentic systems are reshaping cultural institutions and civic projects.</p>
+        <div class="guide-link">Read Convergence Era →</div>
+      </div>
+    </a>
+
+    <a href="museum-projects-to-watch-2026.html" class="guide-card">
+      <div class="guide-card-body">
+        <div class="guide-tag">Field analysis · 2026</div>
+        <div class="guide-title">25 Museum Projects to Watch</div>
+        <p class="guide-desc">Openings, expansions, community alignment, and funding — from presidential libraries to Abu Dhabi.</p>
+        <div class="guide-link">Read the article</div>
+      </div>
+    </a>
+
+    <a href="immersive-museum-planning.html" class="guide-card">
+      <div class="guide-card-body">
+        <div class="guide-tag">Exhibition design</div>
+        <div class="guide-title">Immersive Museum Planning</div>
+        <p class="guide-desc">Visitor journey architecture and immersive exhibition design for science centers, local history, and natural history museums.</p>
+        <div class="guide-link">Read the guide</div>
+      </div>
+    </a>
+
+    <a href="museum-staff-portal.html" class="guide-card">
+      <div class="guide-card-body">
+        <div class="guide-tag">Operating museums</div>
+        <div class="guide-title">Staff Portal &amp; Handbook Review</div>
+        <p class="guide-desc">Employee handbook audit, attorney coordination, and branded staff portals — mission, vision, values, and HR policies in one place.</p>
+        <div class="guide-link">Read about the engagement</div>
+      </div>
+    </a>
+
+    <a href="museum-vitality-index.html" class="guide-card">
+      <div class="guide-card-body">
+        <div class="guide-tag">Framework</div>
+        <div class="guide-title">Museum Vitality Index</div>
+        <p class="guide-desc">0–100 institutional health scoring with size-normalized benchmarking — measure vitality, not just volume.</p>
+        <div class="guide-link">Explore MVI</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-heading">Planning an <em>institution?</em></h2>
+    <p class="cta-body">Thought leadership supports trust; strategic planning, feasibility, and master planning are where engagements begin.</p>
+    <a href="museum-strategic-planning.html" class="btn-gold">Strategic planning</a>
+    <a href="museum-planning-contact.html" class="btn-outline">Contact</a>
+  </div>
+</div>
+
+<p class="privacy-strip"><a href="museum-planning-privacy.html">Privacy &amp; analytics</a></p>
+
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="site-map.html">Site map</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li><a href="museum-planning-privacy.html">Privacy</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button type="button" class="search-close" id="searchClose">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<script>
+const PAGES=[
+  {type:"Home",title:"Museum Planning LLC",desc:"Forty museums. One methodology.",url:"index.html"},
+  {type:"Thought Leadership",title:"Thought Leadership — overview",desc:"Museum AI, 2026 projects, convergence era, immersive planning, staff portal, MVI.",url:"thought-leadership.html"},
+  {type:"Contact",title:"Contact — Rates & conversation",desc:"Typical consulting ranges and how to start.",url:"museum-planning-contact.html"},
+  {type:"Services",title:"Services",desc:"Feasibility, strategic planning, master planning, exhibition design.",url:"museum-planning-services.html"},
+  {type:"Thought Leadership",title:"Museum AI — Smart Museums Practice",desc:"Museum AI inside feasibility and master planning.",url:"museum-ai/"},
+  {type:"Thought Leadership",title:"25 Museum Projects to Watch in 2026",desc:"Field analysis on openings and expansions.",url:"museum-projects-to-watch-2026.html"},
+  {type:"Thought Leadership",title:"Convergence Era",desc:"White paper — AI, industrial design, and cultural systems.",url:"convergence-era.html"},
+  {type:"Thought Leadership",title:"Immersive Museum Planning",desc:"Visitor journey and exhibition design.",url:"immersive-museum-planning.html"},
+  {type:"Thought Leadership",title:"Museum Staff Portal & Handbook Review",desc:"Handbook audit and staff identity portals.",url:"museum-staff-portal.html"},
+  {type:"Framework",title:"Museum Vitality Index",desc:"0–100 health scoring for museums.",url:"museum-vitality-index.html"},
+  {type:"Guide",title:"Museum Strategic Planning",desc:"Mission, vision, roadmap, fees, process.",url:"museum-strategic-planning.html"},
+  {type:"Museum School",title:"Museum School",desc:"Free guides on starting a museum and planning vocabulary.",url:"museum-school/index.html"},
+];
+const input=document.getElementById('search-input');
+const results=document.getElementById('searchResults');
+const overlay=document.getElementById('searchOverlay');
+document.getElementById('searchToggle').addEventListener('click',()=>{overlay.classList.add('open');setTimeout(()=>input.focus(),100);});
+document.getElementById('searchClose').addEventListener('click',()=>{overlay.classList.remove('open');input.value='';results.innerHTML='';});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){overlay.classList.remove('open');input.value='';results.innerHTML='';}});
+input.addEventListener('input',()=>{
+  const q=input.value.toLowerCase().trim();
+  if(!q){results.innerHTML='';return;}
+  const matches=PAGES.filter(p=>p.title.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)||p.type.toLowerCase().includes(q));
+  if(!matches.length){results.innerHTML='<div class="search-empty">No results found.</div>';return;}
+  results.innerHTML=matches.map(p=>`<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('');
+});
+</script>
+<script src="assets/nav-mobile.js" defer></script>
+</body>
+</html>

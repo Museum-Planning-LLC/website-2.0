@@ -4,13 +4,17 @@
 
 **Open this repo** (`museum-planning-llc-website-2.0`) when working on museumplanning.com so `.cursor/rules/` applies.
 
+**Domains & objectives (high level):** [`docs/DOMAINS-AND-OBJECTIVES-STRATEGY.md`](./DOMAINS-AND-OBJECTIVES-STRATEGY.md)
+
 ---
 
 ## What the business is
 
-Museum Planning LLC sells **high-trust consulting engagements** (often **$40K–$100K+**): feasibility studies, strategic planning, master planning, exhibition design, opening-day support.
+Museum Planning LLC sells **high-trust consulting engagements** (often **$40K–$200K+** on the full ladder).
 
-**The website’s job:** rank for **five Tier 1 money keywords**, convert visitors to **Start a Conversation**, support outbound (LinkedIn, director email) with credible pillar URLs.
+**Primary revenue target:** ~$100K+ **museum strategic planning** engagements.
+
+**The website’s job:** rank for **five Tier 1 money keywords**, with **`museum-strategic-planning.html`** as the lead pillar for the primary revenue target; convert visitors to **Start a Conversation**; support outbound (LinkedIn, director email) with credible pillar URLs.
 
 **This is not:** a content farm, a blog-first SEO play, or a separate “museum cost calculator” site. Every new URL must earn its place in the tier model.
 

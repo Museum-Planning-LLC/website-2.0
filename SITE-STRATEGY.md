@@ -1,5 +1,7 @@
 # Site strategy & funnel (internal reference)
 
+**Domains, properties & objective map:** [`docs/DOMAINS-AND-OBJECTIVES-STRATEGY.md`](docs/DOMAINS-AND-OBJECTIVES-STRATEGY.md)
+
 **Audience (priority order)**  
 1. **Cities & municipalities** — city manager, mayor’s office, economic development, council-related decision paths; often triggered by a **historic civic building** or downtown/cultural anchor conversation.  
 2. **Science & technology centers** — civic-scale institutions where workforce, employer signal, and operating reality matter (not small retail “attractions”).  
