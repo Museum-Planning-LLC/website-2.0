@@ -125,6 +125,7 @@ One primary URL per row where possible. Use body copy and internal links — not
 | Interactive museum exhibits | Commercial + informational | `museum-planning-projects.html`, `projects/*.html` | Services, immersive guide |
 | Immersive museum planning | Commercial | `immersive-museum-planning.html` | Services, science-center vertical |
 | Starting a museum | Informational | `museum-school/how-to-start-a-museum.html` | Services, contact |
+| Museum employee handbook / museum staff portal | Commercial (operating museums) | `museum-staff-portal.html` | `for-cities.html`, `museum-strategic-planning.html`, contact |
 | Mark Walhimer | Brand / navigational | `museum-planning-about.html` | Home, contact |
 
 ### Extended topical list (essays & future content)
@@ -142,7 +143,7 @@ One primary URL per row where possible. Use body copy and internal links — not
 
 1. **Google Search Console** — monthly: impressions/clicks by query and landing page; confirm Tier 1 URLs receive impressions for target phrases.
 2. **After any new commercial page** — add to `sitemap.xml`, legacy redirects if needed, request indexing, resubmit sitemap.
-3. **Quarterly** — update this doc from GSC query data; refresh [`docs/seo-competitor-keyword-matrix.csv`](seo-competitor-keyword-matrix.csv) for top 5–10 queries.
+3. **Quarterly** — update this doc from GSC query data; refresh [`docs/seo-competitor-keyword-matrix.csv`](seo-competitor-keyword-matrix.csv) for top 5–10 queries; update competitor ranks in [`docs/seo-dashboard-config.json`](seo-dashboard-config.json) (see [`docs/SEO-DASHBOARD-SETUP.md`](SEO-DASHBOARD-SETUP.md)).
 4. **`meta name="keywords"`** — not used.
 5. **Sitemap regen** — `python3 _gen_site_map.py` refreshes `site-map.html` / `sitemap.xml`; does not replace this strategy file.
 
@@ -186,3 +187,4 @@ Peer cohorts in matrix: Lord Cultural Resources, AEA Consulting, JRA/RWS Global,
 | 2026-05-05 | Competitor matrix CSV cohorts; Lord + AEA rows. |
 | 2026-06-02 | **Tier 1 realignment:** commercial pillars own feasibility/strategic/master (not Museum School); five money keywords mapped; Cloudflare redirect table; Tier 2/3 split; remaining optimization checklist. |
 | 2026-06-02 | See [`docs/BUSINESS-AND-SEO-PLAYBOOK.md`](./BUSINESS-AND-SEO-PLAYBOOK.md) for full thread handoff and new-page pushback protocol. |
+| 2026-06-02 | Added Tier 2 `museum-staff-portal.html` — operating-museum handbook & staff portal (phase-2 keyword; links up to strategic planning & For Cities). |
