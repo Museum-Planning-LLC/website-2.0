@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+<title>25 Museum Projects to Watch in 2026 — Museum Planning LLC</title>
+<meta name="description" content="Field analysis: Mark Walhimer on 25 museum openings, expansions, and controversies in 2026 — community alignment, funding, and what it means for institutional planning.">
+<link rel="canonical" href="https://museumplanning.com/museum-projects-to-watch-2026.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MUSEUMS101 / MUSEUM PLANNING LLC — BRAND SYSTEM
+   Deep: #111C27  Gold: #C9A84C  Cream: #F8F4EC
+   Body: Lato  Display: Playfair Display  Mono: DM Mono
+   ============================================================ */
+:root {
+  --deep:  #111C27;
+  --gold:  #C9A84C;
+  --cream: #F8F4EC;
+  --white: #ffffff;
+  --ink:   #1A1A1A;
+  --mid:   #5A5A5A;
+  --rule:  #D4C8B0;
+  --parch: #F0EBE0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Lato',sans-serif;background:var(--white);color:var(--ink);font-size:17px;line-height:1.78;-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+nav{background:var(--deep);padding:0 56px;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,.06);}
+.nav-logo{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:none;}
+.nav-logo em{color:var(--gold);font-style:normal;}
+.nav-right{display:flex;gap:32px;list-style:none;align-items:center;}
+.nav-right a{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+.nav-right a:hover{color:var(--gold);}
+.nav-right .btn{background:var(--gold);color:var(--deep) !important;padding:6px 16px;font-size:10px;letter-spacing:2px;font-family:'DM Mono',monospace;font-weight:700;}
+
+/* HERO */
+.hero{background:var(--deep);color:white;padding:76px 56px 0;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:480px;height:480px;border:1px solid rgba(201,168,76,.1);border-radius:50%;pointer-events:none;}
+.hero::after{content:'';position:absolute;top:-40px;right:-40px;width:320px;height:320px;border:1px solid rgba(201,168,76,.06);border-radius:50%;pointer-events:none;}
+.hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1;}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:14px;animation:fadeUp .6s .05s both;}
+.eyebrow::before{content:'— ';color:var(--gold);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,4.5vw,54px);font-weight:700;line-height:1.12;color:white;max-width:740px;margin-bottom:22px;animation:fadeUp .6s .15s both;}
+.hero-deck{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:rgba(255,255,255,.55);max-width:620px;margin-bottom:40px;animation:fadeUp .6s .25s both;}
+.byline{display:flex;align-items:center;gap:14px;padding:22px 0;border-top:1px solid rgba(255,255,255,.1);animation:fadeUp .6s .35s both;}
+.byline-avatar{width:42px;height:42px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--deep);flex-shrink:0;}
+.byline-name{font-size:14px;font-weight:700;color:rgba(255,255,255,.9);}
+.byline-meta{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;color:rgba(255,255,255,.35);margin-top:3px;}
+.hero-stats{display:flex;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.07);}
+.hero-stat{padding:22px 32px;border-right:1px solid rgba(255,255,255,.07);flex:1;}
+.hero-stat:last-child{border-right:none;}
+.stat-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:6px;}
+.stat-val{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);}
+
+/* BODY LAYOUT */
+.body-wrap{display:grid;grid-template-columns:1fr 300px;gap:72px;max-width:1100px;margin:0 auto;padding:72px 56px 96px;}
+
+/* PROSE */
+article p{margin-bottom:1.7em;color:#2a2a2a;font-size:16px;line-height:1.8;}
+article strong{font-weight:700;color:var(--ink);}
+article a{color:var(--deep);text-decoration:underline;text-underline-offset:3px;transition:color .2s;}
+article a:hover{color:var(--gold);}
+
+/* SECTION HEADINGS */
+.section-hed{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--deep);margin:2.6em 0 .75em;line-height:1.18;padding-top:2em;border-top:1px solid var(--rule);position:relative;}
+.section-hed::before{content:'— ';font-family:'DM Mono',monospace;font-size:14px;color:var(--gold);font-weight:400;}
+
+/* BLOCKQUOTE */
+blockquote{border-left:3px solid var(--gold);background:var(--cream);margin:2.4em 0;padding:24px 32px;}
+blockquote p{font-family:'Playfair Display',serif;font-size:21px;font-style:italic;line-height:1.45;color:var(--deep);margin:0;}
+blockquote cite{display:block;margin-top:14px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-style:normal;}
+
+/* PROJECT LIST */
+.project-list{list-style:none;margin:2em 0;}
+.project-item{display:grid;grid-template-columns:48px 1fr;gap:0 20px;padding:28px 0;border-bottom:1px solid var(--rule);}
+.project-item:last-child{border-bottom:none;}
+.project-num{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--gold);line-height:1;padding-top:6px;}
+.project-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--deep);margin-bottom:4px;line-height:1.2;}
+.project-name a{color:var(--deep);text-decoration:none;border-bottom:2px solid var(--gold);transition:color .2s;}
+.project-name a:hover{color:var(--gold);}
+.project-location{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);margin-bottom:10px;}
+.project-note{font-size:15px;line-height:1.72;color:#3a3a3a;margin:0;}
+.project-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;border:1px solid var(--gold);color:var(--gold);margin-bottom:10px;margin-right:6px;}
+.project-tag.client{border-color:var(--deep);color:var(--deep);background:var(--cream);}
+.update-flag{display:inline-block;font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;background:var(--gold);color:var(--deep);font-weight:700;margin-bottom:10px;margin-right:6px;}
+
+/* THEME BLOCK */
+.theme-block{background:var(--cream);border-left:3px solid var(--gold);padding:28px 32px;margin:2.4em 0;}
+.theme-block-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.theme-block-label::before{content:'— ';}
+.theme-block p{font-size:15px;line-height:1.72;color:#3a3a3a;margin:0;}
+
+/* SIDEBAR */
+aside{padding-top:8px;}
+.aside-block{background:var(--cream);border-top:2px solid var(--gold);padding:24px;margin-bottom:24px;}
+.aside-head{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--rule);}
+.aside-body{font-size:14px;line-height:1.65;color:var(--mid);}
+.aside-body p{margin-bottom:1em;}
+.aside-body p:last-child{margin-bottom:0;}
+.aside-cta{background:var(--deep);padding:28px;margin-bottom:24px;}
+.aside-cta .aside-head{color:rgba(255,255,255,.35);border-bottom-color:rgba(255,255,255,.1);}
+.aside-cta .aside-body{color:rgba(255,255,255,.55);}
+.aside-cta a{display:block;background:var(--gold);color:var(--deep);text-decoration:none;padding:12px 16px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-align:center;margin-top:18px;font-weight:700;transition:opacity .2s;}
+.aside-cta a:hover{opacity:.85;}
+
+/* ARTICLE CTA */
+.article-cta{background:var(--deep);padding:40px 48px;margin:3em 0;text-align:center;}
+.article-cta h3{font-family:'Playfair Display',serif;font-size:26px;color:white;margin-bottom:12px;}
+.article-cta p{color:rgba(255,255,255,.55);font-size:15px;max-width:480px;margin:0 auto 24px;font-family:'Lato',sans-serif;}
+.article-cta-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px;}
+.btn-copper{display:inline-block;background:var(--gold);color:var(--deep);text-decoration:none;padding:12px 32px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;transition:opacity .2s;}
+.btn-copper:hover{opacity:.85;}
+.btn-outline{display:inline-block;background:transparent;color:white;text-decoration:none;padding:11px 28px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;border:1px solid rgba(255,255,255,.35);transition:border-color .2s,opacity .2s;}
+.btn-outline:hover{border-color:var(--gold);opacity:.9;}
+
+/* PUSHBACK GRID */
+.pushback-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:2em 0;}
+.pushback-card,.pushback-cat-block{background:var(--cream);padding:24px 26px;border-top:2px solid var(--rule);}
+.pushback-cat{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;padding:3px 9px;display:inline-block;margin-bottom:10px;color:white;}
+.pushback-cat.design{background:var(--deep);}
+.pushback-cat.land{background:#2c6e49;}
+.pushback-cat.labor{background:#6b3a2a;}
+.pushback-cat.politics{background:#5b2d7a;}
+.pushback-cat.commercial{background:#8b4500;}
+.pushback-cat.reputation{background:#3a4a5a;}
+.pushback-museum{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--deep);margin-bottom:10px;line-height:1.3;}
+.pushback-museum a{color:var(--deep);text-decoration:none;border-bottom:2px solid var(--gold);transition:color .2s;}
+.pushback-museum a:hover{color:var(--gold);}
+.pushback-card p,.pushback-cat-block p{font-size:14px;line-height:1.68;color:#3a3a3a;margin:0;}
+@media(max-width:680px){.pushback-grid{grid-template-columns:1fr;}}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:3em;padding-top:2em;border-top:1px solid var(--rule);}
+.tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;background:var(--cream);color:var(--mid);text-decoration:none;border:1px solid var(--rule);transition:background .2s,color .2s,border-color .2s;}
+.tag:hover{background:var(--gold);color:var(--deep);border-color:var(--gold);}
+
+/* FOOTER */
+footer{background:var(--deep);padding:32px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.06);}
+.footer-logo{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.28);}
+.footer-logo em{color:var(--gold);font-style:normal;}
+.footer-links{display:flex;gap:24px;list-style:none;}
+.footer-links a{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:860px){
+  nav{padding:0 24px;}
+  .hero{padding:56px 24px 0;}
+  .hero-stats{display:none;}
+  .body-wrap{grid-template-columns:1fr;gap:0;padding:48px 24px 72px;}
+  aside{display:none;}
+  footer{padding:28px 24px;flex-direction:column;align-items:flex-start;}
+  .project-item{grid-template-columns:38px 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://museumplanning.com/" class="nav-logo">Museum <em>Planning</em> LLC</a>
+  <ul class="nav-right">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="museum-planning-contact.html" class="btn">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Museum Planning LLC &nbsp;·&nbsp; Thought Leadership · Field Analysis · 2026</div>
+    <h1>25 Museum Projects to Watch in 2026</h1>
+    <p class="hero-deck">From presidential libraries to Abu Dhabi under fire — the openings, expansions, and experiments that will define the field for the next decade.</p>
+    <div class="byline">
+      <div class="byline-avatar">M</div>
+      <div>
+        <div class="byline-name">Mark Walhimer</div>
+        <div class="byline-meta">Managing Partner, Museum Planning LLC · Author, Museums 101 &amp; Designing Museum Experiences · May 2026</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="stat-label">Projects Tracked</div><div class="stat-val">25</div></div>
+    <div class="hero-stat"><div class="stat-label">Countries</div><div class="stat-val">4</div></div>
+    <div class="hero-stat"><div class="stat-label">Years Experience</div><div class="stat-val">30+</div></div>
+    <div class="hero-stat"><div class="stat-label">Museums in the U.S.</div><div class="stat-val">~35,000</div></div>
+  </div>
+</header>
+
+<div class="body-wrap">
+<article>
+
+<p>I've been planning museums for over 30 years. In that time, I've watched the field go through cycles of expansion, retrenchment, reinvention, and controversy. What's happening right now is different — and the projects opening, expanding, or struggling in 2026 are a precise reflection of every fault line the field is sitting on.</p>
+
+<p>Below are 25 projects I'm watching closely, and why each one matters beyond its own walls.</p>
+
+<blockquote>
+  <p>This is not a surplus of museums. It is an inflection point — from elite collections to civic infrastructure. Museums are evolving into the town squares of civil society. The ones that are struggling are simply the ones that haven't realized they are now in the business of community.</p>
+  <cite>Mark Walhimer, Museum Planning LLC</cite>
+</blockquote>
+
+<div class="theme-block">
+  <div class="theme-block-label">The Structural Shift</div>
+  <p>The International Council of Museums defines a museum as a "not-for-profit, permanent institution in the service of society that researches, collects, conserves, interprets and exhibits tangible and intangible heritage... fostering diversity and sustainability... with the participation of communities." That is not a discretionary cultural amenity. That is civil society infrastructure. The museums that are thriving in 2026 have internalized this — partnering with universities on AI and robotics literacy, acting as resources for local schools and libraries, embedding themselves in neighborhood life in ways that are very difficult to argue with politically. The ones facing opposition, in most cases, led with what they had rather than asking the community what it needed.</p>
+</div>
+
+<div class="theme-block">
+  <div class="theme-block-label">Big Picture Context</div>
+  <p>The City of Fort Worth is a client, so I'm closely watching the National Cowgirl Museum &amp; Hall of Fame expansion and the Juneteenth Museum. I'm also watching where immersive venues are heading — Dataland, TeamLab, MeowWolf — though I don't personally categorize them as museums. They are more entertainment than education, more for-profit business than civil society or civic engagement. And I'm very interested to see what happens with the wave of new African American museums opening in the coming years.</p>
+</div>
+
+<h2 class="section-hed">Presidential Libraries &amp; Legacy Institutions</h2>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">01</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.obama.org/visit/" target="_blank" rel="noopener">Obama Presidential Center</a></div>
+      <div class="project-location">Chicago, IL · Opening June 19, 2026</div>
+      <p class="project-note">Expect it to be very successful — and the reason matters. The Obama Center had genuine community alignment: deep outreach, demographic awareness, stakeholder engagement that preceded the design. The resistance from Protect Our Parks was a land-use fight, not a community rejection. That distinction is fundamental. It will also become a reference point in every discussion about the planned Trump Presidential Library and the question of land donation. Presidential libraries are a category unto themselves right now, and the Obama Center sets the standard against which everything that follows will be measured.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">02</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.trpl.org" target="_blank" rel="noopener">Theodore Roosevelt Presidential Library</a></div>
+      <div class="project-location">Medora, ND</div>
+      <p class="project-note">Presidential libraries are a category unto themselves right now. Watching this project in the context of the broader presidential library debate — and as a test of whether a rural, destination-model institution can build sustainable long-term visitation.</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">Music, Culture &amp; Community</h2>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">03</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://thhm.org" target="_blank" rel="noopener">Hip Hop Museum</a></div>
+      <div class="project-location">Bronx, NY · Opening Summer 2026</div>
+      <p class="project-note">I'm a fan of the Museum of the Moving Image and watching the Hip Hop Museum closely for long-term attendance numbers. The Bronx location is the key variable — it's both the authentic home of the art form and a significant logistical challenge for audience development. The first three years will tell the story.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">04</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://rockhall.com/expansion/" target="_blank" rel="noopener">Rock &amp; Roll Hall of Fame Expansion</a></div>
+      <div class="project-location">Cleveland, OH · Opening Fall 2026</div>
+      <p class="project-note">A $175 million, 50,000-square-foot expansion opening fall 2026. Museum expansions are becoming harder to finance — the traditional campaign model wrapping endowment, deferred maintenance, and capital costs into one package is under real pressure. Watching how the Rock Hall navigates this, and whether the new event and community spaces justify the investment.</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">Artist-Founded &amp; Digital Museums</h2>
+
+<p>One of the most significant emerging categories in the field is the artist-founded museum — institutions built around a single artist's practice, vision, and (often) personal fortune. The Lucas Museum, Beeple Studios, and Dataland all raise the same question: what happens in year three, when the founder's enthusiasm meets the operating reality?</p>
+
+<blockquote>
+  <p>The hard part isn't opening a museum. It's year three — when you need stable attendance, a sustainable operating budget, and a community that has made you part of its life.</p>
+  <cite>Mark Walhimer, Museum Planning LLC</cite>
+</blockquote>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">05</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://lucasmuseum.org" target="_blank" rel="noopener">Lucas Museum of Narrative Art</a></div>
+      <div class="project-location">Los Angeles, CA · Opening September 22, 2026</div>
+      <p class="project-note">Watching long-term funding closely. The hard part isn't opening — it's year three and beyond, when you need stable attendance and a sustainable operating budget. Also part of a broader trend of artist-founded museums that seems to be an emerging theme worth tracking across the field.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">06</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.dataland.art" target="_blank" rel="noopener">Dataland</a></div>
+      <div class="project-location">Los Angeles, CA · Opening June 20, 2026</div>
+      <p class="project-note">The world's first Museum of AI Arts, co-founded by Refik Anadol, opening at Frank Gehry's The Grand LA. Watching the broader digital artist museum category alongside <a href="https://beeple-studios.xyz" target="_blank" rel="noopener">Beeple Studios</a> — Mike Winkelmann's 50,000-square-foot digital art space in Charleston, SC. The key question: do these spaces develop genuine educational programming and community credibility, or do they remain primarily commercial and entertainment-driven?</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">New York's Contemporary Art Ecosystem</h2>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">07</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.newmuseum.org" target="_blank" rel="noopener">New Museum Expansion</a></div>
+      <div class="project-location">New York, NY · Opened March 21, 2026</div>
+      <p class="project-note">The OMA-designed 60,000-square-foot expansion doubled gallery space and opened in March. Watching the contemporary art museum ecosystem in New York — how it expands or consolidates. The New Museum is relatively small within that landscape; interesting to see how it positions itself against the Met, MoMA, and the Whitney as the ecosystem shifts.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">08</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.lacma.org" target="_blank" rel="noopener">LACMA David Geffen Galleries</a></div>
+      <div class="project-location">Los Angeles, CA · Opened April 19, 2026</div>
+      <p class="project-note">Peter Zumthor's 900-foot glass-and-concrete building spanning Wilshire Boulevard — two decades in the making. Watching how the new building performs against attendance and operating projections, and whether the investment in architecture translates to audience growth or primarily serves the donor community.</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">African American Museums &amp; Historical Memory</h2>
+
+<p>The opening of new African American museums is one of the most important developments in the field right now. Each of these institutions is navigating the same structural challenge: launching into a political environment where the very act of telling these stories is contested. Pre-Covid, museums ranked as the most trusted source of factual content in public surveys — above newspapers, universities, and government. That standing is now under genuine pressure. Museums that engage with American history — slavery, Reconstruction, representation — find themselves on the front lines of a national argument about whose story gets told and who controls the telling. That's not a communications problem that better outreach can solve. It's a structural shift.</p>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">09</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://newportblackhistory.org" target="_blank" rel="noopener">Edward W. Kane &amp; Martha J. Wallace Center for Black History</a></div>
+      <div class="project-location">Newport, RI · Opening June 19, 2026</div>
+      <p class="project-note">Part of the broader wave of new African American museums I'm watching closely for reception and long-term sustainability. Newport's demographics and donor base make this a particularly interesting test case.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">10</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://oseolamccartyhouse.com" target="_blank" rel="noopener">Oseola McCarty House Museum</a></div>
+      <div class="project-location">Hattiesburg, MS · Opened March 7, 2026</div>
+      <p class="project-note">Part of the African American museum wave — funding sustainability and community engagement will be the long-term story. McCarty's legacy as a philanthropist who donated her life savings to education makes this a particularly resonant institution to watch.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">11</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.juneteenthmuseum.org" target="_blank" rel="noopener">Juneteenth Museum</a></div>
+      <div class="project-location">Fort Worth, TX</div>
+      <span class="project-tag client">City of Fort Worth Client</span>
+      <p class="project-note">An institution with genuine historical significance — Juneteenth was proclaimed in Galveston, Texas — now being built in Fort Worth. Watching how the location question is addressed in the programming and community engagement strategy.</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">Science Centers &amp; Environment</h2>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">12</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://darkskydiscoverycenter.org" target="_blank" rel="noopener">International Dark Sky Discovery Center</a></div>
+      <div class="project-location">Fountain Hills, AZ</div>
+      <p class="project-note">Watching how climate-related programming is received in the current political environment. Science centers that engage with environmental themes are navigating a genuinely new kind of opposition — not community opposition to process, but ideological opposition to content.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">13</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://epicdiscovery.org" target="_blank" rel="noopener">EPIC Discovery Center</a></div>
+      <div class="project-location">Grand Island, NE</div>
+      <p class="project-note">One of the new science centers opening post-Covid. Watching how these resume in mid-size cities — the economics are very different from major metro markets, and the community integration model has to work harder.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">14</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://charlottenature.org" target="_blank" rel="noopener">Charlotte Museum of Nature</a></div>
+      <div class="project-location">Charlotte, NC</div>
+      <p class="project-note">Watching the core themes: funding sustainability, community engagement, long-term attendance. Charlotte is a fast-growing market with a developing philanthropic infrastructure — an interesting test of whether audience growth outpaces institutional capacity.</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">The Foundation Funding Question</h2>
+
+<p>As federal funding for museums pulls back, a handful of major private foundations are filling the gap — and reshaping the landscape in the process. Two projects illustrate opposite ends of this dynamic.</p>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">15</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://gilcrease.org" target="_blank" rel="noopener">Gilcrease Museum Reopening</a></div>
+      <div class="project-location">Tulsa, OK · Reopening Spring 2027</div>
+      <span class="update-flag">Update: Delayed to 2027 · 70% Over Budget</span>
+      <p class="project-note">The reopening is backed by the George Kaiser Family Foundation, a major driver of Tulsa's broader cultural investment. Worth watching in the context of how large private foundations — Kaiser, Knight, Ford, Mellon — are shaping museum development nationally at a moment when federal funding pulls back. The project has come in nearly 70% over its original budget and slipped to a spring 2027 opening — a cautionary data point for the field. Tulsa also carries the weight of the 1921 Race Massacre, and how the Gilcrease navigates that history and engages the Greenwood community will be a significant story — both locally and as a national model for institutions in cities with unresolved racial trauma.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">16</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://crystalbridges.org" target="_blank" rel="noopener">Crystal Bridges Museum of American Art</a></div>
+      <div class="project-location">Bentonville, AR · Expansion Opening June 6, 2026</div>
+      <p class="project-note">A model worth watching closely — privately funded by the Walton family (Walmart), rural location, national ambitions. Crystal Bridges is expanding by another 114,000 square feet, opening June 6, 2026. It represents one end of the spectrum of how major family foundations are reshaping the museum landscape. The Walton model raises a question the field hasn't fully answered: as federal funding pulls back, how much of American museum infrastructure becomes dependent on a handful of private foundations — and what does that mean for access, governance, and community accountability?</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">17</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://historysmc.org" target="_blank" rel="noopener">San Mateo County History Museum Expansion</a></div>
+      <div class="project-location">San Mateo, CA</div>
+      <span class="project-tag client">Past Client</span>
+      <p class="project-note">Museum expansions are becoming harder to finance. The traditional campaign model — wrapping endowment, deferred maintenance, and capital costs into one campaign — is increasingly difficult in the current funding climate. Watching this expansion as a bellwether for mid-size regional institutions.</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">Fort Worth: A Client Market to Watch</h2>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">18</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.cowgirl.net" target="_blank" rel="noopener">National Cowgirl Museum &amp; Hall of Fame</a></div>
+      <div class="project-location">Fort Worth, TX</div>
+      <span class="project-tag client">City of Fort Worth Client</span>
+      <p class="project-note">An expansion in a market where we have deep institutional knowledge. Watching as both a client project and as a case study in how heritage institutions reposition for a new generation of visitors.</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">Abu Dhabi: A Real-Time Stress Test</h2>
+
+<p>The entire Abu Dhabi cultural district strategy is now playing out against a backdrop no one planned for. The UAE has faced Iranian strikes in response to the war launched in late February — drones targeting tourist infrastructure including airports. Abu Dhabi's response has been to double down: a $1.7 billion Sphere investment announced in May, and the Guggenheim Abu Dhabi still reported on track to open by end of 2026. The question for the museum field is whether the build-it-and-they-will-come model holds when geopolitical instability disrupts the international visitor flows the entire strategy depends on.</p>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">19</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.guggenheim.org/guggenheim-abu-dhabi" target="_blank" rel="noopener">Guggenheim Abu Dhabi</a></div>
+      <div class="project-location">Abu Dhabi, UAE · Opening End of 2026</div>
+      <p class="project-note">Long-delayed and now opening into a genuinely uncertain environment. The Saadiyat Island Cultural District represents one of the most ambitious museum-building programs in history — but it was designed for a stable, tourism-driven Gulf. The <a href="https://www.louvreabudhabi.ae" target="_blank" rel="noopener">Louvre Abu Dhabi</a>, open since 2017, will be the most useful long-term benchmark for how Western institutional brands perform here.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">20</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://teamlab.art/e/phenomena-abudhabi/" target="_blank" rel="noopener">TeamLab Phenomena</a></div>
+      <div class="project-location">Abu Dhabi, UAE</div>
+      <p class="project-note">Immersive/entertainment category — same questions as Dataland, amplified by the geopolitical context. If international visitor numbers drop, the model is under immediate pressure.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">21</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://zayednationalmuseum.ae" target="_blank" rel="noopener">Zayed National Museum</a></div>
+      <div class="project-location">Abu Dhabi, UAE</div>
+      <p class="project-note">A national identity institution in a moment of genuine national stress. Watching how the programming navigates the current environment.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">22</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.nhmad.ae/en" target="_blank" rel="noopener">Natural History Museum Abu Dhabi</a></div>
+      <div class="project-location">Abu Dhabi, UAE · Opened November 22, 2025</div>
+      <p class="project-note">Already open — the largest natural history institution in the Middle East, covering 13.8 billion years of Earth's history. Now watching long-term attendance as a live data point for the Saadiyat cluster's performance in an uncertain geopolitical environment.</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">23</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.louvreabudhabi.ae" target="_blank" rel="noopener">Louvre Abu Dhabi</a></div>
+      <div class="project-location">Abu Dhabi, UAE · Open since 2017</div>
+      <p class="project-note">The most useful long-term benchmark in the Gulf. Nine years of operating data through a pandemic and now a regional conflict — watching attendance and programming decisions closely as the bellwether for the entire Saadiyat district.</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">International &amp; Regional</h2>
+
+<ol class="project-list">
+
+  <li class="project-item">
+    <div class="project-num">24</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.memphisartmuseum.org" target="_blank" rel="noopener">Memphis Art Museum</a></div>
+      <div class="project-location">Memphis, TN · Opening December 2026</div>
+      <p class="project-note">Formerly the Memphis Brooks Museum of Art — now rebranded and relocating to a new Herzog &amp; de Meuron-designed 122,000-square-foot campus on the Mississippi River bluff in downtown Memphis, opening December 2026. Watching the rebranding and relocation model: can a well-established institution successfully reinvent itself for a new downtown audience while retaining its existing community?</p>
+    </div>
+  </li>
+
+  <li class="project-item">
+    <div class="project-num">25</div>
+    <div class="project-body">
+      <div class="project-name"><a href="https://www.teamlab.art" target="_blank" rel="noopener">UBS teamLab Borderless</a></div>
+      <div class="project-location">Hamburg, Germany</div>
+      <p class="project-note">Watching the international expansion of the immersive entertainment model into European markets. Hamburg is a significant test — a major cultural city with sophisticated audiences and high expectations. If the model works here, it works anywhere.</p>
+    </div>
+  </li>
+
+</ol>
+
+<h2 class="section-hed">The Pushback Map: Why These Projects Face Opposition</h2>
+
+<p>Watching these projects, I've noticed that opposition rarely comes from nowhere — and it almost never comes from a single cause. In my public workshops, I always give the same advice: ask questions, don't lecture. Who are the stakeholders? What does the community actually need? Too often, museum projects are positioned as didactic — we're going to demonstrate the importance of what we have. In the current climate, that approach does not go over. The opposition it generates isn't irrational. It's the community saying, in many cases for the first time, "you never asked us."</p>
+
+<p>In today's climate, pushback on museum projects falls into one of four categories: <strong>Design &amp; Urban Impact</strong>, <strong>Labor &amp; Ethics</strong>, <strong>Cultural Politics</strong>, or <strong>Commercialization</strong>. Projects that are perceived as advocacy-first and community-service-second face a much harder path to public approval — regardless of subject matter. Here's how that maps onto the projects above.</p>
+
+<div class="pushback-grid">
+
+  <div class="pushback-card">
+    <div class="pushback-cat design">Design &amp; Urban Impact</div>
+    <div class="pushback-museum"><a href="https://www.lacma.org" target="_blank" rel="noopener">LACMA David Geffen Galleries</a></div>
+    <p>Perhaps the most controversial construction project in the museum world right now. Critics have dubbed it the "Incredible Shrinking Museum" — despite a price tag exceeding $750 million, the new Peter Zumthor building has less gallery space than the buildings it replaced. There is also vocal opposition to the structure spanning Wilshire Boulevard, which some see as an architectural ego trip that complicates the urban fabric rather than enhancing it.</p>
+  </div>
+
+  <div class="pushback-card">
+    <div class="pushback-cat land">Land Use &amp; Gentrification</div>
+    <div class="pushback-museum"><a href="https://www.obama.org/visit/" target="_blank" rel="noopener">Obama Presidential Center</a></div>
+    <p>Construction is complete, but the Protect Our Parks fight remains a case study in legal persistence — the core argument being that public parkland (Jackson Park) should not be handed over to a private entity. Beyond the legal side, there is still underlying community anxiety about displacement. As the "Obama Effect" drives up South Side property values, many long-time residents fear they will be priced out of the very neighborhood the Center is meant to celebrate.</p>
+  </div>
+
+  <div class="pushback-card">
+    <div class="pushback-cat labor">Labor &amp; Geopolitics</div>
+    <div class="pushback-museum"><a href="https://www.guggenheim.org/guggenheim-abu-dhabi" target="_blank" rel="noopener">Guggenheim Abu Dhabi</a></div>
+    <p>The pushback here is international and long-standing. Human Rights Watch and other NGOs have flagged migrant labor conditions on Saadiyat Island for years. While the UAE has updated labor laws, the project remains a lightning rod for "artwashing" critiques — the idea that major Western cultural brands are being used to mask a poor human rights record. The regional instability of early 2026 has added a new layer: internal debates about the security of housing $1 billion+ of global art in a volatile corridor.</p>
+  </div>
+
+  <div class="pushback-card">
+    <div class="pushback-cat labor">Labor &amp; Neighborhood Character</div>
+    <div class="pushback-museum"><a href="https://www.newmuseum.org" target="_blank" rel="noopener">New Museum Expansion</a></div>
+    <p>Two fronts of pushback. First, internal labor relations: the New Museum was one of the first major New York museums to see a successful unionization drive, and the expansion has been shadowed by debates over staff wages vs. capital spending. Second, the Bowery's changing identity — as a contemporary art powerhouse expands, there is a recurring critique that it is accelerating the "sanitization" of a neighborhood historically known for grit and social services.</p>
+  </div>
+
+  <div class="pushback-card">
+    <div class="pushback-cat politics">Cultural Politics</div>
+    <div class="pushback-museum"><a href="https://darkskydiscoverycenter.org" target="_blank" rel="noopener">International Dark Sky Discovery Center</a></div>
+    <p>The pushback here is subtle but reflects the broader culture war landscape. In some conservative political circles, "Dark Sky" initiatives are viewed as a back-door for environmental regulations affecting property rights and commercial development (lighting ordinances). Because the museum leads with science and climate-related themes, it must navigate a very specific political needle in Arizona to maintain broad-based municipal support.</p>
+  </div>
+
+  <div class="pushback-cat-block politics">
+    <div class="pushback-cat politics">Cultural Politics</div>
+    <div class="pushback-museum">Juneteenth &amp; African American Museums</div>
+    <p>These museums are deeply welcomed by their communities, but they are opening in a time of intense national debate over how history is taught. In some states, there is political pushback against any institution that frames American history through the lens of systemic racism or restorative justice. These museums aren't just building galleries — they are building defenses against potential political interference in their curatorial content.</p>
+  </div>
+
+  <div class="pushback-card">
+    <div class="pushback-cat commercial">Commercialization</div>
+    <div class="pushback-museum"><a href="https://www.dataland.art" target="_blank" rel="noopener">Dataland, Sphere &amp; the Identity Crisis Category</a></div>
+    <p>A growing chorus of traditional museum professionals is pushing back against classifying these spaces as museums at all. The argument is that they are unregulated commercial attractions masquerading as civic institutions. The pushback centers on tax status and public funding — critics argue that if a space is primarily for-profit entertainment, it shouldn't be competing for the same grants or tax breaks as an educational institution with a permanent collection and a research mission.</p>
+  </div>
+
+  <div class="pushback-card">
+    <div class="pushback-cat reputation">Reputation &amp; Credibility</div>
+    <div class="pushback-museum"><a href="https://lucasmuseum.org" target="_blank" rel="noopener">Lucas Museum of Narrative Art</a></div>
+    <p>Even in LA, the "vanity project" critique persists. Because the collection is personally owned and reflects the specific tastes of one individual, some in the academic art world have been slow to embrace it as a serious museum. The pushback is intellectual and reputational — the ghost of the Chicago and San Francisco rejections still haunts the project's narrative. Top-tier curatorial hires are helping, but the work is not finished.</p>
+  </div>
+
+</div>
+
+<blockquote>
+  <p>In almost every case, pushback happens when a museum is perceived as "top-down" — an architect's vision, a billionaire's collection, a developer's anchor tenant — without a corresponding bottom-up community benefit.</p>
+  <cite>Mark Walhimer, Museum Planning LLC</cite>
+</blockquote>
+
+<div class="theme-block">
+  <div class="theme-block-label">The Path Forward</div>
+  <p>The opposition museums face is not evidence that the institution is obsolete. Museums are changing — from authority to service, from collection-first to community-first, from lecturing to listening. That's not decline. That's evolution. The institutions thriving in 2026 are the ones most deeply embedded in their communities: serving schools, partnering with libraries, offering AI and robotics literacy to local workers, welcoming Main Street and Chamber partnerships. A museum that can answer clearly what it does for this community, for these schools, for these families — and build its public case around that answer — is in a very different position than one that leads with its collection or its curatorial vision.</p>
+</div>
+
+<div class="article-cta">
+  <h3>Institutional planning at scale</h3>
+  <p>For cities, universities, and museums navigating feasibility, strategic planning, master planning, or expansion — not hobby start-up inquiries. Museum Planning LLC works from community needs assessment through capital campaign and opening.</p>
+  <div class="article-cta-actions">
+    <a href="museum-strategic-planning.html" class="btn-copper">Museum strategic planning</a>
+    <a href="museum-planning-contact.html" class="btn-outline">Request a conversation</a>
+  </div>
+</div>
+
+<div class="tags">
+  <a class="tag" href="museum-planning-services.html">Museum Planning Services</a>
+  <a class="tag" href="convergence-era.html">Convergence Era</a>
+  <a class="tag" href="museum-ai/">Museum AI Practice</a>
+  <a class="tag" href="museum-vitality-index.html">Museum Vitality Index</a>
+  <a class="tag" href="for-cities.html">For Cities</a>
+  <a class="tag" href="museum-planning-about.html">Mark Walhimer</a>
+</div>
+
+</article>
+
+<aside>
+  <div class="aside-cta">
+    <div class="aside-head">Work With Us</div>
+    <div class="aside-body">
+      <p>Museum Planning LLC has guided institutions of every size — from single-room history museums to international cultural districts — through feasibility, strategic planning, master planning, and opening.</p>
+      <p>If you're leading one of these projects from the inside, start with <a href="museum-strategic-planning.html" style="color:var(--gold);font-weight:600;">strategic planning</a> or <a href="museum-planning-contact.html" style="color:var(--gold);font-weight:600;">contact</a>.</p>
+    </div>
+    <a href="museum-strategic-planning.html">Strategic planning →</a>
+  </div>
+
+  <div class="aside-block">
+    <div class="aside-head">About the Author</div>
+    <div class="aside-body">
+      <p>Mark Walhimer is Managing Partner of <a href="https://museumplanning.com" style="color:var(--deep);">Museum Planning LLC</a> and the author of <em>Museums 101</em> and <em>Designing Museum Experiences</em>.</p>
+      <p>He has planned museums on five continents over a 30-year career, with clients ranging from local history societies to major metropolitan institutions and city governments.</p>
+    </div>
+  </div>
+
+  <div class="aside-block">
+    <div class="aside-head">Further Reading — 2026</div>
+    <div class="aside-body">
+      <p><a href="https://www.forbes.com/sites/micheleherrmann/2026/01/10/these-us-museums-and-expansions-are-making-their-debuts-in-2026/" target="_blank" rel="noopener" style="color:var(--deep);font-weight:600;">Forbes:</a> U.S. Museums &amp; Expansions Debuting in 2026</p>
+      <p style="margin-top:12px;"><a href="https://www.theartnewspaper.com/2026/01/01/the-most-exciting-museum-openings-in-2026" target="_blank" rel="noopener" style="color:var(--deep);font-weight:600;">The Art Newspaper:</a> Most Exciting Museum Openings in 2026</p>
+      <p style="margin-top:12px;"><a href="https://whitewall.art/art/the-19-most-anticipated-museum-openings-of-2026/" target="_blank" rel="noopener" style="color:var(--deep);font-weight:600;">Whitewall:</a> 19 Most Anticipated Museum Openings of 2026</p>
+    </div>
+  </div>
+
+  <div class="aside-block">
+    <div class="aside-head">Museum Vitality Index</div>
+    <div class="aside-body">
+      <p>The MVI is Museum Planning LLC's proprietary scoring framework — evaluating any museum across five normalized dimensions regardless of budget size.</p>
+      <p style="margin-top:10px;"><a href="museum-vitality-index.html" style="color:var(--gold);font-weight:600;">Museum Vitality Index →</a></p>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-logo">Museum <em>Planning</em> LLC &nbsp;·&nbsp; mark@museumplanning.com &nbsp;·&nbsp; 415-794-5252</div>
+  <ul class="footer-links">
+    <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="museum-strategic-planning.html">Strategic planning</a></li>
+    <li><a href="museum-planning-contact.html">Contact</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

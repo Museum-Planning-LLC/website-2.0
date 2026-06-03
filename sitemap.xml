@@ -121,6 +121,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://museumplanning.com/museum-ai/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
+    <loc>https://museumplanning.com/museum-projects-to-watch-2026.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+  <url>
     <loc>https://museumplanning.com/404.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
