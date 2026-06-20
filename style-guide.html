@@ -217,6 +217,7 @@ footer {
   <script src="assets/ga-measurement-id.js"></script>
   <script src="assets/analytics.js" defer></script>
 
+  <link rel="stylesheet" href="assets/site-nav.css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -232,12 +233,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <ul class="nav-links" id="site-nav-menu">
     <li><a href="museum-planning-services.html">Services</a></li>
     <li><a href="for-cities.html">For Cities</a></li>
-    <li><a href="for-universities.html">For Universities</a></li>
     <li><a href="museum-planning-projects.html">Projects</a></li>
     <li><a href="museum-school/index.html">Museum School</a></li>
-    <li><a href="for-cities-science-center.html">Science Centers</a></li>
+    <li><a href="thought-leadership.html">Field Notes</a></li>
     <li><a href="museum-planning-about.html">About</a></li>
-    <li><a href="museum-planning-contact.html">Contact</a></li>
     <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
     <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
@@ -275,23 +274,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <section class="section">
     <div class="kicker">2) Global Navigation</div>
-    <h2>Standard Order</h2>
+    <h2>Standard Order (2026-06)</h2>
     <ol>
       <li>Services</li>
       <li>For Cities</li>
-      <li>For Universities</li>
       <li>Projects</li>
       <li>Museum School</li>
-      <li>Science Centers</li>
+      <li>Field Notes → <code>thought-leadership.html</code> (Convergence Era, Museum AI, staff portal, MVI, etc.)</li>
       <li>About</li>
-      <li>Contact</li>
       <li>Search icon</li>
-      <li>Start a Conversation (CTA)</li>
+      <li>Start a Conversation (CTA → contact; no separate Contact link)</li>
     </ol>
+    <p style="color:var(--mid);font-size:15px;margin:12px 0 0;">Audience pages removed from the top bar to reduce crowding: link to <strong>For Universities</strong> and <strong>Science Centers for Cities</strong> from Services, For Cities, and site search. Full spec: <a href="docs/NAVIGATION.md">docs/NAVIGATION.md</a>. Sync all <code>site-nav</code> blocks with <code>python3 tools/sync_site_nav.py</code>.</p>
     <ul>
-      <li>Fixed 60px dark nav with gold CTA.</li>
+      <li>Fixed 60px dark nav with gold CTA; load <code>assets/site-nav.css</code> after page styles.</li>
       <li>Use <code>assets/nav-mobile.css</code> and <code>assets/nav-mobile.js</code>.</li>
       <li>Keep search IDs consistent: <code>searchToggle</code>, <code>searchOverlay</code>, <code>searchClose</code>, <code>searchResults</code>.</li>
+      <li><code>class="active"</code> on one link: For Cities (incl. science-center page), Projects (incl. <code>projects/*</code>), Museum School, Field Notes (TL hub + articles), About, Services.</li>
+    </ul>
+    <h3 style="font-family:var(--serif);font-size:20px;margin:28px 0 12px;color:var(--navy);">Exceptions</h3>
+    <ul>
+      <li><code>museum-ai/index.html</code> — in-page nav only</li>
+      <li><code>museum-school/museum-exhibition-design/index.html</code> — series bar, no global menu</li>
+      <li><code>documents/*</code> — archive copies</li>
     </ul>
   </section>
 
@@ -325,10 +330,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>One primary URL per keyword cluster. Cross-link between tiers; do not duplicate intent.</p>
     <ul>
       <li><strong>Tier 1</strong> (sitemap 0.85): <code>museum-feasibility-study.html</code>, <code>museum-strategic-planning.html</code>, <code>museum-master-planning.html</code>, <code>museum-planning-services.html</code></li>
-      <li><strong>Tier 2</strong> (sitemap 0.45): <code>for-cities.html</code>, <code>for-cities-science-center.html</code>, <code>local-history-museum.html</code>, <code>immersive-museum-planning.html</code>, <code>for-universities.html</code></li>
+      <li><strong>Tier 2</strong> (sitemap 0.45): <code>for-cities.html</code>, <code>for-cities-science-center.html</code>, <code>for-universities.html</code>, <code>local-history-museum.html</code> — linked from Services / For Cities, not separate top-nav items</li>
+      <li><strong>Thought leadership</strong>: hub <code>thought-leadership.html</code> (nav: Field Notes); articles include <code>convergence-era.html</code>, <code>museum-ai/</code>, <code>immersive-museum-planning.html</code>, <code>museum-staff-portal.html</code>, <code>museum-vitality-index.html</code></li>
       <li><strong>Tier 3</strong>: <code>museum-school/*.html</code> — link up to commercial pages</li>
     </ul>
-    <p>Template: Tier 1 → <code>museum-feasibility-study.html</code>. Tier 2 → <code>local-history-museum.html</code> or <code>immersive-museum-planning.html</code>.</p>
+    <p>Template: Tier 1 → <code>museum-feasibility-study.html</code>. Tier 2 → <code>local-history-museum.html</code>. Thought leadership → <code>thought-leadership.html</code> hub.</p>
   </section>
 
   <section class="section">

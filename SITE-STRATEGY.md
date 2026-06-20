@@ -19,7 +19,7 @@ One-off strip-mall or hobby “museum” concepts with no institutional path; ch
 
 ## Funnel (website role)
 
-1. **Land** on a page that matches intent (home, **For Cities**, **Science Centers**, Services, Museum School article, project page).  
+1. **Land** on a page that matches intent (home, **For Cities**, Services, Museum School, **Field Notes** / thought leadership, project page). Science centers and universities are Tier 2 pages linked from Services / For Cities (not separate top-nav items — see [`docs/NAVIGATION.md`](docs/NAVIGATION.md)).  
 2. **Trust** — methodology, projects, tone, concrete fees/ranges, public-sector language.  
 3. **Convert** — **Start a Conversation** → contact; municipal pages also use **mailto** forms as a lightweight capture.  
 4. **Close (off-site)** — scoping call → proposal → **feasibility study** (often first paid gate) → master plan / exhibitions / campaign support as appropriate.

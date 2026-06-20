@@ -158,15 +158,25 @@ footer{background:var(--deep);padding:32px 56px;display:flex;justify-content:spa
   .project-item{grid-template-columns:38px 1fr;}
 }
 </style>
+  <link rel="stylesheet" href="assets/nav-mobile.css">
+  <link rel="stylesheet" href="assets/site-nav.css">
 </head>
 <body>
 
-<nav>
-  <a href="https://museumplanning.com/" class="nav-logo">Museum <em>Planning</em> LLC</a>
-  <ul class="nav-right">
+<nav class="site-nav" id="site-nav">
+  <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
     <li><a href="museum-planning-services.html">Services</a></li>
+    <li><a href="for-cities.html">For Cities</a></li>
+    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="thought-leadership.html" class="active">Field Notes</a></li>
     <li><a href="museum-planning-about.html">About</a></li>
-    <li><a href="museum-planning-contact.html" class="btn">Contact</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
 </nav>
 
@@ -649,5 +659,6 @@ footer{background:var(--deep);padding:32px 56px;display:flex;justify-content:spa
   </ul>
 </footer>
 
+  <script src="assets/nav-mobile.js" defer></script>
 </body>
 </html>

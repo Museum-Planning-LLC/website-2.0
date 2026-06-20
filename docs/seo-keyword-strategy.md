@@ -77,7 +77,7 @@ Sitemap priority **lower than Tier 1** (informational). Answers “what is…?�
 | Project proof | `museum-planning-projects.html`, `projects/*.html` |
 | Brand / person | `museum-planning-about.html` (Mark Walhimer) |
 | Conversion | `museum-planning-contact.html` |
-| Thought leadership | `convergence-era.html`, `museum-vitality-index.html` |
+| Thought leadership (nav: **Field Notes**) | Hub: `thought-leadership.html` — `convergence-era.html`, `museum-ai/`, `museum-staff-portal.html`, `immersive-museum-planning.html`, `museum-vitality-index.html`, `museum-projects-to-watch-2026.html` |
 | Capabilities PDF-style | `Museum_Planning_LLC_Capabilities.html` |
 
 ---

@@ -26,28 +26,52 @@ This guide is the source of truth for visual, structural, and SEO consistency in
 
 ## 2) Global Navigation Standard
 
-Use this nav pattern on all primary pages (commercial pillars, vertical guides, municipal funnels):
+**Full rules:** [docs/NAVIGATION.md](./docs/NAVIGATION.md) · **Sync tool:** `python3 tools/sync_site_nav.py`
 
-- Brand: `Museum <span>Planning</span> LLC`
-- Links (in order):
-  1. Services → `museum-planning-services.html`
-  2. For Cities → `for-cities.html`
-  3. For Universities → `for-universities.html`
-  4. Projects → `museum-planning-projects.html`
-  5. Museum School → `museum-school/index.html`
-  6. Science Centers → `for-cities-science-center.html`
-  7. About → `museum-planning-about.html`
-  8. Contact → `museum-planning-contact.html`
-  9. Search icon button
-  10. CTA: `Start a Conversation` → `museum-planning-contact.html`
+Use `<nav class="site-nav" id="site-nav">` on all primary pages (Tier 1–3, projects, thought-leadership hub, site map). Brand: `Museum <span>Planning</span> LLC` → `index.html` (adjust `../` depth in nested folders).
 
-On each page, set `class="active"` on the current section’s link only (typically `active` on Contact when on the contact page).
+### Top bar order (2026-06 — do not crowd)
 
-Rules:
+| # | Label | Href (from root) |
+|---|--------|------------------|
+| 1 | Services | `museum-planning-services.html` |
+| 2 | For Cities | `for-cities.html` |
+| 3 | Projects | `museum-planning-projects.html` |
+| 4 | Museum School | `museum-school/index.html` |
+| 5 | **Field Notes** | `thought-leadership.html` |
+| 6 | About | `museum-planning-about.html` |
+| 7 | Search | icon button (no link) |
+| 8 | **Start a Conversation** | `museum-planning-contact.html` (`nav-cta`) |
 
-- Keep nav height `60px`, dark background, gold CTA.
-- Keep mobile behavior via `assets/nav-mobile.css` and `assets/nav-mobile.js`.
-- Keep search overlay IDs consistent: `searchToggle`, `searchOverlay`, `searchClose`, `searchResults`, `search-input`.
+**Not in the top bar:** For Universities (`for-universities.html`), Science Centers (`for-cities-science-center.html`), or a separate Contact link — link from Services, For Cities, search `PAGES`, and body copy.
+
+**Field Notes** is the single nav entry for thought leadership (Museum AI, Convergence Era, 2026 projects, immersive guide, staff portal, MVI). Do not add per-article nav items.
+
+### Active state
+
+Set `class="active"` on one primary link only:
+
+- **For Cities** — also active on `for-cities-science-center.html`
+- **Projects** — also active on `projects/*`
+- **Museum School** — `museum-school/*` except exhibition-series hub index
+- **Field Notes** — `thought-leadership.html` and TL article URLs listed in [docs/NAVIGATION.md](./docs/NAVIGATION.md)
+
+Contact page: no `active` on a removed Contact link; CTA only.
+
+### Rules
+
+- Nav height `60px`, dark background (`--deep`), gold CTA.
+- Load `assets/nav-mobile.css`, `assets/nav-mobile.js`, and `assets/site-nav.css` (after page inline nav styles).
+- Search overlay IDs: `searchToggle`, `searchOverlay`, `searchClose`, `searchResults`, `search-input`.
+- After nav edits, run `python3 tools/sync_site_nav.py` and commit HTML + docs together.
+
+### Exceptions
+
+- `museum-ai/index.html` — in-page nav, not global bar.
+- `museum-school/museum-exhibition-design/index.html` — series bar layout.
+- `documents/*` archives — legacy until retired.
+
+See [docs/NAVIGATION.md](./docs/NAVIGATION.md) for exceptions table and new-page checklist.
 
 ## 3) Link and Path Conventions
 
@@ -84,8 +108,11 @@ Do not create competing URLs for the same intent.
 | Tier | Sitemap priority | Examples |
 |------|------------------|----------|
 | **Tier 1** — money keywords | `0.85` | `museum-feasibility-study.html`, `museum-strategic-planning.html`, `museum-master-planning.html`, `museum-planning-services.html` |
-| **Tier 2** — audience / vertical | `0.45` | `for-cities.html`, `for-cities-science-center.html`, `local-history-museum.html`, `immersive-museum-planning.html` |
+| **Tier 2** — audience / vertical | `0.45` | `for-cities.html`, `for-cities-science-center.html`, `for-universities.html`, `local-history-museum.html` |
+| **Thought leadership** — Field Notes hub | `~0.35–0.4` | `thought-leadership.html`, `museum-ai/`, `convergence-era.html`, `museum-staff-portal.html`, etc. (hub: `thought-leadership.html`) |
 | **Tier 3** — Museum School | lower | `museum-school/*.html` |
+
+`immersive-museum-planning.html` is thought leadership (linked from Field Notes hub), not a Tier 2 nav item.
 
 Tier 2 pages link **up** to Tier 1 and **across** to related Tier 2 pages. They do not keyword-stuff or duplicate Tier 1 copy.
 
@@ -150,7 +177,7 @@ After publish: add URL to `sitemap.xml`; add legacy redirect if replacing a Word
 
 ## 12) Pre-Publish Checklist
 
-1. Nav matches §2 (order, mobile, search).
+1. Nav matches §2 and [docs/NAVIGATION.md](./docs/NAVIGATION.md) (run `sync_site_nav.py` if unsure).
 2. Voice is **we**, not **I**.
 3. H1 includes primary keyword naturally; body is not keyword-stuffed.
 4. SEO head complete (§6); FAQ schema matches visible FAQ.

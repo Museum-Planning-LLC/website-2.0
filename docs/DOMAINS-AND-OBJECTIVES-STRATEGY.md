@@ -131,7 +131,9 @@ flowchart LR
 
 ### Thought leadership (credibility — not primary hire path)
 
-**Objective:** Show fluency in how museums are changing; **one soft CTA** up to **`museum-strategic-planning.html`** and contact. **Not** main nav competitors to Tier 1. Footer or “Lens” placement—not homepage hero.
+**Objective:** Show fluency in how museums are changing; **one soft CTA** up to **`museum-strategic-planning.html`** and contact. **Not** Tier 1 product pages.
+
+**Navigation (2026-06):** One top-bar item — **Field Notes** → `thought-leadership.html` (hub links all articles below). Do not add Museum AI, Convergence Era, etc. as separate nav labels. Individual TL URLs are not main-nav competitors to Tier 1.
 
 | Topic | Typical keywords | URL | Links up to |
 |-------|------------------|-----|-------------|
@@ -246,7 +248,7 @@ Not keyword hubs; support trust and Tier 1 links.
 | Museum strategic planning | Core revenue / Tier 1 | `museum-strategic-planning.html` | **Yes** |
 | Museum master planning | Core revenue / Tier 1 | `museum-master-planning.html` | **Yes** (in full five-keyword model) |
 | Museum planning / consultants | Core revenue / Tier 1 | `index.html`, `museum-planning-services.html` | **Yes** |
-| Museum AI | Thought leadership → strategic planning | `museum-ai/index.html` | **Yes** — not a separate SKU; demote nav |
+| Museum AI | Thought leadership → strategic planning | `museum-ai/index.html` | **Yes** — hub + Field Notes nav only; in-page nav on `/museum-ai/` |
 | Museum staff portal | Thought leadership (operating museum) | `museum-staff-portal.html` | **Yes** — keep; soft CTA to strategic planning |
 | Local history museum | **City entry** on-ramp | `local-history-museum.html` | **Yes** — **do not remove**; link to for-cities + strategic planning |
 | Immersive museum planning | Thought leadership (exhibition lens) | `immersive-museum-planning.html` | **Yes** — **do not remove**; commercial hire stays on services |
@@ -264,7 +266,7 @@ Not keyword hubs; support trust and Tier 1 links.
 
 | Item | Current state | Target alignment |
 |------|---------------|------------------|
-| Deploy path | `museumplanning.com/museum-ai/` | **Keep**; footer / Lens—not main nav |
+| Deploy path | `museumplanning.com/museum-ai/` | **Keep**; listed on `thought-leadership.html`; custom in-page nav on `/museum-ai/` |
 | Canonical in HTML | `https://museum-ai.com` | Align with live property or canonical to `/museum-ai/` |
 | Sitemap | Optional | Low priority (~0.35 thought leadership), below Tier 1 |
 | vs Convergence | Two AI touchpoints | Both thought leadership; **strategic planning** owns hire intent |

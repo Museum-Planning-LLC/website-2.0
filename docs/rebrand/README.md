@@ -10,6 +10,6 @@ Internal reference copied from Desktop `rebrand/` — not published to museumpla
 | [domain-portfolio-notes.rtf](./domain-portfolio-notes.rtf) | Domain portfolio routing table (from `Untitled.rtf`) |
 | [to-do.rtf](./to-do.rtf) | Site audit to-do notes (nav parity, polish items) |
 
-**Live site standards:** [`STYLE-GUIDE.md`](../../STYLE-GUIDE.md) and [`style-guide.html`](../../style-guide.html) in repo root.
+**Live site standards:** [`STYLE-GUIDE.md`](../../STYLE-GUIDE.md), [`style-guide.html`](../../style-guide.html), and [`docs/NAVIGATION.md`](../NAVIGATION.md) (global nav + `tools/sync_site_nav.py`).
 
 **SEO & business model:** [`../BUSINESS-AND-SEO-PLAYBOOK.md`](../BUSINESS-AND-SEO-PLAYBOOK.md)

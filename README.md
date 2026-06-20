@@ -13,6 +13,7 @@ Public marketing site for **[museumplanning.com](https://museumplanning.com/)**,
 | File | Purpose |
 |------|---------|
 | **[docs/BUSINESS-AND-SEO-PLAYBOOK.md](./docs/BUSINESS-AND-SEO-PLAYBOOK.md)** | **Start here** — business intent, Tier 1 keywords, new-page pushback rules, thread handoff |
+| **[docs/NAVIGATION.md](./docs/NAVIGATION.md)** | **Global nav** — Field Notes hub, sync script, exceptions, pre-publish checklist |
 | [docs/rebrand/](./docs/rebrand/) | Work plan HTML, May session summary, design-system styleguide, planning RTFs |
 | [AGENTS.md](./AGENTS.md) | Short pointer for Cursor / AI sessions |
 | [STYLE-GUIDE.md](./STYLE-GUIDE.md) | Design system, global nav, footer, voice, SEO checklist |
@@ -55,13 +56,29 @@ Each tier maps to **one primary URL** per keyword cluster. Cross-link between ti
 
 Tier 2 pages **support** Tier 1 — they link up to feasibility, master planning, and services; they do not replace them.
 
+**Universities** and **science centers** are Tier 2 but not separate top-nav items (linked from Services, For Cities, and search). See [docs/NAVIGATION.md](./docs/NAVIGATION.md).
+
+### Thought leadership — Field Notes (hub `thought-leadership.html`)
+
+Credibility articles (Museum AI, Convergence Era, staff portal, immersive guide, MVI, 2026 projects). **One** nav label: **Field Notes** → hub page lists all articles. Not Tier 1 hire paths.
+
 ### Tier 3 — Museum School (vocabulary, sitemap ~0.55)
 
 `museum-school/*.html` — education only; each article links **up** to the matching Tier 1 commercial page.
 
+## Global navigation
+
+Slim top bar: **Services · For Cities · Projects · Museum School · Field Notes · About · Search · Start a Conversation**.
+
+```bash
+python3 tools/sync_site_nav.py   # after any nav change
+```
+
+Details: [docs/NAVIGATION.md](./docs/NAVIGATION.md).
+
 ## SEO and redirects workflow
 
-1. **New page** — follow [STYLE-GUIDE.md § SEO](./STYLE-GUIDE.md); add URL to `sitemap.xml`; add to site search `PAGES` on related pages.
+1. **New page** — follow [STYLE-GUIDE.md § SEO](./STYLE-GUIDE.md); add URL to `sitemap.xml`; add to site search `PAGES` on related pages; if public marketing page, include standard `site-nav` (see NAVIGATION.md).
 2. **Legacy WordPress path** — add mapping in `redirects/legacy-redirects.json`, then run:
    ```bash
    python3 tools/gen_legacy_redirect_stubs.py
