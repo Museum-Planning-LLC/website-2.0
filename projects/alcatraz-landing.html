@@ -6,7 +6,7 @@
 <link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
 <title>Alcatraz Landing — Museum Planning LLC</title>
-<meta name="description" content="Alcatraz Landing · San Francisco, California · Museum Planning LLC">
+<meta name="description" content="Museum Planning LLC designed Alcatraz Landing — the pre-visit visitor experience at Pier 33 for Alcatraz Cruises, LLC, with NPS coordination, interpretive graphics, tactile maps, and ADA-compliant design (2011–2014).">
 <link rel="canonical" href="https://museumplanning.com/projects/alcatraz-landing.html">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
@@ -180,6 +180,44 @@ nav {
 .gallery-item.aspect-land { aspect-ratio: 16/9; }
 .gallery-item.aspect-sq   { aspect-ratio: 1/1; }
 .gallery-item.aspect-port { aspect-ratio: 3/4; }
+.gallery-expand {
+  border: none; padding: 0; margin: 0; cursor: zoom-in;
+  display: block; width: 100%; font: inherit; text-align: left;
+  background: var(--warm);
+}
+.gallery-expand:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.gallery-intro {
+  margin: 0 0 20px; font-family: var(--sans); font-size: 15px;
+  line-height: 1.7; color: #333;
+}
+.gallery-caption {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--mid); margin-top: 8px;
+}
+.gallery-lightbox {
+  display: none; position: fixed; inset: 0; z-index: 400;
+  background: rgba(17,28,39,.94); align-items: center; justify-content: center;
+  padding: 24px;
+}
+.gallery-lightbox.open { display: flex; }
+.gallery-lightbox-inner {
+  max-width: min(96vw, 1400px); max-height: 92vh; width: 100%;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.gallery-lightbox img {
+  max-width: 100%; max-height: calc(92vh - 48px); width: auto; height: auto;
+  object-fit: contain; box-shadow: 0 24px 80px rgba(0,0,0,.45);
+}
+.gallery-lightbox-caption {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.55); text-align: center;
+}
+.gallery-lightbox-close {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: none; color: rgba(255,255,255,.45);
+  font-family: var(--mono); font-size: 28px; cursor: pointer; line-height: 1;
+}
+.gallery-lightbox-close:hover { color: white; }
 
 .next-projects {
   background: var(--navy); padding: 72px 56px;
@@ -381,29 +419,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <div class="hero">
-  <div class="hero-img" style="background-image: url('../content/uploads/2016/10/IMG_0708-1200x2133.jpg');"></div>
+  <div class="hero-img" style="background-image: url('../content/uploads/projects/alcatraz-landing/photos/tactile-island-model-1400.jpg');"></div>
   <div class="hero-content">
     <div class="breadcrumb">
       <a href="../museum-planning-projects.html">← All Projects</a>
       <span>/</span>
       <span>Heritage Visitor Experience</span>
     </div>
-    <div class="hero-eyebrow">Heritage Visitor Experience</div>
+    <div class="hero-eyebrow">Pre-Visit Visitor Experience · Pier 33</div>
     <h1>Alcatraz Landing</h1>
     <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-label">Client</div>
+        <div class="meta-value">Alcatraz Cruises, LLC</div>
+      </div>
+      <div class="meta-divider"></div>
       <div class="meta-item">
         <div class="meta-label">Location</div>
         <div class="meta-value">San Francisco, California</div>
       </div>
       <div class="meta-divider"></div>
       <div class="meta-item">
-        <div class="meta-label">Year</div>
-        <div class="meta-value">2016</div>
+        <div class="meta-label">Years</div>
+        <div class="meta-value">2011–2014</div>
       </div>
       <div class="meta-divider"></div>
       <div class="meta-item">
         <div class="meta-label">Services</div>
-        <div class="service-tags"><span class="service-tag">Exhibition Design</span><span class="service-tag">Experience Design</span><span class="service-tag">Visitor Planning</span></div>
+        <div class="service-tags"><span class="service-tag">Exhibition Design</span><span class="service-tag">Visitor Experience</span><span class="service-tag">ADA &amp; Accessibility</span><span class="service-tag">Interpretive Graphics</span></div>
       </div>
     </div>
   </div>
@@ -411,19 +454,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="body-wrap">
   <div class="prose">
-    
+
       <h2>Project Overview</h2>
-      <p>Museum Planning LLC developed the exhibition and visitor experience design for Alcatraz Landing — the point of arrival for the thousands of visitors who make the ferry crossing to Alcatraz Island each day. The design work focused on setting the tone for the Alcatraz experience from the moment visitors step off the boat.</p>
-      <h2>Visitor Experience Design</h2>
-      <p>Alcatraz Landing is both a logistical gateway and an experiential threshold. The design work engaged this dual role — creating a space that orients, intrigues, and prepares visitors for the island experience while managing the practical demands of high-volume visitor flow.</p>
-      <h2>Interpretive Framework</h2>
-      <p>The interpretive design drew on the layered histories of Alcatraz — federal penitentiary, Native American occupation, military installation, and natural refuge — introducing these threads at the landing in ways that deepen the island visit that follows.</p>
-    
+      <p><em>Alcatraz Landing</em> is the waterfront pre-visit experience at Pier 33 — where Alcatraz Cruises, LLC (Hornblower) boards thousands of visitors daily for the ferry to Alcatraz Island. Because ferry service operates under a National Park Service concession contract, NPS asked the concessionaire to provide interpretation <em>before</em> people board: context, maps, history, and orientation to the island's different periods and places.</p>
+      <p>Museum Planning, LLC was engaged by Alcatraz Cruises to design that arrival experience. The work followed Museum Planning's management of <a href="alcatraz-traveling-exhibition.html"><em>Alcatraz: Life on the Rock</em></a> and applied the same concession-aware approach — meeting NPS expectations for public trust, accessibility, and inclusive welcome while delivering a practical visitor gateway at the pier.</p>
+
   </div>
   <div class="sidebar">
     <div class="sidebar-card">
       <div class="sidebar-label">Project Details</div>
-      <div class="detail-row"><span class="detail-key">Client</span><span class="detail-val">Golden Gate National Parks Conservancy</span></div><div class="detail-row"><span class="detail-key">Location</span><span class="detail-val">San Francisco, California</span></div><div class="detail-row"><span class="detail-key">Year</span><span class="detail-val">2016</span></div><div class="detail-row"><span class="detail-key">Services</span><span class="detail-val">Exhibition Design, Experience Design</span></div>
+      <div class="detail-row"><span class="detail-key">Project</span><span class="detail-val">Alcatraz Landing</span></div>
+      <div class="detail-row"><span class="detail-key">Client</span><span class="detail-val">Alcatraz Cruises, LLC</span></div>
+      <div class="detail-row"><span class="detail-key">Consultant</span><span class="detail-val">Museum Planning, LLC</span></div>
+      <div class="detail-row"><span class="detail-key">Lead</span><span class="detail-val">Mark Walhimer, Managing Partner</span></div>
+      <div class="detail-row"><span class="detail-key">Location</span><span class="detail-val">Pier 33, San Francisco</span></div>
+      <div class="detail-row"><span class="detail-key">Years</span><span class="detail-val">2011–2014</span></div>
+      <div class="detail-row"><span class="detail-key">Services</span><span class="detail-val">Visitor experience design, interpretive graphics, tactile &amp; braille maps, audio, ADA coordination, exhibition drawings</span></div>
     </div>
     <div class="sidebar-card">
       <div class="sidebar-label">Museum Planning LLC</div>
@@ -434,12 +480,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-
 <div class="gallery">
-  <div class="gallery-label">Photography &amp; Renderings</div>
+  <div class="gallery-label">Photography</div>
+  <p class="gallery-intro">Outdoor interpretive vignettes and tactile orientation at the Pier 33 landing — click any image to expand.</p>
   <div class="gallery-grid two-col">
-    <div class="gallery-item aspect-port"><img src="../content/uploads/2016/10/IMG_0708-1200x2133.jpg" alt="" loading="lazy"></div>
+    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-landing/photos/tactile-island-model.jpg" aria-label="Expand photo: tactile island model">
+      <img src="../content/uploads/projects/alcatraz-landing/photos/tactile-island-model-1400.jpg" alt="Tactile island model and Golden Gate NRA orientation panel at Alcatraz Landing" loading="lazy">
+    </button>
+    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-landing/photos/nps-rangers-vignette.jpg" aria-label="Expand photo: NPS rangers vignette">
+      <img src="../content/uploads/projects/alcatraz-landing/photos/nps-rangers-vignette-1400.jpg" alt="National Park Service rangers interpretive vignette" loading="lazy">
+    </button>
+    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-landing/photos/indian-occupiers-vignette.jpg" aria-label="Expand photo: Indian Occupiers vignette">
+      <img src="../content/uploads/projects/alcatraz-landing/photos/indian-occupiers-vignette-1400.jpg" alt="Indian Occupiers interpretive vignette at the landing" loading="lazy">
+    </button>
+    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-landing/photos/landing-planters.jpg" aria-label="Expand photo: landing planters">
+      <img src="../content/uploads/projects/alcatraz-landing/photos/landing-planters-1400.jpg" alt="Planter-based interpretive displays at Pier 33" loading="lazy">
+    </button>
+  </div>
+  <p class="gallery-caption">Click any image to expand</p>
+</div>
 
+<div class="body-wrap">
+  <div class="prose">
+
+      <h2>The Challenge</h2>
+      <p>Alcatraz Landing is both a queue and a threshold. Visitors arrive with uneven knowledge of the island — federal penitentiary, Native American occupation, military fort, natural refuge — and NPS needed the concessionaire to orient them before boarding. At the same time, the National Park Service made clear that the landing had to be <strong>ADA compliant</strong> and clearly welcoming to all visitors, not an afterthought squeezed into a ticket line.</p>
+
+      <h2>Museum Planning's Role</h2>
+      <p>Museum Planning designed the pre-visit experience and produced the drawings, graphics, and accessibility features that defined the landing. The work included:</p>
+      <ul>
+        <li>Visitor experience and interpretive planning for the Pier 33 arrival sequence</li>
+        <li>Orientation to Alcatraz history, island geography, and major interpretive zones</li>
+        <li>Exhibition layout drawings and CAD documentation for landing components</li>
+        <li>Tactile and braille island models and accessible graphic panels</li>
+        <li>Outdoor interpretive vignettes — including National Park Service and Native American occupation stories</li>
+        <li>Audio description and audio equipment integration</li>
+        <li>Artifact display coordination (including the Champion artifact case)</li>
+        <li>ADA coordination with National Park Service staff — responding to NPS accessibility requirements under the concession contract</li>
+      </ul>
+
+      <h2>Accessibility &amp; Inclusive Design</h2>
+      <p>NPS priority for this project was accessibility and welcome. Museum Planning designed tactile maps, braille labeling, audio support, and graphic systems so visitors could understand Alcatraz — its layout, layered histories, and what they would encounter on the island — before boarding the ferry. The landing was conceived as an inclusive threshold: readable, navigable, and open to the full range of visitors who come to Pier 33.</p>
+
+      <h2>Outcome</h2>
+      <p>Alcatraz Landing gave Alcatraz Cruises a concession-compliant pre-visit experience that met NPS expectations for interpretation and accessibility at the San Francisco waterfront. The project extended Museum Planning's Alcatraz work from the national touring exhibition to the daily arrival experience for millions of island visitors.</p>
+
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-label">Project Details</div>
+      <div class="detail-row"><span class="detail-key">Project</span><span class="detail-val">Alcatraz Landing</span></div>
+      <div class="detail-row"><span class="detail-key">Client</span><span class="detail-val">Alcatraz Cruises, LLC</span></div>
+      <div class="detail-row"><span class="detail-key">Consultant</span><span class="detail-val">Museum Planning, LLC</span></div>
+      <div class="detail-row"><span class="detail-key">Lead</span><span class="detail-val">Mark Walhimer, Managing Partner</span></div>
+      <div class="detail-row"><span class="detail-key">Location</span><span class="detail-val">Pier 33, San Francisco</span></div>
+      <div class="detail-row"><span class="detail-key">Years</span><span class="detail-val">2011–2014</span></div>
+      <div class="detail-row"><span class="detail-key">Services</span><span class="detail-val">Visitor experience design, interpretive graphics, tactile &amp; braille maps, audio, ADA coordination, exhibition drawings</span></div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-label">Museum Planning LLC</div>
+      <h3>Interested in a project like this?</h3>
+      <p>Every engagement begins with a conversation. Mark Walhimer is personally involved in all projects — from the first feasibility study through opening day.</p>
+    </div>
+    <a href="mailto:mark@museumplanning.com" class="btn-cta">Start a Conversation →</a>
+  </div>
+</div>
+
+<div class="gallery-lightbox" id="galleryLightbox" hidden aria-hidden="true">
+  <button type="button" class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Close expanded image">×</button>
+  <div class="gallery-lightbox-inner">
+    <img id="galleryLightboxImg" src="" alt="">
+    <div class="gallery-lightbox-caption" id="galleryLightboxCaption"></div>
   </div>
 </div>
 
@@ -448,6 +559,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="next-label">More Projects</div>
     <div class="next-grid">
       
+        <a href="alcatraz-traveling-exhibition.html" class="next-card">
+          <div class="nc-img">
+            <img src="../content/uploads/2019/07/DSC_4325-1400x782.jpg" alt="Alcatraz: Life on the Rock" loading="lazy">
+          </div>
+          <div class="nc-body">
+            <div class="nc-type">Traveling Exhibition</div>
+            <div class="nc-title">Alcatraz: Life on the Rock</div>
+          </div>
+        </a>
         <a href="pretend-city-childrens-museum.html" class="next-card">
           <div class="nc-img">
             <img src="../content/uploads/2013/08/pretendcity1.jpg" alt="Pretend City, Children's Museum of Orange County" loading="lazy">
@@ -569,6 +689,57 @@ input.addEventListener('input',()=>{
 </script>
 
   <script src="../assets/nav-mobile.js" defer></script>
+
+<script>
+(function(){
+  var lightbox = document.getElementById('galleryLightbox');
+  var lightboxImg = document.getElementById('galleryLightboxImg');
+  var lightboxCaption = document.getElementById('galleryLightboxCaption');
+  var lightboxClose = document.getElementById('galleryLightboxClose');
+  var lastFocus = null;
+
+  function openLightbox(src, alt) {
+    if (!lightbox || !lightboxImg) return;
+    lastFocus = document.activeElement;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    if (lightboxCaption) lightboxCaption.textContent = alt || '';
+    lightbox.hidden = false;
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lightboxClose.focus();
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.remove('open');
+    lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('.gallery-expand').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var img = btn.querySelector('img');
+      var full = btn.getAttribute('data-full');
+      if (full) openLightbox(full, img ? img.alt : '');
+    });
+  });
+
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox && lightbox.classList.contains('open')) closeLightbox();
+  });
+})();
+</script>
 
 <script>
 (function(){
