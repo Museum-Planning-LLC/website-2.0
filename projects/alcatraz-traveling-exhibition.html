@@ -195,6 +195,46 @@ nav {
   font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px;
   text-transform: uppercase; color: var(--mid); margin-top: 8px;
 }
+.gallery-caption a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; }
+.gallery-caption a:hover { color: var(--gold); }
+.video-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.video-block .gallery-caption { margin-top: 8px; }
+.video-wrap {
+  position: relative; aspect-ratio: 16/9; background: var(--navy);
+  overflow: hidden;
+}
+.video-wrap iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+}
+.video-poster-btn {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  border: none; padding: 0; margin: 0; cursor: pointer;
+  background: var(--navy);
+}
+.video-poster-btn img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  opacity: .88; transition: opacity .25s;
+}
+.video-poster-btn:hover img { opacity: .72; }
+.video-play-btn {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--gold); box-shadow: 0 8px 32px rgba(0,0,0,.35);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .2s, background .2s;
+}
+.video-play-btn::after {
+  content: '';
+  margin-left: 4px;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent var(--deep);
+}
+.video-poster-btn:hover .video-play-btn { transform: translate(-50%, -50%) scale(1.06); background: var(--gold-lt); }
+.video-wrap.is-playing .video-poster-btn { display: none; }
 .gallery-lightbox {
   display: none; position: fixed; inset: 0; z-index: 400;
   background: rgba(17,28,39,.94); align-items: center; justify-content: center;
@@ -283,6 +323,7 @@ footer {
   .gallery { padding: 0 24px 64px; }
   .gallery-grid, .gallery-grid.two-col, .gallery-grid.four-col { grid-template-columns: repeat(2,1fr); }
   .gallery-item.tall, .gallery-item.wide { grid-column: span 1; grid-row: span 1; }
+  .video-grid { grid-template-columns: 1fr; }
   .next-projects { padding: 56px 24px; }
   .next-grid { grid-template-columns: 1fr; }
   .cta-band, footer { padding-left: 24px; padding-right: 24px; }
@@ -508,25 +549,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <div class="gallery">
+  <div class="gallery-label">Film</div>
+  <div class="video-grid">
+    <div class="video-block">
+      <div class="video-wrap" data-vimeo-id="66086998" data-vimeo-title="Alcatraz: Life on the Rock traveling museum exhibition">
+        <button type="button" class="video-poster-btn" aria-label="Play Alcatraz: Life on the Rock traveling museum exhibition">
+          <img src="https://i.vimeocdn.com/video/437352214-f3b853501ba01c2b4e7c63d6207d4c52da82e5d2d5a3f5d71b6d44da955749d8-d_1280?region=us" alt="" width="1280" height="720">
+          <span class="video-play-btn" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="gallery-caption"><em>Alcatraz: Life on the Rock</em> — traveling exhibition overview · click to play</p>
+    </div>
+    <div class="video-block">
+      <div class="video-wrap" data-vimeo-id="72378021" data-vimeo-title="Alcatraz: The Last Day">
+        <button type="button" class="video-poster-btn" aria-label="Play Alcatraz: The Last Day">
+          <img src="https://i.vimeocdn.com/video/446216461-0956d7deef951caf5f436aa43d719ff428ac19f38e0e59d738b838c36aa3ac24-d_1280?region=us" alt="" width="1280" height="720">
+          <span class="video-play-btn" aria-hidden="true"></span>
+        </button>
+      </div>
+      <p class="gallery-caption"><em>Alcatraz: The Last Day</em> — Leigh Wiener photographs, Hyatt Regency 2013 · click to play</p>
+    </div>
+  </div>
+</div>
+
+<div class="gallery">
   <div class="gallery-label">Photography</div>
   <div class="gallery-grid two-col">
-    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/DSC_4325.jpg" aria-label="Expand photo: traveling exhibition installation">
-      <img src="../content/uploads/2019/07/DSC_4325-1400x782.jpg" alt="Alcatraz: Life on the Rock traveling exhibition installation" loading="lazy">
+    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/DSC_4325.jpg" aria-label="Expand photo: Sally port">
+      <img src="../content/uploads/2019/07/DSC_4325-1400x782.jpg" alt="Alcatraz: Life on the Rock — Sally port and island map kiosk" loading="lazy">
     </button>
-    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/DSC_4336.jpg" aria-label="Expand photo: exhibition gallery">
-      <img src="../content/uploads/2019/07/DSC_4336-1400x782.jpg" alt="Alcatraz: Life on the Rock exhibition gallery" loading="lazy">
+    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/DSC_4336.jpg" aria-label="Expand photo: prison cell interior">
+      <img src="../content/uploads/2019/07/DSC_4336-1400x782.jpg" alt="Alcatraz: Life on the Rock — prison cell interior" loading="lazy">
     </button>
-    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/IMG_3304.jpg" aria-label="Expand photo: exhibition detail">
-      <img src="../content/uploads/2019/07/IMG_3304-1400x782.jpg" alt="Alcatraz: Life on the Rock exhibition detail" loading="lazy">
+    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/IMG_3304.jpg" aria-label="Expand photo: Albright suit">
+      <img src="../content/uploads/2019/07/IMG_3304-1400x782.jpg" alt="Alcatraz: Life on the Rock — Albright suit in display case" loading="lazy">
     </button>
-    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/IMG_3479.jpg" aria-label="Expand photo: artifact display">
-      <img src="../content/uploads/2019/07/IMG_3479-1400x782.jpg" alt="Alcatraz: Life on the Rock artifact display" loading="lazy">
-    </button>
-    <button type="button" class="gallery-item aspect-land wide gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/JT2A3715.jpg" aria-label="Expand photo: touring exhibition">
-      <img src="../content/uploads/2019/07/JT2A3715-1400x933.jpg" alt="Alcatraz: Life on the Rock touring exhibition" loading="lazy">
+    <button type="button" class="gallery-item aspect-land gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/IMG_3479.jpg" aria-label="Expand photo: smartphone app">
+      <img src="../content/uploads/2019/07/IMG_3479-1400x782.jpg" alt="Alcatraz: Life on the Rock — smartphone app at exhibition" loading="lazy">
     </button>
   </div>
   <p class="gallery-caption">Click any image to expand</p>
+</div>
+
+<div class="gallery">
+  <div class="gallery-label">Artifacts &amp; Detail</div>
+  <div class="gallery-grid two-col">
+    <button type="button" class="gallery-item aspect-sq gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/brass-knuckles.jpg" aria-label="Expand photo: brass knuckles">
+      <img src="../content/uploads/projects/alcatraz-life-on-the-rock/photos/brass-knuckles-1400.jpg" alt="Brass knuckles carried by Alcatraz guard Ira Bowden" loading="lazy">
+    </button>
+    <button type="button" class="gallery-item aspect-sq gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/mouse-prop.jpg" aria-label="Expand photo: mouse prop">
+      <img src="../content/uploads/projects/alcatraz-life-on-the-rock/photos/mouse-prop-1400.jpg" alt="Mouse prop in prison cell diorama" loading="lazy">
+    </button>
+    <button type="button" class="gallery-item aspect-sq gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/popular-culture-artifacts.jpg" aria-label="Expand photo: popular culture artifacts">
+      <img src="../content/uploads/projects/alcatraz-life-on-the-rock/photos/popular-culture-artifacts-1400.jpg" alt="Popular culture artifacts — Alcatraz cup, linseed oil tin, and postcards" loading="lazy">
+    </button>
+    <button type="button" class="gallery-item aspect-sq gallery-expand" data-full="../content/uploads/projects/alcatraz-life-on-the-rock/photos/military-artifacts.jpg" aria-label="Expand photo: military artifacts">
+      <img src="../content/uploads/projects/alcatraz-life-on-the-rock/photos/military-artifacts-1400.jpg" alt="Military period artifacts in exhibition case" loading="lazy">
+    </button>
+  </div>
+  <p class="gallery-caption">Artifact close-ups from the touring collection · click to expand</p>
 </div>
 
 <div class="gallery">
@@ -740,6 +821,29 @@ input.addEventListener('input',()=>{
   }
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && lightbox && lightbox.classList.contains('open')) closeLightbox();
+  });
+})();
+</script>
+
+<script>
+(function(){
+  document.querySelectorAll('.video-wrap[data-vimeo-id]').forEach(function(player) {
+    var playBtn = player.querySelector('.video-poster-btn');
+    if (!playBtn) return;
+
+    playBtn.addEventListener('click', function() {
+      if (player.classList.contains('is-playing')) return;
+      var iframe = document.createElement('iframe');
+      var id = player.getAttribute('data-vimeo-id');
+      var title = player.getAttribute('data-vimeo-title') || 'Video';
+      iframe.src = 'https://player.vimeo.com/video/' + id + '?autoplay=1&title=0&byline=0&portrait=0';
+      iframe.title = title;
+      iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; encrypted-media');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      player.appendChild(iframe);
+      player.classList.add('is-playing');
+    });
   });
 })();
 </script>
