@@ -5,1046 +5,605 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
-<title>Museum of Arts and Sciences — Art & Tech Collaboration | Museum Planning, LLC</title>
-<meta name="description" content="Art and technology collaboration program at the Museum of Arts and Sciences — six artists, interactive installations, and public programming that made AI and blockchain accessible. Part 2 of 2.">
+<title>Museum of Arts and Sciences — Art &amp; Tech Collaboration — Museum Planning LLC</title>
+<meta name="description" content="Art and technology collaboration program at the Museum of Arts and Sciences — six artists, interactive installations, and public programming supported by the Knight Foundation.">
 <link rel="canonical" href="https://museumplanning.com/projects/mas-art-tech-collaboration.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0d1b2a;
-    --navy-mid: #1e3a5f;
-    --blue: #2563a8;
-    --indigo: #3730a3;
-    --violet: #6d28d9;
-    --teal: #0d9488;
-    --gold: #c9952a;
-    --gold-light: #e8b84b;
-    --cream: #f8f6f1;
-    --warm: #f0ebe0;
-    --dark: #111827;
-    --mid: #374151;
-    --muted: #6b7280;
-    --border: #d1c9b8;
-  }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:root {
+  --navy:    #1B2A3B;
+  --deep:    #111C27;
+  --gold:    #C9A84C;
+  --gold-lt: #E8D099;
+  --cream:   #F8F4EC;
+  --warm:    #EDE8DC;
+  --ink:     #1A1A1A;
+  --mid:     #5A5A5A;
+  --rule:    #D4C8B0;
+  --serif:   'Playfair Display', Georgia, serif;
+  --mono:    'DM Mono', monospace;
+  --sans:    'Lato', system-ui, sans-serif;
+}
+body { font-family: var(--sans); background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+nav {
+  position: fixed; top:0; left:0; right:0;
+  background: var(--deep); height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px; z-index: 100;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.nav-logo { font-family: var(--serif); font-size: 15px; color: white; text-decoration: none; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: rgba(255,255,255,.9); }
+.nav-cta { background: var(--gold) !important; color: var(--deep) !important; padding: 8px 20px; }
+
+.hero {
+  min-height: 70vh; position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+  padding: 0 0 0 0;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  background-color: var(--navy);
+}
+.hero-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(17,28,39,.95) 0%, rgba(17,28,39,.4) 60%, rgba(17,28,39,.1) 100%);
+}
+.hero-content {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 1100px;
+  margin: 0 auto; padding: 80px 56px 64px;
+  animation: fadeUp .7s .1s both;
+}
+.breadcrumb {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.4);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.breadcrumb a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb span { color: var(--gold); }
+.hero-eyebrow {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(32px, 4.5vw, 58px);
+  font-weight: 900; color: white; line-height: 1.08;
+  max-width: 800px; margin-bottom: 28px;
+}
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 24px; align-items: center;
+}
+.meta-item {
+  display: flex; flex-direction: column; gap: 4px;
+}
+.meta-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.3);
+}
+.meta-value {
+  font-family: var(--sans); font-size: 14px; font-weight: 700;
+  color: white;
+}
+.meta-divider {
+  width: 1px; height: 36px; background: rgba(255,255,255,.15);
+}
+.service-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.service-tag {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--gold);
+  border: 1px solid rgba(201,168,76,.35); padding: 5px 12px;
+}
+
+.body-wrap {
+  max-width: 1100px; margin: 0 auto;
+  padding: 80px 56px 100px;
+  display: grid; grid-template-columns: 1fr 340px; gap: 80px;
+  align-items: start;
+}
+.prose h2 {
+  font-family: var(--serif); font-size: 28px; font-weight: 700;
+  color: var(--navy); margin: 48px 0 16px; line-height: 1.25;
+}
+.prose h2:first-child { margin-top: 0; }
+.prose p { font-size: 16px; line-height: 1.85; color: #333; margin-bottom: 1.4em; }
+.prose ul { margin: 0 0 1.4em 20px; }
+.prose ul li { font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 6px; }
+.prose strong { color: var(--navy); font-weight: 700; }
+.prose blockquote {
+  font-family: var(--serif); font-style: italic; font-size: 20px;
+  color: var(--navy); border-left: 3px solid var(--gold);
+  padding-left: 28px; margin: 40px 0;
+}
+
+.sidebar { position: sticky; top: 80px; }
+.sidebar-card {
+  background: white; padding: 36px 32px;
+  border-top: 3px solid var(--gold); margin-bottom: 3px;
+}
+.sidebar-label {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+}
+.sidebar-card h3 {
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: var(--navy); margin-bottom: 12px; line-height: 1.3;
+}
+.sidebar-card p { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 1em; }
+.sidebar-card p:last-child { margin-bottom: 0; }
+.detail-row {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 12px 0; border-bottom: 1px solid var(--rule); gap: 16px;
+}
+.detail-row:last-child { border-bottom: none; }
+.detail-key { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); flex-shrink: 0; }
+.detail-val { font-size: 14px; color: var(--ink); font-weight: 600; text-align: right; }
+.btn-cta {
+  display: block; background: var(--gold); color: var(--deep);
+  padding: 14px 24px; font-family: var(--mono); font-size: 10px;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+  text-align: center; transition: background .2s; margin-top: 3px;
+}
+.btn-cta:hover { background: var(--gold-lt); }
+
+.gallery {
+  max-width: 1100px; margin: 0 auto; padding: 0 56px 80px;
+}
+.gallery-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 14px;
+}
+.gallery-label::before { content:''; width:32px; height:1px; background: var(--gold); }
+.gallery-grid {
+  display: grid; gap: 3px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.gallery-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+.gallery-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+.gallery-item { overflow: hidden; background: var(--warm); }
+.gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition: transform .4s; }
+.gallery-item:hover img { transform: scale(1.03); }
+.gallery-item.tall { grid-row: span 2; }
+.gallery-item.wide { grid-column: span 2; }
+.gallery-item.aspect-land { aspect-ratio: 16/9; }
+.gallery-item.aspect-sq   { aspect-ratio: 1/1; }
+.gallery-item.aspect-port { aspect-ratio: 3/4; }
+
+.next-projects {
+  background: var(--navy); padding: 72px 56px;
+}
+.next-inner { max-width: 1100px; margin: 0 auto; }
+.next-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 32px;
+}
+.next-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.next-card {
+  display: block; text-decoration: none; overflow: hidden;
+  position: relative;
+}
+.next-card .nc-img {
+  aspect-ratio: 4/3; overflow: hidden;
+  background: var(--deep);
+}
+.next-card .nc-img img {
+  width:100%; height:100%; object-fit:cover;
+  filter: brightness(.65); transition: filter .3s, transform .4s;
+}
+.next-card:hover .nc-img img { filter: brightness(.45); transform: scale(1.04); }
+.nc-body {
+  position: absolute; bottom:0; left:0; right:0;
+  padding: 20px 20px 18px;
+  background: linear-gradient(to top, rgba(17,28,39,.9) 0%, transparent 100%);
+}
+.nc-type { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.nc-title { font-family: var(--serif); font-size: 15px; font-weight: 700; color: white; line-height: 1.3; }
+
+.cta-band { background: var(--cream); padding: 80px 56px; text-align: center; }
+.cta-band h2 { font-family: var(--serif); font-size: clamp(28px,3vw,42px); font-weight: 900; color: var(--navy); margin-bottom: 16px; }
+.cta-band h2 em { font-style: italic; color: var(--gold); }
+.cta-band p { font-size: 16px; color: var(--mid); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
+.btn-primary {
+  display: inline-block; background: var(--gold); color: var(--deep);
+  padding: 14px 36px; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+  transition: background .2s;
+}
+.btn-primary:hover { background: var(--gold-lt); }
+
+footer {
+  background: var(--deep); padding: 40px 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(201,168,76,.1);
+}
+.footer-logo { font-family: var(--serif); font-size: 14px; color: rgba(255,255,255,.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 28px; list-style: none; }
+.footer-links a { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.25); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: rgba(255,255,255,.6); }
+.footer-copy { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,.2); }
+
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero-content { padding: 80px 24px 48px; }
+  .body-wrap { grid-template-columns: 1fr; padding: 48px 24px 64px; gap: 40px; }
+  .sidebar { position: static; }
+  .gallery { padding: 0 24px 64px; }
+  .gallery-grid, .gallery-grid.two-col, .gallery-grid.four-col { grid-template-columns: repeat(2,1fr); }
+  .gallery-item.tall, .gallery-item.wide { grid-column: span 1; grid-row: span 1; }
+  .next-projects { padding: 56px 24px; }
+  .next-grid { grid-template-columns: 1fr; }
+  .cta-band, footer { padding-left: 24px; padding-right: 24px; }
+  footer { flex-direction: column; gap: 20px; text-align: center; }
+}
+
+
+/* ── NEWSLETTER ── */
+.newsletter-band{background:var(--deep);padding:56px;border-top:1px solid rgba(201,168,76,.12);} 
+.newsletter-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:end;}
+.newsletter-kicker{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.newsletter-title{font-family:var(--serif);font-size:clamp(26px,3vw,40px);line-height:1.1;color:#fff;margin-bottom:10px;}
+.newsletter-copy{font-size:14px;line-height:1.6;color:rgba(255,255,255,.55);max-width:560px;}
+.newsletter-form{display:flex;gap:10px;align-items:center;}
+.newsletter-input{flex:1;min-width:200px;padding:12px 14px;border:1px solid rgba(201,168,76,.35);background:rgba(255,255,255,.04);color:#fff;font-family:var(--sans);font-size:14px;}
+.newsletter-input::placeholder{color:rgba(255,255,255,.38);} 
+.newsletter-input:focus{outline:none;border-color:var(--gold);} 
+.newsletter-btn{padding:12px 18px;border:none;background:var(--gold);color:var(--deep);font-family:var(--mono);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;cursor:pointer;}
+.newsletter-btn:hover{background:var(--gold-lt);} 
+@media (max-width:900px){.newsletter-band{padding:40px 24px;}.newsletter-inner{grid-template-columns:1fr;}.newsletter-form{flex-direction:column;align-items:stretch;}}
+
+/* ── SEARCH ── */
+.nav-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: rgba(255,255,255,.45);
+  transition: color .2s;
+  display: flex;
+  align-items: center;
+}
+.search-toggle:hover { color: var(--gold); }
+.search-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+.search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(17,28,39,.97);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 24px 40px;
+}
+.search-overlay.open { display: flex; }
+.search-close {
+  position: absolute;
+  top: 20px; right: 28px;
+  background: none; border: none;
+  color: rgba(255,255,255,.4);
+  font-size: 28px; cursor: pointer;
+  transition: color .2s;
+  font-family: var(--mono);
+}
+.search-close:hover { color: white; }
+.search-input-wrap {
+  width: 100%; max-width: 680px;
+  border-bottom: 2px solid var(--gold);
+  display: flex; align-items: center;
+  gap: 16px; margin-bottom: 48px;
+}
+.search-input-wrap svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; flex-shrink: 0; }
+#search-input {
+  flex: 1; background: none; border: none; outline: none;
+  font-family: var(--serif); font-size: clamp(24px, 4vw, 40px);
+  color: white; padding: 12px 0;
+  caret-color: var(--gold);
+}
+#search-input::placeholder { color: rgba(255,255,255,.2); }
+.search-results {
+  width: 100%; max-width: 680px;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.search-result {
+  background: rgba(255,255,255,.04);
+  padding: 20px 24px;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: border-color .2s, background .2s;
+  display: block;
+}
+.search-result:hover { border-color: var(--gold); background: rgba(201,168,76,.07); }
+.sr-type {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+}
+.sr-title {
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: white; margin-bottom: 4px;
+}
+.sr-desc { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
+.search-empty {
+  font-family: var(--serif); font-style: italic;
+  font-size: 18px; color: rgba(255,255,255,.3);
+  text-align: center; padding: 40px 0;
+}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--dark);
-    color: #fff;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ─────────────────────────────── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.1rem 4rem;
-    background: rgba(13, 27, 42, 0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-  }
-
-  .nav-brand {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.05rem;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .nav-brand em { color: var(--gold-light); font-style: italic; }
-
-  .nav-series {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-  }
-
-  .nav-series a {
-    color: var(--gold-light);
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-
-  .nav-series a:hover { opacity: 0.7; }
-  .nav-series span { color: rgba(255,255,255,0.2); }
-
-  /* ── HERO ─────────────────────────────── */
-  .hero {
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: var(--navy);
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('../content/uploads/2025/08/Untitled.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.25;
-    animation: slowZoom 14s ease forwards;
-    transform: scale(1.06);
-  }
-
-  @keyframes slowZoom { to { transform: scale(1); } }
-
-  /* Animated gradient mesh background */
-  .hero-mesh {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 50%, rgba(109,40,217,0.25) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, rgba(13,148,136,0.2) 0%, transparent 45%),
-      radial-gradient(ellipse at 60% 80%, rgba(37,99,168,0.3) 0%, transparent 45%);
-    animation: meshShift 8s ease-in-out infinite alternate;
-  }
-
-  @keyframes meshShift {
-    0% { opacity: 0.7; }
-    100% { opacity: 1; }
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(13,27,42,1) 0%, rgba(13,27,42,0.3) 60%, rgba(13,27,42,0.6) 100%);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 10rem 5rem 5rem;
-    max-width: 900px;
-  }
-
-  .hero-kicker {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.75rem;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.3s forwards;
-  }
-
-  .hero-kicker-line { width: 40px; height: 2px; background: var(--teal); }
-
-  .hero-kicker span {
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(13,148,136,0.9);
-  }
-
-  .hero-part {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--navy);
-    background: var(--gold-light);
-    padding: 0.3rem 0.85rem;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.4s forwards;
-  }
-
-  .hero-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.8rem, 5.5vw, 5rem);
-    line-height: 1.04;
-    color: #fff;
-    margin-bottom: 1rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.55s forwards;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    background: linear-gradient(135deg, var(--teal), #60a5fa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-sub {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.55);
-    max-width: 600px;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.75s forwards;
-  }
-
-  .hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.9s forwards;
-  }
-
-  .tag {
-    padding: 0.35rem 0.9rem;
-    border-radius: 2rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .tag-teal { background: rgba(13,148,136,0.2); border: 1px solid rgba(13,148,136,0.5); color: #2dd4bf; }
-  .tag-violet { background: rgba(109,40,217,0.2); border: 1px solid rgba(109,40,217,0.5); color: #a78bfa; }
-  .tag-blue { background: rgba(37,99,168,0.2); border: 1px solid rgba(37,99,168,0.5); color: #93c5fd; }
-  .tag-gold { background: rgba(201,149,42,0.2); border: 1px solid rgba(201,149,42,0.5); color: var(--gold-light); }
-
-  /* ── SHARED ───────────────────────────── */
-  section { padding: 6rem 0; }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 4rem;
-  }
-
-  .label {
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 0.75rem;
-  }
-
-  .label-light {
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 0.75rem;
-  }
-
-  .heading {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2rem, 3vw, 2.8rem);
-    line-height: 1.1;
-    color: #fff;
-    margin-bottom: 1rem;
-  }
-
-  .heading-dark {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2rem, 3vw, 2.8rem);
-    line-height: 1.1;
-    color: var(--dark);
-    margin-bottom: 1rem;
-  }
-
-  .rule-teal { width: 48px; height: 3px; background: var(--teal); margin-bottom: 2.5rem; }
-  .rule-gold { width: 48px; height: 3px; background: var(--gold); margin-bottom: 2.5rem; }
-
-  /* ── CONCEPT SECTION ──────────────────── */
-  .concept {
-    background: var(--navy);
-    border-top: 1px solid rgba(255,255,255,0.07);
-  }
-
-  .concept-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
-  }
-
-  .concept-text p {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 1.5rem;
-  }
-
-  .concept-text p strong { color: #fff; }
-
-  .concept-aside {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 2.5rem;
-    position: sticky;
-    top: 7rem;
-  }
-
-  .concept-aside-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1rem;
-    color: var(--gold-light);
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.03em;
-  }
-
-  .tech-pill-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
-  }
-
-  .tech-pill {
-    padding: 0.85rem 1rem;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-    transition: border-color 0.3s, background 0.3s;
-  }
-
-  .tech-pill:hover {
-    border-color: var(--teal);
-    background: rgba(13,148,136,0.08);
-  }
-
-  .tech-pill-icon {
-    font-size: 1.4rem;
-    margin-bottom: 0.4rem;
-    display: block;
-  }
-
-  .tech-pill-name {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.7);
-    letter-spacing: 0.05em;
-  }
-
-  .aside-note {
-    font-size: 0.82rem;
-    line-height: 1.65;
-    color: rgba(255,255,255,0.4);
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 1.25rem;
-    font-style: italic;
-  }
-
-  /* ── SIX ARTISTS ──────────────────────── */
-  .artists {
-    background: var(--cream);
-  }
-
-  .artists .label { color: var(--blue); }
-
-  .artists-intro {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1.08rem;
-    line-height: 1.8;
-    color: var(--mid);
-    max-width: 700px;
-    margin-bottom: 3.5rem;
-  }
-
-  .artists-intro strong { color: var(--dark); }
-
-  .artist-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    background: var(--border);
-  }
-
-  .artist-card {
-    background: #fff;
-    padding: 2.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s;
-  }
-
-  .artist-card:hover { background: var(--cream); }
-
-  .artist-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 3rem;
-    font-weight: 400;
-    color: rgba(37,99,168,0.08);
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-
-  .artist-card-type {
-    display: inline-block;
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 0.25rem 0.7rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .type-ai { background: rgba(109,40,217,0.1); color: #7c3aed; }
-  .type-blockchain { background: rgba(13,148,136,0.1); color: #0f766e; }
-  .type-network { background: rgba(37,99,168,0.1); color: #1d4ed8; }
-  .type-sound { background: rgba(201,149,42,0.12); color: #92400e; }
-  .type-data { background: rgba(220,38,38,0.08); color: #b91c1c; }
-  .type-generative { background: rgba(5,150,105,0.1); color: #065f46; }
-
-  .artist-card h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
-    color: var(--dark);
-    margin-bottom: 0.6rem;
-    line-height: 1.3;
-  }
-
-  .artist-card p {
-    font-size: 0.85rem;
-    line-height: 1.65;
-    color: var(--muted);
-  }
-
-  .artist-card-bar {
-    position: absolute;
-    bottom: 0; left: 0;
-    height: 3px;
-    width: 0;
-    background: var(--blue);
-    transition: width 0.4s ease;
-  }
-
-  .artist-card:hover .artist-card-bar { width: 100%; }
-
-  /* ── GALLERY ──────────────────────────── */
-  .gallery {
-    background: var(--navy);
-    padding: 0;
-  }
-
-  .gallery-full {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 4px;
-    background: var(--dark);
-  }
-
-  .gallery-full-main {
-    overflow: hidden;
-    position: relative;
-  }
-
-  .gallery-full-main img {
-    width: 100%;
-    height: 100%;
-    min-height: 480px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s ease;
-    filter: brightness(0.9);
-  }
-
-  .gallery-full-main:hover img { transform: scale(1.03); filter: brightness(1); }
-
-  .gallery-full-side {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 4px;
-  }
-
-  .gallery-full-side-item {
-    overflow: hidden;
-    position: relative;
-  }
-
-  .gallery-full-side-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s ease;
-    filter: brightness(0.85);
-  }
-
-  .gallery-full-side-item:hover img { transform: scale(1.04); filter: brightness(1); }
-
-  /* ── PROGRAMMING ──────────────────────── */
-  .programming {
-    background: rgba(13,27,42,0.98);
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .programming-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: end;
-    margin-bottom: 4rem;
-  }
-
-  .programming-header p {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.55);
-  }
-
-  .programming-header p strong { color: #fff; }
-
-  .tech-topics {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-
-  .tech-topic {
-    padding: 2rem;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s, background 0.3s;
-  }
-
-  .tech-topic::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 100%;
-    transition: opacity 0.3s;
-  }
-
-  .topic-ai::before { background: linear-gradient(to bottom, #7c3aed, #4f46e5); }
-  .topic-blockchain::before { background: linear-gradient(to bottom, #0d9488, #0891b2); }
-  .topic-network::before { background: linear-gradient(to bottom, #2563a8, #0ea5e9); }
-  .topic-interactive::before { background: linear-gradient(to bottom, #c9952a, #f59e0b); }
-
-  .tech-topic:hover {
-    border-color: rgba(255,255,255,0.14);
-    background: rgba(255,255,255,0.05);
-  }
-
-  .tech-topic-icon {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .tech-topic h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.05rem;
-    color: #fff;
-    margin-bottom: 0.6rem;
-  }
-
-  .tech-topic p {
-    font-size: 0.84rem;
-    line-height: 1.65;
-    color: rgba(255,255,255,0.5);
-  }
-
-  /* ── WHY IT MATTERS ───────────────────── */
-  .impact {
-    background: var(--cream);
-    border-top: 1px solid var(--border);
-  }
-
-  .impact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 6rem;
-    align-items: center;
-  }
-
-  .impact-img img {
-    width: 100%;
-    display: block;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-  }
-
-  .impact-text {}
-
-  .impact-text p {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: var(--mid);
-    margin-bottom: 1.5rem;
-  }
-
-  .impact-text p strong { color: var(--dark); }
-
-  .impact-quote {
-    background: var(--navy);
-    padding: 2.5rem;
-    margin-top: 2rem;
-  }
-
-  .impact-quote p {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.25rem;
-    line-height: 1.55;
-    color: #fff;
-    font-style: italic;
-    margin-bottom: 0;
-  }
-
-  .impact-quote cite {
-    display: block;
-    margin-top: 1rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    font-style: normal;
-  }
-
-  /* ── BACK / FOOTER ────────────────────── */
-  .back-cta {
-    background: var(--gold);
-    padding: 4rem 0;
-  }
-
-  .back-cta-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-
-  .back-cta h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.6rem;
-    color: var(--navy);
-  }
-
-  .back-cta p {
-    font-size: 0.88rem;
-    color: rgba(13,27,42,0.6);
-    margin-top: 0.3rem;
-  }
-
-  .btn-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 2.5rem;
-    background: var(--navy);
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: background 0.3s;
-    white-space: nowrap;
-  }
-
-  .btn-back:hover { background: var(--navy-mid); }
-
-  .btn-back svg {
-    width: 1rem; height: 1rem;
-    stroke: currentColor; fill: none;
-    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-  }
-
-  footer {
-    background: var(--navy);
-    padding: 3.5rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-brand {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1rem;
-    color: #fff;
-  }
-
-  .footer-brand em { color: var(--gold-light); }
-
-  .footer-contact {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .footer-contact a {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.45);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-contact a:hover { color: var(--gold-light); }
-
-  /* ── ANIMATIONS ───────────────────────── */
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .d1 { transition-delay: 0.1s; }
-  .d2 { transition-delay: 0.2s; }
-  .d3 { transition-delay: 0.3s; }
-  .d4 { transition-delay: 0.4s; }
-  .d5 { transition-delay: 0.5s; }
-  .d6 { transition-delay: 0.6s; }
-
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-series { display: none; }
-    .hero-content { padding: 8rem 2rem 4rem; }
-    .container { padding: 0 1.5rem; }
-    .concept-grid, .programming-header, .impact-layout { grid-template-columns: 1fr; gap: 3rem; }
-    .concept-aside { position: static; }
-    .artist-grid { grid-template-columns: 1fr; }
-    .gallery-full { grid-template-columns: 1fr; }
-    .gallery-full-main img { min-height: 280px; }
-    .gallery-full-side { grid-template-rows: auto auto; }
-    .gallery-full-side-item img { height: 220px; }
-    .tech-topics { grid-template-columns: 1fr; }
-    .back-cta-inner { flex-direction: column; text-align: center; }
-    footer { flex-direction: column; text-align: center; }
-  }
 </style>
-</head>
-<body>
+  <link rel="stylesheet" href="../assets/nav-mobile.css">
+  <link rel="stylesheet" href="../assets/site-footer.css">
+  <script src="../assets/ga-measurement-id.js"></script>
+  <script src="../assets/analytics.js" defer></script>
 
-<!-- NAV -->
-<nav>
-  <a href="../index.html" class="nav-brand">Museum <em>Planning</em>, LLC</a>
-  <div class="nav-series">
-    <a href="mas-executive-director.html">← Part 1 — Executive Director</a>
-    <span>|</span>
-    <span>Part 2 of 2</span>
-  </div>
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <link rel="stylesheet" href="../assets/wp-archive-prose.css">
+</head>
+<body class="project-wp-archive">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="site-nav" id="site-nav">
+  <a href="../index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="../museum-planning-services.html">Services</a></li>
+    <li><a href="../for-cities.html">For Cities</a></li>
+    <li><a href="../museum-planning-projects.html" class="active">Projects</a></li>
+    <li><a href="../museum-school/index.html">Museum School</a></li>
+    <li><a href="../thought-leadership.html">Field Notes</a></li>
+    <li><a href="../museum-planning-about.html">About</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="../museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-mesh"></div>
-  <div class="hero-overlay"></div>
+<div class="hero">
+  <div class="hero-img" style="background-image: url('../content/uploads/2025/08/Untitled.png');"></div>
   <div class="hero-content">
-    <div class="hero-kicker">
-      <div class="hero-kicker-line"></div>
-      <span>Museum of Arts and Sciences — Macon, Georgia</span>
+    <div class="breadcrumb">
+      <a href="../museum-planning-projects.html">← All Projects</a>
+      <span>/</span>
+      <span>Art &amp; Tech Collaboration</span>
     </div>
-    <div class="hero-part">Part 2 of 2</div>
-    <h1 class="hero-title">
-      Art &amp; <em>Technology</em><br>Collaboration
-    </h1>
-    <p class="hero-sub">
-      Six artists. Interactive digital installations. And a public programming
-      initiative that transformed complex technology — AI, blockchain, IT networking —
-      into visceral, participatory experiences that anyone could understand.
-    </p>
-    <div class="hero-tags">
-      <span class="tag tag-teal">6 Artists</span>
-      <span class="tag tag-violet">Artificial Intelligence</span>
-      <span class="tag tag-blue">Blockchain</span>
-      <span class="tag tag-blue">IT Networking</span>
-      <span class="tag tag-gold">Public Programming</span>
-      <span class="tag tag-teal">Interactive Installations</span>
-      <span class="tag tag-violet">Digital Experience</span>
-    </div>
-  </div>
-</section>
-
-<!-- CONCEPT -->
-<section class="concept" id="overview">
-  <div class="container">
-    <div class="concept-grid">
-      <div class="concept-text reveal">
-        <div class="label">The Concept</div>
-        <h2 class="heading">Where Art Teaches<br>Technology</h2>
-        <div class="rule-teal"></div>
-        <p>
-          What began as a curatorial initiative — inviting six artists to create
-          interactive digital installations — became something far more significant:
-          <strong>a model for using art to teach the public about the technologies
-          shaping their lives.</strong>
-        </p>
-        <p>
-          Each artist worked at the intersection of contemporary art and emerging
-          technology. Their installations didn't just use AI, blockchain, or networked
-          systems as tools — they made the technology itself visible, tangible,
-          and intellectually accessible to every visitor who engaged with the work.
-        </p>
-        <p>
-          The result was a public programming initiative unlike anything the museum had
-          done before. <strong>Visitors who came for the art left understanding
-          something about artificial intelligence. Visitors who came for the technology
-          left moved by something beautiful.</strong> The two were inseparable.
-        </p>
+    <div class="hero-eyebrow">Macon, Georgia · Knight Foundation Program</div>
+    <h1>Art &amp; Tech Collaboration</h1>
+    <p style="font-family:var(--serif);font-size:clamp(18px,2.5vw,24px);color:rgba(255,255,255,.75);max-width:720px;margin-bottom:28px;font-style:italic;">Six artists. Interactive installations. Art as public technology education.</p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-label">Location</div>
+        <div class="meta-value">Macon, Georgia</div>
       </div>
-      <div class="concept-aside reveal d2">
-        <div class="concept-aside-title">Technologies Made Accessible</div>
-        <div class="tech-pill-grid">
-          <div class="tech-pill">
-            <span class="tech-pill-icon">🤖</span>
-            <div class="tech-pill-name">Artificial Intelligence</div>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-icon">⛓️</span>
-            <div class="tech-pill-name">Blockchain</div>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-icon">🌐</span>
-            <div class="tech-pill-name">IT Networking</div>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-icon">💻</span>
-            <div class="tech-pill-name">Digital Media</div>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-icon">🎵</span>
-            <div class="tech-pill-name">Generative Sound</div>
-          </div>
-          <div class="tech-pill">
-            <span class="tech-pill-icon">📊</span>
-            <div class="tech-pill-name">Data Visualization</div>
-          </div>
-        </div>
-        <p class="aside-note">
-          Each technology was introduced not through explanation, but through
-          direct visitor interaction with artist-created installations — making
-          abstract concepts tangible and memorable.
-        </p>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <div class="meta-label">Year</div>
+        <div class="meta-value">2024–2025</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- SIX ARTISTS -->
-<section class="artists" id="artists">
-  <div class="container">
-    <div class="reveal">
-      <div class="label">Artist Collaborations</div>
-      <h2 class="heading-dark">Six Artists,<br>Six Technologies</h2>
-      <div class="rule-gold"></div>
-      <p class="artists-intro">
-        Mark Walhimer identified and partnered with <strong>six artists</strong> working
-        at the leading edge of art and technology practice. Each artist brought a distinct
-        technology to life through an interactive installation — creating an exhibition
-        that functioned simultaneously as contemporary art and as informal technology education.
-      </p>
-    </div>
-    <div class="artist-grid">
-      <div class="artist-card reveal d1">
-        <div class="artist-card-bar"></div>
-        <div class="artist-num">01</div>
-        <span class="artist-card-type type-ai">Artificial Intelligence</span>
-        <h3>Generative AI Installation</h3>
-        <p>An interactive work exploring machine learning and neural networks — inviting visitors to co-create imagery and text with an AI system, making the mechanics of generative models visible and participatory.</p>
-      </div>
-      <div class="artist-card reveal d2">
-        <div class="artist-card-bar"></div>
-        <div class="artist-num">02</div>
-        <span class="artist-card-type type-blockchain">Blockchain</span>
-        <h3>Distributed Ledger as Art</h3>
-        <p>An installation that visualized blockchain transactions in real time, transforming the abstract concept of distributed trust and immutable records into a living, breathing visual system visitors could observe and interact with.</p>
-      </div>
-      <div class="artist-card reveal d3">
-        <div class="artist-card-bar"></div>
-        <div class="artist-num">03</div>
-        <span class="artist-card-type type-network">IT Networking</span>
-        <h3>Network Topology Sculpture</h3>
-        <p>A physical and digital sculptural work mapping live network traffic and data flows — making the invisible infrastructure of the internet tangible, beautiful, and comprehensible to non-technical visitors.</p>
-      </div>
-      <div class="artist-card reveal d1">
-        <div class="artist-card-bar"></div>
-        <div class="artist-num">04</div>
-        <span class="artist-card-type type-sound">Generative Sound</span>
-        <h3>Algorithmic Sound Environment</h3>
-        <p>An immersive audio installation using algorithmic composition and real-time data inputs to generate music that responded to visitor presence, temperature, and time of day — demonstrating how computers can create and adapt in real time.</p>
-      </div>
-      <div class="artist-card reveal d2">
-        <div class="artist-card-bar"></div>
-        <div class="artist-num">05</div>
-        <span class="artist-card-type type-data">Data Visualization</span>
-        <h3>Living Data Portrait</h3>
-        <p>A large-scale visualization work drawing on publicly available datasets to create dynamic, ever-changing portraits of the community — illustrating how data is collected, structured, and interpreted to tell stories about people and places.</p>
-      </div>
-      <div class="artist-card reveal d3">
-        <div class="artist-card-bar"></div>
-        <div class="artist-num">06</div>
-        <span class="artist-card-type type-generative">Generative Systems</span>
-        <h3>Interactive Co-Creation System</h3>
-        <p>A generative art environment where visitors' movements and choices directly shaped the visual output — demonstrating feedback loops, input-output relationships, and the fundamental logic of interactive computing through playful, accessible engagement.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<div class="gallery">
-  <div class="gallery-full">
-    <div class="gallery-full-main">
-      <img src="../content/uploads/2025/08/IMG_6314.jpeg"
-        alt="Interactive art installation at Museum of Arts and Sciences">
-    </div>
-    <div class="gallery-full-side">
-      <div class="gallery-full-side-item">
-        <img src="../content/uploads/2025/08/IMG_5869.jpeg"
-          alt="STEAM exhibition space">
-      </div>
-      <div class="gallery-full-side-item">
-        <img src="../content/uploads/2025/08/Untitled.png"
-          alt="Technology installation detail">
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <div class="meta-label">Services</div>
+        <div class="service-tags"><span class="service-tag">Art &amp; Tech Program</span><span class="service-tag">Public Programming</span><span class="service-tag">Interactive Installations</span><span class="service-tag">Knight Foundation</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- PUBLIC PROGRAMMING -->
-<section class="programming" id="programming">
-  <div class="container">
-    <div class="programming-header">
-      <div class="reveal">
-        <div class="label-light">The Breakthrough</div>
-        <h2 class="heading">Art as Public<br>Tech Education</h2>
-        <div class="rule-teal"></div>
-      </div>
-      <div class="reveal d2">
-        <p>
-          What made this initiative genuinely innovative was not the installations themselves —
-          it was the <strong>public programming layer built around them.</strong>
-          Curator-led talks, artist demonstrations, and hands-on workshops transformed
-          each installation into a classroom without walls.
-        </p>
-        <p>
-          Visitors didn't just look at art. They learned why it worked — and in doing so,
-          they learned how the technologies underpinning modern life actually function.
-        </p>
-      </div>
-    </div>
-    <div class="tech-topics">
-      <div class="tech-topic topic-ai reveal d1">
-        <span class="tech-topic-icon">🤖</span>
-        <h3>Artificial Intelligence</h3>
-        <p>Visitors engaged with AI-generated content and learned how machine learning models are trained, what neural networks actually do, and how AI is already shaping the images, music, and text they encounter every day.</p>
-      </div>
-      <div class="tech-topic topic-blockchain reveal d2">
-        <span class="tech-topic-icon">⛓️</span>
-        <h3>Blockchain &amp; Distributed Trust</h3>
-        <p>Through the visual language of the blockchain installation, visitors grasped the concept of decentralized record-keeping — why it matters, how it works, and what it means for digital ownership, identity, and finance.</p>
-      </div>
-      <div class="tech-topic topic-network reveal d3">
-        <span class="tech-topic-icon">🌐</span>
-        <h3>IT Networking &amp; Infrastructure</h3>
-        <p>The network sculpture made invisible infrastructure visible — helping visitors understand how information travels across the internet, what data packets are, and why the physical and digital infrastructure of connectivity matters.</p>
-      </div>
-      <div class="tech-topic topic-interactive reveal d4">
-        <span class="tech-topic-icon">✨</span>
-        <h3>Interactive Digital Experience Design</h3>
-        <p>Each installation modeled principles of interaction design — feedback loops, real-time responsiveness, generative systems — giving visitors an intuitive foundation for understanding how digital products and experiences are built.</p>
-      </div>
-    </div>
+<div class="body-wrap">
+  <div class="prose wp-archive">
+<p class="lead">Six artists. Interactive digital installations. A Knight Foundation public programming initiative that transformed AI, blockchain, and IT networking into participatory experiences anyone could understand.</p>
+<p><strong>Client:</strong> Museum of Arts and Sciences</p>
+<p><strong>Location:</strong> Macon, Georgia</p>
+<p><strong>Period:</strong> 2024–2025</p>
+<p><strong>Funder:</strong> Knight Foundation</p>
+<p><strong>Related:</strong> <a href="mas-executive-director.html">Part 1 — Executive Director</a></p>
+<p>What began as a curatorial initiative inviting six artists to create interactive digital installations became a model for using art to teach the public about the technologies shaping their lives. Each artist worked at the intersection of contemporary art and emerging technology. Their installations did not just use AI, blockchain, or networked systems as tools — they made the technology itself visible, tangible, and intellectually accessible to every visitor who engaged with the work.</p>
+<h3>Six Artists, Six Technologies</h3>
+<p>Mark Walhimer identified and partnered with six artists working at the leading edge of art and technology practice. Each artist brought a distinct technology to life through an interactive installation — creating an exhibition that functioned simultaneously as contemporary art and as informal technology education.</p>
+<ol>
+  <li><strong>Generative AI Installation</strong> — An interactive work exploring machine learning and neural networks, inviting visitors to co-create imagery and text with an AI system.</li>
+  <li><strong>Distributed Ledger as Art</strong> — An installation visualizing blockchain transactions in real time, transforming distributed trust and immutable records into a living visual system.</li>
+  <li><strong>Network Topology Sculpture</strong> — A physical and digital sculptural work mapping live network traffic and data flows — making the invisible infrastructure of the internet tangible.</li>
+  <li><strong>Algorithmic Sound Environment</strong> — An immersive audio installation using algorithmic composition and real-time data inputs to generate music responsive to visitor presence.</li>
+  <li><strong>Living Data Portrait</strong> — A large-scale visualization drawing on publicly available datasets to create dynamic portraits of the community.</li>
+  <li><strong>Interactive Co-Creation System</strong> — A generative art environment where visitors' movements and choices directly shaped the visual output.</li>
+</ol>
+<h3>Art as Public Tech Education</h3>
+<p>What made this initiative genuinely innovative was the public programming layer built around the installations. Curator-led talks, artist demonstrations, and hands-on workshops transformed each installation into a classroom without walls.</p>
+<ul>
+  <li><strong>Artificial Intelligence</strong> — Visitors engaged with AI-generated content and learned how machine learning models are trained and how neural networks function.</li>
+  <li><strong>Blockchain &amp; Distributed Trust</strong> — Through the visual language of the blockchain installation, visitors grasped decentralized record-keeping and digital ownership.</li>
+  <li><strong>IT Networking &amp; Infrastructure</strong> — The network sculpture made invisible infrastructure visible — how information travels across the internet and why connectivity matters.</li>
+  <li><strong>Interactive Digital Experience Design</strong> — Each installation modeled principles of interaction design — feedback loops, real-time responsiveness, and generative systems.</li>
+</ul>
+<h3>Why It Matters</h3>
+<p>The Art &amp; Tech Collaboration offers a repeatable, scalable programming model for making emerging technology comprehensible to general audiences: use art as the entry point. Art creates emotional engagement before intellectual understanding. It invites curiosity without prerequisite knowledge.</p>
+<figure class="wp-caption aligncenter"><img src="../content/uploads/2025/08/IMG_6314.jpeg" alt="Interactive art installation at Museum of Arts and Sciences" loading="lazy"><figcaption>Interactive art installation</figcaption></figure>
+<figure class="wp-caption aligncenter"><img src="../content/uploads/2025/08/IMG_5869.jpeg" alt="STEAM exhibition space" loading="lazy"><figcaption>STEAM exhibition space</figcaption></figure>
+<figure class="wp-caption aligncenter"><img src="../content/uploads/2025/08/Untitled.png" alt="Technology installation detail" loading="lazy"><figcaption>Technology installation detail</figcaption></figure>
+<figure class="wp-caption aligncenter"><img src="../content/uploads/2025/08/IMG_5797-1400x1050.jpeg" alt="Museum of Arts and Sciences gallery" loading="lazy"><figcaption>Museum of Arts and Sciences gallery</figcaption></figure>
   </div>
-</section>
-
-<!-- WHY IT MATTERS -->
-<section class="impact" id="impact">
-  <div class="container">
-    <div class="impact-layout">
-      <div class="impact-img reveal">
-        <img src="../content/uploads/2025/08/IMG_6314.jpeg"
-          alt="Art and technology installation detail">
-      </div>
-      <div class="impact-text reveal d2">
-        <div class="label">Why It Matters</div>
-        <h2 class="heading-dark">A New Model for<br>Museum Programming</h2>
-        <div class="rule-gold"></div>
-        <p>
-          Museums have long served as institutions of public learning — but the question
-          of <strong>how to make emerging technology comprehensible and relevant</strong>
-          to general audiences remains one of the most pressing challenges in
-          informal education.
-        </p>
-        <p>
-          The Art &amp; Tech Collaboration at the Museum of Arts and Sciences offers
-          an answer: <strong>use art as the entry point.</strong> Art creates emotional
-          engagement before intellectual understanding. It invites curiosity without
-          prerequisite knowledge. It makes people want to understand how something works.
-        </p>
-        <p>
-          The six artist collaborations didn't just bring new visitors to the museum —
-          they created a <strong>repeatable, scalable programming model</strong> that
-          other institutions can adopt. The methodology is transferable. The impact
-          is measurable. And the precedent is now set.
-        </p>
-        <div class="impact-quote">
-          <p>"The most effective way to teach people about the technologies shaping their world is to let them experience something beautiful made from those technologies — and then ask them how it works."</p>
-          <cite>Mark Walhimer — Museum Planning, LLC</cite>
-        </div>
-      </div>
+  <div class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-label">Project Details</div>
+      <div class="detail-row"><span class="detail-key">Client</span><span class="detail-val">Museum of Arts and Sciences</span></div><div class="detail-row"><span class="detail-key">Location</span><span class="detail-val">Macon, Georgia</span></div><div class="detail-row"><span class="detail-key">Artists</span><span class="detail-val">6 Collaborations</span></div><div class="detail-row"><span class="detail-key">Period</span><span class="detail-val">2024–2025</span></div><div class="detail-row"><span class="detail-key">Funder</span><span class="detail-val">Knight Foundation</span></div>
     </div>
+    <div class="sidebar-card">
+      <div class="sidebar-label">Museum Planning LLC</div>
+      <h3>Interested in a project like this?</h3>
+      <p>Every engagement begins with a conversation. Mark Walhimer is personally involved in all projects — from the first feasibility study through opening day.</p>
+    </div>
+    <a href="mailto:mark@museumplanning.com" class="btn-cta">Start a Conversation →</a>
   </div>
-</section>
+</div>
 
-<!-- BACK CTA -->
-<div class="back-cta">
-  <div class="container">
-    <div class="back-cta-inner">
-      <div>
-        <h2>← Part 1: Executive Director</h2>
-        <p>Institutional restructuring, Discovery House planning, org chart, HR systems, and community reconnection.</p>
-      </div>
-      <a href="mas-executive-director.html" class="btn-back">
-        <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-        View Part 1
-      </a>
+
+<div class="next-projects">
+  <div class="next-inner">
+    <div class="next-label">More Projects</div>
+    <div class="next-grid">
+      
+        <a href="mas-executive-director.html" class="next-card">
+          <div class="nc-img">
+            <img src="../content/uploads/2025/08/IMG_5797-1400x1050.jpeg" alt="Museum of Arts and Sciences — Executive Director" loading="lazy">
+          </div>
+          <div class="nc-body">
+            <div class="nc-type">Museum Leadership</div>
+            <div class="nc-title">MAS — Executive Director</div>
+          </div>
+        </a>
+        <a href="city-of-mcdonough-georgia.html" class="next-card">
+          <div class="nc-img">
+            <img src="../content/uploads/2019/07/JT2A3857-1400x933.jpg" alt="City of McDonough — C.O. Polk Interactive Museum" loading="lazy">
+          </div>
+          <div class="nc-body">
+            <div class="nc-type">Municipal Museum</div>
+            <div class="nc-title">City of McDonough — C.O. Polk Interactive Museum</div>
+          </div>
+        </a>
+        <a href="howard-natural-history-museum.html" class="next-card">
+          <div class="nc-img">
+            <img src="../content/uploads/2025/08/Howard_front-1-1400x788.png" alt="Howard Natural History Museum" loading="lazy">
+          </div>
+          <div class="nc-body">
+            <div class="nc-type">Natural History Museum</div>
+            <div class="nc-title">Howard Natural History Museum</div>
+          </div>
+        </a>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
+<div class="cta-band">
+  <h2>Let's build<br><em>your museum.</em></h2>
+  <p>Forty museums. One methodology. Mark personally involved in every engagement.</p>
+  <a href="mailto:mark@museumplanning.com" class="btn-primary">mark@museumplanning.com</a>
+</div>
+
+
+
+<section class="newsletter-band">
+  <div class="newsletter-inner">
+    <div>
+      <div class="newsletter-kicker">Newsletter</div>
+      <h2 class="newsletter-title">Get museum planning updates.</h2>
+      <p class="newsletter-copy">Join the Museum Planning LLC newsletter for essays, case studies, and practical planning insights.</p>
+    </div>
+    <form class="newsletter-form" data-newsletter-form>
+      <input class="newsletter-input" type="email" name="email" placeholder="Your email address" required>
+      <button class="newsletter-btn" type="submit">Sign Up</button>
+    </form>
+  </div>
+</section>
+
+<p class="privacy-strip"><a href="../museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
+
 <footer>
-  <div class="footer-brand">Museum <em>Planning</em>, LLC &nbsp;·&nbsp; Mark Walhimer</div>
-  <div class="footer-contact">
-    <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>
-    <a href="tel:4157945252">415-794-5252</a>
-    <a href="https://museumplanning.com">museumplanning.com</a>
-  </div>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="https://museumplanner.org">Museum Planner</a></li>
+    <li><a href="https://museums101.com">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="https://www.linkedin.com/company/museum-planning-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/museumplanning/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    <li><a href="https://www.facebook.com/MuseumPlanningLLC/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    <li><a href="https://x.com/MuseumPlanning" target="_blank" rel="noopener noreferrer">X</a></li>
+    <li><a href="../museum-planning-contact.html">Contact</a></li>
+    <li><a href="../museum-planning-privacy.html">Privacy</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
 </footer>
 
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" id="searchClose" type="button" aria-label="Close search">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
-  reveals.forEach(el => obs.observe(el));
+const PAGES=[
+  {type:"Home",title:"Museum Planning LLC",desc:"Forty museums. One methodology. Feasibility through opening day.",url:"../index.html"},
+  {type:"Privacy",title:"Privacy and analytics",desc:"Cookies, Google Analytics, and forms on museumplanning.com.",url:"../museum-planning-privacy.html"},
+  {type:"Contact",title:"Contact — Rates & conversation",desc:"Typical consulting ranges and how to start a conversation.",url:"../museum-planning-contact.html"},
+  {type:"Services",title:"Services — From Vision to Opening Day",desc:"Feasibility, strategic planning, master planning, exhibition design, evaluation.",url:"../museum-planning-services.html"},
+  {type:"Projects",title:"Projects — Forty Museums",desc:"Natural history, children's, science centers, cultural centers.",url:"../museum-planning-projects.html"},
+  {type:"About",title:"About — Mark Walhimer",desc:"Managing partner, Museum Planning LLC since 1999, Bloomsbury author.",url:"../museum-planning-about.html"},
+  {type:"Municipal",title:"For Cities — Museum Feasibility",desc:"City managers, mayors' offices, feasibility before capital.",url:"../for-cities.html"},
+  {type:"Municipal",title:"Science Centers for Cities",desc:"Civic science and technology centers, convergence-era model.",url:"../for-cities-science-center.html"},
+  {type:"Guide",title:"Museum Feasibility Study — What You Get",desc:"Deliverables, costs, and when to commission a study.",url:"../museum-feasibility-study.html"},
+  {type:"Guide",title:"Starting a Local History Museum",desc:"Historic buildings, collections, governance, feasibility.",url:"../local-history-museum.html"},
+  {type:"White Paper",title:"Convergence Era",desc:"Industrial design, AI, and cultural systems — planning context.",url:"../convergence-era.html"},
+  {type:"Framework",title:"Museum Vitality Index",desc:"0–100 health scoring with size-normalized museum benchmarking.",url:"../museum-vitality-index.html"},
+  {type:"Museum School",title:"How to Start a Museum",desc:"Ten steps, costs, common mistakes, and resources.",url:"../museum-school/how-to-start-a-museum.html"},
+  {type:"Museum School",title:"What is a Museum Feasibility Study?",desc:"What it covers, how it works, cost and timeline.",url:"../museum-school/what-is-a-museum-feasibility-study.html"},
+  {type:"Museum School",title:"What is a Museum Master Plan?",desc:"Building program, visitor experience, capital campaign strategy.",url:"../museum-school/what-is-a-museum-master-plan.html"},
+  {type:"Project",title:"Howard Natural History Museum",desc:"Master planning, Riverside County California, $27.75M.",url:"../projects/howard-natural-history-museum.html"},
+  {type:"Project",title:"Frehner Museum of Natural History",desc:"University museum, Southern Utah University.",url:"../projects/frehner-museum-southern-utah-university.html"},
+  {type:"Project",title:"Arizona Natural Resources Museum",desc:"Master planning, University of Arizona.",url:"../projects/arizona-natural-resources-museum.html"},
+  {type:"Project",title:"Interactive African American Museum",desc:"Exhibition design and master planning, Indiana.",url:"../projects/interactive-african-american-museum.html"},
+  {type:"Project",title:"Museum of Arts and Sciences",desc:"Exhibition design, Macon Georgia.",url:"../projects/mas-executive-director.html"},
+  {type:"Project",title:"MIDE Museo Interactivo de Economia",desc:"Exhibition design, Mexico City.",url:"../projects/mide-museo-interactivo-de-economia.html"},
+  {type:"Book",title:"Museums 101",desc:"Bloomsbury 2015.",url:"../projects/museums-101.html"},
+  {type:"Book",title:"Designing Museum Experiences",desc:"Bloomsbury 2021.",url:"../projects/designing-museum-experiences.html"},
+];
+const input=document.getElementById('search-input');
+const results=document.getElementById('searchResults');
+const overlay=document.getElementById('searchOverlay');
+document.getElementById('searchToggle').addEventListener('click',()=>{overlay.classList.add('open');setTimeout(()=>input.focus(),100);});
+document.getElementById('searchClose').addEventListener('click',()=>{overlay.classList.remove('open');input.value='';results.innerHTML='';});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){overlay.classList.remove('open');input.value='';results.innerHTML='';}});
+input.addEventListener('input',()=>{
+  const q=input.value.toLowerCase().trim();
+  if(!q){results.innerHTML='';return;}
+  const matches=PAGES.filter(p=>p.title.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)||p.type.toLowerCase().includes(q));
+  if(!matches.length){results.innerHTML='<div class="search-empty">No results found.</div>';return;}
+  results.innerHTML=matches.map(p=>`<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('');
+});
 </script>
+
+  <script src="../assets/nav-mobile.js" defer></script>
+
+<script>
+(function(){
+  function toMailto(email, page){
+    var subject = encodeURIComponent('Newsletter Signup Request');
+    var body = encodeURIComponent('Please add this email to the Museum Planning LLC newsletter\n\nEmail: ' + email + '\nPage: ' + page + '\nTimestamp: ' + new Date().toISOString());
+    window.location.href = 'mailto:mark@museumplanning.com?subject=' + subject + '&body=' + body;
+  }
+  document.querySelectorAll('[data-newsletter-form]').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var input = form.querySelector('input[type="email"]');
+      if(!input || !input.value) return;
+      toMailto(input.value.trim(), window.location.pathname);
+    });
+  });
+})();
+</script>
+
 </body>
 </html>

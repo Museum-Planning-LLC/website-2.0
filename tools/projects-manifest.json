@@ -254,6 +254,13 @@
     },
     {
       "wp_slug": null,
+      "live_slug": "mcdonough-cultural-plan",
+      "title": "City of McDonough Cultural Plan",
+      "status": "pending",
+      "source": "local-only"
+    },
+    {
+      "wp_slug": null,
       "live_slug": "discovery-center-murfree-spring",
       "title": "Discovery Center at Murfree Spring",
       "status": "pending",
@@ -276,22 +283,15 @@
     },
     {
       "wp_slug": null,
+      "live_slug": "mas-executive-director",
+      "title": "Museum of Arts and Sciences",
+      "status": "pending",
+      "source": "local-only"
+    },
+    {
+      "wp_slug": null,
       "live_slug": "mas-art-tech-collaboration",
       "title": "MAS Art & Tech Collaboration",
-      "status": "pending",
-      "source": "local-only"
-    },
-    {
-      "wp_slug": null,
-      "live_slug": "mas-executive-director",
-      "title": "MAS Executive Director",
-      "status": "pending",
-      "source": "local-only"
-    },
-    {
-      "wp_slug": null,
-      "live_slug": "museum-of-arts-and-sciences",
-      "title": "Museum of Arts and Sciences",
       "status": "pending",
       "source": "local-only"
     }
