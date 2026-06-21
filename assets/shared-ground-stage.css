@@ -51,13 +51,8 @@
   color: var(--sg-paper);
 }
 
-#stage-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #070705;
-  z-index: 10000;
-  flex-direction: column;
+.shared-ground-stage .ibar .sg-btn {
+  flex-shrink: 0;
 }
 
 .sg-btn {
@@ -78,7 +73,7 @@
   color: rgba(200, 168, 130, 0.95);
 }
 
-@media (max-width: 900px) {
+.shared-ground-stage #stage {
   position: relative;
   width: 100%;
   background: #000;
