@@ -254,6 +254,13 @@
     },
     {
       "wp_slug": null,
+      "live_slug": "shared-ground",
+      "title": "Shared Ground",
+      "status": "pending",
+      "source": "local-only"
+    },
+    {
+      "wp_slug": null,
       "live_slug": "mcdonough-cultural-plan",
       "title": "City of McDonough Cultural Plan",
       "status": "pending",
