@@ -267,11 +267,12 @@
       "source": "local-only"
     },
     {
-      "wp_slug": null,
+      "wp_slug": "natural-history-museum",
       "live_slug": "howard-natural-history-museum",
       "title": "Howard Natural History Museum",
-      "status": "pending",
-      "source": "local-only"
+      "status": "live",
+      "source": "wordpress",
+      "canonical_url": "https://museumplanning.com/projects/howard-natural-history-museum.html"
     },
     {
       "wp_slug": null,
