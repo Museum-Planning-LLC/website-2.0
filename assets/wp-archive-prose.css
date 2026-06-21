@@ -1,0 +1,108 @@
+/* Wider layout for WordPress archive project pages (photo-heavy case studies) */
+body.project-wp-archive .body-wrap {
+  max-width: min(1440px, 94vw);
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 56px;
+  padding-left: max(24px, 3vw);
+  padding-right: max(24px, 3vw);
+}
+
+body.project-wp-archive .hero-content {
+  max-width: min(1440px, 94vw);
+  padding-left: max(24px, 3vw);
+  padding-right: max(24px, 3vw);
+}
+
+@media (max-width: 900px) {
+  body.project-wp-archive .body-wrap {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  body.project-wp-archive .hero-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* WordPress entry-content extracted into Museum Planning project pages */
+.prose.wp-archive h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 48px 0 16px;
+  line-height: 1.3;
+  text-align: left;
+}
+.prose.wp-archive h3:first-child { margin-top: 0; }
+.prose.wp-archive .lead {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--mid);
+  text-align: center;
+  margin-bottom: 2em;
+}
+.prose.wp-archive img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.4em;
+}
+.prose.wp-archive p img + img {
+  margin-top: 1.4em;
+}
+.prose.wp-archive .wp-caption,
+.prose.wp-archive figure {
+  max-width: 100%;
+  margin: 0 auto 2em;
+}
+.prose.wp-archive .wp-caption img,
+.prose.wp-archive figure img {
+  margin-bottom: 0.6em;
+}
+.prose.wp-archive .wp-caption-text,
+.prose.wp-archive figcaption {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--mid);
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.prose.wp-archive .video-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin: 0 0 1.6em;
+  background: var(--navy);
+}
+.prose.wp-archive .video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.prose.wp-archive a[href$=".pdf"] {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--navy);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+  text-decoration: none;
+  margin-bottom: 0.4em;
+}
+.prose.wp-archive a[href$=".pdf"]:hover {
+  color: var(--gold);
+}
+.prose.wp-archive .pdf-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 2em;
+  padding: 20px 24px;
+  background: white;
+  border-left: 3px solid var(--gold);
+}
