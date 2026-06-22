@@ -6,7 +6,7 @@
 <link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
 <title>Museum Planning Services &amp; Consultants | Museum Planning LLC</title>
-<meta name="description" content="Museum consultants for feasibility, strategic and master planning, and exhibition design. Forty museums since 1999. We lead every engagement.">
+<meta name="description" content="Museum consultants for feasibility, master planning, strategic planning, exhibition design, and city cultural plans. Forty museums since 1999. The consultant you hire is the consultant in the room.">
 <link rel="canonical" href="https://museumplanning.com/museum-planning-services.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://museumplanning.com/museum-planning-services.html">
@@ -21,14 +21,14 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
   {"@type":"ProfessionalService","@id":"https://museumplanning.com/#organization","name":"Museum Planning LLC","url":"https://museumplanning.com/","logo":{"@type":"ImageObject","url":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg"},"telephone":"+1-415-794-5252","email":"mark@museumplanning.com"},
-  {"@type":"WebPage","@id":"https://museumplanning.com/museum-planning-services.html#webpage","url":"https://museumplanning.com/museum-planning-services.html","name":"Museum Planning Services & Consultants","description":"Museum consultants for feasibility, strategic and master planning, and exhibition design. Forty museums since 1999.","isPartOf":{"@id":"https://museumplanning.com/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg"},"dateModified":"2026-06-02","breadcrumb":{"@id":"https://museumplanning.com/museum-planning-services.html#breadcrumb"}},
+  {"@type":"WebPage","@id":"https://museumplanning.com/museum-planning-services.html#webpage","url":"https://museumplanning.com/museum-planning-services.html","name":"Museum Planning Services & Consultants","description":"Museum consultants for feasibility, master planning, strategic planning, exhibition design, and city cultural plans. Forty museums since 1999.","isPartOf":{"@id":"https://museumplanning.com/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg"},"dateModified":"2026-06-22","breadcrumb":{"@id":"https://museumplanning.com/museum-planning-services.html#breadcrumb"}},
   {"@type":"ItemList","name":"Museum Planning Services","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Museum Feasibility Study","url":"https://museumplanning.com/museum-feasibility-study.html"},
     {"@type":"ListItem","position":2,"name":"Museum Strategic Planning","url":"https://museumplanning.com/museum-strategic-planning.html"},
     {"@type":"ListItem","position":3,"name":"Museum Master Planning","url":"https://museumplanning.com/museum-master-planning.html"}
   ]},
   {"@type":"FAQPage","@id":"https://museumplanning.com/museum-planning-services.html#faq","mainEntity":[
-    {"@type":"Question","name":"What does a museum consultant do?","acceptedAnswer":{"@type":"Answer","text":"Museum consultants guide institutions through feasibility, strategic planning, master planning, exhibition design, and opening-day operations — from the first community assessment through post-opening evaluation."}},
+    {"@type":"Question","name":"What does a museum consultant do?","acceptedAnswer":{"@type":"Answer","text":"Museum consultants align feasibility, master planning, strategic planning, and exhibition design — so pro forma, visitor experience, and community reach match. Museum Planning LLC leads every engagement from first conversation through opening and year-three operations."}},
     {"@type":"Question","name":"When should we hire museum consultants?","acceptedAnswer":{"@type":"Answer","text":"Before capital is committed — when a board, city, university, or donor group needs an honest answer about viability, direction, or what to build."}},
     {"@type":"Question","name":"How much do museum consultants cost?","acceptedAnswer":{"@type":"Answer","text":"Feasibility studies typically run $40k–$70k, strategic planning $45k–$75k, and master planning from $100k, exclusive of travel. Every engagement begins with a one-hour conversation at no cost."}},
     {"@type":"Question","name":"What is the difference between museum consultants and architects?","acceptedAnswer":{"@type":"Answer","text":"Museum consultants define institutional program, audience, and financial viability before design begins. Architects translate a confirmed building program into physical design."}}
@@ -106,8 +106,9 @@ nav {
   background: var(--deep);
   padding: 130px 56px 0;
   position: relative; overflow: hidden;
-  min-height: 72vh;
-  display: flex; align-items: flex-start;
+  min-height: auto;
+  display: block;
+  padding: 130px 56px 72px;
 }
 .hero-grid {
   position: absolute; inset: 0; opacity: .035;
@@ -120,12 +121,10 @@ nav {
 .hero-circle-2 { width: 560px; height: 560px; bottom: -180px; right: -80px; }
 
 .hero-inner {
-  max-width: 1100px; margin: 0 auto; width: 100%;
+  max-width: 680px; margin: 0 auto; width: 100%;
   position: relative; z-index: 1;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: start;
+  padding-bottom: 80px;
 }
-.hero-left { padding-bottom: 80px; }
 .hero-eyebrow {
   font-family: var(--mono); font-size: 10px; letter-spacing: 3.5px;
   text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
@@ -165,6 +164,206 @@ nav {
   padding-bottom: 2px; transition: color .2s;
 }
 .btn-ghost:hover { color: white; }
+
+.hero-deck a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,.35); }
+.hero-deck a:hover { border-bottom-color: var(--gold); }
+.hero-service-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 420px;
+  margin-top: 36px;
+  animation: fadeUp .6s .4s both;
+}
+.hero-service-list li { border-bottom: 1px solid rgba(255,255,255,.12); }
+.hero-service-list a {
+  display: block;
+  padding: 10px 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.58);
+  text-decoration: none;
+  transition: color .2s;
+}
+.hero-service-list a:hover { color: var(--gold); }
+
+.services-thesis {
+  background: var(--warm);
+  padding: 72px 56px;
+  border-bottom: 1px solid var(--rule);
+}
+.services-thesis-inner { max-width: 720px; margin: 0 auto; }
+.services-thesis-kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.services-thesis-kicker::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+.services-thesis-lead {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.5vw, 28px);
+  line-height: 1.45;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+.services-thesis-body {
+  font-size: 16px;
+  color: var(--mid);
+  line-height: 1.75;
+}
+.services-thesis-body p + p { margin-top: 16px; }
+
+.services-stack { padding: 80px 56px; background: var(--cream); }
+.services-stack-inner { max-width: 1060px; margin: 0 auto; }
+.services-stack-intro {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.45;
+  color: var(--navy);
+  margin-bottom: 48px;
+  max-width: 720px;
+}
+.service-block {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.service-block:first-child { padding-top: 0; }
+.service-block:last-child { border-bottom: none; padding-bottom: 0; }
+.service-block-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+  gap: 40px 48px;
+  align-items: start;
+}
+.service-block-copy { min-width: 0; }
+.service-block-visual {
+  margin: 0;
+  background: white;
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 8px 32px rgba(27,42,59,.06);
+}
+.service-block-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.service-visual-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: var(--rule);
+}
+.service-visual-trio figure {
+  margin: 0;
+  background: white;
+}
+.service-visual-trio img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.service-block-visual figcaption,
+.service-visual-trio figcaption {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+  padding: 12px 14px;
+  line-height: 1.5;
+  border-top: 1px solid var(--rule);
+}
+.service-visual-trio figcaption { padding: 10px 8px; font-size: 8px; letter-spacing: 1px; }
+.service-block-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.service-block-title {
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.5vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.service-block-title a {
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.service-block-title a:hover {
+  color: var(--gold);
+  border-bottom-color: rgba(201,168,76,.4);
+}
+.service-block-body {
+  font-size: 16px;
+  color: var(--mid);
+  line-height: 1.75;
+}
+
+.method-pull {
+  background: var(--navy);
+  padding: 64px 56px;
+}
+.method-pull-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.method-pull blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 34px);
+  font-style: italic;
+  font-weight: 700;
+  color: white;
+  line-height: 1.35;
+}
+.method-pull blockquote em { color: var(--gold); font-style: italic; }
+.method-pull cite {
+  display: block;
+  margin-top: 20px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-style: normal;
+  color: rgba(255,255,255,.35);
+}
+
+.school-crosslink-min {
+  background: var(--cream);
+  padding: 40px 56px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.7;
+}
+.school-crosslink-min a {
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,.4);
+}
+.school-crosslink-min a:hover { color: var(--gold); border-bottom-color: var(--gold); }
 
 /* ── HERO RIGHT: Phase Stack ── */
 .hero-phases { animation: fadeUp .6s .3s both; }
@@ -609,7 +808,8 @@ nav {
   font-size: 15px; line-height: 1.5;
 }
 .svc-rate-row:last-of-type { border-bottom: none; }
-.svc-rate-name { font-weight: 700; color: var(--navy); }
+.svc-rate-name a { color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,.35); }
+.svc-rate-name a:hover { color: var(--gold); border-bottom-color: var(--gold); }
 .svc-rate-num { font-family: var(--mono); font-size: 11px; color: var(--mid); text-align: right; }
 .svc-rate-note { width: 100%; font-size: 13px; font-style: italic; color: var(--mid); margin: 0; padding-top: 4px; }
 .services-fees-more { margin-top: 20px; font-size: 15px; color: var(--mid); }
@@ -675,32 +875,24 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1000px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-  .phase-inner { grid-template-columns: 1fr; gap: 40px; }
-  .phase-left { position: static; }
-  .phase-big-num { font-size: 64px; }
-  .overview-inner { grid-template-columns: repeat(2, 1fr); }
-  .how-grid { grid-template-columns: 1fr 1fr; }
   .proof-grid { grid-template-columns: repeat(2, 1fr); }
-  .scan-matrix { grid-template-columns: repeat(2, 1fr); }
-  .practice-quote-grid { grid-template-columns: 1fr; gap: 36px; }
 }
 @media (max-width: 700px) {
   nav { padding: 0 24px; }
   .nav-links { display: none; }
-  .hero { padding: 110px 24px 0; }
-  .phase-section, .how-band, .cta-section, .proof-strip { padding-left: 24px; padding-right: 24px; }
-  .overview-band { padding: 48px 24px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .overview-inner { grid-template-columns: 1fr; }
-  .bp-callout { grid-template-columns: 1fr; }
-  .how-grid { grid-template-columns: 1fr; }
+  .hero { padding: 110px 24px 56px; }
+  .services-thesis,
+  .services-stack,
+  .method-pull,
+  .proof-strip,
+  .cta-section { padding-left: 24px; padding-right: 24px; }
+  .services-thesis { padding-top: 56px; padding-bottom: 56px; }
+  .services-stack { padding-top: 56px; padding-bottom: 56px; }
+  .service-block-grid { grid-template-columns: 1fr; gap: 24px; }
+  .service-visual-trio figcaption { font-size: 8px; }
+  .method-pull { padding-top: 48px; padding-bottom: 48px; }
+  .school-crosslink-min { padding: 32px 24px; }
   .proof-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-scan { padding: 48px 24px 40px; }
-  .scan-matrix { grid-template-columns: 1fr; }
-  .institutions-band { padding: 40px 24px; }
-  .outcome-strip { padding: 28px 24px; }
-  .practice-quotes { padding: 56px 24px; }
   footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
 }
 
@@ -903,396 +1095,137 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-eyebrow">Museum Planning Services</div>
-      <h1>Museum Planning Services — From Vision<br>to <em>Opening Day.</em></h1>
-      <p class="hero-deck">Museum consultants with twenty-five years of practice. Forty museums. One methodology that takes institutions from the first community assessment through post-opening evaluation — we personally lead every engagement. Commercial guides: <a href="museum-feasibility-study.html" style="color:var(--gold);">museum feasibility study</a>, <a href="museum-strategic-planning.html" style="color:var(--gold);">museum strategic planning</a>, and <a href="museum-master-planning.html" style="color:var(--gold);">museum master planning</a>.</p>
+      <h1>The work is<br><em>alignment.</em></h1>
+      <p class="hero-deck">Feasibility asks if the numbers work. Master planning maps those numbers to the visitor experience. Exhibition design expresses both. Strategy reaches the audiences — especially in year three. Forty museums since 1999. The consultant you hire is the consultant in the room.</p>
       <div class="hero-cta-row">
         <a href="museum-planning-contact.html" class="btn-primary">Start a Conversation</a>
         <a href="museum-planning-projects.html" class="btn-ghost">See the Work</a>
       </div>
-    </div>
-    <div class="hero-phases">
-      <div class="phase-strip">
-        <a href="#phase-1" class="phase-strip-item">
-          <div class="phase-num">01</div>
-          <div class="phase-strip-text">
-            <strong>Institutional Planning</strong>
-            <span>Feasibility · Strategy · Mission</span>
-          </div>
-          <div class="phase-arrow">→</div>
-        </a>
-        <a href="#phase-2" class="phase-strip-item">
-          <div class="phase-num">02</div>
-          <div class="phase-strip-text">
-            <strong>Facility Planning</strong>
-            <span>Master Plan · Campaign · Exhibition Design</span>
-          </div>
-          <div class="phase-arrow">→</div>
-        </a>
-        <a href="#phase-3" class="phase-strip-item">
-          <div class="phase-num">03</div>
-          <div class="phase-strip-text">
-            <strong>Operational Planning</strong>
-            <span>Business Plan · Programming · Marketing</span>
-          </div>
-          <div class="phase-arrow">→</div>
-        </a>
-        <a href="#phase-4" class="phase-strip-item">
-          <div class="phase-num">04</div>
-          <div class="phase-strip-text">
-            <strong>Opening & Operations</strong>
-            <span>Grand Opening · Evaluation · Next Cycle</span>
-          </div>
-          <div class="phase-arrow">→</div>
-        </a>
-      </div>
+      <ul class="hero-service-list">
+        <li><a href="museum-feasibility-study.html">Museum feasibility studies</a></li>
+        <li><a href="museum-strategic-planning.html">Museum strategic planning</a></li>
+        <li><a href="museum-master-planning.html">Museum master planning</a></li>
+        <li><a href="immersive-museum-planning.html">Museum exhibition design</a></li>
+        <li><a href="for-cities.html">City cultural plans</a></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="services-scan reveal" aria-labelledby="services-scan-heading">
-  <div class="services-scan-inner">
-    <h2 id="services-scan-heading" class="services-scan-title">Planning services at a glance</h2>
-    <p class="services-scan-note">Scan typical deliverables by phase, or open a phase for full scope.</p>
-    <div class="scan-matrix">
-      <div class="scan-col">
-        <h3 class="scan-phase"><a href="#phase-1">01 · Institutional planning</a></h3>
-        <ul class="scan-list">
-          <li><a href="#phase-1">Community assessment</a></li>
-          <li><a href="#phase-1">Mission, vision &amp; values</a></li>
-          <li><a href="museum-feasibility-study.html">Museum feasibility study</a></li>
-          <li><a href="museum-strategic-planning.html">Museum strategic planning</a></li>
-        </ul>
-      </div>
-      <div class="scan-col">
-        <h3 class="scan-phase"><a href="#phase-2">02 · Facility planning</a></h3>
-        <ul class="scan-list">
-          <li><a href="museum-master-planning.html">Museum master planning</a></li>
-          <li><a href="#phase-2">Capital campaign plan</a></li>
-          <li><a href="#phase-2">Visitor experience plan</a></li>
-          <li><a href="#phase-2">Exhibition design</a></li>
-          <li><a href="#phase-2">Architectural program</a></li>
-        </ul>
-      </div>
-      <div class="scan-col">
-        <h3 class="scan-phase"><a href="#phase-3">03 · Operational planning</a></h3>
-        <ul class="scan-list">
-          <li><a href="#phase-3">Business plan &amp; pro forma</a></li>
-          <li><a href="#phase-3">Programming plan</a></li>
-          <li><a href="#phase-3">Marketing plan</a></li>
-          <li><a href="#phase-3">Fabrication oversight</a></li>
-          <li><a href="#phase-3">Emergency preparedness</a></li>
-        </ul>
-      </div>
-      <div class="scan-col">
-        <h3 class="scan-phase"><a href="#phase-4">04 · Opening &amp; operations</a></h3>
-        <ul class="scan-list">
-          <li><a href="#phase-4">Opening day plan</a></li>
-          <li><a href="#phase-4">Community impact</a></li>
-          <li><a href="#phase-4">Exhibition evaluation</a></li>
-          <li><a href="#phase-4">Institutional assessment</a></li>
-        </ul>
-      </div>
+<section class="services-thesis reveal" aria-labelledby="services-thesis-heading">
+  <div class="services-thesis-inner">
+    <div class="services-thesis-kicker">How we think about it</div>
+    <p id="services-thesis-heading" class="services-thesis-lead">It is not that complicated — if the documents line up and the museum is woven into its community.</p>
+    <div class="services-thesis-body">
+      <p>When someone calls and says they need a feasibility study, the first question is feasibility of <em>what</em>: approximate square footage, audience, voice of the museum, field trips, school groups, community partners. Right-size the building. Capture families and you are on your way.</p>
+      <p>Museums that struggle are not woven into the local community. A city can stretch toward a new science center, children's museum, or digital art museum — but it still has to be <em>of</em> the community.</p>
+      <p>If the pro forma says 20,000 square feet and the master plan describes 60,000, you have a mismatch — and that will not work. Exhibition design is the expression of feasibility, pro forma, and master plan together.</p>
+      <p>Every study produces boards and drawings you can react to — not words alone. Renderings for voice and experience. Diagrams for audiences. Floor plans for scale. Maps for the whole cultural ecosystem. Getting there takes workshops, community conversations, and time listening to why certain things might work and others might not.</p>
     </div>
   </div>
 </section>
 
-<section class="institutions-band reveal" aria-label="For cities and municipalities">
-  <div class="institutions-inner">
-    <p class="institutions-kicker">For Cities &amp; Municipalities</p>
-    <p class="institutions-more" style="max-width: 760px; line-height: 1.7; margin-top: 0;">City managers, mayors' offices, and economic development directors evaluating a civic museum, a historic building reuse, or a science and technology center — <a href="for-cities.html">museum feasibility for cities</a> · <a href="for-cities-science-center.html">science centers for cities</a>.</p>
-  </div>
-</section>
+<section class="services-stack" aria-label="Museum planning services">
+  <div class="services-stack-inner">
+    <p class="services-stack-intro reveal">Each engagement has a visual deliverable clients can point at and say <em>this</em> — or <em>not this</em>.</p>
 
-<section class="institutions-band" aria-label="Selected museum planning projects">
-  <div class="institutions-inner reveal">
-    <p class="institutions-kicker">Selected institutions</p>
-    <div class="institutions-links">
-      <a href="projects/howard-natural-history-museum.html">Howard Natural History Museum</a>
-      <a href="projects/mide-museo-interactivo-de-economia.html">MIDE</a>
-      <a href="projects/mas-executive-director.html">Museum of Arts and Sciences</a>
-      <a href="projects/arizona-natural-resources-museum.html">Arizona Natural Resources Museum</a>
-      <a href="projects/interactive-african-american-museum.html">Interactive African American Museum &amp; Cultural Center</a>
-      <a href="projects/frehner-museum-southern-utah-university.html">Frehner Museum</a>
-    </div>
-    <p class="institutions-more"><a href="museum-planning-projects.html">Full project list →</a></p>
-  </div>
-</section>
-
-<div class="outcome-strip reveal" aria-label="Practice scale and outcomes">
-  <div class="outcome-strip-inner">
-    <p><strong>40+ museums</strong> completed since <strong>Museum Planning LLC was founded in 1999</strong>, with Mark personally involved in every engagement — from a <strong>$2M</strong> university collection to a <strong>$28M</strong> regional cultural center.</p>
-  </div>
-</div>
-
-<!-- OVERVIEW BAND -->
-<div class="overview-band">
-  <div class="overview-inner reveal">
-    <div class="ov-item">
-      <div class="ov-num">Phase 01</div>
-      <div class="ov-title">Institutional Planning</div>
-      <div class="ov-tags">Community Assessment · Mission & Vision · Feasibility Study · Strategic Planning</div>
-    </div>
-    <div class="ov-item">
-      <div class="ov-num">Phase 02</div>
-      <div class="ov-title">Facility Planning</div>
-      <div class="ov-tags">Master Plan · Capital Campaign · Visitor Experience · Exhibition Design · Building Design</div>
-    </div>
-    <div class="ov-item">
-      <div class="ov-num">Phase 03</div>
-      <div class="ov-title">Operational Planning</div>
-      <div class="ov-tags">Business Plan · Programming · Marketing · Fabrication · Emergency Preparedness</div>
-    </div>
-    <div class="ov-item">
-      <div class="ov-num">Phase 04</div>
-      <div class="ov-title">Opening & Operations</div>
-      <div class="ov-tags">Grand Opening · Community Impact · Evaluation · Institutional Assessment</div>
-    </div>
-  </div>
-</div>
-
-<section class="practice-quotes reveal" aria-labelledby="practice-quotes-heading">
-  <div class="practice-quotes-inner">
-    <p class="practice-quotes-kicker">From the practice</p>
-    <h2 id="practice-quotes-heading" class="practice-quotes-title">How we think about the work</h2>
-    <div class="practice-quote-grid">
-      <blockquote class="practice-pull" cite="https://museumplanning.com/Museum_Planning_LLC_Capabilities.html">
-        <p>The plans I produce are designed to be built, not filed. I have been on the other side of the table when a consultant delivers a master plan. I know what happens to that document when the meeting ends.</p>
-        <cite>Mark Walhimer · Managing Partner · Museum Planning LLC</cite>
-      </blockquote>
-      <blockquote class="practice-pull" cite="https://museumplanning.com/Museum_Planning_LLC_Capabilities.html">
-        <p>The same process applied across every engagement — from a $2M university collection to a $28M regional cultural center. Bad feasibility is still fatal. A museum that can open is not the same as a museum that can stay open.</p>
-        <cite>Museum Planning LLC · Capabilities methodology</cite>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<div class="school-crosslink reveal">
-  <div class="school-crosslink-inner">
-    <span class="scl-kicker">Commercial guides &amp; Museum School</span>
-    Commercial guides:
-    <a href="museum-feasibility-study.html">museum feasibility study</a>,
-    <a href="museum-strategic-planning.html">museum strategic planning</a>, and
-    <a href="museum-master-planning.html">museum master planning</a>.
-    <span class="scl-more">Museum School explainers:
-    <a href="museum-school/how-to-start-a-museum.html">starting a museum</a>,
-    <a href="museum-school/what-is-a-museum-feasibility-study.html">what a feasibility study covers</a>, and
-    <a href="museum-school/what-is-a-museum-master-plan.html">master planning</a> —
-    <a href="museum-school/index.html">browse all articles →</a></span>
-    <span class="scl-more">First edition of <em>Museums 101</em>: <a href="https://museums101.com" target="_blank" rel="noopener noreferrer">buy at museums101.com</a>.</span>
-  </div>
-</div>
-
-<!-- PHASE 1 -->
-<section class="phase-section" id="phase-1">
-  <div class="phase-inner">
-    <div class="phase-left reveal">
-      <span class="phase-big-num">01</span>
-      <div class="phase-label">Phase One</div>
-      <h2 class="phase-title">Institutional Planning</h2>
-      <p class="phase-intro">Before a single line is drawn, museums need a clear strategic foundation. This phase establishes why the museum exists, who it serves, and whether it can operate sustainably — starting with a <a href="museum-feasibility-study.html">museum feasibility study</a> when capital is not yet committed, or <a href="museum-strategic-planning.html">museum strategic planning</a> when direction and roadmap are the priority. The documents produced here are what boards, donors, and civic partners need before committing capital. <strong>For cities and municipalities</strong> evaluating a cultural project before capital or a bond — mayors' offices, city managers, and economic development — start with <a href="for-cities.html">museum feasibility for cities</a>. Historic civic buildings and community collections often enter here — when that is the situation, see <a href="local-history-museum.html">starting a local history museum</a>. For the systems-level framing many civic and science-center sponsors ask for — industrial design, AI, and cultural institutions — read <a href="convergence-era.html">Convergence Era</a>.</p>
-      <span class="phase-tag">Foundation Work</span>
-    </div>
-    <div class="services-grid reveal">
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
-        <div class="sc-title">Community Assessment</div>
-        <p class="sc-body">Audience research and needs analysis that maps the community the museum will serve — who they are, what they need, and whether the institution can earn their sustained engagement.</p>
-        <div class="sc-deliverable">Deliverable: Community Assessment Report</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <div class="sc-title">Mission, Vision & Values</div>
-        <p class="sc-body">The organizational identity framework that every other decision flows from. Clear, honest, and grounded in the community — not aspirational language that evades accountability.</p>
-        <div class="sc-deliverable">Deliverable: MVV Framework Document</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
-        <div class="sc-title">Feasibility Study</div>
-        <p class="sc-body">Attendance projections, staffing requirements, and operating cost modeling that answers the fundamental question before capital is committed: <em>can this museum actually survive?</em> Bad feasibility is still fatal. Commercial guide: <a href="museum-feasibility-study.html">museum feasibility study — cost, process &amp; deliverables</a>. Vocabulary and scope: <a href="museum-school/what-is-a-museum-feasibility-study.html">what a museum feasibility study covers</a> (Museum School).</p>
-        <div class="sc-deliverable">Deliverable: Feasibility Study Report</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M9 21V9"/></svg></div>
-        <div class="sc-title">Strategic Planning</div>
-        <p class="sc-body"><strong>Museum strategic planning</strong> — a multi-year roadmap from planning through opening, aligned with the institution's mission and the community's needs. The plan that keeps the board, staff, and funders moving in the same direction. Commercial guide: <a href="museum-strategic-planning.html">museum strategic planning — process, cost &amp; deliverables</a>. Museum School: <a href="museum-school/index.html">planning explainers</a>.</p>
-        <div class="sc-deliverable">Deliverable: Strategic Plan</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PHASE 2 -->
-<section class="phase-section" id="phase-2">
-  <div class="phase-inner">
-    <div class="phase-left reveal">
-      <span class="phase-big-num">02</span>
-      <div class="phase-label">Phase Two</div>
-      <h2 class="phase-title">Facility Planning</h2>
-      <p class="phase-intro">Facility planning translates institutional goals into physical space and financial reality. This phase produces the blueprints — programmatic, experiential, and architectural — that govern every construction and design decision. It also structures the capital campaign required to fund the building and its exhibitions. Start with the <a href="museum-master-planning.html">museum master planning</a> commercial guide for deliverables, fees, and process.</p>
-      <span class="phase-tag">Design & Campaign</span>
-    </div>
-    <div class="services-grid reveal">
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-        <div class="sc-title">Museum Master Plan</div>
-        <p class="sc-body">Building program, floor plans, phasing, and budget — the physical translation of the institution's mission. The document that architects, contractors, and capital campaign chairs all work from. Commercial guide: <a href="museum-master-planning.html">museum master planning — process, cost &amp; deliverables</a>. Museum School: <a href="museum-school/what-is-a-museum-master-plan.html">what a museum master plan covers</a>.</p>
-        <div class="sc-deliverable">Deliverable: Museum Master Plan</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg></div>
-        <div class="sc-title">Capital Campaign Plan</div>
-        <p class="sc-body">Fundraising strategy, donor pipeline, naming opportunities, and a phased campaign timeline. The plan that takes the institution from aspiration to groundbreaking.</p>
-        <div class="sc-deliverable">Deliverable: Capital Campaign Plan</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <div class="sc-title">Visitor Experience Plan</div>
-        <p class="sc-body">The interpretive framework for every guest touchpoint — from arrival to exit, from the first exhibit to the last. Ensures the building serves the visitor, not the other way around.</p>
-        <div class="sc-deliverable">Deliverable: Visitor Experience Plan</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <div class="sc-title">Exhibition Design</div>
-        <p class="sc-body"><strong>Museum exhibition design</strong> for galleries and interactive museum exhibits — content, space, sequence, and interpretation from concept through fabrication-ready CAD documentation. Tier 2 guide: <a href="immersive-museum-planning.html">immersive museum planning</a>.</p>
-        <div class="sc-deliverable">Deliverable: Exhibition Design Documents</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <div class="sc-title">Building Design</div>
-        <p class="sc-body">Architectural programming and systems coordination — ensuring the building serves the museum's mission across the full life of the institution, not just on opening day.</p>
-        <div class="sc-deliverable">Deliverable: Architectural Program</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PHASE 3 -->
-<section class="phase-section" id="phase-3">
-  <div class="phase-inner">
-    <div class="phase-left reveal">
-      <span class="phase-big-num">03</span>
-      <div class="phase-label">Phase Three</div>
-      <h2 class="phase-title">Operational Planning</h2>
-      <p class="phase-intro">As construction progresses, the institution must be ready to operate on opening day. Operational planning builds the systems, plans, and infrastructure that keep a museum running — financially, programmatically, and physically. Personnel typically accounts for 60% of a museum's annual budget, making this phase as important as any other.</p>
-      <span class="phase-tag">Systems & Operations</span>
-    </div>
-    <div class="services-grid reveal">
-
-      <!-- Business Planning Callout spans full width -->
-      <div class="bp-callout">
-        <div class="bp-callout-left">
-          <div class="bp-callout-label">Core Deliverable</div>
-          <div class="bp-callout-title">Business Planning & Pro Forma</div>
-          <p class="bp-callout-body">A museum that can open is not the same as a museum that can stay open. Rigorous pro forma modeling stress-tests the institution before capital is committed — and keeps it honest after it opens. This is not optional and it is not a formality.</p>
+    <article class="service-block reveal">
+      <div class="service-block-grid">
+        <div class="service-block-copy">
+          <div class="service-block-label">01 · Numbers</div>
+          <h2 class="service-block-title"><a href="museum-feasibility-study.html">Museum feasibility studies</a></h2>
+          <p class="service-block-body">Do the numbers work? Audience, scale, operating model, and community demand — before capital is committed. We answer feasibility of <em>what</em>, not a generic template. Experience renderings ask: clean and minimal, homie like your living room, or an elevated upscale visit?</p>
         </div>
-        <div class="bp-callout-right">
-          <div class="bp-row">Operating cost projections across a 5-year horizon</div>
-          <div class="bp-row">Revenue assumptions: admissions, membership, earned income, grants</div>
-          <div class="bp-row">Staffing ratios and personnel cost modeling</div>
-          <div class="bp-row">Break-even analysis and scenario planning</div>
-          <div class="bp-row">Capital reserve and maintenance fund requirements</div>
+        <figure class="service-block-visual">
+          <div class="service-visual-trio">
+            <figure>
+              <img src="content/uploads/2025/08/Howard_front-1-1400x788.png" alt="Museum concept rendering — elevated contemporary entry" width="1400" height="788" loading="lazy">
+              <figcaption>Elevated</figcaption>
+            </figure>
+            <figure>
+              <img src="content/uploads/2025/08/Howard_tables-1400x788.png" alt="Museum concept rendering — warm communal gallery" width="1400" height="788" loading="lazy">
+              <figcaption>Homie</figcaption>
+            </figure>
+            <figure>
+              <img src="content/uploads/2025/08/Howard_ticket-1400x788.png" alt="Museum concept rendering — clean visitor services" width="1400" height="788" loading="lazy">
+              <figcaption>Minimal</figcaption>
+            </figure>
+          </div>
+          <figcaption>Typical deliverable · Experience direction renderings · Howard Natural History Museum</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="service-block reveal">
+      <div class="service-block-grid">
+        <div class="service-block-copy">
+          <div class="service-block-label">02 · Experience</div>
+          <h2 class="service-block-title"><a href="museum-master-planning.html">Museum master planning</a></h2>
+          <p class="service-block-body">The pro forma and the visitor experience have to match. Master planning maps what the feasibility study says is viable into building program, phasing, and the experience visitors will actually have — almost always as a floor plan.</p>
         </div>
+        <figure class="service-block-visual">
+          <img src="content/uploads/2025/08/Howard-master-plan-p09.png" alt="Museum master plan floor plan — Howard Natural History Museum" width="1920" height="1080" loading="lazy">
+          <figcaption>Typical deliverable · Conceptual floor plan and phasing · Howard Natural History Museum</figcaption>
+        </figure>
       </div>
+    </article>
 
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <div class="sc-title">Public Programming</div>
-        <p class="sc-body">Tours, events, education, and community initiatives that keep the museum relevant, visited, and funded. Programming is the operating environment — not a side channel.</p>
-        <div class="sc-deliverable">Deliverable: Programming Plan</div>
+    <article class="service-block reveal">
+      <div class="service-block-grid">
+        <div class="service-block-copy">
+          <div class="service-block-label">03 · Expression</div>
+          <h2 class="service-block-title"><a href="immersive-museum-planning.html">Museum exhibition design</a></h2>
+          <p class="service-block-body">Exhibition design is how feasibility, financial model, and master plan become physical — a detailed floor plan with exhibits named, sequenced, and scoped for fabrication.</p>
+        </div>
+        <figure class="service-block-visual">
+          <img src="content/uploads/2019/07/CO-Polk-6-8-18-copy-3-1400x906.jpg" alt="Exhibition design floor plan with exhibit list — C.O. Polk Interactive Museum" width="1400" height="906" loading="lazy">
+          <figcaption>Typical deliverable · Exhibition floor plan · C.O. Polk Interactive Museum, McDonough</figcaption>
+        </figure>
       </div>
+    </article>
 
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <div class="sc-title">Marketing Plan</div>
-        <p class="sc-body">Brand identity, digital strategy, audience development, and the distribution systems that connect the museum to its community before and after opening day.</p>
-        <div class="sc-deliverable">Deliverable: Marketing Plan</div>
+    <article class="service-block reveal">
+      <div class="service-block-grid">
+        <div class="service-block-copy">
+          <div class="service-block-label">04 · Audiences</div>
+          <h2 class="service-block-title"><a href="museum-strategic-planning.html">Museum strategic planning</a></h2>
+          <p class="service-block-body">Who you serve and how you reach them — field trips, community groups, membership, events. Strategy diagrams map personas, channels, and programming. Museums are event-based; this is how you drive repeat visitation when year-three attendance starts to slip.</p>
+        </div>
+        <figure class="service-block-visual">
+          <img src="content/uploads/2019/07/CO-Polk-6-8-18-copy-1400x906.jpg" alt="Strategic planning board — audience and program framework — C.O. Polk Interactive Museum" width="1400" height="906" loading="lazy">
+          <figcaption>Typical deliverable · Audience and program framework · C.O. Polk Interactive Museum, McDonough</figcaption>
+        </figure>
       </div>
+    </article>
 
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg></div>
-        <div class="sc-title">Building Construction Oversight</div>
-        <p class="sc-body">Owner's representation through the construction phase — protecting the institution's interests and ensuring the building is delivered as designed, on schedule, and within budget.</p>
-        <div class="sc-deliverable">Deliverable: Owner's Rep Services</div>
+    <article class="service-block reveal">
+      <div class="service-block-grid">
+        <div class="service-block-copy">
+          <div class="service-block-label">05 · Ecosystem</div>
+          <h2 class="service-block-title"><a href="for-cities.html">City cultural plans</a></h2>
+          <p class="service-block-body">For cities: the buildings, institutions, audiences, and constituents — mapped so cultural assets can thrive together. Downtown maps show museums, arts centers, heritage sites, and the connections between them. Sometimes that includes strengthening what belongs in the ecosystem and culling what does not.</p>
+        </div>
+        <figure class="service-block-visual">
+          <img src="content/uploads/2019/07/JT2A6487-copy-1400x933.jpg" alt="Downtown cultural wayfinding map — McDonough, Georgia" width="1400" height="933" loading="lazy">
+          <figcaption>Typical deliverable · Downtown cultural map · City of McDonough, Georgia</figcaption>
+        </figure>
       </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
-        <div class="sc-title">Exhibition Fabrication</div>
-        <p class="sc-body">Oversight of interactives, AV systems, graphics, and installation — from fabrication shop to gallery floor. The phase where design becomes the physical experience visitors will have.</p>
-        <div class="sc-deliverable">Deliverable: Fabrication Oversight</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-        <div class="sc-title">Emergency Preparedness</div>
-        <p class="sc-body">Disaster preparedness and emergency response planning — the infrastructure that protects the collection, the building, and the people inside it.</p>
-        <div class="sc-deliverable">Deliverable: Emergency Response Plan</div>
-      </div>
-
-    </div>
+    </article>
   </div>
 </section>
 
-<!-- PHASE 4 -->
-<section class="phase-section" id="phase-4">
-  <div class="phase-inner">
-    <div class="phase-left reveal">
-      <span class="phase-big-num">04</span>
-      <div class="phase-label">Phase Four</div>
-      <h2 class="phase-title">Opening & Operations</h2>
-      <p class="phase-intro">A successful opening is planned, not improvised. The final phase covers grand opening strategy, early-stage community engagement, and the formal evaluation cycles that determine what's working and what must evolve. Post-opening assessment closes the loop and initiates the next strategic planning cycle.</p>
-      <span class="phase-tag">Launch & Evaluate</span>
-    </div>
-    <div class="services-grid reveal">
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-        <div class="sc-title">Museum Opening</div>
-        <p class="sc-body">Press previews, VIP events, ribbon-cutting coordination, and the public grand opening — staged and sequenced to generate coverage, membership, and community ownership of the new institution.</p>
-        <div class="sc-deliverable">Deliverable: Opening Day Plan</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M12 22V12"/></svg></div>
-        <div class="sc-title">Community Impact</div>
-        <p class="sc-body">Measuring the cultural, educational, and economic contributions of the museum to its community — the accountability framework that justifies public investment and fuels the next campaign.</p>
-        <div class="sc-deliverable">Deliverable: Impact Assessment</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div class="sc-title">Exhibition Evaluation</div>
-        <p class="sc-body">Front-end, formative, and summative evaluation of exhibition effectiveness against learning objectives. The evidence that tells you what visitors are actually experiencing — and what needs to change.</p>
-        <div class="sc-deliverable">Deliverable: Evaluation Report</div>
-      </div>
-
-      <div class="service-card">
-        <div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></div>
-        <div class="sc-title">Institutional Assessment</div>
-        <p class="sc-body">A full operational review — financial health, programming vitality, community engagement, staff capacity — that launches the next strategic planning cycle and keeps the institution from becoming the dusty museum.</p>
-        <div class="sc-deliverable">Deliverable: Institutional Assessment</div>
-      </div>
-
-    </div>
+<section class="method-pull reveal" aria-label="Planning principle">
+  <div class="method-pull-inner">
+    <blockquote>
+      <p>Build for the <em>third year</em>, not the opening.</p>
+    </blockquote>
+    <cite>Museum Planning LLC</cite>
   </div>
 </section>
 
-<!-- PROOF STRIP -->
 <div class="proof-strip">
   <div class="proof-inner">
-    <div class="proof-heading reveal">The Track Record</div>
+    <div class="proof-heading">The Track Record</div>
     <div class="proof-grid reveal">
       <div class="proof-item">
         <div class="proof-num">40+</div>
@@ -1300,7 +1233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="proof-item">
         <div class="proof-num">27</div>
-        <div class="proof-label">Years in<br>Practice</div>
+        <div class="proof-label">Years of<br>Practice</div>
       </div>
       <div class="proof-item">
         <div class="proof-num">2</div>
@@ -1308,56 +1241,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="proof-item">
         <div class="proof-num">100%</div>
-        <div class="proof-label">Mark Personally<br>Involved</div>
+        <div class="proof-label">Consultant in<br>the Room</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="how-band">
-  <div class="how-inner">
-    <div class="how-label">The Approach</div>
-    <h2 class="how-heading">What every engagement looks like in practice.</h2>
-    <div class="how-grid reveal">
-      <div class="how-card">
-        <div class="how-card-num">1</div>
-        <div class="how-card-title">It starts with a conversation.</div>
-        <p class="how-card-body">Every engagement begins with an hour — no cost, no obligation. Mark listens to where you are, what you're trying to build, and what decisions are in front of you. That conversation shapes the scope of work.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-card-num">2</div>
-        <div class="how-card-title">Mark is personally involved. Always.</div>
-        <p class="how-card-body">Museum Planning LLC is a personal practice. You are not handed off to a junior associate. Mark is in the room — with your board, your architects, your city council — from first study through opening day.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-card-num">3</div>
-        <div class="how-card-title">The methodology is proven across forty museums.</div>
-        <p class="how-card-body">The four-phase process has been tested on university natural history museums, city-led cultural centers, children's museums, science centers, and international institutions. It works at every scale because the fundamentals don't change.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-card-num">4</div>
-        <div class="how-card-title">We plan for the world the museum opens into.</div>
-        <p class="how-card-body">Audiences behave differently now. Programming drives visitation. Digital and physical are one planning problem. The methodology accounts for this — not to chase technology, but because ignoring the operating environment produces museums that struggle to find their audience. For the systems-level argument — especially for civic science centers — read <a href="convergence-era.html" style="color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,.4);">Convergence Era</a>.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-card-num">5</div>
-        <div class="how-card-title">We measure what matters.</div>
-        <p class="how-card-body">The Museum Vitality Index gives institutions a normalized, ratio-based measure of institutional health — financial, programmatic, digital, community. A $500K museum with strong ratios can outperform a $25M institution in decline. We plan for vitality, not just volume.</p>
-      </div>
-      <div class="how-card">
-        <div class="how-card-num">6</div>
-        <div class="how-card-title">The goal is a museum that lasts.</div>
-        <p class="how-card-body">Not a building. Not a ribbon cutting. A museum that is still vibrant, financially healthy, and deeply connected to its community ten years after opening. That is the standard every engagement is held to.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="services-fees reveal" aria-labelledby="services-fees-heading">
   <div class="services-fees-inner">
     <h2 id="services-fees-heading">Typical consulting ranges</h2>
-    <p class="services-fees-lead">Ballpark fees before you call — same numbers as on the contact page. Every engagement still begins with a one-hour conversation at no cost; actual scope is set from there.</p>
+    <p class="services-fees-lead">Ballpark fees before you call — same numbers as on the contact page. Every engagement begins with a one-hour conversation at no cost.</p>
     <div class="services-fees-card">
       <div class="svc-rate-row">
         <span class="svc-rate-name">Museum Assessment</span>
@@ -1385,7 +1278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="svc-rate-num">Variable — per scope</span>
       </div>
     </div>
-    <p class="services-fees-more"><a href="museum-feasibility-study.html">Museum feasibility study →</a> · <a href="museum-strategic-planning.html">Museum strategic planning →</a> · <a href="museum-master-planning.html">Museum master planning →</a> · <a href="museum-planning-contact.html">Start a conversation →</a></p>
+    <p class="services-fees-more"><a href="museum-feasibility-study.html">Feasibility study →</a> · <a href="museum-strategic-planning.html">Strategic planning →</a> · <a href="museum-master-planning.html">Master planning →</a> · <a href="museum-planning-contact.html">Start a conversation →</a></p>
   </div>
 </section>
 
@@ -1395,28 +1288,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 id="services-faq-heading">Museum Consultants — <em>FAQ</em></h2>
     <div class="svc-faq-item">
       <div class="svc-faq-q">What does a museum consultant do?</div>
-      <div class="svc-faq-a">Museum consultants guide institutions through <a href="museum-feasibility-study.html">feasibility</a>, <a href="museum-strategic-planning.html">strategic planning</a>, <a href="museum-master-planning.html">master planning</a>, exhibition design, and opening-day operations — from the first community assessment through post-opening evaluation.</div>
+      <div class="svc-faq-a">Align feasibility, master planning, strategic planning, and exhibition design — so pro forma, visitor experience, and community reach match. We lead every engagement from first conversation through opening and year-three operations.</div>
     </div>
     <div class="svc-faq-item">
       <div class="svc-faq-q">When should we hire museum consultants?</div>
-      <div class="svc-faq-a">Before capital is committed — when a board, city, university, or donor group needs an honest answer about viability, institutional direction, or what to build. The sequence typically runs <a href="museum-feasibility-study.html">museum feasibility study</a>, then strategic planning, then master planning.</div>
+      <div class="svc-faq-a">Before capital is committed — when a board, city, or donor group needs an honest answer about viability, audience, or what to build. The usual sequence runs <a href="museum-feasibility-study.html">feasibility</a>, then <a href="museum-strategic-planning.html">strategic planning</a>, then <a href="museum-master-planning.html">master planning</a> — each document building on the last.</div>
     </div>
     <div class="svc-faq-item">
       <div class="svc-faq-q">How much do museum consultants cost?</div>
-      <div class="svc-faq-a"><a href="museum-feasibility-study.html">Museum feasibility studies</a> typically run $40k–$70k, <a href="museum-strategic-planning.html">museum strategic planning</a> $45k–$75k, and <a href="museum-master-planning.html">museum master planning</a> from $100k, exclusive of travel. Every engagement begins with a one-hour conversation at no cost.</div>
+      <div class="svc-faq-a"><a href="museum-feasibility-study.html">Feasibility studies</a> typically run $40k–$70k, <a href="museum-strategic-planning.html">strategic planning</a> $45k–$75k, and <a href="museum-master-planning.html">master planning</a> from $100k, exclusive of travel. Every engagement begins with a one-hour conversation at no cost.</div>
     </div>
     <div class="svc-faq-item">
       <div class="svc-faq-q">What is the difference between museum consultants and architects?</div>
-      <div class="svc-faq-a">Museum consultants define institutional program, audience, and financial viability before design begins. Architects translate a confirmed building program into physical design — the master plan is what connects the two.</div>
+      <div class="svc-faq-a">Consultants define program, audience, and financial viability before design begins. Architects translate a confirmed building program into physical design — the master plan connects the two.</div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<p class="school-crosslink-min reveal">Deeper explainers: <a href="museum-school/what-is-a-museum-feasibility-study.html">what a feasibility study covers</a>, <a href="museum-school/what-is-a-museum-master-plan.html">master planning</a>, and <a href="museum-school/index.html">Museum School →</a></p>
+
 <section class="cta-section">
   <div class="cta-inner reveal">
-    <h2 class="cta-heading">Ready to build<br><em>your museum?</em></h2>
-    <p class="cta-body">Whether you're starting from a feasibility question or a capital campaign, the first step is the same — a conversation. No cost, no obligation.</p>
+    <h2 class="cta-heading">Ready to<br><em>talk?</em></h2>
+    <p class="cta-body">Feasibility of what, for whom, at what scale — start there. One conversation, no cost.</p>
     <a href="museum-planning-contact.html" class="btn-primary" style="font-size: 12px; padding: 16px 44px;">Start a Conversation</a>
     <div class="cta-contact">
       <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>
@@ -1456,15 +1350,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
   reveals.forEach(el => observer.observe(el));
-
-  // Smooth scroll for phase nav links
-  document.querySelectorAll('a[href^="#phase"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
 </script>
 
 
@@ -1482,7 +1367,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 const PAGES = [
   { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology. Feasibility through opening day.", url: "index.html" },
   { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and how to start a conversation.", url: "museum-planning-contact.html" },
-  { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design, evaluation.", url: "museum-planning-services.html" },
+  { type: "Services", title: "Museum Planning Services", desc: "Feasibility, master planning, strategic planning, exhibition design, city cultural plans — alignment from numbers to year three.", url: "museum-planning-services.html" },
   { type: "University", title: "For Universities — Museum Planning", desc: "Presidents, provosts, deans, and feasibility before capital.", url: "for-universities.html" },
   { type: "Municipal", title: "For Cities — Museum Feasibility", desc: "City managers, mayors' offices, feasibility before capital.", url: "for-cities.html" },
   { type: "Municipal", title: "Science Centers for Cities", desc: "Civic science and technology centers, convergence-era model.", url: "for-cities-science-center.html" },
