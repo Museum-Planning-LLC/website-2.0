@@ -233,10 +233,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <ul class="nav-links" id="site-nav-menu">
     <li><a href="museum-planning-projects.html">Projects</a></li>
     <li><a href="museum-planning-services.html">Services</a></li>
-    <li><a href="for-cities.html">For Cities</a></li>
-    <li><a href="museum-school/index.html">Museum School</a></li>
-    <li><a href="thought-leadership.html">Field Notes</a></li>
-    <li><a href="museum-planning-about.html">About</a></li>
     <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
     <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
@@ -276,21 +272,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="kicker">2) Global Navigation</div>
     <h2>Standard Order (2026-06)</h2>
     <ol>
-      <li>Services</li>
-      <li>For Cities</li>
       <li>Projects</li>
-      <li>Museum School</li>
-      <li>Field Notes → <code>thought-leadership.html</code> (Convergence Era, Museum AI, staff portal, MVI, etc.)</li>
-      <li>About</li>
+      <li>Services</li>
       <li>Search icon</li>
       <li>Start a Conversation (CTA → contact; no separate Contact link)</li>
     </ol>
-    <p style="color:var(--mid);font-size:15px;margin:12px 0 0;">Audience pages removed from the top bar to reduce crowding: link to <strong>For Universities</strong> and <strong>Science Centers for Cities</strong> from Services, For Cities, and site search. Full spec: <a href="docs/NAVIGATION.md">docs/NAVIGATION.md</a>. Sync all <code>site-nav</code> blocks with <code>python3 tools/sync_site_nav.py</code>.</p>
+    <p style="color:var(--mid);font-size:15px;margin:12px 0 0;"><strong>Footer:</strong> About, For Cities, Museum School, Field Notes (<code>thought-leadership.html</code>), Museums 101, Museum Experiences, social, Site map, Contact. Full spec: <a href="docs/NAVIGATION.md">docs/NAVIGATION.md</a>. Sync nav with <code>python3 tools/sync_site_nav.py</code>; footer with <code>python3 tools/sync_site_footer.py</code>.</p>
     <ul>
       <li>Fixed 60px dark nav with gold CTA; load <code>assets/site-nav.css</code> after page styles.</li>
       <li>Use <code>assets/nav-mobile.css</code> and <code>assets/nav-mobile.js</code>.</li>
       <li>Keep search IDs consistent: <code>searchToggle</code>, <code>searchOverlay</code>, <code>searchClose</code>, <code>searchResults</code>.</li>
-      <li><code>class="active"</code> on one link: For Cities (incl. science-center page), Projects (incl. <code>projects/*</code>), Museum School, Field Notes (TL hub + articles), About, Services.</li>
+      <li><code>class="active"</code> on Projects (incl. <code>projects/*</code>) or Services only.</li>
     </ul>
     <h3 style="font-family:var(--serif);font-size:20px;margin:28px 0 12px;color:var(--navy);">Exceptions</h3>
     <ul>
@@ -382,12 +374,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <footer>
   <div class="footer-logo">Museum <span>Planning</span> LLC</div>
-  <ul class="footer-links">
-    <li><a href="https://museumplanner.org">Museum Planner</a></li>
-    <li><a href="https://museums101.com">Museums 101</a></li>
-    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <ul class="footer-links">
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="for-cities.html">For Cities</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="thought-leadership.html">Field Notes</a></li>
+    <li><a href="https://museums101.com" target="_blank" rel="noopener noreferrer">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com" target="_blank" rel="noopener noreferrer">Museum Experiences</a></li>
+    <li><a href="https://www.linkedin.com/company/museum-planning-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/museumplanning/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    <li><a href="https://www.facebook.com/MuseumPlanningLLC/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    <li><a href="https://x.com/MuseumPlanning" target="_blank" rel="noopener noreferrer">X</a></li>
+    <li><a href="site-map.html">Site map</a></li>
     <li><a href="museum-planning-contact.html">Contact</a></li>
-    <li><a href="museum-planning-privacy.html">Privacy</a></li>
   </ul>
   <div class="footer-copy">© 2026 Museum Planning LLC</div>
 </footer>

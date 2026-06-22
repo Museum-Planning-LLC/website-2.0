@@ -6,22 +6,22 @@
 <link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
 <title>Museum Consultants &amp; Museum Planning | Museum Planning LLC</title>
-<meta name="description" content="Museum consultants for feasibility studies, strategic planning, master planning, and exhibition design — feasibility through opening day. Forty museums since 1999. We personally lead every engagement.">
+<meta name="description" content="Museum consultants for feasibility studies, strategic planning, master planning, exhibition design, and city cultural plans. Forty museums since 1999. The consultant you hire is the consultant in the room.">
 <link rel="canonical" href="https://museumplanning.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://museumplanning.com/">
 <meta property="og:title" content="Museum Consultants &amp; Museum Planning | Museum Planning LLC">
-<meta property="og:description" content="Museum consultants for feasibility, strategic planning, master planning, and exhibition design. Forty museums since 1999. We personally lead every engagement.">
+<meta property="og:description" content="Museum consultants for feasibility, strategic planning, master planning, and exhibition design. Forty museums since 1999. The consultant you hire is the consultant in the room.">
 <meta property="og:image" content="https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Museum Consultants &amp; Museum Planning | Museum Planning LLC">
-<meta name="twitter:description" content="Museum consultants for feasibility, strategic planning, master planning, and exhibition design. We personally lead every engagement.">
+<meta name="twitter:description" content="Museum consultants for feasibility, strategic planning, master planning, and exhibition design. The consultant you hire is the consultant in the room.">
 <meta name="twitter:image" content="https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
   {"@type":"ProfessionalService","@id":"https://museumplanning.com/#organization","name":"Museum Planning LLC","url":"https://museumplanning.com/","logo":{"@type":"ImageObject","url":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg"},"description":"Museum consultants for feasibility studies, strategic planning, master planning, and museum exhibition design. Practice founded 1999.","email":"mark@museumplanning.com","telephone":"+1-415-794-5252","foundingDate":"1999","areaServed":{"@type":"Place","name":"Worldwide"},"sameAs":["https://www.markwalhimer.com/"]},
-  {"@type":"WebPage","@id":"https://museumplanning.com/#webpage","url":"https://museumplanning.com/","name":"Museum Consultants & Museum Planning","description":"Museum consultants for feasibility studies, strategic planning, master planning, and exhibition design.","isPartOf":{"@id":"https://museumplanning.com/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg"},"dateModified":"2026-06-01"},
+  {"@type":"WebPage","@id":"https://museumplanning.com/#webpage","url":"https://museumplanning.com/","name":"Museum Consultants & Museum Planning","description":"Museum consultants for feasibility studies, strategic planning, master planning, and exhibition design.","isPartOf":{"@id":"https://museumplanning.com/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg"},"dateModified":"2026-06-22"},
   {"@type":"Person","@id":"https://museumplanning.com/#mark-walhimer","name":"Mark Walhimer","jobTitle":"Managing Partner","image":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg","url":"https://www.markwalhimer.com/","worksFor":{"@id":"https://museumplanning.com/#organization"},"sameAs":["https://www.markwalhimer.com/"]}
 ]}
 </script>
@@ -121,43 +121,65 @@ nav {
 .hero {
   background: var(--deep);
   min-height: 100vh;
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 120px 56px 80px;
+  padding: 0;
 }
-.hero-bg-lines {
+.hero-carousel--fullbleed {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background: var(--deep);
+  overflow: hidden;
+}
+.hero-carousel--fullbleed .hero-carousel-viewport {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  opacity: 0.04;
-  background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
-    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+  aspect-ratio: unset;
+  height: 100%;
+  width: 100%;
 }
-.hero-circle {
+.hero-carousel-scrim {
   position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(201,168,76,.08);
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(17, 28, 39, 0.88) 0%, rgba(17, 28, 39, 0.35) 22%, transparent 45%),
+    linear-gradient(90deg, rgba(17, 28, 39, 0.94) 0%, rgba(17, 28, 39, 0.84) 34%, rgba(17, 28, 39, 0.52) 58%, rgba(17, 28, 39, 0.22) 100%);
+}
+.hero-foreground {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 56px 0;
+  box-sizing: border-box;
   pointer-events: none;
 }
-.hero-circle-1 { width: 700px; height: 700px; top: -200px; right: -150px; }
-.hero-circle-2 { width: 500px; height: 500px; top: -100px; right: -50px; }
-.hero-circle-3 { width: 300px; height: 300px; top: 0px; right: 50px; }
-
+.hero-left,
+.hero-carousel-bar,
+.hero-carousel-bar * {
+  pointer-events: auto;
+}
 .hero-inner {
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
   position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
 }
-.hero-left { animation: fadeUp .7s .1s both; }
+.hero-left {
+  animation: fadeUp .7s .1s both;
+  max-width: 540px;
+}
 .hero-eyebrow {
   font-family: var(--mono);
   font-size: 10px;
@@ -193,7 +215,7 @@ nav {
   font-family: var(--serif);
   font-style: italic;
   font-size: 19px;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,.62);
   max-width: 500px;
   line-height: 1.6;
   margin-bottom: 44px;
@@ -202,7 +224,30 @@ nav {
   display: flex;
   gap: 16px;
   align-items: center;
+  margin-bottom: 32px;
 }
+.hero-service-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 420px;
+}
+.hero-service-list li {
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.hero-service-list a {
+  display: block;
+  padding: 10px 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.58);
+  text-decoration: none;
+  transition: color .2s;
+}
+.hero-service-list a:hover { color: var(--gold); }
 .btn-primary {
   background: var(--gold);
   color: var(--deep);
@@ -229,44 +274,178 @@ nav {
 }
 .btn-ghost:hover { color: white; }
 
-.hero-right { animation: fadeUp .7s .3s both; }
-.hero-stat-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-.hero-stat-item {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(201,168,76,.1);
-  padding: 28px 32px;
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  transition: background .2s;
-}
-.hero-stat-item:hover { background: rgba(201,168,76,.06); }
-.stat-number {
-  font-family: var(--serif);
-  font-size: 44px;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-  flex-shrink: 0;
-  width: 80px;
-}
-.stat-text strong {
+.hero-carousel--fullbleed .hero-carousel-slide img {
+  width: 100%;
+  height: 100%;
   display: block;
-  font-family: var(--serif);
-  font-size: 16px;
-  color: white;
-  font-weight: 600;
-  margin-bottom: 4px;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.72);
+  transition: opacity .6s ease, filter .6s ease;
 }
-.stat-text span {
-  font-size: 13px;
-  color: rgba(255,255,255,.4);
+.hero-carousel--fullbleed .hero-carousel-slide.is-active img {
+  filter: brightness(0.78);
+}
+.hero-carousel-bar {
+  margin-top: auto;
+  padding: 40px 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.hero-carousel-prev,
+.hero-carousel-next {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 0;
+  padding: 0;
+  background: rgba(17, 28, 39, 0.65);
+  color: rgba(255,255,255,.85);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.hero-carousel-prev:hover,
+.hero-carousel-next:hover {
+  background: rgba(17, 28, 39, 0.92);
+  color: var(--gold);
+  border-color: rgba(201, 168, 76, 0.5);
+}
+.hero-carousel-prev svg,
+.hero-carousel-next svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.hero-carousel-prev:focus-visible,
+.hero-carousel-next:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.hero-carousel-caption {
   font-family: var(--mono);
-  letter-spacing: 0.5px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  padding: 0;
+  border: none;
+  min-height: auto;
+  flex: 1;
+  min-width: 180px;
+  margin: 0;
+}
+.hero-carousel-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 7px 8px;
+  padding: 0;
+  border: none;
+}
+.hero-carousel-all {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid rgba(201, 168, 76, 0.55);
+  padding: 10px 16px;
+  white-space: nowrap;
+  margin-left: auto;
+  display: inline-block;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.hero-carousel-all:hover {
+  background: var(--gold);
+  color: var(--deep);
+  border-color: var(--gold);
+}
+.hero-carousel-all:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.hero-carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255,255,255,.25);
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.hero-carousel-dot.is-active {
+  background: var(--gold);
+  transform: scale(1.15);
+}
+.hero-carousel-dot:hover { background: rgba(201,168,76,.7); }
+.hero-carousel-dot:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* legacy carousel box rules (unused on homepage) */
+.hero-right {
+  animation: fadeUp .7s .3s both;
+  width: 100%;
+  max-width: 400px;
+  justify-self: end;
+}
+.hero-carousel {
+  border: 1px solid rgba(201,168,76,.2);
+  background: rgba(255,255,255,.04);
+  overflow: hidden;
+}
+.hero-carousel-viewport {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--deep);
+}
+.hero-carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .6s ease;
+  pointer-events: none;
+  text-decoration: none;
+  display: block;
+}
+.hero-carousel-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+.hero-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: brightness(0.88);
+  transition: filter .3s, transform .5s ease;
+}
+.hero-carousel-slide:hover img {
+  filter: brightness(0.72);
+  transform: scale(1.02);
+}
+.hero-carousel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 16px 14px;
+  border-top: 1px solid rgba(201,168,76,.08);
 }
 
 /* ── SECTION BASE ── */
@@ -307,318 +486,6 @@ section { padding: 100px 56px; }
   margin-bottom: 56px;
   line-height: 1.6;
 }
-
-/* ── THESIS BAND ── */
-.thesis-band {
-  background: var(--navy);
-  padding: 80px 56px;
-}
-.thesis-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
-}
-.thesis-quote {
-  font-family: var(--serif);
-  font-size: clamp(24px, 3vw, 38px);
-  font-style: italic;
-  font-weight: 400;
-  color: white;
-  line-height: 1.4;
-  margin-bottom: 32px;
-}
-.thesis-quote em { color: var(--gold); font-style: normal; }
-.thesis-attr {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.3);
-}
-
-/* ── FEATURED INSTITUTIONS ── */
-.institutions-band {
-  background: var(--warm);
-  padding: 48px 56px;
-  border-bottom: 1px solid var(--rule);
-}
-.institutions-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
-.institutions-kicker {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-.institutions-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px 18px;
-}
-.institutions-links a {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--navy);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(201,168,76,.5);
-  padding-bottom: 2px;
-}
-.institutions-links a:hover {
-  color: var(--gold);
-  border-bottom-color: var(--gold);
-}
-.institutions-metric {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 17px;
-  color: var(--mid);
-  max-width: 720px;
-  margin: 28px auto 0;
-  line-height: 1.55;
-}
-.institutions-metric strong {
-  font-style: normal;
-  color: var(--navy);
-}
-.institutions-more {
-  margin-top: 22px;
-}
-.institutions-more a {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(201,168,76,.4);
-}
-.institutions-more a:hover { border-bottom-color: var(--gold); }
-
-/* ── FUNDAMENTALS ── */
-.fundamentals { background: var(--cream); }
-.fundamentals-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 56px;
-}
-.fundamental-card {
-  background: white;
-  padding: 40px 36px;
-  border-top: 3px solid transparent;
-  transition: border-color .2s, transform .2s;
-  cursor: default;
-}
-.fundamental-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-3px);
-}
-.fund-number {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
-.fund-title {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 12px;
-  line-height: 1.2;
-}
-.fund-body {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--mid);
-}
-
-/* ── CHANGED WORLD ── */
-.changed { background: var(--warm); }
-.changed-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-.changed-prose p {
-  margin-bottom: 1.5em;
-  color: #333;
-  font-size: 16px;
-  line-height: 1.8;
-}
-.changed-prose p:first-child {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-style: italic;
-  color: var(--navy);
-  line-height: 1.6;
-}
-.changed-signals {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.signal-item {
-  background: white;
-  padding: 28px 32px;
-  border-left: 3px solid var(--rule);
-  transition: border-color .2s;
-}
-.signal-item:hover { border-color: var(--gold); }
-.signal-title {
-  font-family: var(--serif);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-.signal-body {
-  font-size: 14px;
-  color: var(--mid);
-  line-height: 1.65;
-}
-
-/* ── DUSTY MUSEUM ── */
-.dusty {
-  background: var(--deep);
-  position: relative;
-  overflow: hidden;
-}
-.dusty::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 40px,
-    rgba(255,255,255,.012) 40px,
-    rgba(255,255,255,.012) 41px
-  );
-}
-.dusty .section-inner { position: relative; z-index: 1; }
-.dusty .section-heading { color: white; }
-.dusty .section-subhead { color: rgba(255,255,255,.45); }
-.dusty-pullquote {
-  font-family: var(--serif);
-  font-size: clamp(22px, 2.8vw, 34px);
-  font-style: italic;
-  color: rgba(255,255,255,.9);
-  line-height: 1.45;
-  border-left: 3px solid var(--gold);
-  padding-left: 40px;
-  margin: 56px 0;
-  max-width: 780px;
-}
-.dusty-two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  margin-top: 16px;
-}
-.dusty-two-col p {
-  font-size: 16px;
-  color: rgba(255,255,255,.65);
-  line-height: 1.8;
-  margin-bottom: 1.4em;
-}
-.dusty-two-col p strong {
-  color: white;
-  font-weight: 600;
-}
-.not-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 32px;
-}
-.not-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  font-size: 15px;
-  color: rgba(255,255,255,.7);
-  line-height: 1.5;
-}
-.not-list li::before {
-  content: '—';
-  color: var(--gold);
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-
-/* ── TOOLS / ECOSYSTEM ── */
-.ecosystem { background: var(--cream); }
-.eco-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 56px;
-}
-.eco-card {
-  background: white;
-  padding: 44px 36px;
-  position: relative;
-  overflow: hidden;
-}
-.eco-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .3s;
-}
-.eco-card:hover::after { transform: scaleX(1); }
-.eco-tag {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-  display: block;
-}
-.eco-title {
-  font-family: var(--serif);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 14px;
-  line-height: 1.2;
-}
-.eco-body {
-  font-size: 14px;
-  color: var(--mid);
-  line-height: 1.75;
-}
-.eco-link {
-  display: inline-block;
-  margin-top: 20px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(201,168,76,.3);
-  padding-bottom: 2px;
-  transition: border-color .2s;
-}
-.eco-link:hover { border-color: var(--gold); }
 
 /* ── PROOF BAND ── */
 .proof {
@@ -836,20 +703,43 @@ footer {
   nav { padding: 0 24px; }
   nav .nav-links { display: none; }
   section { padding: 72px 24px; }
-  .hero { padding: 100px 24px 64px; }
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-  .fundamentals-grid { grid-template-columns: 1fr; }
-  .changed-layout { grid-template-columns: 1fr; gap: 48px; }
-  .dusty-two-col { grid-template-columns: 1fr; gap: 32px; }
-  .eco-grid { grid-template-columns: 1fr; }
+  .hero { min-height: auto; }
+  .hero-carousel--fullbleed { min-height: auto; display: block; }
+  .hero-carousel--fullbleed .hero-carousel-viewport {
+    position: relative;
+    inset: auto;
+    height: 45vh;
+    min-height: 260px;
+    max-height: 420px;
+  }
+  .hero-carousel-scrim {
+    inset: auto 0 auto 0;
+    top: 0;
+    height: 45vh;
+    min-height: 260px;
+    max-height: 420px;
+    background: linear-gradient(to bottom, rgba(17, 28, 39, 0.08) 0%, rgba(17, 28, 39, 0.72) 100%);
+  }
+  .hero-foreground {
+    min-height: auto;
+    padding: 0;
+    background: var(--deep);
+  }
+  .hero-inner { padding: 36px 24px 0; }
+  .hero-left { max-width: none; }
+  .hero-carousel-bar {
+    padding: 20px 24px 28px;
+    gap: 12px;
+  }
+  .hero-carousel-all {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .hero-carousel-caption { flex: 1 1 100%; order: -1; }
   .proof-grid { grid-template-columns: repeat(2, 1fr); }
-  .featured-grid { grid-template-columns: 1fr; }
-  .feat-large { grid-column: span 1; }
-  .feat-large .feat-image { aspect-ratio: 4/3; }
-  .projects-view-all { flex-direction: column; align-items: flex-start; gap: 12px; }
   footer { flex-direction: column; gap: 20px; text-align: center; }
-  .thesis-band { padding: 64px 24px; }
-  .institutions-band { padding: 40px 24px; }
   .proof { padding: 64px 24px; }
   .cta-section { padding: 80px 24px; }
 }
@@ -913,10 +803,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <ul class="nav-links" id="site-nav-menu">
     <li><a href="museum-planning-projects.html">Projects</a></li>
     <li><a href="museum-planning-services.html">Services</a></li>
-    <li><a href="for-cities.html">For Cities</a></li>
-    <li><a href="museum-school/index.html">Museum School</a></li>
-    <li><a href="thought-leadership.html">Field Notes</a></li>
-    <li><a href="museum-planning-about.html">About</a></li>
     <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
     <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
@@ -924,180 +810,73 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ── HERO ── -->
 <section class="hero">
-  <div class="hero-bg-lines"></div>
-  <div class="hero-circle hero-circle-1"></div>
-  <div class="hero-circle hero-circle-2"></div>
-  <div class="hero-circle hero-circle-3"></div>
-
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-eyebrow">Museum Consultants</div>
-      <h1>We Build<br><em>Museums.</em></h1>
-      <p class="hero-deck">Forty museums since 1999 — <a href="museum-feasibility-study.html" style="color:var(--gold);">museum feasibility study</a>, <a href="museum-strategic-planning.html" style="color:var(--gold);">museum strategic planning</a>, and <a href="museum-master-planning.html" style="color:var(--gold);">museum master planning</a> through opening day. The fundamentals haven't changed. The world your museum opens into has. We know both.</p>
-      <div class="hero-cta-group">
-        <a href="museum-planning-contact.html" class="btn-primary">Start a Conversation</a>
-        <a href="#methodology" class="btn-ghost">Our Methodology</a>
-      </div>
+  <div class="hero-carousel hero-carousel--fullbleed" id="heroCarousel" aria-roledescription="carousel" aria-label="Selected museum projects">
+    <div class="hero-carousel-viewport">
+      <a href="projects/howard-natural-history-museum.html" class="hero-carousel-slide is-active" data-caption="Howard Natural History Museum · Riverside County, CA" aria-label="Howard Natural History Museum" aria-hidden="false">
+        <img src="content/uploads/2025/08/Howard_front-1-1400x788.png" alt="Howard Natural History Museum, Riverside County, California" width="1400" height="788" loading="eager">
+      </a>
+      <a href="projects/frehner-museum-southern-utah-university.html" class="hero-carousel-slide" data-caption="Frehner Museum · Southern Utah University" aria-label="Frehner Museum of Natural History" aria-hidden="true">
+        <img src="content/uploads/2026/02/IMG_2419-1400x1867.jpeg" alt="Frehner Museum of Natural History, Cedar City, Utah" width="1400" height="1867" loading="lazy">
+      </a>
+      <a href="projects/interactive-african-american-museum.html" class="hero-carousel-slide" data-caption="Interactive African American Museum · Indiana" aria-label="Interactive African American Museum and Cultural Center" aria-hidden="true">
+        <img src="content/uploads/2021/12/exterior0001-1400x925.png" alt="Interactive African American Museum and Cultural Center, Indiana" width="1400" height="925" loading="lazy">
+      </a>
+      <a href="projects/mide-museo-interactivo-de-economia.html" class="hero-carousel-slide" data-caption="MIDE · Mexico City, Mexico" aria-label="MIDE, Museo Interactivo de Economía" aria-hidden="true">
+        <img src="content/uploads/2019/04/MIDE.jpg" alt="MIDE, Museo Interactivo de Economía, Mexico City" width="1400" height="933" loading="lazy">
+      </a>
+      <a href="projects/arizona-natural-resources-museum.html" class="hero-carousel-slide" data-caption="Arizona Natural Resources Museum · Tucson" aria-label="Arizona Natural Resources Museum" aria-hidden="true">
+        <img src="content/uploads/2023/02/image-5-copy-4-1400x643.png" alt="Arizona Natural Resources Museum, University of Arizona, Tucson" width="1400" height="643" loading="lazy">
+      </a>
+      <a href="projects/mas-executive-director.html" class="hero-carousel-slide" data-caption="Museum of Arts and Sciences · Macon, Georgia" aria-label="Museum of Arts and Sciences" aria-hidden="true">
+        <img src="content/uploads/2025/08/IMG_5797-1400x1050.jpeg" alt="Museum of Arts and Sciences, Macon, Georgia" width="1400" height="1050" loading="lazy">
+      </a>
+      <a href="projects/mcdonough-cultural-plan.html" class="hero-carousel-slide" data-caption="City of McDonough Cultural Plan · Georgia" aria-label="City of McDonough Cultural Plan" aria-hidden="true">
+        <img src="content/uploads/2019/07/JT2A3857-1400x933.jpg" alt="City of McDonough Cultural Plan, McDonough, Georgia" width="1400" height="933" loading="lazy">
+      </a>
+      <a href="projects/shared-ground.html" class="hero-carousel-slide" data-caption="Shared Ground · McDonough, Georgia" aria-label="Shared Ground interactive installation" aria-hidden="true">
+        <img src="content/uploads/2026/shared-ground/01-lucinda-davis-woman-of-black-and-creek-heritage.jpg" alt="Shared Ground interactive installation, McDonough, Georgia" width="1400" height="933" loading="lazy">
+      </a>
     </div>
+    <div class="hero-carousel-scrim" aria-hidden="true"></div>
 
-    <div class="hero-right">
-      <div class="hero-stat-stack">
-        <div class="hero-stat-item">
-          <div class="stat-number">40+</div>
-          <div class="stat-text">
-            <strong>Museums Built</strong>
-            <span>Universities · Cities · Cultural Institutions</span>
+    <div class="hero-foreground">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-eyebrow">Museum Consultants</div>
+          <h1>We Build<br><em>Museums.</em></h1>
+          <p class="hero-deck">Forty museums since 1999. The consultant you hire is the consultant in the room.</p>
+          <div class="hero-cta-group">
+            <a href="museum-planning-contact.html" class="btn-primary">Start a Conversation</a>
           </div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="stat-number">1999</div>
-          <div class="stat-text">
-            <strong>Practice Founded</strong>
-            <span>Feasibility Through Opening Day</span>
-          </div>
-        </div>
-        <div class="hero-stat-item">
-          <div class="stat-number">01</div>
-          <div class="stat-text">
-            <strong>Methodology</strong>
-            <span>We Personally Lead Every Engagement</span>
-          </div>
+          <ul class="hero-service-list">
+            <li><a href="museum-feasibility-study.html">Museum feasibility studies</a></li>
+            <li><a href="museum-strategic-planning.html">Museum strategic planning</a></li>
+            <li><a href="museum-master-planning.html">Museum master planning</a></li>
+            <li><a href="immersive-museum-planning.html">Museum exhibition design</a></li>
+            <li><a href="for-cities.html">City cultural plans</a></li>
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<section class="institutions-band" aria-label="Selected museum planning projects">
-  <div class="institutions-inner reveal">
-    <p class="institutions-kicker">Selected institutions</p>
-    <div class="institutions-links">
-      <a href="projects/howard-natural-history-museum.html">Howard Natural History Museum</a>
-      <a href="projects/mide-museo-interactivo-de-economia.html">MIDE</a>
-      <a href="projects/mas-executive-director.html">Museum of Arts and Sciences</a>
-      <a href="projects/arizona-natural-resources-museum.html">Arizona Natural Resources Museum</a>
-      <a href="projects/interactive-african-american-museum.html">Interactive African American Museum &amp; Cultural Center</a>
-      <a href="projects/frehner-museum-southern-utah-university.html">Frehner Museum</a>
-    </div>
-    <p class="institutions-metric">The same process applied across every engagement — from a <strong>$2M</strong> university collection to a <strong>$28M</strong> regional cultural center.</p>
-    <p class="institutions-more"><a href="museum-planning-projects.html">Full project list →</a></p>
-  </div>
-</section>
-
-<!-- ── THESIS BAND ── -->
-<div class="thesis-band">
-  <div class="thesis-inner">
-    <p class="thesis-quote">
-      "A museum still needs a feasibility study. It still needs a strategic plan, a master plan, an exhibition design, and a rigorous opening-day process. <em>None of that is different.</em> What has changed is the world that museum opens into."
-    </p>
-    <div class="thesis-attr">Mark Walhimer · Museum Planning LLC · 2026</div>
-    <p class="thesis-attr" style="margin-top:12px;font-size:11px;letter-spacing:1px;">Commercial guides: <a href="museum-feasibility-study.html" style="color:var(--gold);">museum feasibility study</a> · <a href="museum-strategic-planning.html" style="color:var(--gold);">museum strategic planning</a> · <a href="museum-master-planning.html" style="color:var(--gold);">museum master planning</a></p>
-  </div>
-</div>
-
-<!-- ── FUNDAMENTALS ── -->
-<section class="fundamentals" id="methodology">
-  <div class="section-inner">
-    <div class="section-label">The Methodology</div>
-    <h2 class="section-heading">What Has Not Changed</h2>
-    <p class="section-subhead">These are the foundations. They were true in 1990 and they are true now. Bad <a href="museum-feasibility-study.html" style="color:var(--gold);">feasibility</a> is still fatal. A mission without an audience is still a building, not a museum.</p>
-
-    <div class="fundamentals-grid reveal">
-      <div class="fundamental-card">
-        <div class="fund-number">01 — Feasibility</div>
-        <div class="fund-title">Can this museum actually survive?</div>
-        <p class="fund-body">Before your community commits capital, you need to know whether the museum can operate sustainably — attendance projections, staffing, operating costs, and whether the mission is matched to a real audience. <a href="museum-feasibility-study.html" style="color:var(--gold);">Museum feasibility study — cost, process &amp; deliverables →</a></p>
-      </div>
-      <div class="fundamental-card">
-        <div class="fund-number">02 — Strategic Planning</div>
-        <div class="fund-title">Why does this museum exist?</div>
-        <p class="fund-body">Mission, vision, and community identity are not technology questions. They are organizational questions, and they come first. Every capital decision that follows depends on getting this right. <a href="museum-strategic-planning.html" style="color:var(--gold);">Museum strategic planning — process, cost &amp; deliverables →</a></p>
-      </div>
-      <div class="fundamental-card">
-        <div class="fund-number">03 — Business Planning</div>
-        <div class="fund-title">A museum that can open is not a museum that can stay open.</div>
-        <p class="fund-body">Rigorous pro forma modeling — operating costs, revenue assumptions, staffing ratios, earned income strategy — stress-tests the institution before capital is committed.</p>
-      </div>
-      <div class="fundamental-card">
-        <div class="fund-number">04 — Master Planning</div>
-        <div class="fund-title">Building program to capital campaign.</div>
-        <p class="fund-body">The building program, visitor experience framework, and capital campaign structure translate institutional goals into physical and financial reality. This is the work that must be done correctly before construction begins. <a href="museum-master-planning.html" style="color:var(--gold);">Museum master planning — process, cost &amp; deliverables →</a></p>
-      </div>
-      <div class="fundamental-card">
-        <div class="fund-number">05 — Exhibition Design</div>
-        <div class="fund-title">Turning a collection into an experience.</div>
-        <p class="fund-body">Content, space, sequence, interpretation — the craft of turning a collection or a mission into something people actually have. Concept through fabrication-ready documentation. <a href="immersive-museum-planning.html" style="color:var(--gold);">Immersive museum planning guide →</a></p>
-      </div>
-      <div class="fundamental-card">
-        <div class="fund-number">06 — Evaluation</div>
-        <div class="fund-title">Does it work? Is it working?</div>
-        <p class="fund-body">After opening, the institution needs to measure whether it is achieving its objectives — exhibitions, operations, community relationship. Evaluation closes the loop and starts the next planning cycle.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CHANGED WORLD ── -->
-<section class="changed" id="landscape">
-  <div class="section-inner">
-    <div class="section-label">The Landscape</div>
-    <h2 class="section-heading">What Has Changed</h2>
-
-    <div class="changed-layout reveal">
-      <div class="changed-prose">
-        <p>This is not an argument for every museum to become a technology incubator. It is a recognition that the operating environment all museums now share has shifted, and that sound planning has to account for that environment — not chase it, but understand it and plan within it.</p>
-        <p>Audiences today decide whether to visit — or whether a museum is worth caring about — on platforms and in digital spaces before they ever walk through a door. Programming drives visitation more than buildings do. A small museum with a strong presence and a clear community identity can outperform a large institution coasting on legacy.</p>
-        <p>Planning buildings without planning audience and distribution systems is incomplete in a way it was not before. The physical and digital are one planning problem. We treat them that way.</p>
-      </div>
-
-      <div class="changed-signals">
-        <div class="signal-item">
-          <div class="signal-title">Audiences decide before they arrive</div>
-          <p class="signal-body">The public story is negotiated on social platforms and through peer recommendation before the visit happens.</p>
+      <div class="hero-carousel-bar">
+        <button type="button" class="hero-carousel-prev" aria-label="Previous project">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <p class="hero-carousel-caption" id="heroCarouselCaption" aria-live="polite">Howard Natural History Museum · Riverside County, CA</p>
+        <button type="button" class="hero-carousel-next" aria-label="Next project">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="hero-carousel-dots" role="tablist" aria-label="Choose project photo">
+          <button type="button" class="hero-carousel-dot is-active" role="tab" aria-selected="true" aria-label="Howard Natural History Museum" data-index="0"></button>
+          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Frehner Museum" data-index="1"></button>
+          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Interactive African American Museum" data-index="2"></button>
+          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="MIDE" data-index="3"></button>
+          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Arizona Natural Resources Museum" data-index="4"></button>
+          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Museum of Arts and Sciences" data-index="5"></button>
+          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="City of McDonough Cultural Plan" data-index="6"></button>
+          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Shared Ground" data-index="7"></button>
         </div>
-        <div class="signal-item">
-          <div class="signal-title">Programming drives visitation</div>
-          <p class="signal-body">Event- and program-driven attendance is now a primary behavior pattern. A compelling reason to return matters as much as the permanent collection.</p>
-        </div>
-        <div class="signal-item">
-          <div class="signal-title">Measurement has matured</div>
-          <p class="signal-body">A $500,000 museum with strong community engagement can be healthier than a $25 million institution in decline. Ratio-based measurement tells the real story.</p>
-        </div>
-        <div class="signal-item">
-          <div class="signal-title">AI and digital tools are workplace reality</div>
-          <p class="signal-body">Institutions are using these tools in interpretation, collections management, marketing, and operations. Planning that ignores this produces museums that feel dated on opening day.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── DUSTY MUSEUM ── -->
-<section class="dusty">
-  <div class="section-inner">
-    <div class="section-label" style="--gold: #C9A84C; color: var(--gold);">The Real Risk</div>
-    <h2 class="section-heading">We Have All Been to the Dusty Museum.</h2>
-    <p class="section-subhead" style="max-width: 600px;">The one where nothing has changed in years. Where the doors are open but there is no reason to come back.</p>
-
-    <div class="dusty-pullquote reveal">
-      "The labels were printed out years ago and never updated. The exhibitions haven't changed. The doors are technically open — but nothing inside gives you a reason to return, tell a friend, or feel like the institution is alive. Those museums are not failing for lack of a collection. They are failing because nobody has rethought how to reach people with what they already have."
-    </div>
-
-    <div class="dusty-two-col reveal">
-      <div>
-        <p>That rethinking is <strong>not expensive.</strong> It requires curiosity, intention, and planning. A well-run small museum that understands its audience and communicates consistently — online, in programming, in how it presents its collection — can compete for attention and relevance in ways that were not possible fifteen years ago.</p>
-        <p>The tools available today — platforms like Fiverr for targeted creative work, AI tools for content development and collections documentation, university partnerships in design and technology — mean the cost of participation has not gone up. In many cases it has gone down.</p>
-      </div>
-      <div>
-        <p><strong>This is not a call to hire a full-stack developer at $200,000 a year.</strong> It is not a mandate to rebuild the institution around technology or chase every new platform.</p>
-        <ul class="not-list">
-          <li>Know what tools exist and choose what fits your institution</li>
-          <li>Plan buildings and audience systems as one problem, not two</li>
-          <li>Understand the environment your museum will open into</li>
-          <li>Program with the same rigor you plan with</li>
-          <li>Measure vitality, not just volume</li>
-        </ul>
-        <p style="margin-top: 24px;">Museums exist to reach audiences. That has always been true. The tools for doing it have changed. Ignoring those tools is a choice — not a principled one, just a costly one.</p>
+        <a href="museum-planning-projects.html" class="hero-carousel-all">All projects →</a>
       </div>
     </div>
   </div>
@@ -1128,131 +907,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- ── FEATURED PROJECTS ── -->
-<section class="projects-section" id="projects">
-  <div class="section-inner">
-    <div class="section-label">Selected Work</div>
-    <h2 class="section-heading">Forty Museums.<br>One Methodology.</h2>
-    <p class="section-subhead">From university natural history collections to city-led cultural centers — across the United States and worldwide.</p>
-
-    <div class="featured-grid reveal">
-
-      <a href="projects/howard-natural-history-museum.html" class="feat-card feat-large">
-        <div class="feat-image">
-          <img src="content/uploads/2025/08/Howard_front-1-1400x788.png" alt="Howard Natural History Museum" loading="lazy">
-          <div class="feat-overlay">
-            <div class="feat-meta">Master Planning · Exhibition Design · 2024</div>
-            <div class="feat-title">Howard Natural History Museum</div>
-            <div class="feat-loc">Riverside County, California · $27.75M</div>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/interactive-african-american-museum.html" class="feat-card">
-        <div class="feat-image">
-          <img src="content/uploads/2021/12/exterior0001-1400x925.png" alt="African American Museum" loading="lazy">
-          <div class="feat-overlay">
-            <div class="feat-meta">Exhibition Design · Feasibility · 2022</div>
-            <div class="feat-title">Interactive African American Museum &amp; Cultural Center</div>
-            <div class="feat-loc">Indiana</div>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/frehner-museum-southern-utah-university.html" class="feat-card">
-        <div class="feat-image">
-          <img src="content/uploads/2026/02/IMG_2419-1400x1867.jpeg" alt="Frehner Museum" loading="lazy">
-          <div class="feat-overlay">
-            <div class="feat-meta">University Museum · 2026</div>
-            <div class="feat-title">Frehner Museum of Natural History</div>
-            <div class="feat-loc">Southern Utah University · Cedar City, Utah</div>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/arizona-natural-resources-museum.html" class="feat-card">
-        <div class="feat-image">
-          <img src="content/uploads/2023/02/image-5-copy-4-1400x643.png" alt="Arizona Natural Resources Museum" loading="lazy">
-          <div class="feat-overlay">
-            <div class="feat-meta">Master Planning · 2023</div>
-            <div class="feat-title">Arizona Natural Resources Museum</div>
-            <div class="feat-loc">University of Arizona · Tucson</div>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/mide-museo-interactivo-de-economia.html" class="feat-card">
-        <div class="feat-image">
-          <img src="content/uploads/2019/04/MIDE.jpg" alt="MIDE Mexico City" loading="lazy">
-          <div class="feat-overlay">
-            <div class="feat-meta">Exhibition Design · International</div>
-            <div class="feat-title">MIDE, Museo Interactivo de Economía</div>
-            <div class="feat-loc">Mexico City, Mexico</div>
-          </div>
-        </div>
-      </a>
-
-      <a href="projects/mas-executive-director.html" class="feat-card">
-        <div class="feat-image">
-          <img src="content/uploads/2025/08/IMG_5797-1400x1050.jpeg" alt="Museum of Arts and Sciences" loading="lazy">
-          <div class="feat-overlay">
-            <div class="feat-meta">Exhibition Design · 2025</div>
-            <div class="feat-title">Museum of Arts and Sciences</div>
-            <div class="feat-loc">Macon, Georgia</div>
-          </div>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="projects-view-all reveal">
-      <a href="museum-planning-projects.html" class="btn-primary" style="font-size:11px;">View All Projects →</a>
-      <span class="view-all-note">40+ museums · United States &amp; worldwide</span>
-    </div>
-  </div>
-</section>
-
-<!-- ── TOOLS / ECOSYSTEM ── -->
-<section class="ecosystem" id="tools">
-  <div class="section-inner">
-    <div class="section-label">The Ecosystem</div>
-    <h2 class="section-heading">Four Doors Into One Practice</h2>
-    <p class="section-subhead">The consulting work, the measurement tool, the intellectual framework, and the primer — designed to be used together or independently.</p>
-
-    <div class="eco-grid reveal" style="grid-template-columns: repeat(4,1fr);">
-      <div class="eco-card">
-        <span class="eco-tag">Consulting</span>
-        <div class="eco-title">Museum Planning LLC</div>
-        <p class="eco-body"><a href="museum-feasibility-study.html" style="color:var(--gold);">Museum feasibility study</a>, <a href="museum-strategic-planning.html" style="color:var(--gold);">museum strategic planning</a>, and <a href="museum-master-planning.html" style="color:var(--gold);">museum master planning</a> through opening day. Forty museums. One methodology. Mark personally involved in every engagement — from the first community assessment through post-opening evaluation.</p>
-        <a href="museum-planning-services.html" class="eco-link">Services →</a>
-      </div>
-      <div class="eco-card">
-        <span class="eco-tag">Measurement</span>
-        <div class="eco-title">Museum Vitality Index</div>
-        <p class="eco-body">A 0–100 composite scoring framework that normalizes every metric for institutional size. Raw dollars never tell the full story. A $500K museum with a strong strategy can outrank a $25M institution.</p>
-        <a href="museum-vitality-index.html" class="eco-link">Learn about MVI →</a>
-      </div>
-      <div class="eco-card">
-        <span class="eco-tag">White Paper</span>
-        <div class="eco-title">Convergence Era</div>
-        <p class="eco-body">Industrial Design, Artificial Intelligence, and the Transformation of Cultural Systems. The systems-level argument for why the world museums open into has fundamentally changed — and what that means for planning.</p>
-        <a href="convergence-era.html" class="eco-link">Read the Paper →</a>
-      </div>
-      <div class="eco-card">
-        <span class="eco-tag">Foundation</span>
-        <div class="eco-title">Museums 101, Second Edition</div>
-        <p class="eco-body">The primer: what a museum is, how it is governed, what nonprofit form and public trust require. The first edition is still true about what a museum <em>is</em>. The second edition is about what a museum is <em>in</em>. <strong>Museums 101, Second Edition — forthcoming.</strong></p>
-        <a href="https://museums101.com" target="_blank" rel="noopener noreferrer" class="eco-link">First edition — buy at museums101.com →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ── CTA ── -->
 <section class="cta-section" id="contact">
   <div class="cta-inner reveal">
     <h2 class="cta-heading">Let's build<br><em>your museum.</em></h2>
-    <p class="cta-body">Whether you have a historic building looking for a mission, a collection that has never been seen by the public, or a board ready to launch a capital campaign — we bring the experience, the methodology, and the vision to make it happen.</p>
+    <p class="cta-body">Historic building, collection in storage, or board ready for a capital campaign — we bring the methodology and the track record.</p>
     <a href="museum-planning-contact.html" class="btn-primary" style="font-size: 12px; padding: 16px 40px;">Start a Conversation</a>
     <div class="cta-contact">
       <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>
@@ -1283,16 +942,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <footer>
   <div class="footer-logo">Museum <span>Planning</span> LLC</div>
-  <ul class="footer-links">
-    <li><a href="https://museumplanner.org">Museum Planner</a></li>
-    <li><a href="https://museums101.com">Museums 101</a></li>
-    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <ul class="footer-links">
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="for-cities.html">For Cities</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="thought-leadership.html">Field Notes</a></li>
+    <li><a href="https://museums101.com" target="_blank" rel="noopener noreferrer">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com" target="_blank" rel="noopener noreferrer">Museum Experiences</a></li>
     <li><a href="https://www.linkedin.com/company/museum-planning-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
     <li><a href="https://www.instagram.com/museumplanning/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
     <li><a href="https://www.facebook.com/MuseumPlanningLLC/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
     <li><a href="https://x.com/MuseumPlanning" target="_blank" rel="noopener noreferrer">X</a></li>
     <li><a href="site-map.html">Site map</a></li>
-    <li><a href="thought-leadership.html">Thought leadership</a></li>
     <li><a href="museum-planning-contact.html">Contact</a></li>
   </ul>
   <div class="footer-copy">© 2026 Museum Planning LLC</div>
@@ -1309,6 +970,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   reveals.forEach(el => observer.observe(el));
+</script>
+
+<script>
+(function () {
+  var carousel = document.getElementById('heroCarousel');
+  if (!carousel) return;
+  var slides = Array.prototype.slice.call(carousel.querySelectorAll('.hero-carousel-slide'));
+  var dots = Array.prototype.slice.call(carousel.querySelectorAll('.hero-carousel-dot'));
+  var caption = document.getElementById('heroCarouselCaption');
+  var prevBtn = carousel.querySelector('.hero-carousel-prev');
+  var nextBtn = carousel.querySelector('.hero-carousel-next');
+  var index = 0;
+  var timer;
+
+  function show(next) {
+    slides[index].classList.remove('is-active');
+    slides[index].setAttribute('aria-hidden', 'true');
+    dots[index].classList.remove('is-active');
+    dots[index].setAttribute('aria-selected', 'false');
+    index = (next + slides.length) % slides.length;
+    slides[index].classList.add('is-active');
+    slides[index].setAttribute('aria-hidden', 'false');
+    dots[index].classList.add('is-active');
+    dots[index].setAttribute('aria-selected', 'true');
+    if (caption) caption.textContent = slides[index].getAttribute('data-caption') || '';
+  }
+
+  function startAutoplay() {
+    clearInterval(timer);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = setInterval(function () { show(index + 1); }, 6000);
+  }
+
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      show(Number(dot.getAttribute('data-index')));
+      startAutoplay();
+    });
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function () {
+      show(index - 1);
+      startAutoplay();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function () {
+      show(index + 1);
+      startAutoplay();
+    });
+  }
+
+  carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
+  carousel.addEventListener('mouseleave', startAutoplay);
+
+  startAutoplay();
+})();
 </script>
 
 

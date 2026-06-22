@@ -21,18 +21,16 @@ Use on all primary pages: Tier 1 pillars, Tier 2 audience guides, Tier 3 Museum 
 | # | Label | Href (from site root) | `active` when |
 |---|--------|------------------------|---------------|
 | — | Museum **Planning** LLC (logo) | `index.html` | — |
-| 1 | Services | `museum-planning-services.html` | On services page |
-| 2 | For Cities | `for-cities.html` | On `for-cities.html` or `for-cities-science-center.html` |
-| 3 | Projects | `museum-planning-projects.html` | On projects index or `projects/*` |
-| 4 | Museum School | `museum-school/index.html` | On `museum-school/*` (not exhibition-series index) |
-| 5 | **Field Notes** | `thought-leadership.html` | On TL hub or TL article URLs (see below) |
-| 6 | About | `museum-planning-about.html` | On about page |
-| 7 | Search | (button, no link) | — |
-| 8 | **Start a Conversation** (CTA) | `museum-planning-contact.html` | — |
+| 1 | Projects | `museum-planning-projects.html` | On projects index or `projects/*` |
+| 2 | Services | `museum-planning-services.html` | On services page |
+| 3 | Search | (button, no link) | — |
+| 4 | **Start a Conversation** (CTA) | `museum-planning-contact.html` | — |
 
-**Removed from top bar (2026-06):** For Universities, Science Centers, separate Contact link.
+**In the footer (not top bar):** About, For Cities, Museum School, Field Notes, Museums 101, Museum Experiences, social links, Site map, Contact. Sync: `python3 tools/sync_site_footer.py`.
 
-Those pages remain live — discover via **Services**, **For Cities** body copy, site search `PAGES`, footer, and intent strips.
+**Removed from top bar (2026-06):** For Cities, Museum School, Field Notes, About, For Universities, Science Centers, separate Contact link.
+
+Those pages remain live — discover via **footer**, hero service list, site search `PAGES`, and body copy on Tier 1–2 pages.
 
 ---
 
@@ -125,4 +123,5 @@ Commit **HTML + `tools/sync_site_nav.py` + this doc + STYLE-GUIDE** in one chang
 - [ ] Mobile menu opens/closes; CTA visible
 - [ ] Nested page links resolve (`../` depth)
 - [ ] No duplicate Contact + CTA
-- [ ] Field Notes → `thought-leadership.html` on root nav
+- [ ] Search toggle opens overlay; `PAGES` index includes footer-only URLs
+- [ ] Field Notes → `thought-leadership.html` in footer (not top bar)

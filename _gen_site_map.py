@@ -416,10 +416,8 @@ footer {
     <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
   </button>
   <ul class="nav-links" id="site-nav-menu">
-    <li><a href="museum-planning-services.html">Services</a></li>
     <li><a href="museum-planning-projects.html">Projects</a></li>
-    <li><a href="museum-school/index.html">Museum School</a></li>
-    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="museum-planning-services.html">Services</a></li>
     <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
     <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
@@ -519,11 +517,18 @@ footer {
     footer_html = r"""<footer>
   <div class="footer-logo">Museum <span>Planning</span> LLC</div>
   <ul class="footer-links">
-    <li><a href="https://museumplanner.org">Museum Planner</a></li>
-    <li><a href="https://museums101.com">Museums 101</a></li>
-    <li><a href="https://museum-experiences.com">Museum Experiences</a></li>
+    <li><a href="museum-planning-about.html">About</a></li>
+    <li><a href="for-cities.html">For Cities</a></li>
+    <li><a href="museum-school/index.html">Museum School</a></li>
+    <li><a href="thought-leadership.html">Field Notes</a></li>
+    <li><a href="https://museums101.com" target="_blank" rel="noopener noreferrer">Museums 101</a></li>
+    <li><a href="https://museum-experiences.com" target="_blank" rel="noopener noreferrer">Museum Experiences</a></li>
+    <li><a href="https://www.linkedin.com/company/museum-planning-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/museumplanning/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+    <li><a href="https://www.facebook.com/MuseumPlanningLLC/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+    <li><a href="https://x.com/MuseumPlanning" target="_blank" rel="noopener noreferrer">X</a></li>
+    <li><a href="site-map.html">Site map</a></li>
     <li><a href="museum-planning-contact.html">Contact</a></li>
-    <li><a href="site-map.html">Site Map</a></li>
   </ul>
   <div class="footer-copy">© 2026 Museum Planning LLC</div>
 </footer>

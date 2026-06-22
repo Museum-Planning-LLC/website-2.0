@@ -21,12 +21,8 @@ SKIP_FILES = {
 SKIP_PREFIX = "museum-school/museum-exhibition-design/index.html"
 
 NAV_ITEMS = [
-    ("Services", "museum-planning-services.html"),
-    ("For Cities", "for-cities.html"),
     ("Projects", "museum-planning-projects.html"),
-    ("Museum School", "museum-school/index.html"),
-    ("Field Notes", "thought-leadership.html"),
-    ("About", "museum-planning-about.html"),
+    ("Services", "museum-planning-services.html"),
 ]
 
 SEARCH_SVG = (

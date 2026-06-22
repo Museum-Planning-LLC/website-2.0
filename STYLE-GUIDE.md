@@ -34,29 +34,23 @@ Use `<nav class="site-nav" id="site-nav">` on all primary pages (Tier 1–3, pro
 
 | # | Label | Href (from root) |
 |---|--------|------------------|
-| 1 | Services | `museum-planning-services.html` |
-| 2 | For Cities | `for-cities.html` |
-| 3 | Projects | `museum-planning-projects.html` |
-| 4 | Museum School | `museum-school/index.html` |
-| 5 | **Field Notes** | `thought-leadership.html` |
-| 6 | About | `museum-planning-about.html` |
-| 7 | Search | icon button (no link) |
-| 8 | **Start a Conversation** | `museum-planning-contact.html` (`nav-cta`) |
+| 1 | Projects | `museum-planning-projects.html` |
+| 2 | Services | `museum-planning-services.html` |
+| 3 | Search | icon button (no link) |
+| 4 | **Start a Conversation** | `museum-planning-contact.html` (`nav-cta`) |
 
-**Not in the top bar:** For Universities (`for-universities.html`), Science Centers (`for-cities-science-center.html`), or a separate Contact link — link from Services, For Cities, search `PAGES`, and body copy.
+**Footer (not top bar):** About, For Cities, Museum School, Field Notes — sync with `python3 tools/sync_site_footer.py`.
 
-**Field Notes** is the single nav entry for thought leadership (Museum AI, Convergence Era, 2026 projects, immersive guide, staff portal, MVI). Do not add per-article nav items.
+**Field Notes** lives in the footer (`thought-leadership.html` hub). Do not add per-article top-bar items.
 
 ### Active state
 
-Set `class="active"` on one primary link only:
+Set `class="active"` on one top-bar link only:
 
-- **For Cities** — also active on `for-cities-science-center.html`
 - **Projects** — also active on `projects/*`
-- **Museum School** — `museum-school/*` except exhibition-series hub index
-- **Field Notes** — `thought-leadership.html` and TL article URLs listed in [docs/NAVIGATION.md](./docs/NAVIGATION.md)
+- **Services** — active on `museum-planning-services.html`
 
-Contact page: no `active` on a removed Contact link; CTA only.
+Contact page: no `active` on CTA; footer Contact link only.
 
 ### Rules
 
@@ -154,7 +148,8 @@ After publish: add URL to `sitemap.xml`; add legacy redirect if replacing a Word
 ## 9) Footer Standard
 
 - Brand lockup
-- External links: Museum Planner, Museums 101, Museum Experiences
+- External links: Museums 101, Museum Experiences
+- Site links in footer: About, For Cities, Museum School, Field Notes, Site map, Contact
 - Social links when active (LinkedIn, Instagram, Facebook, X) — see §10
 - Contact / Privacy links
 - Copyright line
