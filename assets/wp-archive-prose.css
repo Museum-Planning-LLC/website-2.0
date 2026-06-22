@@ -7,6 +7,16 @@ body.project-wp-archive .body-wrap {
   padding-right: max(24px, 3vw);
 }
 
+body.project-wp-archive .prose.wp-archive {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+body.project-wp-archive .sidebar {
+  min-width: 0;
+}
+
 body.project-wp-archive .hero-content {
   max-width: min(1440px, 94vw);
   padding-left: max(24px, 3vw);
@@ -15,9 +25,26 @@ body.project-wp-archive .hero-content {
 
 @media (max-width: 900px) {
   body.project-wp-archive .body-wrap {
-    padding-left: 24px;
-    padding-right: 24px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 48px 24px 64px;
+    max-width: 100%;
   }
+
+  /* Project details first on phone, full-width prose below */
+  body.project-wp-archive .sidebar {
+    order: -1;
+    position: static;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.project-wp-archive .prose.wp-archive {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+  }
+
   body.project-wp-archive .hero-content {
     padding-left: 24px;
     padding-right: 24px;
