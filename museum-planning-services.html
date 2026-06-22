@@ -27,12 +27,6 @@
     {"@type":"ListItem","position":2,"name":"Museum Strategic Planning","url":"https://museumplanning.com/museum-strategic-planning.html"},
     {"@type":"ListItem","position":3,"name":"Museum Master Planning","url":"https://museumplanning.com/museum-master-planning.html"}
   ]},
-  {"@type":"FAQPage","@id":"https://museumplanning.com/museum-planning-services.html#faq","mainEntity":[
-    {"@type":"Question","name":"What does a museum consultant do?","acceptedAnswer":{"@type":"Answer","text":"Museum consultants align feasibility, master planning, strategic planning, and exhibition design — so pro forma, visitor experience, and community reach match. Museum Planning LLC leads every engagement from first conversation through opening and year-three operations."}},
-    {"@type":"Question","name":"When should we hire museum consultants?","acceptedAnswer":{"@type":"Answer","text":"Before capital is committed — when a board, city, university, or donor group needs an honest answer about viability, direction, or what to build."}},
-    {"@type":"Question","name":"How much do museum consultants cost?","acceptedAnswer":{"@type":"Answer","text":"Feasibility studies typically run $40k–$70k, strategic planning $45k–$75k, and master planning from $100k, exclusive of travel. Every engagement begins with a one-hour conversation at no cost."}},
-    {"@type":"Question","name":"What is the difference between museum consultants and architects?","acceptedAnswer":{"@type":"Answer","text":"Museum consultants define institutional program, audience, and financial viability before design begins. Architects translate a confirmed building program into physical design."}}
-  ]},
   {"@type":"BreadcrumbList","@id":"https://museumplanning.com/museum-planning-services.html#breadcrumb","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://museumplanning.com/"},
     {"@type":"ListItem","position":2,"name":"Museum Planning Services","item":"https://museumplanning.com/museum-planning-services.html"}
@@ -131,7 +125,7 @@ nav {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(to top, rgba(17, 28, 39, 0.92) 0%, rgba(17, 28, 39, 0.42) 28%, transparent 52%),
+    linear-gradient(to top, rgba(17, 28, 39, 0.88) 0%, rgba(17, 28, 39, 0.35) 22%, transparent 45%),
     linear-gradient(90deg, rgba(17, 28, 39, 0.94) 0%, rgba(17, 28, 39, 0.84) 34%, rgba(17, 28, 39, 0.52) 58%, rgba(17, 28, 39, 0.22) 100%);
 }
 .hero-foreground {
@@ -151,9 +145,7 @@ nav {
 }
 .hero-left,
 .hero-carousel-bar,
-.hero-carousel-bar *,
-.service-detail-panel,
-.service-detail-panel * {
+.hero-carousel-bar * {
   pointer-events: auto;
 }
 .hero-inner {
@@ -182,13 +174,13 @@ nav {
 }
 .hero h1 em { font-style: italic; color: var(--gold); }
 .hero-deck {
-  font-family: var(--serif); font-style: italic; font-size: 17px;
-  color: rgba(255,255,255,.58); line-height: 1.6; max-width: 480px;
-  margin-bottom: 32px;
+  font-family: var(--serif); font-style: italic; font-size: 19px;
+  color: rgba(255,255,255,.62); line-height: 1.6; max-width: 480px;
+  margin-bottom: 36px;
 }
 .hero-cta-row {
   display: flex; gap: 16px; align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 .btn-primary {
   display: inline-block; background: var(--gold); color: var(--deep);
@@ -205,20 +197,38 @@ nav {
 }
 .btn-ghost:hover { color: white; }
 
+.hero-service-list-wrap {
+  position: relative;
+  max-width: 420px;
+  margin-top: 28px;
+}
+.hero-service-outline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 0;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  box-sizing: border-box;
+  pointer-events: none;
+  transition: top .4s ease, height .4s ease, border-color .25s ease;
+  z-index: 0;
+}
 .hero-service-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  max-width: 420px;
-  margin-top: 28px;
+  gap: 4px;
+  margin: 0;
+  position: relative;
+  z-index: 1;
 }
-.hero-service-list li { border-bottom: 1px solid rgba(255,255,255,.12); }
+.hero-service-list li { width: 100%; }
 .hero-service-tab {
   display: block;
   width: 100%;
   text-align: left;
-  padding: 10px 0;
+  padding: 10px 14px;
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 1.5px;
@@ -231,6 +241,9 @@ nav {
 }
 .hero-service-tab:hover { color: rgba(255,255,255,.85); }
 .hero-service-tab.is-active { color: var(--gold); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-service-outline { transition: none; }
+}
 
 .hero-carousel-viewport {
   position: relative;
@@ -242,9 +255,12 @@ nav {
   opacity: 0;
   transition: opacity .6s ease;
   pointer-events: none;
+  text-decoration: none;
+  display: block;
 }
 .hero-carousel-slide.is-active {
   opacity: 1;
+  pointer-events: auto;
   z-index: 1;
 }
 .hero-carousel--fullbleed .hero-carousel-slide img {
@@ -346,90 +362,6 @@ nav {
   background: rgba(201,168,76,.12);
   border-color: var(--gold);
 }
-
-.service-detail-panel {
-  width: 100%;
-  margin-top: 28px;
-  display: grid;
-}
-.service-detail {
-  grid-area: 1 / 1;
-  background: rgba(248, 244, 236, 0.96);
-  border-top: 2px solid var(--gold);
-  padding: 24px 28px;
-  box-shadow: 0 16px 48px rgba(17, 28, 39, 0.28);
-  opacity: 0;
-  transform: translateY(16px);
-  pointer-events: none;
-  visibility: hidden;
-  transition: opacity .45s ease, transform .45s ease, visibility .45s;
-}
-.service-detail.is-active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  visibility: visible;
-  z-index: 1;
-}
-.service-detail-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 8px;
-}
-.service-detail-title {
-  font-family: var(--serif);
-  font-size: clamp(20px, 2.2vw, 26px);
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 12px;
-  line-height: 1.2;
-}
-.service-detail-body {
-  font-size: 15px;
-  color: var(--mid);
-  line-height: 1.7;
-  max-width: 640px;
-}
-.service-detail-trio {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-  margin-top: 18px;
-  max-width: 480px;
-  background: var(--rule);
-}
-.service-detail-trio figure { margin: 0; background: white; }
-.service-detail-trio img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-.service-detail-trio figcaption {
-  font-family: var(--mono);
-  font-size: 8px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--mid);
-  padding: 8px;
-  text-align: center;
-}
-.service-detail-link {
-  display: inline-block;
-  margin-top: 16px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--navy);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(201,168,76,.45);
-  transition: color .2s, border-color .2s;
-}
-.service-detail-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
 
 .services-thesis {
   background: var(--warm);
@@ -1145,9 +1077,6 @@ footer {
   }
   .hero-inner { padding: 36px 24px 0; }
   .hero-left { max-width: none; }
-  .service-detail-panel { margin-top: 20px; padding: 0 24px; box-sizing: border-box; }
-  .service-detail { padding: 20px 22px; }
-  .service-detail-trio { max-width: none; }
   .hero-carousel-bar {
     padding: 20px 24px 28px;
     gap: 12px;
@@ -1159,18 +1088,7 @@ footer {
     box-sizing: border-box;
   }
   .hero-carousel-caption { flex: 1 1 100%; order: -1; }
-  .services-thesis,
-  .method-pull,
-  .proof-strip,
-  .cta-section { padding-left: 24px; padding-right: 24px; }
-  .services-thesis { padding-top: 56px; padding-bottom: 56px; }
-  .method-pull { padding-top: 48px; padding-bottom: 48px; }
-  .school-crosslink-min { padding: 32px 24px; }
-  .proof-grid { grid-template-columns: repeat(2, 1fr); }
   footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
-}
-@media (max-width: 700px) {
-  .service-detail-trio { grid-template-columns: 1fr; }
 }
 
 /* ── MUSEUM SCHOOL CROSSLINK ── */
@@ -1366,23 +1284,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-carousel hero-carousel--fullbleed" id="servicesHeroCarousel" aria-roledescription="carousel" aria-label="Typical service deliverables">
+  <div class="hero-carousel hero-carousel--fullbleed" id="servicesHeroCarousel" aria-roledescription="carousel" aria-label="Museum planning services — project examples">
     <div class="hero-carousel-viewport">
-      <div class="hero-carousel-slide is-active" data-caption="01 · Numbers · Experience direction renderings · Howard Natural History Museum" data-href="museum-feasibility-study.html" data-link-label="Feasibility study →" aria-hidden="false">
-        <img src="content/uploads/2025/08/Howard_front-1-1400x788.png" alt="Museum concept rendering — elevated contemporary entry, Howard Natural History Museum" width="1400" height="788" loading="eager">
-      </div>
-      <div class="hero-carousel-slide" data-caption="02 · Experience · Conceptual floor plan and phasing · Howard Natural History Museum" data-href="museum-master-planning.html" data-link-label="Master planning →" aria-hidden="true">
-        <img src="content/uploads/2025/08/Howard-master-plan-p09.png" alt="Museum master plan floor plan — Howard Natural History Museum" width="1920" height="1080" loading="lazy">
-      </div>
-      <div class="hero-carousel-slide" data-caption="03 · Expression · Exhibition floor plan · C.O. Polk Interactive Museum" data-href="immersive-museum-planning.html" data-link-label="Exhibition design →" aria-hidden="true">
-        <img src="content/uploads/2019/07/CO-Polk-6-8-18-copy-3-1400x906.jpg" alt="Exhibition design floor plan — C.O. Polk Interactive Museum, McDonough" width="1400" height="906" loading="lazy">
-      </div>
-      <div class="hero-carousel-slide" data-caption="04 · Audiences · Audience and program framework · C.O. Polk Interactive Museum" data-href="museum-strategic-planning.html" data-link-label="Strategic planning →" aria-hidden="true">
-        <img src="content/uploads/2019/07/CO-Polk-6-8-18-copy-1400x906.jpg" alt="Strategic planning board — C.O. Polk Interactive Museum, McDonough" width="1400" height="906" loading="lazy">
-      </div>
-      <div class="hero-carousel-slide" data-caption="05 · Ecosystem · Downtown cultural map · City of McDonough, Georgia" data-href="for-cities.html" data-link-label="City cultural plans →" aria-hidden="true">
-        <img src="content/uploads/2019/07/JT2A6487-copy-1400x933.jpg" alt="Downtown cultural wayfinding map — McDonough, Georgia" width="1400" height="933" loading="lazy">
-      </div>
+      <a href="projects/city-of-mcdonough-georgia.html" class="hero-carousel-slide is-active" data-caption="C.O. Polk Interactive Museum · McDonough, Georgia" aria-label="C.O. Polk Interactive Museum — feasibility" aria-hidden="false">
+        <img src="content/uploads/2019/07/camera3-1400x938.jpg" alt="C.O. Polk Interactive Museum concept rendering, McDonough Georgia" width="1400" height="938" loading="eager">
+      </a>
+      <a href="projects/arizona-natural-resources-museum.html" class="hero-carousel-slide" data-caption="Arizona Natural Resources Museum · Tucson" aria-label="Arizona Natural Resources Museum — master planning" aria-hidden="true">
+        <img src="content/uploads/2023/02/image-5-copy-4-1400x643.png" alt="Arizona Natural Resources Museum, University of Arizona, Tucson" width="1400" height="643" loading="lazy">
+      </a>
+      <a href="projects/city-of-mcdonough-georgia.html" class="hero-carousel-slide" data-caption="C.O. Polk Interactive Museum · McDonough, Georgia" aria-label="C.O. Polk Interactive Museum — exhibition design" aria-hidden="true">
+        <img src="content/uploads/2019/07/JT2A3754-1400x933.jpg" alt="Town Square interactive exhibit, C.O. Polk Interactive Museum, McDonough Georgia" width="1400" height="933" loading="lazy">
+      </a>
+      <a href="projects/howard-natural-history-museum.html" class="hero-carousel-slide" data-caption="Howard Natural History Museum · Riverside County, CA" aria-label="Howard Natural History Museum — strategic planning" aria-hidden="true">
+        <img src="content/uploads/2025/08/Howard_tables-1400x788.png" alt="Howard Natural History Museum gallery concept, Riverside County California" width="1400" height="788" loading="lazy">
+      </a>
+      <a href="projects/mcdonough-cultural-plan.html" class="hero-carousel-slide" data-caption="City of McDonough Cultural Plan · Georgia" aria-label="City of McDonough Cultural Plan" aria-hidden="true">
+        <img src="content/uploads/2019/07/JT2A3857-1400x933.jpg" alt="City of McDonough Cultural Plan, McDonough Georgia" width="1400" height="933" loading="lazy">
+      </a>
     </div>
     <div class="hero-carousel-scrim" aria-hidden="true"></div>
 
@@ -1391,65 +1309,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-left">
           <div class="hero-eyebrow">Museum Planning Services</div>
           <h1>The work is<br><em>alignment.</em></h1>
-          <p class="hero-deck">Each engagement produces boards and drawings you can react to — not words alone. Forty museums since 1999. The consultant you hire is the consultant in the room.</p>
+          <p class="hero-deck">Forty museums since 1999. The consultant you hire is the consultant in the room.</p>
           <div class="hero-cta-row">
             <a href="museum-planning-contact.html" class="btn-primary">Start a Conversation</a>
-            <a href="museum-planning-projects.html" class="btn-ghost">See the Work</a>
           </div>
-          <ul class="hero-service-list" role="tablist" aria-label="Museum planning services">
-            <li><button type="button" class="hero-service-tab is-active" role="tab" aria-selected="true" data-index="0">Museum feasibility studies</button></li>
-            <li><button type="button" class="hero-service-tab" role="tab" aria-selected="false" data-index="1">Museum master planning</button></li>
-            <li><button type="button" class="hero-service-tab" role="tab" aria-selected="false" data-index="2">Museum exhibition design</button></li>
-            <li><button type="button" class="hero-service-tab" role="tab" aria-selected="false" data-index="3">Museum strategic planning</button></li>
-            <li><button type="button" class="hero-service-tab" role="tab" aria-selected="false" data-index="4">City cultural plans</button></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="service-detail-panel" id="serviceDetailPanel" aria-live="polite">
-        <div class="service-detail is-active" data-index="0">
-          <div class="service-detail-label">01 · Numbers</div>
-          <h2 class="service-detail-title">Museum feasibility studies</h2>
-          <p class="service-detail-body">Do the numbers work? Audience, scale, operating model, and community demand — before capital is committed. We answer feasibility of <em>what</em>, not a generic template. Experience renderings ask: clean and minimal, homie like your living room, or an elevated upscale visit?</p>
-          <div class="service-detail-trio" aria-label="Experience direction options">
-            <figure>
-              <img src="content/uploads/2025/08/Howard_front-1-1400x788.png" alt="Elevated contemporary museum entry" width="1400" height="788" loading="lazy">
-              <figcaption>Elevated</figcaption>
-            </figure>
-            <figure>
-              <img src="content/uploads/2025/08/Howard_tables-1400x788.png" alt="Warm communal gallery space" width="1400" height="788" loading="lazy">
-              <figcaption>Homie</figcaption>
-            </figure>
-            <figure>
-              <img src="content/uploads/2025/08/Howard_ticket-1400x788.png" alt="Clean minimal visitor services" width="1400" height="788" loading="lazy">
-              <figcaption>Minimal</figcaption>
-            </figure>
+          <div class="hero-service-list-wrap">
+            <div class="hero-service-outline" id="serviceListOutline" aria-hidden="true"></div>
+            <ul class="hero-service-list" role="tablist" aria-label="Museum planning services">
+              <li><button type="button" class="hero-service-tab is-active" role="tab" aria-selected="true" data-index="0">Museum feasibility studies</button></li>
+              <li><button type="button" class="hero-service-tab" role="tab" aria-selected="false" data-index="1">Museum master planning</button></li>
+              <li><button type="button" class="hero-service-tab" role="tab" aria-selected="false" data-index="2">Museum exhibition design</button></li>
+              <li><button type="button" class="hero-service-tab" role="tab" aria-selected="false" data-index="3">Museum strategic planning</button></li>
+              <li><button type="button" class="hero-service-tab" role="tab" aria-selected="false" data-index="4">City cultural plans</button></li>
+            </ul>
           </div>
-          <a href="museum-feasibility-study.html" class="service-detail-link">Feasibility study →</a>
-        </div>
-        <div class="service-detail" data-index="1">
-          <div class="service-detail-label">02 · Experience</div>
-          <h2 class="service-detail-title">Museum master planning</h2>
-          <p class="service-detail-body">The pro forma and the visitor experience have to match. Master planning maps what the feasibility study says is viable into building program, phasing, and the experience visitors will actually have — almost always as a floor plan.</p>
-          <a href="museum-master-planning.html" class="service-detail-link">Master planning →</a>
-        </div>
-        <div class="service-detail" data-index="2">
-          <div class="service-detail-label">03 · Expression</div>
-          <h2 class="service-detail-title">Museum exhibition design</h2>
-          <p class="service-detail-body">Exhibition design is how feasibility, financial model, and master plan become physical — a detailed floor plan with exhibits named, sequenced, and scoped for fabrication.</p>
-          <a href="immersive-museum-planning.html" class="service-detail-link">Exhibition design →</a>
-        </div>
-        <div class="service-detail" data-index="3">
-          <div class="service-detail-label">04 · Audiences</div>
-          <h2 class="service-detail-title">Museum strategic planning</h2>
-          <p class="service-detail-body">Who you serve and how you reach them — field trips, community groups, membership, events. Strategy diagrams map personas, channels, and programming. Museums are event-based; this is how you drive repeat visitation when year-three attendance starts to slip.</p>
-          <a href="museum-strategic-planning.html" class="service-detail-link">Strategic planning →</a>
-        </div>
-        <div class="service-detail" data-index="4">
-          <div class="service-detail-label">05 · Ecosystem</div>
-          <h2 class="service-detail-title">City cultural plans</h2>
-          <p class="service-detail-body">For cities: the buildings, institutions, audiences, and constituents — mapped so cultural assets can thrive together. Downtown maps show museums, arts centers, heritage sites, and the connections between them.</p>
-          <a href="for-cities.html" class="service-detail-link">City cultural plans →</a>
         </div>
       </div>
 
@@ -1457,140 +1330,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button type="button" class="hero-carousel-prev" aria-label="Previous service">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <p class="hero-carousel-caption" id="servicesHeroCaption">01 · Numbers · Experience direction renderings · Howard Natural History Museum</p>
+        <p class="hero-carousel-caption" id="servicesHeroCaption">C.O. Polk Interactive Museum · McDonough, Georgia</p>
         <button type="button" class="hero-carousel-next" aria-label="Next service">
           <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
-        <div class="hero-carousel-dots" role="tablist" aria-label="Choose service deliverable">
+        <div class="hero-carousel-dots" role="tablist" aria-label="Choose service">
           <button type="button" class="hero-carousel-dot is-active" role="tab" aria-selected="true" aria-label="Museum feasibility studies" data-index="0"></button>
           <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Museum master planning" data-index="1"></button>
           <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Museum exhibition design" data-index="2"></button>
           <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Museum strategic planning" data-index="3"></button>
           <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="City cultural plans" data-index="4"></button>
         </div>
-        <a href="museum-feasibility-study.html" class="hero-carousel-all" id="servicesHeroLink">Feasibility study →</a>
+        <a href="projects/city-of-mcdonough-georgia.html" class="hero-carousel-all" id="servicesHeroLink">View project →</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="services-thesis reveal" aria-labelledby="services-thesis-heading">
-  <div class="services-thesis-inner">
-    <div class="services-thesis-kicker">How we think about it</div>
-    <p id="services-thesis-heading" class="services-thesis-lead">When everything aligns — who you serve, how you reach them, what you build, and how the museum sits in its community — your chances of success are strong. We have proven that pattern again and again.</p>
-    <div class="services-thesis-body">
-      <p>When someone calls and says they need a feasibility study, the first question is feasibility of <em>what</em>: approximate square footage, audience, voice of the museum, field trips, school groups, community partners. Right-size the building. Capture families and you are on your way.</p>
-      <p>Museums that struggle are not woven into the local community. A city can stretch toward a new science center, children's museum, or digital art museum — but it still has to be <em>of</em> the community.</p>
-      <p>If the pro forma says 20,000 square feet and the master plan describes 60,000, you have a mismatch — and that will not work. When audience, reach, and building program point the same direction, the model holds. Exhibition design is how feasibility, pro forma, and master plan become one physical expression.</p>
-      <p>Every study produces boards and drawings you can react to — not words alone. Renderings for voice and experience. Diagrams for audiences. Floor plans for scale. Maps for the whole cultural ecosystem. Getting there takes workshops, community conversations, and time listening to why certain things might work and others might not.</p>
-    </div>
-  </div>
-</section>
-
-<section class="method-pull reveal" aria-label="Planning principle">
-  <div class="method-pull-inner">
-    <blockquote>
-      <p>Build for the <em>third year</em>, not the opening.</p>
-    </blockquote>
-    <cite>Museum Planning LLC</cite>
-  </div>
-</section>
-
-<div class="proof-strip">
-  <div class="proof-inner">
-    <div class="proof-heading">The Track Record</div>
-    <div class="proof-grid reveal">
-      <div class="proof-item">
-        <div class="proof-num">40+</div>
-        <div class="proof-label">Museums<br>Completed</div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-num">27</div>
-        <div class="proof-label">Years of<br>Practice</div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-num">2</div>
-        <div class="proof-label">Bloomsbury<br>Books Published</div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-num">100%</div>
-        <div class="proof-label">Consultant in<br>the Room</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section class="services-fees reveal" aria-labelledby="services-fees-heading">
-  <div class="services-fees-inner">
-    <h2 id="services-fees-heading">Typical consulting ranges</h2>
-    <p class="services-fees-lead">Ballpark fees before you call — same numbers as on the contact page. Every engagement begins with a one-hour conversation at no cost.</p>
-    <div class="services-fees-card">
-      <div class="svc-rate-row">
-        <span class="svc-rate-name">Museum Assessment</span>
-        <span class="svc-rate-num">$18,000 + travel</span>
-        <p class="svc-rate-note">Minimum retainer.</p>
-      </div>
-      <div class="svc-rate-row">
-        <span class="svc-rate-name"><a href="museum-strategic-planning.html">Museum strategic planning</a></span>
-        <span class="svc-rate-num">$45k – $75k + travel</span>
-      </div>
-      <div class="svc-rate-row">
-        <span class="svc-rate-name"><a href="museum-feasibility-study.html">Museum feasibility study</a></span>
-        <span class="svc-rate-num">$40k – $70k + travel</span>
-      </div>
-      <div class="svc-rate-row">
-        <span class="svc-rate-name"><a href="museum-master-planning.html">Museum master planning</a></span>
-        <span class="svc-rate-num">$100k+ + travel</span>
-      </div>
-      <div class="svc-rate-row">
-        <span class="svc-rate-name">Exhibition Design</span>
-        <span class="svc-rate-num">$60k – $200k + travel</span>
-      </div>
-      <div class="svc-rate-row">
-        <span class="svc-rate-name">Owners Rep / PM</span>
-        <span class="svc-rate-num">Variable — per scope</span>
-      </div>
-    </div>
-    <p class="services-fees-more"><a href="museum-feasibility-study.html">Feasibility study →</a> · <a href="museum-strategic-planning.html">Strategic planning →</a> · <a href="museum-master-planning.html">Master planning →</a> · <a href="museum-planning-contact.html">Start a conversation →</a></p>
-  </div>
-</section>
-
-<section class="services-faq reveal" id="faq" aria-labelledby="services-faq-heading">
-  <div class="services-faq-inner">
-    <div class="services-faq-kicker">Common Questions</div>
-    <h2 id="services-faq-heading">Museum Consultants — <em>FAQ</em></h2>
-    <div class="svc-faq-item">
-      <div class="svc-faq-q">What does a museum consultant do?</div>
-      <div class="svc-faq-a">Align feasibility, master planning, strategic planning, and exhibition design — so pro forma, visitor experience, and community reach match. We lead every engagement from first conversation through opening and year-three operations.</div>
-    </div>
-    <div class="svc-faq-item">
-      <div class="svc-faq-q">When should we hire museum consultants?</div>
-      <div class="svc-faq-a">Before capital is committed — when a board, city, or donor group needs an honest answer about viability, audience, or what to build. The usual sequence runs <a href="museum-feasibility-study.html">feasibility</a>, then <a href="museum-strategic-planning.html">strategic planning</a>, then <a href="museum-master-planning.html">master planning</a> — each document building on the last.</div>
-    </div>
-    <div class="svc-faq-item">
-      <div class="svc-faq-q">How much do museum consultants cost?</div>
-      <div class="svc-faq-a"><a href="museum-feasibility-study.html">Feasibility studies</a> typically run $40k–$70k, <a href="museum-strategic-planning.html">strategic planning</a> $45k–$75k, and <a href="museum-master-planning.html">master planning</a> from $100k, exclusive of travel. Every engagement begins with a one-hour conversation at no cost.</div>
-    </div>
-    <div class="svc-faq-item">
-      <div class="svc-faq-q">What is the difference between museum consultants and architects?</div>
-      <div class="svc-faq-a">Consultants define program, audience, and financial viability before design begins. Architects translate a confirmed building program into physical design — the master plan connects the two.</div>
-    </div>
-  </div>
-</section>
-
-<p class="school-crosslink-min reveal">Deeper explainers: <a href="museum-school/what-is-a-museum-feasibility-study.html">what a feasibility study covers</a>, <a href="museum-school/what-is-a-museum-master-plan.html">master planning</a>, and <a href="museum-school/index.html">Museum School →</a></p>
-
-<section class="cta-section">
-  <div class="cta-inner reveal">
-    <h2 class="cta-heading">Ready to<br><em>talk?</em></h2>
-    <p class="cta-body">Feasibility of what, for whom, at what scale — start there. One conversation, no cost.</p>
-    <a href="museum-planning-contact.html" class="btn-primary" style="font-size: 12px; padding: 16px 44px;">Start a Conversation</a>
-    <div class="cta-contact">
-      <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>
-      &nbsp;·&nbsp;
-      <a href="tel:4157945252">415-794-5252</a>
-      &nbsp;·&nbsp;
-      New York · Mexico City · Worldwide
     </div>
   </div>
 </section>
@@ -1624,19 +1376,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var slides = Array.prototype.slice.call(carousel.querySelectorAll('.hero-carousel-slide'));
   var dots = Array.prototype.slice.call(carousel.querySelectorAll('.hero-carousel-dot'));
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.hero-service-tab'));
-  var details = Array.prototype.slice.call(document.querySelectorAll('.service-detail'));
   var caption = document.getElementById('servicesHeroCaption');
   var heroLink = document.getElementById('servicesHeroLink');
+  var outline = document.getElementById('serviceListOutline');
   var prevBtn = carousel.querySelector('.hero-carousel-prev');
   var nextBtn = carousel.querySelector('.hero-carousel-next');
   var index = 0;
   var timer;
 
-  function showDetail(next) {
-    details.forEach(function (panel, i) {
-      panel.classList.toggle('is-active', i === next);
-      panel.setAttribute('aria-hidden', i === next ? 'false' : 'true');
-    });
+  function moveOutline() {
+    if (!outline || !tabs[index]) return;
+    var item = tabs[index].closest('li');
+    if (!item) return;
+    outline.style.top = item.offsetTop + 'px';
+    outline.style.height = item.offsetHeight + 'px';
   }
 
   function show(next) {
@@ -1654,11 +1407,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     tabs[index].classList.add('is-active');
     tabs[index].setAttribute('aria-selected', 'true');
     if (caption) caption.textContent = slides[index].getAttribute('data-caption') || '';
-    if (heroLink) {
-      heroLink.href = slides[index].getAttribute('data-href') || '#';
-      heroLink.textContent = slides[index].getAttribute('data-link-label') || 'Learn more →';
-    }
-    showDetail(index);
+    if (heroLink) heroLink.href = slides[index].getAttribute('href') || '#';
+    moveOutline();
   }
 
   function startAutoplay() {
@@ -1697,6 +1447,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
   carousel.addEventListener('mouseleave', startAutoplay);
 
+  window.addEventListener('resize', moveOutline);
   show(0);
   startAutoplay();
 })();
