@@ -533,29 +533,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
-const PAGES = [
-  { type: "Operating", title: "Museum Staff Portal & Handbook Review", desc: "Handbook audit, attorney coordination, and staff identity portals for operating museums.", url: "museum-staff-portal.html" },
-  { type: "Municipal", title: "For Cities — Museum Feasibility", desc: "City managers, mayors' offices, and feasibility before capital.", url: "for-cities.html" },
-  { type: "Guide", title: "Museum Strategic Planning", desc: "Mission, vision, roadmap, fees, and process.", url: "museum-strategic-planning.html" },
-  { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "museum-planning-services.html" },
-  { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and how to start a conversation.", url: "museum-planning-contact.html" },
-  { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology.", url: "index.html" }
-];
-const input = document.getElementById("search-input");
-const results = document.getElementById("searchResults");
-const overlay = document.getElementById("searchOverlay");
-document.getElementById("searchToggle").addEventListener("click", () => { overlay.classList.add("open"); setTimeout(() => input.focus(), 100); });
-document.getElementById("searchClose").addEventListener("click", () => { overlay.classList.remove("open"); input.value = ""; results.innerHTML = ""; });
-document.addEventListener("keydown", e => { if (e.key === "Escape") { overlay.classList.remove("open"); input.value = ""; results.innerHTML = ""; } });
-input.addEventListener("input", () => {
-  const q = input.value.toLowerCase().trim();
-  if (!q) { results.innerHTML = ""; return; }
-  const matches = PAGES.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
-  results.innerHTML = matches.length
-    ? matches.map(p => `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join("")
-    : '<div class="search-empty">No results found.</div>';
-});
+
 </script>
+<script src="assets/search-pages.js"></script>
+<script src="assets/site-search.js"></script>
 <script src="assets/nav-mobile.js" defer></script>
 </body>
 </html>

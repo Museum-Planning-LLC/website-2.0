@@ -1402,54 +1402,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 </script>
 
 <script>
-const PAGES = [
-  { type: "Municipal", title: "For Cities — Museum Feasibility", desc: "City managers, mayors' offices, and feasibility before capital.", url: "for-cities.html" },
-  { type: "Municipal", title: "Science Centers for Cities", desc: "Civic science & technology centers, feasibility, convergence-era model.", url: "for-cities-science-center.html" },
-  { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology.", url: "index.html" },
-  { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and how to start a conversation.", url: "museum-planning-contact.html" },
-  { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "museum-planning-services.html" },
-  { type: "Projects", title: "Projects — Forty Museums", desc: "Portfolio worldwide.", url: "museum-planning-projects.html" },
-  { type: "About", title: "About — Mark Walhimer", desc: "Managing partner, Museum Planning LLC since 1999, Pratt Institute, Bloomsbury author.", url: "museum-planning-about.html" },
-  { type: "MVI", title: "Museum Vitality Index", desc: "0–100 institutional health benchmarking.", url: "museum-vitality-index.html" },
-  { type: "Museum School", title: "Museum School", desc: "Guides on starting a museum, feasibility, and master planning.", url: "museum-school/index.html" },
-  { type: "Museum School", title: "How to Start a Museum", desc: "Ten steps, costs, common mistakes, and resources.", url: "museum-school/how-to-start-a-museum.html" },
-  { type: "Museum School", title: "What is a Museum Feasibility Study?", desc: "What it covers, how it works, cost and timeline.", url: "museum-school/what-is-a-museum-feasibility-study.html" },
-  { type: "Museum School", title: "What is a Museum Master Plan?", desc: "Building program, visitor experience, capital campaign strategy.", url: "museum-school/what-is-a-museum-master-plan.html" },
-  { type: "Guide", title: "Museum Feasibility Study — What You Get", desc: "Deliverables, costs, commissioning context.", url: "museum-feasibility-study.html" },
-  { type: "Guide", title: "Starting a Local History Museum", desc: "Historic buildings, collections, governance.", url: "local-history-museum.html" }
-];
-const input = document.getElementById("search-input");
-const results = document.getElementById("searchResults");
-const overlay = document.getElementById("searchOverlay");
-document.getElementById("searchToggle").addEventListener("click", function () {
-  overlay.classList.add("open");
-  setTimeout(function () { input.focus(); }, 100);
-});
-document.getElementById("searchClose").addEventListener("click", function () {
-  overlay.classList.remove("open");
-  input.value = "";
-  results.innerHTML = "";
-});
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
-    overlay.classList.remove("open");
-    input.value = "";
-    results.innerHTML = "";
-  }
-});
-input.addEventListener("input", function () {
-  const q = input.value.toLowerCase().trim();
-  if (!q) {
-    results.innerHTML = "";
-    return;
-  }
-  const matches = PAGES.filter(function (p) {
-    return (
-      p.title.toLowerCase().includes(q) ||
-      p.desc.toLowerCase().includes(q) ||
-      p.type.toLowerCase().includes(q)
-    );
-  });
+
   if (!matches.length) {
     results.innerHTML = '<div class="search-empty">No results found.</div>';
     return;
@@ -1471,6 +1424,8 @@ input.addEventListener("input", function () {
     .join("");
 });
 </script>
+<script src="assets/search-pages.js"></script>
+<script src="assets/site-search.js"></script>
 <script src="assets/nav-mobile.js" defer></script>
 
 </body>

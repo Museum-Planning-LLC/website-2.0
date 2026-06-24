@@ -252,34 +252,10 @@ nav{position:fixed;top:0;left:0;right:0;background:var(--deep);height:60px;
 </div>
 
 <script>
-const PAGES=[
-  {type:"Home",title:"Museum Planning LLC",desc:"Forty museums. One methodology.",url:"index.html"},
-  {type:"Thought Leadership",title:"Thought Leadership — overview",desc:"Museum AI, 2026 projects, convergence era, immersive planning, staff portal, MVI.",url:"thought-leadership.html"},
-  {type:"Contact",title:"Contact — Rates & conversation",desc:"Typical consulting ranges and how to start.",url:"museum-planning-contact.html"},
-  {type:"Services",title:"Services",desc:"Feasibility, strategic planning, master planning, exhibition design.",url:"museum-planning-services.html"},
-  {type:"Thought Leadership",title:"Museum AI — Smart Museums Practice",desc:"Museum AI inside feasibility and master planning.",url:"museum-ai/"},
-  {type:"Thought Leadership",title:"25 Museum Projects to Watch in 2026",desc:"Field analysis on openings and expansions.",url:"museum-projects-to-watch-2026.html"},
-  {type:"Thought Leadership",title:"Convergence Era",desc:"White paper — AI, industrial design, and cultural systems.",url:"convergence-era.html"},
-  {type:"Thought Leadership",title:"Immersive Museum Planning",desc:"Visitor journey and exhibition design.",url:"immersive-museum-planning.html"},
-  {type:"Thought Leadership",title:"Museum Staff Portal & Handbook Review",desc:"Handbook audit and staff identity portals.",url:"museum-staff-portal.html"},
-  {type:"Framework",title:"Museum Vitality Index",desc:"0–100 health scoring for museums.",url:"museum-vitality-index.html"},
-  {type:"Guide",title:"Museum Strategic Planning",desc:"Mission, vision, roadmap, fees, process.",url:"museum-strategic-planning.html"},
-  {type:"Museum School",title:"Museum School",desc:"Free guides on starting a museum and planning vocabulary.",url:"museum-school/index.html"},
-];
-const input=document.getElementById('search-input');
-const results=document.getElementById('searchResults');
-const overlay=document.getElementById('searchOverlay');
-document.getElementById('searchToggle').addEventListener('click',()=>{overlay.classList.add('open');setTimeout(()=>input.focus(),100);});
-document.getElementById('searchClose').addEventListener('click',()=>{overlay.classList.remove('open');input.value='';results.innerHTML='';});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){overlay.classList.remove('open');input.value='';results.innerHTML='';}});
-input.addEventListener('input',()=>{
-  const q=input.value.toLowerCase().trim();
-  if(!q){results.innerHTML='';return;}
-  const matches=PAGES.filter(p=>p.title.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)||p.type.toLowerCase().includes(q));
-  if(!matches.length){results.innerHTML='<div class="search-empty">No results found.</div>';return;}
-  results.innerHTML=matches.map(p=>`<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('');
-});
+
 </script>
+<script src="assets/search-pages.js"></script>
+<script src="assets/site-search.js"></script>
 <script src="assets/nav-mobile.js" defer></script>
 </body>
 </html>

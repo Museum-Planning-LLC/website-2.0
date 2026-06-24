@@ -414,28 +414,9 @@ function handleSubmit() {
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
-const PAGES = [
-  { type: "Guide", title: "Immersive Museum Planning", desc: "Science centers, local history, natural history — visitor journey and exhibition design.", url: "immersive-museum-planning.html" },
-  { type: "Guide", title: "Museum Feasibility Study — What You Get", desc: "Deliverables, costs, when to commission.", url: "museum-feasibility-study.html" },
-  { type: "Guide", title: "Museum Strategic Planning Consultants", desc: "Mission, vision, roadmap, fees, process.", url: "museum-strategic-planning.html" },
-  { type: "Guide", title: "Museum Master Planning", desc: "Building program through capital campaign.", url: "museum-master-planning.html" },
-  { type: "Guide", title: "Starting a Local History Museum", desc: "Historic buildings, collections, governance.", url: "local-history-museum.html" },
-  { type: "Municipal", title: "Science Centers for Cities", desc: "Civic science centers, convergence-era model.", url: "for-cities-science-center.html" },
-  { type: "Services", title: "Museum Consultants", desc: "Feasibility through opening day.", url: "museum-planning-services.html" },
-  { type: "Contact", title: "Contact", desc: "Rates and conversation.", url: "museum-planning-contact.html" },
-  { type: "Projects", title: "Projects", desc: "Forty museums worldwide.", url: "museum-planning-projects.html" }
-];
-const overlay = document.getElementById('searchOverlay');
-document.getElementById('searchToggle')?.addEventListener('click', () => { overlay.classList.add('open'); document.getElementById('search-input').focus(); });
-document.getElementById('searchClose')?.addEventListener('click', () => overlay.classList.remove('open'));
-document.getElementById('search-input')?.addEventListener('input', e => {
-  const q = e.target.value.toLowerCase().trim();
-  const box = document.getElementById('searchResults');
-  if (!q) { box.innerHTML = ''; return; }
-  box.innerHTML = PAGES.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q)).map(p =>
-    `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('') || '<p class="sr-desc" style="color:rgba(255,255,255,.3);padding:20px;">No results.</p>';
-});
 </script>
+<script src="assets/search-pages.js"></script>
+<script src="assets/site-search.js"></script>
 <script src="assets/nav-mobile.js" defer></script>
 </body>
 </html>

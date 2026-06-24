@@ -317,40 +317,10 @@ footer .footer-copy{font-size:12px;color:rgba(255,255,255,.25);}
 </div>
 
 <script>
-const PAGES = [
-  { type: "Museum School", title: "Museum Exhibition Design — Overview", desc: "Six-part series from planning through maintenance.", url: "index.html" },
-  { type: "Museum School", title: "Exhibition Design Part I — Planning", desc: "Visitor objectives, charter, budget, schedule.", url: "exhibition-design-part-i.html" },
-  { type: "Museum School", title: "Exhibition Design Part II — Design", desc: "Script, schematic, design development, final design.", url: "exhibition-design-part-ii.html" },
-  { type: "Museum School", title: "Exhibition Design Part III — Fabrication", desc: "Working drawings, fabricator, quality control.", url: "exhibition-design-part-iii.html" },
-  { type: "Museum School", title: "Exhibition Design Part IV — Installation", desc: "Load-in, staging, punch list, opening.", url: "exhibition-design-part-iv.html" },
-  { type: "Museum School", title: "Exhibition Design Part V — Maintenance", desc: "Operational exhibits, staff training, evaluation.", url: "exhibition-design-part-v.html" },
-  { type: "Museum School", title: "Exhibition Design Part VI — Full Process", desc: "Complete process summary and checklist.", url: "exhibition-design-part-vi.html" },
-  { type: "Services", title: "Museum Planning Services", desc: "Feasibility, strategic planning, master planning, exhibition design.", url: "../../museum-planning-services.html" },
-  { type: "Guide", title: "Immersive Museum Planning", desc: "Interactive and immersive exhibition design.", url: "../../immersive-museum-planning.html" },
-  { type: "Museum School", title: "How to Start a Museum", desc: "Ten steps to starting a museum.", url: "../how-to-start-a-museum.html" },
-];
-const input = document.getElementById('search-input');
-const results = document.getElementById('searchResults');
-const overlay = document.getElementById('searchOverlay');
-document.getElementById('searchToggle').addEventListener('click', () => {
-  overlay.classList.add('open');
-  setTimeout(() => input.focus(), 100);
-});
-document.getElementById('searchClose').addEventListener('click', () => {
-  overlay.classList.remove('open');
-  input.value = '';
-  results.innerHTML = '';
-});
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { overlay.classList.remove('open'); input.value = ''; results.innerHTML = ''; }
-});
-input.addEventListener('input', () => {
-  const q = input.value.toLowerCase().trim();
-  if (!q) { results.innerHTML = ''; return; }
-  const matches = PAGES.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
-  results.innerHTML = matches.length ? matches.map(p => `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`).join('') : '<div class="search-empty">No results found.</div>';
-});
+
 </script>
+<script src="../../assets/search-pages.js"></script>
+<script src="../../assets/site-search.js"></script>
 <script src="../../assets/nav-mobile.js" defer></script>
 </body>
 </html>

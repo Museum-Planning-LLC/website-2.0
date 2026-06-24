@@ -517,55 +517,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="search-results" id="searchResults"></div>
 </div>
-<script>
-(function () {
-  var PAGES = [
-    { type: "Resource", title: "Museum Vitality Index", desc: "0–100 composite scoring framework; size-normalized benchmarking.", url: "https://museum-planning-llc.github.io/website-2.0/museum-vitality-index.html" },
-    { type: "Home", title: "Museum Planning LLC", desc: "Forty museums. One methodology. Feasibility through opening day.", url: "https://museum-planning-llc.github.io/website-2.0/index.html" },
-    { type: "Contact", title: "Contact — Rates & conversation", desc: "Typical consulting ranges and how to start a conversation.", url: "https://museum-planning-llc.github.io/website-2.0/museum-planning-contact.html" },
-    { type: "Services", title: "Services — From Vision to Opening Day", desc: "Feasibility, strategic planning, master planning, exhibition design, evaluation.", url: "https://museum-planning-llc.github.io/website-2.0/museum-planning-services.html" },
-    { type: "Projects", title: "Projects — Forty Museums", desc: "Natural history, children's, science centers, cultural centers.", url: "https://museum-planning-llc.github.io/website-2.0/museum-planning-projects.html" },
-    { type: "About", title: "About — Mark Walhimer", desc: "Managing partner, Museum Planning LLC since 1999, Bloomsbury author.", url: "https://museum-planning-llc.github.io/website-2.0/museum-planning-about.html" },
-    { type: "Museum School", title: "Museum School", desc: "Guides: starting a museum, feasibility, master planning.", url: "https://museum-planning-llc.github.io/website-2.0/museum-school/index.html" }
-  ];
-  var input = document.getElementById("search-input");
-  var results = document.getElementById("searchResults");
-  var overlay = document.getElementById("searchOverlay");
-  document.getElementById("searchToggle").addEventListener("click", function () {
-    overlay.classList.add("open");
-    setTimeout(function () { input.focus(); }, 100);
-  });
-  document.getElementById("searchClose").addEventListener("click", function () {
-    overlay.classList.remove("open");
-    input.value = "";
-    results.innerHTML = "";
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      overlay.classList.remove("open");
-      input.value = "";
-      results.innerHTML = "";
-    }
-  });
-  input.addEventListener("input", function () {
-    var q = input.value.toLowerCase().trim();
-    if (!q) {
-      results.innerHTML = "";
-      return;
-    }
-    var matches = PAGES.filter(function (p) {
-      return p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.type.toLowerCase().includes(q);
-    });
-    if (!matches.length) {
-      results.innerHTML = '<div class="search-empty">No results found.</div>';
-      return;
-    }
-    results.innerHTML = matches.map(function (p) {
-      return '<a href="' + p.url + '" class="search-result"><div class="sr-type">' + p.type + '</div><div class="sr-title">' + p.title + '</div><div class="sr-desc">' + p.desc + '</div></a>';
-    }).join("");
-  });
-})();
-</script>
+<script src="../../assets/search-pages.js"></script>
+<script src="../../assets/site-search.js"></script>
 <script src="../../assets/nav-mobile.js" defer></script>
 
 <script>

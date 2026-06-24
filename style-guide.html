@@ -400,57 +400,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="search-results" id="searchResults"></div>
 </div>
 <script>
-const PAGES = [
-  {type:"Guide",title:"Website Style Guide",desc:"Design system, nav standards, SEO tiers, and consistency rules.",url:"style-guide.html"},
-  {type:"Guide",title:"Immersive Museum Planning",desc:"Science centers, local history, natural history — exhibition design.",url:"immersive-museum-planning.html"},
-  {type:"Guide",title:"Museum Feasibility Study — What You Get",desc:"Deliverables, costs, when to commission.",url:"museum-feasibility-study.html"},
-  {type:"Guide",title:"Museum Strategic Planning Consultants",desc:"Mission, vision, roadmap, fees, process.",url:"museum-strategic-planning.html"},
-  {type:"Guide",title:"Museum Master Planning",desc:"Building program through capital campaign.",url:"museum-master-planning.html"},
-  {type:"Home",title:"Museum Planning LLC",desc:"Forty museums. One methodology.",url:"index.html"},
-  {type:"Contact",title:"Contact — Rates & conversation",desc:"Typical consulting ranges and how to start a conversation.",url:"museum-planning-contact.html"},
-  {type:"Services",title:"Services — From Vision to Opening Day",desc:"Feasibility, strategic planning, master planning, exhibition design, evaluation.",url:"museum-planning-services.html"},
-  {type:"Projects",title:"Projects — Forty Museums",desc:"Natural history, children's, science centers, cultural centers.",url:"museum-planning-projects.html"},
-  {type:"About",title:"About — Mark Walhimer",desc:"Managing partner, Museum Planning LLC since 1999, Bloomsbury author.",url:"museum-planning-about.html"},
-  {type:"Museum School",title:"Museum School",desc:"How to start a museum, feasibility, and master planning guides.",url:"museum-school/index.html"},
-  {type:"White Paper",title:"Convergence Era",desc:"Industrial design, AI, and cultural systems.",url:"convergence-era.html"},
-  {type:"Framework",title:"Museum Vitality Index",desc:"0–100 health scoring with size-normalized benchmarking.",url:"museum-vitality-index.html"},
-];
-const input = document.getElementById("search-input");
-const results = document.getElementById("searchResults");
-const overlay = document.getElementById("searchOverlay");
-document.getElementById("searchToggle").addEventListener("click", () => {
-  overlay.classList.add("open");
-  setTimeout(() => input.focus(), 100);
-});
-document.getElementById("searchClose").addEventListener("click", () => {
-  overlay.classList.remove("open");
-  input.value = "";
-  results.innerHTML = "";
-});
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    overlay.classList.remove("open");
-    input.value = "";
-    results.innerHTML = "";
-  }
-});
-input.addEventListener("input", () => {
-  const q = input.value.toLowerCase().trim();
-  if (!q) { results.innerHTML = ""; return; }
-  const matches = PAGES.filter(p =>
-    p.title.toLowerCase().includes(q) ||
-    p.desc.toLowerCase().includes(q) ||
-    p.type.toLowerCase().includes(q)
-  );
-  if (!matches.length) {
-    results.innerHTML = '<div class="search-empty">No results found.</div>';
-    return;
-  }
-  results.innerHTML = matches.map(p =>
-    `<a href="${p.url}" class="search-result"><div class="sr-type">${p.type}</div><div class="sr-title">${p.title}</div><div class="sr-desc">${p.desc}</div></a>`
-  ).join("");
-});
+
 </script>
+<script src="assets/search-pages.js"></script>
+<script src="assets/site-search.js"></script>
 <script src="assets/nav-mobile.js" defer></script>
 </body>
 </html>
