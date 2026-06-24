@@ -82,8 +82,7 @@ def main() -> None:
             continue
         add(source, dest, trailing_slash=False)
         # WordPress legacy URLs often used trailing slashes; Cloudflare must match both.
-        if source in PRIORITY_SOURCES:
-            add(source, dest, trailing_slash=True)
+        add(source, dest, trailing_slash=True)
 
     skip_prefixes = {
         "/portfolio-item/",

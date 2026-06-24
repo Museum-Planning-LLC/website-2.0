@@ -12,6 +12,9 @@ ROOT = Path(__file__).resolve().parent
 BASE = "https://museumplanning.com"
 LASTMOD = date.today().isoformat()
 
+# Not for search indexing — error page and internal style reference.
+SITEMAP_EXCLUDE = frozenset({"404.html", "style-guide.html"})
+
 TITLE_RE = re.compile(r"<title>([^<]+)</title>", re.I)
 META_DESC_RE = re.compile(
     r'<meta\s+name="description"\s+content="([^"]*)"', re.I
@@ -134,6 +137,8 @@ def write_sitemap() -> None:
         "urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     )
     for rel in html_files:
+        if rel in SITEMAP_EXCLUDE:
+            continue
         url_el = ET.SubElement(urlset, "url")
         ET.SubElement(url_el, "loc").text = loc_for(rel)
         ET.SubElement(url_el, "lastmod").text = LASTMOD
