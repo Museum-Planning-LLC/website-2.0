@@ -1,24 +1,24 @@
 {
-  "export_dir_default": "~/Desktop/museum-export",
+  "export_dir_default": "/Users/markwalhimer/Local Sites/museum-planning-wordpress/app/public/wp-content/uploads/simply-static/temp-files/simply-static-1-1782065628",
   "site": "https://museumplanning.com",
   "projects": [
     {
       "wp_slug": "academy-studios",
       "live_slug": "academy-studios",
       "title": "Academy Studios",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "african-american-museum-exhibition-design",
       "live_slug": "interactive-african-american-museum",
       "title": "Interactive African American Museum and Cultural Center",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "air-and-space-science-center-exhibition",
       "live_slug": "air-and-space-science-center-exhibition",
       "title": "Air and Space \u2013 Science Center Exhibition",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "alcatraz-landing-2",
@@ -36,13 +36,13 @@
       "wp_slug": "amazing-sensations-science-center-exhibition",
       "live_slug": "amazing-sensations-science-center-exhibition",
       "title": "Amazing Sensations \u2013 Science Center Exhibition",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "bolivian-museum",
       "live_slug": "bolivian-museum",
       "title": "Bolivian Museum",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "c-o-polk-interactive-museum",
@@ -54,196 +54,196 @@
       "wp_slug": "cade-steam-music-concept",
       "live_slug": "cade-museum-steam",
       "title": "Cade \u2013 STEAM Music Concept",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "childrens-museum-indianapolis",
       "live_slug": "childrens-museum-indianapolis",
       "title": "Children's Museum of Indianapolis",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "childrens-museum-indianapolis-sculpture",
       "live_slug": "childrens-museum-indianapolis-sculpture",
       "title": "Children's Museum of Indianapolis Sculpture",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "childrens-museum-of-manhhattan",
       "live_slug": "childrens-museum-manhattan",
       "title": "Children's Museum of Manhattan",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "designing-museum-experiences-book-by-mark-walhimer",
       "live_slug": "designing-museum-experiences",
       "title": "Designing Museum Experiences",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "habitot-childrens-museum",
       "live_slug": "habitot-childrens-museum",
       "title": "Habitot Children's Museum",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "interactive-exhibit-consultant",
       "live_slug": "interactive-exhibit-consultant",
       "title": "Louisiana State Museum",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "interactive-nature-conservation-museum",
       "live_slug": "interactive-nature-conservation-museum",
       "title": "Interactive Nature Conservation Museum",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "mide-museo-interactivo-de-economia",
       "live_slug": "mide-museo-interactivo-de-economia",
       "title": "MIDE, Museo Interactivo de Econom\u00eda",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "mobius-science-center",
       "live_slug": "mobius-science-center",
       "title": "Mobius Science Center",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "museo-memoria-y-tolerancia",
       "live_slug": "museo-memoria-y-tolerancia",
       "title": "Museo Memoria y Tolerancia",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "museum-customer-experience-design",
       "live_slug": "museum-customer-experience-design",
       "title": "Museum Customer Experience Design",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "museum-inclusion-simulator",
       "live_slug": "museum-inclusion-simulator",
       "title": "Museum Inclusion Simulator",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "museum-planning-workshop",
       "live_slug": "museum-planning-workshop",
       "title": "Museum Planning Workshop",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "museum-project-management",
       "live_slug": "museum-project-management",
       "title": "Museum Project Management",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "museum-regular-man",
       "live_slug": "museum-regular-man",
       "title": "Museum Regular Man",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "museums-101",
       "live_slug": "museums-101",
       "title": "Museums 101",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "muzeo",
       "live_slug": "muzeo",
       "title": "Muzeo",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "nature-play-museum-strategic-planning",
       "live_slug": "nature-play-museum-strategic-planning",
       "title": "Science Center Strategic Planning \u2013 Nature Exhibition",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "pge-look-forward-bus",
       "live_slug": "pge-look-forward-bus",
       "title": "PG&E Look Forward Bus",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "poughkeepsie-center-for-arts-creativity-pcac-feasibility-study",
       "live_slug": "poughkeepsie-center-for-arts-creativity-pcac-feasibility-study",
       "title": "Poughkeepsie Center for Arts & Creativity (PCAC) Feasibility Study",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "pretend-city-childrens-museum-of-orange-county",
       "live_slug": "pretend-city-childrens-museum",
       "title": "Pretend City, Children's Museum of Orange County",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "san-diego-childrens-museum",
       "live_slug": "san-diego-childrens-museum",
       "title": "San Diego Children's Museum",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "science-center-master-planning",
       "live_slug": "discovery-science-center",
       "title": "Discovery Science Center",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "science-of-surfing",
       "live_slug": "science-of-surfing",
       "title": "Science of Surfing \u2013 Traveling Museum Exhibition",
-      "status": "pending",
+      "status": "skinned",
       "template": "traveling"
     },
     {
       "wp_slug": "science-technology-engineering-art-and-mathematics-steam-website",
       "live_slug": "steam-museum-website",
       "title": "STEAM Museum Website",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "steam-pop-up-museum",
       "live_slug": "steam-pop-up-museum",
       "title": "STEAM Pop-up Museum",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "stem-steam-science-center",
       "live_slug": "stem-steam-science-center",
       "title": "Spark Dome \u2013 STEM / STEAM Science Center",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "the-tech-interactive-museum",
       "live_slug": "the-tech-interactive",
       "title": "The Tech Interactive",
-      "status": "pending"
+      "status": "skinned"
     },
     {
       "wp_slug": "toyota-mobile-hybrid-experience",
       "live_slug": "toyota-mobile-hybrid-experience",
       "title": "Toyota Mobile Hybrid Experience",
-      "status": "pending",
+      "status": "skinned",
       "template": "traveling"
     },
     {
       "wp_slug": "trans-studio-science-center",
       "live_slug": "trans-studio-science-center",
       "title": "Trans Studio Science Center",
-      "status": "pending"
+      "status": "skinned"
     },
     {
-      "wp_slug": null,
+      "wp_slug": "university-of-arizona",
       "live_slug": "arizona-natural-resources-museum",
       "title": "Arizona Natural Resources Museum",
-      "status": "pending",
-      "source": "local-only"
+      "status": "skinned",
+      "source": "wordpress"
     },
     {
       "wp_slug": null,
