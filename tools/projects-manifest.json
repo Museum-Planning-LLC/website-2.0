@@ -246,11 +246,11 @@
       "source": "wordpress"
     },
     {
-      "wp_slug": null,
+      "wp_slug": "city-of-mcdonough-georgia",
       "live_slug": "city-of-mcdonough-georgia",
       "title": "City of McDonough, Georgia",
-      "status": "pending",
-      "source": "local-only"
+      "status": "skinned",
+      "source": "wordpress"
     },
     {
       "wp_slug": null,
@@ -267,18 +267,18 @@
       "source": "local-only"
     },
     {
-      "wp_slug": null,
+      "wp_slug": "discovery-center-at-murfree-spring",
       "live_slug": "discovery-center-murfree-spring",
       "title": "Discovery Center at Murfree Spring",
-      "status": "pending",
-      "source": "local-only"
+      "status": "skinned",
+      "source": "wordpress"
     },
     {
-      "wp_slug": null,
+      "wp_slug": "frehner-museum-southern-utah-university",
       "live_slug": "frehner-museum-southern-utah-university",
       "title": "Frehner Museum of Natural History",
-      "status": "pending",
-      "source": "local-only"
+      "status": "live",
+      "source": "wordpress"
     },
     {
       "wp_slug": "natural-history-museum",
@@ -289,11 +289,12 @@
       "canonical_url": "https://museumplanning.com/projects/howard-natural-history-museum.html"
     },
     {
-      "wp_slug": null,
+      "wp_slug": "museum-of-arts-and-sciences",
       "live_slug": "mas-executive-director",
       "title": "Museum of Arts and Sciences",
-      "status": "pending",
-      "source": "local-only"
+      "status": "live",
+      "source": "wordpress",
+      "notes": "Also see mas-art-tech-collaboration.html"
     },
     {
       "wp_slug": null,

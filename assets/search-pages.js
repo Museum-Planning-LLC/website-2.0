@@ -502,6 +502,18 @@ window.SITE_SEARCH_PAGES = [
     "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/amazing-sensations-science-center-exhibition/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/bolivian-museum/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
     "url": "portfolio-item/c-o-polk-interactive-museum/index.html"
   },
   {
@@ -556,7 +568,19 @@ window.SITE_SEARCH_PAGES = [
     "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/habitot-childrens-museum/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
     "url": "portfolio-item/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/interactive-exhibit-consultant/index.html"
   },
   {
     "type": "Page",
@@ -586,6 +610,42 @@ window.SITE_SEARCH_PAGES = [
     "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/museum-customer-experience-design/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/museum-inclusion-simulator/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/museum-planning-workshop/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/museum-project-management/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/museum-regular-man/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/museums-101/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
     "url": "portfolio-item/muzeo/index.html"
   },
   {
@@ -598,13 +658,55 @@ window.SITE_SEARCH_PAGES = [
     "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/nature-play-museum-strategic-planning/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
     "url": "portfolio-item/pge-look-forward-bus/index.html"
   },
   {
     "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/poughkeepsie-center-for-arts-creativity-pcac-feasibility-study/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
     "url": "portfolio-item/pretend-city-childrens-museum-of-orange-county/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/san-diego-childrens-museum/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/science-center-master-planning/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/science-of-surfing/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/science-technology-engineering-art-and-mathematics-steam-website/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "portfolio-item/steam-pop-up-museum/index.html"
   },
   {
     "type": "Page",
@@ -651,8 +753,14 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Project",
     "title": "Academy Studios",
-    "desc": "Academy Studios · United States · Museum Planning LLC",
+    "desc": "Academy Studios — Museum Planning LLC project case study.",
     "url": "projects/academy-studios.html"
+  },
+  {
+    "type": "Project",
+    "title": "Air and Space – Science Center Exhibition",
+    "desc": "Air and Space – Science Center Exhibition — Museum Planning LLC project case study.",
+    "url": "projects/air-and-space-science-center-exhibition.html"
   },
   {
     "type": "Project",
@@ -668,9 +776,21 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Project",
+    "title": "Amazing Sensations – Science Center Exhibition",
+    "desc": "Amazing Sensations – Science Center Exhibition — Museum Planning LLC project case study.",
+    "url": "projects/amazing-sensations-science-center-exhibition.html"
+  },
+  {
+    "type": "Project",
     "title": "Arizona Natural Resources Museum (ANRM)",
     "desc": "Arizona Natural Resources Museum (ANRM) · University of Arizona · Tucson, Arizona · Museum Planning LLC",
     "url": "projects/arizona-natural-resources-museum.html"
+  },
+  {
+    "type": "Project",
+    "title": "Bolivian Museum",
+    "desc": "Bolivian Museum — Museum Planning LLC project case study.",
+    "url": "projects/bolivian-museum.html"
   },
   {
     "type": "Project",
@@ -680,38 +800,38 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Project",
-    "title": "Cade Museum — STEAM Music Concept",
-    "desc": "Cade Museum — STEAM Music Concept · Gainesville, Florida · Museum Planning LLC",
+    "title": "Cade – STEAM Music Concept",
+    "desc": "Cade – STEAM Music Concept — Museum Planning LLC project case study.",
     "url": "projects/cade-museum-steam.html"
   },
   {
     "type": "Project",
-    "title": "Children's Museum of Indianapolis — Sculpture",
-    "desc": "Children's Museum of Indianapolis — Sculpture · Indianapolis, Indiana · Museum Planning LLC",
+    "title": "Children&#x27;s Museum of Indianapolis Sculpture",
+    "desc": "Children&#x27;s Museum of Indianapolis Sculpture — Museum Planning LLC project case study.",
     "url": "projects/childrens-museum-indianapolis-sculpture.html"
   },
   {
     "type": "Project",
-    "title": "Children's Museum of Indianapolis",
-    "desc": "Children's Museum of Indianapolis · Indianapolis, Indiana · Museum Planning LLC",
+    "title": "Children&#x27;s Museum of Indianapolis",
+    "desc": "Children&#x27;s Museum of Indianapolis — Museum Planning LLC project case study.",
     "url": "projects/childrens-museum-indianapolis.html"
   },
   {
     "type": "Project",
-    "title": "Children's Museum of Manhattan",
-    "desc": "Children's Museum of Manhattan · New York, New York · Museum Planning LLC",
+    "title": "Children&#x27;s Museum of Manhattan",
+    "desc": "Children&#x27;s Museum of Manhattan — Museum Planning LLC project case study.",
     "url": "projects/childrens-museum-manhattan.html"
   },
   {
     "type": "Project",
     "title": "C.O. Polk Interactive Museum",
-    "desc": "C.O. Polk Interactive Museum — turn-key local history museum for the City of McDonough, Georgia. Master planning, exhibition design, and project management by Museum Planning LLC.",
+    "desc": "C.O. Polk Interactive Museum — Museum Planning LLC project case study.",
     "url": "projects/city-of-mcdonough-georgia.html"
   },
   {
     "type": "Project",
     "title": "Designing Museum Experiences",
-    "desc": "Designing Museum Experiences · Published 2021 · Museum Planning LLC",
+    "desc": "Designing Museum Experiences — Museum Planning LLC project case study.",
     "url": "projects/designing-museum-experiences.html"
   },
   {
@@ -723,7 +843,7 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Project",
     "title": "Discovery Science Center",
-    "desc": "Discovery Science Center · Orange County, California · Museum Planning LLC",
+    "desc": "Discovery Science Center — Museum Planning LLC project case study.",
     "url": "projects/discovery-science-center.html"
   },
   {
@@ -731,6 +851,12 @@ window.SITE_SEARCH_PAGES = [
     "title": "Frehner Museum of Natural History",
     "desc": "Frehner Museum of Natural History · Southern Utah University · Cedar City, Utah · Museum Planning LLC",
     "url": "projects/frehner-museum-southern-utah-university.html"
+  },
+  {
+    "type": "Project",
+    "title": "Habitot Children&#x27;s Museum",
+    "desc": "Habitot Children&#x27;s Museum — Museum Planning LLC project case study.",
+    "url": "projects/habitot-childrens-museum.html"
   },
   {
     "type": "Project",
@@ -746,14 +872,20 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Project",
-    "title": "Interactive African American Museum & Cultural Center",
-    "desc": "Interactive African American Museum & Cultural Center · Indiana · Museum Planning LLC",
+    "title": "Interactive African American Museum and Cultural Center",
+    "desc": "Interactive African American Museum and Cultural Center — Museum Planning LLC project case study.",
     "url": "projects/interactive-african-american-museum.html"
   },
   {
     "type": "Project",
+    "title": "Louisiana State Museum",
+    "desc": "Louisiana State Museum — Museum Planning LLC project case study.",
+    "url": "projects/interactive-exhibit-consultant.html"
+  },
+  {
+    "type": "Project",
     "title": "Interactive Nature Conservation Museum",
-    "desc": "Interactive Nature Conservation Museum · United States · Museum Planning LLC",
+    "desc": "Interactive Nature Conservation Museum — Museum Planning LLC project case study.",
     "url": "projects/interactive-nature-conservation-museum.html"
   },
   {
@@ -776,45 +908,99 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Project",
-    "title": "MIDE — Museo Interactivo de Economía",
-    "desc": "MIDE — Museo Interactivo de Economía · Mexico City, Mexico · Museum Planning LLC",
+    "title": "MIDE, Museo Interactivo de Economía",
+    "desc": "MIDE, Museo Interactivo de Economía — Museum Planning LLC project case study.",
     "url": "projects/mide-museo-interactivo-de-economia.html"
   },
   {
     "type": "Project",
+    "title": "Mobius Science Center",
+    "desc": "Mobius Science Center — Museum Planning LLC project case study.",
+    "url": "projects/mobius-science-center.html"
+  },
+  {
+    "type": "Project",
     "title": "Museo Memoria y Tolerancia",
-    "desc": "Museo Memoria y Tolerancia · Mexico City, Mexico · Museum Planning LLC",
+    "desc": "Museo Memoria y Tolerancia — Museum Planning LLC project case study.",
     "url": "projects/museo-memoria-y-tolerancia.html"
   },
   {
     "type": "Project",
+    "title": "Museum Customer Experience Design",
+    "desc": "Museum Customer Experience Design — Museum Planning LLC project case study.",
+    "url": "projects/museum-customer-experience-design.html"
+  },
+  {
+    "type": "Project",
+    "title": "Museum Inclusion Simulator",
+    "desc": "Museum Inclusion Simulator — Museum Planning LLC project case study.",
+    "url": "projects/museum-inclusion-simulator.html"
+  },
+  {
+    "type": "Project",
+    "title": "Museum Planning Workshop",
+    "desc": "Museum Planning Workshop — Museum Planning LLC project case study.",
+    "url": "projects/museum-planning-workshop.html"
+  },
+  {
+    "type": "Project",
+    "title": "Museum Project Management",
+    "desc": "Museum Project Management — Museum Planning LLC project case study.",
+    "url": "projects/museum-project-management.html"
+  },
+  {
+    "type": "Project",
+    "title": "Museum Regular Man",
+    "desc": "Museum Regular Man — Museum Planning LLC project case study.",
+    "url": "projects/museum-regular-man.html"
+  },
+  {
+    "type": "Project",
     "title": "Museums 101",
-    "desc": "Museums 101 · Published 2015 · Museum Planning LLC",
+    "desc": "Museums 101 — Museum Planning LLC project case study.",
     "url": "projects/museums-101.html"
   },
   {
     "type": "Project",
     "title": "Muzeo",
-    "desc": "Muzeo · Anaheim, California · Museum Planning LLC",
+    "desc": "Muzeo — Museum Planning LLC project case study.",
     "url": "projects/muzeo.html"
   },
   {
     "type": "Project",
-    "title": "PG&E Look Forward Bus",
-    "desc": "PG&E Look Forward Bus · California · Museum Planning LLC",
+    "title": "Science Center Strategic Planning – Nature Exhibition",
+    "desc": "Science Center Strategic Planning – Nature Exhibition — Museum Planning LLC project case study.",
+    "url": "projects/nature-play-museum-strategic-planning.html"
+  },
+  {
+    "type": "Project",
+    "title": "PG&amp;E Look Forward Bus",
+    "desc": "PG&amp;E Look Forward Bus — Museum Planning LLC project case study.",
     "url": "projects/pge-look-forward-bus.html"
   },
   {
     "type": "Project",
-    "title": "Pretend City, Children's Museum of Orange County",
-    "desc": "Pretend City, Children's Museum of Orange County · Irvine, California · Museum Planning LLC",
+    "title": "Poughkeepsie Center for Arts &amp; Creativity (PCAC) Feasibility Study",
+    "desc": "Poughkeepsie Center for Arts &amp; Creativity (PCAC) Feasibility Study — Museum Planning LLC project case study.",
+    "url": "projects/poughkeepsie-center-for-arts-creativity-pcac-feasibility-study.html"
+  },
+  {
+    "type": "Project",
+    "title": "Pretend City, Children&#x27;s Museum of Orange County",
+    "desc": "Pretend City, Children&#x27;s Museum of Orange County — Museum Planning LLC project case study.",
     "url": "projects/pretend-city-childrens-museum.html"
   },
   {
     "type": "Project",
-    "title": "San Diego Children's Museum",
-    "desc": "San Diego Children's Museum · San Diego, California · Museum Planning LLC",
+    "title": "San Diego Children&#x27;s Museum",
+    "desc": "San Diego Children&#x27;s Museum — Museum Planning LLC project case study.",
     "url": "projects/san-diego-childrens-museum.html"
+  },
+  {
+    "type": "Project",
+    "title": "Science of Surfing – Traveling Museum Exhibition",
+    "desc": "Science of Surfing – Traveling Museum Exhibition — Museum Planning LLC project case study.",
+    "url": "projects/science-of-surfing.html"
   },
   {
     "type": "Project",
@@ -824,21 +1010,39 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Project",
-    "title": "STEAM Museum Website & Digital Experience",
-    "desc": "Portfolio redirect — Museum Planning LLC projects.",
+    "title": "STEAM Museum Website",
+    "desc": "STEAM Museum Website — Museum Planning LLC project case study.",
     "url": "projects/steam-museum-website.html"
   },
   {
     "type": "Project",
-    "title": "The Tech Interactive — Innovation Exhibits",
-    "desc": "The Tech Interactive — Innovation Exhibits · San Jose, California · Museum Planning LLC",
+    "title": "STEAM Pop-up Museum",
+    "desc": "STEAM Pop-up Museum — Museum Planning LLC project case study.",
+    "url": "projects/steam-pop-up-museum.html"
+  },
+  {
+    "type": "Project",
+    "title": "Spark Dome – STEM / STEAM Science Center",
+    "desc": "Spark Dome – STEM / STEAM Science Center — Museum Planning LLC project case study.",
+    "url": "projects/stem-steam-science-center.html"
+  },
+  {
+    "type": "Project",
+    "title": "The Tech Interactive",
+    "desc": "The Tech Interactive — Museum Planning LLC project case study.",
     "url": "projects/the-tech-interactive.html"
   },
   {
     "type": "Project",
     "title": "Toyota Mobile Hybrid Experience",
-    "desc": "Toyota Mobile Hybrid Experience · United States · Museum Planning LLC",
+    "desc": "Toyota Mobile Hybrid Experience — Museum Planning LLC project case study.",
     "url": "projects/toyota-mobile-hybrid-experience.html"
+  },
+  {
+    "type": "Project",
+    "title": "Trans Studio Science Center",
+    "desc": "Trans Studio Science Center — Museum Planning LLC project case study.",
+    "url": "projects/trans-studio-science-center.html"
   },
   {
     "type": "Page",
@@ -875,6 +1079,12 @@ window.SITE_SEARCH_PAGES = [
     "title": "Thought Leadership",
     "desc": "Field notes, white papers, and practice lenses from Museum Planning LLC — museum AI, immersive planning, staff portals, convergence-era civic museums, and 2026 projects to watch.",
     "url": "thought-leadership.html"
+  },
+  {
+    "type": "Page",
+    "title": "University of Arizona - Arizona Natural Resources Museum (ANRM)",
+    "desc": "The Nature and Technology Museum is an interactive natural history, conservation center, online virtual museum, and student in-school programming.",
+    "url": "tools/sources/university-of-arizona-wp.html"
   },
   {
     "type": "Page",

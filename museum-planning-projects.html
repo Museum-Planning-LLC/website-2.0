@@ -470,6 +470,61 @@ footer {
   text-align: center; padding: 40px 0;
 }
 
+
+/* ── FULL ARCHIVE ── */
+.projects-archive {
+  background: var(--navy);
+  padding: 72px 56px 88px;
+  border-top: 3px solid var(--gold);
+}
+.archive-inner { max-width: 1100px; margin: 0 auto; }
+.archive-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 14px;
+}
+.archive-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.archive-deck {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.55);
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+.archive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 3rem;
+}
+.archive-list li {
+  break-inside: avoid;
+  margin: 0 0 10px;
+}
+.archive-list a {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: rgba(255,255,255,.82);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,.25);
+  line-height: 1.5;
+}
+.archive-list a:hover { color: var(--gold); border-color: var(--gold); }
+@media (max-width: 768px) {
+  .projects-archive { padding: 56px 24px 72px; }
+  .archive-list { columns: 1; }
+}
+
 </style>
   <link rel="stylesheet" href="assets/nav-mobile.css">
   <link rel="stylesheet" href="assets/site-footer.css">
@@ -1048,6 +1103,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- CTA -->
+<!-- PROJECTS_ARCHIVE_START -->
+<div class="projects-archive">
+  <div class="archive-inner">
+    <div class="archive-label">Full project archive</div>
+    <h2 class="archive-title">All case studies</h2>
+    <p class="archive-deck">Complete index of 47 museum planning projects — including earlier engagements not shown in the featured grid above. Every page is a full case study with images and project documentation.</p>
+    <ul class="archive-list">
+        <li><a href="projects/academy-studios.html">Academy Studios</a></li>
+        <li><a href="projects/air-and-space-science-center-exhibition.html">Air and Space – Science Center Exhibition</a></li>
+        <li><a href="projects/alcatraz-landing.html">Alcatraz Landing</a></li>
+        <li><a href="projects/alcatraz-traveling-exhibition.html">Alcatraz: Life on the Rock — Traveling Exhibition</a></li>
+        <li><a href="projects/amazing-sensations-science-center-exhibition.html">Amazing Sensations – Science Center Exhibition</a></li>
+        <li><a href="projects/arizona-natural-resources-museum.html">Arizona Natural Resources Museum (ANRM)</a></li>
+        <li><a href="projects/bolivian-museum.html">Bolivian Museum</a></li>
+        <li><a href="projects/cade-museum-steam.html">Cade – STEAM Music Concept</a></li>
+        <li><a href="projects/childrens-museum-indianapolis-sculpture.html">Children&#x27;s Museum of Indianapolis Sculpture</a></li>
+        <li><a href="projects/childrens-museum-indianapolis.html">Children&#x27;s Museum of Indianapolis</a></li>
+        <li><a href="projects/childrens-museum-manhattan.html">Children&#x27;s Museum of Manhattan</a></li>
+        <li><a href="projects/city-of-mcdonough-georgia.html">C.O. Polk Interactive Museum</a></li>
+        <li><a href="projects/designing-museum-experiences.html">Designing Museum Experiences</a></li>
+        <li><a href="projects/discovery-center-murfree-spring.html">Discovery Center at Murfree Spring</a></li>
+        <li><a href="projects/discovery-science-center.html">Discovery Science Center</a></li>
+        <li><a href="projects/frehner-museum-southern-utah-university.html">Frehner Museum of Natural History</a></li>
+        <li><a href="projects/habitot-childrens-museum.html">Habitot Children&#x27;s Museum</a></li>
+        <li><a href="projects/howard-natural-history-museum.html">Howard Natural History Museum</a></li>
+        <li><a href="projects/interactive-african-american-museum.html">Interactive African American Museum and Cultural Center</a></li>
+        <li><a href="projects/interactive-exhibit-consultant.html">Louisiana State Museum</a></li>
+        <li><a href="projects/interactive-nature-conservation-museum.html">Interactive Nature Conservation Museum</a></li>
+        <li><a href="projects/mas-art-tech-collaboration.html">Museum of Arts and Sciences — Art &amp; Tech Collaboration</a></li>
+        <li><a href="projects/mas-executive-director.html">Museum of Arts and Sciences — Executive Director</a></li>
+        <li><a href="projects/mcdonough-cultural-plan.html">City of McDonough Cultural Plan</a></li>
+        <li><a href="projects/mide-museo-interactivo-de-economia.html">MIDE, Museo Interactivo de Economía</a></li>
+        <li><a href="projects/mobius-science-center.html">Mobius Science Center</a></li>
+        <li><a href="projects/museo-memoria-y-tolerancia.html">Museo Memoria y Tolerancia</a></li>
+        <li><a href="projects/museum-customer-experience-design.html">Museum Customer Experience Design</a></li>
+        <li><a href="projects/museum-inclusion-simulator.html">Museum Inclusion Simulator</a></li>
+        <li><a href="projects/museum-planning-workshop.html">Museum Planning Workshop</a></li>
+        <li><a href="projects/museum-project-management.html">Museum Project Management</a></li>
+        <li><a href="projects/museum-regular-man.html">Museum Regular Man</a></li>
+        <li><a href="projects/museums-101.html">Museums 101</a></li>
+        <li><a href="projects/muzeo.html">Muzeo</a></li>
+        <li><a href="projects/nature-play-museum-strategic-planning.html">Science Center Strategic Planning – Nature Exhibition</a></li>
+        <li><a href="projects/pge-look-forward-bus.html">PG&amp;E Look Forward Bus</a></li>
+        <li><a href="projects/poughkeepsie-center-for-arts-creativity-pcac-feasibility-study.html">Poughkeepsie Center for Arts &amp; Creativity (PCAC) Feasibility Study</a></li>
+        <li><a href="projects/pretend-city-childrens-museum.html">Pretend City, Children&#x27;s Museum of Orange County</a></li>
+        <li><a href="projects/san-diego-childrens-museum.html">San Diego Children&#x27;s Museum</a></li>
+        <li><a href="projects/science-of-surfing.html">Science of Surfing – Traveling Museum Exhibition</a></li>
+        <li><a href="projects/shared-ground.html">Shared Ground — Interactive Installation · Museum Planning LLC</a></li>
+        <li><a href="projects/steam-museum-website.html">STEAM Museum Website</a></li>
+        <li><a href="projects/steam-pop-up-museum.html">STEAM Pop-up Museum</a></li>
+        <li><a href="projects/stem-steam-science-center.html">Spark Dome – STEM / STEAM Science Center</a></li>
+        <li><a href="projects/the-tech-interactive.html">The Tech Interactive</a></li>
+        <li><a href="projects/toyota-mobile-hybrid-experience.html">Toyota Mobile Hybrid Experience</a></li>
+        <li><a href="projects/trans-studio-science-center.html">Trans Studio Science Center</a></li>
+    </ul>
+  </div>
+</div>
+<!-- PROJECTS_ARCHIVE_END -->
+
+
 <div class="projects-cta">
   <h2>Your museum<br><em>could be next.</em></h2>
   <p>Whether you're starting from a collection, a community need, or a capital campaign — we bring forty museums of experience to your first conversation.</p>
