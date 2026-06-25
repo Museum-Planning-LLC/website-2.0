@@ -128,6 +128,12 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
+    "title": "Clients",
+    "desc": "Museum Planning LLC client list — museums, science centers, and cultural institutions across the United States and worldwide since 1999.",
+    "url": "clients/index.html"
+  },
+  {
+    "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
     "url": "contact-museum-planning/index.html"

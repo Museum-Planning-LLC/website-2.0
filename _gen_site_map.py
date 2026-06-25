@@ -463,6 +463,7 @@ footer {
       <li><a href="museum-planning-services.html">Services</a></li>
       <li><a href="museum-planning-projects.html">Projects</a></li>
       <li><a href="museum-planning-about.html">About</a></li>
+      <li><a href="clients/index.html">Clients</a></li>
       <li><a href="museum-planning-contact.html">Contact</a></li>
     </ul>
   </section>
