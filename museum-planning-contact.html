@@ -641,30 +641,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   reveals.forEach(function (el) { io.observe(el); });
 })();
 </script>
-
-<script>
-
-  if (!matches.length) {
-    results.innerHTML = '<div class="search-empty">No results found.</div>';
-    return;
-  }
-  results.innerHTML = matches
-    .map(function (p) {
-      return (
-        '<a href="' +
-        p.url +
-        '" class="search-result"><div class="sr-type">' +
-        p.type +
-        "</div><div class=\"sr-title\">" +
-        p.title +
-        '</div><div class="sr-desc">' +
-        p.desc +
-        "</div></a>"
-      );
-    })
-    .join("");
-});
-</script>
   <script src="assets/search-pages.js"></script>
 <script src="assets/site-search.js"></script>
 <script src="assets/nav-mobile.js" defer></script>

@@ -127,10 +127,11 @@ window.SITE_SEARCH_PAGES = [
     "url": "by-michael-vega/index.html"
   },
   {
-    "type": "Page",
+    "type": "Clients",
     "title": "Clients",
-    "desc": "Museum Planning LLC client list — museums, science centers, and cultural institutions across the United States and worldwide since 1999.",
-    "url": "clients/index.html"
+    "desc": "Museum Planning LLC clients — full client list of museums, science centers, zoos, and cultural institutions across the United States and worldwide since 1999.",
+    "url": "clients/index.html",
+    "keywords": "Akron Zoo, Akron, OH (as staff Academy Studios) Alcatraz Island (U.S. National Park Service), San Francisco, CA Brooker Creek Preserve, Tarpon Springs, FL (as staff Academy Studios) Butterfly House C.O. Polk Interactive Museum, McDonough, GA, 2019 Cabela Family Foundation The Cade California Academy of Science, San Francisco, CA (as staff Academy Studios) California Unity Council, Sacramento, CA (as staff Academy Studios) Central Sierra Historical Society, Shaver Lake, CA (as staff Academy Studios) Children's Museum of Indianapolis, Indianapolis, IN (as staff) Children's Museum of Manhattan (as staff) Children's Museum of San Diego City of Fort Worth City of McDonough, Georgia Denver Museum of Nature and Science (Group Delphi) Detroit Science Center (Group Delphi) Discovery Center at Murfree Spring Discovery Center Malaysia Discovery Science Center Edgewood County Park and Nature Preserve Ford Museum “Heroes of Flight” (Academy Studios) Habitot Children's Museum Hornblower, operator of Alcatraz Cruises Indianapolis Children's Museum International Balloon Museum, Albuquerque, New Mexico (Academy Studios) International Wetland Park (Academy Studios) Jackson Rancheria, Archival Cases Jazz Museum Liberty Science Center (as staff) M+ MIDE (Academy Studios) Mobius Science Center Museum of Idaho (Academy Studios) Muzeo Oakland Museum (Group Delphi) Oakland Zoo (Academy Studios) Palo Alto Junior Museum and Zoo Papalote (Academy Studios) PG&amp;E Look Forward Bus Poughkeepsie Art Center Pretend City Riverbend Nature Center (Academy Studios) San Francisco Maritime Museum (Group Delphi) San Mateo County History Museum Santa Barbara Sea Center (Academy Studio) Shure, Inc. Smithsonian LUCE (Academy Studios) The Strong The Tech Museum (as staff) Toyota Trans Studio Wildcare (Academy Studios) Women's Sports Museum Wow! Children's Museum"
   },
   {
     "type": "Page",

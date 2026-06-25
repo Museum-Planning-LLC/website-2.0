@@ -14,19 +14,29 @@
   }
 
   function haystack(page) {
-    return [page.type, page.title, page.desc, page.url]
+    return [page.type, page.title, page.desc, page.url, page.keywords]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
   }
 
-  function pageMatches(page, query) {
+  function matchScore(page, query) {
     var h = haystack(page);
+    var title = (page.title || "").toLowerCase();
     var words = query.split(/\s+/).filter(Boolean);
-    if (!words.length) return false;
-    return words.every(function (word) {
-      return h.indexOf(word) !== -1;
-    });
+    if (!words.length || !words.every(function (word) { return h.indexOf(word) !== -1; })) {
+      return -1;
+    }
+    if (title === query) return 100;
+    if (title.indexOf(query) === 0) return 90;
+    if ((page.type || "").toLowerCase() === query) return 85;
+    if (title.indexOf(query) !== -1) return 80;
+    if ((page.url || "").toLowerCase().indexOf(query) !== -1) return 70;
+    return 10;
+  }
+
+  function pageMatches(page, query) {
+    return matchScore(page, query) >= 0;
   }
 
   function initSiteSearch() {
@@ -66,9 +76,19 @@
         return;
       }
 
-      var matches = pages.filter(function (p) {
-        return pageMatches(p, q);
-      });
+      var matches = pages
+        .map(function (p) {
+          return { page: p, score: matchScore(p, q) };
+        })
+        .filter(function (item) {
+          return item.score >= 0;
+        })
+        .sort(function (a, b) {
+          return b.score - a.score;
+        })
+        .map(function (item) {
+          return item.page;
+        });
 
       if (!matches.length) {
         results.innerHTML =

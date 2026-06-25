@@ -89,6 +89,8 @@ def url_priority(rel: str) -> tuple[str, str]:
 def page_type(rel: str) -> str:
     if rel == "index.html":
         return "Home"
+    if rel == "clients/index.html":
+        return "Clients"
     if rel.startswith("museum-school/"):
         return "Museum School"
     if rel.startswith("projects/"):
@@ -112,6 +114,15 @@ for p in sorted(ROOT.rglob("*.html")):
 html_files.sort(key=sort_key)
 
 
+def extract_search_keywords(rel: str, path: Path) -> str:
+    if rel != "clients/index.html":
+        return ""
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    items = re.findall(r'<li[^>]*>([^<]+)</li>', text)
+    cleaned = [re.sub(r"\s+", " ", i).strip() for i in items if i.strip()]
+    return " ".join(cleaned)
+
+
 def build_overlay_pages() -> list[dict]:
     out: list[dict] = []
     seen_urls: set[str] = set()
@@ -126,6 +137,9 @@ def build_overlay_pages() -> list[dict]:
             "desc": desc,
             "url": rel,
         }
+        keywords = extract_search_keywords(rel, path)
+        if keywords:
+            entry["keywords"] = keywords
         out.append(entry)
         seen_urls.add(rel)
     return out
