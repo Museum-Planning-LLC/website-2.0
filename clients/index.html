@@ -97,17 +97,114 @@ body {
   letter-spacing: 0.2em;
 }
 
-.privacy-strip {
-  text-align: center;
-  padding: 20px 24px 0;
-  font-size: 12px;
-  color: var(--mid);
-  background: var(--deep);
-}
-.privacy-strip a { color: var(--gold); }
-
 @media (max-width: 640px) {
   .page-header, .page-main { padding-left: 24px; padding-right: 24px; }
+}
+
+nav.site-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: var(--deep); height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  z-index: 100;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.nav-logo { font-family: var(--serif); font-size: 15px; color: white; text-decoration: none; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: rgba(255,255,255,.45);
+  text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: rgba(255,255,255,.9); }
+.nav-cta {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; background: var(--gold);
+  color: var(--deep) !important; padding: 8px 20px; text-decoration: none;
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--gold-lt) !important; }
+
+footer {
+  background: var(--deep); padding: 40px 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid rgba(201,168,76,.1);
+}
+.footer-logo { font-family: var(--serif); font-size: 14px; color: rgba(255,255,255,.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
+.footer-links a {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,.25);
+  text-decoration: none; transition: color .2s;
+}
+.footer-links a:hover { color: rgba(255,255,255,.6); }
+.footer-copy { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,.2); }
+
+.nav-search { position: relative; display: flex; align-items: center; }
+.search-toggle {
+  background: none; border: none; cursor: pointer; padding: 6px;
+  color: rgba(255,255,255,.45); transition: color .2s;
+  display: flex; align-items: center;
+}
+.search-toggle:hover { color: var(--gold); }
+.search-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+.search-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(17,28,39,.97); z-index: 200;
+  flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: 80px 24px 40px;
+}
+.search-overlay.open { display: flex; }
+.search-close {
+  position: absolute; top: 20px; right: 28px;
+  background: none; border: none;
+  color: rgba(255,255,255,.4); font-size: 28px; cursor: pointer;
+  transition: color .2s; font-family: var(--mono);
+}
+.search-close:hover { color: white; }
+.search-input-wrap {
+  width: 100%; max-width: 680px;
+  border-bottom: 2px solid var(--gold);
+  display: flex; align-items: center; gap: 16px; margin-bottom: 48px;
+}
+.search-input-wrap svg {
+  width: 22px; height: 22px; stroke: var(--gold); fill: none;
+  stroke-width: 2; stroke-linecap: round; flex-shrink: 0;
+}
+#search-input {
+  flex: 1; background: none; border: none; outline: none;
+  font-family: var(--serif); font-size: clamp(24px, 4vw, 40px);
+  color: white; padding: 12px 0; caret-color: var(--gold);
+}
+#search-input::placeholder { color: rgba(255,255,255,.2); }
+.search-results {
+  width: 100%; max-width: 680px;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.search-result {
+  background: rgba(255,255,255,.04); padding: 20px 24px;
+  text-decoration: none; border-left: 3px solid transparent;
+  transition: border-color .2s, background .2s; display: block;
+}
+.search-result:hover { border-color: var(--gold); background: rgba(201,168,76,.07); }
+.sr-type {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+}
+.sr-title {
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: white; margin-bottom: 4px;
+}
+.sr-desc { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
+.search-empty {
+  font-family: var(--serif); font-style: italic; font-size: 18px;
+  color: rgba(255,255,255,.3); text-align: center; padding: 40px 0;
+}
+
+@media (max-width: 900px) {
+  footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
 }
 </style>
 <link rel="stylesheet" href="../assets/nav-mobile.css">
