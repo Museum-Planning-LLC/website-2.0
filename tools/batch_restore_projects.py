@@ -43,6 +43,38 @@ OUTPUT_OVERRIDE = {
     "c-o-polk-interactive-museum": "city-of-mcdonough-georgia",
 }
 
+HERO_OVERRIDE = {
+    "arizona-natural-resources-museum": {
+        "title": "Arizona Natural Resources Museum (ANRM)",
+        "subtitle": "",
+        "eyebrow": "University Museum",
+        "hero_image": "../content/uploads/2023/02/image-5-copy-4-1400x643.png",
+        "location": "University of Arizona · Tucson, Arizona",
+        "year": "2022–2023",
+        "year_label": "Year",
+        "services": [
+            "Feasibility Study",
+            "Master Planning",
+            "Exhibition Design",
+            "Business Planning",
+            "Strategic Planning",
+        ],
+        "meta_description": (
+            "Arizona Natural Resources Museum (ANRM) · University of Arizona · "
+            "Tucson, Arizona · Museum Planning LLC"
+        ),
+        "sidebar": {
+            "client": "University of Arizona",
+            "location": "Tucson, Arizona",
+            "opening": "Fall 2025",
+            "services": "Feasibility, Master Planning, Exhibition Design",
+            "extra_rows": [
+                ("Sq Footage", "30,000 sq ft total"),
+            ],
+        },
+    },
+}
+
 SKIP_STATUS = {"done", "live"}
 
 DRIVE_PDF_LOCAL = {
@@ -315,6 +347,12 @@ def parse_field(html: str, *labels: str) -> str:
 
 
 def infer_hero(project: dict, raw_html: str, cleaned: str) -> dict:
+    live_slug = project["live_slug"]
+    if live_slug in HERO_OVERRIDE:
+        hero = dict(HERO_OVERRIDE[live_slug])
+        hero.setdefault("sidebar", {})
+        return hero
+
     title = project["title"]
     client = parse_field(raw_html, "Client")
     location = parse_field(raw_html, "Location")
@@ -407,7 +445,24 @@ def build_page(hero: dict, content_html: str, live_slug: str, footer: str) -> st
 
     service_tags = "".join(f'<span class="service-tag">{escape(s)}</span>' for s in hero["services"])
     sb = hero["sidebar"]
-    year_label = "Opened" if re.search(r"\b(19|20)\d{2}\b", hero["year"]) else "Period"
+    year_label = hero.get("year_label") or (
+        "Opened" if re.search(r"\b(19|20)\d{2}\b", hero["year"]) else "Period"
+    )
+    subtitle_html = ""
+    if hero.get("subtitle"):
+        subtitle_html = (
+            f'<p style="font-family:var(--serif);font-size:clamp(18px,2.5vw,24px);'
+            f'color:rgba(255,255,255,.75);max-width:720px;margin-bottom:28px;font-style:italic;">'
+            f'{escape(hero["subtitle"])}</p>'
+        )
+
+    extra_rows = ""
+    opening_label = sb.get("opening_label", "Opening")
+    for key, val in sb.get("extra_rows", []):
+        extra_rows += (
+            f'\n      <div class="detail-row"><span class="detail-key">{escape(key)}</span>'
+            f'<span class="detail-val">{escape(val)}</span></div>'
+        )
 
     body = f"""
 <body class="project-wp-archive">
@@ -443,7 +498,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="hero-eyebrow">{escape(hero["eyebrow"])}</div>
     <h1>{escape(hero["title"])}</h1>
-    <p style="font-family:var(--serif);font-size:clamp(18px,2.5vw,24px);color:rgba(255,255,255,.75);max-width:720px;margin-bottom:28px;font-style:italic;">{escape(hero["subtitle"])}</p>
+    {subtitle_html}
     <div class="hero-meta">
       <div class="meta-item">
         <div class="meta-label">Location</div>
@@ -472,7 +527,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sidebar-label">Project Details</div>
       <div class="detail-row"><span class="detail-key">Client</span><span class="detail-val">{escape(sb["client"])}</span></div>
       <div class="detail-row"><span class="detail-key">Location</span><span class="detail-val">{escape(sb["location"])}</span></div>
-      <div class="detail-row"><span class="detail-key">{year_label}</span><span class="detail-val">{escape(sb["opening"])}</span></div>
+      <div class="detail-row"><span class="detail-key">{opening_label}</span><span class="detail-val">{escape(sb["opening"])}</span></div>{extra_rows}
       <div class="detail-row"><span class="detail-key">Services</span><span class="detail-val">{escape(sb["services"])}</span></div>
     </div>
     <div class="sidebar-card">
