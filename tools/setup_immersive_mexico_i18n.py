@@ -92,6 +92,9 @@ def ensure_scroll_reveal(html: str) -> str:
     if "IntersectionObserver" in html and "querySelectorAll('.fu')" in html:
         return html
     marker = '<script src="../../assets/search-pages.js">'
+    alt = '<script src="../assets/search-pages.js">'
+    if marker not in html and alt in html:
+        marker = alt
     if marker not in html:
         raise ValueError("expected search-pages.js marker for scroll reveal injection")
     return html.replace(marker, SCROLL_REVEAL_SCRIPT + "\n" + marker, 1)
@@ -121,7 +124,6 @@ def fix_site_paths(html: str) -> str:
 
 def build_index(lang: str) -> None:
     html = SOURCE_INDEX.read_text(encoding="utf-8")
-    html = fix_site_paths(html)
     html = LANG_SCRIPT.sub("", html)
     html = ensure_scroll_reveal(html)
 
