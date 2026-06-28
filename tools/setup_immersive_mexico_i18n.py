@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1] / "immersive-mexico"
 BASE = "https://museumplanning.com/immersive-mexico"
-SOURCE_INDEX = ROOT / "index.html"
+SOURCE_INDEX = ROOT / "en" / "index.html"
 
 DEMO_PAGES = [
     {
