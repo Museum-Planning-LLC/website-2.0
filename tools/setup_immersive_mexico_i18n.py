@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1] / "immersive-mexico"
 BASE = "https://museumplanning.com/immersive-mexico"
 SOURCE_INDEX = ROOT / "en" / "index.html"
+SHARED_GROUND_SOURCE = ROOT / "_source" / "shared-ground.html"
 
 DEMO_PAGES = [
     {
@@ -107,7 +108,15 @@ LANG_BUTTONS_ES = """<div class="lang-toggle">
 
 
 def fix_site_paths(html: str) -> str:
-    return html.replace('href="../', 'href="../../').replace('src="../', 'src="../../')
+    placeholders: dict[str, str] = {}
+    for i, match in enumerate(re.finditer(r'src="\.\./works/[^"]+"', html)):
+        key = f"__IM_WORKS_{i}__"
+        placeholders[key] = match.group(0)
+        html = html.replace(match.group(0), key, 1)
+    html = html.replace('href="../', 'href="../../').replace('src="../', 'src="../../')
+    for key, val in placeholders.items():
+        html = html.replace(key, val)
+    return html
 
 
 def build_index(lang: str) -> None:
@@ -297,7 +306,7 @@ def build_demo_page(meta: dict, lang: str) -> None:
 
 
 def build_shared_ground(lang: str) -> None:
-    src = ROOT / "shared-ground.html"
+    src = SHARED_GROUND_SOURCE if SHARED_GROUND_SOURCE.exists() else ROOT / "en" / "shared-ground.html"
     html = src.read_text(encoding="utf-8")
     html = html.replace("<html lang=\"en\">", f"<html lang=\"{lang}\">", 1)
     html = html.replace(

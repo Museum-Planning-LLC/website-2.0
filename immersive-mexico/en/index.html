@@ -415,55 +415,48 @@ body.lang-en .es { display: none; }
 .dash-note strong { color: var(--gold); }
 
 /* ── INSTALLATIONS ── */
-.installs-section { background: var(--cream); padding: 96px 56px; }
+.installs-section { background: var(--cream); padding: 72px 56px 96px; }
 .installs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; margin-top: 48px; }
-a.install-card {
+.install-card {
   background: white; position: relative; overflow: hidden;
   border-top: 3px solid var(--rule); transition: border-color 0.25s, transform 0.2s;
-  text-decoration: none; color: inherit; display: block;
+  display: flex; flex-direction: column;
 }
-a.install-card:hover { border-top-color: var(--gold); transform: translateY(-2px); }
-.install-img {
+.install-card:hover { border-top-color: var(--gold); transform: translateY(-2px); }
+.install-live {
   width: 100%; aspect-ratio: 4/3;
-  background: var(--deep); display: flex; flex-direction: column;
-  align-items: flex-start; justify-content: flex-end;
-  padding: 22px 24px; gap: 8px;
-  position: relative; overflow: hidden;
+  background: #000; position: relative; overflow: hidden;
 }
-.install-img::before {
-  content: '';
+.install-live iframe {
   position: absolute; inset: 0;
-  background:
-    linear-gradient(to top, rgba(13,21,32,0.92) 0%, rgba(13,21,32,0.35) 55%, transparent 100%);
-  z-index: 1;
+  width: 100%; height: 100%;
+  border: 0; display: block;
 }
-.install-img.living { background: radial-gradient(ellipse 80% 70% at 30% 40%, rgba(120,180,220,0.35) 0%, var(--deep) 70%); }
-.install-img.shared { background: radial-gradient(ellipse 70% 60% at 70% 35%, rgba(181,84,26,0.28) 0%, var(--deep) 68%); }
-.install-img.surrender { background: radial-gradient(ellipse 65% 55% at 50% 45%, rgba(255,16,240,0.22) 0%, var(--deep) 72%); }
-.install-img-title {
-  font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700;
-  color: var(--white); line-height: 1.15; position: relative; z-index: 2;
+.install-body { padding: 24px 22px; flex: 1 1 auto; display: flex; flex-direction: column; }
+.install-title {
+  font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+  color: var(--deep); line-height: 1.15; margin-bottom: 4px;
 }
-.install-img-title em { font-style: italic; color: var(--gold); }
-.install-img-artist {
+.install-title em { font-style: italic; color: var(--gold); }
+.install-artist {
   font-family: 'DM Mono', monospace; font-size: 9px;
   letter-spacing: 2px; text-transform: uppercase;
-  color: rgba(255,255,255,0.42); position: relative; z-index: 2;
+  color: var(--mid); margin-bottom: 12px;
 }
-.install-body { padding: 24px 22px; }
 .install-desc {
   font-size: 13px; color: var(--mid); line-height: 1.65; margin-bottom: 12px;
 }
 .install-link {
   font-family: 'DM Mono', monospace; font-size: 9px;
   letter-spacing: 2px; text-transform: uppercase; color: var(--gold);
+  text-decoration: none; margin-top: auto;
 }
 .install-link::after { content: ' →'; }
+.install-link:hover { text-decoration: underline; }
 .install-type {
   font-family: 'DM Mono', monospace; font-size: 9px;
   letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
 }
-.install-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--deep); margin-bottom: 6px; }
 .install-loc { font-size: 13px; color: var(--mid); }
 
 /* ── SECTORS ── */
@@ -612,11 +605,11 @@ footer {
   .process-grid{grid-template-columns:1fr;}
 }
 </style>
-<link rel="stylesheet" href="../../assets/nav-mobile.css">
-<link rel="stylesheet" href="../../assets/site-nav.css">
-<link rel="stylesheet" href="../../assets/site-footer.css">
-<script src="../../assets/ga-measurement-id.js"></script>
-<script src="../../assets/analytics.js" defer></script>
+<link rel="stylesheet" href="../../../../../assets/nav-mobile.css">
+<link rel="stylesheet" href="../../../../../assets/site-nav.css">
+<link rel="stylesheet" href="../../../../../assets/site-footer.css">
+<script src="../../../../../assets/ga-measurement-id.js"></script>
+<script src="../../../../../assets/analytics.js" defer></script>
 </head>
 <body class="lang-en">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -631,23 +624,23 @@ footer {
 
 <!-- SITE NAV -->
 <nav class="site-nav" id="site-nav">
-  <a href="../../index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <a href="../../../../../index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
     <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
   </button>
   <ul class="nav-links" id="site-nav-menu">
-    <li><a href="../../museum-planning-projects.html">Projects</a></li>
-    <li><a href="../../museum-planning-services.html">Services</a></li>
+    <li><a href="../../../../../museum-planning-projects.html">Projects</a></li>
+    <li><a href="../../../../../museum-planning-services.html">Services</a></li>
     <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
-    <li><a href="../../museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+    <li><a href="../../../../../museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
 </nav>
 
 <!-- PAGE SECTION NAV -->
 <nav class="page-subnav" aria-label="Page sections">
+  <a href="#installations"><span class="en">Installations</span><span class="es">Instalaciones</span></a>
   <a href="#pitch"><span class="en">Approach</span><span class="es">Enfoque</span></a>
   <a href="#dashboard"><span class="en">Dashboard</span><span class="es">Panel</span></a>
-  <a href="#installations"><span class="en">Installations</span><span class="es">Instalaciones</span></a>
   <a href="#sectors"><span class="en">Sectors</span><span class="es">Sectores</span></a>
   <a href="#process"><span class="en">Process</span><span class="es">Proceso</span></a>
   <a href="#mexico">México</a>
@@ -671,7 +664,7 @@ footer {
     <p class="hero-sub en">Your marketing budget funds the experience. The experience captures the data. The data closes more sales. This is not interior design — it is your most measurable marketing channel.</p>
     <p class="hero-sub es">Tu presupuesto de marketing financia la experiencia. La experiencia captura los datos. Los datos cierran más ventas. Esto no es diseño de interiores — es tu canal de marketing más medible.</p>
     <div class="cta-row">
-      <a href="../../museum-planning-contact.html" class="btn-p">
+      <a href="../../../../../museum-planning-contact.html" class="btn-p">
         <span class="en">Start a Conversation</span>
         <span class="es">Iniciar una Conversación</span>
       </a>
@@ -735,6 +728,81 @@ footer {
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- INSTALLATIONS -->
+<section class="installs-section" id="installations">
+  <div class="eyebrow terr fu en">Reference Works</div>
+  <div class="eyebrow terr fu es">Obras de Referencia</div>
+  <h2 class="section-h dark fu en">Live generative environments — <em>ready to deploy.</em></h2>
+  <h2 class="section-h dark fu es">Entornos generativos en vivo — <em>listos para implementar.</em></h2>
+  <p class="section-sub light fu en">Three proven works from museum and residency contexts — each runs live below, responds to co-presence, and adapts to corporate lobbies, visitor centers, and preview environments. Click to interact.</p>
+  <p class="section-sub light fu es">Tres obras probadas en contextos museísticos y de residencia — cada una funciona en vivo abajo, responde a la copresencia y se adapta a lobbies corporativos, centros de visitantes y centros de preventas. Haz clic para interactuar.</p>
+
+  <div class="installs-grid">
+    <article class="install-card fu">
+      <div class="install-live">
+        <iframe
+          src="../works/living-commons-work.html"
+          title="Living Commons — live generative work"
+          allow="fullscreen"
+          loading="eager"
+        ></iframe>
+      </div>
+      <div class="install-body">
+        <div class="install-artist">Mark Walhimer · 2026</div>
+        <h3 class="install-title"><span class="en">Living <em>Commons</em></span><span class="es">Living <em>Commons</em></span></h3>
+        <div class="install-type en">Corporate Lobby &amp; Shared Space</div>
+        <div class="install-type es">Lobby Corporativo y Espacio Compartido</div>
+        <p class="install-desc en">Co-presence generative work — two inputs, one emergent result. Ideal for lobbies where visitors, clients, and recruits share space. Kiosk-ready, no fixed state.</p>
+        <p class="install-desc es">Obra generativa de copresencia — dos entradas, un resultado emergente. Ideal para lobbies donde visitantes, clientes y candidatos comparten espacio. Lista para quiosco, sin estado fijo.</p>
+        <a href="living-commons.html" class="install-link en">Open full demo</a>
+        <a href="living-commons.html" class="install-link es">Abrir demo completa</a>
+      </div>
+    </article>
+
+    <article class="install-card fu d1">
+      <div class="install-live">
+        <iframe
+          src="shared-ground.html?embed=1"
+          title="Shared Ground — live generative work"
+          allow="fullscreen"
+          loading="eager"
+        ></iframe>
+      </div>
+      <div class="install-body">
+        <div class="install-artist">Mark Walhimer · 2026</div>
+        <h3 class="install-title"><span class="en">Shared <em>Ground</em></span><span class="es">Shared <em>Ground</em></span></h3>
+        <div class="install-type en">Visitor Center &amp; Brand Narrative</div>
+        <div class="install-type es">Centro de Visitantes y Narrativa de Marca</div>
+        <p class="install-desc en">Multi-person archival environment — social geometry between bodies determines what history surfaces on the wall. Adaptable to any place, company story, or development narrative.</p>
+        <p class="install-desc es">Entorno de archivo multipersona — la geometría social entre cuerpos determina qué historia aparece en la pared. Adaptable a cualquier lugar, historia corporativa o narrativa de desarrollo.</p>
+        <a href="shared-ground.html" class="install-link en">Open full demo</a>
+        <a href="shared-ground.html" class="install-link es">Abrir demo completa</a>
+      </div>
+    </article>
+
+    <article class="install-card fu d2">
+      <div class="install-live">
+        <iframe
+          src="../works/surrender-machine-work.html"
+          title="Surrender Machine 77823 — live generative work"
+          allow="fullscreen"
+          loading="eager"
+        ></iframe>
+      </div>
+      <div class="install-body">
+        <div class="install-artist">Mark Walhimer · 2026</div>
+        <h3 class="install-title"><span class="en">Surrender Machine <em>77823</em></span><span class="es">Surrender Machine <em>77823</em></span></h3>
+        <div class="install-type en">Preview Center &amp; Branded Experience</div>
+        <div class="install-type es">Centro de Preventas y Experiencia de Marca</div>
+        <p class="install-desc en">Three-zone generative machine — narrative cylinder, dense field, surrender state. Spatial logic built for preview centers and immersive sales environments. Sensor-ready.</p>
+        <p class="install-desc es">Máquina generativa de tres zonas — cilindro narrativo, campo denso, estado de entrega. Lógica espacial para centros de preventas y entornos de venta inmersivos. Lista para sensores.</p>
+        <a href="surrender-machine-77823.html" class="install-link en">Open full demo</a>
+        <a href="surrender-machine-77823.html" class="install-link es">Abrir demo completa</a>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -970,63 +1038,6 @@ footer {
   </div>
 </section>
 
-<!-- INSTALLATIONS -->
-<section class="installs-section" id="installations">
-  <div class="eyebrow terr fu en">Reference Works</div>
-  <div class="eyebrow terr fu es">Obras de Referencia</div>
-  <h2 class="section-h dark fu en">Live generative environments — <em>ready to deploy.</em></h2>
-  <h2 class="section-h dark fu es">Entornos generativos en vivo — <em>listos para implementar.</em></h2>
-  <p class="section-sub light fu en">Three proven works from museum and residency contexts — each runs live in browser or kiosk, responds to co-presence, and adapts to corporate lobbies, visitor centers, and preview environments. Behavioral measurement layers on top.</p>
-  <p class="section-sub light fu es">Tres obras probadas en contextos museísticos y de residencia — cada una funciona en vivo en navegador o quiosco, responde a la copresencia y se adapta a lobbies corporativos, centros de visitantes y centros de preventas. La medición de comportamiento se integra encima.</p>
-
-  <div class="installs-grid">
-    <a href="living-commons.html" class="install-card fu">
-      <div class="install-img living">
-        <div class="install-img-artist">Mark Walhimer · 2026</div>
-        <div class="install-img-title"><span class="en">Living <em>Commons</em></span><span class="es">Living <em>Commons</em></span></div>
-      </div>
-      <div class="install-body">
-        <div class="install-type en">Corporate Lobby &amp; Shared Space</div>
-        <div class="install-type es">Lobby Corporativo y Espacio Compartido</div>
-        <p class="install-desc en">Co-presence generative work — two inputs, one emergent result. Ideal for lobbies where visitors, clients, and recruits share space. Kiosk-ready, no fixed state.</p>
-        <p class="install-desc es">Obra generativa de copresencia — dos entradas, un resultado emergente. Ideal para lobbies donde visitantes, clientes y candidatos comparten espacio. Lista para quiosco, sin estado fijo.</p>
-        <div class="install-link en">View commercial demo</div>
-        <div class="install-link es">Ver demo comercial</div>
-      </div>
-    </a>
-
-    <a href="shared-ground.html" class="install-card fu d1">
-      <div class="install-img shared">
-        <div class="install-img-artist">Mark Walhimer · 2026</div>
-        <div class="install-img-title"><span class="en">Shared <em>Ground</em></span><span class="es">Shared <em>Ground</em></span></div>
-      </div>
-      <div class="install-body">
-        <div class="install-type en">Visitor Center &amp; Brand Narrative</div>
-        <div class="install-type es">Centro de Visitantes y Narrativa de Marca</div>
-        <p class="install-desc en">Multi-person archival environment — social geometry between bodies determines what history surfaces on the wall. Adaptable to any place, company story, or development narrative.</p>
-        <p class="install-desc es">Entorno de archivo multipersona — la geometría social entre cuerpos determina qué historia aparece en la pared. Adaptable a cualquier lugar, historia corporativa o narrativa de desarrollo.</p>
-        <div class="install-link en">View commercial demo</div>
-        <div class="install-link es">Ver demo comercial</div>
-      </div>
-    </a>
-
-    <a href="surrender-machine-77823.html" class="install-card fu d2">
-      <div class="install-img surrender">
-        <div class="install-img-artist">Mark Walhimer · 2026</div>
-        <div class="install-img-title"><span class="en">Surrender Machine <em>77823</em></span><span class="es">Surrender Machine <em>77823</em></span></div>
-      </div>
-      <div class="install-body">
-        <div class="install-type en">Preview Center &amp; Branded Experience</div>
-        <div class="install-type es">Centro de Preventas y Experiencia de Marca</div>
-        <p class="install-desc en">Three-zone generative machine — narrative cylinder, dense field, surrender state. Spatial logic built for preview centers and immersive sales environments. Sensor-ready.</p>
-        <p class="install-desc es">Máquina generativa de tres zonas — cilindro narrativo, campo denso, estado de entrega. Lógica espacial para centros de preventas y entornos de venta inmersivos. Lista para sensores.</p>
-        <div class="install-link en">View commercial demo</div>
-        <div class="install-link es">Ver demo comercial</div>
-      </div>
-    </a>
-  </div>
-</section>
-
 <!-- SECTORS -->
 <section class="sectors" id="sectors">
   <div class="eyebrow fu en">Who We Work With</div>
@@ -1174,12 +1185,12 @@ footer {
     <div class="mx-proj fu">
       <div class="mx-proj-lbl en">Mexico Projects · Completed</div>
       <div class="mx-proj-lbl es">Proyectos en México · Completados</div>
-      <a href="../../projects/mide-museo-interactivo-de-economia.html" class="mx-row">
+      <a href="../../../../../projects/mide-museo-interactivo-de-economia.html" class="mx-row">
         <span class="mx-name">MIDE · Museo Interactivo de Economía</span>
         <span class="mx-type en">Exhibition Design · 2019</span>
         <span class="mx-type es">Diseño de Exhibición · 2019</span>
       </a>
-      <a href="../../projects/museo-memoria-y-tolerancia.html" class="mx-row">
+      <a href="../../../../../projects/museo-memoria-y-tolerancia.html" class="mx-row">
         <span class="mx-name">Museo Memoria y Tolerancia</span>
         <span class="mx-type en">Exhibition Design · 2016</span>
         <span class="mx-type es">Diseño de Exhibición · 2016</span>
@@ -1196,8 +1207,8 @@ footer {
       <div class="cta-t es">Una Hora. Sin Costo. Sin Obligación.</div>
       <div class="cta-d en">Bring your space and your conversion target. We will tell you what is possible, what it will cost, and what the dashboard will measure. Direct conversation with Mark.</div>
       <div class="cta-d es">Trae tu espacio y tu meta de conversión. Te diremos qué es posible, cuánto costará y qué medirá el panel. Conversación directa con Mark.</div>
-      <a href="../../museum-planning-contact.html" class="cta-link en">Schedule a Conversation</a>
-      <a href="../../museum-planning-contact.html" class="cta-link es">Agendar una Conversación</a>
+      <a href="../../../../../museum-planning-contact.html" class="cta-link en">Schedule a Conversation</a>
+      <a href="../../../../../museum-planning-contact.html" class="cta-link es">Agendar una Conversación</a>
     </div>
     <div class="cta-c">
       <div class="cta-lbl en">Background</div>
@@ -1206,7 +1217,7 @@ footer {
       <div class="cta-t es">Sobre la Práctica</div>
       <div class="cta-d en">Mark Walhimer. Pratt Institute, M.S. Industrial Design. 25 years. 40+ environments. Author, <em>Designing Museum Experiences</em> (AAM Press). We personally lead every engagement.</div>
       <div class="cta-d es">Mark Walhimer. Pratt Institute, M.S. Diseño Industrial. 25 años. 40+ entornos. Autor de <em>Designing Museum Experiences</em> (AAM Press). Lideramos personalmente cada proyecto.</div>
-      <a href="../../museum-planning-about.html" class="cta-link">museumplanning.com/about</a>
+      <a href="../../../../../museum-planning-about.html" class="cta-link">museumplanning.com/about</a>
     </div>
     <div class="cta-c">
       <div class="cta-lbl en">Direct Contact</div>
@@ -1219,16 +1230,16 @@ footer {
   </div>
 </section>
 
-<p class="privacy-strip"><a href="../../museum-planning-privacy.html">Privacy &amp; analytics</a></p>
+<p class="privacy-strip"><a href="../../../../../museum-planning-privacy.html">Privacy &amp; analytics</a></p>
 <footer>
   <div class="footer-logo">Museum <span>Planning</span> LLC</div>
   <ul class="footer-links">
-    <li><a href="../../museum-planning-about.html">About</a></li>
-    <li><a href="../../for-cities.html">For Cities</a></li>
-    <li><a href="../../museum-school/index.html">Museum School</a></li>
-    <li><a href="../../thought-leadership.html">Field Notes</a></li>
-    <li><a href="../../museum-planning-contact.html">Contact</a></li>
-    <li><a href="../../site-map.html">Site map</a></li>
+    <li><a href="../../../../../museum-planning-about.html">About</a></li>
+    <li><a href="../../../../../for-cities.html">For Cities</a></li>
+    <li><a href="../../../../../museum-school/index.html">Museum School</a></li>
+    <li><a href="../../../../../thought-leadership.html">Field Notes</a></li>
+    <li><a href="../../../../../museum-planning-contact.html">Contact</a></li>
+    <li><a href="../../../../../site-map.html">Site map</a></li>
   </ul>
   <div class="footer-copy">© 2026 Museum Planning LLC · <span class="en">Immersive Environments · Mexico</span><span class="es">Entornos Inmersivos · México</span></div>
 </footer>
@@ -1239,9 +1250,9 @@ footer {
   <div class="search-results" id="searchResults"></div>
 </div>
 
-<script src="../../assets/search-pages.js"></script>
-<script src="../../assets/site-search.js"></script>
-<script src="../../assets/nav-mobile.js" defer></script>
+<script src="../../../../../assets/search-pages.js"></script>
+<script src="../../../../../assets/site-search.js"></script>
+<script src="../../../../../assets/nav-mobile.js" defer></script>
 <script>
 (function () {
   if (!('IntersectionObserver' in window)) {
