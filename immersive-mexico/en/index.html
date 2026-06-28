@@ -1242,5 +1242,19 @@ footer {
 <script src="../../assets/search-pages.js"></script>
 <script src="../../assets/site-search.js"></script>
 <script src="../../assets/nav-mobile.js" defer></script>
+<script>
+(function () {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.fu').forEach(function (el) { el.classList.add('vis'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) e.target.classList.add('vis');
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fu').forEach(function (el) { obs.observe(el); });
+})();
+</script>
 </body>
 </html>

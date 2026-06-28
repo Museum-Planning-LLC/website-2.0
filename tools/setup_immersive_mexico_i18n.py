@@ -70,6 +70,31 @@ LANG_SCRIPT = re.compile(
     re.DOTALL,
 )
 
+SCROLL_REVEAL_SCRIPT = """<script>
+(function () {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.fu').forEach(function (el) { el.classList.add('vis'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) e.target.classList.add('vis');
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fu').forEach(function (el) { obs.observe(el); });
+})();
+</script>
+"""
+
+
+def ensure_scroll_reveal(html: str) -> str:
+    if "IntersectionObserver" in html and "querySelectorAll('.fu')" in html:
+        return html
+    marker = '<script src="../../assets/search-pages.js">'
+    if marker not in html:
+        raise ValueError("expected search-pages.js marker for scroll reveal injection")
+    return html.replace(marker, SCROLL_REVEAL_SCRIPT + "\n" + marker, 1)
+
 LANG_BUTTONS_EN = """<div class="lang-toggle">
     <a class="lang-btn active" href="./" hreflang="en" aria-current="page">EN</a>
     <a class="lang-btn" href="../es/" hreflang="es">ES</a>
@@ -89,6 +114,7 @@ def build_index(lang: str) -> None:
     html = SOURCE_INDEX.read_text(encoding="utf-8")
     html = fix_site_paths(html)
     html = LANG_SCRIPT.sub("", html)
+    html = ensure_scroll_reveal(html)
 
     other = "es" if lang == "en" else "en"
     buttons = LANG_BUTTONS_EN if lang == "en" else LANG_BUTTONS_ES
