@@ -80,6 +80,8 @@ Files:
 
 **CSV column format:** source = `museumplanning.com/path` (no `https://`); target = full `https://museumplanning.com/...` URL.
 
+**Prefix paths** (e.g. `/author/`, `/category/`) emit exact `…/author/` plus wildcard `…/author/*` rows. **Wildcards often do not match on Bulk Redirect Lists** — use **Rules → Redirect Rules** (static 301 + `starts_with(http.request.uri.path, "/author/")`) for all author subpaths, or add **exact** sources (e.g. `museumplanning.com/author/alvaro/`) the same way as `about.html`.
+
 **Import in Cloudflare:**
 
 1. **Bulk Redirects** → **Create Bulk Redirect List** → name it e.g. `wordpress-legacy`

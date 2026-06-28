@@ -94,7 +94,15 @@ def main() -> None:
     for entry in data.get("prefix", []):
         if entry["prefix"] in skip_prefixes:
             continue
-        add(entry["prefix"].rstrip("/"), entry["target"], trailing_slash=True)
+        p = entry["prefix"].rstrip("/")
+        # Exact prefix landing (e.g. /author/)
+        add(p, entry["target"], trailing_slash=True)
+        # Subpaths (e.g. /author/alvaro/) — Bulk Redirects need trailing /*
+        src = f"{HOST}{p}/*"
+        if src not in seen:
+            seen.add(src)
+            row = [src, target_url(entry["target"]), "301"]
+            rows.append(row)
 
     for path in (OUT_FILE, OUT_PRIORITY):
         path.parent.mkdir(parents=True, exist_ok=True)
