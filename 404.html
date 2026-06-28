@@ -6,6 +6,8 @@
 <link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
 <title>Redirecting — Museum Planning LLC</title>
+<script src="assets/ga-measurement-id.js"></script>
+<script src="assets/analytics.js"></script>
 <script>
 (function() {
   var path = window.location.pathname.replace(/\/$/, '').toLowerCase();
@@ -32,6 +34,8 @@
     '/museum-consulting-and-cultural-planning-museum-planning-llc': '/museum-planning-services.html',
     '/about-us':                                 '/museum-planning-about.html',
     '/about':                                    '/museum-planning-about.html',
+    '/about.html':                               '/museum-planning-about.html',
+    '/contact.html':                             '/museum-planning-contact.html',
     '/support':                                  '/museum-planning-contact.html',
     '/museum-planning-llc':                      '/',
     '/museum-school':                            '/museum-school/index.html',
@@ -151,7 +155,12 @@
     return;
   }
 
-  // Category / tag / page archives → homepage
+  // Category / tag / author / page archives → homepage or about
+  if (path.indexOf('/author/') === 0) {
+    window.location.replace('https://museumplanning.com/museum-planning-about.html');
+    return;
+  }
+
   if (path.indexOf('/category/') === 0 ||
       path.indexOf('/tag/') === 0 ||
       path.indexOf('/page/') === 0 ||

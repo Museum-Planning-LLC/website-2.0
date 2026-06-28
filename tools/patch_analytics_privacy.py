@@ -13,6 +13,22 @@ HEAD_SNIPPET = """  <link rel="stylesheet" href="{prefix}assets/site-footer.css"
   <script src="{prefix}assets/analytics.js" defer></script>
 """
 
+REDIRECT_ANALYTICS = """  <script src="{prefix}assets/ga-measurement-id.js"></script>
+  <script src="{prefix}assets/analytics.js"></script>
+"""
+
+GTM_NOSCRIPT = """<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+"""
+
+REDIRECT_PAGE_RE = re.compile(
+    r'http-equiv="refresh"|location\.replace\s*\(',
+    re.IGNORECASE,
+)
+
 CONTACT_LI_RE = re.compile(
     r'(<li><a href="(?:\.\./)*museum-planning-contact\.html">Contact</a></li>)'
 )
@@ -40,8 +56,16 @@ def patch_file(path: Path) -> bool:
         print(f"skip (no </head>): {path.relative_to(ROOT)}", file=sys.stderr)
         return False
 
-    snippet = HEAD_SNIPPET.format(prefix=prefix)
-    text = text.replace("</head>", snippet + "\n</head>", 1)
+    is_redirect = bool(REDIRECT_PAGE_RE.search(text))
+    if is_redirect:
+        snippet = REDIRECT_ANALYTICS.format(prefix=prefix)
+        text = re.sub(r"(<head>\s*\n)", r"\1" + snippet + "\n", text, count=1)
+    else:
+        snippet = HEAD_SNIPPET.format(prefix=prefix)
+        text = text.replace("</head>", snippet + "\n</head>", 1)
+
+    if "GTM-PGG4KV35" not in text and "<body>" in text:
+        text = text.replace("<body>", "<body>\n" + GTM_NOSCRIPT, 1)
 
     if "privacy-strip" not in text and "<footer>" in text:
         strip = (
