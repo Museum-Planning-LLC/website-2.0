@@ -136,13 +136,25 @@ def extract_search_keywords(rel: str, path: Path) -> str:
         return (
             "Mexico México CDMX Mexico City immersive environments "
             "preview center corporate lobby hospitality behavioral dashboard "
-            "sales funnel digital marketing outreach"
+            "sales funnel digital marketing outreach QR scan to control lobby sync"
         )
     if rel == "immersive-mexico/es/index.html":
         return (
             "México CDMX Ciudad de México entornos inmersivos "
             "centro de preventas lobby corporativo hospitalidad panel comportamiento "
             "embudo de ventas marketing digital"
+        )
+    if rel == "immersive-mexico/en/scan-to-control.html":
+        return (
+            "QR code phone controller lobby sync projection mapping Firebase "
+            "real-time dashboard camera machine learning scan to control "
+            "corporate lobby technical brief"
+        )
+    if rel == "immersive-mexico/es/scan-to-control.html":
+        return (
+            "QR código controlador teléfono sincronización lobby proyección Firebase "
+            "tiempo real panel cámara aprendizaje automático scan to control "
+            "lobby corporativo brief técnico"
         )
     if rel != "clients/index.html":
         return ""

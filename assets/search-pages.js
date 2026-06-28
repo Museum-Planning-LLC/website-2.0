@@ -83,7 +83,7 @@ window.SITE_SEARCH_PAGES = [
     "title": "Immersive Environments · Mexico",
     "desc": "Immersive commercial environments for real estate preview centers, corporate lobbies, and hospitality — with live behavioral dashboards. Museum Planning LLC · Mexico City and worldwide.",
     "url": "immersive-mexico/en/index.html",
-    "keywords": "Mexico México CDMX Mexico City immersive environments preview center corporate lobby hospitality behavioral dashboard sales funnel digital marketing outreach"
+    "keywords": "Mexico México CDMX Mexico City immersive environments preview center corporate lobby hospitality behavioral dashboard sales funnel digital marketing outreach QR scan to control lobby sync"
   },
   {
     "type": "Page",
@@ -238,9 +238,22 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Immersive Mexico",
+    "title": "Shared Ground — Mark Walhimer",
+    "desc": "Museum Planning LLC — Shared Ground — Mark Walhimer.",
+    "url": "immersive-mexico/_source/shared-ground.html"
+  },
+  {
+    "type": "Immersive Mexico",
     "title": "Living Commons · Lobby Demo",
     "desc": "Living Commons — commercial lobby demo. Co-presence generative environment for corporate shared spaces. Museum Planning LLC.",
     "url": "immersive-mexico/en/living-commons.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Scan to Control · Lobby Sync POC",
+    "desc": "Scan to Control — lobby sync proof of concept. QR + phone + projection wall with real-time Firebase sync. Technical brief for corporate lobby deployments.",
+    "url": "immersive-mexico/en/scan-to-control.html",
+    "keywords": "QR code phone controller lobby sync projection mapping Firebase real-time dashboard camera machine learning scan to control corporate lobby technical brief"
   },
   {
     "type": "Immersive Mexico",
@@ -269,6 +282,13 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Immersive Mexico",
+    "title": "Scan to Control · POC Sincronización Lobby",
+    "desc": "Scan to Control — prueba de concepto de sincronización de lobby. QR + teléfono + muro con sincronización Firebase en tiempo real. Brief técnico para lobbies corporativos.",
+    "url": "immersive-mexico/es/scan-to-control.html",
+    "keywords": "QR código controlador teléfono sincronización lobby proyección Firebase tiempo real panel cámara aprendizaje automático scan to control lobby corporativo brief técnico"
+  },
+  {
+    "type": "Immersive Mexico",
     "title": "Shared Ground — Mark Walhimer",
     "desc": "Museum Planning LLC — Shared Ground — Mark Walhimer.",
     "url": "immersive-mexico/es/shared-ground.html"
@@ -284,6 +304,12 @@ window.SITE_SEARCH_PAGES = [
     "title": "Living Commons",
     "desc": "Museum Planning LLC — Living Commons.",
     "url": "immersive-mexico/living-commons.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Scan To Control",
+    "desc": "Museum Planning LLC — Scan To Control.",
+    "url": "immersive-mexico/scan-to-control.html"
   },
   {
     "type": "Immersive Mexico",

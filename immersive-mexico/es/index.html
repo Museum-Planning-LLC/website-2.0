@@ -423,7 +423,7 @@ body.lang-en .es { display: none; }
 
 /* ── INSTALLATIONS ── */
 .installs-section { background: var(--cream); padding: 72px 56px 96px; }
-.installs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; margin-top: 48px; }
+.installs-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 3px; margin-top: 48px; }
 .install-card {
   background: white; position: relative; overflow: hidden;
   border-top: 3px solid var(--rule); transition: border-color 0.25s, transform 0.2s;
@@ -690,8 +690,8 @@ footer {
   <div class="eyebrow terr fu es">Obras de Referencia</div>
   <h2 class="section-h dark fu en">Live generative environments — <em>ready to deploy.</em></h2>
   <h2 class="section-h dark fu es">Entornos generativos en vivo — <em>listos para implementar.</em></h2>
-  <p class="section-sub light fu en">Three proven works — preview center, corporate lobby, visitor center — running live below. Click to interact. Each adapts to your sector and ships with behavioral measurement on top.</p>
-  <p class="section-sub light fu es">Tres obras probadas — centro de preventas, lobby corporativo, centro de visitantes — en vivo abajo. Haz clic para interactuar. Cada una se adapta a tu sector e incluye medición de comportamiento.</p>
+  <p class="section-sub light fu en">Four reference works — preview center, corporate lobby, visitor center, and lobby sync infrastructure — running live below. Click to interact. Each adapts to your sector; Scan to Control shows the QR + phone + wall stack that powers measurement.</p>
+  <p class="section-sub light fu es">Cuatro obras de referencia — centro de preventas, lobby corporativo, centro de visitantes e infraestructura de sincronización — en vivo abajo. Haz clic para interactuar. Scan to Control muestra la pila QR + teléfono + muro que habilita la medición.</p>
 
   <div class="installs-grid">
     <article class="install-card fu">
@@ -754,6 +754,27 @@ footer {
         <p class="install-desc es">Entorno de archivo multipersona — la geometría social entre cuerpos determina qué historia aparece en la pared. Adaptable a cualquier lugar, historia corporativa o narrativa de desarrollo.</p>
         <a href="shared-ground.html" class="install-link en">Open full demo</a>
         <a href="shared-ground.html" class="install-link es">Abrir demo completa</a>
+      </div>
+    </article>
+
+    <article class="install-card fu d3">
+      <div class="install-live">
+        <iframe
+          src="https://interactive-sliders.netlify.app/poc"
+          title="Scan to Control — lobby sync proof of concept"
+          allow="fullscreen"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="install-body">
+        <div class="install-artist">Museum Planning LLC · 2026</div>
+        <h3 class="install-title"><span class="en">Scan to <em>Control</em></span><span class="es">Scan to <em>Control</em></span></h3>
+        <div class="install-type en">Lobby Sync · QR + Phone + Wall</div>
+        <div class="install-type es">Sincronización Lobby · QR + Teléfono + Muro</div>
+        <p class="install-desc en">Proof-of-concept for projection-mapped lobbies — QR on the wall, phone becomes the controller, artwork updates in real time. The technical layer behind dashboard capture and adaptation.</p>
+        <p class="install-desc es">Prueba de concepto para lobbies con proyección — QR en el muro, el teléfono es el controlador, la obra se actualiza en tiempo real. La capa técnica detrás de captura y adaptación en el panel.</p>
+        <a href="scan-to-control.html" class="install-link en">Demo &amp; technical brief</a>
+        <a href="scan-to-control.html" class="install-link es">Demo y brief técnico</a>
       </div>
     </article>
   </div>

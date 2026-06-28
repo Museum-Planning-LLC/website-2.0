@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <meta name="description" content="Scan to Control — prueba de concepto de sincronización de lobby. QR + teléfono + muro con sincronización Firebase en tiempo real. Brief técnico para lobbies corporativos." />
+  <link rel="canonical" href="https://museumplanning.com/immersive-mexico/es/scan-to-control.html" />
+  <link rel="alternate" hreflang="en" href="https://museumplanning.com/immersive-mexico/en/scan-to-control.html" />
+  <link rel="alternate" hreflang="es" href="https://museumplanning.com/immersive-mexico/es/scan-to-control.html" />
+  <link rel="alternate" hreflang="x-default" href="https://museumplanning.com/immersive-mexico/en/scan-to-control.html" />
+  <link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48" />
+  <link rel="stylesheet" href="../im-chrome.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Scan to Control · POC Sincronización Lobby | Museum Planning LLC</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #111C27;
+      --deep: #0D1520;
+      --muted: #6b6760;
+      --rule: rgba(201, 168, 76, 0.2);
+      --gold: #C9A84C;
+      --cream: #F8F4EC;
+    }
+    html, body { min-height: 100%; }
+    body {
+      background: #fff;
+      color: var(--ink);
+      font-family: 'Lato', system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    header.page-hd {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 16px;
+      align-items: center;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--rule);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .header-main { display: grid; gap: 4px; min-width: 0; }
+    .kicker { letter-spacing: 0.14em; color: var(--gold); }
+    header.page-hd h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+    .subtitle { font-size: 9px; color: rgba(107, 103, 96, 0.85); line-height: 1.5; }
+    header.page-hd a { color: var(--gold); text-decoration: none; white-space: nowrap; }
+    header.page-hd a:hover { text-decoration: underline; }
+    #stage {
+      flex: 0 0 auto;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;
+      max-height: 62vh;
+      background: #000;
+    }
+    #stage iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .brief {
+      flex: 1 1 auto;
+      background: var(--cream);
+      padding: 48px clamp(20px, 5vw, 56px) 64px;
+    }
+    .brief-inner { max-width: 780px; margin: 0 auto; }
+    .brief-kicker {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brief-kicker::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+    .brief-h {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+    .brief-h em { font-style: italic; color: var(--gold); }
+    .brief-lede {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+    .brief-h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 32px 0 14px;
+      color: var(--ink);
+    }
+    .stack, .deploy {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .stack li, .deploy li {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--muted);
+      padding: 14px 16px;
+      background: #fff;
+      border-left: 3px solid var(--gold);
+    }
+    .stack li strong {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .try-box {
+      margin-top: 36px;
+      padding: 20px 22px;
+      background: var(--deep);
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .try-box strong {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .try-box a { color: var(--gold); }
+    footer.page-ft {
+      padding: 12px 18px 16px;
+      border-top: 1px solid var(--rule);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      line-height: 1.7;
+      background: #fff;
+    }
+    footer.page-ft a { color: var(--gold); text-decoration: none; }
+    footer.page-ft a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="im-chrome">
+    <a class="im-back" href="index.html">← Immersive México</a>
+    <span class="im-lang">
+    <a class="lang-btn " href="../en/scan-to-control.html" hreflang="en">EN</a>
+    <a class="lang-btn active" href="../es/scan-to-control.html" hreflang="es" aria-current="page">ES</a>
+  </span>
+    <span class="im-label">Sincronización Lobby · Brief Técnico</span>
+  </div>
+  <header class="page-hd">
+    <div class="header-main">
+      <div class="kicker">Museum Planning LLC · Immersive Environments · México</div>
+      <h1>Scan to Control</h1>
+      <div class="subtitle">POC sincronización lobby · QR en muro · controlador móvil · actualización en vivo</div>
+    </div>
+    <a href="https://interactive-sliders.netlify.app/poc/controller" target="_blank" rel="noopener">Abrir controlador móvil ↗</a>
+  </header>
+  <div id="stage">
+    <iframe
+      src="https://interactive-sliders.netlify.app/poc"
+      title="Scan to Control — lobby display"
+      allow="fullscreen"
+      loading="eager"
+    ></iframe>
+  </div>
+  <section class="brief" id="brief">
+    <div class="brief-inner">
+      <div class="brief-kicker">Brief Técnico</div>
+      <h2 class="brief-h">QR + teléfono + muro — la <em>capa de sensores</em> del lobby.</h2>
+      <p class="brief-lede">Esta prueba de concepto muestra la columna vertebral de interacción para un lobby corporativo: una proyección o superficie mapeada ejecuta la obra, un código QR invita al teléfono del visitante, y los cambios se sincronizan en tiempo real con el muro. El mismo flujo de eventos alimenta captura, métricas del panel y mensajería opcional — con cámara superior para tráfico anónimo.</p>
+
+      <h3 class="brief-h3">Stack</h3>
+      <ol class="stack">
+        <li><strong>01 · Pantalla de muro</strong> Navegador a pantalla completa en PC de proyección o servidor de medios.</li>
+        <li><strong>02 · Entrada QR</strong> URL única por instalación. El escaneo abre el controlador móvil — sin app, sin login.</li>
+        <li><strong>03 · Controlador móvil</strong> Sliders, toques o elecciones narrativas. Cada evento es una señal de interacción.</li>
+        <li><strong>04 · Sincronización en vivo</strong> Firebase Realtime Database (u otra capa WebSocket) empuja parámetros muro ↔ teléfono.</li>
+        <li><strong>05 · Registro de eventos</strong> Escaneos, sesiones, permanencia, cambios → panel de comportamiento y CRM “capturados”.</li>
+        <li><strong>06 · Adaptación</strong> Motor de reglas agrega reacciones; parámetros generativos se inclinan hacia lo más usado.</li>
+        <li><strong>07 · Cámara (opcional)</strong> ML superior: tráfico, teléfono en mano, permanencia por zona — sin PII.</li>
+        <li><strong>08 · CRM + mensajes (opcional)</strong> Opt-in tras escaneo para SMS/email; etapas del embudo registradas en CRM.</li>
+      </ol>
+
+      <h3 class="brief-h3">Notas de despliegue</h3>
+      <ul class="deploy">
+        <li>Una URL de controlador por lobby (evitar colisión de sesiones entre sitios).</li>
+        <li>Aviso de privacidad en landing QR; consentimiento LFPDPPP para cámara y mensajes en México.</li>
+        <li>Funciona con cualquier pieza generativa — Surrender Machine, Living Commons, Shared Ground.</li>
+        <li>Producción añade auth del panel, rutas Firebase por cliente e integración con el Panel de Automatización Museum Planning.</li>
+      </ul>
+
+      <div class="try-box">
+        <strong>Pruébalo ahora</strong>
+        Abre la pantalla abajo en una pantalla grande (o pantalla completa). En tu teléfono, abre el controlador y mueve los sliders — el muro se actualiza en vivo cuando está conectado.
+        <br><br>
+        <a href="https://interactive-sliders.netlify.app/poc/controller" target="_blank" rel="noopener">https://interactive-sliders.netlify.app/poc/controller</a>
+      </div>
+    </div>
+  </section>
+  <footer class="page-ft">
+    Prueba de concepto sincronización lobby · Museum Planning LLC ·
+    <a href="index.html">Volver al resumen</a> ·
+    <a href="../../museum-planning-contact.html">Iniciar una conversación</a>
+  </footer>
+</body>
+</html>
