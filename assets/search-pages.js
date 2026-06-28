@@ -2,13 +2,13 @@
 window.SITE_SEARCH_PAGES = [
   {
     "type": "Home",
-    "title": "Museum Consultants &amp; Museum Planning | Museum Planning LLC",
+    "title": "Museum Consultants &amp; Museum Planning",
     "desc": "Museum consultants for feasibility studies, strategic planning, master planning, exhibition design, and city cultural plans. Forty museums since 1999. The consultant you hire is the consultant in the room.",
     "url": "index.html"
   },
   {
     "type": "Services",
-    "title": "Museum Planning Services &amp; Consultants | Museum Planning LLC",
+    "title": "Museum Planning Services &amp; Consultants",
     "desc": "Museum consultants for feasibility, master planning, strategic planning, exhibition design, and city cultural plans. Forty museums since 1999. The consultant you hire is the consultant in the room.",
     "url": "museum-planning-services.html"
   },
@@ -62,7 +62,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "Museum Vitality Index — Museum Health Scoring Framework | Museum Planning LLC",
+    "title": "Museum Vitality Index — Museum Health Scoring Framework",
     "desc": "The Museum Vitality Index is a 0–100 composite scoring framework that benchmarks museums of all sizes using size-normalized metrics. A $500K museum with strong ratios can outrank a $25M institution.",
     "url": "museum-vitality-index.html"
   },
@@ -77,6 +77,13 @@ window.SITE_SEARCH_PAGES = [
     "title": "Convergence Era",
     "desc": "Science centers, museums, and AI: how industrial design and agentic systems are reshaping cultural institutions — a museum planning white paper by Mark Walhimer (Museum Planning LLC). Museum feasibility, civic projects, convergence-era planning.",
     "url": "convergence-era.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Immersive Environments · Mexico",
+    "desc": "Immersive commercial environments for real estate preview centers, corporate lobbies, and hospitality — with live behavioral dashboards. Museum Planning LLC · Mexico City and worldwide.",
+    "url": "immersive-mexico/en/index.html",
+    "keywords": "Mexico México CDMX Mexico City immersive environments preview center corporate lobby hospitality behavioral dashboard sales funnel digital marketing outreach"
   },
   {
     "type": "Page",
@@ -183,7 +190,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "Science Center Feasibility for Cities | The New Model | Museum Planning LLC",
+    "title": "Science Center Feasibility for Cities | The New Model",
     "desc": "Science center feasibility for cities: starting a science center or technology center, workforce pipelines, employer signal, and real operating costs — before capital is committed. Museum Planning LLC helps you compare the legacy template to a convergence-era civic model.",
     "url": "for-cities-science-center.html"
   },
@@ -195,7 +202,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "Museum Feasibility Study for Cities & Municipalities | Museum Planning LLC",
+    "title": "Museum Feasibility Study for Cities & Municipalities",
     "desc": "Museum Planning LLC helps city managers, mayors' offices, and economic development directors evaluate museum feasibility, plan cultural destinations, and understand real operating costs — before capital is committed.",
     "url": "for-cities.html"
   },
@@ -207,7 +214,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "University Museum Planning &amp; Feasibility | Museum Planning LLC",
+    "title": "University Museum Planning &amp; Feasibility",
     "desc": "University museum planning for presidents, provosts, and boards — we turn collections in storage and underused buildings into public-facing museums that serve campus and community.",
     "url": "for-universities.html"
   },
@@ -230,8 +237,69 @@ window.SITE_SEARCH_PAGES = [
     "url": "immersive-interactive-museum-transformation/index.html"
   },
   {
+    "type": "Immersive Mexico",
+    "title": "Living Commons · Lobby Demo",
+    "desc": "Living Commons — commercial lobby demo. Co-presence generative environment for corporate shared spaces. Museum Planning LLC.",
+    "url": "immersive-mexico/en/living-commons.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Shared Ground — Mark Walhimer",
+    "desc": "Museum Planning LLC — Shared Ground — Mark Walhimer.",
+    "url": "immersive-mexico/en/shared-ground.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Surrender Machine 77823 · Preview Center Demo",
+    "desc": "Surrender Machine 77823 — commercial preview center demo. Three-zone generative environment for immersive sales spaces. Museum Planning LLC.",
+    "url": "immersive-mexico/en/surrender-machine-77823.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Immersive Environments · Mexico",
+    "desc": "Immersive commercial environments for real estate preview centers, corporate lobbies, and hospitality — with live behavioral dashboards. Museum Planning LLC · Mexico City and worldwide.",
+    "url": "immersive-mexico/es/index.html",
+    "keywords": "México CDMX Ciudad de México entornos inmersivos centro de preventas lobby corporativo hospitalidad panel comportamiento embudo de ventas marketing digital"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Living Commons · Demo Lobby",
+    "desc": "Living Commons — demo de lobby comercial. Entorno generativo de co-presencia para espacios corporativos compartidos. Museum Planning LLC.",
+    "url": "immersive-mexico/es/living-commons.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Shared Ground — Mark Walhimer",
+    "desc": "Museum Planning LLC — Shared Ground — Mark Walhimer.",
+    "url": "immersive-mexico/es/shared-ground.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Surrender Machine 77823 · Demo Centro de Previsualización",
+    "desc": "Surrender Machine 77823 — demo de centro de previsualización comercial. Entorno generativo de tres zonas para espacios de venta inmersivos. Museum Planning LLC.",
+    "url": "immersive-mexico/es/surrender-machine-77823.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Living Commons",
+    "desc": "Museum Planning LLC — Living Commons.",
+    "url": "immersive-mexico/living-commons.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Shared Ground",
+    "desc": "Museum Planning LLC — Shared Ground.",
+    "url": "immersive-mexico/shared-ground.html"
+  },
+  {
+    "type": "Immersive Mexico",
+    "title": "Surrender Machine 77823",
+    "desc": "Museum Planning LLC — Surrender Machine 77823.",
+    "url": "immersive-mexico/surrender-machine-77823.html"
+  },
+  {
     "type": "Page",
-    "title": "Immersive Museum Planning — Science Centers, Local &amp; Natural History | Museum Planning LLC",
+    "title": "Immersive Museum Planning — Science Centers, Local &amp; Natural History",
     "desc": "Immersive museum planning for science center transformation, local history museums, and natural history institutions — visitor journey, interactives, and exhibition design from concept through opening. We personally lead every engagement.",
     "url": "immersive-museum-planning.html"
   },
@@ -249,7 +317,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "Starting a Local History Museum | Historic Building & Community Collection | Museum Planning LLC",
+    "title": "Starting a Local History Museum | Historic Building & Community Collection",
     "desc": "The most common starting point: a historic building that needs a purpose, a collection in boxes, or a historical society ready to grow into something permanent. Here's what the planning process actually looks like — and what makes local history museums succeed or fail.",
     "url": "local-history-museum.html"
   },
@@ -261,7 +329,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "Museum AI — Strategic Planning for Smart Museums | Museum Planning LLC",
+    "title": "Museum AI — Strategic Planning for Smart Museums",
     "desc": "Museum-AI is a Museum Planning LLC practice: phased feasibility and master planning for audience strategy, smart exhibits, and IoT building intelligence — from opening day thinking, not product sales.",
     "url": "museum-ai/index.html"
   },
@@ -339,7 +407,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "Museum Planner — Museum Planning Consultants · Museum Planning LLC",
+    "title": "Museum Planner — Museum Planning Consultants",
     "desc": "Museum planning consultant for feasibility studies, master planning, and strategic planning. Mark Walhimer, Managing Partner — 40+ museums, practice founded 1999. Engagements begin at $40,000.",
     "url": "museum-planner/index.html"
   },
@@ -447,7 +515,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "Museum Staff Portal & Employee Handbook Review | Museum Planning LLC",
+    "title": "Museum Staff Portal & Employee Handbook Review",
     "desc": "Museum Planning LLC helps city-operated and small museums audit employee handbooks, coordinate attorney review, and build branded staff identity portals — mission, values, HR policies, and a staff Q&amp;A channel in one place.",
     "url": "museum-staff-portal.html"
   },
@@ -1011,7 +1079,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Project",
-    "title": "Shared Ground — Interactive Installation · Museum Planning LLC",
+    "title": "Shared Ground — Interactive Installation",
     "desc": "Shared Ground — interactive installation for embodied collective memory. Ars Electronica PRIX 2026. First archive: McDonough, Georgia Starr Collection.",
     "url": "projects/shared-ground.html"
   },
@@ -1089,7 +1157,7 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "University of Arizona - Arizona Natural Resources Museum (ANRM)",
+    "title": "University of Arizona - Arizona Natural Resources Museum (ANRM) - Museum Planning LLC",
     "desc": "The Nature and Technology Museum is an interactive natural history, conservation center, online virtual museum, and student in-school programming.",
     "url": "tools/sources/university-of-arizona-wp.html"
   },

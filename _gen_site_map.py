@@ -15,6 +15,15 @@ LASTMOD = date.today().isoformat()
 # Not for search indexing — error page and internal style reference.
 SITEMAP_EXCLUDE = frozenset({"404.html", "style-guide.html"})
 
+# Embed / work shells — linked from parent demos, not standalone search targets.
+SEARCH_EXCLUDE_PREFIXES = ("immersive-mexico/works/",)
+
+# Language-router / redirect stubs — canonical pages live under en/ and es/.
+SEARCH_EXCLUDE = frozenset({
+    "immersive-mexico/index.html",
+    "immersive-mexico.html",
+})
+
 TITLE_RE = re.compile(r"<title>([^<]+)</title>", re.I)
 META_DESC_RE = re.compile(
     r'<meta\s+name="description"\s+content="([^"]*)"', re.I
@@ -26,9 +35,12 @@ def title_from_slug(slug: str) -> str:
 
 
 def strip_suffix(title: str) -> str:
-    return re.sub(
-        r"\s*[—–-]\s*Museum Planning LLC\s*$", "", title.strip(), flags=re.I
+    title = title.strip()
+    title = re.sub(
+        r"\s*[—–|·]\s*Museum Planning LLC\s*$", "", title, flags=re.I
     )
+    title = re.sub(r"\s*\|\s*Museum Planning LLC\s*$", "", title, flags=re.I)
+    return title.strip()
 
 
 def extract_meta(path: Path) -> tuple[str, str]:
@@ -55,6 +67,7 @@ def sort_key(rel: str) -> tuple:
         "museum-vitality-index.html": 10,
         "Museum_Planning_LLC_Capabilities.html": 11,
         "convergence-era.html": 12,
+        "immersive-mexico/en/index.html": 13,
         "style-guide.html": 98,
         "site-map.html": 99,
     }
@@ -83,6 +96,8 @@ def url_priority(rel: str) -> tuple[str, str]:
         return "monthly", "0.8"
     if rel.startswith("projects/"):
         return "monthly", "0.72"
+    if rel.startswith("immersive-mexico/"):
+        return "monthly", "0.82"
     return "monthly", "0.45"
 
 
@@ -95,6 +110,8 @@ def page_type(rel: str) -> str:
         return "Museum School"
     if rel.startswith("projects/"):
         return "Project"
+    if rel.startswith("immersive-mexico/"):
+        return "Immersive Mexico"
     if rel.startswith("museum-planning-"):
         return rel.replace("museum-planning-", "").replace(".html", "").title()
     if rel == "site-map.html":
@@ -115,6 +132,18 @@ html_files.sort(key=sort_key)
 
 
 def extract_search_keywords(rel: str, path: Path) -> str:
+    if rel == "immersive-mexico/en/index.html":
+        return (
+            "Mexico México CDMX Mexico City immersive environments "
+            "preview center corporate lobby hospitality behavioral dashboard "
+            "sales funnel digital marketing outreach"
+        )
+    if rel == "immersive-mexico/es/index.html":
+        return (
+            "México CDMX Ciudad de México entornos inmersivos "
+            "centro de preventas lobby corporativo hospitalidad panel comportamiento "
+            "embudo de ventas marketing digital"
+        )
     if rel != "clients/index.html":
         return ""
     text = path.read_text(encoding="utf-8", errors="ignore")
@@ -127,7 +156,9 @@ def build_overlay_pages() -> list[dict]:
     out: list[dict] = []
     seen_urls: set[str] = set()
     for rel in html_files:
-        if rel in SITEMAP_EXCLUDE:
+        if rel in SITEMAP_EXCLUDE or rel in SEARCH_EXCLUDE:
+            continue
+        if rel.startswith(SEARCH_EXCLUDE_PREFIXES):
             continue
         path = ROOT / rel
         title, desc = extract_meta(path)
