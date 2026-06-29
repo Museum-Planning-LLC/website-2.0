@@ -39,7 +39,7 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Museum School",
     "title": "Museum School — Feasibility, Strategic &amp; Master Planning Guides",
-    "desc": "Free Museum School guides for the field. Commercial work: feasibility studies for startup museums in new cities — cities, municipalities, and foundations.",
+    "desc": "Museum School — free guides on starting a museum, children's museums, and exhibit costs. Commercial work: feasibility studies for startup museums in new cities, commissioned by cities and foundations.",
     "url": "museum-school/index.html"
   },
   {
@@ -221,7 +221,7 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Page",
     "title": "Museum Feasibility Study for Cities & Municipalities",
-    "desc": "Museum Planning LLC helps city managers, mayors' offices, and economic development directors evaluate museum feasibility, plan cultural destinations, and understand real operating costs — before capital is committed.",
+    "desc": "Museum feasibility for cities and redevelopment — downtown, mall, housing, or mixed-use; then someone says museum. Building selection, operating costs, council-ready studies. Typical feasibility $40k–$70k.",
     "url": "for-cities.html"
   },
   {
@@ -397,6 +397,12 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
+    "title": "Museum Culture Reset &amp; Staff Handbook Alignment | Museum Courses",
+    "desc": "Museum change management for operating museums — employee handbook review, staff culture reset, visitor services training, and rollout. Typically 4–8 months. Museum Planning LLC.",
+    "url": "museum-courses.html"
+  },
+  {
+    "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
     "url": "museum-customer-service-training/index.html"
@@ -422,7 +428,7 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Page",
     "title": "Museum Feasibility Study — Cost, Process &amp; Deliverables",
-    "desc": "Museum feasibility study: attendance, operating costs, and a board-ready report before capital is committed. Typical fee $40k–$70k.",
+    "desc": "Museum feasibility study for cities — scope, deliverables, fee range ($40k–$70k), and timeline. For city managers and staff comparing consultants before procurement.",
     "url": "museum-feasibility-study.html"
   },
   {
@@ -518,7 +524,7 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Museum School",
     "title": "How Much Do Museum Buildings &amp; Exhibits Cost?",
-    "desc": "Why museum building and exhibit cost estimates changed after Covid — historical benchmarks, tariffs and supply-chain volatility, project-by-project reality.",
+    "desc": "Why museum building and exhibit cost estimates changed after Covid — historical benchmarks, supply chain and tariff volatility, and what boards can still plan for. Museum School reference.",
     "url": "museum-school/how-much-do-museum-exhibits-cost.html"
   },
   {
