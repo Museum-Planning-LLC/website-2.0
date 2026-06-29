@@ -220,8 +220,8 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "Museum Feasibility Study for Cities & Municipalities",
-    "desc": "Museum feasibility for cities and redevelopment — downtown, mall, housing, or mixed-use; then someone says museum. Building selection, operating costs, council-ready studies. Typical feasibility $40k–$70k.",
+    "title": "City Cultural Planning &amp; Museum Feasibility for Cities",
+    "desc": "City cultural planning and museum feasibility study for municipalities — downtown revitalization, building selection, museum master planning, and council-ready deliverables. Typical feasibility $40k–$70k.",
     "url": "for-cities.html"
   },
   {
@@ -396,10 +396,11 @@ window.SITE_SEARCH_PAGES = [
     "url": "museum-consulting-and-cultural-planning-museum-planning-llc/index.html"
   },
   {
-    "type": "Page",
-    "title": "Museum Culture Reset &amp; Staff Handbook Alignment | Museum Courses",
-    "desc": "Museum change management for operating museums — employee handbook review, staff culture reset, visitor services training, and rollout. Typically 4–8 months. Museum Planning LLC.",
-    "url": "museum-courses.html"
+    "type": "Service",
+    "title": "Museum Courses — Culture Reset &amp; Staff Handbook Alignment",
+    "desc": "Museum Courses — change management for operating museums: employee handbook review, staff culture reset, visitor services training, and rollout. Typically 4–8 months. Museum Planning LLC.",
+    "url": "museum-courses.html",
+    "keywords": "museum courses culture reset change management employee handbook staff training visitor services operating museums HR marketing rollout"
   },
   {
     "type": "Page",

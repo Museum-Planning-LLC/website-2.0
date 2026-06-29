@@ -112,6 +112,8 @@ def page_type(rel: str) -> str:
         return "Project"
     if rel.startswith("immersive-mexico/"):
         return "Immersive Mexico"
+    if rel == "museum-courses.html":
+        return "Service"
     if rel.startswith("museum-planning-"):
         return rel.replace("museum-planning-", "").replace(".html", "").title()
     if rel == "site-map.html":
@@ -155,6 +157,11 @@ def extract_search_keywords(rel: str, path: Path) -> str:
             "QR código controlador teléfono sincronización lobby proyección Firebase "
             "tiempo real panel cámara aprendizaje automático scan to control "
             "lobby corporativo brief técnico"
+        )
+    if rel == "museum-courses.html":
+        return (
+            "museum courses culture reset change management employee handbook "
+            "staff training visitor services operating museums HR marketing rollout"
         )
     if rel != "clients/index.html":
         return ""
