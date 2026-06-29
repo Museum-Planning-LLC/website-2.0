@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
+<title>How Much Do Museum Buildings &amp; Exhibits Cost? — Museum Planning LLC</title>
+<meta name="description" content="Why museum building and exhibit cost estimates changed after Covid — historical benchmarks, supply chain and tariff volatility, and what boards can still plan for. Museum School reference.">
+<link rel="canonical" href="https://museumplanning.com/museum-school/how-much-do-museum-exhibits-cost.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --navy:#1B2A3B;--deep:#111C27;--gold:#C9A84C;--gold-lt:#E8D099;
+  --cream:#F8F4EC;--ink:#1A1A1A;--mid:#5A5A5A;--rule:#D4C8B0;
+  --serif:'Playfair Display',Georgia,serif;--mono:'DM Mono',monospace;--sans:'Lato',system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;}
+.page-hero{background:var(--deep);padding:120px 56px 72px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;opacity:.035;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px),
+  repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,1) 79px,rgba(201,168,76,1) 80px);}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.hero-breadcrumb{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:20px;}
+.hero-breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none;}
+.hero-breadcrumb a:hover{color:var(--gold);}
+.hero-breadcrumb span{color:rgba(255,255,255,.15);margin:0 8px;}
+.hero-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.page-hero h1{font-family:var(--serif);font-size:clamp(34px,4.5vw,58px);font-weight:900;color:white;line-height:1.08;max-width:780px;margin-bottom:20px;}
+.page-hero h1 em{font-style:italic;color:var(--gold);}
+.hero-deck{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(255,255,255,.5);max-width:640px;line-height:1.65;}
+.article-wrap{max-width:1100px;margin:0 auto;padding:80px 56px 100px;display:grid;grid-template-columns:1fr 320px;gap:72px;align-items:start;}
+.prose h2{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--navy);line-height:1.2;margin:48px 0 16px;}
+.prose h2:first-child{margin-top:0;}
+.prose p{font-size:17px;line-height:1.85;color:#2a2a2a;margin-bottom:1.4em;}
+.prose ul{margin:0 0 1.5em;padding:0;list-style:none;}
+.prose ul li{font-size:16px;line-height:1.75;color:#333;margin-bottom:10px;padding-left:24px;position:relative;}
+.prose ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-family:var(--mono);}
+.prose strong{color:var(--navy);}
+.prose a{color:var(--navy);border-bottom:1px solid rgba(201,168,76,.45);text-decoration:none;}
+.prose a:hover{color:var(--gold);border-bottom-color:var(--gold);}
+.prose .callout{background:var(--navy);padding:32px 36px;margin:36px 0;}
+.prose .callout-label{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.prose .callout-title{font-family:var(--serif);font-size:20px;font-weight:700;color:white;margin-bottom:10px;}
+.prose .callout-body{font-size:15px;color:rgba(255,255,255,.65);line-height:1.75;}
+.prose .callout-body a{color:var(--gold-lt);border:none;}
+.cost-table{width:100%;border-collapse:collapse;margin:24px 0 32px;font-size:15px;}
+.cost-table th,.cost-table td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--rule);vertical-align:top;}
+.cost-table th{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mid);background:var(--warm);}
+.cost-table td:first-child{font-weight:700;color:var(--navy);width:38%;}
+.sb-card{background:white;padding:28px 24px;margin-bottom:3px;border-top:2px solid var(--rule);}
+.sb-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.sb-card p{font-size:14px;line-height:1.7;color:var(--mid);margin-bottom:12px;}
+.sb-links{list-style:none;padding:0;margin:0;}
+.sb-links a{display:flex;justify-content:space-between;font-size:14px;color:var(--navy);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--rule);}
+.sb-links a:hover{color:var(--gold);}
+.btn-gold{display:inline-block;background:var(--gold);color:var(--deep);padding:12px 28px;font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;margin-top:8px;}
+.cta-band{background:var(--navy);padding:72px 56px;text-align:center;}
+.cta-heading{font-family:var(--serif);font-size:clamp(28px,3.5vw,40px);font-weight:900;color:white;line-height:1.1;margin-bottom:16px;}
+.cta-heading em{font-style:italic;color:var(--gold);}
+.cta-body{font-size:16px;color:rgba(255,255,255,.55);max-width:520px;margin:0 auto 28px;line-height:1.75;}
+@media(max-width:900px){.page-hero,.article-wrap,.cta-band{padding-left:24px;padding-right:24px;}.article-wrap{grid-template-columns:1fr;gap:40px;}}
+</style>
+<link rel="stylesheet" href="../assets/nav-mobile.css">
+<link rel="stylesheet" href="../assets/site-footer.css">
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script src="../assets/ga-measurement-id.js"></script>
+<script src="../assets/analytics.js" defer></script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGG4KV35" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<nav class="site-nav" id="site-nav">
+  <a href="../index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
+  <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+  </button>
+  <ul class="nav-links" id="site-nav-menu">
+    <li><a href="../museum-planning-projects.html">Projects</a></li>
+    <li><a href="../museum-planning-services.html">Services</a></li>
+    <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
+    <li><a href="../museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="index.html">Museum School</a><span>/</span>Exhibit costs</div>
+    <div class="hero-eyebrow">Museum School</div>
+    <h1>How much do buildings<br>and <em>exhibits cost?</em></h1>
+    <p class="hero-deck">The honest answer in 2026: reliable per-square-foot numbers — for the shell and for the galleries — are hard to give and harder to schedule against. What changed, and what boards should still plan for. Not obstacle-setting; just the world right now.</p>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <div class="prose">
+    <h2>Honest answer first</h2>
+    <p>Boards and donors still ask for a single number — <em>how much per square foot?</em> — for the building and for the exhibits, with a schedule they can put in a capital campaign. That was workable before 2020. It is much harder now.</p>
+    <p>Building cost, exhibit cost, and project schedule are all uncertain in ways they were not pre-Covid. Energy, freight, tariffs, procurement, fabrication capacity, and production tools are moving targets — some week to week. Treat any per-square-foot rule of thumb as <strong>historical context</strong>, not a budget you can fundraise against without fresh quotes tied to a real proceed date.</p>
+
+    <h2>What used to work (pre-Covid)</h2>
+    <p><strong>Building.</strong> Depending on building type, practitioners could often place total construction cost in the ballpark of roughly <strong>$1,000/sq ft</strong> — construction and fit-out of the shell, <em>not</em> including land purchase (which might be high or low in any given market). You were in the ballpark enough to frame a campaign and talk to a GC.</p>
+    <p><strong>Exhibits.</strong> For fully interactive museum galleries, the field could often cite roughly <strong>$300–$650/sq ft</strong> for exhibit fabrication and fit-out — and match that range to a fabrication calendar with reasonable confidence. Museum fabricators, installers, and traveling-exhibit producers were stable enough that you could scope a project, pick a shop, and hold a timeline.</p>
+    <p>Those norms supported the benchmarks below. They still explain <em>what drives cost</em> — but they no longer predict what you will pay or when work will finish.</p>
+
+    <h2>What broke after Covid</h2>
+    <ul>
+      <li><strong>Fabricator and installer capacity</strong> — many museum exhibit shops, installers, and traveling-exhibit producers did not survive the disruption. Fewer qualified bidders, longer lead times, less predictable pricing.</li>
+      <li><strong>Supply chain, energy, and freight</strong> — materials and shipping costs no longer behave like pre-2020 models. Commodity and energy prices swing quickly; that flows straight into transportation and manufacturing.</li>
+      <li><strong>Tariffs and trade policy</strong> — another moving layer on imported materials, equipment, and finished goods. A bid valid in one month may not survive the next.</li>
+      <li><strong>Schedule risk</strong> — the same project can cost differently depending on when you lock scope and who still has crew capacity that quarter.</li>
+      <li><strong>AI and production tools</strong> — software for design, visualization, fabrication prep, and content is shifting quickly — in some cases week to week — which changes how shops and contractors price labor and what they can promise on timeline.</li>
+    </ul>
+    <p>The result is <strong>project-by-project pricing</strong> for both shell and exhibits: a number that is valid if you are ready to proceed by a specific date — with contractors, fabricators, procurement, and shipping booked — not a universal constant you can carry for months while fundraising drifts.</p>
+
+    <h2>Historical benchmarks (pre-disruption reference)</h2>
+    <p>Use this table to understand <strong>what used to be in the conversation</strong>, not as a 2026 quote. Ranges vary by interactivity, durability, geography, and whether the gallery is temporary or permanent:</p>
+
+    <table class="cost-table">
+      <thead><tr><th>Category</th><th>Typical range (historical)</th></tr></thead>
+      <tbody>
+        <tr><td>New museum building (construction, not land)</td><td>Roughly <strong>~$1,000/sq ft</strong> all-in for the shell — varied by building type and market (pre-Covid ballpark)</td></tr>
+        <tr><td>Interactive exhibition fit-out</td><td><strong>$300–$650/sq ft</strong> at full interactivity (pre-Covid field norm)</td></tr>
+        <tr><td>Exhibition fit-out (moderate interactivity)</td><td><strong>$150–$300/sq ft</strong></td></tr>
+        <tr><td>Small gallery refresh (~500 sq ft)</td><td>Often <strong>$75k–$250k</strong> all-in for design through install</td></tr>
+        <tr><td>Permanent gallery (~5,000 sq ft)</td><td>Often <strong>$750k–$1.5M+</strong> in exhibit fabrication alone</td></tr>
+        <tr><td>Traveling / modular exhibition</td><td>Wide range — <strong>$200k–$2M+</strong> depending on footprint and tour structure</td></tr>
+      </tbody>
+    </table>
+
+    <p>Land is a separate line item — purchase or lease can dominate the pro forma in some cities and barely register in others. Exhibition space is often roughly half the total building program — so capital planning historically had at least three buckets: <strong>land, shell, and exhibits</strong>, each with its own logic. Today all three need fresh quotes when you have a proceed date.</p>
+
+    <h2>What still drives cost up or down</h2>
+    <ul>
+      <li><strong>Building type and systems</strong> — climate control, high bays, loading docks, and life-safety requirements for collections and crowds push shell cost well beyond generic commercial construction.</li>
+      <li><strong>Interactivity</strong> — touch tables, AV, sensors, and software maintenance add first cost and ongoing operating expense.</li>
+      <li><strong>Custom fabrication</strong> — one-off scenic and object mounts cost more than modular casework and graphic panels.</li>
+      <li><strong>Life safety and accessibility</strong> — code compliance, fire suppression in showcases, and universal design are non-negotiable and affect budget.</li>
+      <li><strong>Operating model</strong> — children's museums and science centers often budget higher per square foot because exhibits wear faster and staff facilitation is part of the experience.</li>
+      <li><strong>Phasing</strong> — opening with a partial gallery and expanding in phase two spreads capital but changes donor messaging.</li>
+    </ul>
+
+    <h2>A dated project benchmark</h2>
+    <p>On the C.O. Polk Interactive Museum (McDonough, Georgia), exhibition fabrication for roughly <strong>1,800 sq ft</strong> was budgeted at about <strong>$590,000</strong> — approximately <strong>$328/sq ft</strong> at high interactivity. That project predates the post-Covid disruption. It is one useful data point for <em>what interactive civic scale felt like when the fabricator market was intact</em> — not a number to paste into a 2026 campaign without new bids.</p>
+
+    <h2>What boards can still do</h2>
+    <ul>
+      <li><strong>Separate building from exhibits</strong> in the capital stack — they have different risk profiles and different vendor markets.</li>
+      <li><strong>Test operating sustainability first</strong> — attendance, staffing, refresh reserves — before locking exhibit scope. See <a href="what-is-a-museum-feasibility-study.html">what a feasibility study covers</a>.</li>
+      <li><strong>Phase galleries</strong> — open with partial fit-out; expand when procurement and capacity are visible, not assumed.</li>
+      <li><strong>Get quotes when you have a proceed date</strong> — for the GC and the fabricators, not twelve months earlier for numbers that will expire. Treat schedule and price as a pair.</li>
+      <li><strong>Build contingency</strong> — post-disruption projects need more float on cost and calendar than pre-2020 models assumed — for shell and exhibits alike.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Context</div>
+      <div class="callout-title">Exhibit budget is only part of the picture.</div>
+      <p class="callout-body">Capital for galleries has to match operating revenue — attendance, membership, staffing, and refresh cycles. See <a href="what-is-a-museum-feasibility-study.html">what a feasibility study covers</a> and <a href="how-to-start-a-museum.html">how to start a museum</a> for how boards usually test those assumptions before fundraising.</p>
+    </div>
+
+    <h2>More Museum School reading</h2>
+    <ul>
+      <li><a href="how-to-start-a-museum.html">How to start a museum</a> — capital and operating benchmarks in context</li>
+      <li><a href="how-to-start-a-childrens-museum.html">How to start a children's museum</a> — higher wear and staffing costs</li>
+      <li><a href="museum-exhibition-design/">Exhibition design reference series</a> — six-part process from planning through maintenance</li>
+    </ul>
+  </div>
+
+  <aside>
+    <div class="sb-card">
+      <div class="sb-label">Pre-Covid ballparks</div>
+      <p>Building shell: <strong>~$1,000/sq ft</strong> (not land)</p>
+      <p>Interactive fit-out: <strong>$300–650/sq ft</strong></p>
+      <p>Moderate fit-out: <strong>$150–300/sq ft</strong></p>
+      <p class="sb-note" style="font-size:13px;color:var(--mid);margin-top:12px;">Historical — not a 2026 quote or schedule.</p>
+    </div>
+    <div class="sb-card">
+      <div class="sb-label">Museum School</div>
+      <p>Educational reference — not a quote or engagement offer.</p>
+      <ul class="sb-links">
+        <li><a href="index.html">Overview <span>→</span></a></li>
+        <li><a href="how-to-start-a-museum.html">Start a museum <span>→</span></a></li>
+        <li><a href="how-to-start-a-childrens-museum.html">Start a children's museum <span>→</span></a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<p class="privacy-strip"><a href="../museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
+<footer>
+  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <ul class="footer-links">
+    <li><a href="../museum-planning-about.html">About</a></li>
+    <li><a href="../for-cities.html">For Cities</a></li>
+    <li><a href="index.html">Museum School</a></li>
+    <li><a href="../museum-planning-contact.html">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Museum Planning LLC</div>
+</footer>
+
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-close" id="searchClose">×</button>
+  <div class="search-input-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+<script src="../assets/search-pages.js"></script>
+<script src="../assets/site-search.js"></script>
+<script src="../assets/nav-mobile.js" defer></script>
+</body>
+</html>

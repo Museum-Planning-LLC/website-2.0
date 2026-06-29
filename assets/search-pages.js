@@ -38,8 +38,8 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Museum School",
-    "title": "Museum School — Starting a Museum, Feasibility &amp; Master Planning",
-    "desc": "Free Museum School guides on starting a museum, museum feasibility studies, and museum master planning — written by Mark Walhimer, Museum Planning LLC.",
+    "title": "Museum School — Feasibility, Strategic &amp; Master Planning Guides",
+    "desc": "Free Museum School guides for the field. Commercial work: feasibility studies for startup museums in new cities — cities, municipalities, and foundations.",
     "url": "museum-school/index.html"
   },
   {
@@ -107,6 +107,12 @@ window.SITE_SEARCH_PAGES = [
     "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
+    "url": "about.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
     "url": "about/index.html"
   },
   {
@@ -131,6 +137,12 @@ window.SITE_SEARCH_PAGES = [
     "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
+    "url": "author/alvaro/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
     "url": "by-michael-vega/index.html"
   },
   {
@@ -145,6 +157,12 @@ window.SITE_SEARCH_PAGES = [
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
     "url": "contact-museum-planning/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
+    "url": "contact.html"
   },
   {
     "type": "Page",
@@ -496,6 +514,18 @@ window.SITE_SEARCH_PAGES = [
     "title": "25 Museum Projects to Watch in 2026",
     "desc": "Field analysis: Mark Walhimer on 25 museum openings, expansions, and controversies in 2026 — community alignment, funding, and what it means for institutional planning.",
     "url": "museum-projects-to-watch-2026.html"
+  },
+  {
+    "type": "Museum School",
+    "title": "How Much Do Museum Buildings &amp; Exhibits Cost?",
+    "desc": "Why museum building and exhibit cost estimates changed after Covid — historical benchmarks, tariffs and supply-chain volatility, project-by-project reality.",
+    "url": "museum-school/how-much-do-museum-exhibits-cost.html"
+  },
+  {
+    "type": "Museum School",
+    "title": "How to Start a Children's Museum",
+    "desc": "How to start a children's museum — feasibility, capital, operating model, and common mistakes. Practical guidance from Museum Planning LLC, forty museums since 1999.",
+    "url": "museum-school/how-to-start-a-childrens-museum.html"
   },
   {
     "type": "Museum School",
