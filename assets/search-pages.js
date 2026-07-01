@@ -523,6 +523,12 @@ window.SITE_SEARCH_PAGES = [
     "url": "museum-projects-to-watch-2026.html"
   },
   {
+    "type": "Page",
+    "title": "Landmark Supreme Court Decisions & Museums 2026",
+    "desc": "Field analysis: Trump v. Slaughter, Wolford v. Lopez, and the OMB federal grant overhaul — how Supreme Court rulings and executive policy reshape museum funding, exhibit content, and security.",
+    "url": "landmark-supreme-court-decisions-museums-2026.html"
+  },
+  {
     "type": "Museum School",
     "title": "How Much Do Museum Buildings &amp; Exhibits Cost?",
     "desc": "Why museum building and exhibit cost estimates changed after Covid — historical benchmarks, supply chain and tariff volatility, and what boards can still plan for. Museum School reference.",

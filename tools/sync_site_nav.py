@@ -53,6 +53,7 @@ def active_href(rel: str) -> str | None:
         "immersive-museum-planning.html",
         "museum-staff-portal.html",
         "museum-projects-to-watch-2026.html",
+        "landmark-supreme-court-decisions-museums-2026.html",
         "museum-vitality-index.html",
         "museum-ai/index.html",
     ) or rel.startswith("museum-ai/"):
