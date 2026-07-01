@@ -23,8 +23,34 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Lato',sans-serif;background:var(--white);color:var(--ink);font-size:17px;line-height:1.78;-webkit-font-smoothing:antialiased;}
 
+/* NAV */
+nav.site-nav{background:var(--deep);padding:0 56px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,.06);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:15px;color:white;text-decoration:none;letter-spacing:.02em;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center;}
+.nav-links a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-cta{background:var(--gold)!important;color:var(--deep)!important;padding:8px 20px;}
+.nav-search{position:relative;display:flex;align-items:center;}
+.search-toggle{background:none;border:none;cursor:pointer;padding:6px;color:rgba(255,255,255,.45);transition:color .2s;display:flex;align-items:center;}
+.search-toggle:hover{color:var(--gold);}
+.search-toggle svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
+.search-overlay{display:none;position:fixed;inset:0;background:rgba(17,28,39,.97);z-index:300;flex-direction:column;align-items:center;justify-content:flex-start;padding:80px 24px 40px;}
+.search-overlay.open{display:flex;}
+.search-close{position:absolute;top:20px;right:28px;background:none;border:none;color:rgba(255,255,255,.4);font-size:28px;cursor:pointer;font-family:'DM Mono',monospace;}
+.search-input-wrap{width:100%;max-width:680px;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:48px;}
+.search-input-wrap svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0;}
+#search-input{flex:1;background:none;border:none;outline:none;font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,40px);color:white;padding:12px 0;caret-color:var(--gold);}
+.search-results{width:100%;max-width:680px;display:flex;flex-direction:column;gap:3px;}
+.search-result{background:rgba(255,255,255,.04);padding:20px 24px;text-decoration:none;border-left:3px solid transparent;transition:border-color .2s,background .2s;display:block;}
+.search-result:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
+.sr-type{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.sr-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:white;margin-bottom:4px;}
+.sr-desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.5;}
+
 .hero{background:var(--deep);color:white;padding:76px 56px 0;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:480px;height:480px;border:1px solid rgba(201,168,76,.1);border-radius:50%;pointer-events:none;}
+.hero::after{content:'';position:absolute;top:-40px;right:-40px;width:320px;height:320px;border:1px solid rgba(201,168,76,.06);border-radius:50%;pointer-events:none;}
 .hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1;}
 .eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:14px;animation:fadeUp .6s .05s both;}
 .eyebrow::before{content:'— ';color:var(--gold);}
@@ -78,6 +104,18 @@ article a:hover{color:var(--gold);}
 .detail-item strong{display:block;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--deep);margin-bottom:8px;line-height:1.3;}
 .detail-item p{font-size:15px;line-height:1.72;color:#3a3a3a;margin:0;}
 
+.planning-list{list-style:none;margin:1.5em 0 2em;}
+.planning-list li{padding:14px 0 14px 20px;border-left:2px solid var(--gold);margin-bottom:12px;font-size:15px;line-height:1.72;color:#3a3a3a;}
+.planning-list li strong{color:var(--deep);}
+
+.disclaimer{background:var(--cream);border-left:3px solid var(--gold);padding:24px 28px;margin:2.4em 0;font-size:14px;line-height:1.75;color:var(--mid);}
+.disclaimer strong{color:var(--ink);}
+
+.resource-list{list-style:none;margin:1.5em 0 2em;}
+.resource-list li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.65;}
+.resource-list li:last-child{border-bottom:none;}
+.resource-list a{font-weight:600;}
+
 aside{padding-top:8px;}
 .aside-block{background:var(--cream);border-top:2px solid var(--gold);padding:24px;margin-bottom:24px;}
 .aside-head{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--rule);}
@@ -103,15 +141,21 @@ aside{padding-top:8px;}
 .tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;background:var(--cream);color:var(--mid);text-decoration:none;border:1px solid var(--rule);transition:background .2s,color .2s,border-color .2s;}
 .tag:hover{background:var(--gold);color:var(--deep);border-color:var(--gold);}
 
-.privacy-strip{text-align:center;padding:24px;font-size:13px;color:var(--mid);}
-.privacy-strip a{color:var(--deep);}
+footer{background:var(--deep);padding:32px 56px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.06);}
+.footer-logo{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.28);}
+.footer-logo em{color:var(--gold);font-style:normal;}
+.footer-links{display:flex;flex-wrap:wrap;gap:24px;list-style:none;margin:0;padding:0;}
+.footer-links a{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 @media(max-width:860px){
+  nav.site-nav{padding:0 24px;}
   .hero{padding:56px 24px 0;}
   .hero-stats{display:none;}
   .body-wrap{grid-template-columns:1fr;gap:0;padding:48px 24px 72px;}
   aside{display:none;}
+  footer{padding:28px 24px;flex-direction:column;align-items:flex-start;}
   .summary-grid{grid-template-columns:1fr;}
 }
 </style>
@@ -146,6 +190,7 @@ aside{padding-top:8px;}
     <div class="eyebrow">Museum Planning LLC &nbsp;·&nbsp; Thought Leadership · Field Analysis · 2026</div>
     <h1>Landmark Supreme Court Decisions &amp; Museums 2026</h1>
     <p class="hero-deck">How recent executive actions, federal rules, and Supreme Court rulings intersect to reshape administrative control, exhibit content, and security protocols at American museums.</p>
+    <p class="hero-note" style="font-family:'Lato',sans-serif;font-size:14px;font-style:normal;color:rgba(255,255,255,.35);max-width:620px;margin:-24px 0 0;line-height:1.65;">Field analysis for boards and executive directors — what to track and what to brief counsel on. Not legal advice.</p>
     <div class="byline">
       <div class="byline-avatar">M</div>
       <div>
@@ -167,7 +212,7 @@ aside{padding-top:8px;}
 
 <h2 class="section-hed">Executive Summary</h2>
 
-<p>This discussion explores how recent executive actions, federal rules, and landmark Supreme Court decisions intersect to reshape the administrative control, content, and security protocols of American museums.</p>
+<p>This discussion explores how recent executive actions, federal rules, and landmark Supreme Court decisions intersect to reshape the administrative control, content, and security protocols of American museums. It is written as a <strong>planning brief</strong> — not as legal guidance for any specific institution.</p>
 
 <div class="summary-grid">
   <div class="summary-card">
@@ -258,6 +303,32 @@ aside{padding-top:8px;}
   </li>
 </ul>
 
+<h2 class="section-hed">Planning Implications for Museum Leaders</h2>
+
+<p>Regardless of where an institution falls on the public–private spectrum, these developments belong on the board agenda now — as risk items to track, not as policy to interpret without counsel.</p>
+
+<ul class="planning-list">
+  <li><strong>Federal grant dependency audit.</strong> Map IMLS, NEA, and other federal lines against operating and project budgets. If political vetting replaces peer review, capital and program plans may need alternate funding scenarios.</li>
+  <li><strong>Exhibit and program governance.</strong> Document who approves interpretive themes, temporary exhibitions, and community-facing history programming — and whether grant conditions could influence those decisions.</li>
+  <li><strong>Security and firearms policy review.</strong> Public museums in preemption states and private museums in post-<em>Wolford</em> states face different defaults. Posting, screening, and staff training requirements should be reviewed with qualified counsel before changes go live.</li>
+  <li><strong>Strategic plan refresh.</strong> Feasibility studies and master plans written before 2026 may understate regulatory and security risk. Update assumptions in the next board cycle or dedicated working session.</li>
+</ul>
+
+<h2 class="section-hed">Further Reading</h2>
+
+<p>Primary sources and field context — confirm current status before acting on any single development.</p>
+
+<ul class="resource-list">
+  <li><a href="https://www.supremecourt.gov/opinions/opinions.aspx" target="_blank" rel="noopener noreferrer">U.S. Supreme Court — Opinions</a> — official opinions for <em>Trump v. Slaughter</em>, <em>Wolford v. Lopez</em>, and related cases.</li>
+  <li><a href="https://www.scotusblog.com/" target="_blank" rel="noopener noreferrer">SCOTUSblog</a> — case coverage and analysis.</li>
+  <li><a href="https://www.regulations.gov/" target="_blank" rel="noopener noreferrer">Regulations.gov</a> — OMB <em>Regulation for Federal Financial Assistance</em> docket and public comments.</li>
+  <li><a href="https://www.imls.gov/" target="_blank" rel="noopener noreferrer">Institute of Museum and Library Services (IMLS)</a></li>
+  <li><a href="https://www.arts.gov/" target="_blank" rel="noopener noreferrer">National Endowment for the Arts (NEA)</a></li>
+  <li><a href="https://www.aam-us.org/programs/advocacy/" target="_blank" rel="noopener noreferrer">AAM Advocacy</a> — museum field policy and advocacy resources.</li>
+</ul>
+
+<p class="disclaimer"><strong>Not legal advice.</strong> Museum Planning LLC summarizes publicly reported executive, regulatory, and judicial developments for museum leaders, boards, and planners. Laws and rules vary by state, institution type, and funding source, and may change after publication. Confirm security, firearms, grant, and employment implications with qualified legal counsel before changing policy or operations.</p>
+
 <div class="article-cta">
   <h3>Planning under new constraints</h3>
   <p>For museums, cities, and boards navigating funding risk, security policy, and exhibit planning in a shifting legal environment — Museum Planning LLC works from feasibility through strategic planning and opening.</p>
@@ -302,13 +373,20 @@ aside{padding-top:8px;}
       <p>Mark Walhimer is Managing Partner of <a href="https://museumplanning.com" style="color:var(--deep);">Museum Planning LLC</a> and the author of <em>Museums 101</em> and <em>Designing Museum Experiences</em>.</p>
     </div>
   </div>
+
+  <div class="aside-block">
+    <div class="aside-head">Handbook &amp; Security</div>
+    <div class="aside-body">
+      <p>For operating museums updating staff policy alongside security review, see <a href="museum-staff-portal.html" style="color:var(--deep);font-weight:600;">Staff Portal &amp; Handbook Review</a> — operational gap analysis coordinated with your counsel.</p>
+    </div>
+  </div>
 </aside>
 </div>
 
-<p class="privacy-strip"><a href="museum-planning-privacy.html">Privacy &amp; analytics</a></p>
+<p class="privacy-strip"><a href="museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
 
 <footer>
-  <div class="footer-logo">Museum <span>Planning</span> LLC</div>
+  <div class="footer-logo">Museum <em>Planning</em> LLC &nbsp;·&nbsp; mark@museumplanning.com &nbsp;·&nbsp; 415-794-5252</div>
   <ul class="footer-links">
     <li><a href="museum-planning-about.html">About</a></li>
     <li><a href="for-cities.html">For Cities</a></li>
@@ -322,8 +400,8 @@ aside{padding-top:8px;}
     <li><a href="https://x.com/MuseumPlanning" target="_blank" rel="noopener noreferrer">X</a></li>
     <li><a href="site-map.html">Site map</a></li>
     <li><a href="museum-planning-contact.html">Contact</a></li>
+    <li><a href="museum-planning-privacy.html">Privacy</a></li>
   </ul>
-  <div class="footer-copy">© 2026 Museum Planning LLC</div>
 </footer>
 
 <div class="search-overlay" id="searchOverlay">
