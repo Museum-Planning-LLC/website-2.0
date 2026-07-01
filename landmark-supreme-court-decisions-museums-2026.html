@@ -115,6 +115,18 @@ article a:hover{color:var(--gold);}
 .resource-list li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.65;}
 .resource-list li:last-child{border-bottom:none;}
 .resource-list a{font-weight:600;}
+.resource-list .resource-desc{display:block;font-size:13px;color:var(--mid);font-weight:400;margin-top:4px;}
+
+.status-note{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;display:inline-block;padding:3px 8px;margin-bottom:10px;}
+.status-note.decided{background:var(--deep);color:white;}
+.status-note.proposed{background:var(--gold);color:var(--deep);}
+
+.suggested-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:2em 0;}
+.suggested-card{background:var(--cream);padding:22px 24px;border-top:2px solid var(--rule);text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
+.suggested-card:hover{border-color:var(--gold);transform:translateY(-2px);}
+.suggested-card .suggested-type{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.suggested-card .suggested-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--deep);margin-bottom:6px;line-height:1.3;}
+.suggested-card p{font-size:13px;line-height:1.65;color:var(--mid);margin:0;}
 
 aside{padding-top:8px;}
 .aside-block{background:var(--cream);border-top:2px solid var(--gold);padding:24px;margin-bottom:24px;}
@@ -157,6 +169,7 @@ footer{background:var(--deep);padding:32px 56px;display:flex;justify-content:spa
   aside{display:none;}
   footer{padding:28px 24px;flex-direction:column;align-items:flex-start;}
   .summary-grid{grid-template-columns:1fr;}
+  .suggested-grid{grid-template-columns:1fr;}
 }
 </style>
 <link rel="stylesheet" href="assets/nav-mobile.css">
@@ -217,19 +230,23 @@ footer{background:var(--deep);padding:32px 56px;display:flex;justify-content:spa
 <div class="summary-grid">
   <div class="summary-card">
     <div class="summary-cat">I. Administrative Impact</div>
+    <span class="status-note decided">Supreme Court · Decided June 29, 2026</span>
     <div class="summary-title">Trump v. Slaughter + OMB</div>
     <p>The President can fire agency heads at will.</p>
-    <p>Appointees bypass peer-reviewed grants to dictate cultural and exhibit content.</p>
+    <p>Appointees may bypass peer-reviewed grants to influence cultural and exhibit content.</p>
   </div>
   <div class="summary-card">
     <div class="summary-cat">II. Security Impact</div>
+    <span class="status-note decided">Supreme Court · Decided June 25, 2026</span>
     <div class="summary-title">Wolford v. Lopez</div>
-    <p>Private property default flipped.</p>
-    <p>Museums must explicitly post &ldquo;No Guns&rdquo; signs to legally ban firearm carry.</p>
+    <p>Private-property default flipped in affected states.</p>
+    <p>Private museums may need visible &ldquo;No Firearms Allowed&rdquo; signage to bar carry — confirm with counsel.</p>
   </div>
 </div>
 
 <h2 class="section-hed">OMB Grant Overhaul Timeline</h2>
+
+<p><span class="status-note proposed">Proposed rule · Not yet final</span></p>
 
 <p>The OMB proposal — titled the <em>Regulation for Federal Financial Assistance</em> — is currently on a highly compressed fast track and is scheduled to be finalized with an effective date of October 1, 2026, to coincide with the start of the 2027 federal fiscal year.</p>
 
@@ -277,11 +294,11 @@ footer{background:var(--deep);padding:32px 56px;display:flex;justify-content:spa
 
 <h2 class="section-hed">Firearm Carrying and Security Frameworks</h2>
 
-<p>The legal requirements for how museums handle firearms depend entirely on whether the institution is publicly funded or privately owned, governed by state law and a separate 2026 Supreme Court decision.</p>
+<p>In many states, legal requirements for how museums handle firearms depend on whether the institution is publicly funded or privately owned, governed by state law and the separate 2026 Supreme Court decision discussed below.</p>
 
 <h3 class="subsection-hed">1. State and Municipal Public Museums</h3>
 
-<p>Publicly owned museums in roughly 40 states with strong state preemption laws (like Texas and Florida) or Constitutional Carry statutes must allow citizens to carry firearms by default.</p>
+<p>Publicly owned museums in many states with strong preemption laws (like Texas and Florida) or constitutional-carry statutes may be required to allow lawful firearm carry by default — state law varies, and institutions should confirm obligations with counsel.</p>
 
 <div class="theme-block">
   <div class="theme-block-label">The Metal Detector Loophole</div>
@@ -299,7 +316,7 @@ footer{background:var(--deep);padding:32px 56px;display:flex;justify-content:spa
   </li>
   <li class="detail-item">
     <strong>The New Burden</strong>
-    <p>Following <em>Wolford</em>, private museums in those states must now proactively post visible &ldquo;No Firearms Allowed&rdquo; signs and deploy physical security parameters if they wish to legally bar firearms from entering their galleries.</p>
+    <p>Following <em>Wolford</em>, private museums in affected states may need to proactively post visible &ldquo;No Firearms Allowed&rdquo; signs and deploy physical security measures if they wish to bar firearms from galleries — requirements vary by state; confirm with counsel before changing policy.</p>
   </li>
 </ul>
 
@@ -314,18 +331,72 @@ footer{background:var(--deep);padding:32px 56px;display:flex;justify-content:spa
   <li><strong>Strategic plan refresh.</strong> Feasibility studies and master plans written before 2026 may understate regulatory and security risk. Update assumptions in the next board cycle or dedicated working session.</li>
 </ul>
 
-<h2 class="section-hed">Further Reading</h2>
+<h2 class="section-hed">Suggested Resources</h2>
 
-<p>Primary sources and field context — confirm current status before acting on any single development.</p>
+<p>Primary sources, field advocacy, and state-level guidance — confirm current status before acting on any single development.</p>
+
+<h3 class="subsection-hed">Cases &amp; Federal Rulemaking</h3>
 
 <ul class="resource-list">
-  <li><a href="https://www.supremecourt.gov/opinions/opinions.aspx" target="_blank" rel="noopener noreferrer">U.S. Supreme Court — Opinions</a> — official opinions for <em>Trump v. Slaughter</em>, <em>Wolford v. Lopez</em>, and related cases.</li>
-  <li><a href="https://www.scotusblog.com/" target="_blank" rel="noopener noreferrer">SCOTUSblog</a> — case coverage and analysis.</li>
-  <li><a href="https://www.regulations.gov/" target="_blank" rel="noopener noreferrer">Regulations.gov</a> — OMB <em>Regulation for Federal Financial Assistance</em> docket and public comments.</li>
+  <li><a href="https://www.supremecourt.gov/opinions/opinions.aspx" target="_blank" rel="noopener noreferrer">U.S. Supreme Court — Opinions</a><span class="resource-desc">Official opinions for <em>Trump v. Slaughter</em>, <em>Wolford v. Lopez</em>, and related cases.</span></li>
+  <li><a href="https://www.oyez.org/" target="_blank" rel="noopener noreferrer">Oyez</a><span class="resource-desc">Plain-language case summaries and audio from oral arguments.</span></li>
+  <li><a href="https://www.scotusblog.com/" target="_blank" rel="noopener noreferrer">SCOTUSblog</a><span class="resource-desc">Case coverage and analysis.</span></li>
+  <li><a href="https://www.regulations.gov/" target="_blank" rel="noopener noreferrer">Regulations.gov</a><span class="resource-desc">OMB <em>Regulation for Federal Financial Assistance</em> docket and public comments.</span></li>
+  <li><a href="https://www.federalregister.gov/" target="_blank" rel="noopener noreferrer">Federal Register</a><span class="resource-desc">Published proposed and final rule text when issued.</span></li>
+</ul>
+
+<h3 class="subsection-hed">Museum Funding &amp; Advocacy</h3>
+
+<ul class="resource-list">
   <li><a href="https://www.imls.gov/" target="_blank" rel="noopener noreferrer">Institute of Museum and Library Services (IMLS)</a></li>
   <li><a href="https://www.arts.gov/" target="_blank" rel="noopener noreferrer">National Endowment for the Arts (NEA)</a></li>
-  <li><a href="https://www.aam-us.org/programs/advocacy/" target="_blank" rel="noopener noreferrer">AAM Advocacy</a> — museum field policy and advocacy resources.</li>
+  <li><a href="https://www.aam-us.org/programs/advocacy/" target="_blank" rel="noopener noreferrer">AAM Advocacy</a><span class="resource-desc">Museum field policy and advocacy resources.</span></li>
+  <li><a href="https://www.aam-us.org/about/state-regional-regional-international-organizations/" target="_blank" rel="noopener noreferrer">AAM State &amp; Regional Museum Associations</a><span class="resource-desc">Find your state museum association for local policy context and counsel referrals.</span></li>
 </ul>
+
+<h3 class="subsection-hed">Security &amp; State Law</h3>
+
+<ul class="resource-list">
+  <li><a href="https://www.aam-us.org/resource/security-and-emergency-preparedness/" target="_blank" rel="noopener noreferrer">AAM Security &amp; Emergency Preparedness</a><span class="resource-desc">Museum security planning resources — pair with qualified counsel on firearms policy.</span></li>
+  <li>Your state attorney general or municipal counsel<span class="resource-desc">Firearms carry, public-building restrictions, and posting requirements are state-specific — municipal and state-owned museums should start here.</span></li>
+</ul>
+
+<h3 class="subsection-hed">Suggested Next Steps from Museum Planning</h3>
+
+<p>Internal guides and engagements that pair with this brief — planning support, not legal advice.</p>
+
+<div class="suggested-grid">
+  <a href="museum-strategic-planning.html" class="suggested-card">
+    <div class="suggested-type">Tier 1 · Services</div>
+    <div class="suggested-title">Museum Strategic Planning</div>
+    <p>Refresh assumptions, board governance, and funding scenarios in a shifting regulatory environment.</p>
+  </a>
+  <a href="museum-staff-portal.html" class="suggested-card">
+    <div class="suggested-type">Field Notes</div>
+    <div class="suggested-title">Staff Portal &amp; Handbook Review</div>
+    <p>Operational handbook gap analysis coordinated with your employment counsel.</p>
+  </a>
+  <a href="for-cities.html" class="suggested-card">
+    <div class="suggested-type">For Cities</div>
+    <div class="suggested-title">Municipal &amp; Civic Museums</div>
+    <p>Public ownership, preemption, and security costs in city-led cultural projects.</p>
+  </a>
+  <a href="local-history-museum.html" class="suggested-card">
+    <div class="suggested-type">Audience Guide</div>
+    <div class="suggested-title">Local History Museums</div>
+    <p>Community history institutions navigating content pressure and public trust.</p>
+  </a>
+  <a href="museum-projects-to-watch-2026.html" class="suggested-card">
+    <div class="suggested-type">Field Notes · 2026</div>
+    <div class="suggested-title">25 Projects to Watch</div>
+    <p>How political fault lines are shaping openings, expansions, and community alignment.</p>
+  </a>
+  <a href="museum-feasibility-study.html" class="suggested-card">
+    <div class="suggested-type">Tier 1 · Services</div>
+    <div class="suggested-title">Museum Feasibility Study</div>
+    <p>Stress-test grant dependency, operating risk, and security cost assumptions before capital commitments.</p>
+  </a>
+</div>
 
 <p class="disclaimer"><strong>Not legal advice.</strong> Museum Planning LLC summarizes publicly reported executive, regulatory, and judicial developments for museum leaders, boards, and planners. Laws and rules vary by state, institution type, and funding source, and may change after publication. Confirm security, firearms, grant, and employment implications with qualified legal counsel before changing policy or operations.</p>
 
