@@ -2,15 +2,21 @@
 window.SITE_SEARCH_PAGES = [
   {
     "type": "Home",
-    "title": "Museum Consultants &amp; Museum Planning",
-    "desc": "Museum consultants for feasibility studies, strategic planning, master planning, exhibition design, and city cultural plans. Forty museums since 1999. The consultant you hire is the consultant in the room.",
+    "title": "Museum &amp; Cultural Resiliency Planning",
+    "desc": "Museum consultants for resiliency planning, footprint triage, and phased capital studies — plus feasibility, master planning, and exhibition design. Forty museums since 1999. The consultant you hire is the consultant in the room.",
     "url": "index.html"
   },
   {
     "type": "Services",
     "title": "Museum Planning Services &amp; Consultants",
-    "desc": "Museum consultants for feasibility, master planning, strategic planning, exhibition design, and city cultural plans. Forty museums since 1999. The consultant you hire is the consultant in the room.",
+    "desc": "Museum consultants for resiliency planning studies, feasibility, master planning, strategic planning, and exhibition design. Resiliency Study from $12k. Forty museums since 1999.",
     "url": "museum-planning-services.html"
+  },
+  {
+    "type": "Service",
+    "title": "Museum &amp; Cultural Resiliency Planning",
+    "desc": "A fixed-scope Resiliency Planning Study for museums, cities, and municipalities — footprint, operations, and phased capital options when every square foot has to earn its keep.",
+    "url": "museum-cultural-resiliency-planning.html"
   },
   {
     "type": "Projects",
@@ -220,8 +226,8 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "City Cultural Planning &amp; Museum Feasibility for Cities",
-    "desc": "City cultural planning and museum feasibility study for municipalities — downtown revitalization, building selection, museum master planning, and council-ready deliverables. Typical feasibility $40k–$70k.",
+    "title": "Museum Feasibility Study for Cities & Municipalities",
+    "desc": "Museum feasibility for cities and redevelopment — downtown, mall, housing, or mixed-use; then someone says museum. Building selection, operating costs, council-ready studies. Typical feasibility $40k–$70k.",
     "url": "for-cities.html"
   },
   {
@@ -358,6 +364,12 @@ window.SITE_SEARCH_PAGES = [
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
     "url": "interactive-museum-exhibition-design/index.html"
+  },
+  {
+    "type": "Page",
+    "title": "Landmark Supreme Court Decisions &amp; Museums 2026",
+    "desc": "Field analysis: how Trump v. Slaughter, Wolford v. Lopez, and the OMB federal grant overhaul intersect to reshape museum funding, exhibit content, and security protocols in 2026.",
+    "url": "landmark-supreme-court-decisions-museums-2026.html"
   },
   {
     "type": "Page",
@@ -521,12 +533,6 @@ window.SITE_SEARCH_PAGES = [
     "title": "25 Museum Projects to Watch in 2026",
     "desc": "Field analysis: Mark Walhimer on 25 museum openings, expansions, and controversies in 2026 — community alignment, funding, and what it means for institutional planning.",
     "url": "museum-projects-to-watch-2026.html"
-  },
-  {
-    "type": "Page",
-    "title": "Landmark Supreme Court Decisions & Museums 2026",
-    "desc": "Field analysis: Trump v. Slaughter, Wolford v. Lopez, and the OMB federal grant overhaul — how Supreme Court rulings and executive policy reshape museum funding, exhibit content, and security.",
-    "url": "landmark-supreme-court-decisions-museums-2026.html"
   },
   {
     "type": "Museum School",
