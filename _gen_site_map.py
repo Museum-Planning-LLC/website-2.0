@@ -57,6 +57,7 @@ def sort_key(rel: str) -> tuple:
         "index.html": 0,
         "museum-planning-services.html": 1,
         "museum-cultural-resiliency-planning.html": 1.5,
+        "museum-institutional-continuity.html": 1.55,
         "museum-planning-projects.html": 2,
         "museum-planning-about.html": 3,
         "museum-planning-contact.html": 4,
@@ -81,6 +82,7 @@ def url_priority(rel: str) -> tuple[str, str]:
     if rel in {
         "museum-planning-services.html",
         "museum-cultural-resiliency-planning.html",
+        "museum-institutional-continuity.html",
         "museum-planning-projects.html",
         "museum-planning-about.html",
         "museum-planning-contact.html",
@@ -117,6 +119,8 @@ def page_type(rel: str) -> str:
     if rel == "museum-courses.html":
         return "Service"
     if rel == "museum-cultural-resiliency-planning.html":
+        return "Service"
+    if rel == "museum-institutional-continuity.html":
         return "Service"
     if rel.startswith("museum-planning-"):
         return rel.replace("museum-planning-", "").replace(".html", "").title()

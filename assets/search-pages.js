@@ -19,6 +19,12 @@ window.SITE_SEARCH_PAGES = [
     "url": "museum-cultural-resiliency-planning.html"
   },
   {
+    "type": "Service",
+    "title": "Institutional Continuity",
+    "desc": "After your Resiliency Planning Study — keep objectives, guardrails, KPIs, and your Modular Implementation Menu current. Monthly check-ins, quarterly reports, and a planning dashboard. Not a shelf document.",
+    "url": "museum-institutional-continuity.html"
+  },
+  {
     "type": "Projects",
     "title": "Projects — Forty Museums &amp; Interactive Exhibits",
     "desc": "Forty museums across the United States and worldwide — natural history, children&apos;s museums, science centers, and interactive museum exhibits. Feasibility through opening day.",
