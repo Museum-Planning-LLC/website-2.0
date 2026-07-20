@@ -202,6 +202,18 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
+    "title": "Flow field grid — Digital Exhibits proof",
+    "desc": "Digital Exhibits science template proof — 6×6×6 flow field simulation for museum full-wall and kiosk delivery.",
+    "url": "digital-exhibits/flow-field-grid.html"
+  },
+  {
+    "type": "Page",
+    "title": "Digital Exhibits · Delivery proofs",
+    "desc": "Digital Exhibits delivery proofs — kiosk, full-wall, and full-room participatory templates. Museum Planning LLC.",
+    "url": "digital-exhibits/index.html"
+  },
+  {
+    "type": "Page",
     "title": "Next Steps — Museum Planning LLC · Mark Walhimer",
     "desc": "Museum Planning LLC — Next Steps — Museum Planning LLC · Mark Walhimer.",
     "url": "docs/rebrand/next-steps-work-plan.html"
@@ -358,6 +370,18 @@ window.SITE_SEARCH_PAGES = [
     "title": "Immersive Museum Planning — Science Centers, Local &amp; Natural History",
     "desc": "Immersive museum planning for science center transformation, local history museums, and natural history institutions — visitor journey, interactives, and exhibition design from concept through opening. We personally lead every engagement.",
     "url": "immersive-museum-planning.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting — Flow field grid",
+    "desc": "Museum Planning LLC — Redirecting — Flow field grid.",
+    "url": "interactive-digital/flow-field-grid.html"
+  },
+  {
+    "type": "Page",
+    "title": "Redirecting — Digital Exhibits",
+    "desc": "Museum Planning LLC — Redirecting — Digital Exhibits.",
+    "url": "interactive-digital/index.html"
   },
   {
     "type": "Page",
