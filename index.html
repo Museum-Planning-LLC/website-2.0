@@ -5,26 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="https://museumplanning.com/assets/favicon.png" type="image/png" sizes="48x48">
 <link rel="apple-touch-icon" href="https://museumplanning.com/assets/apple-touch-icon.png" sizes="180x180">
-<title>Museum &amp; Cultural Resiliency Planning | Museum Planning LLC</title>
-<meta name="description" content="Museum consultants for resiliency planning, footprint triage, and phased capital studies — plus feasibility, master planning, and exhibition design. Forty museums since 1999. The consultant you hire is the consultant in the room.">
+<!-- EXPERIMENT: portfolio as homepage through 2026-07-31. Revert: docs/experiments/portfolio-home-week-2026-07-24.md -->
+<title>Forty Museums &amp; Interactive Exhibits | Museum Planning LLC</title>
+<meta name="description" content="Forty museums across the United States and worldwide — natural history, children&apos;s museums, science centers, and interactive museum exhibits. Feasibility through opening day. Museum Planning LLC since 1999.">
 <link rel="canonical" href="https://museumplanning.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://museumplanning.com/">
-<meta property="og:title" content="Museum &amp; Cultural Resiliency Planning | Museum Planning LLC">
-<meta property="og:description" content="Fixed-scope Resiliency Planning Study for museums, cities, and campus portfolios — plus feasibility, master planning, and exhibition design. Forty museums since 1999.">
+<meta property="og:title" content="Forty Museums &amp; Interactive Exhibits | Museum Planning LLC">
+<meta property="og:description" content="Forty museums across the United States and worldwide. Feasibility through opening day. Museum Planning LLC since 1999.">
 <meta property="og:image" content="https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Museum &amp; Cultural Resiliency Planning | Museum Planning LLC">
-<meta name="twitter:description" content="Resiliency Planning Study for museums, cities, and campus portfolios — footprint, operations, and phased capital when every square foot has to earn its keep.">
+<meta name="twitter:title" content="Forty Museums &amp; Interactive Exhibits | Museum Planning LLC">
+<meta name="twitter:description" content="Forty museums worldwide — feasibility through opening day. Museum Planning LLC since 1999.">
 <meta name="twitter:image" content="https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-  {"@type":"ProfessionalService","@id":"https://museumplanning.com/#organization","name":"Museum Planning LLC","url":"https://museumplanning.com/","logo":{"@type":"ImageObject","url":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg"},"description":"Museum consultants for resiliency planning, feasibility studies, strategic planning, master planning, and museum exhibition design. Practice founded 1999.","email":"mark@museumplanning.com","telephone":"+1-415-794-5252","foundingDate":"1999","areaServed":{"@type":"Place","name":"Worldwide"},"sameAs":["https://www.markwalhimer.com/"]},
-  {"@type":"WebPage","@id":"https://museumplanning.com/#webpage","url":"https://museumplanning.com/","name":"Museum & Cultural Resiliency Planning","description":"Museum consultants for resiliency planning, feasibility studies, strategic planning, master planning, and exhibition design.","isPartOf":{"@id":"https://museumplanning.com/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg"},"dateModified":"2026-07-17"},
-  {"@type":"Person","@id":"https://museumplanning.com/#mark-walhimer","name":"Mark Walhimer","jobTitle":"Managing Partner","image":"https://museumplanning.com/content/uploads/2024/07/Walhimer-Mark-2819-1-1400x933.jpg","url":"https://www.markwalhimer.com/","worksFor":{"@id":"https://museumplanning.com/#organization"},"sameAs":["https://www.markwalhimer.com/"]}
-]}
-</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,23 +43,12 @@ body {
   font-family: var(--sans);
   background: var(--cream);
   color: var(--ink);
-  font-size: 17px;
-  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── ANIMATIONS ── */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes lineGrow {
-  from { width: 0; }
-  to   { width: 60px; }
 }
 
 /* ── NAV ── */
@@ -86,14 +69,9 @@ nav {
   font-size: 15px;
   color: white;
   text-decoration: none;
-  letter-spacing: 0.02em;
 }
 .nav-logo span { color: var(--gold); }
-.nav-links {
-  display: flex;
-  gap: 36px;
-  list-style: none;
-}
+.nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links a {
   font-family: var(--mono);
   font-size: 10px;
@@ -104,6 +82,7 @@ nav {
   transition: color .2s;
 }
 .nav-links a:hover { color: var(--gold); }
+.nav-links a.active { color: rgba(255,255,255,.9); }
 .nav-cta {
   font-family: var(--mono);
   font-size: 10px;
@@ -113,456 +92,277 @@ nav {
   color: var(--deep) !important;
   padding: 8px 20px;
   text-decoration: none;
-  transition: background .2s;
 }
-.nav-cta:hover { background: var(--gold-lt) !important; }
 
-/* ── HERO ── */
-.hero {
+/* ── HEADER ── */
+.page-header {
   background: var(--deep);
-  min-height: 100vh;
+  padding: 120px 56px 72px;
   position: relative;
   overflow: hidden;
-  padding: 0;
 }
-.hero-carousel--fullbleed {
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,168,76,1) 79px, rgba(201,168,76,1) 80px);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  border: none;
-  background: var(--deep);
-  overflow: hidden;
-}
-.hero-carousel--fullbleed .hero-carousel-viewport {
-  position: absolute;
-  inset: 0;
-  aspect-ratio: unset;
-  height: 100%;
-  width: 100%;
-}
-.hero-carousel-scrim {
-  position: absolute;
-  inset: 0;
   z-index: 1;
-  pointer-events: none;
-  background:
-    linear-gradient(to top, rgba(17, 28, 39, 0.88) 0%, rgba(17, 28, 39, 0.35) 22%, transparent 45%),
-    linear-gradient(90deg, rgba(17, 28, 39, 0.94) 0%, rgba(17, 28, 39, 0.84) 34%, rgba(17, 28, 39, 0.52) 58%, rgba(17, 28, 39, 0.22) 100%);
 }
-.hero-foreground {
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-  min-height: 100vh;
-  padding: 120px 56px 0;
-  box-sizing: border-box;
-  pointer-events: none;
-}
-.hero-left,
-.hero-carousel-bar,
-.hero-carousel-bar * {
-  pointer-events: auto;
-}
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-}
-.hero-left {
-  animation: fadeUp .7s .1s both;
-  max-width: 540px;
-}
-.hero-eyebrow {
+.page-eyebrow {
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 3.5px;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 14px;
+  animation: fadeUp .6s .1s both;
 }
-.hero-eyebrow::before {
+.page-eyebrow::before {
   content: '';
-  display: block;
   width: 32px;
   height: 1px;
   background: var(--gold);
-  animation: lineGrow .6s .5s both;
 }
-.hero h1 {
+.page-title {
   font-family: var(--serif);
-  font-size: clamp(42px, 4.5vw, 64px);
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: 900;
-  line-height: 1.05;
   color: white;
-  margin-bottom: 28px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  animation: fadeUp .6s .2s both;
 }
-.hero h1 em {
-  font-style: italic;
-  color: var(--gold);
-}
-.hero-deck {
+.page-title em { font-style: italic; color: var(--gold); }
+.page-deck {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 19px;
-  color: rgba(255,255,255,.62);
-  max-width: 500px;
-  line-height: 1.6;
-  margin-bottom: 44px;
-}
-.hero-cta-group {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  margin-bottom: 32px;
-}
-.hero-service-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 420px;
-}
-.hero-service-list li {
-  border-bottom: 1px solid rgba(255,255,255,.12);
-}
-.hero-service-list a {
-  display: block;
-  padding: 10px 0;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.58);
-  text-decoration: none;
-  transition: color .2s;
-}
-.hero-service-list a:hover { color: var(--gold); }
-.btn-primary {
-  background: var(--gold);
-  color: var(--deep);
-  padding: 14px 32px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: background .2s, transform .2s;
-  display: inline-block;
-}
-.btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
-.btn-ghost {
+  font-size: 18px;
   color: rgba(255,255,255,.5);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,.2);
-  padding-bottom: 2px;
-  transition: color .2s;
+  max-width: 560px;
+  line-height: 1.6;
+  animation: fadeUp .6s .3s both;
 }
-.btn-ghost:hover { color: white; }
 
-.hero-carousel--fullbleed .hero-carousel-slide img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.72);
-  transition: opacity .6s ease, filter .6s ease;
+/* ── FILTERS ── */
+.filters-bar {
+  background: var(--navy);
+  padding: 0 56px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  position: sticky;
+  top: 60px;
+  z-index: 50;
 }
-.hero-carousel--fullbleed .hero-carousel-slide.is-active img {
-  filter: brightness(0.78);
-}
-.hero-carousel-bar {
-  margin-top: auto;
-  padding: 40px 0 32px;
+.filters-inner {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  gap: 10px 16px;
-  flex-wrap: wrap;
-  width: 100%;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 16px 0;
 }
-.hero-carousel-prev,
-.hero-carousel-next {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(201, 168, 76, 0.25);
-  border-radius: 0;
-  padding: 0;
-  background: rgba(17, 28, 39, 0.65);
-  color: rgba(255,255,255,.85);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background .2s, color .2s, border-color .2s;
-}
-.hero-carousel-prev:hover,
-.hero-carousel-next:hover {
-  background: rgba(17, 28, 39, 0.92);
-  color: var(--gold);
-  border-color: rgba(201, 168, 76, 0.5);
-}
-.hero-carousel-prev svg,
-.hero-carousel-next svg {
-  width: 16px;
-  height: 16px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.hero-carousel-prev:focus-visible,
-.hero-carousel-next:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-}
-.hero-carousel-caption {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.55);
-  padding: 0;
-  border: none;
-  min-height: auto;
-  flex: 1;
-  min-width: 180px;
-  margin: 0;
-}
-.hero-carousel-dots {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 7px 8px;
-  padding: 0;
-  border: none;
-}
-.hero-carousel-all {
+.filters-inner::-webkit-scrollbar { display: none; }
+.filter-btn {
   font-family: var(--mono);
   font-size: 9px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-decoration: none;
-  border: 1px solid rgba(201, 168, 76, 0.55);
-  padding: 10px 16px;
-  white-space: nowrap;
-  margin-left: auto;
-  display: inline-block;
-  transition: background .2s, color .2s, border-color .2s;
-}
-.hero-carousel-all:hover {
-  background: var(--gold);
-  color: var(--deep);
-  border-color: var(--gold);
-}
-.hero-carousel-all:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-}
-.hero-carousel-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  border: none;
-  padding: 0;
-  background: rgba(255,255,255,.25);
-  cursor: pointer;
-  transition: background .2s, transform .2s;
-}
-.hero-carousel-dot.is-active {
-  background: var(--gold);
-  transform: scale(1.15);
-}
-.hero-carousel-dot:hover { background: rgba(201,168,76,.7); }
-.hero-carousel-dot:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-}
-
-/* legacy carousel box rules (unused on homepage) */
-.hero-right {
-  animation: fadeUp .7s .3s both;
-  width: 100%;
-  max-width: 400px;
-  justify-self: end;
-}
-.hero-carousel {
-  border: 1px solid rgba(201,168,76,.2);
-  background: rgba(255,255,255,.04);
-  overflow: hidden;
-}
-.hero-carousel-viewport {
-  position: relative;
-  aspect-ratio: 3 / 4;
-  background: var(--deep);
-}
-.hero-carousel-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity .6s ease;
-  pointer-events: none;
-  text-decoration: none;
-  display: block;
-}
-.hero-carousel-slide.is-active {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 1;
-}
-.hero-carousel-slide img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  filter: brightness(0.88);
-  transition: filter .3s, transform .5s ease;
-}
-.hero-carousel-slide:hover img {
-  filter: brightness(0.72);
-  transform: scale(1.02);
-}
-.hero-carousel-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 0 16px 14px;
-  border-top: 1px solid rgba(201,168,76,.08);
-}
-
-/* ── SECTION BASE ── */
-section { padding: 100px 56px; }
-.section-inner { max-width: 1100px; margin: 0 auto; }
-.section-label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.section-label::before {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 1px;
-  background: var(--gold);
-}
-.section-heading {
-  font-family: var(--serif);
-  font-size: clamp(32px, 3vw, 46px);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--navy);
-  margin-bottom: 20px;
-}
-.section-subhead {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 19px;
-  color: var(--mid);
-  max-width: 640px;
-  margin-bottom: 56px;
-  line-height: 1.6;
-}
-
-/* ── PROOF BAND ── */
-.proof {
-  background: var(--navy);
-  padding: 80px 56px;
-}
-.proof-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.proof-heading {
-  font-family: var(--serif);
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.3);
-  text-align: center;
-  margin-bottom: 48px;
-}
-.proof-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-}
-.proof-item {
-  background: rgba(255,255,255,.04);
-  padding: 32px 28px;
-  text-align: center;
-}
-.proof-num {
-  font-family: var(--serif);
-  font-size: 40px;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.proof-label {
-  font-family: var(--mono);
-  font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(255,255,255,.4);
-  line-height: 1.4;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 7px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .2s;
+}
+.filter-btn:hover { color: rgba(255,255,255,.8); border-color: rgba(255,255,255,.3); }
+.filter-btn.active {
+  background: var(--gold);
+  color: var(--deep);
+  border-color: var(--gold);
+  font-weight: 700;
 }
 
-/* ── CTA ── */
-.cta-section {
+/* ── GRID ── */
+.projects-section {
+  padding: 64px 56px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.projects-count {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 32px;
+}
+.projects-count span { color: var(--navy); font-weight: 700; }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.project-card {
+  background: white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(27,42,59,.12);
+  z-index: 2;
+  position: relative;
+}
+.project-card.hidden { display: none; }
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: var(--warm);
+  position: relative;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.project-card:hover .card-image img {
+  transform: scale(1.04);
+}
+.card-type-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--deep);
+  color: var(--gold);
+  padding: 5px 10px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .2s, transform .2s;
+}
+.project-card:hover .card-type-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-body {
+  padding: 24px 24px 28px;
+  border-top: 2px solid transparent;
+  transition: border-color .2s;
+}
+.project-card:hover .card-body {
+  border-color: var(--gold);
+}
+.card-meta {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.card-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.card-location {
+  font-size: 13px;
+  color: var(--mid);
+  font-family: var(--mono);
+  letter-spacing: 0.5px;
+}
+.card-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.service-tag {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mid);
   background: var(--cream);
-  padding: 120px 56px;
+  padding: 4px 9px;
+  border: 1px solid var(--rule);
+}
+
+/* ── NO RESULTS ── */
+.no-results {
+  display: none;
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 80px 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--mid);
+}
+.no-results.visible { display: block; }
+
+/* ── CTA ── */
+.projects-cta {
+  background: var(--navy);
+  padding: 80px 56px;
   text-align: center;
 }
-.cta-inner { max-width: 680px; margin: 0 auto; }
-.cta-heading {
+.projects-cta h2 {
   font-family: var(--serif);
-  font-size: clamp(36px, 4vw, 52px);
-  font-weight: 900;
-  color: var(--navy);
-  line-height: 1.1;
-  margin-bottom: 24px;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
 }
-.cta-heading em { font-style: italic; color: var(--gold); }
-.cta-body {
-  font-size: 17px;
-  color: var(--mid);
-  line-height: 1.75;
-  margin-bottom: 48px;
+.projects-cta h2 em { font-style: italic; color: var(--gold); }
+.projects-cta p {
+  font-size: 16px;
+  color: rgba(255,255,255,.5);
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
 }
-.cta-contact {
+.btn-gold {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--deep);
+  padding: 14px 36px;
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  color: var(--mid);
-  margin-top: 32px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .2s;
 }
-.cta-contact a { color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--rule); }
-.cta-contact a:hover { color: var(--gold); border-color: var(--gold); }
+.btn-gold:hover { background: var(--gold-lt); }
 
 /* ── FOOTER ── */
 footer {
@@ -573,17 +373,9 @@ footer {
   justify-content: space-between;
   border-top: 1px solid rgba(201,168,76,.1);
 }
-.footer-logo {
-  font-family: var(--serif);
-  font-size: 14px;
-  color: rgba(255,255,255,.5);
-}
+.footer-logo { font-family: var(--serif); font-size: 14px; color: rgba(255,255,255,.5); }
 .footer-logo span { color: var(--gold); }
-.footer-links {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-}
+.footer-links { display: flex; gap: 28px; list-style: none; }
 .footer-links a {
   font-family: var(--mono);
   font-size: 9px;
@@ -594,197 +386,162 @@ footer {
   transition: color .2s;
 }
 .footer-links a:hover { color: rgba(255,255,255,.6); }
-.footer-copy {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 1px;
-  color: rgba(255,255,255,.2);
-}
+.footer-copy { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; color: rgba(255,255,255,.2); }
 
-/* ── FEATURED PROJECTS ── */
-.projects-section { background: var(--navy); }
-.projects-section .section-label { color: var(--gold); }
-.projects-section .section-heading { color: white; }
-.projects-section .section-subhead { color: rgba(255,255,255,.45); }
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-}
-.feat-large { grid-column: span 2; }
-.feat-card {
-  display: block;
-  text-decoration: none;
-  overflow: hidden;
-  position: relative;
-}
-.feat-image {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-}
-.feat-large .feat-image { aspect-ratio: 16/9; }
-.feat-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .5s ease;
-  filter: brightness(0.75);
-}
-.feat-card:hover .feat-image img {
-  transform: scale(1.04);
-  filter: brightness(0.5);
-}
-.feat-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 28px 28px 24px;
-  background: linear-gradient(to top, rgba(17,28,39,.88) 0%, rgba(17,28,39,0) 55%);
-}
-.feat-meta {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 8px;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .3s, transform .3s;
-}
-.feat-card:hover .feat-meta { opacity: 1; transform: translateY(0); }
-.feat-title {
-  font-family: var(--serif);
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
-  line-height: 1.25;
-  margin-bottom: 6px;
-}
-.feat-large .feat-title { font-size: 24px; }
-.feat-loc {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 1px;
-  color: rgba(255,255,255,.5);
-}
-.projects-view-all {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-top: 40px;
-}
-.view-all-note {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.3);
-}
-
-/* ── SCROLL REVEAL ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  nav { padding: 0 24px; }
+  nav, .page-header, .filters-bar, .projects-section, .projects-cta, footer { padding-left: 24px; padding-right: 24px; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
   nav .nav-links { display: none; }
-  section { padding: 72px 24px; }
-  .hero { min-height: auto; }
-  .hero-carousel--fullbleed { min-height: auto; display: block; }
-  .hero-carousel--fullbleed .hero-carousel-viewport {
-    position: relative;
-    inset: auto;
-    height: 45vh;
-    min-height: 260px;
-    max-height: 420px;
-  }
-  .hero-carousel-scrim {
-    inset: auto 0 auto 0;
-    top: 0;
-    height: 45vh;
-    min-height: 260px;
-    max-height: 420px;
-    background: linear-gradient(to bottom, rgba(17, 28, 39, 0.08) 0%, rgba(17, 28, 39, 0.72) 100%);
-  }
-  .hero-foreground {
-    min-height: auto;
-    padding: 0;
-    background: var(--deep);
-  }
-  .hero-inner { padding: 36px 24px 0; }
-  .hero-left { max-width: none; }
-  .hero-carousel-bar {
-    padding: 20px 24px 28px;
-    gap: 12px;
-  }
-  .hero-carousel-all {
-    margin-left: 0;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-  }
-  .hero-carousel-caption { flex: 1 1 100%; order: -1; }
-  .proof-grid { grid-template-columns: repeat(2, 1fr); }
   footer { flex-direction: column; gap: 20px; text-align: center; }
-  .proof { padding: 64px 24px; }
-  .cta-section { padding: 80px 24px; }
+}
+@media (max-width: 600px) {
+  .projects-grid { grid-template-columns: 1fr; }
 }
 
 /* ── SEARCH ── */
-.nav-search{position:relative;display:flex;align-items:center;}
-.search-toggle{background:none;border:none;cursor:pointer;padding:6px;color:rgba(255,255,255,.45);transition:color .2s;display:flex;align-items:center;}
-.search-toggle:hover{color:var(--gold);}
-.search-toggle svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
-.search-overlay{display:none;position:fixed;inset:0;background:rgba(17,28,39,.97);z-index:200;flex-direction:column;align-items:center;justify-content:flex-start;padding:80px 24px 40px;}
-.search-overlay.open{display:flex;}
-.search-close{position:absolute;top:20px;right:28px;background:none;border:none;color:rgba(255,255,255,.4);font-size:28px;cursor:pointer;transition:color .2s;font-family:var(--mono);}
-.search-close:hover{color:white;}
-.search-input-wrap{width:100%;max-width:680px;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:48px;}
-.search-input-wrap svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0;}
-#search-input{flex:1;background:none;border:none;outline:none;font-family:var(--serif);font-size:clamp(24px,4vw,40px);color:white;padding:12px 0;caret-color:var(--gold);}
-#search-input::placeholder{color:rgba(255,255,255,.2);}
-.search-results{width:100%;max-width:680px;display:flex;flex-direction:column;gap:3px;}
-.search-result{background:rgba(255,255,255,.04);padding:20px 24px;text-decoration:none;border-left:3px solid transparent;transition:border-color .2s,background .2s;display:block;}
-.search-result:hover{border-color:var(--gold);background:rgba(201,168,76,.07);}
-.sr-type{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
-.sr-title{font-family:var(--serif);font-size:18px;font-weight:700;color:white;margin-bottom:4px;}
-.sr-desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.5;}
-.search-empty{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(255,255,255,.3);text-align:center;padding:40px 0;}
+.nav-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: rgba(255,255,255,.45);
+  transition: color .2s;
+  display: flex;
+  align-items: center;
+}
+.search-toggle:hover { color: var(--gold); }
+.search-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+.search-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(17,28,39,.97);
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 24px 40px;
+}
+.search-overlay.open { display: flex; }
+.search-close {
+  position: absolute;
+  top: 20px; right: 28px;
+  background: none; border: none;
+  color: rgba(255,255,255,.4);
+  font-size: 28px; cursor: pointer;
+  transition: color .2s;
+  font-family: var(--mono);
+}
+.search-close:hover { color: white; }
+.search-input-wrap {
+  width: 100%; max-width: 680px;
+  border-bottom: 2px solid var(--gold);
+  display: flex; align-items: center;
+  gap: 16px; margin-bottom: 48px;
+}
+.search-input-wrap svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; flex-shrink: 0; }
+#search-input {
+  flex: 1; background: none; border: none; outline: none;
+  font-family: var(--serif); font-size: clamp(24px, 4vw, 40px);
+  color: white; padding: 12px 0;
+  caret-color: var(--gold);
+}
+#search-input::placeholder { color: rgba(255,255,255,.2); }
+.search-results {
+  width: 100%; max-width: 680px;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.search-result {
+  background: rgba(255,255,255,.04);
+  padding: 20px 24px;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: border-color .2s, background .2s;
+  display: block;
+}
+.search-result:hover { border-color: var(--gold); background: rgba(201,168,76,.07); }
+.sr-type {
+  font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+}
+.sr-title {
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  color: white; margin-bottom: 4px;
+}
+.sr-desc { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.5; }
+.search-empty {
+  font-family: var(--serif); font-style: italic;
+  font-size: 18px; color: rgba(255,255,255,.3);
+  text-align: center; padding: 40px 0;
+}
 
 
-
-/* ── NEWSLETTER ── */
-.newsletter-band{background:var(--deep);padding:56px;border-top:1px solid rgba(201,168,76,.12);} 
-.newsletter-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:end;}
-.newsletter-kicker{font-family:var(--mono);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
-.newsletter-title{font-family:var(--serif);font-size:clamp(26px,3vw,40px);line-height:1.1;color:#fff;margin-bottom:10px;}
-.newsletter-copy{font-size:14px;line-height:1.6;color:rgba(255,255,255,.55);max-width:560px;}
-.newsletter-form{display:flex;gap:10px;align-items:center;}
-.newsletter-input{flex:1;min-width:200px;padding:12px 14px;border:1px solid rgba(201,168,76,.35);background:rgba(255,255,255,.04);color:#fff;font-family:var(--sans);font-size:14px;}
-.newsletter-input::placeholder{color:rgba(255,255,255,.38);} 
-.newsletter-input:focus{outline:none;border-color:var(--gold);} 
-.newsletter-btn{padding:12px 18px;border:none;background:var(--gold);color:var(--deep);font-family:var(--mono);font-size:10px;letter-spacing:1.8px;text-transform:uppercase;cursor:pointer;}
-.newsletter-btn:hover{background:var(--gold-lt);} 
-@media (max-width:900px){.newsletter-band{padding:40px 24px;}.newsletter-inner{grid-template-columns:1fr;}.newsletter-form{flex-direction:column;align-items:stretch;}}
+/* ── FULL ARCHIVE ── */
+.projects-archive {
+  background: var(--navy);
+  padding: 72px 56px 88px;
+  border-top: 3px solid var(--gold);
+}
+.archive-inner { max-width: 1100px; margin: 0 auto; }
+.archive-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 14px;
+}
+.archive-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.archive-deck {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.55);
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+.archive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 3rem;
+}
+.archive-list li {
+  break-inside: avoid;
+  margin: 0 0 10px;
+}
+.archive-list a {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: rgba(255,255,255,.82);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,168,76,.25);
+  line-height: 1.5;
+}
+.archive-list a:hover { color: var(--gold); border-color: var(--gold); }
+@media (max-width: 768px) {
+  .projects-archive { padding: 56px 24px 72px; }
+  .archive-list { columns: 1; }
+}
 
 </style>
   <link rel="stylesheet" href="assets/nav-mobile.css">
+  <link rel="stylesheet" href="assets/site-footer.css">
   <script src="assets/ga-measurement-id.js"></script>
   <script src="assets/analytics.js" defer></script>
+
   <link rel="stylesheet" href="assets/site-nav.css">
 </head>
 <body>
@@ -794,154 +551,637 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav class="site-nav" id="site-nav">
   <a href="index.html" class="nav-logo">Museum <span>Planning</span> LLC</a>
   <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav-menu">
     <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
   </button>
   <ul class="nav-links" id="site-nav-menu">
-    <li><a href="museum-planning-projects.html">Projects</a></li>
+    <li><a href="index.html" class="active">Projects</a></li>
     <li><a href="museum-planning-services.html">Services</a></li>
     <li class="nav-search"><button type="button" class="search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></li>
     <li><a href="museum-planning-contact.html" class="nav-cta">Start a Conversation</a></li>
   </ul>
 </nav>
 
-<!-- ── HERO ── -->
-<section class="hero">
-  <div class="hero-carousel hero-carousel--fullbleed" id="heroCarousel" aria-roledescription="carousel" aria-label="Selected museum projects">
-    <div class="hero-carousel-viewport">
-      <a href="projects/howard-natural-history-museum.html" class="hero-carousel-slide is-active" data-caption="Howard Natural History Museum · Riverside County, CA" aria-label="Howard Natural History Museum" aria-hidden="false">
-        <img src="content/uploads/2025/08/Howard_front-1-1400x788.png" alt="Howard Natural History Museum, Riverside County, California" width="1400" height="788" loading="eager">
-      </a>
-      <a href="projects/frehner-museum-southern-utah-university.html" class="hero-carousel-slide" data-caption="Frehner Museum · Southern Utah University" aria-label="Frehner Museum of Natural History" aria-hidden="true">
-        <img src="content/uploads/2026/02/IMG_2419-1400x1867.jpeg" alt="Frehner Museum of Natural History, Cedar City, Utah" width="1400" height="1867" loading="lazy">
-      </a>
-      <a href="projects/interactive-african-american-museum.html" class="hero-carousel-slide" data-caption="Interactive African American Museum · Indiana" aria-label="Interactive African American Museum and Cultural Center" aria-hidden="true">
-        <img src="content/uploads/2021/12/exterior0001-1400x925.png" alt="Interactive African American Museum and Cultural Center, Indiana" width="1400" height="925" loading="lazy">
-      </a>
-      <a href="projects/mide-museo-interactivo-de-economia.html" class="hero-carousel-slide" data-caption="MIDE · Mexico City, Mexico" aria-label="MIDE, Museo Interactivo de Economía" aria-hidden="true">
-        <img src="content/uploads/2019/04/MIDE.jpg" alt="MIDE, Museo Interactivo de Economía, Mexico City" width="1400" height="933" loading="lazy">
-      </a>
-      <a href="projects/arizona-natural-resources-museum.html" class="hero-carousel-slide" data-caption="Arizona Natural Resources Museum · Tucson" aria-label="Arizona Natural Resources Museum" aria-hidden="true">
-        <img src="content/uploads/2023/02/image-5-copy-4-1400x643.png" alt="Arizona Natural Resources Museum, University of Arizona, Tucson" width="1400" height="643" loading="lazy">
-      </a>
-      <a href="projects/mas-executive-director.html" class="hero-carousel-slide" data-caption="Museum of Arts and Sciences · Macon, Georgia" aria-label="Museum of Arts and Sciences" aria-hidden="true">
-        <img src="content/uploads/2025/08/IMG_5797-1400x1050.jpeg" alt="Museum of Arts and Sciences, Macon, Georgia" width="1400" height="1050" loading="lazy">
-      </a>
-      <a href="projects/mcdonough-cultural-plan.html" class="hero-carousel-slide" data-caption="City of McDonough Cultural Plan · Georgia" aria-label="City of McDonough Cultural Plan" aria-hidden="true">
-        <img src="content/uploads/2019/07/JT2A3857-1400x933.jpg" alt="City of McDonough Cultural Plan, McDonough, Georgia" width="1400" height="933" loading="lazy">
-      </a>
-      <a href="projects/shared-ground.html" class="hero-carousel-slide" data-caption="Shared Ground · McDonough, Georgia" aria-label="Shared Ground interactive installation" aria-hidden="true">
-        <img src="content/uploads/2026/shared-ground/01-lucinda-davis-woman-of-black-and-creek-heritage.jpg" alt="Shared Ground interactive installation, McDonough, Georgia" width="1400" height="933" loading="lazy">
-      </a>
-    </div>
-    <div class="hero-carousel-scrim" aria-hidden="true"></div>
-
-    <div class="hero-foreground">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <div class="hero-eyebrow">Museum &amp; Cultural Resiliency Planning</div>
-          <h1>Sequence what to<br><em>fund first.</em></h1>
-          <p class="hero-deck">We work with museums, cities, and municipalities to steward cultural resources — when capital is constrained and every square foot has to earn its keep.</p>
-          <div class="hero-cta-group">
-            <a href="museum-cultural-resiliency-planning.html" class="btn-primary">Resiliency Planning Study</a>
-            <a href="museum-planning-contact.html" style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;margin-left:20px;">Start a Conversation →</a>
-          </div>
-          <ul class="hero-service-list">
-            <li><a href="museum-cultural-resiliency-planning.html">Resiliency Planning Study</a></li>
-            <li><a href="museum-feasibility-study.html">Museum feasibility studies</a></li>
-            <li><a href="museum-strategic-planning.html">Museum strategic planning</a></li>
-            <li><a href="museum-master-planning.html">Museum master planning</a></li>
-            <li><a href="immersive-museum-planning.html">Museum exhibition design</a></li>
-            <li><a href="museum-courses.html">Museum Courses</a></li>
-            <li><a href="for-cities.html">City cultural plans</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="hero-carousel-bar">
-        <button type="button" class="hero-carousel-prev" aria-label="Previous project">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <p class="hero-carousel-caption" id="heroCarouselCaption" aria-live="polite">Howard Natural History Museum · Riverside County, CA</p>
-        <button type="button" class="hero-carousel-next" aria-label="Next project">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-        <div class="hero-carousel-dots" role="tablist" aria-label="Choose project photo">
-          <button type="button" class="hero-carousel-dot is-active" role="tab" aria-selected="true" aria-label="Howard Natural History Museum" data-index="0"></button>
-          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Frehner Museum" data-index="1"></button>
-          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Interactive African American Museum" data-index="2"></button>
-          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="MIDE" data-index="3"></button>
-          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Arizona Natural Resources Museum" data-index="4"></button>
-          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Museum of Arts and Sciences" data-index="5"></button>
-          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="City of McDonough Cultural Plan" data-index="6"></button>
-          <button type="button" class="hero-carousel-dot" role="tab" aria-selected="false" aria-label="Shared Ground" data-index="7"></button>
-        </div>
-        <a href="museum-planning-projects.html" class="hero-carousel-all">All projects →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROOF BAND ── -->
-<div class="proof">
-  <div class="proof-inner">
-    <div class="proof-heading">The Track Record</div>
-    <div class="proof-grid reveal">
-      <div class="proof-item">
-        <div class="proof-num">40+</div>
-        <div class="proof-label">Museums<br>Completed</div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-num">27</div>
-        <div class="proof-label">Years of<br>Practice</div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-num">2</div>
-        <div class="proof-label">Bloomsbury<br>Books Published</div>
-      </div>
-      <div class="proof-item">
-        <div class="proof-num">100%</div>
-        <div class="proof-label">Mark Personally<br>Involved</div>
-      </div>
-    </div>
+<!-- HEADER -->
+<div class="page-header">
+  <div class="header-inner">
+    <div class="page-eyebrow">Selected Work</div>
+    <h1 class="page-title">Forty Museums.<br><em>One Methodology.</em></h1>
+    <p class="page-deck">From university natural history collections to city-led African American cultural centers — feasibility through opening day, worldwide. Work spans feasibility studies, master planning, museum exhibition design, and interactive museum exhibits.</p>
   </div>
 </div>
 
-<!-- ── CTA ── -->
-<section class="cta-section" id="contact">
-  <div class="cta-inner reveal">
-    <h2 class="cta-heading">Stewardship under<br><em>constrained capital.</em></h2>
-    <p class="cta-body">Footprint triage, deferred maintenance, portfolio sequencing — or a board ready to expand when capital exists. We bring the methodology and the track record.</p>
-    <a href="museum-cultural-resiliency-planning.html" class="btn-primary" style="font-size: 12px; padding: 16px 40px;">Resiliency Planning Study</a>
-    <div class="cta-contact">
-      <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a>
-      &nbsp;·&nbsp;
-      <a href="tel:4157945252">415-794-5252</a>
-      &nbsp;·&nbsp;
-      New York · Mexico City · Worldwide
-    </div>
+<!-- FILTERS -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="feasibility">Feasibility</button>
+    <button class="filter-btn" data-filter="master-planning">Master Planning</button>
+    <button class="filter-btn" data-filter="exhibition-design">Exhibition Design</button>
+    <button class="filter-btn" data-filter="strategic-planning">Strategic Planning</button>
+    <button class="filter-btn" data-filter="university">University</button>
+    <button class="filter-btn" data-filter="science">Science &amp; Nature</button>
+    <button class="filter-btn" data-filter="history">History &amp; Culture</button>
+    <button class="filter-btn" data-filter="childrens">Children's</button>
+    <button class="filter-btn" data-filter="international">International</button>
   </div>
-</section>
+</div>
 
-<!-- ── FOOTER ── -->
+<!-- GRID -->
+<div class="projects-section">
+  <div class="projects-count">Showing <span id="count">30</span> projects</div>
 
+  <div class="projects-grid" id="grid">
 
-<section class="newsletter-band">
-  <div class="newsletter-inner">
-    <div>
-      <div class="newsletter-kicker">Newsletter</div>
-      <h2 class="newsletter-title">Get museum planning updates.</h2>
-      <p class="newsletter-copy">Join the Museum Planning LLC newsletter for essays, case studies, and practical planning insights.</p>
-    </div>
-    <form class="newsletter-form" data-newsletter-form>
-      <input class="newsletter-input" type="email" name="email" placeholder="Your email address" required>
-      <button class="newsletter-btn" type="submit">Sign Up</button>
-    </form>
+    <!-- 1 -->
+<a href="projects/shared-ground.html" class="project-card" data-tags="interactive exhibition-design archive mcdonough">
+      <div class="card-image">
+        <img src="content/uploads/2026/shared-ground/01-lucinda-davis-woman-of-black-and-creek-heritage.jpg" alt="Shared Ground — interactive installation" loading="lazy">
+        <div class="card-type-badge">2026</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Interactive Installation</div>
+        <div class="card-title">Shared Ground</div>
+        <div class="card-location">McDonough, Georgia · Ars Electronica PRIX 2026</div>
+        <div class="card-services">
+          <span class="service-tag">Interactive Media</span>
+          <span class="service-tag">Archive Curation</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2 -->
+<a href="projects/mcdonough-cultural-plan.html" class="project-card" data-tags="cultural-planning strategic-planning municipal master-planning">
+      <div class="card-image">
+        <img src="content/uploads/2019/07/JT2A3857-1400x933.jpg" alt="City of McDonough Cultural Plan" loading="lazy">
+        <div class="card-type-badge">2025</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">City Cultural Planning</div>
+        <div class="card-title">City of McDonough Cultural Plan</div>
+        <div class="card-location">McDonough, Georgia · 2026–2031</div>
+        <div class="card-services">
+          <span class="service-tag">Cultural Planning</span>
+          <span class="service-tag">Community Engagement</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 3 -->
+<a href="projects/mas-executive-director.html" class="project-card" data-tags="exhibition-design history leadership">
+      <div class="card-image">
+        <img src="content/uploads/2025/08/IMG_5797-1400x1050.jpeg" alt="Museum of Arts and Sciences — Executive Director" loading="lazy">
+        <div class="card-type-badge">2025</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Part 1 · Executive Director</div>
+        <div class="card-title">Museum of Arts and Sciences</div>
+        <div class="card-location">Macon, Georgia</div>
+        <div class="card-services">
+          <span class="service-tag">Executive Director</span>
+          <span class="service-tag">Institutional Restructuring</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 4 -->
+<a href="projects/mas-art-tech-collaboration.html" class="project-card" data-tags="exhibition-design interactive technology">
+      <div class="card-image">
+        <img src="content/uploads/2025/08/Untitled.png" alt="MAS — Art &amp; Tech Collaboration" loading="lazy">
+        <div class="card-type-badge">2025</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Part 2 · Knight Foundation</div>
+        <div class="card-title">MAS — Art &amp; Tech Collaboration</div>
+        <div class="card-location">Macon, Georgia</div>
+        <div class="card-services">
+          <span class="service-tag">Art &amp; Tech</span>
+          <span class="service-tag">Public Programming</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5 -->
+<a href="projects/howard-natural-history-museum.html" class="project-card" data-tags="master-planning exhibition-design strategic-planning university science">
+      <div class="card-image">
+        <img src="content/uploads/2025/08/Howard_front-1-1400x788.png" alt="Howard Natural History Museum" loading="lazy">
+        <div class="card-type-badge">2024</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Natural History Museum</div>
+        <div class="card-title">Howard Natural History Museum</div>
+        <div class="card-location">Riverside County, California</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 6 -->
+<a href="projects/frehner-museum-southern-utah-university.html" class="project-card" data-tags="master-planning university science">
+      <div class="card-image">
+        <img src="content/uploads/2026/02/IMG_2419-1400x1867.jpeg" alt="Frehner Museum" loading="lazy">
+        <div class="card-type-badge">2026</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">University Museum</div>
+        <div class="card-title">Frehner Museum of Natural History</div>
+        <div class="card-location">Southern Utah University · Cedar City, Utah</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">University</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 7 -->
+<a href="projects/arizona-natural-resources-museum.html" class="project-card" data-tags="master-planning university science">
+      <div class="card-image">
+        <img src="content/uploads/2023/02/image-5-copy-4-1400x643.png" alt="University of Arizona ANRM" loading="lazy">
+        <div class="card-type-badge">2023</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">University Museum</div>
+        <div class="card-title">Arizona Natural Resources Museum (ANRM)</div>
+        <div class="card-location">University of Arizona · Tucson, Arizona</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">University</span>
+          <span class="service-tag">Science</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 8 -->
+<a href="projects/interactive-african-american-museum.html" class="project-card" data-tags="exhibition-design master-planning strategic-planning feasibility history">
+      <div class="card-image">
+        <img src="content/uploads/2021/12/exterior0001-1400x925.png" alt="African American Museum" loading="lazy">
+        <div class="card-type-badge">2022</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">African American Museum</div>
+        <div class="card-title">Interactive African American Museum &amp; Cultural Center</div>
+        <div class="card-location">Indiana</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Feasibility</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 9 -->
+<a href="projects/designing-museum-experiences.html" class="project-card" data-tags="">
+      <div class="card-image">
+        <img src="content/uploads/2021/06/Designing-Museum-Experiences-1400x2000.jpg" alt="Designing Museum Experiences" loading="lazy" style="object-fit: contain; background: #f0ebe0; padding: 20px;">
+        <div class="card-type-badge">2021</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Bloomsbury · Book</div>
+        <div class="card-title">Designing Museum Experiences</div>
+        <div class="card-location">Mark Walhimer · Bloomsbury · 2021</div>
+        <div class="card-services">
+          <span class="service-tag">Publication</span>
+          <span class="service-tag">Bloomsbury</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 10 -->
+<a href="projects/discovery-center-murfree-spring.html" class="project-card" data-tags="exhibition-design strategic-planning childrens">
+      <div class="card-image">
+        <img src="content/uploads/2004/04/2020-06-06-12.png" alt="Discovery Center at Murfree Spring" loading="lazy">
+        <div class="card-type-badge">2020</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Nature Center</div>
+        <div class="card-title">Discovery Center at Murfree Spring</div>
+        <div class="card-location">Murfreesboro, Tennessee</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 11 -->
+<a href="projects/city-of-mcdonough-georgia.html" class="project-card" data-tags="master-planning strategic-planning feasibility history">
+      <div class="card-image">
+        <img src="content/uploads/2019/07/JT2A3715-1400x933.jpg" alt="C.O. Polk Interactive Museum, McDonough Georgia" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">History Museum</div>
+        <div class="card-title">C.O. Polk Interactive Museum</div>
+        <div class="card-location">McDonough, Georgia · Local history museum</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 12 -->
+<a href="projects/academy-studios.html" class="project-card" data-tags="feasibility strategic-planning history">
+      <div class="card-image">
+        <img src="content/uploads/2019/04/MIDE.jpg" alt="Academy Studios" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Cultural Institution</div>
+        <div class="card-title">Academy Studios</div>
+        <div class="card-location">United States</div>
+        <div class="card-services">
+          <span class="service-tag">Feasibility</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 13 -->
+<a href="projects/mide-museo-interactivo-de-economia.html" class="project-card" data-tags="exhibition-design international">
+      <div class="card-image">
+        <img src="content/uploads/2019/04/MIDE.jpg" alt="MIDE Mexico City" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Interactive Museum</div>
+        <div class="card-title">MIDE, Museo Interactivo de Economía</div>
+        <div class="card-location">Mexico City, Mexico</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">International</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 14 -->
+<a href="projects/the-tech-interactive.html" class="project-card" data-tags="exhibition-design science">
+      <div class="card-image">
+        <img src="content/uploads/2019/05/IMG_7010_o-1400x786.jpg" alt="The Tech Interactive" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Innovation Museum</div>
+        <div class="card-title">The Tech Interactive — Innovation Exhibits</div>
+        <div class="card-location">San Jose, California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Development</span>
+          <span class="service-tag">Interactive</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 15 -->
+<a href="projects/interactive-nature-conservation-museum.html" class="project-card" data-tags="exhibition-design science">
+      <div class="card-image">
+        <img src="content/uploads/2019/04/0044-1400x700.jpg" alt="Interactive Nature Conservation Museum" loading="lazy">
+        <div class="card-type-badge">2019</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Conservation Museum</div>
+        <div class="card-title">Interactive Nature Conservation Museum</div>
+        <div class="card-location">United States</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Interactive</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 16 -->
+<a href="projects/cade-museum-steam.html" class="project-card" data-tags="master-planning strategic-planning feasibility science">
+      <div class="card-image">
+        <img src="content/uploads/2017/06/camera3-1200x600.jpg" alt="Cade STEAM Music Concept" loading="lazy">
+        <div class="card-type-badge">2017</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">STEAM Museum</div>
+        <div class="card-title">Cade Museum — STEAM Music Concept</div>
+        <div class="card-location">Gainesville, Florida</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">STEAM</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 17 -->
+<a href="projects/museo-memoria-y-tolerancia.html" class="project-card" data-tags="exhibition-design international history">
+      <div class="card-image">
+        <img src="content/uploads/2016/10/ipad_tables-1200x1392.jpg" alt="Museo Memoria y Tolerancia" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">History Museum</div>
+        <div class="card-title">Museo Memoria y Tolerancia</div>
+        <div class="card-location">Mexico City, Mexico</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">International</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 18 -->
+<a href="projects/alcatraz-landing.html" class="project-card" data-tags="exhibition-design history">
+      <div class="card-image">
+        <img src="content/uploads/2016/10/IMG_0708-1200x2133.jpg" alt="Alcatraz Landing" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Heritage Site</div>
+        <div class="card-title">Alcatraz Landing</div>
+        <div class="card-location">San Francisco, California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Experience Design</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 19 -->
+<a href="projects/childrens-museum-indianapolis-sculpture.html" class="project-card" data-tags="exhibition-design childrens">
+      <div class="card-image">
+        <img src="content/uploads/2016/03/dino.png" alt="Children's Museum Indianapolis Sculpture" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">Children's Museum of Indianapolis — Sculpture</div>
+        <div class="card-location">Indianapolis, Indiana</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Fabrication</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 20 -->
+<a href="projects/pge-look-forward-bus.html" class="project-card" data-tags="exhibition-design">
+      <div class="card-image">
+        <img src="content/uploads/2016/10/DSC_0081.jpg" alt="PG&E Look Forward Bus" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Mobile Exhibition</div>
+        <div class="card-title">PG&amp;E Look Forward Bus</div>
+        <div class="card-location">California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Mobile</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 21 -->
+<a href="projects/toyota-mobile-hybrid-experience.html" class="project-card" data-tags="exhibition-design">
+      <div class="card-image">
+        <img src="content/uploads/2016/10/IMG_0935-1200x900.jpg" alt="Toyota Mobile Hybrid Experience" loading="lazy">
+        <div class="card-type-badge">2016</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Brand Experience</div>
+        <div class="card-title">Toyota Mobile Hybrid Experience</div>
+        <div class="card-location">United States</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Brand Experience</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 22 -->
+<a href="projects/steam-museum-website.html" class="project-card" data-tags="science">
+      <div class="card-image">
+        <img src="content/uploads/2015/06/Science-Museum-Website-Design-1400x839.jpg" alt="STEAM Website" loading="lazy">
+        <div class="card-type-badge">2015</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Science Center</div>
+        <div class="card-title">STEAM Museum Website &amp; Digital Experience</div>
+        <div class="card-location">United States</div>
+        <div class="card-services">
+          <span class="service-tag">Digital Strategy</span>
+          <span class="service-tag">STEAM</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 23 -->
+<a href="projects/museums-101.html" class="project-card" data-tags="">
+      <div class="card-image">
+        <img src="content/uploads/2015/04/Museums_101.png" alt="Museums 101" loading="lazy" style="object-fit: contain; background: #f0ebe0; padding: 20px;">
+        <div class="card-type-badge">2015</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Bloomsbury · Book</div>
+        <div class="card-title">Museums 101</div>
+        <div class="card-location">Mark Walhimer · Bloomsbury · 2015</div>
+        <div class="card-services">
+          <span class="service-tag">Publication</span>
+          <span class="service-tag">Bloomsbury</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 24 -->
+<a href="projects/childrens-museum-indianapolis.html" class="project-card" data-tags="exhibition-design childrens">
+      <div class="card-image">
+        <img src="content/uploads/2012/08/TMTE1.jpeg" alt="Children's Museum of Indianapolis" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">Children's Museum of Indianapolis</div>
+        <div class="card-location">Indianapolis, Indiana</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Interactive</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 25 -->
+<a href="projects/san-diego-childrens-museum.html" class="project-card" data-tags="exhibition-design master-planning childrens">
+      <div class="card-image">
+        <img src="content/uploads/2013/08/2.jpg" alt="San Diego Children's Museum" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">San Diego Children's Museum</div>
+        <div class="card-location">San Diego, California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Master Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 26 -->
+<a href="projects/pretend-city-childrens-museum.html" class="project-card" data-tags="exhibition-design strategic-planning childrens">
+      <div class="card-image">
+        <img src="content/uploads/2013/08/pretendcity1.jpg" alt="Pretend City" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">Pretend City, Children's Museum of Orange County</div>
+        <div class="card-location">Irvine, California</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 27 -->
+<a href="projects/discovery-science-center.html" class="project-card" data-tags="master-planning feasibility science">
+      <div class="card-image">
+        <img src="content/uploads/2013/08/cube.jpg" alt="Discovery Science Center" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Science Center</div>
+        <div class="card-title">Discovery Science Center</div>
+        <div class="card-location">Orange County, California</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Feasibility</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 28 -->
+<a href="projects/muzeo.html" class="project-card" data-tags="master-planning strategic-planning history">
+      <div class="card-image">
+        <img src="content/uploads/2013/08/muzeo2.jpg" alt="Muzeo" loading="lazy">
+        <div class="card-type-badge">2013</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">History Museum</div>
+        <div class="card-title">Muzeo</div>
+        <div class="card-location">Anaheim, California</div>
+        <div class="card-services">
+          <span class="service-tag">Master Planning</span>
+          <span class="service-tag">Strategic Planning</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 29 -->
+<a href="projects/childrens-museum-manhattan.html" class="project-card" data-tags="exhibition-design childrens">
+      <div class="card-image">
+        <img src="content/uploads/2012/08/soundsfun2.jpeg" alt="Children's Museum of Manhattan" loading="lazy">
+        <div class="card-type-badge">2012</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Children's Museum</div>
+        <div class="card-title">Children's Museum of Manhattan</div>
+        <div class="card-location">New York, New York</div>
+        <div class="card-services">
+          <span class="service-tag">Exhibition Design</span>
+          <span class="service-tag">Interactive</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 30 -->
+<a href="projects/alcatraz-traveling-exhibition.html" class="project-card" data-tags="exhibition-design history">
+      <div class="card-image">
+        <img src="content/uploads/2019/07/DSC_4325-1400x782.jpg" alt="Alcatraz: Life on the Rock traveling exhibition" loading="lazy">
+        <div class="card-type-badge">2011–2014</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">Traveling Exhibition</div>
+        <div class="card-title">Alcatraz: Life on the Rock</div>
+        <div class="card-location">National tour · Alcatraz Cruises, LLC</div>
+        <div class="card-services">
+          <span class="service-tag">Project Management</span>
+          <span class="service-tag">Curatorial</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="no-results" id="noResults">No projects match this filter.</div>
   </div>
-</section>
+</div>
+
+<!-- CTA -->
+<!-- PROJECTS_ARCHIVE_START -->
+<div class="projects-archive">
+  <div class="archive-inner">
+    <div class="archive-label">Full project archive</div>
+    <h2 class="archive-title">All case studies</h2>
+    <p class="archive-deck">Complete index of 47 museum planning projects — including earlier engagements not shown in the featured grid above. Every page is a full case study with images and project documentation.</p>
+    <ul class="archive-list">
+        <li><a href="projects/academy-studios.html">Academy Studios</a></li>
+        <li><a href="projects/air-and-space-science-center-exhibition.html">Air and Space – Science Center Exhibition</a></li>
+        <li><a href="projects/alcatraz-landing.html">Alcatraz Landing</a></li>
+        <li><a href="projects/alcatraz-traveling-exhibition.html">Alcatraz: Life on the Rock — Traveling Exhibition</a></li>
+        <li><a href="projects/amazing-sensations-science-center-exhibition.html">Amazing Sensations – Science Center Exhibition</a></li>
+        <li><a href="projects/arizona-natural-resources-museum.html">Arizona Natural Resources Museum (ANRM)</a></li>
+        <li><a href="projects/bolivian-museum.html">Bolivian Museum</a></li>
+        <li><a href="projects/cade-museum-steam.html">Cade – STEAM Music Concept</a></li>
+        <li><a href="projects/childrens-museum-indianapolis-sculpture.html">Children&#x27;s Museum of Indianapolis Sculpture</a></li>
+        <li><a href="projects/childrens-museum-indianapolis.html">Children&#x27;s Museum of Indianapolis</a></li>
+        <li><a href="projects/childrens-museum-manhattan.html">Children&#x27;s Museum of Manhattan</a></li>
+        <li><a href="projects/city-of-mcdonough-georgia.html">C.O. Polk Interactive Museum</a></li>
+        <li><a href="projects/designing-museum-experiences.html">Designing Museum Experiences</a></li>
+        <li><a href="projects/discovery-center-murfree-spring.html">Discovery Center at Murfree Spring</a></li>
+        <li><a href="projects/discovery-science-center.html">Discovery Science Center</a></li>
+        <li><a href="projects/frehner-museum-southern-utah-university.html">Frehner Museum of Natural History</a></li>
+        <li><a href="projects/habitot-childrens-museum.html">Habitot Children&#x27;s Museum</a></li>
+        <li><a href="projects/howard-natural-history-museum.html">Howard Natural History Museum</a></li>
+        <li><a href="projects/interactive-african-american-museum.html">Interactive African American Museum and Cultural Center</a></li>
+        <li><a href="projects/interactive-exhibit-consultant.html">Louisiana State Museum</a></li>
+        <li><a href="projects/interactive-nature-conservation-museum.html">Interactive Nature Conservation Museum</a></li>
+        <li><a href="projects/mas-art-tech-collaboration.html">Museum of Arts and Sciences — Art &amp; Tech Collaboration</a></li>
+        <li><a href="projects/mas-executive-director.html">Museum of Arts and Sciences — Executive Director</a></li>
+        <li><a href="projects/mcdonough-cultural-plan.html">City of McDonough Cultural Plan</a></li>
+        <li><a href="projects/mide-museo-interactivo-de-economia.html">MIDE, Museo Interactivo de Economía</a></li>
+        <li><a href="projects/mobius-science-center.html">Mobius Science Center</a></li>
+        <li><a href="projects/museo-memoria-y-tolerancia.html">Museo Memoria y Tolerancia</a></li>
+        <li><a href="projects/museum-customer-experience-design.html">Museum Customer Experience Design</a></li>
+        <li><a href="projects/museum-inclusion-simulator.html">Museum Inclusion Simulator</a></li>
+        <li><a href="projects/museum-planning-workshop.html">Museum Planning Workshop</a></li>
+        <li><a href="projects/museum-project-management.html">Museum Project Management</a></li>
+        <li><a href="projects/museum-regular-man.html">Museum Regular Man</a></li>
+        <li><a href="projects/museums-101.html">Museums 101</a></li>
+        <li><a href="projects/muzeo.html">Muzeo</a></li>
+        <li><a href="projects/nature-play-museum-strategic-planning.html">Science Center Strategic Planning – Nature Exhibition</a></li>
+        <li><a href="projects/pge-look-forward-bus.html">PG&amp;E Look Forward Bus</a></li>
+        <li><a href="projects/poughkeepsie-center-for-arts-creativity-pcac-feasibility-study.html">Poughkeepsie Center for Arts &amp; Creativity (PCAC) Feasibility Study</a></li>
+        <li><a href="projects/pretend-city-childrens-museum.html">Pretend City, Children&#x27;s Museum of Orange County</a></li>
+        <li><a href="projects/san-diego-childrens-museum.html">San Diego Children&#x27;s Museum</a></li>
+        <li><a href="projects/science-of-surfing.html">Science of Surfing – Traveling Museum Exhibition</a></li>
+        <li><a href="projects/shared-ground.html">Shared Ground — Interactive Installation · Museum Planning LLC</a></li>
+        <li><a href="projects/steam-museum-website.html">STEAM Museum Website</a></li>
+        <li><a href="projects/steam-pop-up-museum.html">STEAM Pop-up Museum</a></li>
+        <li><a href="projects/stem-steam-science-center.html">Spark Dome – STEM / STEAM Science Center</a></li>
+        <li><a href="projects/the-tech-interactive.html">The Tech Interactive</a></li>
+        <li><a href="projects/toyota-mobile-hybrid-experience.html">Toyota Mobile Hybrid Experience</a></li>
+        <li><a href="projects/trans-studio-science-center.html">Trans Studio Science Center</a></li>
+    </ul>
+  </div>
+</div>
+<!-- PROJECTS_ARCHIVE_END -->
+
+
+<div class="projects-cta">
+  <h2>Your museum<br><em>could be next.</em></h2>
+  <p>Whether you're starting from a collection, a community need, or a capital campaign — we bring forty museums of experience to your first conversation.</p>
+  <a href="mailto:mark@museumplanning.com" class="btn-gold">Start a Conversation</a>
+</div>
+
+<!-- FOOTER -->
+<p class="privacy-strip"><a href="museum-planning-privacy.html">Privacy &amp; analytics</a> — how this site uses cookies and Google Analytics.</p>
 
 <footer>
   <div class="footer-logo">Museum <span>Planning</span> LLC</div>
@@ -962,110 +1202,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="footer-copy">© 2026 Museum Planning LLC</div>
 </footer>
 
-<!-- ── SCROLL REVEAL SCRIPT ── -->
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-  reveals.forEach(el => observer.observe(el));
-</script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  const countEl = document.getElementById('count');
+  const noResults = document.getElementById('noResults');
 
-<script>
-(function () {
-  var carousel = document.getElementById('heroCarousel');
-  if (!carousel) return;
-  var slides = Array.prototype.slice.call(carousel.querySelectorAll('.hero-carousel-slide'));
-  var dots = Array.prototype.slice.call(carousel.querySelectorAll('.hero-carousel-dot'));
-  var caption = document.getElementById('heroCarouselCaption');
-  var prevBtn = carousel.querySelector('.hero-carousel-prev');
-  var nextBtn = carousel.querySelector('.hero-carousel-next');
-  var index = 0;
-  var timer;
-
-  function show(next) {
-    slides[index].classList.remove('is-active');
-    slides[index].setAttribute('aria-hidden', 'true');
-    dots[index].classList.remove('is-active');
-    dots[index].setAttribute('aria-selected', 'false');
-    index = (next + slides.length) % slides.length;
-    slides[index].classList.add('is-active');
-    slides[index].setAttribute('aria-hidden', 'false');
-    dots[index].classList.add('is-active');
-    dots[index].setAttribute('aria-selected', 'true');
-    if (caption) caption.textContent = slides[index].getAttribute('data-caption') || '';
-  }
-
-  function startAutoplay() {
-    clearInterval(timer);
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    timer = setInterval(function () { show(index + 1); }, 6000);
-  }
-
-  dots.forEach(function (dot) {
-    dot.addEventListener('click', function () {
-      show(Number(dot.getAttribute('data-index')));
-      startAutoplay();
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        if (filter === 'all') {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          const tags = card.dataset.tags || '';
+          if (tags.includes(filter)) {
+            card.classList.remove('hidden');
+            visible++;
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+      countEl.textContent = visible;
+      noResults.classList.toggle('visible', visible === 0);
     });
   });
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', function () {
-      show(index - 1);
-      startAutoplay();
-    });
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener('click', function () {
-      show(index + 1);
-      startAutoplay();
-    });
-  }
-
-  carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
-  carousel.addEventListener('mouseleave', startAutoplay);
-
-  startAutoplay();
-})();
 </script>
 
 
+<!-- SEARCH OVERLAY -->
 <div class="search-overlay" id="searchOverlay">
   <button class="search-close" id="searchClose">×</button>
   <div class="search-input-wrap">
     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off">
+    <input type="text" id="search-input" placeholder="Search the site..." autocomplete="off" autofocus>
   </div>
   <div class="search-results" id="searchResults"></div>
 </div>
+
 <script>
 
 </script>
   <script src="assets/search-pages.js"></script>
 <script src="assets/site-search.js"></script>
 <script src="assets/nav-mobile.js" defer></script>
-
-<script>
-(function(){
-  function toMailto(email, page){
-    var subject = encodeURIComponent('Newsletter Signup Request');
-    var body = encodeURIComponent('Please add this email to the Museum Planning LLC newsletter\n\nEmail: ' + email + '\nPage: ' + page + '\nTimestamp: ' + new Date().toISOString());
-    window.location.href = 'mailto:mark@museumplanning.com?subject=' + subject + '&body=' + body;
-  }
-  document.querySelectorAll('[data-newsletter-form]').forEach(function(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var input = form.querySelector('input[type="email"]');
-      if(!input || !input.value) return;
-      toMailto(input.value.trim(), window.location.pathname);
-    });
-  });
-})();
-</script>
-
 </body>
 </html>
