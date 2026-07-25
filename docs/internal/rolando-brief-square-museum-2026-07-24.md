@@ -15,6 +15,8 @@ This is the **anti–Dateland** image: daylight, objects, community, downtown li
 
 You did excellent work on **Howard**; that tone and clarity are the reference. I also opened **C.O. Polk Interactive Museum** in McDonough, GA (2017 exhibit package on file — five program zones, touch tables, kids/maker, square connection). This brief **generalizes** that logic for a **~10,000 ft²** building where a city doesn’t yet have a Polk.
 
+**Important:** The building is only half the story. These renderings should show a **Convergence Era** museum — physical plant + **digital layer + community programming** planned as one system. The software side is a **kit of parts** (same idea as the architecture), not a one-off AV rack.
+
 ---
 
 ## Program (single scenario)
@@ -41,7 +43,33 @@ These match our standard “kit” — same spine we use on real projects:
 4. **Art / changing gallery** — local art + history; museum-quality cases; one changing-exhibition wall  
 5. **Kids / maker** — bright, safe, **3D print or maker table**, reading nook, post-office or play element tied to local story  
 
-**Back of house (plan or cutaway):** collection storage, prep, staff workroom, loading/service — visibly ** proportional** to 5k BoH (not omitted).
+**Back of house (plan or cutaway):** collection storage, prep, staff workroom, loading/service — visibly **proportional** to 5k BoH (not omitted).
+
+---
+
+## Digital layer — show it, don’t cave it
+
+The **C.O. Polk framework** (2017) already defined the split: building systems on one side, participatory digital on the other.
+
+| Layer | Show in renderings | Polk / operating precedent |
+|-------|-------------------|----------------------------|
+| **Building systems** | MEP, storage RH, staff paths, AV closet, loading | Real museum ops — not omitted |
+| **Participatory digital** | Touch table, object table, digital signage, “today’s activities” | Staff-updatable; supports events on the square |
+| **Reach beyond walls** | Optional subtle graphic: website / collections / school | Museums Everywhere — federated content, not copied Smithsonian |
+
+**Digital Exhibits** ([github.com/Museum-Planning-LLC/digital-exhibits](https://github.com/Museum-Planning-LLC/digital-exhibits)) is our **software kit of parts** — delivery templates at three scales:
+
+| Form factor | Typical placement in this building | Example |
+|-------------|-----------------------------------|---------|
+| **Kiosk** | Entry, lobby, kids zone | Single-station touch; high throughput |
+| **Full-wall immersive** | Main gallery or theater wall | Local history · place; science sim at wall scale |
+| **Full-room immersive** | Dedicated program room (optional) | **Shared Ground** pattern — McDonough; humanities / community memory |
+
+Live proofs on museumplanning.com: [digital-exhibits/](https://museumplanning.com/digital-exhibits/) · [flow-field grid](https://museumplanning.com/digital-exhibits/flow-field-grid.html) · [Shared Ground](https://museumplanning.com/immersive-mexico/en/shared-ground.html).
+
+**For renderings:** one or two **legible digital moments** per interior — e.g. touch table with families, monument/signage facing the square, optional full-wall treatment in theater — always **alongside objects and daylight**. Screens support local story; they don’t replace the collection.
+
+**Theory (internal framing):** [Convergence Era](https://museumplanning.com/convergence-era.html) · digital twin = program + systems + content parameterized per city (population, site, parking, HVAC zone) — Rolando draws the **physical twin**; Digital Exhibits + Polk software spec are the **operational twin**.
 
 ---
 
@@ -73,8 +101,8 @@ Renderings should feel **alive on a Saturday morning**:
 | # | View | Notes |
 |---|------|--------|
 | 1 | **Exterior — square context** | Building on square, parking constraint visible, morning light, people walking to entrance |
-| 2 | **Interior — main gallery** | Daylight, cases + one interactive, timeline/supergraphic, readable circulation |
-| 3 | **Interior — kids / maker** | Maker or touch, reading area, warm color, families |
+| 2 | **Interior — main gallery** | Daylight, cases + **touch table or local-history wall**, timeline/supergraphic, readable circulation |
+| 3 | **Interior — kids / maker** | Maker or touch, reading area, warm color, families; optional kiosk or 3D-print station |
 | 4 | **Plan diagram** | Simple color-coded 5 zones + BoH; labels OK |
 | 5 | *(Optional)* **Exterior evening / event** | Square lit, museum open late, community event |
 
@@ -86,16 +114,19 @@ Renderings should feel **alive on a Saturday morning**:
 ## Reference material (from Mark)
 
 - **Howard project** renderings (your work) — quality bar  
-- **C.O. Polk Interactive Museum** — McDonough, GA: 2017 exhibit development set (Project Overview diagram + exhibit plan); opened and operating  
+- **C.O. Polk Interactive Museum** — McDonough, GA: 2017 exhibit development set (Project Overview EX-0.1 system diagram + exhibit plan); opened and operating — **physical + software kit ancestor**  
+- **Polk empathy maps** — audience segments (families, schools, fundraisers, community) — use for people in scenes  
+- **Digital Exhibits repo** — [github.com/Museum-Planning-LLC/digital-exhibits](https://github.com/Museum-Planning-LLC/digital-exhibits) — kiosk / full-wall / full-room templates; Shared Ground = McDonough full-room entry  
+- **Convergence Era** — [museumplanning.com/convergence-era.html](https://museumplanning.com/convergence-era.html) — why physical + digital + community are one planning problem  
 - **McDonough on the square** — real precedent for parking, square life, local history mission  
 
-I can send Polk PDFs (overview + plan) if helpful.
+I can send Polk PDFs (overview + plan + empathy maps) if helpful.
 
 ---
 
 ## One-sentence intent
 
-> A mayor should look at these and say: *“We could build that — it brings people downtown, respects our history, and looks like a museum that will still make sense in twenty years.”*
+> A mayor should look at these and say: *“We could build that — it brings people downtown, respects our history, and looks like a museum that will still make sense in twenty years — with programming we can actually run.”*
 
 ---
 
