@@ -60,6 +60,14 @@ export default {
     const subj = subject || "Inquiry — Museum Planning LLC";
 
     const textBody = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      interest ? `Exploring: ${interest}` : "",
+      "",
+      message,
+      "",
+      "---",
+      "",
       "Typical rates (Museum Planning LLC):",
       "- Museum Assessment: $18,000 + travel (min. retainer)",
       "- Strategic Planning: $45k – $75k + travel",
@@ -67,13 +75,6 @@ export default {
       "- Master Planning: $100k+ + travel",
       "- Exhibition Design: $60k – $200k + travel",
       "- Owners Rep / PM: Variable — per scope",
-      "",
-      "---",
-      `Name: ${name}`,
-      `Email: ${email}`,
-      interest ? `Exploring: ${interest}` : "",
-      "",
-      message,
     ]
       .filter((line, i, arr) => line !== "" || (i > 0 && arr[i - 1] !== ""))
       .join("\n");
