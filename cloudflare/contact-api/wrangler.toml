@@ -1,0 +1,13 @@
+name = "museumplanning-contact-api"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+FROM_EMAIL = "contact@museumplanning.com"
+FROM_NAME = "Museum Planning LLC"
+TO_EMAIL = "mark@museumplanning.com"
+
+# Route — requires museumplanning.com zone on this Cloudflare account
+routes = [
+  { pattern = "museumplanning.com/api/contact", zone_name = "museumplanning.com" }
+]

@@ -261,6 +261,21 @@ nav {
   transition: background .2s;
 }
 .btn-submit:hover { background: var(--gold-lt); }
+.btn-submit:disabled { opacity: .65; cursor: wait; }
+.form-status {
+  font-size: 13px;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+.form-status.ok { color: var(--deep); }
+.form-status.err { color: #8b2e2e; }
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .form-foot {
   font-size: 12px;
   color: var(--mid);
@@ -512,8 +527,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="contact-card">
       <div class="contact-card-label">Send a Message</div>
-      <p class="form-note">Submit opens your email app with typical rates included in the message body.</p>
+      <p class="form-note">Submit sends your message to Museum Planning LLC. Typical rates are included automatically.</p>
       <form id="contact-form" novalidate>
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
         <div class="form-field">
           <label for="your-name">Your Name (required)</label>
           <input type="text" id="your-name" name="your-name" required autocomplete="name">
@@ -544,9 +563,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <textarea id="your-message" name="your-message" required></textarea>
         </div>
         <div class="form-actions">
-          <button type="submit" class="btn-submit">Send via email</button>
+          <button type="submit" class="btn-submit" id="contact-submit">Send message</button>
         </div>
-        <p class="form-foot">If nothing opens, email <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a> directly.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-foot">Or email <a href="mailto:mark@museumplanning.com">mark@museumplanning.com</a> directly.</p>
       </form>
     </div>
   </div>
@@ -595,38 +615,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 (function () {
-  var RATES_BLOCK =
-    "Typical rates (Museum Planning LLC):\r\n" +
-    "- Museum Assessment: $18,000 + travel (min. retainer)\r\n" +
-    "- Strategic Planning: $45k – $75k + travel\r\n" +
-    "- Feasibility Studies: $40k – $70k + travel\r\n" +
-    "- Master Planning: $100k+ + travel\r\n" +
-    "- Exhibition Design: $60k – $200k + travel\r\n" +
-    "- Owners Rep / PM: Variable — per scope\r\n\r\n";
+  var form = document.getElementById("contact-form");
+  var submitBtn = document.getElementById("contact-submit");
+  var statusEl = document.getElementById("form-status");
 
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
+  function setStatus(text, ok) {
+    statusEl.textContent = text;
+    statusEl.className = "form-status" + (text ? (ok ? " ok" : " err") : "");
+  }
+
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
     var name = document.getElementById("your-name").value.trim();
     var email = document.getElementById("your-email").value.trim();
     var interest = document.getElementById("interest").value.trim();
     var subject = document.getElementById("your-subject").value.trim();
     var message = document.getElementById("your-message").value.trim();
+    var company = document.getElementById("company").value.trim();
     if (!name || !email || !message) return;
 
-    var subj = subject || "Inquiry — Museum Planning LLC";
-    var body =
-      RATES_BLOCK +
-      "---\r\n" +
-      "Name: " + name + "\r\n" +
-      "Email: " + email + "\r\n" +
-      (interest ? "Exploring: " + interest + "\r\n\r\n" : "\r\n") +
-      message;
+    submitBtn.disabled = true;
+    setStatus("Sending…", true);
 
-    window.location.href =
-      "mailto:mark@museumplanning.com?subject=" +
-      encodeURIComponent(subj) +
-      "&body=" +
-      encodeURIComponent(body);
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        interest: interest,
+        subject: subject,
+        message: message,
+        company: company
+      })
+    })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+      .then(function (result) {
+        if (result.ok && result.data.ok) {
+          setStatus("Message sent — we’ll reply to " + email + ".", true);
+          form.reset();
+        } else {
+          setStatus("Could not send. Please email mark@museumplanning.com directly.", false);
+        }
+      })
+      .catch(function () {
+        setStatus("Could not send. Please email mark@museumplanning.com directly.", false);
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+      });
   });
 
   var reveals = document.querySelectorAll(".reveal");
