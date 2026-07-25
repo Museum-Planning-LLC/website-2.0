@@ -2,14 +2,16 @@
 
 **To:** Rolando  
 **From:** Mark Walhimer, Museum Planning LLC  
-**Date:** 2026-07-24  
+**Date:** 2026-07-24 (updated 2026-07-25)  
 **Purpose:** Proof-of-concept visuals for civic/local-history museums — **not** a ticketed immersive art venue.
+
+**Companion doc:** `square-museum-kit-of-parts-2026-07-25.md` — full pick-list (core + optional modules, budget tiers, reference links).
 
 ---
 
 ## What this is
 
-We need a small set of architectural renderings for a **generic** local history museum on a **Southern town square** — the type of project mayors and city councils ask about when they say *“what’s the future of museums?”*
+We need a small set of architectural renderings for a **generic** local history museum on a **Southern or Rust Belt town square** — Main Street recovery, declining downtown, **$5–10 million total budget**, ~10k ft² — the type of project mayors ask about when they say *“what’s the future of museums?”*
 
 This is the **anti–Dateland** image: daylight, objects, community, downtown life — smart and contemporary, but **civic and sustainable**, not a black-box spectacle at $85/ticket.
 
@@ -26,7 +28,8 @@ You did excellent work on **Howard**; that tone and clarity are the reference. I
 | **Total building** | ~10,000 ft² |
 | **Front of house (exhibits / public)** | ~5,000 ft² |
 | **Back of house (storage, prep, staff, MEP)** | ~5,000 ft² |
-| **City scale** | ~60,000–100,000 population (adjustable label only) |
+| **City scale** | ~25,000–60,000 population (declining or flat Main Street) |
+| **Total budget** | **$5–10M all-in** (building + exhibits + digital) — civic, not Bilbao |
 | **Site** | **Town square** — historic downtown fabric; building faces or steps down to the square |
 | **Parking** | **Tight** — show reality: small lot adjacent *or* shuttle/event parking noted in one exterior view (no endless surface parking fantasy) |
 | **Building type** | New construction **or** sensitive adaptive reuse of a civic/historic shell — your judgment; should read as *belonging on a square* |
@@ -42,6 +45,11 @@ These match our standard “kit” — same spine we use on real projects:
 3. **Theater / multi-use** — community meetings, school groups, weekend programs; chairs storable  
 4. **Art / changing gallery** — local art + history; museum-quality cases; one changing-exhibition wall  
 5. **Kids / maker** — bright, safe, **3D print or maker table**, reading nook, post-office or play element tied to local story  
+6. **Renewal office** (visible from entry) — casual staff workspace where programming, signage, and digital content get updated — *constant renewal*, not a one-time build  
+
+**Optional kit modules (pick 2–4 in renderings — see companion doc):** infinity/mirror chamber · glass spheres/lenses in one ceiling bay · skyspace-lite · fiber-optic eaves/garden · exterior garden room · full-room or full-wall digital (Shared Ground / flow-field tier).
+
+**Not in scope:** British Museum Great Court, Guggenheim Bilbao atrium, Cloud Gate–scale public art — we borrow **ideas** at room/garden scale only.
 
 **Back of house (plan or cutaway):** collection storage, prep, staff workroom, loading/service — visibly **proportional** to 5k BoH (not omitted).
 
@@ -118,9 +126,11 @@ Renderings should feel **alive on a Saturday morning**:
 - **Polk empathy maps** — audience segments (families, schools, fundraisers, community) — use for people in scenes  
 - **Digital Exhibits repo** — [github.com/Museum-Planning-LLC/digital-exhibits](https://github.com/Museum-Planning-LLC/digital-exhibits) — kiosk / full-wall / full-room templates; Shared Ground = McDonough full-room entry  
 - **Convergence Era** — [museumplanning.com/convergence-era.html](https://museumplanning.com/convergence-era.html) — why physical + digital + community are one planning problem  
+- **Mark’s reference links** — `Desktop/rolando/links.rtf`: Jeongok (landscape gesture), Bilbao (one dramatic volume only), Kapoor (infinity **room**), ARoS Turrell (skyspace-lite), Discovery Lab (maker), Bruce Munro (fiber eaves/garden); **exclude** British Museum Great Court as draw subject  
+- **Kit catalog** — `docs/internal/square-museum-kit-of-parts-2026-07-25.md`  
 - **McDonough on the square** — real precedent for parking, square life, local history mission  
 
-I can send Polk PDFs (overview + plan + empathy maps) if helpful.
+I can send Polk PDFs (overview + plan + empathy maps) and the links RTF if helpful.
 
 ---
 
