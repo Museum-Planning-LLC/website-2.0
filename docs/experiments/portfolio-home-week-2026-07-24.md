@@ -1,33 +1,52 @@
-# Portfolio as homepage — one-week experiment
+# Portfolio as homepage — kept (2026-08-04)
 
 **Started:** 2026-07-24  
-**Review / revert by:** 2026-07-31  
+**Reviewed:** 2026-08-04  
+**Decision:** **Keep** portfolio at `/`
 
 ## What changed
 
-- `/` (`index.html`) now serves the full project portfolio (formerly `museum-planning-projects.html`).
-- Previous resiliency homepage saved as `index-resiliency-home.html`.
-- `museum-planning-projects.html` redirects to `/` so existing links still work.
+- `/` (`index.html`) serves the full project portfolio (formerly `museum-planning-projects.html`).
+- Previous resiliency homepage preserved as `index-resiliency-home.html`.
+- `museum-planning-projects.html` redirects to `/`.
 
-## What to watch (GA4)
+## North star (30 days from 2026-08-04)
 
-- Sessions on `/` vs prior week
-- Clicks on **Start a Conversation** / mailto
-- Contact form submissions on `museum-planning-contact.html`
-- Any inbound email volume
+Track **inbound email frequency and fit**, not raw GA sessions.
 
-## Revert (after review)
+| Target | Signal |
+|--------|--------|
+| **~1 email / day or every other day** | Consultant-grade inbound (institution, city, university) |
+| **Quality holds** | Tagged rows in [`docs/internal/inbound-inquiry-log.md`](../internal/inbound-inquiry-log.md) skew `consultant` / `city` / `university`, not `wrong-fit` |
+| **Next review** | **2026-09-03** — GA + GSC + inquiry log |
+
+## Review summary (2026-08-04)
+
+| Signal | Before (Jul 17–23) | After (Jul 24–Aug 3) |
+|--------|-------------------:|---------------------:|
+| GA active users / day | ~71 | ~74 |
+| GA contact views / day | 1.4 | 1.6 |
+| GSC impressions / day | 417 | 451 |
+| Inbound email | months of silence | ~daily / every other day |
+| Notable | — | NYBG (Jul 27; wrong-fit on remote, right-fit on credibility) |
+
+**Takeaway:** Volume metrics flat or slightly mixed; **fidelity up** — fewer clicks, better inquiries.
+
+## Shipped with keep decision
+
+- Homepage title/H1: **museum planning consultants** + proof grid (`index.html`)
+- `assets/analytics.js`: `contact_click` on mailto → `dataLayer`
+- GTM tag steps: [`docs/analytics/gtm-contact-click-setup.md`](../analytics/gtm-contact-click-setup.md)
+
+## Revert (only if needed)
 
 ```bash
 cd museum-planning-llc-website-2.0
 git checkout museum-planning-projects.html
 mv index-resiliency-home.html index.html
-# optional: remove index-resiliency-home.html after confirming restore
 git add index.html museum-planning-projects.html
-git commit -m "Revert portfolio-as-homepage experiment."
+git commit -m "Revert portfolio-as-homepage."
 git push
 ```
 
-## Keep experiment
-
-If portfolio-home is working, restore resiliency messaging elsewhere (e.g. link from Services / For Cities) rather than deleting `index-resiliency-home.html` until merged intentionally.
+Resiliency messaging stays on dedicated pages and in `index-resiliency-home.html` until merged elsewhere.
