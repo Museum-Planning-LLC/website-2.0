@@ -82,20 +82,81 @@
     "/a-future-vision-for-childrens-museums": "/museum-planning-about.html",
     "/home-2": "/",
     "/digital-2": "/",
-    "/2022-plans": "/museum-planning-projects.html"
+    "/2022-plans": "/museum-planning-projects.html",
+    "/immersive-mexico.html": "/museum-planning-services.html",
+    "/immersive-mexico": "/museum-planning-services.html",
+    "/immersive-mexico/": "/museum-planning-services.html",
+    "/immersive-mexico/index.html": "/museum-planning-services.html",
+    "/immersive-mexico/en/": "/museum-planning-services.html",
+    "/immersive-mexico/en/index.html": "/museum-planning-services.html",
+    "/immersive-mexico/en/living-commons.html": "/museum-planning-services.html",
+    "/immersive-mexico/en/scan-to-control.html": "/museum-planning-services.html",
+    "/immersive-mexico/en/shared-ground.html": "/museum-planning-services.html",
+    "/immersive-mexico/en/surrender-machine-77823.html": "/museum-planning-services.html",
+    "/immersive-mexico/es/": "/museum-planning-services.html",
+    "/immersive-mexico/es/index.html": "/museum-planning-services.html",
+    "/immersive-mexico/es/living-commons.html": "/museum-planning-services.html",
+    "/immersive-mexico/es/scan-to-control.html": "/museum-planning-services.html",
+    "/immersive-mexico/es/shared-ground.html": "/museum-planning-services.html",
+    "/immersive-mexico/es/surrender-machine-77823.html": "/museum-planning-services.html",
+    "/immersive-mexico/living-commons.html": "/museum-planning-services.html",
+    "/immersive-mexico/scan-to-control.html": "/museum-planning-services.html",
+    "/immersive-mexico/shared-ground.html": "/museum-planning-services.html",
+    "/immersive-mexico/surrender-machine-77823.html": "/museum-planning-services.html",
+    "/immersive-mexico/_source/shared-ground.html": "/museum-planning-services.html",
+    "/immersive-mexico/works/living-commons-work.html": "/museum-planning-services.html",
+    "/immersive-mexico/works/surrender-machine-work.html": "/museum-planning-services.html",
+    "/projects/shared-ground.html": "/museum-planning-projects.html",
+    "/projects/shared-ground": "/museum-planning-projects.html"
   },
   "prefix": [
-    { "prefix": "/portfolio/page", "target": "/museum-planning-projects.html" },
-    { "prefix": "/portfolio-item/", "target": "/museum-planning-projects.html" },
-    { "prefix": "/portfolio-item-category/", "target": "/museum-planning-projects.html" },
-    { "prefix": "/portfolio-item-tag/", "target": "/museum-planning-projects.html" },
-    { "prefix": "/author/", "target": "/museum-planning-about.html" },
-    { "prefix": "/category/", "target": "/" },
-    { "prefix": "/tag/", "target": "/" },
-    { "prefix": "/page/", "target": "/" },
-    { "prefix": "/updates/", "target": "/" },
-    { "prefix": "/process/", "target": "/museum-planning-services.html" },
-    { "prefix": "/museum-assessment/", "target": "/museum-planning-services.html" },
-    { "prefix": "/mark-walhimer-resume/", "target": "/museum-planning-about.html" }
+    {
+      "prefix": "/portfolio/page",
+      "target": "/museum-planning-projects.html"
+    },
+    {
+      "prefix": "/portfolio-item/",
+      "target": "/museum-planning-projects.html"
+    },
+    {
+      "prefix": "/portfolio-item-category/",
+      "target": "/museum-planning-projects.html"
+    },
+    {
+      "prefix": "/portfolio-item-tag/",
+      "target": "/museum-planning-projects.html"
+    },
+    {
+      "prefix": "/author/",
+      "target": "/museum-planning-about.html"
+    },
+    {
+      "prefix": "/category/",
+      "target": "/"
+    },
+    {
+      "prefix": "/tag/",
+      "target": "/"
+    },
+    {
+      "prefix": "/page/",
+      "target": "/"
+    },
+    {
+      "prefix": "/updates/",
+      "target": "/"
+    },
+    {
+      "prefix": "/process/",
+      "target": "/museum-planning-services.html"
+    },
+    {
+      "prefix": "/museum-assessment/",
+      "target": "/museum-planning-services.html"
+    },
+    {
+      "prefix": "/mark-walhimer-resume/",
+      "target": "/museum-planning-about.html"
+    }
   ]
 }

@@ -2,8 +2,8 @@
 window.SITE_SEARCH_PAGES = [
   {
     "type": "Home",
-    "title": "Museum &amp; Cultural Resiliency Planning",
-    "desc": "Museum consultants for resiliency planning, footprint triage, and phased capital studies — plus feasibility, master planning, and exhibition design. Forty museums since 1999. The consultant you hire is the consultant in the room.",
+    "title": "Museum Planning Consultants | Fifty+ Projects Since 1999",
+    "desc": "Museum planning consultants — feasibility through opening day. Fifty+ museums since 1999: natural history, children&apos;s museums, science centers, and interactive exhibits worldwide.",
     "url": "index.html"
   },
   {
@@ -26,8 +26,8 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Projects",
-    "title": "Projects — Forty Museums &amp; Interactive Exhibits",
-    "desc": "Forty museums across the United States and worldwide — natural history, children&apos;s museums, science centers, and interactive museum exhibits. Feasibility through opening day.",
+    "title": "Redirecting",
+    "desc": "Museum Planning LLC — Redirecting.",
     "url": "museum-planning-projects.html"
   },
   {
@@ -86,16 +86,9 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
-    "title": "Convergence Era",
-    "desc": "Science centers, museums, and AI: how industrial design and agentic systems are reshaping cultural institutions — a museum planning white paper by Mark Walhimer (Museum Planning LLC). Museum feasibility, civic projects, convergence-era planning.",
+    "title": "Convergence Era — Civic Museums for Main Street",
+    "desc": "Convergence Era: a next-generation civic museum model for mid-size downtowns — about 10–15,000 square feet, adaptive reuse of a landmark shell, physical exhibits first, with a place-based intelligence layer. Museum Planning LLC.",
     "url": "convergence-era.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Immersive Environments · Mexico",
-    "desc": "Immersive commercial environments for real estate preview centers, corporate lobbies, and hospitality — with live behavioral dashboards. Museum Planning LLC · Mexico City and worldwide.",
-    "url": "immersive-mexico/en/index.html",
-    "keywords": "Mexico México CDMX Mexico City immersive environments preview center corporate lobby hospitality behavioral dashboard sales funnel digital marketing outreach QR scan to control lobby sync"
   },
   {
     "type": "Page",
@@ -214,6 +207,18 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
+    "title": "Fullerton Museum Center — Five-Year Strategic Plan Proposal",
+    "desc": "Museum Planning LLC — Fullerton Museum Center — Five-Year Strategic Plan Proposal.",
+    "url": "docs/internal/proposals/fullerton-museum-strategic-plan.html"
+  },
+  {
+    "type": "Page",
+    "title": "Museum Planning LLC — Capabilities &amp; Recommended Sequence — The Poker Museum",
+    "desc": "Museum Planning LLC — Museum Planning LLC — Capabilities &amp; Recommended Sequence — The Poker Museum.",
+    "url": "docs/internal/proposals/poker-museum-capabilities.html"
+  },
+  {
+    "type": "Page",
     "title": "Next Steps — Museum Planning LLC · Mark Walhimer",
     "desc": "Museum Planning LLC — Next Steps — Museum Planning LLC · Mark Walhimer.",
     "url": "docs/rebrand/next-steps-work-plan.html"
@@ -245,7 +250,7 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Page",
     "title": "Museum Feasibility Study for Cities & Municipalities",
-    "desc": "Museum feasibility for cities and redevelopment — downtown, mall, housing, or mixed-use; then someone says museum. Building selection, operating costs, council-ready studies. Typical feasibility $40k–$70k.",
+    "desc": "Museum feasibility for cities and redevelopment — downtown, mall, housing, or mixed-use; then someone says museum. Building selection, operating costs, council-ready studies. Typical feasibility $60k–$110k.",
     "url": "for-cities.html"
   },
   {
@@ -279,97 +284,16 @@ window.SITE_SEARCH_PAGES = [
     "url": "immersive-interactive-museum-transformation/index.html"
   },
   {
-    "type": "Immersive Mexico",
-    "title": "Shared Ground — Mark Walhimer",
-    "desc": "Museum Planning LLC — Shared Ground — Mark Walhimer.",
-    "url": "immersive-mexico/_source/shared-ground.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Living Commons · Lobby Demo",
-    "desc": "Living Commons — commercial lobby demo. Co-presence generative environment for corporate shared spaces. Museum Planning LLC.",
-    "url": "immersive-mexico/en/living-commons.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Scan to Control · Lobby Sync POC",
-    "desc": "Scan to Control — lobby sync proof of concept. QR + phone + projection wall with real-time Firebase sync. Technical brief for corporate lobby deployments.",
-    "url": "immersive-mexico/en/scan-to-control.html",
-    "keywords": "QR code phone controller lobby sync projection mapping Firebase real-time dashboard camera machine learning scan to control corporate lobby technical brief"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Shared Ground — Mark Walhimer",
-    "desc": "Museum Planning LLC — Shared Ground — Mark Walhimer.",
-    "url": "immersive-mexico/en/shared-ground.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Surrender Machine 77823 · Preview Center Demo",
-    "desc": "Surrender Machine 77823 — commercial preview center demo. Three-zone generative environment for immersive sales spaces. Museum Planning LLC.",
-    "url": "immersive-mexico/en/surrender-machine-77823.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Immersive Environments · Mexico",
-    "desc": "Immersive commercial environments for real estate preview centers, corporate lobbies, and hospitality — with live behavioral dashboards. Museum Planning LLC · Mexico City and worldwide.",
-    "url": "immersive-mexico/es/index.html",
-    "keywords": "México CDMX Ciudad de México entornos inmersivos centro de preventas lobby corporativo hospitalidad panel comportamiento embudo de ventas marketing digital"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Living Commons · Demo Lobby",
-    "desc": "Living Commons — demo de lobby comercial. Entorno generativo de co-presencia para espacios corporativos compartidos. Museum Planning LLC.",
-    "url": "immersive-mexico/es/living-commons.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Scan to Control · POC Sincronización Lobby",
-    "desc": "Scan to Control — prueba de concepto de sincronización de lobby. QR + teléfono + muro con sincronización Firebase en tiempo real. Brief técnico para lobbies corporativos.",
-    "url": "immersive-mexico/es/scan-to-control.html",
-    "keywords": "QR código controlador teléfono sincronización lobby proyección Firebase tiempo real panel cámara aprendizaje automático scan to control lobby corporativo brief técnico"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Shared Ground — Mark Walhimer",
-    "desc": "Museum Planning LLC — Shared Ground — Mark Walhimer.",
-    "url": "immersive-mexico/es/shared-ground.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Surrender Machine 77823 · Demo Centro de Previsualización",
-    "desc": "Surrender Machine 77823 — demo de centro de previsualización comercial. Entorno generativo de tres zonas para espacios de venta inmersivos. Museum Planning LLC.",
-    "url": "immersive-mexico/es/surrender-machine-77823.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Living Commons",
-    "desc": "Museum Planning LLC — Living Commons.",
-    "url": "immersive-mexico/living-commons.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Scan To Control",
-    "desc": "Museum Planning LLC — Scan To Control.",
-    "url": "immersive-mexico/scan-to-control.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Shared Ground",
-    "desc": "Museum Planning LLC — Shared Ground.",
-    "url": "immersive-mexico/shared-ground.html"
-  },
-  {
-    "type": "Immersive Mexico",
-    "title": "Surrender Machine 77823",
-    "desc": "Museum Planning LLC — Surrender Machine 77823.",
-    "url": "immersive-mexico/surrender-machine-77823.html"
-  },
-  {
     "type": "Page",
     "title": "Immersive Museum Planning — Science Centers, Local &amp; Natural History",
     "desc": "Immersive museum planning for science center transformation, local history museums, and natural history institutions — visitor journey, interactives, and exhibition design from concept through opening. We personally lead every engagement.",
     "url": "immersive-museum-planning.html"
+  },
+  {
+    "type": "Page",
+    "title": "Museum &amp; Cultural Resiliency Planning",
+    "desc": "Museum consultants for resiliency planning, footprint triage, and phased capital studies — plus feasibility, master planning, and exhibition design. Forty museums since 1999. The consultant you hire is the consultant in the room.",
+    "url": "index-resiliency-home.html"
   },
   {
     "type": "Page",
@@ -471,7 +395,7 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Page",
     "title": "Museum Feasibility Study — Cost, Process &amp; Deliverables",
-    "desc": "Museum feasibility study for cities — scope, deliverables, fee range ($40k–$70k), and timeline. For city managers and staff comparing consultants before procurement.",
+    "desc": "Museum feasibility study for cities — scope, deliverables, fee range ($60k–$110k), and timeline. For city managers and staff comparing consultants before procurement.",
     "url": "museum-feasibility-study.html"
   },
   {
@@ -1181,12 +1105,6 @@ window.SITE_SEARCH_PAGES = [
     "title": "Science of Surfing – Traveling Museum Exhibition",
     "desc": "Science of Surfing – Traveling Museum Exhibition — Museum Planning LLC project case study.",
     "url": "projects/science-of-surfing.html"
-  },
-  {
-    "type": "Project",
-    "title": "Shared Ground — Interactive Installation",
-    "desc": "Shared Ground — interactive installation for embodied collective memory. Ars Electronica PRIX 2026. First archive: McDonough, Georgia Starr Collection.",
-    "url": "projects/shared-ground.html"
   },
   {
     "type": "Project",
