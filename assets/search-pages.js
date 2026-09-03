@@ -15,7 +15,7 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Service",
     "title": "Institutional Continuity",
-    "desc": "Keep objectives, guardrails, KPIs, and your planning menu current. Monthly check-ins, quarterly reports, and a planning dashboard. Not a shelf document.",
+    "desc": "After your institutional plan — keep objectives, guardrails, KPIs, and sequencing current. Monthly check-ins, quarterly reports, and a planning dashboard. Not a shelf document.",
     "url": "museum-institutional-continuity.html"
   },
   {
