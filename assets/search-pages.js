@@ -9,19 +9,13 @@ window.SITE_SEARCH_PAGES = [
   {
     "type": "Services",
     "title": "Museum Planning Services &amp; Consultants",
-    "desc": "Museum consultants for resiliency planning studies, feasibility, master planning, strategic planning, and exhibition design. Resiliency Study from $12k. Forty museums since 1999.",
+    "desc": "We build the plan for your institution — whatever stage you&apos;re in. Feasibility, master planning, strategic planning, and exhibition design. More than 40 museums since 1999.",
     "url": "museum-planning-services.html"
   },
   {
     "type": "Service",
-    "title": "Museum &amp; Cultural Resiliency Planning",
-    "desc": "A fixed-scope Resiliency Planning Study for museums, cities, and municipalities — footprint, operations, and phased capital options when every square foot has to earn its keep.",
-    "url": "museum-cultural-resiliency-planning.html"
-  },
-  {
-    "type": "Service",
     "title": "Institutional Continuity",
-    "desc": "After your Resiliency Planning Study — keep objectives, guardrails, KPIs, and your Modular Implementation Menu current. Monthly check-ins, quarterly reports, and a planning dashboard. Not a shelf document.",
+    "desc": "Keep objectives, guardrails, KPIs, and your planning menu current. Monthly check-ins, quarterly reports, and a planning dashboard. Not a shelf document.",
     "url": "museum-institutional-continuity.html"
   },
   {
@@ -288,12 +282,6 @@ window.SITE_SEARCH_PAGES = [
     "title": "Immersive Museum Planning — Science Centers, Local &amp; Natural History",
     "desc": "Immersive museum planning for science center transformation, local history museums, and natural history institutions — visitor journey, interactives, and exhibition design from concept through opening. We personally lead every engagement.",
     "url": "immersive-museum-planning.html"
-  },
-  {
-    "type": "Page",
-    "title": "Museum &amp; Cultural Resiliency Planning",
-    "desc": "Museum consultants for resiliency planning, footprint triage, and phased capital studies — plus feasibility, master planning, and exhibition design. Forty museums since 1999. The consultant you hire is the consultant in the room.",
-    "url": "index-resiliency-home.html"
   },
   {
     "type": "Page",
