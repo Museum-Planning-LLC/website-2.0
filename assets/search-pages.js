@@ -8,8 +8,8 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Services",
-    "title": "Museum Planning Services &amp; Consultants",
-    "desc": "We build the plan for your institution — whatever stage you&apos;re in. Feasibility, master planning, strategic planning, and exhibition design. More than 40 museums since 1999.",
+    "title": "Museum Planning Firm — Feasibility, Master &amp; Strategic Planning",
+    "desc": "Museum planning firm and consultants for institutions at any stage — feasibility, master planning, strategic planning, and exhibition design. More than 40 museums since 1999.",
     "url": "museum-planning-services.html"
   },
   {
