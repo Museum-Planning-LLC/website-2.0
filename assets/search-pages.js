@@ -405,9 +405,15 @@ window.SITE_SEARCH_PAGES = [
     "url": "museum-master-planning/index.html"
   },
   {
+    "type": "Service",
+    "title": "Owner’s Rep / Project Management",
+    "desc": "Museum owner’s representative and project management — construction and fabrication oversight that protects the institution’s interests, schedule, and budget.",
+    "url": "museum-owners-representative.html"
+  },
+  {
     "type": "Page",
-    "title": "Redirecting",
-    "desc": "Museum Planning LLC — Redirecting.",
+    "title": "Redirecting — Owner’s Rep",
+    "desc": "Redirecting to Owner’s Rep / Project Management.",
     "url": "museum-owners-representative/index.html"
   },
   {
