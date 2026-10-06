@@ -67,6 +67,13 @@ window.SITE_SEARCH_PAGES = [
     "url": "museum-school/what-is-a-museum-master-plan.html"
   },
   {
+    "type": "Museum School",
+    "title": "Museum AI Planning — Where AI Helps, Where It Doesn't",
+    "desc": "We map your museum, visitor ecosystem, service blueprint, and visitor journey — where AI helps, where it doesn't, and what to build. $80k–$130k + travel.",
+    "url": "museum-school/museum-artificial-intelligence.html",
+    "keywords": "artificial intelligence AI machine learning chatbot generative AI visitor journey visitor experience service blueprint visitor ecosystem journey map personas technology plan AI strategy AI policy build buy roadmap"
+  },
+  {
     "type": "Page",
     "title": "Museum Vitality Index — Museum Health Scoring Framework",
     "desc": "The Museum Vitality Index is a 0–100 composite scoring framework that benchmarks museums of all sizes using size-normalized metrics. A $500K museum with strong ratios can outrank a $25M institution.",
@@ -324,12 +331,6 @@ window.SITE_SEARCH_PAGES = [
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
     "url": "mark-walhimer-resume/index.html"
-  },
-  {
-    "type": "Page",
-    "title": "Museum AI — Strategic Planning for Smart Museums",
-    "desc": "Museum-AI is a Museum Planning LLC practice: phased feasibility and master planning for audience strategy, smart exhibits, and IoT building intelligence — from opening day thinking, not product sales.",
-    "url": "museum-ai/index.html"
   },
   {
     "type": "Page",

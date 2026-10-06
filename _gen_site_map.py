@@ -22,6 +22,7 @@ SEARCH_EXCLUDE_PREFIXES = ("immersive-mexico/works/",)
 SEARCH_EXCLUDE = frozenset({
     "immersive-mexico/index.html",
     "immersive-mexico.html",
+    "museum-ai/index.html",
 })
 
 TITLE_RE = re.compile(r"<title>([^<]+)</title>", re.I)
@@ -170,6 +171,12 @@ def extract_search_keywords(rel: str, path: Path) -> str:
         return (
             "museum courses culture reset change management employee handbook "
             "staff training visitor services operating museums HR marketing rollout"
+        )
+    if rel == "museum-school/museum-artificial-intelligence.html":
+        return (
+            "artificial intelligence AI machine learning chatbot generative AI "
+            "visitor journey visitor experience service blueprint visitor ecosystem "
+            "journey map personas technology plan AI strategy AI policy build buy roadmap"
         )
     if rel != "clients/index.html":
         return ""
@@ -549,6 +556,7 @@ footer {
       <li><a href="museum-school/how-to-start-a-museum.html">How to start a museum</a></li>
       <li><a href="museum-school/what-is-a-museum-feasibility-study.html">What is a museum feasibility study</a></li>
       <li><a href="museum-school/what-is-a-museum-master-plan.html">What is a museum master plan</a></li>
+      <li><a href="museum-school/museum-artificial-intelligence.html">Museum AI planning</a></li>
     </ul>
   </section>
 """
