@@ -13,7 +13,7 @@ BASE = "https://museumplanning.com"
 LASTMOD = date.today().isoformat()
 
 # Not for search indexing — error page and internal style reference.
-SITEMAP_EXCLUDE = frozenset({"404.html", "style-guide.html"})
+SITEMAP_EXCLUDE = frozenset({"404.html", "style-guide.html", "museum-ai/index.html"})
 
 # Embed / work shells — linked from parent demos, not standalone search targets.
 SEARCH_EXCLUDE_PREFIXES = ("immersive-mexico/works/",)
