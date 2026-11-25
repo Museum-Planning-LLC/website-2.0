@@ -127,6 +127,7 @@ One primary URL per row where possible. Use body copy and internal links — not
 | Starting a museum | Informational | `museum-school/how-to-start-a-museum.html` | Services, contact |
 | Museum employee handbook / museum staff portal | Commercial (operating museums) | `museum-staff-portal.html` | `for-cities.html`, `museum-strategic-planning.html`, contact |
 | Mark Walhimer | Brand / navigational | `museum-planning-about.html` | Home, contact |
+| Broken museum exhibits / museum exhibit repair | Commercial (city/county museums) | `museum-exhibit-repair.html` (not in nav/footer) | `for-cities.html`, contact |
 
 ### Extended topical list (essays & future content)
 
@@ -187,4 +188,5 @@ Peer cohorts in matrix: Lord Cultural Resources, AEA Consulting, JRA/RWS Global,
 | 2026-05-05 | Competitor matrix CSV cohorts; Lord + AEA rows. |
 | 2026-06-02 | **Tier 1 realignment:** commercial pillars own feasibility/strategic/master (not Museum School); five money keywords mapped; Cloudflare redirect table; Tier 2/3 split; remaining optimization checklist. |
 | 2026-06-02 | See [`docs/BUSINESS-AND-SEO-PLAYBOOK.md`](./BUSINESS-AND-SEO-PLAYBOOK.md) for full thread handoff and new-page pushback protocol. |
+| 2026-11-24 | Added `museum-exhibit-repair.html` — standalone offer page (broken museum exhibits, repair & upgrade for city/county museums; $10k–$30k + travel). **Owner of:** *broken museum exhibits*, *museum exhibit repair*. **Not** a Tier 1 competitor. Intentionally **not in top nav, not in footer**; in `sitemap.xml` only. Prompted by City of McDonough engagement. |
 | 2026-06-02 | Added Tier 2 `museum-staff-portal.html` — operating-museum handbook & staff portal (phase-2 keyword; links up to strategic planning & For Cities). |
