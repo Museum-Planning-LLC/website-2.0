@@ -139,7 +139,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-
 .service-list li { font-size: 17px; color: var(--mid); line-height: 1.7; padding: 8px 0 8px 20px; border-left: 2px solid var(--gold); margin-bottom: 8px; }
 .contact-block { font-size: 17px; color: var(--mid); line-height: 1.9; margin: 8px 0 28px; }
 
-.intake { margin-top: 40px; padding: 32px; background: var(--cream); border: 1px solid var(--rule); }
+.client-list { list-style: none; margin: 0; padding: 0; }
+.client-list li { font-size: 17px; line-height: 1.7; padding: 8px 0 8px 20px; border-left: 2px solid var(--gold); margin-bottom: 8px; }
+.intake { margin-top: 40px; padding: 32px; background: var(--white); border: 1px solid var(--rule); }
 .intake h3 { font-family: var(--serif); font-size: 22px; color: var(--deep); margin-bottom: 8px; }
 .intake .intake-lead { font-size: 15px; margin-bottom: 20px; }
 .intake form { display: flex; flex-direction: column; gap: 14px; }
@@ -249,7 +251,20 @@ footer {
   </div>
 </section>
 
-<section class="section" id="contact">
+<section class="section" id="clients">
+  <div class="section-inner">
+    <h2>Previous clients</h2>
+    <div class="gold-rule"></div>
+    <ul class="client-list">
+      <li><a href="https://www.mcdonoughga.org/" target="_blank" rel="noopener noreferrer">City of McDonough, Georgia</a></li>
+      <li><a href="https://oc.discoverycube.org/" target="_blank" rel="noopener noreferrer">Discovery Science Center, Santa Ana, California</a></li>
+      <li><a href="https://mobiusdiscoverycenter.org/" target="_blank" rel="noopener noreferrer">Mobius Discovery Center, Spokane, Washington</a></li>
+      <li><a href="https://www.nps.gov/alca/" target="_blank" rel="noopener noreferrer">Alcatraz Island (U.S. National Park Service)</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-cream" id="contact">
   <div class="section-inner">
     <h2>Get your broken exhibits working again</h2>
     <div class="gold-rule"></div>
