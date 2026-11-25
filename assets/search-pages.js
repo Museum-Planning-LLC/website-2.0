@@ -545,6 +545,12 @@ window.SITE_SEARCH_PAGES = [
   },
   {
     "type": "Page",
+    "title": "Interactive Museum Exhibit Repair Service",
+    "desc": "Broken museum exhibits? We fix them. Broken touchscreens, kiosks, videos and interactive exhibits repaired and upgraded for city and county museums. Exhibit repairs and upgrades, $10,000–$30,000 plus travel.",
+    "url": "museum-exhibit-repair.html"
+  },
+  {
+    "type": "Page",
     "title": "Redirecting",
     "desc": "Museum Planning LLC — Redirecting.",
     "url": "museum-strategic-planning-consultants/index.html"
