@@ -7,6 +7,51 @@ Single source of truth for **which phrases we target** and **which pages own the
 
 ---
 
+## Owner keyword priority (2026-11-24) — consulting, not design
+
+**Rule:** target what a board or city manager types **before they hire anyone**, when they have a project and a budget decision. Lead with **feasibility + master planning + cost + consultant**. Let the design firms have the design words.
+
+Where a keyword has no page yet, the page column says **unassigned** — assign it before building anything new (one primary URL per phrase).
+
+### Priority A — defend (hiring intent)
+
+| Keyword / phrase | Page |
+|------------------|------|
+| Museum feasibility study / museum feasibility studies | `museum-feasibility-study.html` |
+| Museum master planning / what is a museum master plan | `museum-master-planning.html` · `museum-school/what-is-a-museum-master-plan.html` |
+| How much does a museum feasibility study cost | `museum-feasibility-study.html` (FAQ + fee card) |
+| Museum planning consultant | unassigned (services hub owns *museum consultants*) |
+
+### Priority B — win
+
+| Keyword / phrase | Page |
+|------------------|------|
+| Museum strategic planning | `museum-strategic-planning.html` |
+| Museum planning (generic) | `index.html` |
+| Museum assessment / museum feasibility assessment | unassigned |
+| How to start a museum (win back — highest-traffic guide) | `museum-school/how-to-start-a-museum.html` |
+| How to open a museum | unassigned |
+
+### Priority C — long-tail (real prospects)
+
+| Keyword / phrase | Page |
+|------------------|------|
+| Museum feasibility study cost / feasibility study for a museum | `museum-feasibility-study.html` |
+| Children's museum feasibility study | unassigned |
+| Science museum feasibility study / science center planning | `for-cities-science-center.html` |
+| Museum master plan cost | unassigned |
+| Museum business plan / museum operating plan | unassigned |
+| Museum strategic plan cost | unassigned |
+| How to build a museum / new museum planning | unassigned |
+
+### Do NOT target
+
+Museum design, exhibition design, interpretive planning, experience design, wayfinding, interactive exhibits, museum branding, environmental graphic design. That is the exhibit-design firms' lane, not the core $60k–$110k planning work. Do not add these terms to pages to chase rankings.
+
+**Exception (separate offer):** `museum-exhibit-repair.html` targets *interactive museum exhibit repair service* — a repair job for open city/county museums, not exhibit design.
+
+---
+
 ## Tier 1 — money keywords (one URL per phrase)
 
 These five phrases drive $100K-class engagements. Each has a **single primary URL**. Do not create competing pages or duplicate intent.
@@ -121,8 +166,8 @@ One primary URL per row where possible. Use body copy and internal links — not
 
 | Keyword / phrase | Intent | Primary URL | Supporting URLs |
 |------------------|--------|-------------|-----------------|
-| Museum exhibition design | Commercial | `museum-planning-services.html` | Project case studies, capabilities |
-| Interactive museum exhibits | Commercial + informational | `museum-planning-projects.html`, `projects/*.html` | Services, immersive guide |
+| ~~Museum exhibition design~~ | **Removed 2026-11-24 — do not target** (see Owner keyword priority) | — | — |
+| ~~Interactive museum exhibits~~ | **Removed 2026-11-24 — do not target** | — | — |
 | Immersive museum planning | Commercial | `immersive-museum-planning.html` | Services, science-center vertical |
 | Starting a museum | Informational | `museum-school/how-to-start-a-museum.html` | Services, contact |
 | Museum employee handbook / museum staff portal | Commercial (operating museums) | `museum-staff-portal.html` | `for-cities.html`, `museum-strategic-planning.html`, contact |
@@ -189,4 +234,5 @@ Peer cohorts in matrix: Lord Cultural Resources, AEA Consulting, JRA/RWS Global,
 | 2026-06-02 | **Tier 1 realignment:** commercial pillars own feasibility/strategic/master (not Museum School); five money keywords mapped; Cloudflare redirect table; Tier 2/3 split; remaining optimization checklist. |
 | 2026-06-02 | See [`docs/BUSINESS-AND-SEO-PLAYBOOK.md`](./BUSINESS-AND-SEO-PLAYBOOK.md) for full thread handoff and new-page pushback protocol. |
 | 2026-11-24 | Added `museum-exhibit-repair.html` — standalone offer page (broken museum exhibits, repair & upgrade for city/county museums; $10k–$30k + travel). **Owner of:** *broken museum exhibits*, *museum exhibit repair*. **Not** a Tier 1 competitor. Intentionally **not in top nav, not in footer**; in `sitemap.xml` only. Prompted by City of McDonough engagement. |
+| 2026-11-24 | Added **Owner keyword priority** (Priority A/B/C + Do NOT target list). Removed *museum exhibition design* and *interactive museum exhibits* from phase-2 targets. |
 | 2026-06-02 | Added Tier 2 `museum-staff-portal.html` — operating-museum handbook & staff portal (phase-2 keyword; links up to strategic planning & For Cities). |
